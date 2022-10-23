@@ -1,15 +1,20 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Andrew Frazer',
-  authorAddress: 'andrew.frazer@contactenergy.co.nz',
-  cdkVersion: '2.1.0',
+  authorAddress: 'andrew.frazer@raindancers.co.nz',
+  cdkVersion: '2.46.0',
   defaultReleaseBranch: 'main',
-  name: 'kapua-network',
-  repositoryUrl: 'https://github.com/andrew.frazer/kapua-network.git',
+  name: 'raindancers-network',
+  repositoryUrl: 'https://github.com/raindancers/raindancers-network.raindancers-cdk',
+  description: 'Extensions to the ec2.Vpc Constructs',
+  keywords: ['IPAM', 'VPC'],
+  license: 'Apache-2.0',
+  stability: 'experimental',
+  publishToPypi: {
+    distName: 'raindancers-network.raindancers-cdk',
+    module: 'Evpc',
+  },
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+
 });
 project.synth();
