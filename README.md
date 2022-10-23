@@ -8,16 +8,15 @@ All of the methods that work with ec2.Vpc, work with Evpc.   Refer to [the ec2.V
 import { Evpc } from 'raindancers-cdk.raindancers-network';
 ```
 
-### VPC
+## VPC
 Many projects need a Virtual Private Cloud network.  This can be provided by creating an instance of ```EVpc``` :
 ```
 const shineyEvpc = new Evpc(this, 'EnterpriseVPC');
 ```
 
+### Using IPAM address Pool for Addressing in Cidr
 
-### Using IPAM address Pool for Addressing
-
-Creating a vpc that gets its Ip Address allocation from an IPAM pool, requires providing a netmask and ipamPoolId.  Only one of ipamPoolId or cidr is allowed.
+Creating a vpc that gets its Ip Address allocation from an IPAM pool, requires providing a netmask and ipamPoolId.  Only one of ipamPoolId or cidr is allowed.    The underlying resource that creates a VPC natively consumes IPAM.
 
 ```
 const shineyEpvc = new Evpc(this, 'EnterpriseVPC', {
@@ -26,14 +25,6 @@ const shineyEpvc = new Evpc(this, 'EnterpriseVPC', {
 })
 ```
 
-### Internal Route53 Zones
-
-A internal Route53 Zone can be created and associated with the Vpc, by specifying the r53InternalZoneName property
-```
-const shineyEpvc = new Evpc(this, 'EnterpriseVPC', {
-	r53InternalZoneName: 'internal.somedomain.cloud',
-})
-```
 
 ### Centralised Flow Logs and Athena Querys.
 
@@ -67,7 +58,7 @@ const shiney = new Evpc(this, 'Shineyvpc', {
 )
 ```
 
-## Attaching to cloud wan.
+### Attaching a VPC to cloud wan.
 
 To attach a vpc to a cloudwan, use the attachToCloudWan method, for example to connect to a core network 'AcmeCore' and segment 'AppsProd';  The attachments to cloudwan will be made in the linknets subnets
 
@@ -77,8 +68,12 @@ shineyVpc.attachToCloudWan('AcmeCore', 'AppsProd')
 ```
 This method returns the attachmentId, which is used in the routing methods.
 
+## Attaching a VPC to a TransitGateway in Appliance Mode.
+(very beta and potentially buggy)
+TODO: Write doc's
 
-## Adding Routes to Cloudwan
+
+### Adding Routes to Cloudwan attached VPC's
 
 A number of convience methods are provided to add routes to the cloudwan; For example to add a default route (0/0) in all privatesubnets
 
@@ -86,23 +81,59 @@ A number of convience methods are provided to add routes to the cloudwan; For ex
 shineyVpc.addRouteForPrivateSubnetstoCloudwan('0.0.0.0/0', attachmentId)
 ```
 
-A similar method exisits for PublicSubnets
+Similar method exisits for PublicSubnets, TransitGateways Instances and Firewalls. 
 
-## Other Routing Functions.
 
-addRouteForPrivateSubnetstoTransitGateway
-addRouteForPrivateSubnetstoinstance
+### Internal Route53 Zones
 
+A internal Route53 Zone can be created and associated with the Vpc, by specifying the r53InternalZoneName property
+```
+const shineyEpvc = new Evpc(this, 'EnterpriseVPC', {
+	r53InternalZoneName: 'internal.somedomain.cloud',
+})
+```
 
 ## DNS Methods
+To do.
 associateVPCZonewithCentralVPC
 associateSharedRoute53ResolverRules
 
 
-## Attaching a VPC to a TransitGateway in Appliance Mode.
-(very beta and potentially buggy)
-TODO: Write doc's
 
-## createConnectAttachment
+# IPAM  
+
+This package contains constructs for integrating with **Amazon IP Address Manager**.  While the IPAM Service is GA and provides a very useful service, only a handful of services natively support ingesting a IPAM allocated address ( ie, VPC ). 
+
+For futher infomation on Amazon IPAM, see the [IPAM Documentation](https://docs.aws.amazon.com/vpc/latest/ipam/getting-started-ipam.html)
 
 
+
+### Using IPAM for IPsec VPN tunnel addresses ###
+
+The Cidr ranges for IPSec VPN Tunnels must comply to several constraints.  
+- they must be a /30
+- they must be subnets of 169.254.0.0/16 
+- they must not conflict with the reserved subnets ( see docs above )
+
+The following example demonstrates how the constructs can be used to create an address Pool and suitable allocations, that met these criteria
+
+```
+
+const tunnelIPAMPool = new kapua_ipam.IpsecTunnelPool(this, 'ipampool', {
+	ipamScopeId: 'ipam-scope-00112233445566778',
+	cidr: '169.254.100.0/27',
+	description: 'Addressing for IPSec Tunnels between ap-southeast-2 and on prem',
+	name: 'ToOnPremVPNTunnels'
+})
+
+
+var assignedCidrs: string[] = []
+
+const tunnelAllocation = new GetTunnelAddressPair(this, `${name}tunneladdress`,{
+	ipamPoolId: tunnelIPAMPool.attrIpamPoolId,
+	name: name
+})
+
+assignedCidrs = tunnelAllocation.assignedCidrPair
+
+```
