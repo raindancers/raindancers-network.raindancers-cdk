@@ -64,7 +64,9 @@
     "constructs": "^10.0.5"
   },
   "keywords": [
+    "Cloudwan",
     "IPAM",
+    "NetworkFirewall",
     "VPC",
     "cdk"
   ],

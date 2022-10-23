@@ -7,7 +7,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'raindancers-network',
   repositoryUrl: 'https://github.com/raindancers/raindancers-network.raindancers-cdk',
   description: 'Extensions to the ec2.Vpc Constructs',
-  keywords: ['IPAM', 'VPC'],
+  keywords: [
+    'IPAM',
+    'VPC',
+    'Cloudwan',
+    'NetworkFirewall',
+  ],
   license: 'Apache-2.0',
   stability: 'experimental',
   publishToPypi: {

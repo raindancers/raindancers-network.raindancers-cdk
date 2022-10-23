@@ -954,6 +954,246 @@ The default subnet configuration if natGateways specified to be 0.
 
 ---
 
+### GetTunnelAddressPair <a name="GetTunnelAddressPair" id="raindancers-network.GetTunnelAddressPair"></a>
+
+Allocate a pair of /30 networks CIDRS for use in Ipsec VPN Tunnels.
+
+#### Initializers <a name="Initializers" id="raindancers-network.GetTunnelAddressPair.Initializer"></a>
+
+```typescript
+import { GetTunnelAddressPair } from 'raindancers-network'
+
+new GetTunnelAddressPair(scope: Construct, id: string, props: GetTunnelAddressPairProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is created. |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.id">id</a></code> | <code>string</code> | scope id of the resoruce. |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.GetTunnelAddressPairProps">GetTunnelAddressPairProps</a></code> | resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is created.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scope id of the resoruce.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.GetTunnelAddressPairProps">GetTunnelAddressPairProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.GetTunnelAddressPair.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.GetTunnelAddressPair.isConstruct"></a>
+
+```typescript
+import { GetTunnelAddressPair } from 'raindancers-network'
+
+GetTunnelAddressPair.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.GetTunnelAddressPair.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.GetTunnelAddressPair.property.assignedCidrPair">assignedCidrPair</a></code> | <code>string[]</code> | returns 2 cidr blocks as an array to be used by an IPsec Tunnel. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.GetTunnelAddressPair.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `assignedCidrPair`<sup>Required</sup> <a name="assignedCidrPair" id="raindancers-network.GetTunnelAddressPair.property.assignedCidrPair"></a>
+
+```typescript
+public readonly assignedCidrPair: string[];
+```
+
+- *Type:* string[]
+
+returns 2 cidr blocks as an array to be used by an IPsec Tunnel.
+
+---
+
+
+### IpsecTunnelPool <a name="IpsecTunnelPool" id="raindancers-network.IpsecTunnelPool"></a>
+
+Creates an IPAM pool to assign address's for IPsec VPNS.
+
+#### Initializers <a name="Initializers" id="raindancers-network.IpsecTunnelPool.Initializer"></a>
+
+```typescript
+import { IpsecTunnelPool } from 'raindancers-network'
+
+new IpsecTunnelPool(scope: Construct, id: string, props: IpsecTunnelPoolProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is defined. |
+| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.id">id</a></code> | <code>string</code> | id of the resource. |
+| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.IpsecTunnelPoolProps">IpsecTunnelPoolProps</a></code> | resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.IpsecTunnelPoolProps">IpsecTunnelPoolProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.IpsecTunnelPool.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.IpsecTunnelPool.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.IpsecTunnelPool.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.IpsecTunnelPool.isConstruct"></a>
+
+```typescript
+import { IpsecTunnelPool } from 'raindancers-network'
+
+IpsecTunnelPool.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.IpsecTunnelPool.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IpsecTunnelPool.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.IpsecTunnelPool.property.ipampool">ipampool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | returns the created ipam Pool. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IpsecTunnelPool.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `ipampool`<sup>Required</sup> <a name="ipampool" id="raindancers-network.IpsecTunnelPool.property.ipampool"></a>
+
+```typescript
+public readonly ipampool: CfnIPAMPool;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnIPAMPool
+
+returns the created ipam Pool.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### EvpcProps <a name="EvpcProps" id="raindancers-network.EvpcProps"></a>
@@ -1394,6 +1634,124 @@ public readonly r53InternalZoneName: string;
 - *Type:* string
 
 Name of an internal Route53 Zone that is associated with this voc.
+
+---
+
+### GetTunnelAddressPairProps <a name="GetTunnelAddressPairProps" id="raindancers-network.GetTunnelAddressPairProps"></a>
+
+Properties for obtaining an IPAM assigned address pair for use on IPsec VPN Tunnels.
+
+#### Initializer <a name="Initializer" id="raindancers-network.GetTunnelAddressPairProps.Initializer"></a>
+
+```typescript
+import { GetTunnelAddressPairProps } from 'raindancers-network'
+
+const getTunnelAddressPairProps: GetTunnelAddressPairProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.GetTunnelAddressPairProps.property.ipamPoolId">ipamPoolId</a></code> | <code>string</code> | The IPAM Pool Id from which the assginment will be made from. |
+| <code><a href="#raindancers-network.GetTunnelAddressPairProps.property.name">name</a></code> | <code>string</code> | The Name used by IPAM to record the allocation. |
+
+---
+
+##### `ipamPoolId`<sup>Required</sup> <a name="ipamPoolId" id="raindancers-network.GetTunnelAddressPairProps.property.ipamPoolId"></a>
+
+```typescript
+public readonly ipamPoolId: string;
+```
+
+- *Type:* string
+
+The IPAM Pool Id from which the assginment will be made from.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.GetTunnelAddressPairProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The Name used by IPAM to record the allocation.
+
+---
+
+### IpsecTunnelPoolProps <a name="IpsecTunnelPoolProps" id="raindancers-network.IpsecTunnelPoolProps"></a>
+
+Properties for defining a IPAM Pool specifically for IPSec VPN Tunnels.
+
+#### Initializer <a name="Initializer" id="raindancers-network.IpsecTunnelPoolProps.Initializer"></a>
+
+```typescript
+import { IpsecTunnelPoolProps } from 'raindancers-network'
+
+const ipsecTunnelPoolProps: IpsecTunnelPoolProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.cidr">cidr</a></code> | <code>string</code> | The Cidr range for pools to be created from    eg, 169.254.100.0/27 The cidr must be in the 169.254.0.0/16 range and must be a minimum of a /29 and a maximum of /24. |
+| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.description">description</a></code> | <code>string</code> | the description used by IPAM to describe the pool. |
+| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.ipamScopeId">ipamScopeId</a></code> | <code>string</code> | The IPAM Scope Id to use to create the Pool. |
+| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.name">name</a></code> | <code>string</code> | the name used by IPAM to identify the pool. |
+
+---
+
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.IpsecTunnelPoolProps.property.cidr"></a>
+
+```typescript
+public readonly cidr: string;
+```
+
+- *Type:* string
+
+The Cidr range for pools to be created from    eg, 169.254.100.0/27 The cidr must be in the 169.254.0.0/16 range and must be a minimum of a /29 and a maximum of /24.
+
+It must also not overlap the AWS reserved ranges. T
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.IpsecTunnelPoolProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+the description used by IPAM to describe the pool.
+
+---
+
+##### `ipamScopeId`<sup>Required</sup> <a name="ipamScopeId" id="raindancers-network.IpsecTunnelPoolProps.property.ipamScopeId"></a>
+
+```typescript
+public readonly ipamScopeId: string;
+```
+
+- *Type:* string
+
+The IPAM Scope Id to use to create the Pool.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.IpsecTunnelPoolProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+the name used by IPAM to identify the pool.
 
 ---
 
