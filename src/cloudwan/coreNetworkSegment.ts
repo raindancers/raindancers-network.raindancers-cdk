@@ -1,0 +1,124 @@
+import * as cdk from 'aws-cdk-lib';
+import * as constructs from 'constructs';
+
+
+import * as cloudWanEnum from './cloudWanEnum';
+
+/**
+ * Create a Network Segment in a core network
+ */
+
+export class CoreNetworkSegment extends constructs.Construct {
+
+  /** the name for the segment */
+  public readonly segmentName: string;
+
+  /** Service token for  */
+  public readonly PolicyTableServiceToken: string;
+
+  /** resources which update depends on */
+  private updateDependsOn: cdk.CustomResource[];
+
+  constructor(scope: constructs.Construct, id: string, props: cloudWanEnum.ICoreNetworkSegmentProps) {
+    super(scope, id);
+
+    this.updateDependsOn = props.updateDependsOn;
+    this.segmentName = props.segmentName;
+    this.PolicyTableServiceToken = props.policyTableServiceToken;
+  }
+
+
+  /**
+	 * Add an Action to the Segment, ( Share or Route )
+	 * @param props segment action
+	 */
+  public addSegmentAction(props: cloudWanEnum.SegmentAction): void {
+
+    const segmentAction: {[k: string]: any} = {};
+
+    segmentAction.description = props.description;
+    segmentAction.action = props.action;
+    segmentAction.segment = this.segmentName;
+    if ( props.action === cloudWanEnum.SegmentActionType.SHARE ) {
+      if (props.shareWith === undefined) {
+        throw Error ('shareWith must be defined for a share action');
+      }
+      segmentAction.mode = cloudWanEnum.SegmentActionMode.ATTACHMENT_ROUTE;
+      segmentAction['share-with'] = props.shareWith;
+
+      if (props.except === undefined) {
+        segmentAction.except = props.except;
+      }
+    }
+
+    if ( props.action === cloudWanEnum.SegmentActionType.CREATE_ROUTE ) {
+
+      if ( props.destinationCidrBlocks === undefined || props.destinations === undefined ) {
+        throw new Error('Both destinationCidrBlock and destinations are requried for a create-route action');
+      }
+
+      segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
+      segmentAction.destinations = props.destinations;
+
+      if (props.description !== undefined) {
+        segmentAction.description = props.description;
+      }
+    }
+
+    const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
+      serviceToken: this.PolicyTableServiceToken,
+      properties: {
+        segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
+      },
+    });
+
+    this.updateDependsOn.push(segmentaction);
+  }
+
+  /**
+	 * Add an AttachmentPolicy to a segment
+	 * @param props An attachment policy
+	 */
+  public addAttachmentPolicy(
+    props: cloudWanEnum.AttachmentPolicy,
+  ): void {
+
+    const attachmentPolicy: {[k: string]: any} = {};
+
+    // check construction of policy
+    if (props.conditions.length > 1 && props.conditionLogic === undefined) {
+      throw Error ('conditionLogic must be set when there is more than 1 condition');
+    }
+
+    attachmentPolicy['rule-number'] = Number(props.ruleNumber);
+    attachmentPolicy.conditions = props.conditions;
+
+
+    //deal to key naming issues.
+    if ('associationMethod' in props.action) {
+      let localAction: {[k: string]: any} = {};
+      localAction.segment = props.action.segment;
+      localAction['association-method'] = props.action.associationMethod;
+      attachmentPolicy.action = localAction;
+    } else {
+      attachmentPolicy.action = props.action;
+    }
+
+    if (props.conditionLogic !== undefined) {
+      attachmentPolicy['condition-logic'] = props.conditionLogic;
+    }
+
+    if (props.description !== undefined) {
+      attachmentPolicy.description = props.description;
+    }
+
+    const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
+      serviceToken: this.PolicyTableServiceToken,
+      properties: {
+        attachmentPolicy: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(attachmentPolicy)),
+      },
+    });
+
+    this.updateDependsOn?.push(segmentpolicy);
+  }
+}

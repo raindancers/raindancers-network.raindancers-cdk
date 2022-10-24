@@ -2,6 +2,224 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### CoreNetwork <a name="CoreNetwork" id="raindancers-network.CoreNetwork"></a>
+
+Create a CoreNework for a Cloudwan.
+
+#### Initializers <a name="Initializers" id="raindancers-network.CoreNetwork.Initializer"></a>
+
+```typescript
+import { CoreNetwork } from 'raindancers-network'
+
+new CoreNetwork(scope: Construct, id: string, props: CoreNetworkProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CoreNetworkProps">CoreNetworkProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CoreNetwork.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CoreNetwork.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CoreNetworkProps">CoreNetworkProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CoreNetwork.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.CoreNetwork.addSegment">addSegment</a></code> | Add a segment to the core network. |
+| <code><a href="#raindancers-network.CoreNetwork.share">share</a></code> | Create a CoreNetwork Sharing. |
+| <code><a href="#raindancers-network.CoreNetwork.updatePolicy">updatePolicy</a></code> | Update the corewan policy after actions, segments are added. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CoreNetwork.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addSegment` <a name="addSegment" id="raindancers-network.CoreNetwork.addSegment"></a>
+
+```typescript
+public addSegment(props: Segment): void
+```
+
+Add a segment to the core network.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.addSegment.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.Segment">Segment</a>
+
+properties of the segment.
+
+---
+
+##### `share` <a name="share" id="raindancers-network.CoreNetwork.share"></a>
+
+```typescript
+public share(props: CoreNetworkShare): void
+```
+
+Create a CoreNetwork Sharing.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.share.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CoreNetworkShare">CoreNetworkShare</a>
+
+Share properties.
+
+---
+
+##### `updatePolicy` <a name="updatePolicy" id="raindancers-network.CoreNetwork.updatePolicy"></a>
+
+```typescript
+public updatePolicy(): void
+```
+
+Update the corewan policy after actions, segments are added.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CoreNetwork.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CoreNetwork.isConstruct"></a>
+
+```typescript
+import { CoreNetwork } from 'raindancers-network'
+
+CoreNetwork.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CoreNetwork.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetwork.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CoreNetwork.property.cfnCoreNetwork">cfnCoreNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnCoreNetwork</code> | The corenetwork object. |
+| <code><a href="#raindancers-network.CoreNetwork.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetwork.property.policyTable">policyTable</a></code> | <code>aws-cdk-lib.aws_dynamodb.Table</code> | THe dynamo table holding the policy. |
+| <code><a href="#raindancers-network.CoreNetwork.property.policyTableName">policyTableName</a></code> | <code>string</code> | Name of the Dynamo Table holding the policy. |
+| <code><a href="#raindancers-network.CoreNetwork.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | The policyTable Lamba's Service Token. |
+| <code><a href="#raindancers-network.CoreNetwork.property.updateProviderToken">updateProviderToken</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CoreNetwork.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `cfnCoreNetwork`<sup>Required</sup> <a name="cfnCoreNetwork" id="raindancers-network.CoreNetwork.property.cfnCoreNetwork"></a>
+
+```typescript
+public readonly cfnCoreNetwork: CfnCoreNetwork;
+```
+
+- *Type:* aws-cdk-lib.aws_networkmanager.CfnCoreNetwork
+
+The corenetwork object.
+
+---
+
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.CoreNetwork.property.coreName"></a>
+
+```typescript
+public readonly coreName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.CoreNetwork.property.policyTable"></a>
+
+```typescript
+public readonly policyTable: Table;
+```
+
+- *Type:* aws-cdk-lib.aws_dynamodb.Table
+
+THe dynamo table holding the policy.
+
+---
+
+##### `policyTableName`<sup>Required</sup> <a name="policyTableName" id="raindancers-network.CoreNetwork.property.policyTableName"></a>
+
+```typescript
+public readonly policyTableName: string;
+```
+
+- *Type:* string
+
+Name of the Dynamo Table holding the policy.
+
+---
+
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.CoreNetwork.property.policyTableServiceToken"></a>
+
+```typescript
+public readonly policyTableServiceToken: string;
+```
+
+- *Type:* string
+
+The policyTable Lamba's Service Token.
+
+---
+
+##### `updateProviderToken`<sup>Required</sup> <a name="updateProviderToken" id="raindancers-network.CoreNetwork.property.updateProviderToken"></a>
+
+```typescript
+public readonly updateProviderToken: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### Evpc <a name="Evpc" id="raindancers-network.Evpc"></a>
 
 Extends the ec2.Vpc construct to provide additional functionality - support for using AWS IPAM - methods for integration - Flow logs and Athena Querys - Create and share 53 zones.
@@ -1196,6 +1414,350 @@ returns the created ipam Pool.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### AttachmentConditions <a name="AttachmentConditions" id="raindancers-network.AttachmentConditions"></a>
+
+an attachmentconditions.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AttachmentConditions.Initializer"></a>
+
+```typescript
+import { AttachmentConditions } from 'raindancers-network'
+
+const attachmentConditions: AttachmentConditions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AttachmentConditions.property.type">type</a></code> | <code><a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentConditions.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentConditions.property.operator">operator</a></code> | <code><a href="#raindancers-network.Operators">Operators</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentConditions.property.value">value</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="raindancers-network.AttachmentConditions.property.type"></a>
+
+```typescript
+public readonly type: AttachmentCondition;
+```
+
+- *Type:* <a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>
+
+---
+
+##### `key`<sup>Optional</sup> <a name="key" id="raindancers-network.AttachmentConditions.property.key"></a>
+
+```typescript
+public readonly key: string;
+```
+
+- *Type:* string
+
+---
+
+##### `operator`<sup>Optional</sup> <a name="operator" id="raindancers-network.AttachmentConditions.property.operator"></a>
+
+```typescript
+public readonly operator: Operators;
+```
+
+- *Type:* <a href="#raindancers-network.Operators">Operators</a>
+
+---
+
+##### `value`<sup>Optional</sup> <a name="value" id="raindancers-network.AttachmentConditions.property.value"></a>
+
+```typescript
+public readonly value: string;
+```
+
+- *Type:* string
+
+---
+
+### AttachmentPolicy <a name="AttachmentPolicy" id="raindancers-network.AttachmentPolicy"></a>
+
+an attachment policy.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AttachmentPolicy.Initializer"></a>
+
+```typescript
+import { AttachmentPolicy } from 'raindancers-network'
+
+const attachmentPolicy: AttachmentPolicy = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.action">action</a></code> | <code><a href="#raindancers-network.AttachmentPolicyAction">AttachmentPolicyAction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.conditions">conditions</a></code> | <code><a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.conditionLogic">conditionLogic</a></code> | <code><a href="#raindancers-network.ConditionLogic">ConditionLogic</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.description">description</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.AttachmentPolicy.property.action"></a>
+
+```typescript
+public readonly action: AttachmentPolicyAction;
+```
+
+- *Type:* <a href="#raindancers-network.AttachmentPolicyAction">AttachmentPolicyAction</a>
+
+---
+
+##### `conditions`<sup>Required</sup> <a name="conditions" id="raindancers-network.AttachmentPolicy.property.conditions"></a>
+
+```typescript
+public readonly conditions: AttachmentCondition[];
+```
+
+- *Type:* <a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>[]
+
+---
+
+##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.AttachmentPolicy.property.ruleNumber"></a>
+
+```typescript
+public readonly ruleNumber: number;
+```
+
+- *Type:* number
+
+---
+
+##### `conditionLogic`<sup>Optional</sup> <a name="conditionLogic" id="raindancers-network.AttachmentPolicy.property.conditionLogic"></a>
+
+```typescript
+public readonly conditionLogic: ConditionLogic;
+```
+
+- *Type:* <a href="#raindancers-network.ConditionLogic">ConditionLogic</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.AttachmentPolicy.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+### AttachmentPolicyAction <a name="AttachmentPolicyAction" id="raindancers-network.AttachmentPolicyAction"></a>
+
+Attachment Policy Action.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AttachmentPolicyAction.Initializer"></a>
+
+```typescript
+import { AttachmentPolicyAction } from 'raindancers-network'
+
+const attachmentPolicyAction: AttachmentPolicyAction = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AttachmentPolicyAction.property.associationMethod">associationMethod</a></code> | <code><a href="#raindancers-network.AssociationMethod">AssociationMethod</a></code> | The Assocation Method. |
+| <code><a href="#raindancers-network.AttachmentPolicyAction.property.segment">segment</a></code> | <code>string</code> | The Segment this applies to. |
+
+---
+
+##### `associationMethod`<sup>Required</sup> <a name="associationMethod" id="raindancers-network.AttachmentPolicyAction.property.associationMethod"></a>
+
+```typescript
+public readonly associationMethod: AssociationMethod;
+```
+
+- *Type:* <a href="#raindancers-network.AssociationMethod">AssociationMethod</a>
+
+The Assocation Method.
+
+---
+
+##### `segment`<sup>Optional</sup> <a name="segment" id="raindancers-network.AttachmentPolicyAction.property.segment"></a>
+
+```typescript
+public readonly segment: string;
+```
+
+- *Type:* string
+
+The Segment this applies to.
+
+---
+
+### CoreNetworkProps <a name="CoreNetworkProps" id="raindancers-network.CoreNetworkProps"></a>
+
+CoreNetwork Properties.
+
+#### Initializer <a name="Initializer" id="raindancers-network.CoreNetworkProps.Initializer"></a>
+
+```typescript
+import { CoreNetworkProps } from 'raindancers-network'
+
+const coreNetworkProps: CoreNetworkProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.asnRanges">asnRanges</a></code> | <code>string[]</code> | a list of of asn's that can be used. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.coreName">coreName</a></code> | <code>string</code> | core name. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | list of edgeLocaitons. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.globalNetwork">globalNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnGlobalNetwork</code> | Which Global Network. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.policyDescription">policyDescription</a></code> | <code>string</code> | a decription for the policy Document. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.insideCidrBlocks">insideCidrBlocks</a></code> | <code>string[]</code> | List of InsideCidr Blocks. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.vpnEcmpSupport">vpnEcmpSupport</a></code> | <code>boolean</code> | support VpnECmp. |
+
+---
+
+##### `asnRanges`<sup>Required</sup> <a name="asnRanges" id="raindancers-network.CoreNetworkProps.property.asnRanges"></a>
+
+```typescript
+public readonly asnRanges: string[];
+```
+
+- *Type:* string[]
+
+a list of of asn's that can be used.
+
+---
+
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.CoreNetworkProps.property.coreName"></a>
+
+```typescript
+public readonly coreName: string;
+```
+
+- *Type:* string
+
+core name.
+
+---
+
+##### `edgeLocations`<sup>Required</sup> <a name="edgeLocations" id="raindancers-network.CoreNetworkProps.property.edgeLocations"></a>
+
+```typescript
+public readonly edgeLocations: object[];
+```
+
+- *Type:* object[]
+
+list of edgeLocaitons.
+
+---
+
+##### `globalNetwork`<sup>Required</sup> <a name="globalNetwork" id="raindancers-network.CoreNetworkProps.property.globalNetwork"></a>
+
+```typescript
+public readonly globalNetwork: CfnGlobalNetwork;
+```
+
+- *Type:* aws-cdk-lib.aws_networkmanager.CfnGlobalNetwork
+
+Which Global Network.
+
+---
+
+##### `policyDescription`<sup>Required</sup> <a name="policyDescription" id="raindancers-network.CoreNetworkProps.property.policyDescription"></a>
+
+```typescript
+public readonly policyDescription: string;
+```
+
+- *Type:* string
+
+a decription for the policy Document.
+
+---
+
+##### `insideCidrBlocks`<sup>Optional</sup> <a name="insideCidrBlocks" id="raindancers-network.CoreNetworkProps.property.insideCidrBlocks"></a>
+
+```typescript
+public readonly insideCidrBlocks: string[];
+```
+
+- *Type:* string[]
+
+List of InsideCidr Blocks.
+
+---
+
+##### `vpnEcmpSupport`<sup>Optional</sup> <a name="vpnEcmpSupport" id="raindancers-network.CoreNetworkProps.property.vpnEcmpSupport"></a>
+
+```typescript
+public readonly vpnEcmpSupport: boolean;
+```
+
+- *Type:* boolean
+
+support VpnECmp.
+
+---
+
+### CoreNetworkShare <a name="CoreNetworkShare" id="raindancers-network.CoreNetworkShare"></a>
+
+CoreNetworkShare.
+
+#### Initializer <a name="Initializer" id="raindancers-network.CoreNetworkShare.Initializer"></a>
+
+```typescript
+import { CoreNetworkShare } from 'raindancers-network'
+
+const coreNetworkShare: CoreNetworkShare = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkShare.property.allowExternalPrincipals">allowExternalPrincipals</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetworkShare.property.principals">principals</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetworkShare.property.tags">tags</a></code> | <code>aws-cdk-lib.Tag[]</code> | *No description.* |
+
+---
+
+##### `allowExternalPrincipals`<sup>Required</sup> <a name="allowExternalPrincipals" id="raindancers-network.CoreNetworkShare.property.allowExternalPrincipals"></a>
+
+```typescript
+public readonly allowExternalPrincipals: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `principals`<sup>Required</sup> <a name="principals" id="raindancers-network.CoreNetworkShare.property.principals"></a>
+
+```typescript
+public readonly principals: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="raindancers-network.CoreNetworkShare.property.tags"></a>
+
+```typescript
+public readonly tags: Tag[];
+```
+
+- *Type:* aws-cdk-lib.Tag[]
+
+---
+
 ### EvpcProps <a name="EvpcProps" id="raindancers-network.EvpcProps"></a>
 
 Properties for Creating an enterprise Vpc which extend ec2.Vpc.
@@ -1755,5 +2317,440 @@ the name used by IPAM to identify the pool.
 
 ---
 
+### Segment <a name="Segment" id="raindancers-network.Segment"></a>
 
+Segment Properties.
+
+#### Initializer <a name="Initializer" id="raindancers-network.Segment.Initializer"></a>
+
+```typescript
+import { Segment } from 'raindancers-network'
+
+const segment: Segment = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Segment.property.name">name</a></code> | <code>string</code> | Name of the Segment. |
+| <code><a href="#raindancers-network.Segment.property.allowFilter">allowFilter</a></code> | <code>string[]</code> | A list of denys. |
+| <code><a href="#raindancers-network.Segment.property.denyFilter">denyFilter</a></code> | <code>string[]</code> | a List of denys. |
+| <code><a href="#raindancers-network.Segment.property.description">description</a></code> | <code>string</code> | A description of the of the segement. |
+| <code><a href="#raindancers-network.Segment.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | A list of edge locations where the segement will be avaialble. |
+| <code><a href="#raindancers-network.Segment.property.isolateAttachments">isolateAttachments</a></code> | <code>boolean</code> | Set true if attached VPCS are isolated from each other. |
+| <code><a href="#raindancers-network.Segment.property.requireAttachmentAcceptance">requireAttachmentAcceptance</a></code> | <code>boolean</code> | Set true if the attachment needs approval for connection. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.Segment.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Name of the Segment.
+
+---
+
+##### `allowFilter`<sup>Optional</sup> <a name="allowFilter" id="raindancers-network.Segment.property.allowFilter"></a>
+
+```typescript
+public readonly allowFilter: string[];
+```
+
+- *Type:* string[]
+
+A list of denys.
+
+---
+
+##### `denyFilter`<sup>Optional</sup> <a name="denyFilter" id="raindancers-network.Segment.property.denyFilter"></a>
+
+```typescript
+public readonly denyFilter: string[];
+```
+
+- *Type:* string[]
+
+a List of denys.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.Segment.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+A description of the of the segement.
+
+---
+
+##### `edgeLocations`<sup>Optional</sup> <a name="edgeLocations" id="raindancers-network.Segment.property.edgeLocations"></a>
+
+```typescript
+public readonly edgeLocations: object[];
+```
+
+- *Type:* object[]
+
+A list of edge locations where the segement will be avaialble.
+
+Not that the 
+locations must also be included in the core network edge ( CNE )
+
+---
+
+##### `isolateAttachments`<sup>Optional</sup> <a name="isolateAttachments" id="raindancers-network.Segment.property.isolateAttachments"></a>
+
+```typescript
+public readonly isolateAttachments: boolean;
+```
+
+- *Type:* boolean
+
+Set true if attached VPCS are isolated from each other.
+
+---
+
+##### `requireAttachmentAcceptance`<sup>Optional</sup> <a name="requireAttachmentAcceptance" id="raindancers-network.Segment.property.requireAttachmentAcceptance"></a>
+
+```typescript
+public readonly requireAttachmentAcceptance: boolean;
+```
+
+- *Type:* boolean
+
+Set true if the attachment needs approval for connection.
+
+Currently not supported
+and requires an automation step
+
+---
+
+### SegmentAction <a name="SegmentAction" id="raindancers-network.SegmentAction"></a>
+
+Segmment ACtions.
+
+#### Initializer <a name="Initializer" id="raindancers-network.SegmentAction.Initializer"></a>
+
+```typescript
+import { SegmentAction } from 'raindancers-network'
+
+const segmentAction: SegmentAction = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SegmentAction.property.action">action</a></code> | <code><a href="#raindancers-network.SegmentActionType">SegmentActionType</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.destinations">destinations</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.except">except</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.mode">mode</a></code> | <code><a href="#raindancers-network.SegmentActionMode">SegmentActionMode</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.shareWith">shareWith</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.SegmentAction.property.action"></a>
+
+```typescript
+public readonly action: SegmentActionType;
+```
+
+- *Type:* <a href="#raindancers-network.SegmentActionType">SegmentActionType</a>
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.SegmentAction.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `destinationCidrBlocks`<sup>Optional</sup> <a name="destinationCidrBlocks" id="raindancers-network.SegmentAction.property.destinationCidrBlocks"></a>
+
+```typescript
+public readonly destinationCidrBlocks: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.SegmentAction.property.destinations"></a>
+
+```typescript
+public readonly destinations: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `except`<sup>Optional</sup> <a name="except" id="raindancers-network.SegmentAction.property.except"></a>
+
+```typescript
+public readonly except: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `mode`<sup>Optional</sup> <a name="mode" id="raindancers-network.SegmentAction.property.mode"></a>
+
+```typescript
+public readonly mode: SegmentActionMode;
+```
+
+- *Type:* <a href="#raindancers-network.SegmentActionMode">SegmentActionMode</a>
+
+---
+
+##### `shareWith`<sup>Optional</sup> <a name="shareWith" id="raindancers-network.SegmentAction.property.shareWith"></a>
+
+```typescript
+public readonly shareWith: string;
+```
+
+- *Type:* string
+
+---
+
+
+## Protocols <a name="Protocols" id="Protocols"></a>
+
+### ICoreNetworkSegmentProps <a name="ICoreNetworkSegmentProps" id="raindancers-network.ICoreNetworkSegmentProps"></a>
+
+- *Implemented By:* <a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a>
+
+Properties creating a Corenetwork Segment.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.updateDependsOn">updateDependsOn</a></code> | <code>aws-cdk-lib.CustomResource[]</code> | *No description.* |
+
+---
+
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.ICoreNetworkSegmentProps.property.policyTableServiceToken"></a>
+
+```typescript
+public readonly policyTableServiceToken: string;
+```
+
+- *Type:* string
+
+---
+
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.ICoreNetworkSegmentProps.property.segmentName"></a>
+
+```typescript
+public readonly segmentName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `updateDependsOn`<sup>Required</sup> <a name="updateDependsOn" id="raindancers-network.ICoreNetworkSegmentProps.property.updateDependsOn"></a>
+
+```typescript
+public readonly updateDependsOn: CustomResource[];
+```
+
+- *Type:* aws-cdk-lib.CustomResource[]
+
+---
+
+## Enums <a name="Enums" id="Enums"></a>
+
+### AssociationMethod <a name="AssociationMethod" id="raindancers-network.AssociationMethod"></a>
+
+Association Methods.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AssociationMethod.CONSTANT">CONSTANT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AssociationMethod.TAG">TAG</a></code> | *No description.* |
+
+---
+
+##### `CONSTANT` <a name="CONSTANT" id="raindancers-network.AssociationMethod.CONSTANT"></a>
+
+---
+
+
+##### `TAG` <a name="TAG" id="raindancers-network.AssociationMethod.TAG"></a>
+
+---
+
+
+### AttachmentCondition <a name="AttachmentCondition" id="raindancers-network.AttachmentCondition"></a>
+
+Attachment Conditions.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AttachmentCondition.ANY">ANY</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.RESOURCE_ID">RESOURCE_ID</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.ACCOUNT_ID">ACCOUNT_ID</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.REGION">REGION</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.ATTACHMENT_TYPE">ATTACHMENT_TYPE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.TAG_EXISTS">TAG_EXISTS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentCondition.TAG_VALUE">TAG_VALUE</a></code> | *No description.* |
+
+---
+
+##### `ANY` <a name="ANY" id="raindancers-network.AttachmentCondition.ANY"></a>
+
+---
+
+
+##### `RESOURCE_ID` <a name="RESOURCE_ID" id="raindancers-network.AttachmentCondition.RESOURCE_ID"></a>
+
+---
+
+
+##### `ACCOUNT_ID` <a name="ACCOUNT_ID" id="raindancers-network.AttachmentCondition.ACCOUNT_ID"></a>
+
+---
+
+
+##### `REGION` <a name="REGION" id="raindancers-network.AttachmentCondition.REGION"></a>
+
+---
+
+
+##### `ATTACHMENT_TYPE` <a name="ATTACHMENT_TYPE" id="raindancers-network.AttachmentCondition.ATTACHMENT_TYPE"></a>
+
+---
+
+
+##### `TAG_EXISTS` <a name="TAG_EXISTS" id="raindancers-network.AttachmentCondition.TAG_EXISTS"></a>
+
+---
+
+
+##### `TAG_VALUE` <a name="TAG_VALUE" id="raindancers-network.AttachmentCondition.TAG_VALUE"></a>
+
+---
+
+
+### ConditionLogic <a name="ConditionLogic" id="raindancers-network.ConditionLogic"></a>
+
+Conditon Logic.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ConditionLogic.AND">AND</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionLogic.OR">OR</a></code> | *No description.* |
+
+---
+
+##### `AND` <a name="AND" id="raindancers-network.ConditionLogic.AND"></a>
+
+---
+
+
+##### `OR` <a name="OR" id="raindancers-network.ConditionLogic.OR"></a>
+
+---
+
+
+### Operators <a name="Operators" id="raindancers-network.Operators"></a>
+
+Operatior COnditons for Attachments.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Operators.EQUALS">EQUALS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Operators.NOTEQUALS">NOTEQUALS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Operators.CONTAINS">CONTAINS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Operators.BEGINS_WITH">BEGINS_WITH</a></code> | *No description.* |
+
+---
+
+##### `EQUALS` <a name="EQUALS" id="raindancers-network.Operators.EQUALS"></a>
+
+---
+
+
+##### `NOTEQUALS` <a name="NOTEQUALS" id="raindancers-network.Operators.NOTEQUALS"></a>
+
+---
+
+
+##### `CONTAINS` <a name="CONTAINS" id="raindancers-network.Operators.CONTAINS"></a>
+
+---
+
+
+##### `BEGINS_WITH` <a name="BEGINS_WITH" id="raindancers-network.Operators.BEGINS_WITH"></a>
+
+---
+
+
+### SegmentActionMode <a name="SegmentActionMode" id="raindancers-network.SegmentActionMode"></a>
+
+Segment Action Mode.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SegmentActionMode.ATTACHMENT_ROUTE">ATTACHMENT_ROUTE</a></code> | *No description.* |
+
+---
+
+##### `ATTACHMENT_ROUTE` <a name="ATTACHMENT_ROUTE" id="raindancers-network.SegmentActionMode.ATTACHMENT_ROUTE"></a>
+
+---
+
+
+### SegmentActionType <a name="SegmentActionType" id="raindancers-network.SegmentActionType"></a>
+
+Segment Action Type.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SegmentActionType.SHARE">SHARE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentActionType.CREATE_ROUTE">CREATE_ROUTE</a></code> | *No description.* |
+
+---
+
+##### `SHARE` <a name="SHARE" id="raindancers-network.SegmentActionType.SHARE"></a>
+
+---
+
+
+##### `CREATE_ROUTE` <a name="CREATE_ROUTE" id="raindancers-network.SegmentActionType.CREATE_ROUTE"></a>
+
+---
 
