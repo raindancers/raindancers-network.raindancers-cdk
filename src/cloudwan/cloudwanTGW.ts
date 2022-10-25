@@ -43,7 +43,7 @@ export class CloudWanTGW extends constructs.Construct {
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-tgOnCloudwan', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'getcloudwanID.on_event',
-      code: aws_lambda.Code.fromAsset('./lib/constructs/evpc_lambda/'),
+      code: aws_lambda.Code.fromAsset('./lib/constructs/lambda/'),
     });
 
     lookupIdLambda.addToRolePolicy(
