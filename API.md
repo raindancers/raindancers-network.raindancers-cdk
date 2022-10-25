@@ -2,6 +2,187 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.CloudWanTGW"></a>
+
+Create a TransitGateway That is attached to Cloudwan.
+
+#### Initializers <a name="Initializers" id="raindancers-network.CloudWanTGW.Initializer"></a>
+
+```typescript
+import { CloudWanTGW } from 'raindancers-network'
+
+new CloudWanTGW(scope: Construct, id: string, props: TGWOnCloudWanProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which the resource is c. |
+| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.TGWOnCloudWanProps">TGWOnCloudWanProps</a></code> | TGWOnCloudWanProps. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CloudWanTGW.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which the resource is c.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CloudWanTGW.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CloudWanTGW.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.TGWOnCloudWanProps">TGWOnCloudWanProps</a>
+
+TGWOnCloudWanProps.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CloudWanTGW.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.CloudWanTGW.addDXGateway">addDXGateway</a></code> | provision a DX Gateway and attach it to the transit gateway. |
+| <code><a href="#raindancers-network.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway,  using a defined set of VPn Properties. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CloudWanTGW.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addDXGateway` <a name="addDXGateway" id="raindancers-network.CloudWanTGW.addDXGateway"></a>
+
+```typescript
+public addDXGateway(dxgatewayname: string, dxgatewayASN: number): string
+```
+
+provision a DX Gateway and attach it to the transit gateway.
+
+###### `dxgatewayname`<sup>Required</sup> <a name="dxgatewayname" id="raindancers-network.CloudWanTGW.addDXGateway.parameter.dxgatewayname"></a>
+
+- *Type:* string
+
+The name of the dxgateway.
+
+---
+
+###### `dxgatewayASN`<sup>Required</sup> <a name="dxgatewayASN" id="raindancers-network.CloudWanTGW.addDXGateway.parameter.dxgatewayASN"></a>
+
+- *Type:* number
+
+An ASN for the Dxgateway.
+
+---
+
+##### `adds2sVPN` <a name="adds2sVPN" id="raindancers-network.CloudWanTGW.adds2sVPN"></a>
+
+```typescript
+public adds2sVPN(name: string, vpnprops: VpnProps): string
+```
+
+Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway,  using a defined set of VPn Properties.
+
+###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CloudWanTGW.adds2sVPN.parameter.name"></a>
+
+- *Type:* string
+
+A name to identify the vpn.
+
+---
+
+###### `vpnprops`<sup>Required</sup> <a name="vpnprops" id="raindancers-network.CloudWanTGW.adds2sVPN.parameter.vpnprops"></a>
+
+- *Type:* <a href="#raindancers-network.VpnProps">VpnProps</a>
+
+the vpn properties.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CloudWanTGW.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CloudWanTGW.isConstruct"></a>
+
+```typescript
+import { CloudWanTGW } from 'raindancers-network'
+
+CloudWanTGW.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CloudWanTGW.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CloudWanTGW.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CloudWanTGW.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | The created Transit Gateway. |
+| <code><a href="#raindancers-network.CloudWanTGW.property.tgcidr">tgcidr</a></code> | <code>string[]</code> | The Cidr Ranges assigned to the transit Gateway. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CloudWanTGW.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.CloudWanTGW.property.transitGateway"></a>
+
+```typescript
+public readonly transitGateway: CfnTransitGateway;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnTransitGateway
+
+The created Transit Gateway.
+
+---
+
+##### `tgcidr`<sup>Optional</sup> <a name="tgcidr" id="raindancers-network.CloudWanTGW.property.tgcidr"></a>
+
+```typescript
+public readonly tgcidr: string[];
+```
+
+- *Type:* string[]
+
+The Cidr Ranges assigned to the transit Gateway.
+
+---
+
+
 ### CoreNetwork <a name="CoreNetwork" id="raindancers-network.CoreNetwork"></a>
 
 Create a CoreNework for a Cloudwan.
@@ -2317,6 +2498,64 @@ the name used by IPAM to identify the pool.
 
 ---
 
+### SampleConfig <a name="SampleConfig" id="raindancers-network.SampleConfig"></a>
+
+An interface that defines a set of Sample Configurations.
+
+#### Initializer <a name="Initializer" id="raindancers-network.SampleConfig.Initializer"></a>
+
+```typescript
+import { SampleConfig } from 'raindancers-network'
+
+const sampleConfig: SampleConfig = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SampleConfig.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | The S3 bucket where to place the sample configurations. |
+| <code><a href="#raindancers-network.SampleConfig.property.deviceType">deviceType</a></code> | <code><a href="#raindancers-network.VpnDeviceType">VpnDeviceType</a></code> | the type of device of the customer gateway. |
+| <code><a href="#raindancers-network.SampleConfig.property.ikeVersion">ikeVersion</a></code> | <code><a href="#raindancers-network.IkeVersion">IkeVersion</a></code> | create configs for IKE1 or IKE2. |
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.SampleConfig.property.bucket"></a>
+
+```typescript
+public readonly bucket: Bucket;
+```
+
+- *Type:* aws-cdk-lib.aws_s3.Bucket
+
+The S3 bucket where to place the sample configurations.
+
+---
+
+##### `deviceType`<sup>Required</sup> <a name="deviceType" id="raindancers-network.SampleConfig.property.deviceType"></a>
+
+```typescript
+public readonly deviceType: VpnDeviceType;
+```
+
+- *Type:* <a href="#raindancers-network.VpnDeviceType">VpnDeviceType</a>
+
+the type of device of the customer gateway.
+
+---
+
+##### `ikeVersion`<sup>Required</sup> <a name="ikeVersion" id="raindancers-network.SampleConfig.property.ikeVersion"></a>
+
+```typescript
+public readonly ikeVersion: IkeVersion;
+```
+
+- *Type:* <a href="#raindancers-network.IkeVersion">IkeVersion</a>
+
+create configs for IKE1 or IKE2.
+
+---
+
 ### Segment <a name="Segment" id="raindancers-network.Segment"></a>
 
 Segment Properties.
@@ -2401,7 +2640,7 @@ public readonly edgeLocations: object[];
 
 A list of edge locations where the segement will be avaialble.
 
-Not that the 
+Not that the
 locations must also be included in the core network edge ( CNE )
 
 ---
@@ -2526,6 +2765,488 @@ public readonly shareWith: string;
 ```
 
 - *Type:* string
+
+---
+
+### TGWOnCloudWanProps <a name="TGWOnCloudWanProps" id="raindancers-network.TGWOnCloudWanProps"></a>
+
+Properties for a TWGOnCloudWan.
+
+#### Initializer <a name="Initializer" id="raindancers-network.TGWOnCloudWanProps.Initializer"></a>
+
+```typescript
+import { TGWOnCloudWanProps } from 'raindancers-network'
+
+const tGWOnCloudWanProps: TGWOnCloudWanProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn">amazonSideAsn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentTag">attachmentTag</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudwan">cloudwan</a></code> | <code><a href="#raindancers-network.CoreNetwork">CoreNetwork</a></code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr">cloudWanCidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.defaultRouteInSegments">defaultRouteInSegments</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.tgCidr">tgCidr</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `amazonSideAsn`<sup>Required</sup> <a name="amazonSideAsn" id="raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn"></a>
+
+```typescript
+public readonly amazonSideAsn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `attachmentTag`<sup>Required</sup> <a name="attachmentTag" id="raindancers-network.TGWOnCloudWanProps.property.attachmentTag"></a>
+
+```typescript
+public readonly attachmentTag: object[];
+```
+
+- *Type:* object[]
+
+---
+
+##### `cloudwan`<sup>Required</sup> <a name="cloudwan" id="raindancers-network.TGWOnCloudWanProps.property.cloudwan"></a>
+
+```typescript
+public readonly cloudwan: CoreNetwork;
+```
+
+- *Type:* <a href="#raindancers-network.CoreNetwork">CoreNetwork</a>
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.TGWOnCloudWanProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `cloudWanCidr`<sup>Optional</sup> <a name="cloudWanCidr" id="raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr"></a>
+
+```typescript
+public readonly cloudWanCidr: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `defaultRouteInSegments`<sup>Optional</sup> <a name="defaultRouteInSegments" id="raindancers-network.TGWOnCloudWanProps.property.defaultRouteInSegments"></a>
+
+```typescript
+public readonly defaultRouteInSegments: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `tgCidr`<sup>Optional</sup> <a name="tgCidr" id="raindancers-network.TGWOnCloudWanProps.property.tgCidr"></a>
+
+```typescript
+public readonly tgCidr: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### VpnProps <a name="VpnProps" id="raindancers-network.VpnProps"></a>
+
+Properties for S2S VPN.
+
+#### Initializer <a name="Initializer" id="raindancers-network.VpnProps.Initializer"></a>
+
+```typescript
+import { VpnProps } from 'raindancers-network'
+
+const vpnProps: VpnProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.VpnProps.property.customerGateway">customerGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnCustomerGateway</code> | The customer gateway where the vpn will terminate. |
+| <code><a href="#raindancers-network.VpnProps.property.vpnspec">vpnspec</a></code> | <code><a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a></code> | a VPN specification for the VPN. |
+| <code><a href="#raindancers-network.VpnProps.property.sampleconfig">sampleconfig</a></code> | <code><a href="#raindancers-network.SampleConfig">SampleConfig</a></code> | Optionally provide a sampleconfig specification. |
+| <code><a href="#raindancers-network.VpnProps.property.tunnelInsideCidr">tunnelInsideCidr</a></code> | <code>string[]</code> | Specify a pair of concrete Cidr's for the tunnel. |
+| <code><a href="#raindancers-network.VpnProps.property.tunnelIpamPool">tunnelIpamPool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | Specify an ipam pool to allocated the tunnel address's from. |
+
+---
+
+##### `customerGateway`<sup>Required</sup> <a name="customerGateway" id="raindancers-network.VpnProps.property.customerGateway"></a>
+
+```typescript
+public readonly customerGateway: CfnCustomerGateway;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnCustomerGateway
+
+The customer gateway where the vpn will terminate.
+
+---
+
+##### `vpnspec`<sup>Required</sup> <a name="vpnspec" id="raindancers-network.VpnProps.property.vpnspec"></a>
+
+```typescript
+public readonly vpnspec: VpnSpecProps;
+```
+
+- *Type:* <a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a>
+
+a VPN specification for the VPN.
+
+---
+
+##### `sampleconfig`<sup>Optional</sup> <a name="sampleconfig" id="raindancers-network.VpnProps.property.sampleconfig"></a>
+
+```typescript
+public readonly sampleconfig: SampleConfig;
+```
+
+- *Type:* <a href="#raindancers-network.SampleConfig">SampleConfig</a>
+
+Optionally provide a sampleconfig specification.
+
+---
+
+##### `tunnelInsideCidr`<sup>Optional</sup> <a name="tunnelInsideCidr" id="raindancers-network.VpnProps.property.tunnelInsideCidr"></a>
+
+```typescript
+public readonly tunnelInsideCidr: string[];
+```
+
+- *Type:* string[]
+
+Specify a pair of concrete Cidr's for the tunnel.
+
+Only use one of tunnelInsideCidr or tunnelIpmamPool
+
+---
+
+##### `tunnelIpamPool`<sup>Optional</sup> <a name="tunnelIpamPool" id="raindancers-network.VpnProps.property.tunnelIpamPool"></a>
+
+```typescript
+public readonly tunnelIpamPool: CfnIPAMPool;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnIPAMPool
+
+Specify an ipam pool to allocated the tunnel address's from.
+
+Use only one of tunnelInsideCidr or tunnelIpamPool
+
+---
+
+### VpnSpecProps <a name="VpnSpecProps" id="raindancers-network.VpnSpecProps"></a>
+
+THe properties for a S2S Ipsec Vpn Connection https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html.
+
+#### Initializer <a name="Initializer" id="raindancers-network.VpnSpecProps.Initializer"></a>
+
+```typescript
+import { VpnSpecProps } from 'raindancers-network'
+
+const vpnSpecProps: VpnSpecProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.VpnSpecProps.property.dpdTimeoutAction">dpdTimeoutAction</a></code> | <code><a href="#raindancers-network.DPDTimeoutAction">DPDTimeoutAction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.dpdTimeoutSeconds">dpdTimeoutSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.enableAcceleration">enableAcceleration</a></code> | <code>boolean</code> | Indicate whether to enable acceleration for the VPN connection. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.enableLogging">enableLogging</a></code> | <code>boolean</code> | Enable CloudwatchLogging for the S2S VPN. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.ikeVersions">ikeVersions</a></code> | <code>object[]</code> | The IKE versions that are permitted for the VPN tunnel. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.localIpv4NetworkCidr">localIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.outsideIpAddressType">outsideIpAddressType</a></code> | <code><a href="#raindancers-network.OutsideIpAddressType">OutsideIpAddressType</a></code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase1DHGroupNumbers">phase1DHGroupNumbers</a></code> | <code><a href="#raindancers-network.Phase1DHGroupNumbers">Phase1DHGroupNumbers</a>[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase1EncryptionAlgorithms">phase1EncryptionAlgorithms</a></code> | <code><a href="#raindancers-network.Phase1EncryptionAlgorithms">Phase1EncryptionAlgorithms</a>[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase1IntegrityAlgorithms">phase1IntegrityAlgorithms</a></code> | <code><a href="#raindancers-network.Phase1IntegrityAlgorithms">Phase1IntegrityAlgorithms</a>[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase1LifetimeSeconds">phase1LifetimeSeconds</a></code> | <code>number</code> | The lifetime for phase 1 of the IKE negotiation, in seconds. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase2DHGroupNumbers">phase2DHGroupNumbers</a></code> | <code><a href="#raindancers-network.Phase2DHGroupNumbers">Phase2DHGroupNumbers</a>[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase2EncryptionAlgorithms">phase2EncryptionAlgorithms</a></code> | <code><a href="#raindancers-network.Phase2EncryptionAlgorithms">Phase2EncryptionAlgorithms</a>[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase2IntegrityAlgorithms">phase2IntegrityAlgorithms</a></code> | <code><a href="#raindancers-network.Phase2IntegrityAlgorithms">Phase2IntegrityAlgorithms</a>[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.phase2LifeTimeSeconds">phase2LifeTimeSeconds</a></code> | <code>number</code> | The lifetime for phase 2 of the IKE negotiation, in seconds. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.rekeyFuzzPercentage">rekeyFuzzPercentage</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.rekeyMarginTimeSeconds">rekeyMarginTimeSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.remoteIpv4NetworkCidr">remoteIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.replayWindowSize">replayWindowSize</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.VpnSpecProps.property.startupAction">startupAction</a></code> | <code><a href="#raindancers-network.StartupAction">StartupAction</a></code> | The action to take when the establishing the tunnel for the VPN connection. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.staticRoutesOnly">staticRoutesOnly</a></code> | <code>boolean \| aws-cdk-lib.IResolvable</code> | Indicate if this will only use Static Routes Only. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.tunnelInsideIpVersion">tunnelInsideIpVersion</a></code> | <code><a href="#raindancers-network.TunnelInsideIpVersion">TunnelInsideIpVersion</a></code> | *No description.* |
+
+---
+
+##### `dpdTimeoutAction`<sup>Optional</sup> <a name="dpdTimeoutAction" id="raindancers-network.VpnSpecProps.property.dpdTimeoutAction"></a>
+
+```typescript
+public readonly dpdTimeoutAction: DPDTimeoutAction;
+```
+
+- *Type:* <a href="#raindancers-network.DPDTimeoutAction">DPDTimeoutAction</a>
+- *Default:* CLEAR The action to take after DPD timeout occurs. Specify restart to restart the IKE initiation. Specify clear to end the IKE session.
+
+---
+
+##### `dpdTimeoutSeconds`<sup>Optional</sup> <a name="dpdTimeoutSeconds" id="raindancers-network.VpnSpecProps.property.dpdTimeoutSeconds"></a>
+
+```typescript
+public readonly dpdTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 30 The number of seconds after which a DPD timeout occurs.
+
+---
+
+##### `enableAcceleration`<sup>Optional</sup> <a name="enableAcceleration" id="raindancers-network.VpnSpecProps.property.enableAcceleration"></a>
+
+```typescript
+public readonly enableAcceleration: boolean;
+```
+
+- *Type:* boolean
+
+Indicate whether to enable acceleration for the VPN connection.
+
+---
+
+##### `enableLogging`<sup>Optional</sup> <a name="enableLogging" id="raindancers-network.VpnSpecProps.property.enableLogging"></a>
+
+```typescript
+public readonly enableLogging: boolean;
+```
+
+- *Type:* boolean
+
+Enable CloudwatchLogging for the S2S VPN.
+
+---
+
+##### `ikeVersions`<sup>Optional</sup> <a name="ikeVersions" id="raindancers-network.VpnSpecProps.property.ikeVersions"></a>
+
+```typescript
+public readonly ikeVersions: object[];
+```
+
+- *Type:* object[]
+
+The IKE versions that are permitted for the VPN tunnel.
+
+---
+
+##### `localIpv4NetworkCidr`<sup>Optional</sup> <a name="localIpv4NetworkCidr" id="raindancers-network.VpnSpecProps.property.localIpv4NetworkCidr"></a>
+
+```typescript
+public readonly localIpv4NetworkCidr: string;
+```
+
+- *Type:* string
+- *Default:* 0.0.0.0/0 The IPv4 CIDR on the AWS side of the VPN connection.
+
+---
+
+##### `outsideIpAddressType`<sup>Optional</sup> <a name="outsideIpAddressType" id="raindancers-network.VpnSpecProps.property.outsideIpAddressType"></a>
+
+```typescript
+public readonly outsideIpAddressType: OutsideIpAddressType;
+```
+
+- *Type:* <a href="#raindancers-network.OutsideIpAddressType">OutsideIpAddressType</a>
+- *Default:* PUBLIC The type of IPv4 address assigned to the outside interface of the customer gateway device.
+
+---
+
+##### `phase1DHGroupNumbers`<sup>Optional</sup> <a name="phase1DHGroupNumbers" id="raindancers-network.VpnSpecProps.property.phase1DHGroupNumbers"></a>
+
+```typescript
+public readonly phase1DHGroupNumbers: Phase1DHGroupNumbers[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase1DHGroupNumbers">Phase1DHGroupNumbers</a>[]
+
+One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.
+
+---
+
+##### `phase1EncryptionAlgorithms`<sup>Optional</sup> <a name="phase1EncryptionAlgorithms" id="raindancers-network.VpnSpecProps.property.phase1EncryptionAlgorithms"></a>
+
+```typescript
+public readonly phase1EncryptionAlgorithms: Phase1EncryptionAlgorithms[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase1EncryptionAlgorithms">Phase1EncryptionAlgorithms</a>[]
+
+One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
+
+---
+
+##### `phase1IntegrityAlgorithms`<sup>Optional</sup> <a name="phase1IntegrityAlgorithms" id="raindancers-network.VpnSpecProps.property.phase1IntegrityAlgorithms"></a>
+
+```typescript
+public readonly phase1IntegrityAlgorithms: Phase1IntegrityAlgorithms[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase1IntegrityAlgorithms">Phase1IntegrityAlgorithms</a>[]
+
+One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
+
+---
+
+##### `phase1LifetimeSeconds`<sup>Optional</sup> <a name="phase1LifetimeSeconds" id="raindancers-network.VpnSpecProps.property.phase1LifetimeSeconds"></a>
+
+```typescript
+public readonly phase1LifetimeSeconds: number;
+```
+
+- *Type:* number
+
+The lifetime for phase 1 of the IKE negotiation, in seconds.
+
+---
+
+##### `phase2DHGroupNumbers`<sup>Optional</sup> <a name="phase2DHGroupNumbers" id="raindancers-network.VpnSpecProps.property.phase2DHGroupNumbers"></a>
+
+```typescript
+public readonly phase2DHGroupNumbers: Phase2DHGroupNumbers[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase2DHGroupNumbers">Phase2DHGroupNumbers</a>[]
+
+One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.
+
+---
+
+##### `phase2EncryptionAlgorithms`<sup>Optional</sup> <a name="phase2EncryptionAlgorithms" id="raindancers-network.VpnSpecProps.property.phase2EncryptionAlgorithms"></a>
+
+```typescript
+public readonly phase2EncryptionAlgorithms: Phase2EncryptionAlgorithms[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase2EncryptionAlgorithms">Phase2EncryptionAlgorithms</a>[]
+
+One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
+
+---
+
+##### `phase2IntegrityAlgorithms`<sup>Optional</sup> <a name="phase2IntegrityAlgorithms" id="raindancers-network.VpnSpecProps.property.phase2IntegrityAlgorithms"></a>
+
+```typescript
+public readonly phase2IntegrityAlgorithms: Phase2IntegrityAlgorithms[];
+```
+
+- *Type:* <a href="#raindancers-network.Phase2IntegrityAlgorithms">Phase2IntegrityAlgorithms</a>[]
+
+One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
+
+---
+
+##### `phase2LifeTimeSeconds`<sup>Optional</sup> <a name="phase2LifeTimeSeconds" id="raindancers-network.VpnSpecProps.property.phase2LifeTimeSeconds"></a>
+
+```typescript
+public readonly phase2LifeTimeSeconds: number;
+```
+
+- *Type:* number
+
+The lifetime for phase 2 of the IKE negotiation, in seconds.
+
+---
+
+##### `rekeyFuzzPercentage`<sup>Optional</sup> <a name="rekeyFuzzPercentage" id="raindancers-network.VpnSpecProps.property.rekeyFuzzPercentage"></a>
+
+```typescript
+public readonly rekeyFuzzPercentage: number;
+```
+
+- *Type:* number
+- *Default:* 100 The percentage of the rekey window (determined by RekeyMarginTimeSeconds) during which the rekey time is randomly selected.
+
+---
+
+##### `rekeyMarginTimeSeconds`<sup>Optional</sup> <a name="rekeyMarginTimeSeconds" id="raindancers-network.VpnSpecProps.property.rekeyMarginTimeSeconds"></a>
+
+```typescript
+public readonly rekeyMarginTimeSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 540 The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for RekeyFuzzPercentage.
+
+---
+
+##### `remoteIpv4NetworkCidr`<sup>Optional</sup> <a name="remoteIpv4NetworkCidr" id="raindancers-network.VpnSpecProps.property.remoteIpv4NetworkCidr"></a>
+
+```typescript
+public readonly remoteIpv4NetworkCidr: string;
+```
+
+- *Type:* string
+- *Default:* 0.0.0.0/0 The IPv4 CIDR on the Remote side of the VPN connection.
+
+---
+
+##### `replayWindowSize`<sup>Optional</sup> <a name="replayWindowSize" id="raindancers-network.VpnSpecProps.property.replayWindowSize"></a>
+
+```typescript
+public readonly replayWindowSize: number;
+```
+
+- *Type:* number
+- *Default:* 1024 The number of packets in an IKE replay window.
+
+---
+
+##### `startupAction`<sup>Optional</sup> <a name="startupAction" id="raindancers-network.VpnSpecProps.property.startupAction"></a>
+
+```typescript
+public readonly startupAction: StartupAction;
+```
+
+- *Type:* <a href="#raindancers-network.StartupAction">StartupAction</a>
+
+The action to take when the establishing the tunnel for the VPN connection.
+
+By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify start for AWS to initiate the IKE negotiation.
+
+---
+
+##### `staticRoutesOnly`<sup>Optional</sup> <a name="staticRoutesOnly" id="raindancers-network.VpnSpecProps.property.staticRoutesOnly"></a>
+
+```typescript
+public readonly staticRoutesOnly: boolean | IResolvable;
+```
+
+- *Type:* boolean | aws-cdk-lib.IResolvable
+
+Indicate if this will only use Static Routes Only.
+
+---
+
+##### `tunnelInsideIpVersion`<sup>Optional</sup> <a name="tunnelInsideIpVersion" id="raindancers-network.VpnSpecProps.property.tunnelInsideIpVersion"></a>
+
+```typescript
+public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
+```
+
+- *Type:* <a href="#raindancers-network.TunnelInsideIpVersion">TunnelInsideIpVersion</a>
+- *Default:* IPV4 Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
 
 ---
 
@@ -2680,6 +3401,68 @@ Conditon Logic.
 ---
 
 
+### DPDTimeoutAction <a name="DPDTimeoutAction" id="raindancers-network.DPDTimeoutAction"></a>
+
+Dead Peer Detection Timeout Actions.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DPDTimeoutAction.CLEAR">CLEAR</a></code> | Clear the Session. |
+| <code><a href="#raindancers-network.DPDTimeoutAction.NONE">NONE</a></code> | Do nothing. |
+| <code><a href="#raindancers-network.DPDTimeoutAction.RESTART">RESTART</a></code> | Restart The Session. |
+
+---
+
+##### `CLEAR` <a name="CLEAR" id="raindancers-network.DPDTimeoutAction.CLEAR"></a>
+
+Clear the Session.
+
+---
+
+
+##### `NONE` <a name="NONE" id="raindancers-network.DPDTimeoutAction.NONE"></a>
+
+Do nothing.
+
+---
+
+
+##### `RESTART` <a name="RESTART" id="raindancers-network.DPDTimeoutAction.RESTART"></a>
+
+Restart The Session.
+
+---
+
+
+### IkeVersion <a name="IkeVersion" id="raindancers-network.IkeVersion"></a>
+
+Ike Version for S2S VPN.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.IkeVersion.IKEV1">IKEV1</a></code> | Use IKEv1. |
+| <code><a href="#raindancers-network.IkeVersion.IKEV2">IKEV2</a></code> | Use IKEv2. |
+
+---
+
+##### `IKEV1` <a name="IKEV1" id="raindancers-network.IkeVersion.IKEV1"></a>
+
+Use IKEv1.
+
+---
+
+
+##### `IKEV2` <a name="IKEV2" id="raindancers-network.IkeVersion.IKEV2"></a>
+
+Use IKEv2.
+
+---
+
+
 ### Operators <a name="Operators" id="raindancers-network.Operators"></a>
 
 Operatior COnditons for Attachments.
@@ -2711,6 +3494,333 @@ Operatior COnditons for Attachments.
 
 
 ##### `BEGINS_WITH` <a name="BEGINS_WITH" id="raindancers-network.Operators.BEGINS_WITH"></a>
+
+---
+
+
+### OutsideIpAddressType <a name="OutsideIpAddressType" id="raindancers-network.OutsideIpAddressType"></a>
+
+Specify the use of public or private IP address's for Site to Site VPN.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.OutsideIpAddressType.PRIVATE">PRIVATE</a></code> | Use Private IPv4 Address from the Transit Gateways IP address Pool. |
+| <code><a href="#raindancers-network.OutsideIpAddressType.PUBLIC">PUBLIC</a></code> | Use Public IPv4 Address Assigned by AWS. |
+
+---
+
+##### `PRIVATE` <a name="PRIVATE" id="raindancers-network.OutsideIpAddressType.PRIVATE"></a>
+
+Use Private IPv4 Address from the Transit Gateways IP address Pool.
+
+---
+
+
+##### `PUBLIC` <a name="PUBLIC" id="raindancers-network.OutsideIpAddressType.PUBLIC"></a>
+
+Use Public IPv4 Address Assigned by AWS.
+
+---
+
+
+### Phase1DHGroupNumbers <a name="Phase1DHGroupNumbers" id="raindancers-network.Phase1DHGroupNumbers"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
+
+---
+
+##### `DH2` <a name="DH2" id="raindancers-network.Phase1DHGroupNumbers.DH2"></a>
+
+---
+
+
+##### `DH14` <a name="DH14" id="raindancers-network.Phase1DHGroupNumbers.DH14"></a>
+
+---
+
+
+##### `DH15` <a name="DH15" id="raindancers-network.Phase1DHGroupNumbers.DH15"></a>
+
+---
+
+
+##### `DH16` <a name="DH16" id="raindancers-network.Phase1DHGroupNumbers.DH16"></a>
+
+---
+
+
+##### `DH17` <a name="DH17" id="raindancers-network.Phase1DHGroupNumbers.DH17"></a>
+
+---
+
+
+##### `DH18` <a name="DH18" id="raindancers-network.Phase1DHGroupNumbers.DH18"></a>
+
+---
+
+
+##### `DH19` <a name="DH19" id="raindancers-network.Phase1DHGroupNumbers.DH19"></a>
+
+---
+
+
+##### `DH20` <a name="DH20" id="raindancers-network.Phase1DHGroupNumbers.DH20"></a>
+
+---
+
+
+##### `DH21` <a name="DH21" id="raindancers-network.Phase1DHGroupNumbers.DH21"></a>
+
+---
+
+
+##### `DH22` <a name="DH22" id="raindancers-network.Phase1DHGroupNumbers.DH22"></a>
+
+---
+
+
+##### `DH23` <a name="DH23" id="raindancers-network.Phase1DHGroupNumbers.DH23"></a>
+
+---
+
+
+##### `DH24` <a name="DH24" id="raindancers-network.Phase1DHGroupNumbers.DH24"></a>
+
+---
+
+
+### Phase1EncryptionAlgorithms <a name="Phase1EncryptionAlgorithms" id="raindancers-network.Phase1EncryptionAlgorithms"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
+
+---
+
+##### `AES128` <a name="AES128" id="raindancers-network.Phase1EncryptionAlgorithms.AES128"></a>
+
+---
+
+
+##### `AES256` <a name="AES256" id="raindancers-network.Phase1EncryptionAlgorithms.AES256"></a>
+
+---
+
+
+##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.Phase1EncryptionAlgorithms.AES128_GCM_16"></a>
+
+---
+
+
+##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.Phase1EncryptionAlgorithms.AES256_GCM_16"></a>
+
+---
+
+
+### Phase1IntegrityAlgorithms <a name="Phase1IntegrityAlgorithms" id="raindancers-network.Phase1IntegrityAlgorithms"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
+
+---
+
+##### `SHA1` <a name="SHA1" id="raindancers-network.Phase1IntegrityAlgorithms.SHA1"></a>
+
+---
+
+
+##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_256"></a>
+
+---
+
+
+##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_384"></a>
+
+---
+
+
+##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_512"></a>
+
+---
+
+
+### Phase2DHGroupNumbers <a name="Phase2DHGroupNumbers" id="raindancers-network.Phase2DHGroupNumbers"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH5">DH5</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
+
+---
+
+##### `DH2` <a name="DH2" id="raindancers-network.Phase2DHGroupNumbers.DH2"></a>
+
+---
+
+
+##### `DH5` <a name="DH5" id="raindancers-network.Phase2DHGroupNumbers.DH5"></a>
+
+---
+
+
+##### `DH14` <a name="DH14" id="raindancers-network.Phase2DHGroupNumbers.DH14"></a>
+
+---
+
+
+##### `DH15` <a name="DH15" id="raindancers-network.Phase2DHGroupNumbers.DH15"></a>
+
+---
+
+
+##### `DH16` <a name="DH16" id="raindancers-network.Phase2DHGroupNumbers.DH16"></a>
+
+---
+
+
+##### `DH17` <a name="DH17" id="raindancers-network.Phase2DHGroupNumbers.DH17"></a>
+
+---
+
+
+##### `DH18` <a name="DH18" id="raindancers-network.Phase2DHGroupNumbers.DH18"></a>
+
+---
+
+
+##### `DH19` <a name="DH19" id="raindancers-network.Phase2DHGroupNumbers.DH19"></a>
+
+---
+
+
+##### `DH20` <a name="DH20" id="raindancers-network.Phase2DHGroupNumbers.DH20"></a>
+
+---
+
+
+##### `DH21` <a name="DH21" id="raindancers-network.Phase2DHGroupNumbers.DH21"></a>
+
+---
+
+
+##### `DH22` <a name="DH22" id="raindancers-network.Phase2DHGroupNumbers.DH22"></a>
+
+---
+
+
+##### `DH23` <a name="DH23" id="raindancers-network.Phase2DHGroupNumbers.DH23"></a>
+
+---
+
+
+##### `DH24` <a name="DH24" id="raindancers-network.Phase2DHGroupNumbers.DH24"></a>
+
+---
+
+
+### Phase2EncryptionAlgorithms <a name="Phase2EncryptionAlgorithms" id="raindancers-network.Phase2EncryptionAlgorithms"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
+
+---
+
+##### `AES128` <a name="AES128" id="raindancers-network.Phase2EncryptionAlgorithms.AES128"></a>
+
+---
+
+
+##### `AES256` <a name="AES256" id="raindancers-network.Phase2EncryptionAlgorithms.AES256"></a>
+
+---
+
+
+##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.Phase2EncryptionAlgorithms.AES128_GCM_16"></a>
+
+---
+
+
+##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.Phase2EncryptionAlgorithms.AES256_GCM_16"></a>
+
+---
+
+
+### Phase2IntegrityAlgorithms <a name="Phase2IntegrityAlgorithms" id="raindancers-network.Phase2IntegrityAlgorithms"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
+
+---
+
+##### `SHA1` <a name="SHA1" id="raindancers-network.Phase2IntegrityAlgorithms.SHA1"></a>
+
+---
+
+
+##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_256"></a>
+
+---
+
+
+##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_384"></a>
+
+---
+
+
+##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_512"></a>
 
 ---
 
@@ -2751,6 +3861,91 @@ Segment Action Type.
 
 
 ##### `CREATE_ROUTE` <a name="CREATE_ROUTE" id="raindancers-network.SegmentActionType.CREATE_ROUTE"></a>
+
+---
+
+
+### StartupAction <a name="StartupAction" id="raindancers-network.StartupAction"></a>
+
+Startup Action for S2S VPN.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StartupAction.START">START</a></code> | AWS end to Intiate Startup. |
+| <code><a href="#raindancers-network.StartupAction.ADD">ADD</a></code> | Do not attempt to startup. |
+
+---
+
+##### `START` <a name="START" id="raindancers-network.StartupAction.START"></a>
+
+AWS end to Intiate Startup.
+
+---
+
+
+##### `ADD` <a name="ADD" id="raindancers-network.StartupAction.ADD"></a>
+
+Do not attempt to startup.
+
+---
+
+
+### TunnelInsideIpVersion <a name="TunnelInsideIpVersion" id="raindancers-network.TunnelInsideIpVersion"></a>
+
+Determine if this is an IPv4 or IPv6 Tunnel.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.TunnelInsideIpVersion.IPV4">IPV4</a></code> | Use IPv4. |
+| <code><a href="#raindancers-network.TunnelInsideIpVersion.IPV6">IPV6</a></code> | Use IPv6. |
+
+---
+
+##### `IPV4` <a name="IPV4" id="raindancers-network.TunnelInsideIpVersion.IPV4"></a>
+
+Use IPv4.
+
+---
+
+
+##### `IPV6` <a name="IPV6" id="raindancers-network.TunnelInsideIpVersion.IPV6"></a>
+
+Use IPv6.
+
+---
+
+
+### VpnDeviceType <a name="VpnDeviceType" id="raindancers-network.VpnDeviceType"></a>
+
+Remote end Device Types.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R77_10">CHECKPOINT_R77_10</a></code> | Checkpoint R77_10. |
+| <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R80_10">CHECKPOINT_R80_10</a></code> | *No description.* |
+| <code><a href="#raindancers-network.VpnDeviceType.CISCO_ISR_12_4">CISCO_ISR_12_4</a></code> | *No description.* |
+
+---
+
+##### `CHECKPOINT_R77_10` <a name="CHECKPOINT_R77_10" id="raindancers-network.VpnDeviceType.CHECKPOINT_R77_10"></a>
+
+Checkpoint R77_10.
+
+---
+
+
+##### `CHECKPOINT_R80_10` <a name="CHECKPOINT_R80_10" id="raindancers-network.VpnDeviceType.CHECKPOINT_R80_10"></a>
+
+---
+
+
+##### `CISCO_ISR_12_4` <a name="CISCO_ISR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ISR_12_4"></a>
 
 ---
 
