@@ -2,6 +2,113 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### AwsServiceEndPoints <a name="AwsServiceEndPoints" id="raindancers-network.AwsServiceEndPoints"></a>
+
+Provisions a set of AWS Service Endpoints in a VPC.
+
+#### Initializers <a name="Initializers" id="raindancers-network.AwsServiceEndPoints.Initializer"></a>
+
+```typescript
+import { AwsServiceEndPoints } from 'raindancers-network'
+
+new AwsServiceEndPoints(scope: Construct, id: string, props: AwsServiceEndPointsProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope that this construct is created in. |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.id">id</a></code> | <code>string</code> | Id for the construct. |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AwsServiceEndPointsProps">AwsServiceEndPointsProps</a></code> | AWSServiceEndpoints. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+The scope that this construct is created in.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+Id for the construct.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AwsServiceEndPointsProps">AwsServiceEndPointsProps</a>
+
+AWSServiceEndpoints.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.AwsServiceEndPoints.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AwsServiceEndPoints.isConstruct"></a>
+
+```typescript
+import { AwsServiceEndPoints } from 'raindancers-network'
+
+AwsServiceEndPoints.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AwsServiceEndPoints.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AwsServiceEndPoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AwsServiceEndPoints.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.CloudWanTGW"></a>
 
 Create a TransitGateway That is attached to Cloudwan.
@@ -50,7 +157,7 @@ TGWOnCloudWanProps.
 | --- | --- |
 | <code><a href="#raindancers-network.CloudWanTGW.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#raindancers-network.CloudWanTGW.addDXGateway">addDXGateway</a></code> | provision a DX Gateway and attach it to the transit gateway. |
-| <code><a href="#raindancers-network.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway,  using a defined set of VPn Properties. |
+| <code><a href="#raindancers-network.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties. |
 
 ---
 
@@ -92,7 +199,7 @@ An ASN for the Dxgateway.
 public adds2sVPN(name: string, vpnprops: VpnProps): string
 ```
 
-Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway,  using a defined set of VPn Properties.
+Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties.
 
 ###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CloudWanTGW.adds2sVPN.parameter.name"></a>
 
@@ -1774,6 +1881,92 @@ public readonly segment: string;
 - *Type:* string
 
 The Segment this applies to.
+
+---
+
+### AwsServiceEndPointsProps <a name="AwsServiceEndPointsProps" id="raindancers-network.AwsServiceEndPointsProps"></a>
+
+Properties to create a set of AWS service Endpoints.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AwsServiceEndPointsProps.Initializer"></a>
+
+```typescript
+import { AwsServiceEndPointsProps } from 'raindancers-network'
+
+const awsServiceEndPointsProps: AwsServiceEndPointsProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | An arry of InterfaceVPCEndpoints. |
+| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | Subnet Group in which to create the service. |
+| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The vpc in which the service is created. |
+| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface">dynamoDBGatewayInterface</a></code> | <code>boolean</code> | indicate true for a Dynamo Gateway Interface. |
+| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | indicate true for a S3 Gateway Interface. |
+
+---
+
+##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.AwsServiceEndPointsProps.property.services"></a>
+
+```typescript
+public readonly services: InterfaceVpcEndpointAwsService[];
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]
+
+An arry of InterfaceVPCEndpoints.
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.AwsServiceEndPointsProps.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: string;
+```
+
+- *Type:* string
+
+Subnet Group in which to create the service.
+
+Typically a subnet Dedicated to the task
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.AwsServiceEndPointsProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+The vpc in which the service is created.
+
+---
+
+##### `dynamoDBGatewayInterface`<sup>Optional</sup> <a name="dynamoDBGatewayInterface" id="raindancers-network.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface"></a>
+
+```typescript
+public readonly dynamoDBGatewayInterface: boolean;
+```
+
+- *Type:* boolean
+
+indicate true for a Dynamo Gateway Interface.
+
+---
+
+##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.AwsServiceEndPointsProps.property.s3GatewayInterface"></a>
+
+```typescript
+public readonly s3GatewayInterface: boolean;
+```
+
+- *Type:* boolean
+
+indicate true for a S3 Gateway Interface.
 
 ---
 
