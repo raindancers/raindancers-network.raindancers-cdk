@@ -22,29 +22,29 @@ export enum ResolverDirection {
 /**
  * Properties to for creating inbound resolvers.
  */
-export interface r53ResolverendpointsProps {
+export interface R53ResolverendpointsProps {
   /**
 	 * the vpc that the resolvers will be placed in
 	 */
-  vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc;
   /**
 	 * the subnetgroup to place the resolvers in
 	 */
-  subnetGroup: string;
+  readonly subnetGroup: string;
   /**
 	 * An array of Internal domains that can be centrally resolved in this VPC
 	 */
-  resolveDomains: string[];
+  readonly resolveDomains: string[];
   /**
 	 * Value for Sharing.
 	 */
-  tagValue: string;
+  readonly tagValue: string;
 }
 
 /**
  * Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
  */
-export class r53Resolverendpoints extends constructs.Construct {
+export class R53Resolverendpoints extends constructs.Construct {
 
   /**
 	 *
@@ -52,7 +52,7 @@ export class r53Resolverendpoints extends constructs.Construct {
 	 * @param id the id of the construct
 	 * @param props propertys for the R53Resolver Endpoints
 	 */
-  constructor(scope: constructs.Construct, id: string, props: r53ResolverendpointsProps) {
+  constructor(scope: constructs.Construct, id: string, props: R53ResolverendpointsProps) {
     super(scope, id);
 
 

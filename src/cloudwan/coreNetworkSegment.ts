@@ -14,17 +14,18 @@ export class CoreNetworkSegment extends constructs.Construct {
   public readonly segmentName: string;
 
   /** Service token for  */
-  public readonly PolicyTableServiceToken: string;
+  public readonly policyTableServiceToken: string;
 
   /** resources which update depends on */
   private updateDependsOn: cdk.CustomResource[];
+
 
   constructor(scope: constructs.Construct, id: string, props: cloudWanEnum.ICoreNetworkSegmentProps) {
     super(scope, id);
 
     this.updateDependsOn = props.updateDependsOn;
     this.segmentName = props.segmentName;
-    this.PolicyTableServiceToken = props.policyTableServiceToken;
+    this.policyTableServiceToken = props.policyTableServiceToken;
   }
 
 
@@ -66,7 +67,7 @@ export class CoreNetworkSegment extends constructs.Construct {
     }
 
     const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
-      serviceToken: this.PolicyTableServiceToken,
+      serviceToken: this.policyTableServiceToken,
       properties: {
         segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
       },
@@ -113,7 +114,7 @@ export class CoreNetworkSegment extends constructs.Construct {
     }
 
     const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
-      serviceToken: this.PolicyTableServiceToken,
+      serviceToken: this.policyTableServiceToken,
       properties: {
         attachmentPolicy: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(attachmentPolicy)),
       },

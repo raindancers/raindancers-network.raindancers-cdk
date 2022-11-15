@@ -508,6 +508,167 @@ public readonly updateProviderToken: string;
 ---
 
 
+### CoreNetworkSegment <a name="CoreNetworkSegment" id="raindancers-network.CoreNetworkSegment"></a>
+
+Create a Network Segment in a core network.
+
+#### Initializers <a name="Initializers" id="raindancers-network.CoreNetworkSegment.Initializer"></a>
+
+```typescript
+import { CoreNetworkSegment } from 'raindancers-network'
+
+new CoreNetworkSegment(scope: Construct, id: string, props: ICoreNetworkSegmentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkSegment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.CoreNetworkSegment.addAttachmentPolicy">addAttachmentPolicy</a></code> | Add an AttachmentPolicy to a segment. |
+| <code><a href="#raindancers-network.CoreNetworkSegment.addSegmentAction">addSegmentAction</a></code> | Add an Action to the Segment, ( Share or Route ). |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CoreNetworkSegment.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addAttachmentPolicy` <a name="addAttachmentPolicy" id="raindancers-network.CoreNetworkSegment.addAttachmentPolicy"></a>
+
+```typescript
+public addAttachmentPolicy(props: AttachmentPolicy): void
+```
+
+Add an AttachmentPolicy to a segment.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addAttachmentPolicy.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AttachmentPolicy">AttachmentPolicy</a>
+
+An attachment policy.
+
+---
+
+##### `addSegmentAction` <a name="addSegmentAction" id="raindancers-network.CoreNetworkSegment.addSegmentAction"></a>
+
+```typescript
+public addSegmentAction(props: SegmentAction): void
+```
+
+Add an Action to the Segment, ( Share or Route ).
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSegmentAction.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.SegmentAction">SegmentAction</a>
+
+segment action.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkSegment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CoreNetworkSegment.isConstruct"></a>
+
+```typescript
+import { CoreNetworkSegment } from 'raindancers-network'
+
+CoreNetworkSegment.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CoreNetworkSegment.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CoreNetworkSegment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CoreNetworkSegment.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | Service token for. |
+| <code><a href="#raindancers-network.CoreNetworkSegment.property.segmentName">segmentName</a></code> | <code>string</code> | the name for the segment. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CoreNetworkSegment.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.CoreNetworkSegment.property.policyTableServiceToken"></a>
+
+```typescript
+public readonly policyTableServiceToken: string;
+```
+
+- *Type:* string
+
+Service token for.
+
+---
+
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.CoreNetworkSegment.property.segmentName"></a>
+
+```typescript
+public readonly segmentName: string;
+```
+
+- *Type:* string
+
+the name for the segment.
+
+---
+
+
 ### Evpc <a name="Evpc" id="raindancers-network.Evpc"></a>
 
 Extends the ec2.Vpc construct to provide additional functionality - support for using AWS IPAM - methods for integration - Flow logs and Athena Querys - Create and share 53 zones.
@@ -1700,6 +1861,113 @@ returns the created ipam Pool.
 ---
 
 
+### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
+
+Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
+
+#### Initializers <a name="Initializers" id="raindancers-network.R53Resolverendpoints.Initializer"></a>
+
+```typescript
+import { R53Resolverendpoints } from 'raindancers-network'
+
+new R53Resolverendpoints(scope: Construct, id: string, props: R53ResolverendpointsProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | the scope in which these resources are craeted. |
+| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.id">id</a></code> | <code>string</code> | the id of the construct. |
+| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.R53ResolverendpointsProps">R53ResolverendpointsProps</a></code> | propertys for the R53Resolver Endpoints. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+the scope in which these resources are craeted.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+the id of the construct.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.R53ResolverendpointsProps">R53ResolverendpointsProps</a>
+
+propertys for the R53Resolver Endpoints.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.R53Resolverendpoints.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.R53Resolverendpoints.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.R53Resolverendpoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.R53Resolverendpoints.isConstruct"></a>
+
+```typescript
+import { R53Resolverendpoints } from 'raindancers-network'
+
+R53Resolverendpoints.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.R53Resolverendpoints.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.R53Resolverendpoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.R53Resolverendpoints.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### AttachmentConditions <a name="AttachmentConditions" id="raindancers-network.AttachmentConditions"></a>
@@ -2688,6 +2956,77 @@ public readonly name: string;
 - *Type:* string
 
 the name used by IPAM to identify the pool.
+
+---
+
+### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.R53ResolverendpointsProps"></a>
+
+Properties to for creating inbound resolvers.
+
+#### Initializer <a name="Initializer" id="raindancers-network.R53ResolverendpointsProps.Initializer"></a>
+
+```typescript
+import { R53ResolverendpointsProps } from 'raindancers-network'
+
+const r53ResolverendpointsProps: R53ResolverendpointsProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.resolveDomains">resolveDomains</a></code> | <code>string[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetgroup to place the resolvers in. |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the vpc that the resolvers will be placed in. |
+
+---
+
+##### `resolveDomains`<sup>Required</sup> <a name="resolveDomains" id="raindancers-network.R53ResolverendpointsProps.property.resolveDomains"></a>
+
+```typescript
+public readonly resolveDomains: string[];
+```
+
+- *Type:* string[]
+
+An array of Internal domains that can be centrally resolved in this VPC.
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.R53ResolverendpointsProps.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: string;
+```
+
+- *Type:* string
+
+the subnetgroup to place the resolvers in.
+
+---
+
+##### `tagValue`<sup>Required</sup> <a name="tagValue" id="raindancers-network.R53ResolverendpointsProps.property.tagValue"></a>
+
+```typescript
+public readonly tagValue: string;
+```
+
+- *Type:* string
+
+Value for Sharing.
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.R53ResolverendpointsProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+the vpc that the resolvers will be placed in.
 
 ---
 
@@ -4014,6 +4353,29 @@ Use Public IPv4 Address Assigned by AWS.
 
 
 ##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_512"></a>
+
+---
+
+
+### ResolverDirection <a name="ResolverDirection" id="raindancers-network.ResolverDirection"></a>
+
+Direction of Resolver.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ResolverDirection.INBOUND">INBOUND</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ResolverDirection.OUTBOUND">OUTBOUND</a></code> | *No description.* |
+
+---
+
+##### `INBOUND` <a name="INBOUND" id="raindancers-network.ResolverDirection.INBOUND"></a>
+
+---
+
+
+##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.ResolverDirection.OUTBOUND"></a>
 
 ---
 
