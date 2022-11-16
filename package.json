@@ -48,7 +48,7 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27",
     "jest-junit": "^13",
-    "jsii": "^1.69.0",
+    "jsii": "^1.71.0",
     "jsii-diff": "^1.69.0",
     "jsii-docgen": "^7.0.118",
     "jsii-pacmak": "^1.69.0",

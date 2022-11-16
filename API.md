@@ -350,7 +350,7 @@ Returns a string representation of this construct.
 ##### `addSegment` <a name="addSegment" id="raindancers-network.CoreNetwork.addSegment"></a>
 
 ```typescript
-public addSegment(props: Segment): void
+public addSegment(props: Segment): CoreNetworkSegment
 ```
 
 Add a segment to the core network.

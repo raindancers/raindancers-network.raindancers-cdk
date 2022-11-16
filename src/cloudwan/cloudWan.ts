@@ -110,7 +110,7 @@ export class CoreNetwork extends constructs.Construct {
 	 */
   public addSegment(
     props: cloudWanEnum.Segment,
-  ): void {
+  ): CoreNetworkSegment {
 
     // verify only one of deny/allow filters are set.
     if (props.denyFilter !== undefined && props.allowFilter !== undefined) {
@@ -152,7 +152,7 @@ export class CoreNetwork extends constructs.Construct {
 
     this.updateDependson.push(addsegment);
 
-    new CoreNetworkSegment(this, `CoreNetworkSegment${props.name}`, {
+    return new CoreNetworkSegment(this, `CoreNetworkSegment${props.name}`, {
       segmentName: props.name,
       policyTableServiceToken: this.policyTableServiceToken,
       updateDependsOn: this.updateDependson,
