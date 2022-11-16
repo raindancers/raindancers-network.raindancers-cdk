@@ -126,7 +126,7 @@ export interface AttachmentConditions {
  */
 export interface AttachmentPolicy {
   readonly ruleNumber: number;
-  readonly conditions: AttachmentCondition[];
+  readonly conditions: AttachmentConditions[];
   readonly action: AttachmentPolicyAction;
   readonly description?: string;
   readonly conditionLogic?: ConditionLogic;

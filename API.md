@@ -2050,7 +2050,7 @@ const attachmentPolicy: AttachmentPolicy = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.AttachmentPolicy.property.action">action</a></code> | <code><a href="#raindancers-network.AttachmentPolicyAction">AttachmentPolicyAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.conditions">conditions</a></code> | <code><a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachmentPolicy.property.conditions">conditions</a></code> | <code><a href="#raindancers-network.AttachmentConditions">AttachmentConditions</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.AttachmentPolicy.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.AttachmentPolicy.property.conditionLogic">conditionLogic</a></code> | <code><a href="#raindancers-network.ConditionLogic">ConditionLogic</a></code> | *No description.* |
 | <code><a href="#raindancers-network.AttachmentPolicy.property.description">description</a></code> | <code>string</code> | *No description.* |
@@ -2070,10 +2070,10 @@ public readonly action: AttachmentPolicyAction;
 ##### `conditions`<sup>Required</sup> <a name="conditions" id="raindancers-network.AttachmentPolicy.property.conditions"></a>
 
 ```typescript
-public readonly conditions: AttachmentCondition[];
+public readonly conditions: AttachmentConditions[];
 ```
 
-- *Type:* <a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>[]
+- *Type:* <a href="#raindancers-network.AttachmentConditions">AttachmentConditions</a>[]
 
 ---
 
