@@ -22,4 +22,5 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
 
 });
+project.addGitIgnore('!lambda/**')
 project.synth();

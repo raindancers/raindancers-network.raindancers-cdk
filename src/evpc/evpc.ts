@@ -1,4 +1,4 @@
-
+import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import {
   aws_ec2 as ec2,
@@ -211,15 +211,7 @@ export class Evpc extends ec2.Vpc {
 
 	  // set up athena querys with a custom resource
 	  const athenaLogsHandler = new aws_lambda.Function(this, 'Function', {
-	    code: aws_lambda.Code.fromAsset('./lambda/', {
-	      bundling: {
-	        image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
-	        command: [
-	          'bash', '-c',
-	          'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
-	        ],
-	      },
-	    }),
+	    code: aws_lambda.Code.fromAsset(path.join(__dirname, '../lambda/evpc')),
 	    runtime: aws_lambda.Runtime.PYTHON_3_9,
 	    handler: 'flowlogintegration.on_event',
 	  });
@@ -258,7 +250,7 @@ export class Evpc extends ec2.Vpc {
 	  const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-evpc', {
 	    runtime: aws_lambda.Runtime.PYTHON_3_9,
 	    handler: 'get_core_network_id.on_event',
-	    code: aws_lambda.Code.fromAsset('./lambda/'),
+	    code: aws_lambda.Code.fromAsset(path.join(__dirname, '../lambda/evpc')),
 	  });
 
 	  lookupIdLambda.addToRolePolicy(
@@ -531,7 +523,7 @@ export class Evpc extends ec2.Vpc {
 
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'getRouteResolvers.on_event',
-      code: aws_lambda.Code.fromAsset('./lib/constructs/lambda/'),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../lambda/evpc')),
     });
 
     associateRouteResolvers.addToRolePolicy(
@@ -773,7 +765,7 @@ export class Evpc extends ec2.Vpc {
       const waitForTransitGatewayPeering = new aws_lambda.Function(this, 'oneventttobeready', {
         runtime: aws_lambda.Runtime.PYTHON_3_9,
         handler: 'transitgatewayRoutes.on_event',
-        code: aws_lambda.Code.fromAsset('lib/constructs/lambda/'),
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../lambda/evpc')),
       });
 
       // need to be able to delete the routes.
@@ -789,7 +781,7 @@ export class Evpc extends ec2.Vpc {
       const isCompleteTransitGatewayPeering = new aws_lambda.Function(this, 'iscompleterattachmenttobeready', {
         runtime: aws_lambda.Runtime.PYTHON_3_9,
         handler: 'transitgatewayRoutes.is_complete',
-        code: aws_lambda.Code.fromAsset('lib/constructs/lambda/'),
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../lambda/evpc')),
       });
 
       // need to be able to check if the attachment is done, and if it is add routes.
