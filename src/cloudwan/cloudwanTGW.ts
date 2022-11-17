@@ -43,7 +43,7 @@ export class CloudWanTGW extends constructs.Construct {
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-tgOnCloudwan', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'getcloudwanID.on_event',
-      code: aws_lambda.Code.fromAsset('./lib/constructs/lambda/'),
+      code: aws_lambda.Code.fromAsset('./lambda/'),
     });
 
     lookupIdLambda.addToRolePolicy(
@@ -635,7 +635,7 @@ export class CloudWanTGW extends constructs.Construct {
     if (vpnprops.sampleconfig !=undefined) {
 
       const sampleConfigLambda = new aws_lambda.SingletonFunction(this, 'sampleconfig', {
-        code: aws_lambda.Code.fromAsset('./lib/constructs/samplevpn/'),
+        code: aws_lambda.Code.fromAsset('./lambda/'),
         uuid: 'FFFFAAFFEEDDDDE000',
         handler: 'samplevpn.on_event',
         runtime: aws_lambda.Runtime.PYTHON_3_9,
