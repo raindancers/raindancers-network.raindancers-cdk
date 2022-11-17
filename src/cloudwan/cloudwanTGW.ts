@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import {
   aws_ec2 as ec2,
@@ -43,7 +44,7 @@ export class CloudWanTGW extends constructs.Construct {
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-tgOnCloudwan', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'getcloudwanID.on_event',
-      code: aws_lambda.Code.fromAsset('./lambda/'),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
     });
 
     lookupIdLambda.addToRolePolicy(
@@ -635,7 +636,7 @@ export class CloudWanTGW extends constructs.Construct {
     if (vpnprops.sampleconfig !=undefined) {
 
       const sampleConfigLambda = new aws_lambda.SingletonFunction(this, 'sampleconfig', {
-        code: aws_lambda.Code.fromAsset('./lambda/'),
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
         uuid: 'FFFFAAFFEEDDDDE000',
         handler: 'samplevpn.on_event',
         runtime: aws_lambda.Runtime.PYTHON_3_9,
