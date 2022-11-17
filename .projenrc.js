@@ -19,8 +19,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'raindancers-network.raindancers-cdk',
     module: 'Evpc',
   },
-
-
 });
-project.addGitIgnore('!lambda/**')
+project.addGitIgnore('!lambda/**');
 project.synth();
