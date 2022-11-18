@@ -48,7 +48,7 @@ export class CloudWanCorePolicyTable extends constructs.Construct {
     });
 
     this.policyTable = policyTable;
-
+ 
     // create the lambda
     const onEvent = new aws_lambda.Function(this, 'putItems', {
       environment: { policyTableName: this.policyTable.tableName },

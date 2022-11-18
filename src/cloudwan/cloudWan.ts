@@ -186,7 +186,7 @@ export class CoreNetwork extends constructs.Construct {
       environment: { coreNetworkName: this.coreName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'updatepolicy.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
       timeout: cdk.Duration.seconds(899),
       //functionName: 'updatecorelambda'//cdk.PhysicalName.GENERATE_IF_NEEDED
     });
@@ -239,7 +239,7 @@ export class CoreNetwork extends constructs.Construct {
       environment: { coreNetworkName: this.coreName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'checkpolicycomplete.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
       timeout: cdk.Duration.seconds(899),
       functionName: 'cloudwanPolicyExecutewaittofinishonevent', //cdk.PhysicalName.GENERATE_IF_NEEDED
     });
@@ -249,7 +249,7 @@ export class CoreNetwork extends constructs.Construct {
       environment: { coreNetworkName: this.coreName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'checkpolicycomplete.is_complete',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
       timeout: cdk.Duration.seconds(899),
       functionName: 'cloudwanPolicyExecutewaitiscomplete', //cdk.PhysicalName.GENERATE_IF_NEEDED
     });
