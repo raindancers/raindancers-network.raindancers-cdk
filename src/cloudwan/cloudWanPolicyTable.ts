@@ -4,6 +4,7 @@ import {
   custom_resources as cr,
   aws_logs as logs,
   aws_lambda,
+  aws_backup as backup,
 }
   from 'aws-cdk-lib';
 
@@ -44,14 +45,22 @@ export class CloudWanCorePolicyTable extends constructs.Construct {
       billingMode: dynamo.BillingMode.PAY_PER_REQUEST,
       tableClass: dynamo.TableClass.STANDARD_INFREQUENT_ACCESS,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
+      pointInTimeRecovery: true,
 
     });
+    // create a back up for the Policy Table.
+    backup.BackupPlan.dailyWeeklyMonthly5YearRetention(this, 'policytablebackup').addSelection(
+      'Selection',
+      {
+        resources: [
+          backup.BackupResource.fromDynamoDbTable(policyTable),
+        ],
+      },
+    );
 
-    this.policyTable = policyTable;
- 
     // create the lambda
     const onEvent = new aws_lambda.Function(this, 'putItems', {
-      environment: { policyTableName: this.policyTable.tableName },
+      environment: { policyTableName: policyTable.tableName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'putitems.on_event',
       code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
