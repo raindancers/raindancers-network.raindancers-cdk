@@ -1,4 +1,4 @@
-import * as path from 'path';
+//import * as path from 'path';
 import {
   aws_dynamodb as dynamo,
   custom_resources as cr,
@@ -54,7 +54,7 @@ export class CloudWanCorePolicyTable extends constructs.Construct {
       environment: { policyTableName: this.policyTable.tableName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'putitems.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '/lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset('./lambda/cloudwan'),
     });
 
 
