@@ -143,12 +143,6 @@ export interface TGWOnCloudWanProps {
 }
 
 
-export enum IkeVersions {
-  IKE1 = 'ike1',
-  IKE2 = 'ike2'
-}
-
-
 /**
  * THe properties for a S2S Ipsec Vpn Connection
  * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html
@@ -156,7 +150,7 @@ export enum IkeVersions {
 export interface VpnSpecProps {
 
   /**The IKE versions that are permitted for the VPN tunnel. */
-  readonly ikeVersions?: IkeVersions[] | undefined;
+  readonly ikeVersions?: IkeVersion[] | undefined;
 
   /** Indicate whether to enable acceleration for the VPN connection */
   readonly enableAcceleration?: boolean | undefined;
