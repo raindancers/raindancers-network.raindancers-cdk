@@ -317,6 +317,43 @@ export class CloudWanTGW extends constructs.Construct {
   }
 
   /**
+   *
+   * @param dxgatewayId Id of a DX gateway that
+   */
+  public createDirectConnectGatewayAssociation(dxgatewayId: string): void {
+
+    // associate the TransitGateway with the DXGateway
+    // https://docs.aws.amazon.com/cli/latest/reference/directconnect/create-direct-connect-gateway-association.html
+
+    new cr.AwsCustomResource(this, 'CreateDXGateway', {
+      onCreate: {
+        service: 'DirectConnect',
+        action: 'createDirectConnectGatewayAssociation',
+        parameters: {
+          directConnectGatewayId: dxgatewayId,
+          addAllowedPrefixesToDirectConnectGateway: this.tgcidr,
+          gatewayId: this.transitGateway.attrId,
+        },
+        physicalResourceId: cr.PhysicalResourceId.fromResponse('directConnectGatewayAssociation.associationId'),
+
+      },
+
+      onDelete: {
+        service: 'associationId',
+        action: 'DeleteDirectConnectGatewayAssociation',
+        parameters: {
+          directConnectGatewayID: new cr.PhysicalResourceIdReference(),
+        },
+      },
+
+      logRetention: logs.RetentionDays.ONE_WEEK,
+      policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+        resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+      }),
+    });
+  }
+
+  /**
   *  provision a DX Gateway and attach it to the transit gateway
   * @param dxgatewayname The name of the dxgateway
   * @param dxgatewayASN An ASN for the Dxgateway

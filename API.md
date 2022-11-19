@@ -158,6 +158,7 @@ TGWOnCloudWanProps.
 | <code><a href="#raindancers-network.CloudWanTGW.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#raindancers-network.CloudWanTGW.addDXGateway">addDXGateway</a></code> | provision a DX Gateway and attach it to the transit gateway. |
 | <code><a href="#raindancers-network.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties. |
+| <code><a href="#raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation">createDirectConnectGatewayAssociation</a></code> | *No description.* |
 
 ---
 
@@ -214,6 +215,20 @@ A name to identify the vpn.
 - *Type:* <a href="#raindancers-network.VpnProps">VpnProps</a>
 
 the vpn properties.
+
+---
+
+##### `createDirectConnectGatewayAssociation` <a name="createDirectConnectGatewayAssociation" id="raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation"></a>
+
+```typescript
+public createDirectConnectGatewayAssociation(dxgatewayId: string): void
+```
+
+###### `dxgatewayId`<sup>Required</sup> <a name="dxgatewayId" id="raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation.parameter.dxgatewayId"></a>
+
+- *Type:* string
+
+Id of a DX gateway that.
 
 ---
 
@@ -3317,7 +3332,7 @@ const tGWOnCloudWanProps: TGWOnCloudWanProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn">amazonSideAsn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentTag">attachmentTag</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentTag">attachmentTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudwan">cloudwan</a></code> | <code><a href="#raindancers-network.CoreNetwork">CoreNetwork</a></code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr">cloudWanCidr</a></code> | <code>string[]</code> | *No description.* |
@@ -3339,10 +3354,10 @@ public readonly amazonSideAsn: string;
 ##### `attachmentTag`<sup>Required</sup> <a name="attachmentTag" id="raindancers-network.TGWOnCloudWanProps.property.attachmentTag"></a>
 
 ```typescript
-public readonly attachmentTag: object[];
+public readonly attachmentTag: Tag;
 ```
 
-- *Type:* object[]
+- *Type:* aws-cdk-lib.Tag
 
 ---
 

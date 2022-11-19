@@ -1,3 +1,6 @@
+import * as cdk from 'aws-cdk-lib';
+
+
 import {
   aws_ec2 as ec2,
   IResolvable,
@@ -128,7 +131,7 @@ export interface TGWOnCloudWanProps {
   //** description of the TGW */
   readonly description: string;
   //** tag for the Attachment */
-  readonly attachmentTag: object[];
+  readonly attachmentTag: cdk.Tag;
   //** the Clouwan CoreNetwork this will be attached to */
   readonly cloudwan: CloudWan.CoreNetwork;
   //** A list of segments to add default routes to this TG for */
