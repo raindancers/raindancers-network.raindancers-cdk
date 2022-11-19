@@ -142,11 +142,21 @@ export interface TGWOnCloudWanProps {
   readonly tgCidr?: string[] | undefined;
 }
 
+
+export enum IkeVersions {
+  IKE1 = 'ike1',
+  IKE2 = 'ike2'
+}
+
+
 /**
  * THe properties for a S2S Ipsec Vpn Connection
  * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html
  */
 export interface VpnSpecProps {
+
+  /**The IKE versions that are permitted for the VPN tunnel. */
+  readonly ikeVersions?: IkeVersions[] | undefined;
 
   /** Indicate whether to enable acceleration for the VPN connection */
   readonly enableAcceleration?: boolean | undefined;
@@ -172,8 +182,7 @@ export interface VpnSpecProps {
   /** @default 30 The number of seconds after which a DPD timeout occurs. */
   readonly dpdTimeoutSeconds?: number | undefined;
 
-  /**The IKE versions that are permitted for the VPN tunnel. */
-  readonly ikeVersions?: object[] | undefined;
+  
 
   /** Enable CloudwatchLogging for the S2S VPN */
   readonly enableLogging?: boolean | undefined;
