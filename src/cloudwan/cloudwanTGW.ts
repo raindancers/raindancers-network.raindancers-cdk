@@ -683,7 +683,7 @@ export class CloudWanTGW extends constructs.Construct {
 
       // get the parameters from the core.
       new cdk.CustomResource(this, 'createconfigplaceinbucket', {
-        serviceToken: new cr.Provider(this, 'NetworkManagerProvider', {
+        serviceToken: new cr.Provider(this, `NetworkManagerProvider${name}`, {
           onEventHandler: sampleConfigLambda,
         }).serviceToken,
         properties: {
