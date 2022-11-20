@@ -481,8 +481,8 @@ export class CloudWanTGW extends constructs.Construct {
 
       }
       if (vpnprops.vpnspec.phase1LifetimeSeconds != undefined ) {
-        if (vpnprops.vpnspec.phase1LifetimeSeconds >= vpnprops.vpnspec.phase2LifeTimeSeconds) {
-          throw new Error('Phase2 Life time must be less than phase1 lifeime ');
+        if (!(vpnprops.vpnspec.phase1LifetimeSeconds > vpnprops.vpnspec.phase2LifeTimeSeconds )) {
+          throw new Error('Phase1 Life time must be greater than phase2 lifetime ');
         }
       }
     }

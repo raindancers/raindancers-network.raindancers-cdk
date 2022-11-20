@@ -151,7 +151,6 @@ export class IpsecTunnelPool extends constructs.Construct {
     ];
 
     reservedTunnelAddress.forEach((checkAddr) => {
-      console.log(checkAddr);
       const rsvAddr = ipToInt32(checkAddr.split('/')[0]);
       if (rsvAddr >= networkAddress && rsvAddr <= networkAddress + Math.pow(2, 32-netmask)) {
         throw new Error(`The cidr ${props.cidr} includes the reserved range ${checkAddr}`);
