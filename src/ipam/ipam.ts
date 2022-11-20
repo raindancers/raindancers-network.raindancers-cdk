@@ -66,6 +66,7 @@ export class GetTunnelAddressPair extends constructs.Construct {
             IpamPoolId: props.ipamPoolId,
             IpamPoolAllocationId: allocation.attrIpamPoolAllocationId,
           },
+          physicalResourceId: cr.PhysicalResourceId.of(`tunnel${i}cidr`)
         },
         policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
           resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
