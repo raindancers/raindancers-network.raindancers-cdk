@@ -431,7 +431,7 @@ export class CloudWanTGW extends constructs.Construct {
    */
   public adds2sVPN(name: string, vpnprops: CloudWanTGWProps.VpnProps): string {
 
-    const vpnPresharedKey = new secretsmanager.Secret(this, 'PresharedKey', {
+    const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
       generateSecretString: {
         excludePunctuation: true,
         // We will Prefix the generated key with PSK. This means the key will never start
