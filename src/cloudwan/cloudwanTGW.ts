@@ -576,12 +576,12 @@ export class CloudWanTGW extends constructs.Construct {
 
     const tunnels: object[] = [];
 
-    //Ike Versions: 
-    var ikeVersions: object[] = []; 
-      if (vpnprops.vpnspec.ikeVersions){
+    //Ike Versions:
+    var ikeVersions: object[] = [];
+    if (vpnprops.vpnspec.ikeVersions) {
       vpnprops.vpnspec.ikeVersions?.forEach((ikeversion) => {
-        ikeVersions.push({'version': ikeversion})
-      })
+        ikeVersions.push({ version: ikeversion });
+      });
     }
 
 

@@ -176,7 +176,6 @@ export interface VpnSpecProps {
   /** @default 30 The number of seconds after which a DPD timeout occurs. */
   readonly dpdTimeoutSeconds?: number | undefined;
 
-  
 
   /** Enable CloudwatchLogging for the S2S VPN */
   readonly enableLogging?: boolean | undefined;

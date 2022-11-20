@@ -3519,7 +3519,7 @@ const vpnSpecProps: VpnSpecProps = { ... }
 | <code><a href="#raindancers-network.VpnSpecProps.property.dpdTimeoutSeconds">dpdTimeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.VpnSpecProps.property.enableAcceleration">enableAcceleration</a></code> | <code>boolean</code> | Indicate whether to enable acceleration for the VPN connection. |
 | <code><a href="#raindancers-network.VpnSpecProps.property.enableLogging">enableLogging</a></code> | <code>boolean</code> | Enable CloudwatchLogging for the S2S VPN. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.ikeVersions">ikeVersions</a></code> | <code>object[]</code> | The IKE versions that are permitted for the VPN tunnel. |
+| <code><a href="#raindancers-network.VpnSpecProps.property.ikeVersions">ikeVersions</a></code> | <code><a href="#raindancers-network.IkeVersion">IkeVersion</a>[]</code> | The IKE versions that are permitted for the VPN tunnel. |
 | <code><a href="#raindancers-network.VpnSpecProps.property.localIpv4NetworkCidr">localIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.VpnSpecProps.property.outsideIpAddressType">outsideIpAddressType</a></code> | <code><a href="#raindancers-network.OutsideIpAddressType">OutsideIpAddressType</a></code> | *No description.* |
 | <code><a href="#raindancers-network.VpnSpecProps.property.phase1DHGroupNumbers">phase1DHGroupNumbers</a></code> | <code><a href="#raindancers-network.Phase1DHGroupNumbers">Phase1DHGroupNumbers</a>[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
@@ -3589,10 +3589,10 @@ Enable CloudwatchLogging for the S2S VPN.
 ##### `ikeVersions`<sup>Optional</sup> <a name="ikeVersions" id="raindancers-network.VpnSpecProps.property.ikeVersions"></a>
 
 ```typescript
-public readonly ikeVersions: object[];
+public readonly ikeVersions: IkeVersion[];
 ```
 
-- *Type:* object[]
+- *Type:* <a href="#raindancers-network.IkeVersion">IkeVersion</a>[]
 
 The IKE versions that are permitted for the VPN tunnel.
 
