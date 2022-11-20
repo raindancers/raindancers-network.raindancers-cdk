@@ -664,7 +664,7 @@ export class CloudWanTGW extends constructs.Construct {
 
     if (vpnprops.sampleconfig !=undefined) {
 
-      const sampleConfigLambda = new aws_lambda.SingletonFunction(this, 'sampleconfig', {
+      const sampleConfigLambda = new aws_lambda.SingletonFunction(this, `${name}sampleconfig`, {
         code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
         uuid: 'FFFFAAFFEEDDDDE000',
         handler: 'samplevpn.on_event',
