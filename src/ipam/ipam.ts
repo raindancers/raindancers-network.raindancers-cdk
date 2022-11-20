@@ -58,7 +58,9 @@ export class GetTunnelAddressPair extends constructs.Construct {
         netmaskLength: 30,
       });
 
-      const allocationCidr = new cr.AwsCustomResource(this, `tunnel${i}cidr`, {
+      const tunnelId = `tunnel${i}${props.name}`;
+
+      const allocationCidr = new cr.AwsCustomResource(this, tunnelId, {
         onCreate: {
           service: 'EC2',
           action: 'getIpamPoolAllocations',
@@ -66,7 +68,7 @@ export class GetTunnelAddressPair extends constructs.Construct {
             IpamPoolId: props.ipamPoolId,
             IpamPoolAllocationId: allocation.attrIpamPoolAllocationId,
           },
-          physicalResourceId: cr.PhysicalResourceId.of(`tunnel${i}cidr`)
+          physicalResourceId: cr.PhysicalResourceId.of(tunnelId),
         },
         policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
           resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
