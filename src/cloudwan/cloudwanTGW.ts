@@ -624,7 +624,7 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
 
-    const vpn = new cr.AwsCustomResource(this, 'CreateP2PVPN', {
+    const vpn = new cr.AwsCustomResource(this, `CreateP2PVPN${name}`, {
       onCreate: {
         service: 'EC2',
         action: 'createVpnConnection',
@@ -682,7 +682,7 @@ export class CloudWanTGW extends constructs.Construct {
       vpnprops.sampleconfig.bucket.grantReadWrite(sampleConfigLambda);
 
       // get the parameters from the core.
-      new cdk.CustomResource(this, 'createconfigplaceinbucket', {
+      new cdk.CustomResource(this, `createconfigplaceinbucket${name}`, {
         serviceToken: new cr.Provider(this, `NetworkManagerProvider${name}`, {
           onEventHandler: sampleConfigLambda,
         }).serviceToken,
