@@ -450,7 +450,7 @@ export class CloudWanTGW extends constructs.Construct {
     if (vpnprops.vpnspec.enableLogging != undefined) {
       if (vpnprops.vpnspec.enableLogging) {
 
-        var vpnlog = new logs.LogGroup(this, 'vpnLogGroup', {
+        var vpnlog = new logs.LogGroup(this, `${name}vpnLogGroup`, {
           retention: logs.RetentionDays.THREE_MONTHS, // this is operational data, no need to retain longer
         });
 
