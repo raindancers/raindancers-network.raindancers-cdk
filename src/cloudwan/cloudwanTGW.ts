@@ -462,7 +462,7 @@ export class CloudWanTGW extends constructs.Construct {
    */
   public adds2sVPN(name: string, vpnprops: CloudWanTGWProps.VpnProps): void {
 
-    const createVpnCrLambda = new aws_lambda.SingletonFunction(this, 'createVpnCrLambda', {
+    const createVpnCrLambda = new aws_lambda.SingletonFunction(this, `createVpnCrLambda${name}`, {
       uuid: 'AABBCCDDEEFF000001',
       code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
       runtime: aws_lambda.Runtime.PYTHON_3_9,
@@ -480,7 +480,7 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     );
 
-    const createVPNProvider = new cr.Provider(this, 'createVPNProvider', {
+    const createVPNProvider = new cr.Provider(this, `createVPNProvider${name}`, {
       onEventHandler: createVpnCrLambda,
       logRetention: logs.RetentionDays.ONE_WEEK,
     });
