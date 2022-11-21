@@ -16,6 +16,7 @@ import * as constructs from 'constructs';
 
 import { GetTunnelAddressPair } from '../ipam/ipam';
 import * as CloudWanTGWProps from './cloudwanTGWProps';
+import { PropagatedTagSource } from 'aws-cdk-lib/aws-ecs';
 
 
 /**
@@ -495,6 +496,10 @@ export class CloudWanTGW extends constructs.Construct {
       }
     }
 
+    // validate that if the Outside address's are Private that a DX gateway Assn is provided. 
+    if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && !vpnprops.dxAssociationId) {
+        throw new Error("If the Outside address for a S2S VPN is Private, a dxAssociationId must be provided");
+    }
 
     // validate Timeout
     if (vpnprops.vpnspec.phase1LifetimeSeconds != undefined) {
