@@ -197,7 +197,7 @@ An ASN for the Dxgateway.
 ##### `adds2sVPN` <a name="adds2sVPN" id="raindancers-network.CloudWanTGW.adds2sVPN"></a>
 
 ```typescript
-public adds2sVPN(name: string, vpnprops: VpnProps): string
+public adds2sVPN(name: string, vpnprops: VpnProps): void
 ```
 
 Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties.

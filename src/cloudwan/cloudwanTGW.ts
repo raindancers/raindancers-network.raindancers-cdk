@@ -16,7 +16,6 @@ import * as constructs from 'constructs';
 
 import { GetTunnelAddressPair } from '../ipam/ipam';
 import * as CloudWanTGWProps from './cloudwanTGWProps';
-import { PropagatedTagSource } from 'aws-cdk-lib/aws-ecs';
 
 
 /**
@@ -461,7 +460,30 @@ export class CloudWanTGW extends constructs.Construct {
    * @param vpnprops the vpn properties
    * @returns
    */
-  public adds2sVPN(name: string, vpnprops: CloudWanTGWProps.VpnProps): string {
+  public adds2sVPN(name: string, vpnprops: CloudWanTGWProps.VpnProps): void {
+
+    const createVpnCrLambda = new aws_lambda.SingletonFunction(this, 'createVpnCrLambda', {
+      uuid: 'AABBCCDDEEFF000001',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'addS2Svpn.on_event',
+    });
+
+    createVpnCrLambda.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'ec2:CreateVpnConnection',
+          'ec2:DeleteVpnConnection',
+        ],
+      }),
+    );
+
+    const createVPNProvider = new cr.Provider(this, 'createVPNProvider', {
+      onEventHandler: createVpnCrLambda,
+      logRetention: logs.RetentionDays.ONE_WEEK,
+    });
 
     const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
       generateSecretString: {
@@ -496,9 +518,9 @@ export class CloudWanTGW extends constructs.Construct {
       }
     }
 
-    // validate that if the Outside address's are Private that a DX gateway Assn is provided. 
+    // validate that if the Outside address's are Private that a DX gateway Assn is provided.
     if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && !vpnprops.dxAssociationId) {
-        throw new Error("If the Outside address for a S2S VPN is Private, a dxAssociationId must be provided");
+      throw new Error('If the Outside address for a S2S VPN is Private, a dxAssociationId must be provided');
     }
 
     // validate Timeout
@@ -660,43 +682,22 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
 
-    const vpn = new cr.AwsCustomResource(this, `CreateP2PVPN${name}`, {
-      logRetention: logs.RetentionDays.ONE_WEEK,
-      onCreate: {
-        service: 'EC2',
-        action: 'createVpnConnection',
-        outputPaths: ['VpnConnection.VpnConnectionId'],	// theres too much otherwise
-        parameters: {
-          TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
-          TransitGatewayId: this.transitGateway.attrId,
-          Type: 'ipsec.1', /* required */
-
-          Options: {
-            EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
-            LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
-            RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
-            OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
-            StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
-            TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
-            TunnelOptions: tunnels,
-          },
-        },
-        physicalResourceId: cr.PhysicalResourceId.fromResponse('VpnConnection.VpnConnectionId'),
-      },
-      onDelete: {
-        service: 'EC2',
-        action: 'deleteVpnConnection',
-        parameters: {
-          VpnConnectionId: new cr.PhysicalResourceIdReference(),
+    const vpn = new cdk.CustomResource(this, `CreateP2PVPN${name}`, {
+      serviceToken: createVPNProvider.serviceToken,
+      properties: {
+        Type: 'ipsec.1',
+        TransitGatewayId: this.transitGateway.attrId,
+        TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
+        Options: {
+          EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
+          LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
+          RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
+          OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
+          StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
+          TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
+          TunnelOptions: tunnels,
         },
       },
-
-      policy: cr.AwsCustomResourcePolicy.fromSdkCalls(
-        {
-          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-        },
-      ),
-
     });
 
 
@@ -728,18 +729,13 @@ export class CloudWanTGW extends constructs.Construct {
           Name: `${name}`,
           BucketArn: vpnprops.sampleconfig.bucket.bucketArn,
           BucketName: vpnprops.sampleconfig.bucket.bucketArn,
-          VpnConnectionId: vpn.getResponseField('VpnConnection.VpnConnectionId'),
+          VpnConnectionId: vpn.getAtt('VpnConnectionId'),
           VpnConnectionDeviceTypeId: vpnprops.sampleconfig.deviceType,
           InternetKeyExchangeVersion: vpnprops.sampleconfig.ikeVersion,
         },
       });
 
     }
-
-    const vpnConnectionId = vpn.getResponseField('VpnConnection.VpnConnectionId');
-
-    return vpnConnectionId;
-
   }
 }
 
