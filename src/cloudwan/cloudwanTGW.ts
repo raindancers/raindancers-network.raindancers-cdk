@@ -17,6 +17,7 @@ import * as constructs from 'constructs';
 import { GetTunnelAddressPair } from '../ipam/ipam';
 import * as CloudWanTGWProps from './cloudwanTGWProps';
 
+
 /**
  * Create a TransitGateway That is attached to Cloudwan
  */
@@ -325,13 +326,27 @@ export class CloudWanTGW extends constructs.Construct {
     // associate the TransitGateway with the DXGateway
     // https://docs.aws.amazon.com/cli/latest/reference/directconnect/create-direct-connect-gateway-association.html
 
+    var cidrList: Object[] = [];
+
+
+    // create-direct-connect-gateway-association requires the prefix lists to be presented as a array of objects
+    // in the format {'cidr':cidr}
+    //
+    // this is a bit unfriendly, so we we create them here.
+
+    if (this.tgcidr) {
+      this.tgcidr?.forEach((cidr) => {
+        cidrList.push({ cidr: cidr });
+      });
+    }
+
     new cr.AwsCustomResource(this, 'CreateDXGateway', {
       onCreate: {
         service: 'DirectConnect',
         action: 'createDirectConnectGatewayAssociation',
         parameters: {
           directConnectGatewayId: dxgatewayId,
-          addAllowedPrefixesToDirectConnectGateway: this.tgcidr,
+          addAllowedPrefixesToDirectConnectGateway: cidrList,
           gatewayId: this.transitGateway.attrId,
         },
         physicalResourceId: cr.PhysicalResourceId.fromResponse('directConnectGatewayAssociation.associationId'),
@@ -391,6 +406,20 @@ export class CloudWanTGW extends constructs.Construct {
 
     // associate the TransitGateway with the DXGateway
     // https://docs.aws.amazon.com/cli/latest/reference/directconnect/create-direct-connect-gateway-association.html
+
+
+    var cidrList: Object[] = [];
+    // create-direct-connect-gateway-association requires the prefix lists to be presented as a array of objects
+    // in the format {'cidr':cidr}
+    //
+    // this is a bit unfriendly, so we we create them here.
+
+    if (this.tgcidr) {
+      this.tgcidr?.forEach((cidr) => {
+        cidrList.push({ cidr: cidr });
+      });
+    }
+
 
     new cr.AwsCustomResource(this, 'CreateDXGateway', {
       onCreate: {
