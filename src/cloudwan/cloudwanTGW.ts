@@ -656,6 +656,7 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     const vpn = new cr.AwsCustomResource(this, `CreateP2PVPN${name}`, {
+      logRetention: logs.RetentionDays.ONE_WEEK,
       onCreate: {
         service: 'EC2',
         action: 'createVpnConnection',
@@ -690,6 +691,7 @@ export class CloudWanTGW extends constructs.Construct {
           resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
         },
       ),
+
     });
 
 
