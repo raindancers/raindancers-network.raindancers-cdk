@@ -318,10 +318,9 @@ export class CloudWanTGW extends constructs.Construct {
   }
 
   /**
-   *
    * @param dxgatewayId Id of a DX gateway that
    */
-  public createDirectConnectGatewayAssociation(dxgatewayId: string): void {
+  public createDirectConnectGatewayAssociation(dxgatewayId: string): string {
 
     // associate the TransitGateway with the DXGateway
     // https://docs.aws.amazon.com/cli/latest/reference/directconnect/create-direct-connect-gateway-association.html
@@ -340,7 +339,7 @@ export class CloudWanTGW extends constructs.Construct {
       });
     }
 
-    new cr.AwsCustomResource(this, 'CreateDXGateway', {
+    const dxGWAssn = new cr.AwsCustomResource(this, 'CreateDXGatewayAssn', {
       onCreate: {
         service: 'DirectConnect',
         action: 'createDirectConnectGatewayAssociation',
@@ -366,6 +365,9 @@ export class CloudWanTGW extends constructs.Construct {
         resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
       }),
     });
+
+    return dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
+
   }
 
   /**
@@ -659,8 +661,10 @@ export class CloudWanTGW extends constructs.Construct {
         action: 'createVpnConnection',
         outputPaths: ['VpnConnection.VpnConnectionId'],	// theres too much otherwise
         parameters: {
+          TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
           TransitGatewayId: this.transitGateway.attrId,
           Type: 'ipsec.1', /* required */
+
           Options: {
             EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
             LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
@@ -681,15 +685,13 @@ export class CloudWanTGW extends constructs.Construct {
         },
       },
 
-      policy: cr.AwsCustomResourcePolicy.fromStatements(
-        [
-          new iam.PolicyStatement({
-            actions: ['*'],
-        			resources: ['*'],
-          }),
-        ],
+      policy: cr.AwsCustomResourcePolicy.fromSdkCalls(
+        {
+          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+        },
       ),
     });
+
 
     if (vpnprops.sampleconfig !=undefined) {
 
