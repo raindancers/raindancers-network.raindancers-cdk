@@ -29,7 +29,7 @@ const shineyEpvc = new Evpc(this, 'EnterpriseVPC', {
 })
 ```
 
-.
+
 ### Centralised Flow Logs and Athena Querys.
 
 This construct will create a flow log, that is written to a centralised flow log bucket. The construct expects to find the bucket name in they key ```flowlogbucket``` in cdk.json. (This typically is in the log-archive acount, set up by Control Tower). This requires that the buckets policy allows access. To DISABLE this feature, set the disableFLowLog to ```false```.  By default the flow log will aggregate flow logs at a 10minute internal.  To enable aggregation on a 1 minute interval, set the oneMinuteFlowLogs property to true.   
