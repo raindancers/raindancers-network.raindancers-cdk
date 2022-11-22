@@ -4,7 +4,7 @@ The raindancers network package contains  constructs that construct to provide a
 
 All of the methods that work with ec2.Vpc, work with Evpc.   Refer to [the ec2.Vpc Documentation](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ec2-readme.html)
 
-Note: This Construct Library shoudl be considered experimental, and breaking changes are likely, untill it reaches version 1.x.x.  
+Note: This Construct Library shoudl be considered experimental, and breaking changes are likely, untill it reaches version 1.x.x.  !
 
 The authors of this construct encourage and welcome PR's.  Please raise an issue...
 
