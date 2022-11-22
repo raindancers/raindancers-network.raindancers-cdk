@@ -207,7 +207,7 @@ export class CloudWanTGW extends constructs.Construct {
           image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
           command: [
             'bash', '-c',
-            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output'
+            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
           ],
         },
       }),
