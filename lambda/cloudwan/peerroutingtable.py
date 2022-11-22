@@ -14,8 +14,11 @@ def on_event(event, context):
 def is_complete(event, context):
 	props = event["ResourceProperties"]
 
+	print(boto3.__version__) 
+
 	# check if the peering is completed. 
 	peering_completed = False
+
 
 	peerings = networkmanager.list_peerings(
     	CoreNetworkId= props['CoreNetworkId'],
