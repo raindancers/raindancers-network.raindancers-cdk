@@ -13,21 +13,22 @@ def on_event(event, context):
 
 def on_create(event):
 	props = event["ResourceProperties"]
+	options = props['Options']
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
 		TransitGatewayId=props['TransitGatewayId'],
 		TransportTransitGatewayAttachmentId=props['TransportTransitGatewayAttachmentId'],
 		Options={
-			'EnableAcceleration': props['enableAcceleration'],
-			'LocalIpv4NetworkCidr': props['localIpv4NetworkCidr'],			
-			'RemoteIpv4NetworkCidr': props['remoteIpv4NetworkCidr'],
-			'OutsideIpAddressType': props['outsideIpAddressType'],
-			'StaticRoutesOnly': props['staticRoutesOnly'],
-			'TunnelInsideIpVersion': props['tunnelInsideIpVersion'],
-			'TunnelOptions': props['tunnels'],
+			'EnableAcceleration': options['EnableAcceleration'],
+			'LocalIpv4NetworkCidr': options['LocalIpv4NetworkCidr'],			
+			'RemoteIpv4NetworkCidr': options['RemoteIpv4NetworkCidr'],
+			'OutsideIpAddressType': options['OutsideIpAddressType'],
+			'StaticRoutesOnly': options['StaticRoutesOnly'],
+			'TunnelInsideIpVersion': options['TunnelInsideIpVersion'],
+			'TunnelOptions': options['tunnels'],
 		},
 	)
-	
+
 	
 	return { 
 		'PhysicalResourceId': response['VpnConnection']['VpnConnectionId'],
