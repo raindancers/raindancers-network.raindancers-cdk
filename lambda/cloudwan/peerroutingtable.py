@@ -4,12 +4,12 @@ networkmanager = boto3.client('networkmanager', region_name = 'us-west-2')
 ssm = boto3.client('ssm')
 
 def on_event(event, context):
-  print(event)
-  request_type = event['RequestType']
-  if request_type == 'Create': return on_create(event)
-  if request_type == 'Update': return donothing(event)
-  if request_type == 'Delete': return donothing(event)
-  raise Exception("Invalid request type: %s" % request_type)
+	print(event)
+	request_type = event['RequestType']
+	if request_type == 'Create': return on_create(event)
+	if request_type == 'Update': return donothing(event)
+	if request_type == 'Delete': return donothing(event)
+	raise Exception("Invalid request type: %s" % request_type)
 
 def is_complete(event, context):
 	props = event["ResourceProperties"]
@@ -21,8 +21,8 @@ def is_complete(event, context):
 
 
 	peerings = networkmanager.list_peerings(
-    	CoreNetworkId= props['CoreNetworkId'],
-   )
+		CoreNetworkId= props['CoreNetworkId'],
+	)
 
 	get_peering = next((peering for peering in peerings['Peerings'] if peering["PeeringId"] == props['PeeringId']), None)
 
@@ -45,9 +45,12 @@ def is_complete(event, context):
 					peering_completed = True	
 					break
 
-			return {
-				'IsComplete': False,
-			}
+	
+	if peering_completed is False:
+
+		return {
+			'IsComplete': False,
+		}
 			
 	if peering_completed is True:
 
@@ -59,9 +62,9 @@ def is_complete(event, context):
 		)
 		
 		ssm.put_parameter(
-    		Name=props['attachmentIdSSMName'],
-    		Value=attachment['TransitGatewayRouteTableAttachment']['Attachment']['AttachmentId'],
-    		Overwrite=True
+			Name=props['attachmentIdSSMName'],
+			Value=attachment['TransitGatewayRouteTableAttachment']['Attachment']['AttachmentId'],
+			Overwrite=True
 		)
 
 		return { 
@@ -71,24 +74,20 @@ def is_complete(event, context):
 			}
 		}
 
-	# if the peering is not completed, the funciton returns nothing and the is_complete goes back for a second turn
-
-
-
 def on_delete(event):
 
 	props = event["ResourceProperties"]
 
 	networkmanager.delete_attachment(
 		AttachmentId=ssm.get_parameter(
-    		Name=props['attachmentIdSSMName']
+			Name=props['attachmentIdSSMName']
 		)['Parameter']['Value']
 	)
 
 
 def on_create(event):
-  print("waiting for attachment")
+	print("waiting for attachment")
 
 def donothing(event):
-  print("no operation required on update")
+	print("no operation required on update")
 
