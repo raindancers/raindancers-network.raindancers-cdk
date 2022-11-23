@@ -14,8 +14,6 @@ def on_event(event, context):
 def is_complete(event, context):
 	props = event["ResourceProperties"]
 
-	print(boto3.__version__) 
-
 	# check if the peering is completed. 
 	peering_completed = False
 
@@ -58,7 +56,7 @@ def is_complete(event, context):
 		attachment = networkmanager.create_transit_gateway_route_table_attachment(
 			PeeringId=props['PeeringId'],
 			TransitGatewayRouteTableArn= props['transitGatewayRouteTableArn'],
-			Tags=[props['AttachmentTag']]
+			#Tags=[props['AttachmentTag']]
 		)
 		
 		ssm.put_parameter(
