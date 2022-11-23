@@ -227,7 +227,15 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     const isPeeringDone = new aws_lambda.Function(this, 'ispeeringDone', {
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan'), {
+        bundling: {
+          image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
+          command: [
+            'bash', '-c',
+            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
+          ],
+        },
+      }),
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'peerroutingtable.is_complete',
     });
