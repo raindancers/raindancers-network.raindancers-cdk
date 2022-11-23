@@ -44,6 +44,10 @@ def is_complete(event, context):
 				if get_peering['State'] == 'AVAILABLE':
 					peering_completed = True	
 					break
+
+			return {
+				'IsComplete': False,
+			}
 			
 	if peering_completed is True:
 
