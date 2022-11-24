@@ -25,7 +25,7 @@ def on_create(event):
 			'OutsideIpAddressType': options['OutsideIpAddressType'],
 			'StaticRoutesOnly': options['StaticRoutesOnly'],
 			'TunnelInsideIpVersion': options['TunnelInsideIpVersion'],
-			'TunnelOptions': props['tunnels'],
+			'TunnelOptions': options['tunnels'],
 		},
 	)
 

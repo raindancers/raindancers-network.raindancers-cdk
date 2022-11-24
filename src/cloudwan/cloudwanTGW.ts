@@ -273,7 +273,7 @@ export class CloudWanTGW extends constructs.Construct {
     attachmentId.grantWrite(onEvent);
 
 
-    new cdk.CustomResource(this, 'AttachTGRouteTable', {
+    const attachTGRouteTable = new cdk.CustomResource(this, 'AttachTGRouteTable', {
       serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
       properties: {
         transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
@@ -285,7 +285,8 @@ export class CloudWanTGW extends constructs.Construct {
       },
     });
 
-    // this.tgAttachmentId = attachTGRouteTable.getAttString('AttachmentId')
+    
+
 
 
     // if (props.defaultRouteInSegments !== undefined) {
