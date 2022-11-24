@@ -478,7 +478,15 @@ export class CloudWanTGW extends constructs.Construct {
 
     const createVpnCrLambda = new aws_lambda.SingletonFunction(this, `createVpnCrLambda${name}`, {
       uuid: 'AABBCCDDEEFF000001',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan'), {
+        bundling: {
+          image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
+          command: [
+            'bash', '-c',
+            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
+          ],
+        },
+      }),
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'addS2Svpn.on_event',
     });
@@ -702,15 +710,17 @@ export class CloudWanTGW extends constructs.Construct {
         Type: 'ipsec.1',
         TransitGatewayId: this.transitGateway.attrId,
         TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
-        Options: {
-          EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
-          LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
-          RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
-          OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
-          StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
-          TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
-          TunnelOptions: tunnels,
-        },
+        Options: cdk.Fn.base64(
+          cdk.Stack.of(this).toJsonString({
+            EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
+            LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
+            RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
+            OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
+            StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
+            TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
+            TunnelOptions: tunnels,
+          }),
+        ),
       },
     });
 

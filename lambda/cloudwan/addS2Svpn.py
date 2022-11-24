@@ -1,4 +1,6 @@
 import boto3
+import json
+import base64
 
 ec2 = boto3.client('ec2')
 s3 = boto3.resource('s3')
@@ -19,13 +21,13 @@ def on_create(event):
 		TransitGatewayId=props['TransitGatewayId'],
 		TransportTransitGatewayAttachmentId=props['TransportTransitGatewayAttachmentId'],
 		Options={
-			'EnableAcceleration': options['EnableAcceleration'],
+			'EnableAcceleration': json.loads(base64.b64decode(options['EnableAcceleration']).decode('utf-8')),
 			'LocalIpv4NetworkCidr': options['LocalIpv4NetworkCidr'],			
 			'RemoteIpv4NetworkCidr': options['RemoteIpv4NetworkCidr'],
 			'OutsideIpAddressType': options['OutsideIpAddressType'],
-			'StaticRoutesOnly': options['StaticRoutesOnly'],
+			'StaticRoutesOnly': json.loads(base64.b64decode(options['StaticRoutesOnly']).decode('utf-8')),
 			'TunnelInsideIpVersion': options['TunnelInsideIpVersion'],
-			'TunnelOptions': options['TunnelOptions'],
+			'TunnelOptions': json.loads(base64.b64decode(options['TunnelOptions']).decode('utf-8'))
 		},
 	)
 
