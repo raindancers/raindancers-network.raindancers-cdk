@@ -510,10 +510,8 @@ export class CloudWanTGW extends constructs.Construct {
     const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
       generateSecretString: {
         excludePunctuation: true,
-        // We will Prefix the generated key with PSK. This means the key will never start
-        // with zero, but will allow the use of numerics.  The PSK, has to between 8 and 64
-        // characters, so we will use 61 + len('PSK') = 64
-        passwordLength: 61,
+        excludeNumbers: true,
+        passwordLength: 48,
       },
       secretName: `${name}-PSK`,
       description: `PresharedKey for ${name} s2S VPN`,
@@ -669,7 +667,7 @@ export class CloudWanTGW extends constructs.Construct {
       tunnels.push({
 
         // key and tunnel addressing
-        PreSharedKey: 'PSK' + vpnPresharedKey.secretValue,
+        PreSharedKey: vpnPresharedKey.secretValue,
         TunnelInsideCidr: cidr,
 
 
