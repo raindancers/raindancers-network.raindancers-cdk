@@ -6,7 +6,7 @@ All of the methods that work with ec2.Vpc, work with Evpc.   Refer to [the ec2.V
 
 Note: This Construct Library shoudl be considered experimental, and breaking changes are likely, untill it reaches version 1.x.x.  
 
-The authors of this construct encourage and welcome PR's.  Please raise an issue...
+The authors of this construct encourage and welcome PR's.  Please raise an issue.../
 
 ```
 import { Evpc } from 'raindancers-cdk.raindancers-network';
