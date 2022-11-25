@@ -678,21 +678,21 @@ export class CloudWanTGW extends constructs.Construct {
         DPDTimeoutSeconds: vpnprops.vpnspec.dpdTimeoutSeconds,				// after 30seconds attempt to restart
 
         // Allowable IKE versions
-        IKEVersions: ikeVersions,
+        IKEVersions: makeObject(ikeVersions),
         LogOptions: {
           CloudWatchLogOptions: cloudWatchLogOptions,
         },
 
         // Phase one Configuration
-        Phase1DHGroupNumbers: vpnprops.vpnspec.phase1DHGroupNumbers,
-        Phase1EncryptionAlgorithms: vpnprops.vpnspec.phase1EncryptionAlgorithms,
-        Phase1IntegrityAlgorithms: vpnprops.vpnspec.phase1IntegrityAlgorithms,
+        Phase1DHGroupNumbers: makeObject(vpnprops.vpnspec.phase1DHGroupNumbers),
+        Phase1EncryptionAlgorithms: makeObject(vpnprops.vpnspec.phase1EncryptionAlgorithms),
+        Phase1IntegrityAlgorithms: makeObject(vpnprops.vpnspec.phase1IntegrityAlgorithms),
         Phase1LifetimeSeconds: vpnprops.vpnspec.phase1LifetimeSeconds,
 
         // Phase Two configuration
-        Phase2DHGroupNumbers: vpnprops.vpnspec.phase2DHGroupNumbers,
-        Phase2EncryptionAlgorithms: vpnprops.vpnspec.phase2EncryptionAlgorithms,
-        Phase2IntegrityAlgorithms: vpnprops.vpnspec.phase2IntegrityAlgorithms,
+        Phase2DHGroupNumbers: makeObject(vpnprops.vpnspec.phase2DHGroupNumbers),
+        Phase2EncryptionAlgorithms: makeObject(vpnprops.vpnspec.phase2EncryptionAlgorithms),
+        Phase2IntegrityAlgorithms: makeObject(vpnprops.vpnspec.phase2IntegrityAlgorithms),
         Phase2LifetimeSeconds: vpnprops.vpnspec.phase2LifeTimeSeconds,
 
         // rekeying and windowsizes
@@ -710,9 +710,10 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     const props = {
+      CustomerGatewayId: vpnprops.customerGateway.attrCustomerGatewayId,
       Type: 'ipsec.1',
       TransitGatewayId: this.transitGateway.attrId,
-      TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
+
       Options: {
         EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
         LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
@@ -721,6 +722,7 @@ export class CloudWanTGW extends constructs.Construct {
         StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
         TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
         TunnelOptions: tunnels,
+        TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
       },
     };
 
@@ -768,5 +770,16 @@ export class CloudWanTGW extends constructs.Construct {
 
     }
   }
+}
+
+function makeObject(x: any[] | undefined) {
+  let object: Object[] = [];
+  if (x) {
+    x.forEach((item) => {
+      object.push({ Value: item });
+    });
+    return object;
+  }
+  return null;
 }
 
