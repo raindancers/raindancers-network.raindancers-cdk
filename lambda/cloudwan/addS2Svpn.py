@@ -14,20 +14,20 @@ def on_event(event, context):
 	raise Exception("Invalid request type: %s" % request_type)
 
 def on_create(event):
-	props = event["ResourceProperties"]
+	props = json.loads(base64.b64decode(event["ResourceProperties"]["props64"]).decode('utf-8'))
 	options = props['Options']
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
 		TransitGatewayId=props['TransitGatewayId'],
 		TransportTransitGatewayAttachmentId=props['TransportTransitGatewayAttachmentId'],
 		Options={
-			'EnableAcceleration': json.loads(base64.b64decode(options['EnableAcceleration']).decode('utf-8')),
+			'EnableAcceleration': options['EnableAcceleration'],
 			'LocalIpv4NetworkCidr': options['LocalIpv4NetworkCidr'],			
 			'RemoteIpv4NetworkCidr': options['RemoteIpv4NetworkCidr'],
 			'OutsideIpAddressType': options['OutsideIpAddressType'],
-			'StaticRoutesOnly': json.loads(base64.b64decode(options['StaticRoutesOnly']).decode('utf-8')),
+			'StaticRoutesOnly': options['StaticRoutesOnly'],
 			'TunnelInsideIpVersion': options['TunnelInsideIpVersion'],
-			'TunnelOptions': json.loads(base64.b64decode(options['TunnelOptions']).decode('utf-8'))
+			'TunnelOptions': options['TunnelOptions']
 		},
 	)
 

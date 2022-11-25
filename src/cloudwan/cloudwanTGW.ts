@@ -486,7 +486,7 @@ export class CloudWanTGW extends constructs.Construct {
             'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
           ],
         },
-      }),
+    }),
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'addS2Svpn.on_event',
     });
@@ -704,25 +704,35 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
 
+    // the converison to a base64 string is so that the types of the string can be passed to the lambda without them being converted to a string.
+    // json supports ints and boleans, but natively the propertys in a lambda dont. 
+    // where the the properties are not plain strings, they need to be packed in base64, and then decoded lambda side.
+
+    
+
+    const props =  {
+      Type: 'ipsec.1',
+      TransitGatewayId: this.transitGateway.attrId,
+      TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
+      Options: {
+          EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
+          LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
+          RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
+          OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
+          StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
+          TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
+          TunnelOptions: tunnels,
+      }
+    }
+    
     const vpn = new cdk.CustomResource(this, `CreateP2PVPN${name}`, {
       serviceToken: createVPNProvider.serviceToken,
       properties: {
-        Type: 'ipsec.1',
-        TransitGatewayId: this.transitGateway.attrId,
-        TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
-        Options: cdk.Fn.base64(
-          cdk.Stack.of(this).toJsonString({
-            EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
-            LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
-            RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
-            OutsideIpAddressType: vpnprops.vpnspec.outsideIpAddressType,
-            StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
-            TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
-            TunnelOptions: tunnels,
-          }),
-        ),
-      },
+        props64: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(props))
+      }
     });
+
+
 
 
     if (vpnprops.sampleconfig !=undefined) {
