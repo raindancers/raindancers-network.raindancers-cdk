@@ -19,7 +19,6 @@ def on_create(event):
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
 		TransitGatewayId=props['TransitGatewayId'],
-		TransportTransitGatewayAttachmentId=props['TransportTransitGatewayAttachmentId'],
 		Options={
 			'EnableAcceleration': options['EnableAcceleration'],
 			'LocalIpv4NetworkCidr': options['LocalIpv4NetworkCidr'],			
