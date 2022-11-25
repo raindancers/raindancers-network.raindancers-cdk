@@ -18,6 +18,7 @@ def on_create(event):
 	options = props['Options']
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
+		CustomerGatewayId=props['CustomerGatewayId'],
 		TransitGatewayId=props['TransitGatewayId'],
 		Options={
 			'EnableAcceleration': options['EnableAcceleration'],
@@ -26,7 +27,8 @@ def on_create(event):
 			'OutsideIpAddressType': options['OutsideIpAddressType'],
 			'StaticRoutesOnly': options['StaticRoutesOnly'],
 			'TunnelInsideIpVersion': options['TunnelInsideIpVersion'],
-			'TunnelOptions': options['TunnelOptions']
+			'TunnelOptions': options['TunnelOptions'],
+			'TransportTransitGatewayAttachmentId': options['TransportTransitGatewayAttachmentId']
 		},
 	)
 

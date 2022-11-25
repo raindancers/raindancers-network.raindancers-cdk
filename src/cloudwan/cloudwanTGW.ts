@@ -678,7 +678,7 @@ export class CloudWanTGW extends constructs.Construct {
         DPDTimeoutSeconds: vpnprops.vpnspec.dpdTimeoutSeconds,				// after 30seconds attempt to restart
 
         // Allowable IKE versions
-        IKEVersions: makeObject(ikeVersions),
+        IKEVersions: ikeVersions,
         LogOptions: {
           CloudWatchLogOptions: cloudWatchLogOptions,
         },
