@@ -657,12 +657,12 @@ export class CloudWanTGW extends constructs.Construct {
     const tunnels: object[] = [];
 
     //Ike Versions:
-    var ikeVersions: object[] = [];
-    if (vpnprops.vpnspec.ikeVersions) {
-      vpnprops.vpnspec.ikeVersions?.forEach((ikeversion) => {
-        ikeVersions.push({ version: ikeversion });
-      });
-    }
+    // var ikeVersions: object[] = [];
+    // if (vpnprops.vpnspec.ikeVersions) {
+    //   vpnprops.vpnspec.ikeVersions?.forEach((ikeversion) => {
+    //     ikeVersions.push({ version: ikeversion });
+    //   });
+    // }
 
 
     assignedCidrs.forEach((cidr) => {
@@ -678,7 +678,7 @@ export class CloudWanTGW extends constructs.Construct {
         DPDTimeoutSeconds: vpnprops.vpnspec.dpdTimeoutSeconds,				// after 30seconds attempt to restart
 
         // Allowable IKE versions
-        IKEVersions: ikeVersions,
+        IKEVersions: makeObject(vpnprops.vpnspec.ikeVersions),
         LogOptions: {
           CloudWatchLogOptions: cloudWatchLogOptions,
         },
