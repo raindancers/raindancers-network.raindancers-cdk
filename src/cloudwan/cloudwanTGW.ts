@@ -402,7 +402,7 @@ export class CloudWanTGW extends constructs.Construct {
             },
           ],
         },
-        physicalResourceId: cr.PhysicalResourceId.of('getAttachmentId')
+        physicalResourceId: cr.PhysicalResourceId.of('getAttachmentId'),
       },
       logRetention: logs.RetentionDays.ONE_WEEK,
       policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
