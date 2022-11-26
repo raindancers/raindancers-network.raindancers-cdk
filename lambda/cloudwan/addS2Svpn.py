@@ -15,7 +15,10 @@ def on_event(event, context):
 
 def on_create(event):
 	props = json.loads(base64.b64decode(event["ResourceProperties"]["props64"]).decode('utf-8'))
+
 	options = props['Options']
+
+	print(options)
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
 		CustomerGatewayId=props['CustomerGatewayId'],
