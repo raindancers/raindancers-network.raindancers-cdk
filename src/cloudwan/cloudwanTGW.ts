@@ -476,6 +476,15 @@ export class CloudWanTGW extends constructs.Construct {
    */
   public adds2sVPN(name: string, vpnprops: CloudWanTGWProps.VpnProps): void {
 
+    const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
+      generateSecretString: {
+        excludePunctuation: true,
+        passwordLength: 61,
+      },
+      secretName: `${name}-PSK`,
+      description: `PresharedKey for ${name} s2S VPN`,
+    });
+
     const createVpnCrLambda = new aws_lambda.SingletonFunction(this, `createVpnCrLambda${name}`, {
       uuid: 'AABBCCDDEEFF000001',
       code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan'), {
@@ -502,19 +511,14 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     );
 
+    vpnPresharedKey.grantRead(createVpnCrLambda);
+
+
     const createVPNProvider = new cr.Provider(this, `createVPNProvider${name}`, {
       onEventHandler: createVpnCrLambda,
       logRetention: logs.RetentionDays.ONE_WEEK,
     });
 
-    const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
-      generateSecretString: {
-        excludePunctuation: true,
-        passwordLength: 61,
-      },
-      secretName: `${name}-PSK`,
-      description: `PresharedKey for ${name} s2S VPN`,
-    });
 
     // create a flow log for the vpn
 
