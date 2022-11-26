@@ -29,6 +29,8 @@ export class CloudWanTGW extends constructs.Construct {
   /** The Cidr Ranges assigned to the transit Gateway  */
   public readonly tgcidr: string[] | undefined;
 
+  public tgDXattachmentId: string;
+
   /**
 	 *
 	 * @param scope scope in which the resource is c
@@ -40,6 +42,7 @@ export class CloudWanTGW extends constructs.Construct {
 
     this.tgcidr = props.tgCidr;
 
+    this.tgDXattachmentId = 'abcef';
 
     // look up the corewan
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-tgOnCloudwan', {
@@ -380,6 +383,8 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     });
 
+    this.tgDXattachmentId = dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
+
     return dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
 
   }
@@ -540,6 +545,12 @@ export class CloudWanTGW extends constructs.Construct {
         // }
       }
     }
+
+    // validate that if the Outside addrss's are Private that Acceleration is not enabled.
+    if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && vpnprops.vpnspec.enableAcceleration === true) {
+      throw new Error('if using Private addresss for S2S Vpn, Vpn Acceleration can not be enabled.');
+    }
+
 
     // validate that if the Outside address's are Private that a DX gateway Assn is provided.
     if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && !vpnprops.dxAssociationId) {
@@ -723,7 +734,8 @@ export class CloudWanTGW extends constructs.Construct {
         StaticRoutesOnly: vpnprops.vpnspec.staticRoutesOnly,
         TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
         TunnelOptions: tunnels,
-        TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
+        TransportTransitGatewayAttachmentId: this.tgDXattachmentId,
+        //TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
       },
     };
 

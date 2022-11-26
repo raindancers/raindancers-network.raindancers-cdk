@@ -265,6 +265,7 @@ Any object.
 | <code><a href="#raindancers-network.CloudWanTGW.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#raindancers-network.CloudWanTGW.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | The created Transit Gateway. |
 | <code><a href="#raindancers-network.CloudWanTGW.property.tgcidr">tgcidr</a></code> | <code>string[]</code> | The Cidr Ranges assigned to the transit Gateway. |
+| <code><a href="#raindancers-network.CloudWanTGW.property.tgDXattachmentId">tgDXattachmentId</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -301,6 +302,16 @@ public readonly tgcidr: string[];
 - *Type:* string[]
 
 The Cidr Ranges assigned to the transit Gateway.
+
+---
+
+##### `tgDXattachmentId`<sup>Required</sup> <a name="tgDXattachmentId" id="raindancers-network.CloudWanTGW.property.tgDXattachmentId"></a>
+
+```typescript
+public readonly tgDXattachmentId: string;
+```
+
+- *Type:* string
 
 ---
 
