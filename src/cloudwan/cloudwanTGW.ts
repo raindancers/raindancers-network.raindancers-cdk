@@ -366,7 +366,6 @@ export class CloudWanTGW extends constructs.Construct {
           gatewayId: this.transitGateway.attrId,
         },
         physicalResourceId: cr.PhysicalResourceId.fromResponse('directConnectGatewayAssociation.associationId'),
-
       },
 
       onDelete: {
@@ -383,10 +382,40 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     });
 
-    this.tgDXattachmentId = dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
+    const getAttachmentId = new cr.AwsCustomResource(this, 'Getattachment', {
+      onCreate: {
+        service: 'ec2',
+        action: 'describeTransitGatewayAttachments',
+        parameters: {
+          Filters: [
+            {
+              Name: 'resource-type',
+              Values: [
+                'direct-connect-gateway',
+              ],
+            },
+            {
+              Name: 'transit-gateway-id',
+              Values: [
+                this.transitGateway.attrId,
+              ],
+            },
+          ],
+        },
+      },
+      logRetention: logs.RetentionDays.ONE_WEEK,
+      policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+        resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+      }),
+    });
 
-    return dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
+    getAttachmentId.node.addDependency(dxGWAssn);
 
+
+    this.tgDXattachmentId = getAttachmentId.getResponseField('TransitGatewayAttachments.0.TransitGatewayAttachmentId');
+    //this.tgDXattachmentId = dxGWAssn.getResponseField('directConnectGatewayAssociation.associationId');
+
+    return getAttachmentId.getResponseField('TransitGatewayAttachments.0.TransitGatewayAttachmentId');
   }
 
   /**
