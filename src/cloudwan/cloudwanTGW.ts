@@ -746,9 +746,8 @@ export class CloudWanTGW extends constructs.Construct {
       CustomerGatewayId: vpnprops.customerGateway.attrCustomerGatewayId,
       Type: 'ipsec.1',
       TransitGatewayId: this.transitGateway.attrId,
-
+      Name: name,
       Options: {
-        Name: name,
         EnableAcceleration: vpnprops.vpnspec.enableAcceleration,
         LocalIpv4NetworkCidr: vpnprops.vpnspec.localIpv4NetworkCidr,			// if its routable, let it go
         RemoteIpv4NetworkCidr: vpnprops.vpnspec.remoteIpv4NetworkCidr,
