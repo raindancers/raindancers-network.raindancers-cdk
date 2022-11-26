@@ -15,10 +15,11 @@ def on_create(event):
 
 	props = event["ResourceProperties"]
 	
+	print(props)
+
 	s3_object = s3.Object(
 		props['BucketName'].split(':')[5],
 		f"{props['Name']}_ipsec_vpn_sample_configuration.txt"
-	)
 	
 	cfg = ec2.get_vpn_connection_device_sample_configuration(
 		VpnConnectionId=props['VpnConnectionId'],

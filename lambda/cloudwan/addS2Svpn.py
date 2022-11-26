@@ -45,6 +45,16 @@ def on_create(event):
 			'TunnelOptions': options['TunnelOptions'],
 			'TransportTransitGatewayAttachmentId': options['TransportTransitGatewayAttachmentId']
 		},
+		TagSpecifications=[
+		{
+			'Tags': [
+				{
+					'Key': 'Name',
+					'Value': props['Name']
+				},
+			]
+		},
+	]
 	)
 
 	
