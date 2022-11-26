@@ -698,15 +698,6 @@ export class CloudWanTGW extends constructs.Construct {
 
     const tunnels: object[] = [];
 
-    //Ike Versions:
-    // var ikeVersions: object[] = [];
-    // if (vpnprops.vpnspec.ikeVersions) {
-    //   vpnprops.vpnspec.ikeVersions?.forEach((ikeversion) => {
-    //     ikeVersions.push({ version: ikeversion });
-    //   });
-    // }
-
-
     assignedCidrs.forEach((cidr) => {
       tunnels.push({
 
@@ -765,7 +756,6 @@ export class CloudWanTGW extends constructs.Construct {
         TunnelInsideIpVersion: vpnprops.vpnspec.tunnelInsideIpVersion,
         TunnelOptions: tunnels,
         TransportTransitGatewayAttachmentId: this.tgDXattachmentId,
-        //TransportTransitGatewayAttachmentId: vpnprops.dxAssociationId,
       },
     };
 
@@ -803,8 +793,7 @@ export class CloudWanTGW extends constructs.Construct {
         }).serviceToken,
         properties: {
           Name: `${name}`,
-          BucketArn: vpnprops.sampleconfig.bucket.bucketArn,
-          BucketName: vpnprops.sampleconfig.bucket.bucketArn,
+          BucketName: vpnprops.sampleconfig.bucket.bucketName,
           VpnConnectionId: vpn.getAtt('VpnConnectionId'),
           VpnConnectionDeviceTypeId: vpnprops.sampleconfig.deviceType,
           InternetKeyExchangeVersion: vpnprops.sampleconfig.ikeVersion,

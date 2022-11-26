@@ -16,7 +16,7 @@ def on_create(event):
 	props = event["ResourceProperties"]
 	
 	s3_object = s3.Object(
-		props['BucketName'],
+		props['BucketName'].split(':')[5],
 		f"{props['Name']}_ipsec_vpn_sample_configuration.txt"
 	)
 	
