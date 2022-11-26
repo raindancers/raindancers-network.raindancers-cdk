@@ -3440,7 +3440,7 @@ const vpnProps: VpnProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.VpnProps.property.customerGateway">customerGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnCustomerGateway</code> | The customer gateway where the vpn will terminate. |
 | <code><a href="#raindancers-network.VpnProps.property.vpnspec">vpnspec</a></code> | <code><a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a></code> | a VPN specification for the VPN. |
-| <code><a href="#raindancers-network.VpnProps.property.dxAssociationId">dxAssociationId</a></code> | <code>string</code> | DX Association Id. |
+| <code><a href="#raindancers-network.VpnProps.property.dxAssociationId">dxAssociationId</a></code> | <code>string</code> | DX Association Id, need to use if there using private IP. |
 | <code><a href="#raindancers-network.VpnProps.property.sampleconfig">sampleconfig</a></code> | <code><a href="#raindancers-network.SampleConfig">SampleConfig</a></code> | Optionally provide a sampleconfig specification. |
 | <code><a href="#raindancers-network.VpnProps.property.tunnelInsideCidr">tunnelInsideCidr</a></code> | <code>string[]</code> | Specify a pair of concrete Cidr's for the tunnel. |
 | <code><a href="#raindancers-network.VpnProps.property.tunnelIpamPool">tunnelIpamPool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | Specify an ipam pool to allocated the tunnel address's from. |
@@ -3479,7 +3479,7 @@ public readonly dxAssociationId: string;
 
 - *Type:* string
 
-DX Association Id.
+DX Association Id, need to use if there using private IP.
 
 ---
 
@@ -4524,6 +4524,7 @@ Remote end Device Types.
 | <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R77_10">CHECKPOINT_R77_10</a></code> | Checkpoint R77_10. |
 | <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R80_10">CHECKPOINT_R80_10</a></code> | *No description.* |
 | <code><a href="#raindancers-network.VpnDeviceType.CISCO_ISR_12_4">CISCO_ISR_12_4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.VpnDeviceType.CISCO_ASR_12_4">CISCO_ASR_12_4</a></code> | *No description.* |
 
 ---
 
@@ -4540,6 +4541,11 @@ Checkpoint R77_10.
 
 
 ##### `CISCO_ISR_12_4` <a name="CISCO_ISR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ISR_12_4"></a>
+
+---
+
+
+##### `CISCO_ASR_12_4` <a name="CISCO_ASR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ASR_12_4"></a>
 
 ---
 

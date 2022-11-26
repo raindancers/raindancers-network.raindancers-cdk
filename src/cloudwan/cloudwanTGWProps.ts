@@ -61,8 +61,11 @@ export enum VpnDeviceType{
   //** Checkpoint R80_10 */
   CHECKPOINT_R80_10 = '1b270706',
   //** Cisco ISR 12.4+ */
-  CISCO_ISR_12_4 = 'b0adb196'
+  CISCO_ISR_12_4 = 'b0adb196',
+  //** Cisco ASR 1000  */
+  CISCO_ASR_12_4 = '48548f98'
 }
+
 
 export enum Phase1DHGroupNumbers{
   DH2 = 2,
@@ -239,7 +242,7 @@ export interface VpnProps {
   readonly tunnelIpamPool?: ec2.CfnIPAMPool | undefined;
   /** Optionally provide a sampleconfig specification */
   readonly sampleconfig?: SampleConfig;
-  /** DX Association Id  */
+  /** DX Association Id, need to use if there using private IP  */
   readonly dxAssociationId?: string | undefined;
 }
 
