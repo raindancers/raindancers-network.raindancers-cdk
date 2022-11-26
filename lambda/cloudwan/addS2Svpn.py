@@ -21,16 +21,14 @@ def on_create(event):
 
 	print(options)
 
+	for i, tunnel in options['TunnelOptions']:
+		options['TunnelOptions'][i]['PreSharedKey'] = 'PSK' + sm.get_secret_value(
+			SecretId=options['TunnelOptions'][i]['PreSharedKeyArn'],
+		)['SecretString']
+		del options['TunnelOptions'][i]['PreSharedKeyArn']
 
-	# lookup from Secret from Arn 
-	options['TunnelOptions']['PreSharedKey'] = sm.get_secret_value(
-		SecretId=options['TunnelOptions']['PreSharedKeyArn'],
-	)['SecretString']
-
-	# delete the arn from The TunnelOptons
-	del options['TunnelOptions']['PreSharedKeyArn']
-	
-
+		#delete this line!
+		print(i, options['TunnelOptions'][i]['PreSharedKey'])
 
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
