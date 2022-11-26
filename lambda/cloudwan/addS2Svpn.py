@@ -4,6 +4,7 @@ import base64
 
 ec2 = boto3.client('ec2')
 s3 = boto3.resource('s3')
+sm = boto3.client('secretsmanager')
 
 def on_event(event, context):
 	print(event)
@@ -19,6 +20,18 @@ def on_create(event):
 	options = props['Options']
 
 	print(options)
+
+
+	# lookup from Secret from Arn 
+	options['TunnelOptions']['PreSharedKey'] = sm.get_secret_value(
+		SecretId=options['TunnelOptions']['PreSharedKeyArn'],
+	)['SecretString']
+
+	# delete the arn from The TunnelOptons
+	del options['TunnelOptions']['PreSharedKeyArn']
+	
+
+
 	response = ec2.create_vpn_connection(
 		Type=props['Type'],
 		CustomerGatewayId=props['CustomerGatewayId'],

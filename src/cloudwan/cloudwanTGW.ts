@@ -510,8 +510,7 @@ export class CloudWanTGW extends constructs.Construct {
     const vpnPresharedKey = new secretsmanager.Secret(this, `${name}PresharedKey`, {
       generateSecretString: {
         excludePunctuation: true,
-        excludeNumbers: true,
-        passwordLength: 48,
+        passwordLength: 61,
       },
       secretName: `${name}-PSK`,
       description: `PresharedKey for ${name} s2S VPN`,
@@ -667,7 +666,7 @@ export class CloudWanTGW extends constructs.Construct {
       tunnels.push({
 
         // key and tunnel addressing
-        PreSharedKey: vpnPresharedKey.secretValue,
+        PreSharedKeyArn: vpnPresharedKey.secretFullArn,
         TunnelInsideCidr: cidr,
 
 
