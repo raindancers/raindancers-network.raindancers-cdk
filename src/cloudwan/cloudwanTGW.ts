@@ -384,7 +384,7 @@ export class CloudWanTGW extends constructs.Construct {
 
     const getAttachmentId = new cr.AwsCustomResource(this, 'Getattachment', {
       onCreate: {
-        service: 'ec2',
+        service: 'EC2',
         action: 'describeTransitGatewayAttachments',
         parameters: {
           Filters: [
