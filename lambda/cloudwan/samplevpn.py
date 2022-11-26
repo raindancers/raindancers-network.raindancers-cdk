@@ -17,13 +17,13 @@ def on_create(event):
 	
 	s3_object = s3.Object(
 		props['BucketName'],
-		f"{props['Name']}_ipsec_vpn_sample_configuration"
+		f"{props['Name']}_ipsec_vpn_sample_configuration.txt"
 	)
 	
 	cfg = ec2.get_vpn_connection_device_sample_configuration(
 		VpnConnectionId=props['VpnConnectionId'],
 		VpnConnectionDeviceTypeId=props['VpnConnectionDeviceTypeId'],
-		InternetKeyExchangeVersion=props['InternetKeyExchangeVersion']
+		#InternetKeyExchangeVersion=props['InternetKeyExchangeVersion']
 	)['VpnConnectionDeviceSampleConfiguration']
 	
 	s3_object.put(Body=cfg)
