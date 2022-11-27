@@ -47,6 +47,7 @@ def on_create(event):
 		},
 		TagSpecifications=[
 		{
+			'ResourceType': 'vpn-connection',
 			'Tags': [
 				{
 					'Key': 'Name',
