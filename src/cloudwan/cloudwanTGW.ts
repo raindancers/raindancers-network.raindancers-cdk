@@ -38,7 +38,7 @@ export class CloudWanTGW extends constructs.Construct {
   /**
    * the AttachmentId between the Transit Gateway and the cloudwan
    */
-  public cloudwanTgAttachmentId: string;
+  public readonly cloudwanTgAttachmentId: string;
 
   /**
 	 *

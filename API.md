@@ -263,9 +263,9 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.CloudWanTGW.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId">cloudwanTgAttachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and the cloudwan. |
 | <code><a href="#raindancers-network.CloudWanTGW.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | The created Transit Gateway. |
 | <code><a href="#raindancers-network.CloudWanTGW.property.tgcidr">tgcidr</a></code> | <code>string[]</code> | The Cidr Ranges assigned to the transit Gateway. |
-| <code><a href="#raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId">cloudwanTgAttachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and the cloudwan. |
 | <code><a href="#raindancers-network.CloudWanTGW.property.tgDXattachmentId">tgDXattachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and DX ( if any ). |
 
 ---
@@ -279,6 +279,18 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `cloudwanTgAttachmentId`<sup>Required</sup> <a name="cloudwanTgAttachmentId" id="raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId"></a>
+
+```typescript
+public readonly cloudwanTgAttachmentId: string;
+```
+
+- *Type:* string
+
+the AttachmentId between the Transit Gateway and the cloudwan.
 
 ---
 
@@ -303,18 +315,6 @@ public readonly tgcidr: string[];
 - *Type:* string[]
 
 The Cidr Ranges assigned to the transit Gateway.
-
----
-
-##### `cloudwanTgAttachmentId`<sup>Required</sup> <a name="cloudwanTgAttachmentId" id="raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId"></a>
-
-```typescript
-public readonly cloudwanTgAttachmentId: string;
-```
-
-- *Type:* string
-
-the AttachmentId between the Transit Gateway and the cloudwan.
 
 ---
 
