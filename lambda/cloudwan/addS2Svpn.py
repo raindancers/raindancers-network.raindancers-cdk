@@ -45,17 +45,6 @@ def on_create(event):
 			'TunnelOptions': options['TunnelOptions'],
 			'TransportTransitGatewayAttachmentId': options['TransportTransitGatewayAttachmentId']
 		},
-		TagSpecifications=[
-		{
-			'ResourceType': 'vpn-connection',
-			'Tags': [
-				{
-					'Key': 'Name',
-					'Value': props['Name']
-				},
-			]
-		},
-	]
 	)
 
 	
