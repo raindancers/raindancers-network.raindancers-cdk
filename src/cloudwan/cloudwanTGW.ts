@@ -29,7 +29,16 @@ export class CloudWanTGW extends constructs.Construct {
   /** The Cidr Ranges assigned to the transit Gateway  */
   public readonly tgcidr: string[] | undefined;
 
-  public tgDXattachmentId: string;
+
+  /**
+   * the AttachmentId between the Transit Gateway and DX ( if any )
+   */
+  public tgDXattachmentId: string | undefined;
+
+  /**
+   * the AttachmentId between the Transit Gateway and the cloudwan
+   */
+  public cloudwanTgAttachmentId: string;
 
   /**
 	 *
@@ -41,8 +50,7 @@ export class CloudWanTGW extends constructs.Construct {
     super(scope, id);
 
     this.tgcidr = props.tgCidr;
-
-    this.tgDXattachmentId = 'abcef';
+    //this.tgDXattachmentId = 'abcef';
 
     // look up the corewan
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-tgOnCloudwan', {
@@ -83,8 +91,6 @@ export class CloudWanTGW extends constructs.Construct {
       description: props.description,
       dnsSupport: 'enable',
       multicastSupport: 'enable',
-      //propagationDefaultRouteTableId: 'propagationDefaultRouteTableId',
-      //transitGatewayCidrBlocks: ['transitGatewayCidrBlocks'],
     });
 
     // a transit gateway must have a policy table to be attached to Cloudwan..
@@ -108,29 +114,6 @@ export class CloudWanTGW extends constructs.Construct {
         resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
       }),
     });
-
-    // do we need to assocaite this first?
-    // const asscTgPolicyTable = new cr.AwsCustomResource(this, 'TWpolicyTable', {
-    // 	onCreate: {
-    // 		service: 'EC2',
-    // 		action: 'associateTransitGatewayPolicyTable',
-    // 		parameters: {
-    // 			TransitGatewayPolicyTableId: tgPolicyTable.getResponseField('TransitGatewayPolicyTable.TransitGatewayPolicyTableId')
-    	// 			TransitGatewayAttachmentId: ='string',
-    // 		},
-    // 		physicalResourceId: cr.PhysicalResourceId.fromResponse('Association.ResourceId')
-    // 	},
-    // 	onDelete: {
-    // 		service: 'EC2',
-    // 		action: 'disassociate_transit_gateway_policy_table()',
-    // 		parameters: {
-    // 			TransitGatewayPolicyTableId: new cr.PhysicalResourceIdReference()
-    // 		},
-    // 	},
-    // 	policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
-    // 		resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-    // 	}),
-    // })
 
 
     //get the TG's default routing table, as the attribute is not workign
@@ -276,7 +259,7 @@ export class CloudWanTGW extends constructs.Construct {
     attachmentId.grantWrite(onEvent);
 
 
-    new cdk.CustomResource(this, 'AttachTGRouteTable', {
+    const cloudwanTgAttachment = new cdk.CustomResource(this, 'AttachTGRouteTable', {
       serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
       properties: {
         transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
@@ -288,48 +271,7 @@ export class CloudWanTGW extends constructs.Construct {
       },
     });
 
-
-    // if (props.defaultRouteInSegments !== undefined) {
-    // 	var dependsOn: cdk.CustomResource[]
-    // 	dependsOn = []
-
-
-    // 	props.defaultRouteInSegments.forEach((segment) =>{
-
-    // 		const Route = new SegmentRoute(this, `${segment}segmentdefaultroute`, {
-    // 			cloudwan: props.cloudwan,
-    // 			action: CloudWan.segmentActionType.CREATE_ROUTE,
-    // 			segment: segment,
-    // 			cidrBlocks: ['0.0.0.0/0'],
-    // 			attachments: [attachTGRouteTable.getAttString('AttachmentId')],
-    // 			description: 'routeToInternet'
-    // 		})
-
-    // 		dependsOn.push(Route.addSegmentAction)
-    // 	})
-    // 	// we must wait untill segment Routes are completed.
-    // 	new UpdateCorePolicy(this, 'updateCore', {
-    // 		cloudwan: props.cloudwan,
-    // 		dependson: dependsOn
-    // 	})
-    // }
-
-    // if (props.cloudWanCidr !== undefined) {
-
-    // 	props.cloudWanCidr.forEach((cidr) => {
-
-    // 		console.log(egressTG.associationDefaultRouteTableId)
-
-    // 		const cfnTransitGatewayRoute = new ec2.CfnTransitGatewayRoute(this, `${cidr}TransitGatewayRoute`, {
-    // 			transitGatewayRouteTableId: routingtableId,    // undefined.
-    // 		  	destinationCidrBlock: cidr,
-    // 			transitGatewayAttachmentId: this.tgAttachmentId
-    // 		  });
-
-    // 	});
-
-
-    // }
+    this.cloudwanTgAttachmentId = cloudwanTgAttachment.getAttString('AttachmentId');
 
 
   }
