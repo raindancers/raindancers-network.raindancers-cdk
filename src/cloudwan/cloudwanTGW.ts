@@ -369,7 +369,7 @@ export class CloudWanTGW extends constructs.Construct {
       },
 
       onDelete: {
-        service: 'associationId',
+        service: 'DirectConnect',
         action: 'DeleteDirectConnectGatewayAssociation',
         parameters: {
           directConnectGatewayID: new cr.PhysicalResourceIdReference(),
