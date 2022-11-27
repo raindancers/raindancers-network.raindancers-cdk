@@ -559,7 +559,7 @@ export class CloudWanTGW extends constructs.Construct {
 
     var cloudWatchLogOptions: object | undefined;
 
-    if (vpnprops.vpnspec.enableLogging != undefined) {
+    if (vpnprops.vpnspec.enableLogging !== undefined) {
       if (vpnprops.vpnspec.enableLogging) {
 
         var vpnlog = new logs.LogGroup(this, `${name}vpnLogGroup`, {
@@ -583,12 +583,12 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     // validate that if the Outside address's are Private that a DX gateway Assn is provided.
-    if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && !vpnprops.dxAssociationId) {
+    if (vpnprops.vpnspec.outsideIpAddressType === CloudWanTGWProps.OutsideIpAddressType.PRIVATE && !this.tgDXattachmentId) {
       throw new Error('If the Outside address for a S2S VPN is Private, a dxAssociationId must be provided');
     }
 
     // validate Timeout
-    if (vpnprops.vpnspec.phase1LifetimeSeconds != undefined) {
+    if (vpnprops.vpnspec.phase1LifetimeSeconds !== undefined) {
       if (!(vpnprops.vpnspec.phase1LifetimeSeconds >= 900 && vpnprops.vpnspec.phase1LifetimeSeconds <= 28000 )) {
         throw new Error('Phase1 Life time must be between 900 and 28000');
 
@@ -597,12 +597,12 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     // validate p2 Timeout
-    if (vpnprops.vpnspec.phase2LifeTimeSeconds != undefined) {
+    if (vpnprops.vpnspec.phase2LifeTimeSeconds !== undefined) {
       if (!(vpnprops.vpnspec.phase2LifeTimeSeconds >= 900 && vpnprops.vpnspec.phase2LifeTimeSeconds <= 3600 )) {
         throw new Error('Phase2 Life time must be between 900 and 3600');
 
       }
-      if (vpnprops.vpnspec.phase1LifetimeSeconds != undefined ) {
+      if (vpnprops.vpnspec.phase1LifetimeSeconds !== undefined ) {
         if (!(vpnprops.vpnspec.phase1LifetimeSeconds > vpnprops.vpnspec.phase2LifeTimeSeconds )) {
           throw new Error('Phase1 Life time must be greater than phase2 lifetime ');
         }
@@ -610,7 +610,7 @@ export class CloudWanTGW extends constructs.Construct {
     }
 
     // validate rekeyFuzzPercentage
-    if (vpnprops.vpnspec.rekeyFuzzPercentage != undefined) {
+    if (vpnprops.vpnspec.rekeyFuzzPercentage !== undefined) {
       if (vpnprops.vpnspec.rekeyFuzzPercentage > 100 && vpnprops.vpnspec.rekeyFuzzPercentage < 0) {
         throw new Error('rekey Fuzz Percentage must be between 0 and 100');
       }
@@ -621,13 +621,13 @@ export class CloudWanTGW extends constructs.Construct {
 
     var p2lifetime: number;
 
-    if (vpnprops.vpnspec.phase2LifeTimeSeconds == undefined) {
+    if (vpnprops.vpnspec.phase2LifeTimeSeconds === undefined) {
       p2lifetime = 540;
     } else {
       p2lifetime = vpnprops.vpnspec.phase2LifeTimeSeconds / 2;
     }
 
-    if (vpnprops.vpnspec.rekeyMarginTimeSeconds != undefined) {
+    if (vpnprops.vpnspec.rekeyMarginTimeSeconds !== undefined) {
       if (!(vpnprops.vpnspec.rekeyMarginTimeSeconds >= 60 && vpnprops.vpnspec.rekeyMarginTimeSeconds <= p2lifetime)) {
         throw new Error('rekeyMarginTimeSeconds must be a value between 60 and half of Phase2LifetimeSeconds ');
       }
@@ -637,7 +637,7 @@ export class CloudWanTGW extends constructs.Construct {
     //valdiate replayWindowsSize:
     // Constraints: A value between 64 and 2048.
 
-    if (vpnprops.vpnspec.replayWindowSize !=undefined) {
+    if (vpnprops.vpnspec.replayWindowSize !==undefined) {
       if (vpnprops.vpnspec.replayWindowSize <=64 && vpnprops.vpnspec.replayWindowSize >=2048 ) {
         throw new Error('replayWindowSize must be a value between 64 and 2048');
       }
@@ -646,10 +646,10 @@ export class CloudWanTGW extends constructs.Construct {
 
     // validate or create Ipam address's
 
-    if (vpnprops.tunnelInsideCidr == undefined && vpnprops.tunnelIpamPool == undefined) {
+    if (vpnprops.tunnelInsideCidr === undefined && vpnprops.tunnelIpamPool === undefined) {
       throw new Error('At least one of tunnelInsideCidr or tunnelIpamPool must be defined');
 
-    } else if (vpnprops.tunnelInsideCidr != undefined && vpnprops.tunnelIpamPool != undefined) {
+    } else if (vpnprops.tunnelInsideCidr !== undefined && vpnprops.tunnelIpamPool !== undefined) {
       throw new Error('Only one of tunnelInsideCidr or tunnelIpamPool can be defined');
     }
 
@@ -657,7 +657,7 @@ export class CloudWanTGW extends constructs.Construct {
 
 
     // validate if supplied tunnels are valid
-    if (vpnprops.tunnelInsideCidr != undefined) {
+    if (vpnprops.tunnelInsideCidr !== undefined) {
 
       vpnprops.tunnelInsideCidr.forEach((cidr) => {
 
@@ -685,7 +685,7 @@ export class CloudWanTGW extends constructs.Construct {
 
         assignedCidrs.push(cidr);
       });
-    } else if (vpnprops.tunnelIpamPool != undefined) {
+    } else if (vpnprops.tunnelIpamPool !== undefined) {
 
       const tunnelAllocation = new GetTunnelAddressPair(this, `${name}tunneladdress`, {
         ipamPoolId: vpnprops.tunnelIpamPool.attrIpamPoolId,
@@ -767,7 +767,7 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
 
-    if (vpnprops.sampleconfig !=undefined) {
+    if (vpnprops.sampleconfig !==undefined) {
 
       const sampleConfigLambda = new aws_lambda.SingletonFunction(this, `${name}sampleconfig`, {
         code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),

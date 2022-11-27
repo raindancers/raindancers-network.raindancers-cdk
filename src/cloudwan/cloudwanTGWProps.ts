@@ -242,8 +242,7 @@ export interface VpnProps {
   readonly tunnelIpamPool?: ec2.CfnIPAMPool | undefined;
   /** Optionally provide a sampleconfig specification */
   readonly sampleconfig?: SampleConfig;
-  /** DX Association Id, need to use if there using private IP  */
-  readonly dxAssociationId?: string | undefined;
+  //readonly dxAssociationId?: string | undefined;
 }
 
 

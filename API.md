@@ -3440,7 +3440,6 @@ const vpnProps: VpnProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.VpnProps.property.customerGateway">customerGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnCustomerGateway</code> | The customer gateway where the vpn will terminate. |
 | <code><a href="#raindancers-network.VpnProps.property.vpnspec">vpnspec</a></code> | <code><a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a></code> | a VPN specification for the VPN. |
-| <code><a href="#raindancers-network.VpnProps.property.dxAssociationId">dxAssociationId</a></code> | <code>string</code> | DX Association Id, need to use if there using private IP. |
 | <code><a href="#raindancers-network.VpnProps.property.sampleconfig">sampleconfig</a></code> | <code><a href="#raindancers-network.SampleConfig">SampleConfig</a></code> | Optionally provide a sampleconfig specification. |
 | <code><a href="#raindancers-network.VpnProps.property.tunnelInsideCidr">tunnelInsideCidr</a></code> | <code>string[]</code> | Specify a pair of concrete Cidr's for the tunnel. |
 | <code><a href="#raindancers-network.VpnProps.property.tunnelIpamPool">tunnelIpamPool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | Specify an ipam pool to allocated the tunnel address's from. |
@@ -3468,18 +3467,6 @@ public readonly vpnspec: VpnSpecProps;
 - *Type:* <a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a>
 
 a VPN specification for the VPN.
-
----
-
-##### `dxAssociationId`<sup>Optional</sup> <a name="dxAssociationId" id="raindancers-network.VpnProps.property.dxAssociationId"></a>
-
-```typescript
-public readonly dxAssociationId: string;
-```
-
-- *Type:* string
-
-DX Association Id, need to use if there using private IP.
 
 ---
 
