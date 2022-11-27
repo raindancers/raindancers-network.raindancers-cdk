@@ -538,7 +538,7 @@ export class CloudWanTGW extends constructs.Construct {
     createVpnCrLambda.addToRolePolicy(
       new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
-        resources: [`*`],
+        resources: ['*'],
         actions: [
           'ec2:CreateVpnConnection',
           'ec2:DeleteVpnConnection',
