@@ -710,6 +710,245 @@ the name for the segment.
 ---
 
 
+### EnterpriseVpc <a name="EnterpriseVpc" id="raindancers-network.EnterpriseVpc"></a>
+
+Enteprise VPC's take the stock ec2.Vpc and provide numerous convience methods primarly related to connecting to internal networks.
+
+#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseVpc.Initializer"></a>
+
+```typescript
+import { EnterpriseVpc } from 'raindancers-network'
+
+new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnterpriseVpcProps">EnterpriseVpcProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseVpc.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseVpc.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.EnterpriseVpcProps">EnterpriseVpcProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
+| <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
+| <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
+| <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.EnterpriseVpc.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addRoutes` <a name="addRoutes" id="raindancers-network.EnterpriseVpc.addRoutes"></a>
+
+```typescript
+public addRoutes(props: AddRoutesProps): void
+```
+
+Add routes to SubnetGroups ( by implication their routing tables ).
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addRoutes.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddRoutesProps">AddRoutesProps</a>
+
+---
+
+##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.EnterpriseVpc.attachToCloudWan"></a>
+
+```typescript
+public attachToCloudWan(props: AttachToCloudWanProps): string
+```
+
+attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.attachToCloudWan.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AttachToCloudWanProps">AttachToCloudWanProps</a>
+
+---
+
+##### `attachToTransitGateway` <a name="attachToTransitGateway" id="raindancers-network.EnterpriseVpc.attachToTransitGateway"></a>
+
+```typescript
+public attachToTransitGateway(props: AttachToTransitGatewayProps): string
+```
+
+Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.attachToTransitGateway.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AttachToTransitGatewayProps">AttachToTransitGatewayProps</a>
+
+---
+
+##### `createFlowLog` <a name="createFlowLog" id="raindancers-network.EnterpriseVpc.createFlowLog"></a>
+
+```typescript
+public createFlowLog(props: FlowLogProps): void
+```
+
+Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.createFlowLog.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.FlowLogProps">FlowLogProps</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpc.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseVpc.isConstruct"></a>
+
+```typescript
+import { EnterpriseVpc } from 'raindancers-network'
+
+EnterpriseVpc.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseVpc.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseVpc.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.EnterpriseVpc.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+the ec2.Vpc that is passed in as property.
+
+---
+
+##### `cloudWanName`<sup>Optional</sup> <a name="cloudWanName" id="raindancers-network.EnterpriseVpc.property.cloudWanName"></a>
+
+```typescript
+public readonly cloudWanName: string;
+```
+
+- *Type:* string
+
+the Name of the cloudwan that the VPC is attached to.
+
+---
+
+##### `cloudWanSegment`<sup>Optional</sup> <a name="cloudWanSegment" id="raindancers-network.EnterpriseVpc.property.cloudWanSegment"></a>
+
+```typescript
+public readonly cloudWanSegment: string;
+```
+
+- *Type:* string
+
+the Name of the Cloudwan segment that the vpc is attached to.
+
+---
+
+##### `cloudWanVpcAttachmentId`<sup>Optional</sup> <a name="cloudWanVpcAttachmentId" id="raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId"></a>
+
+```typescript
+public readonly cloudWanVpcAttachmentId: string;
+```
+
+- *Type:* string
+
+AttachmentId when the vpc is attached to a Cloudwan.
+
+---
+
+##### `transitGWAttachmentID`<sup>Optional</sup> <a name="transitGWAttachmentID" id="raindancers-network.EnterpriseVpc.property.transitGWAttachmentID"></a>
+
+```typescript
+public readonly transitGWAttachmentID: string;
+```
+
+- *Type:* string
+
+AttachmentId when the vpc is attached to a transitGateway.
+
+---
+
+##### `transitGWID`<sup>Optional</sup> <a name="transitGWID" id="raindancers-network.EnterpriseVpc.property.transitGWID"></a>
+
+```typescript
+public readonly transitGWID: string;
+```
+
+- *Type:* string
+
+The Id of the transitgateway that the VPC is attached to.
+
+---
+
+
 ### Evpc <a name="Evpc" id="raindancers-network.Evpc"></a>
 
 Extends the ec2.Vpc construct to provide additional functionality - support for using AWS IPAM - methods for integration - Flow logs and Athena Querys - Create and share 53 zones.
@@ -2011,6 +2250,58 @@ The tree node.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### AddRoutesProps <a name="AddRoutesProps" id="raindancers-network.AddRoutesProps"></a>
+
+Propertys for Adding Routes in VPC.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddRoutesProps.Initializer"></a>
+
+```typescript
+import { AddRoutesProps } from 'raindancers-network'
+
+const addRoutesProps: AddRoutesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddRoutesProps.property.cidr">cidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddRoutesProps.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.AddRoutesProps.property.cidr"></a>
+
+```typescript
+public readonly cidr: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.AddRoutesProps.property.destination"></a>
+
+```typescript
+public readonly destination: Destination;
+```
+
+- *Type:* <a href="#raindancers-network.Destination">Destination</a>
+
+---
+
+##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.AddRoutesProps.property.subnetGroups"></a>
+
+```typescript
+public readonly subnetGroups: string[];
+```
+
+- *Type:* string[]
+
+---
+
 ### AttachmentConditions <a name="AttachmentConditions" id="raindancers-network.AttachmentConditions"></a>
 
 an attachmentconditions.
@@ -2190,6 +2481,116 @@ public readonly segment: string;
 - *Type:* string
 
 The Segment this applies to.
+
+---
+
+### AttachToCloudWanProps <a name="AttachToCloudWanProps" id="raindancers-network.AttachToCloudWanProps"></a>
+
+Propertys for Attaching to a Cloudwan Core Network.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AttachToCloudWanProps.Initializer"></a>
+
+```typescript
+import { AttachToCloudWanProps } from 'raindancers-network'
+
+const attachToCloudWanProps: AttachToCloudWanProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AttachToCloudWanProps.property.coreNetworkName">coreNetworkName</a></code> | <code>string</code> | corenetworkName. |
+| <code><a href="#raindancers-network.AttachToCloudWanProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachToCloudWanProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `coreNetworkName`<sup>Required</sup> <a name="coreNetworkName" id="raindancers-network.AttachToCloudWanProps.property.coreNetworkName"></a>
+
+```typescript
+public readonly coreNetworkName: string;
+```
+
+- *Type:* string
+
+corenetworkName.
+
+---
+
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.AttachToCloudWanProps.property.segmentName"></a>
+
+```typescript
+public readonly segmentName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.AttachToCloudWanProps.property.attachmentSubnetGroup"></a>
+
+```typescript
+public readonly attachmentSubnetGroup: string;
+```
+
+- *Type:* string
+
+---
+
+### AttachToTransitGatewayProps <a name="AttachToTransitGatewayProps" id="raindancers-network.AttachToTransitGatewayProps"></a>
+
+Propertys to attach the Vpc To Transit Gateway.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AttachToTransitGatewayProps.Initializer"></a>
+
+```typescript
+import { AttachToTransitGatewayProps } from 'raindancers-network'
+
+const attachToTransitGatewayProps: AttachToTransitGatewayProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | the TransitGateway to connect to. |
+| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.applicanceMode">applicanceMode</a></code> | <code><a href="#raindancers-network.ApplianceMode">ApplianceMode</a></code> | Will this be connected in appliance mode ( used if you have Network Firewalls ). |
+| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.AttachToTransitGatewayProps.property.transitGateway"></a>
+
+```typescript
+public readonly transitGateway: CfnTransitGateway;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnTransitGateway
+
+the TransitGateway to connect to.
+
+---
+
+##### `applicanceMode`<sup>Optional</sup> <a name="applicanceMode" id="raindancers-network.AttachToTransitGatewayProps.property.applicanceMode"></a>
+
+```typescript
+public readonly applicanceMode: ApplianceMode;
+```
+
+- *Type:* <a href="#raindancers-network.ApplianceMode">ApplianceMode</a>
+
+Will this be connected in appliance mode ( used if you have Network Firewalls ).
+
+---
+
+##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.AttachToTransitGatewayProps.property.attachmentSubnetGroup"></a>
+
+```typescript
+public readonly attachmentSubnetGroup: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -2438,6 +2839,36 @@ public readonly tags: Tag[];
 ```
 
 - *Type:* aws-cdk-lib.Tag[]
+
+---
+
+### EnterpriseVpcProps <a name="EnterpriseVpcProps" id="raindancers-network.EnterpriseVpcProps"></a>
+
+Propertys for an Enterprise VPC.
+
+#### Initializer <a name="Initializer" id="raindancers-network.EnterpriseVpcProps.Initializer"></a>
+
+```typescript
+import { EnterpriseVpcProps } from 'raindancers-network'
+
+const enterpriseVpcProps: EnterpriseVpcProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.EnterpriseVpcProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
@@ -2879,6 +3310,64 @@ public readonly r53InternalZoneName: string;
 - *Type:* string
 
 Name of an internal Route53 Zone that is associated with this voc.
+
+---
+
+### FlowLogProps <a name="FlowLogProps" id="raindancers-network.FlowLogProps"></a>
+
+Properties for flow logs *.
+
+#### Initializer <a name="Initializer" id="raindancers-network.FlowLogProps.Initializer"></a>
+
+```typescript
+import { FlowLogProps } from 'raindancers-network'
+
+const flowLogProps: FlowLogProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FlowLogProps.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | the central s3 location for enterprise flow logs. |
+| <code><a href="#raindancers-network.FlowLogProps.property.localAthenaQuerys">localAthenaQuerys</a></code> | <code>boolean</code> | create in Account Athena Querys for flow logs. |
+| <code><a href="#raindancers-network.FlowLogProps.property.oneMinuteFlowLogs">oneMinuteFlowLogs</a></code> | <code>boolean</code> | 1 minute resolution. |
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.FlowLogProps.property.bucket"></a>
+
+```typescript
+public readonly bucket: Bucket;
+```
+
+- *Type:* aws-cdk-lib.aws_s3.Bucket
+
+the central s3 location for enterprise flow logs.
+
+---
+
+##### `localAthenaQuerys`<sup>Optional</sup> <a name="localAthenaQuerys" id="raindancers-network.FlowLogProps.property.localAthenaQuerys"></a>
+
+```typescript
+public readonly localAthenaQuerys: boolean;
+```
+
+- *Type:* boolean
+
+create in Account Athena Querys for flow logs.
+
+---
+
+##### `oneMinuteFlowLogs`<sup>Optional</sup> <a name="oneMinuteFlowLogs" id="raindancers-network.FlowLogProps.property.oneMinuteFlowLogs"></a>
+
+```typescript
+public readonly oneMinuteFlowLogs: boolean;
+```
+
+- *Type:* boolean
+
+1 minute resolution.
 
 ---
 
@@ -3875,6 +4364,25 @@ public readonly updateDependsOn: CustomResource[];
 
 ## Enums <a name="Enums" id="Enums"></a>
 
+### ApplianceMode <a name="ApplianceMode" id="raindancers-network.ApplianceMode"></a>
+
+Propertys for Appliance Mode.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ApplianceMode.ENABLED">ENABLED</a></code> | enable Connecting VPC to TransitGateway in Appliance Mode. |
+
+---
+
+##### `ENABLED` <a name="ENABLED" id="raindancers-network.ApplianceMode.ENABLED"></a>
+
+enable Connecting VPC to TransitGateway in Appliance Mode.
+
+---
+
+
 ### AssociationMethod <a name="AssociationMethod" id="raindancers-network.AssociationMethod"></a>
 
 Association Methods.
@@ -3970,6 +4478,33 @@ Conditon Logic.
 
 
 ##### `OR` <a name="OR" id="raindancers-network.ConditionLogic.OR"></a>
+
+---
+
+
+### Destination <a name="Destination" id="raindancers-network.Destination"></a>
+
+The Destinations for Adding Routes.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Destination.CLOUDWAN">CLOUDWAN</a></code> | route to the cloudwan that the vpc is attached to. |
+| <code><a href="#raindancers-network.Destination.TRANSITGATEWAY">TRANSITGATEWAY</a></code> | route to the transitGateway that the vpc is attached to. |
+
+---
+
+##### `CLOUDWAN` <a name="CLOUDWAN" id="raindancers-network.Destination.CLOUDWAN"></a>
+
+route to the cloudwan that the vpc is attached to.
+
+---
+
+
+##### `TRANSITGATEWAY` <a name="TRANSITGATEWAY" id="raindancers-network.Destination.TRANSITGATEWAY"></a>
+
+route to the transitGateway that the vpc is attached to.
 
 ---
 

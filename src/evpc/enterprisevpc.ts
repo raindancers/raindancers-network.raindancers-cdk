@@ -16,20 +16,20 @@ import * as constructs from 'constructs';
 /** Properties for flow logs **/
 export interface FlowLogProps {
   /** the central s3 location for enterprise flow logs */
-  bucket: s3.Bucket;
+  readonly bucket: s3.Bucket;
   /** 1 minute resolution */
-  oneMinuteFlowLogs?: boolean;
+  readonly oneMinuteFlowLogs?: boolean;
   /** create in Account Athena Querys for flow logs*/
-  localAthenaQuerys?: boolean;
+  readonly localAthenaQuerys?: boolean;
 }
 
 /** Propertys for Attaching to a Cloudwan Core Network */
 export interface AttachToCloudWanProps {
   /** corenetworkName */
-  coreNetworkName: string;
+  readonly coreNetworkName: string;
   //** segmentName */
-  segmentName: string;
-  attachmentSubnetGroup?: string | undefined;
+  readonly segmentName: string;
+  readonly attachmentSubnetGroup?: string | undefined;
 }
 /**
  * Propertys for Appliance Mode
@@ -44,11 +44,11 @@ export enum ApplianceMode {
  */
 export interface AttachToTransitGatewayProps {
   /** the TransitGateway to connect to */
-	 transitGateway: ec2. CfnTransitGateway;
+	 readonly transitGateway: ec2. CfnTransitGateway;
 	 /** Will this be connected in appliance mode ( used if you have Network Firewalls ) */
-	 applicanceMode?: ApplianceMode | undefined;
+	 readonly applicanceMode?: ApplianceMode | undefined;
 	 //** Which Subnet Groups will the attachments be made ( defaults to 'linknet') */
-	 attachmentSubnetGroup?: string | undefined;
+	 readonly attachmentSubnetGroup?: string | undefined;
 }
 
 /**
@@ -56,11 +56,11 @@ export interface AttachToTransitGatewayProps {
  */
 export interface AddRoutesProps {
   // a list of cidrs to route
-  cidr: string[];
+  readonly cidr: string[];
   // a list of the subnetGroups to add the Routes to
-  subnetGroups: string[];
+  readonly subnetGroups: string[];
   // the destination for the route
-  destination: Destination;
+  readonly destination: Destination;
 }// end of addRoutetoCloudWan
 
 /**
@@ -76,7 +76,7 @@ export enum Destination{
 /** Propertys for an Enterprise VPC */
 export interface EnterpriseVpcProps {
   // the vpc
-  vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc;
 }// end of addRoutetoCloudWan
 
 /**
@@ -220,13 +220,16 @@ export class EnterpriseVpc extends constructs.Construct {
       },
     });
 
+    let attachmentSubnetGroup = 'linket';
+
     // if the subnetGroup name is not defined, it will default to using linknet
-    if (!props.attachmentSubnetGroup) {
-      props.attachmentSubnetGroup = 'linknet';
+    if (props.attachmentSubnetGroup) {
+      attachmentSubnetGroup = 'linknet';
     }
 
+
     const linknetsubnetarns = [];
-    const linknetSelection = this.vpc.selectSubnets({ subnetGroupName: props.attachmentSubnetGroup });
+    const linknetSelection = this.vpc.selectSubnets({ subnetGroupName: attachmentSubnetGroup });
     for (const subnet of linknetSelection.subnets) {
       linknetsubnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
     }
@@ -259,8 +262,9 @@ export class EnterpriseVpc extends constructs.Construct {
 	 */
   public attachToTransitGateway(props: AttachToTransitGatewayProps): string {
 
-    if (!props.attachmentSubnetGroup) {
-      props.attachmentSubnetGroup = 'linknet';
+    let attachmentSubnetGroup = 'linknet';
+    if (props.attachmentSubnetGroup) {
+      attachmentSubnetGroup = props.attachmentSubnetGroup;
     }
 
     const transitGatewaypeering = new cr.AwsCustomResource(this, 'AttachtheVPCtoTG', {
@@ -268,7 +272,7 @@ export class EnterpriseVpc extends constructs.Construct {
 			  service: 'EC2',
 			  action: 'createTransitGatewayVpcAttachment',
 			  parameters: {
-          SubnetIds: this.vpc.selectSubnets({ subnetGroupName: props.attachmentSubnetGroup }).subnetIds, // this needs to be the subnet
+          SubnetIds: this.vpc.selectSubnets({ subnetGroupName: attachmentSubnetGroup }).subnetIds, // this needs to be the subnet
           TransitGatewayId: props.transitGateway.attrId,
           VpcId: this.vpc.vpcId,
           Options: {
