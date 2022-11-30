@@ -1,5 +1,6 @@
 // the Evpc constructs
 export * from './evpc/evpc';
+export * from './evpc/enterprisevpc';
 
 // the ipam constructs
 export * from './ipam/ipam';
