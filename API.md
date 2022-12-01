@@ -3329,7 +3329,7 @@ const flowLogProps: FlowLogProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FlowLogProps.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | the central s3 location for enterprise flow logs. |
+| <code><a href="#raindancers-network.FlowLogProps.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | the central s3 location for enterprise flow logs. |
 | <code><a href="#raindancers-network.FlowLogProps.property.localAthenaQuerys">localAthenaQuerys</a></code> | <code>boolean</code> | create in Account Athena Querys for flow logs. |
 | <code><a href="#raindancers-network.FlowLogProps.property.oneMinuteFlowLogs">oneMinuteFlowLogs</a></code> | <code>boolean</code> | 1 minute resolution. |
 
@@ -3338,10 +3338,10 @@ const flowLogProps: FlowLogProps = { ... }
 ##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.FlowLogProps.property.bucket"></a>
 
 ```typescript
-public readonly bucket: Bucket;
+public readonly bucket: IBucket;
 ```
 
-- *Type:* aws-cdk-lib.aws_s3.Bucket
+- *Type:* aws-cdk-lib.aws_s3.IBucket
 
 the central s3 location for enterprise flow logs.
 
