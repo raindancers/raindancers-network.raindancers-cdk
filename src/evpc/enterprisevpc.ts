@@ -16,7 +16,7 @@ import * as constructs from 'constructs';
 /** Properties for flow logs **/
 export interface FlowLogProps {
   /** the central s3 location for enterprise flow logs */
-  readonly bucket: s3.Bucket;
+  readonly bucket: s3.IBucket;
   /** 1 minute resolution */
   readonly oneMinuteFlowLogs?: boolean;
   /** create in Account Athena Querys for flow logs*/
