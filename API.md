@@ -2141,6 +2141,152 @@ returns the created ipam Pool.
 ---
 
 
+### NetworkFirewall <a name="NetworkFirewall" id="raindancers-network.NetworkFirewall"></a>
+
+Creates Network Firewalls.
+
+#### Initializers <a name="Initializers" id="raindancers-network.NetworkFirewall.Initializer"></a>
+
+```typescript
+import { NetworkFirewall } from 'raindancers-network'
+
+new NetworkFirewall(scope: Construct, id: string, props: NetworkFirewallProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | Scope. |
+| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.id">id</a></code> | <code>string</code> | id. |
+| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.NetworkFirewallProps">NetworkFirewallProps</a></code> | props. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.NetworkFirewall.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+Scope.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.NetworkFirewall.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+id.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.NetworkFirewall.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.NetworkFirewallProps">NetworkFirewallProps</a>
+
+props.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.NetworkFirewall.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.NetworkFirewall.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.NetworkFirewall.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.NetworkFirewall.isConstruct"></a>
+
+```typescript
+import { NetworkFirewall } from 'raindancers-network'
+
+NetworkFirewall.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.NetworkFirewall.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.NetworkFirewall.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.NetworkFirewall.property.endPointIds">endPointIds</a></code> | <code>string[]</code> | Gateway Endpoints for the Firewalls. |
+| <code><a href="#raindancers-network.NetworkFirewall.property.firewallArn">firewallArn</a></code> | <code>string</code> | Arn of the firewall. |
+| <code><a href="#raindancers-network.NetworkFirewall.property.firewallId">firewallId</a></code> | <code>string</code> | Firewall ID. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.NetworkFirewall.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `endPointIds`<sup>Required</sup> <a name="endPointIds" id="raindancers-network.NetworkFirewall.property.endPointIds"></a>
+
+```typescript
+public readonly endPointIds: string[];
+```
+
+- *Type:* string[]
+
+Gateway Endpoints for the Firewalls.
+
+---
+
+##### `firewallArn`<sup>Required</sup> <a name="firewallArn" id="raindancers-network.NetworkFirewall.property.firewallArn"></a>
+
+```typescript
+public readonly firewallArn: string;
+```
+
+- *Type:* string
+
+Arn of the firewall.
+
+---
+
+##### `firewallId`<sup>Required</sup> <a name="firewallId" id="raindancers-network.NetworkFirewall.property.firewallId"></a>
+
+```typescript
+public readonly firewallId: string;
+```
+
+- *Type:* string
+
+Firewall ID.
+
+---
+
+
 ### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
 
 Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
@@ -3486,6 +3632,77 @@ public readonly name: string;
 - *Type:* string
 
 the name used by IPAM to identify the pool.
+
+---
+
+### NetworkFirewallProps <a name="NetworkFirewallProps" id="raindancers-network.NetworkFirewallProps"></a>
+
+Propertys of a Network Firewall.
+
+#### Initializer <a name="Initializer" id="raindancers-network.NetworkFirewallProps.Initializer"></a>
+
+```typescript
+import { NetworkFirewallProps } from 'raindancers-network'
+
+const networkFirewallProps: NetworkFirewallProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.NetworkFirewallProps.property.firewallName">firewallName</a></code> | <code>string</code> | the name that will be given to the firewall. |
+| <code><a href="#raindancers-network.NetworkFirewallProps.property.firewallPolicy">firewallPolicy</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy</code> | the firewalls policy. |
+| <code><a href="#raindancers-network.NetworkFirewallProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetGroup where the firewall will be created. |
+| <code><a href="#raindancers-network.NetworkFirewallProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the the vpc where the Network firewall is placed. |
+
+---
+
+##### `firewallName`<sup>Required</sup> <a name="firewallName" id="raindancers-network.NetworkFirewallProps.property.firewallName"></a>
+
+```typescript
+public readonly firewallName: string;
+```
+
+- *Type:* string
+
+the name that will be given to the firewall.
+
+---
+
+##### `firewallPolicy`<sup>Required</sup> <a name="firewallPolicy" id="raindancers-network.NetworkFirewallProps.property.firewallPolicy"></a>
+
+```typescript
+public readonly firewallPolicy: CfnFirewallPolicy;
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy
+
+the firewalls policy.
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.NetworkFirewallProps.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: string;
+```
+
+- *Type:* string
+
+the subnetGroup where the firewall will be created.
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.NetworkFirewallProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+the the vpc where the Network firewall is placed.
 
 ---
 

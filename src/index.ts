@@ -21,3 +21,5 @@ export * from './endpoints/awsServiceEndpoints';
 // dns
 export * from './dns/dnsResolvers';
 
+// firewall
+export * from './nwfirewall/firewall';
