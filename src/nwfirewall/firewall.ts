@@ -100,6 +100,7 @@ export class NetworkFirewall extends constructs.Construct {
       },
     });
 
+
     this.firewallArn = fw.attrFirewallArn;
     this.firewallId = fw.attrFirewallId;
     this.endPointIds = fw.attrEndpointIds;

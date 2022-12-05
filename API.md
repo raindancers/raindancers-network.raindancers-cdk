@@ -2415,6 +2415,7 @@ const addRoutesProps: AddRoutesProps = { ... }
 | <code><a href="#raindancers-network.AddRoutesProps.property.cidr">cidr</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddRoutesProps.property.networkFirewallArn">networkFirewallArn</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -2445,6 +2446,16 @@ public readonly subnetGroups: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `networkFirewallArn`<sup>Optional</sup> <a name="networkFirewallArn" id="raindancers-network.AddRoutesProps.property.networkFirewallArn"></a>
+
+```typescript
+public readonly networkFirewallArn: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -4709,6 +4720,7 @@ The Destinations for Adding Routes.
 | --- | --- |
 | <code><a href="#raindancers-network.Destination.CLOUDWAN">CLOUDWAN</a></code> | route to the cloudwan that the vpc is attached to. |
 | <code><a href="#raindancers-network.Destination.TRANSITGATEWAY">TRANSITGATEWAY</a></code> | route to the transitGateway that the vpc is attached to. |
+| <code><a href="#raindancers-network.Destination.NWFIREWALL">NWFIREWALL</a></code> | *No description.* |
 
 ---
 
@@ -4722,6 +4734,11 @@ route to the cloudwan that the vpc is attached to.
 ##### `TRANSITGATEWAY` <a name="TRANSITGATEWAY" id="raindancers-network.Destination.TRANSITGATEWAY"></a>
 
 route to the transitGateway that the vpc is attached to.
+
+---
+
+
+##### `NWFIREWALL` <a name="NWFIREWALL" id="raindancers-network.Destination.NWFIREWALL"></a>
 
 ---
 

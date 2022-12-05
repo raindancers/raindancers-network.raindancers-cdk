@@ -51,6 +51,7 @@ export interface AttachToTransitGatewayProps {
 	 readonly attachmentSubnetGroup?: string | undefined;
 }
 
+
 /**
  * Propertys for Adding Routes in VPC.
  */
@@ -61,6 +62,8 @@ export interface AddRoutesProps {
   readonly subnetGroups: string[];
   // the destination for the route
   readonly destination: Destination;
+  // gatewayloadbalancers
+  readonly networkFirewallArn?: string;
 }// end of addRoutetoCloudWan
 
 /**
@@ -70,7 +73,9 @@ export enum Destination{
   /** route to the cloudwan that the vpc is attached to */
   CLOUDWAN = 'Cloudwan',
   /** route to the transitGateway that the vpc is attached to */
-  TRANSITGATEWAY = 'TransitGateway'
+  TRANSITGATEWAY = 'TransitGateway',
+  //** route to a gateway loadbalancer end point */
+  NWFIREWALL = 'NetworkFirewall'
 }
 
 /** Propertys for an Enterprise VPC */
@@ -110,11 +115,11 @@ export class EnterpriseVpc extends constructs.Construct {
   public readonly vpc: ec2.Vpc;
 
   /**
-	 * Constructor
-	 * @param scope
-	 * @param id
-	 * @param props
-	 */
+   *
+   * @param scope
+   * @param id
+   * @param props
+   */
   constructor(scope: constructs.Construct, id: string, props: EnterpriseVpcProps) {
     super(scope, id);
 
@@ -313,82 +318,142 @@ export class EnterpriseVpc extends constructs.Construct {
 	 * Add routes to SubnetGroups ( by implication their routing tables )
 	 * @param props
 	 */
+
   public addRoutes (props: AddRoutesProps): void {
 
-    var routeTableIds: string[] = [];
+    if ( props.destination in [Destination.TRANSITGATEWAY, Destination.CLOUDWAN] ) {
 
-    // get all the routeTableIds for the subnets
-    props.subnetGroups.forEach((groupName) => {
-      const selection = this.vpc.selectSubnets({
-        subnetGroupName: groupName,
+      var routeTableIds: string[] = [];
+
+      // get all the routeTableIds for the subnets
+      props.subnetGroups.forEach((groupName) => {
+        const selection = this.vpc.selectSubnets({
+          subnetGroupName: groupName,
+        });
+        selection.subnets.forEach((subnet) => {
+          routeTableIds.push(subnet.routeTable.routeTableId);
+        });
       });
-      selection.subnets.forEach((subnet) => {
-        routeTableIds.push(subnet.routeTable.routeTableId);
+
+
+      const addRoutesLambda = new aws_lambda.SingletonFunction(this, 'lookupIdLambda-evpc', {
+        uuid: '00001122AA',
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        handler: 'addRoutes.on_event',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
       });
-    });
+
+      addRoutesLambda.addToRolePolicy(
+        new iam.PolicyStatement({
+          effect: iam.Effect.ALLOW,
+          resources: ['*'],
+          actions: [
+            'ec2:CreateRoute',
+            'ec2:DeleteRoute',
+            'ec2:ReplaceRoute',
+            'net_manager.list_core_networks',
+          ],
+        }),
+      );
+
+      const addRoutesProvider = new cr.Provider(this, 'NetworkManagerProvider', {
+        onEventHandler: addRoutesLambda,
+      });
+
+      // check that the cidrs are valid
+      const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
 
 
-    const addRoutesLambda = new aws_lambda.SingletonFunction(this, 'lookupIdLambda-evpc', {
-      uuid: '00001122AA',
-      runtime: aws_lambda.Runtime.PYTHON_3_9,
-      handler: 'addRoutes.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-		  });
+      routeTableIds.forEach((routeTableId) => {
+        props.cidr.forEach((network) => {
+          if (ipRegex.test(network) === false) {
+            throw new Error(`cidr ${network} is invalid`);
+          }
 
-    addRoutesLambda.addToRolePolicy(
-      new iam.PolicyStatement({
-        effect: iam.Effect.ALLOW,
-        resources: ['*'],
-        actions: [
-          'ec2:CreateRoute',
-          'ec2:DeleteRoute',
-          'ec2:ReplaceRoute',
-          'net_manager.list_core_networks',
-        ],
-      }),
-    );
+          switch (props.destination) {
+            case Destination.CLOUDWAN: {
+              new cdk.CustomResource(this, `${network}${routeTableId}route`, {
+                serviceToken: addRoutesProvider.serviceToken,
+                properties: {
+                  cidr: network,
+                  RouteTableId: routeTableId,
+                  Destination: props.destination,
+                  CloudWanName: this.cloudWanName,
+                },
+              });
+              break;
+            }
+            case Destination.TRANSITGATEWAY: {
+              new ec2.CfnRoute(this, `${network}${routeTableId}route`, {
+                routeTableId: routeTableId,
+                destinationCidrBlock: network,
+                transitGatewayId: this.transitGWID,
+              });
+              break;
+            }
+            default: {
+              throw new Error('No valid destinations for this method. ');
+            }
+          }
+        });
+      });
+    } else if (props.destination in [Destination.NWFIREWALL]) {
 
-    const addRoutesProvider = new cr.Provider(this, 'NetworkManagerProvider', {
-      onEventHandler: addRoutesLambda,
-    });
+      /**
+       * the respose from the API call, exceeds 4096, so need to limit it with an output path
+       */
+      const outputPaths: string[] = [];
+      const azlist = cdk.Stack.of(this).availabilityZones;
+      azlist.forEach ((az) => {
+        outputPaths.push(`FirewallStatus.SyncStates.${az}.Attachment.EndpointId`);
+      });
 
-    // check that the cidrs are valid
-    const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
+      const fwDescription = new cr.AwsCustomResource(this, `DescribeFirewall${hashProps(props)}`, {
+        onCreate: {
+          service: 'NetworkFirewall',
+          action: 'describeFirewall',
+          parameters: {
+            FirewallArn: props.networkFirewallArn,
+          },
+          region: cdk.Aws.REGION,
+          physicalResourceId: cr.PhysicalResourceId.of('DescribeFirewall'),
+          outputPaths: outputPaths,
+        },
+        logRetention: logs.RetentionDays.SEVEN_YEARS,
+        policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+        }),
+      });
 
+      props.subnetGroups.forEach((subnetGroup) => {
+        props.cidr.forEach((destinationCidr) => {
+          this.vpc.selectSubnets({ subnetGroupName: subnetGroup }).subnets.forEach(subnet => {
 
-    routeTableIds.forEach((routeTableId) => {
-      props.cidr.forEach((network) => {
-        if (ipRegex.test(network) === false) {
-          throw new Error(`cidr ${network} is invalid`);
-        }
-
-        switch (props.destination) {
-          case Destination.CLOUDWAN: {
-            new cdk.CustomResource(this, `${network}${routeTableId}route`, {
-              serviceToken: addRoutesProvider.serviceToken,
-              properties: {
-                cidr: network,
-                RouteTableId: routeTableId,
-                Destination: props.destination,
-                CloudWanName: this.cloudWanName,
-              },
+            new ec2.CfnRoute(this, 'FirewallRoute-' + subnet.node.path.split('/').pop(), {
+              destinationCidrBlock: destinationCidr,
+              routeTableId: subnet.routeTable.routeTableId,
+              vpcEndpointId: fwDescription.getResponseField(`FirewallStatus.SyncStates.${subnet.availabilityZone}.Attachment.EndpointId`),
             });
-            break;
-          }
-          case Destination.TRANSITGATEWAY: {
-            new ec2.CfnRoute(this, `${network}${routeTableId}route`, {
-              routeTableId: routeTableId,
-              destinationCidrBlock: network,
-              transitGatewayId: this.transitGWID,
-            });
-            break;
-          }
-          default: {
-            throw new Error('No valid destinations for this method. ');
-          }
-        }
-
+          });
+        });
       });
-    });
+
+
+    } else {
+      throw new Error('Unsupported Destination for Route');
+    }
   } // end of add routes
+}
+
+
+// this provides a unique string based on the props
+function hashProps(props: object): string {
+
+  const str = JSON.stringify(props);
+  var h: number = 0;
+  for (var i = 0; i < str.length; i++) {
+    h = 31 * h + str.charCodeAt(i);
+  }
+  /* eslint-disable-next-line */
+  return String(h & 0xFFFFFFFF) 
 }
