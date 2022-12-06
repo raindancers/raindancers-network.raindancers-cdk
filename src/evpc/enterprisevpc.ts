@@ -361,7 +361,7 @@ export class EnterpriseVpc extends constructs.Construct {
           switch (props.destination) {
             case Destination.CLOUDWAN: {
 
-              new cdk.CustomResource(this, `cloudwanroute${network}${hashProps(props)}${index}`, {
+              new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
                 serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
@@ -374,7 +374,7 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-              const waiter = new cdk.CustomResource(this, `cloudwanroute${network}${hashProps(props)}${index}`, {
+              const waiter = new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
                 serviceToken: this.tgWaiterProvider.serviceToken,
                 properties: {
                   transitGatewayId: this.transitGWID,
@@ -382,7 +382,7 @@ export class EnterpriseVpc extends constructs.Construct {
                 },
               });
 
-              const transitgatewayroute = new ec2.CfnRoute(this, `transitgatewayroute${network}${hashProps(props)}${index}`, {
+              const transitgatewayroute = new ec2.CfnRoute(this, `transitgatewayroute${hashProps(props)}${index}`, {
                 routeTableId: routeTableId,
                 destinationCidrBlock: network,
                 transitGatewayId: this.transitGWID,
