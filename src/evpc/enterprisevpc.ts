@@ -363,7 +363,7 @@ export class EnterpriseVpc extends constructs.Construct {
       const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
 
 
-      routeTableIds.forEach((routeTableId) => {
+      routeTableIds.forEach((routeTableId, index) => {
         props.cidr.forEach((network) => {
           if (ipRegex.test(network) === false) {
             throw new Error(`cidr ${network} is invalid`);
@@ -371,7 +371,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
           switch (props.destination) {
             case Destination.CLOUDWAN: {
-              new cdk.CustomResource(this, `${network}${routeTableId}route`, {
+              new cdk.CustomResource(this, `cloudwanroute${network}${hashProps(props)}${index}`, {
                 serviceToken: addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
@@ -383,7 +383,7 @@ export class EnterpriseVpc extends constructs.Construct {
               break;
             }
             case Destination.TRANSITGATEWAY: {
-              new ec2.CfnRoute(this, `${network}${routeTableId}route`, {
+              new ec2.CfnRoute(this, `transitgatewayroute${network}${hashProps(props)}${index}`, {
                 routeTableId: routeTableId,
                 destinationCidrBlock: network,
                 transitGatewayId: this.transitGWID,
@@ -430,7 +430,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
           this.vpc.selectSubnets({ subnetGroupName: subnetGroup }).subnets.forEach((subnet) => {
 
-            new ec2.CfnRoute(this, 'FirewallRoute-' + subnet.node.path.split('/').pop() + destinationCidr, {
+            new ec2.CfnRoute(this, 'FirewallRoute-' + subnet.node.path.split('/').pop(), {
               destinationCidrBlock: destinationCidr,
               routeTableId: subnet.routeTable.routeTableId,
               vpcEndpointId: fwDescription.getResponseField(`FirewallStatus.SyncStates.${subnet.availabilityZone}.Attachment.EndpointId`),
