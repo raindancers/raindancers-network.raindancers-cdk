@@ -52,6 +52,7 @@ export interface AttachToTransitGatewayProps {
 }
 
 
+
 /**
  * Propertys for Adding Routes in VPC.
  */
@@ -63,7 +64,7 @@ export interface AddRoutesProps {
   // the destination for the route
   readonly destination: Destination;
   // gatewayloadbalancers
-  readonly networkFirewallArn?: string;
+  readonly networkFirewallArn?: string
 }// end of addRoutetoCloudWan
 
 /**
@@ -115,16 +116,17 @@ export class EnterpriseVpc extends constructs.Construct {
   public readonly vpc: ec2.Vpc;
 
   /**
-   *
-   * @param scope
-   * @param id
-   * @param props
+   * 
+   * @param scope 
+   * @param id 
+   * @param props 
    */
   constructor(scope: constructs.Construct, id: string, props: EnterpriseVpcProps) {
     super(scope, id);
 
     this.vpc = props.vpc;
   }
+
 
   /**
 	 * Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys
@@ -153,7 +155,6 @@ export class EnterpriseVpc extends constructs.Construct {
     if (props.localAthenaQuerys === true) {
       const athenaResultsBucket = new s3.Bucket(this, 'AthenaFlowLogResults', {
         blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-        bucketName: `athena-${this.vpc.vpcId.toLowerCase()}`,
         removalPolicy: cdk.RemovalPolicy.DESTROY,
       });
 
@@ -314,14 +315,15 @@ export class EnterpriseVpc extends constructs.Construct {
   }// end of attachToTransitGateway
 
 
+
   /**
 	 * Add routes to SubnetGroups ( by implication their routing tables )
 	 * @param props
 	 */
 
-  public addRoutes (props: AddRoutesProps): void {
+   public addRoutes (props: AddRoutesProps): void {
 
-    if ( props.destination in [Destination.TRANSITGATEWAY, Destination.CLOUDWAN] ) {
+    if ( props.destination in [Destination.TRANSITGATEWAY, Destination.CLOUDWAN ] ){
 
       var routeTableIds: string[] = [];
 
@@ -341,7 +343,7 @@ export class EnterpriseVpc extends constructs.Construct {
         runtime: aws_lambda.Runtime.PYTHON_3_9,
         handler: 'addRoutes.on_event',
         code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-      });
+        });
 
       addRoutesLambda.addToRolePolicy(
         new iam.PolicyStatement({
@@ -397,8 +399,11 @@ export class EnterpriseVpc extends constructs.Construct {
           }
         });
       });
-    } else if (props.destination in [Destination.NWFIREWALL]) {
-
+    } 
+    
+    
+    else if (props.destination in [Destination.NWFIREWALL]) {
+   
       /**
        * the respose from the API call, exceeds 4096, so need to limit it with an output path
        */
@@ -435,12 +440,14 @@ export class EnterpriseVpc extends constructs.Construct {
               vpcEndpointId: fwDescription.getResponseField(`FirewallStatus.SyncStates.${subnet.availabilityZone}.Attachment.EndpointId`),
             });
           });
-        });
-      });
+        })
+      })
 
 
-    } else {
-      throw new Error('Unsupported Destination for Route');
+
+    }
+    else {
+      throw new Error("Unsupported Destination for Route");
     }
   } // end of add routes
 }
@@ -449,10 +456,10 @@ export class EnterpriseVpc extends constructs.Construct {
 // this provides a unique string based on the props
 function hashProps(props: object): string {
 
-  const str = JSON.stringify(props);
+  const str = JSON.stringify(props)
   var h: number = 0;
   for (var i = 0; i < str.length; i++) {
-    h = 31 * h + str.charCodeAt(i);
+      h = 31 * h + str.charCodeAt(i);
   }
   /* eslint-disable-next-line */
   return String(h & 0xFFFFFFFF) 
