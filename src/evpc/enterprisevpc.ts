@@ -321,7 +321,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public addRoutes (props: AddRoutesProps): void {
 
-    if ( props.destination in [Destination.TRANSITGATEWAY, Destination.CLOUDWAN] ) {
+    if ( props.destination === Destination.TRANSITGATEWAY || props.destination === Destination.CLOUDWAN ) {
 
       var routeTableIds: string[] = [];
 
@@ -397,7 +397,7 @@ export class EnterpriseVpc extends constructs.Construct {
           }
         });
       });
-    } else if (props.destination in [Destination.NWFIREWALL]) {
+    } else if (props.destination === Destination.NWFIREWALL) {
 
       /**
        * the respose from the API call, exceeds 4096, so need to limit it with an output path
