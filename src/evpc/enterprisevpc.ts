@@ -12,6 +12,8 @@ import {
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
+import { EnterpriseVpcLambda } from './enterprisevpclambdas';
+
 
 /** Properties for flow logs **/
 export interface FlowLogProps {
@@ -36,7 +38,7 @@ export interface AttachToCloudWanProps {
  */
 export enum ApplianceMode {
   /** enable Connecting VPC to TransitGateway in Appliance Mode */
-  ENABLED = 'enabled'
+  ENABLED = 'enable'
 }
 
 /**
@@ -114,6 +116,10 @@ export class EnterpriseVpc extends constructs.Construct {
 	 */
   public readonly vpc: ec2.Vpc;
 
+  public readonly addRoutesProvider: cr.Provider;
+
+  public readonly tgWaiterProvider: cr.Provider;
+
   /**
    *
    * @param scope
@@ -124,6 +130,12 @@ export class EnterpriseVpc extends constructs.Construct {
     super(scope, id);
 
     this.vpc = props.vpc;
+
+    const crHandlders = new EnterpriseVpcLambda(this, 'vpclambda');
+
+    this.addRoutesProvider = crHandlders.addRoutesProvider;
+    this.tgWaiterProvider = crHandlders.tgWaiterProvider;
+
   }
 
 
@@ -281,7 +293,7 @@ export class EnterpriseVpc extends constructs.Construct {
           TransitGatewayId: props.transitGateway.attrId,
           VpcId: this.vpc.vpcId,
           Options: {
-				  ApplianceModeSupport: props.applicanceMode,
+				    ApplianceModeSupport: props.applicanceMode,
           },
 			  },
 			  physicalResourceId: cr.PhysicalResourceId.fromResponse('TransitGatewayVpcAttachment.TransitGatewayAttachmentId'),
@@ -336,61 +348,8 @@ export class EnterpriseVpc extends constructs.Construct {
       });
 
 
-      const addRoutesLambda = new aws_lambda.SingletonFunction(this, `lookupIdLambda-evpc${hashProps(props)}`, {
-        uuid: '00001122AA',
-        runtime: aws_lambda.Runtime.PYTHON_3_9,
-        handler: 'addRoutes.on_event',
-        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-      });
-
-      addRoutesLambda.addToRolePolicy(
-        new iam.PolicyStatement({
-          effect: iam.Effect.ALLOW,
-          resources: ['*'],
-          actions: [
-            'ec2:CreateRoute',
-            'ec2:DeleteRoute',
-            'ec2:ReplaceRoute',
-          ],
-        }),
-      );
-
-      const addRoutesProvider = new cr.Provider(this, `NetworkManagerProvider${hashProps(props)}`, {
-        onEventHandler: addRoutesLambda,
-      });
-
       // check that the cidrs are valid
       const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
-
-
-      // TransitGatewayReady
-      const tgwaittofinishOnEvent = new aws_lambda.Function(this, 'tgReadyOnevent', {
-
-        runtime: aws_lambda.Runtime.PYTHON_3_9,
-        handler: 'checktgready.on_event',
-        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-        timeout: cdk.Duration.seconds(899),
-        //functionName: 'cloudwanPolicyExecutewaittofinishonevent', //cdk.PhysicalName.GENERATE_IF_NEEDED
-      });
-
-
-      const tgwaittofinishIsComplete = new aws_lambda.Function(this, 'tgReadyisComplete', {
-        runtime: aws_lambda.Runtime.PYTHON_3_9,
-        handler: 'checktgready.is_complete',
-        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-        timeout: cdk.Duration.seconds(899),
-        //functionName: 'cloudwanPolicyExecutewaitiscomplete', //cdk.PhysicalName.GENERATE_IF_NEEDED
-      });
-
-      tgwaittofinishIsComplete.addToRolePolicy(
-        new iam.PolicyStatement({
-          effect: iam.Effect.ALLOW,
-          resources: ['*'],
-          actions: [
-            'ec2:DescribeTransitGateway*',
-          ],
-        }),
-      );
 
 
       routeTableIds.forEach((routeTableId, index) => {
@@ -401,8 +360,9 @@ export class EnterpriseVpc extends constructs.Construct {
 
           switch (props.destination) {
             case Destination.CLOUDWAN: {
+
               new cdk.CustomResource(this, `cloudwanroute${network}${hashProps(props)}${index}`, {
-                serviceToken: addRoutesProvider.serviceToken,
+                serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
                   RouteTableId: routeTableId,
@@ -414,14 +374,12 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-
-              const waiter = new cr.Provider(this, `WaittoFinishProvider${network}${hashProps(props)}${index}`, {
-                onEventHandler: tgwaittofinishOnEvent,
-                isCompleteHandler: tgwaittofinishIsComplete,
-                totalTimeout: cdk.Duration.minutes(119),	// note this can be longer than the lambda timeout
-                queryInterval: cdk.Duration.seconds(20),
-                logRetention: logs.RetentionDays.ONE_MONTH,
-                providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
+              const waiter = new cdk.CustomResource(this, `cloudwanroute${network}${hashProps(props)}${index}`, {
+                serviceToken: this.tgWaiterProvider.serviceToken,
+                properties: {
+                  transitGatewayId: this.transitGWID,
+                  transitGatewayAttachmentId: this.transitGWAttachmentID,
+                },
               });
 
               const transitgatewayroute = new ec2.CfnRoute(this, `transitgatewayroute${network}${hashProps(props)}${index}`, {

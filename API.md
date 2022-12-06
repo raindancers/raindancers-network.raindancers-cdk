@@ -855,6 +855,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
@@ -873,6 +875,26 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.EnterpriseVpc.property.addRoutesProvider"></a>
+
+```typescript
+public readonly addRoutesProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
+
+---
+
+##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.EnterpriseVpc.property.tgWaiterProvider"></a>
+
+```typescript
+public readonly tgWaiterProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
 
 ---
 
