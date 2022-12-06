@@ -447,12 +447,10 @@ export class EnterpriseVpc extends constructs.Construct {
 
 // this provides a unique string based on the props
 function hashProps(props: object): string {
-
   const str = JSON.stringify(props);
   var h: number = 0;
   for (var i = 0; i < str.length; i++) {
-    h = 31 * h + str.charCodeAt(i);
+	  h = 31 * h + str.charCodeAt(i);
   }
-  /* eslint-disable-next-line */
-  return String(h & 0xFFFFFFFF) 
+  return h.toString(16).substring(0, 12);
 }
