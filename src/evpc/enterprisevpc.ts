@@ -350,8 +350,7 @@ export class EnterpriseVpc extends constructs.Construct {
           actions: [
             'ec2:CreateRoute',
             'ec2:DeleteRoute',
-            'ec2:ReplaceRoute',
-            'net_manager.list_core_networks',
+            'ec2:ReplaceRoute'
           ],
         }),
       );
