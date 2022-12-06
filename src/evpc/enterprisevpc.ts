@@ -363,6 +363,36 @@ export class EnterpriseVpc extends constructs.Construct {
       const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
 
 
+      // TransitGatewayReady
+      const tgwaittofinishOnEvent = new aws_lambda.Function(this, 'tgReadyOnevent', {
+
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        handler: 'checktgready.on_event',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+        timeout: cdk.Duration.seconds(899),
+        //functionName: 'cloudwanPolicyExecutewaittofinishonevent', //cdk.PhysicalName.GENERATE_IF_NEEDED
+      });
+
+
+      const tgwaittofinishIsComplete = new aws_lambda.Function(this, 'tgReadyisComplete', {
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        handler: 'checktgready.is_complete',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+        timeout: cdk.Duration.seconds(899),
+        //functionName: 'cloudwanPolicyExecutewaitiscomplete', //cdk.PhysicalName.GENERATE_IF_NEEDED
+      });
+
+      tgwaittofinishIsComplete.addToRolePolicy(
+        new iam.PolicyStatement({
+          effect: iam.Effect.ALLOW,
+          resources: ['*'],
+          actions: [
+            'ec2:DescribeTransitGateway*',
+          ],
+        }),
+      );
+
+
       routeTableIds.forEach((routeTableId, index) => {
         props.cidr.forEach((network) => {
           if (ipRegex.test(network) === false) {
@@ -384,38 +414,10 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-              const waittofinishOnEvent = new aws_lambda.Function(this, `tgReadyOnevent${network}${hashProps(props)}${index}`, {
-
-                runtime: aws_lambda.Runtime.PYTHON_3_9,
-                handler: 'checktgready.on_event',
-                code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-                timeout: cdk.Duration.seconds(899),
-                //functionName: 'cloudwanPolicyExecutewaittofinishonevent', //cdk.PhysicalName.GENERATE_IF_NEEDED
-              });
-
-
-              const waittofinishIsComplete = new aws_lambda.Function(this, `tgReadyisComplete${network}${hashProps(props)}${index}`, {
-                runtime: aws_lambda.Runtime.PYTHON_3_9,
-                handler: 'checktgready.is_complete',
-                code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
-                timeout: cdk.Duration.seconds(899),
-                //functionName: 'cloudwanPolicyExecutewaitiscomplete', //cdk.PhysicalName.GENERATE_IF_NEEDED
-              });
-
-
-              waittofinishIsComplete.addToRolePolicy(
-                new iam.PolicyStatement({
-                  effect: iam.Effect.ALLOW,
-                  resources: ['*'],
-                  actions: [
-                    'ec2:DescribeTransitGateway*',
-                  ],
-                }),
-              );
 
               const waiter = new cr.Provider(this, `WaittoFinishProvider${network}${hashProps(props)}${index}`, {
-                onEventHandler: waittofinishOnEvent,
-                isCompleteHandler: waittofinishIsComplete,
+                onEventHandler: tgwaittofinishOnEvent,
+                isCompleteHandler: tgwaittofinishIsComplete,
                 totalTimeout: cdk.Duration.minutes(119),	// note this can be longer than the lambda timeout
                 queryInterval: cdk.Duration.seconds(20),
                 logRetention: logs.RetentionDays.ONE_MONTH,
