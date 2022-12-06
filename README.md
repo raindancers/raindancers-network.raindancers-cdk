@@ -1,6 +1,6 @@
 # Raindancers Network Construct Library
 
-The raindancers network package contains  constructs that construct to provide additional network capablitys, particually for using in an enterprise network. 
+The raindancers network package contains  constructs that construct to provide additional network capablitys, particually for using in an enterprise network. .
 
 All of the methods that work with ec2.Vpc, work with Evpc.   Refer to [the ec2.Vpc Documentation](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ec2-readme.html)
 
