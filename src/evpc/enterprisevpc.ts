@@ -431,9 +431,9 @@ export class EnterpriseVpc extends constructs.Construct {
         props.cidr.forEach((destinationCidr) => {
 
 
-          this.vpc.selectSubnets({ subnetGroupName: subnetGroup }).subnets.forEach((subnet) => {
+          this.vpc.selectSubnets({ subnetGroupName: subnetGroup }).subnets.forEach((subnet, index) => {
 
-            new ec2.CfnRoute(this, 'FirewallRoute-' + hashProps(props) + subnet.node.path.split('/').pop(), {
+            new ec2.CfnRoute(this, 'FirewallRoute-' + hashProps(props) + subnet.node.path.split('/').pop() + index, {
               destinationCidrBlock: destinationCidr,
               routeTableId: subnet.routeTable.routeTableId,
               vpcEndpointId: fwDescription.getResponseField(`FirewallStatus.SyncStates.${subnet.availabilityZone}.Attachment.EndpointId`),
