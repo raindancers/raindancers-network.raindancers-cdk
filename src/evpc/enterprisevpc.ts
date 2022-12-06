@@ -383,12 +383,55 @@ export class EnterpriseVpc extends constructs.Construct {
               break;
             }
             case Destination.TRANSITGATEWAY: {
-              new ec2.CfnRoute(this, `transitgatewayroute${network}${hashProps(props)}${index}`, {
+
+              const waittofinishOnEvent = new aws_lambda.Function(this, 'tgReadyOnevent', {
+
+                runtime: aws_lambda.Runtime.PYTHON_3_9,
+                handler: 'checktgready.on_event',
+                code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+                timeout: cdk.Duration.seconds(899),
+                //functionName: 'cloudwanPolicyExecutewaittofinishonevent', //cdk.PhysicalName.GENERATE_IF_NEEDED
+              });
+
+
+              const waittofinishIsComplete = new aws_lambda.Function(this, 'tgReadyisComplete', {
+                runtime: aws_lambda.Runtime.PYTHON_3_9,
+                handler: 'checktgready.is_complete',
+                code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+                timeout: cdk.Duration.seconds(899),
+                //functionName: 'cloudwanPolicyExecutewaitiscomplete', //cdk.PhysicalName.GENERATE_IF_NEEDED
+              });
+
+
+              waittofinishIsComplete.addToRolePolicy(
+                new iam.PolicyStatement({
+                  effect: iam.Effect.ALLOW,
+                  resources: ['*'],
+                  actions: [
+                    'ec2:DescribeTransitGateway*',
+                  ],
+                }),
+              );
+
+              const waiter = new cr.Provider(this, 'WaittoFinishProvider', {
+                onEventHandler: waittofinishOnEvent,
+                isCompleteHandler: waittofinishIsComplete,
+                totalTimeout: cdk.Duration.minutes(119),	// note this can be longer than the lambda timeout
+                queryInterval: cdk.Duration.seconds(20),
+                logRetention: logs.RetentionDays.ONE_MONTH,
+                providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
+              });
+
+              const transitgatewayroute = new ec2.CfnRoute(this, `transitgatewayroute${network}${hashProps(props)}${index}`, {
                 routeTableId: routeTableId,
                 destinationCidrBlock: network,
                 transitGatewayId: this.transitGWID,
               });
+
+              transitgatewayroute.node.addDependency(waiter);
+
               break;
+
             }
             default: {
               throw new Error('No valid destinations for this method. ');
