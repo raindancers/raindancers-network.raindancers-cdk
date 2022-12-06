@@ -336,7 +336,7 @@ export class EnterpriseVpc extends constructs.Construct {
       });
 
 
-      const addRoutesLambda = new aws_lambda.SingletonFunction(this, 'lookupIdLambda-evpc', {
+      const addRoutesLambda = new aws_lambda.SingletonFunction(this, `lookupIdLambda-evpc${hashProps(props)}`, {
         uuid: '00001122AA',
         runtime: aws_lambda.Runtime.PYTHON_3_9,
         handler: 'addRoutes.on_event',
@@ -355,7 +355,7 @@ export class EnterpriseVpc extends constructs.Construct {
         }),
       );
 
-      const addRoutesProvider = new cr.Provider(this, 'NetworkManagerProvider', {
+      const addRoutesProvider = new cr.Provider(this, `NetworkManagerProvider${hashProps(props)}`, {
         onEventHandler: addRoutesLambda,
       });
 
