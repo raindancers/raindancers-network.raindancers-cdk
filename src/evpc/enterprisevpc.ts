@@ -384,7 +384,7 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-              const waittofinishOnEvent = new aws_lambda.Function(this, 'tgReadyOnevent', {
+              const waittofinishOnEvent = new aws_lambda.Function(this, `tgReadyOnevent${network}${hashProps(props)}${index}`, {
 
                 runtime: aws_lambda.Runtime.PYTHON_3_9,
                 handler: 'checktgready.on_event',
@@ -394,7 +394,7 @@ export class EnterpriseVpc extends constructs.Construct {
               });
 
 
-              const waittofinishIsComplete = new aws_lambda.Function(this, 'tgReadyisComplete', {
+              const waittofinishIsComplete = new aws_lambda.Function(this, `tgReadyisComplete${network}${hashProps(props)}${index}`, {
                 runtime: aws_lambda.Runtime.PYTHON_3_9,
                 handler: 'checktgready.is_complete',
                 code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
@@ -413,7 +413,7 @@ export class EnterpriseVpc extends constructs.Construct {
                 }),
               );
 
-              const waiter = new cr.Provider(this, 'WaittoFinishProvider', {
+              const waiter = new cr.Provider(this, `WaittoFinishProvider${network}${hashProps(props)}${index}`, {
                 onEventHandler: waittofinishOnEvent,
                 isCompleteHandler: waittofinishIsComplete,
                 totalTimeout: cdk.Duration.minutes(119),	// note this can be longer than the lambda timeout
