@@ -33,7 +33,9 @@ def is_complete(event, context):
 	)['TransitGatewayVpcAttachments'][0]['State']
 
 	if attachment_state == 'available' and tg_state == 'avaialble':
-		return { 'IsComplete': 'is_ready' }	
+			return { 'IsComplete': True }	
+	else:
+			return { 'IsComplete': False }
 
 	
 
