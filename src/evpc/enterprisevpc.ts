@@ -60,12 +60,15 @@ export interface AttachToTransitGatewayProps {
 export interface AddRoutesProps {
   // a list of cidrs to route
   readonly cidr: string[];
+  // description
+  readonly description: string;
   // a list of the subnetGroups to add the Routes to
   readonly subnetGroups: string[];
   // the destination for the route
   readonly destination: Destination;
   // gatewayloadbalancers
   readonly networkFirewallArn?: string;
+
 }// end of addRoutetoCloudWan
 
 /**
@@ -410,7 +413,7 @@ export class EnterpriseVpc extends constructs.Construct {
         outputPaths.push(`FirewallStatus.SyncStates.${az}.Attachment.EndpointId`);
       });
 
-      const fwDescription = new cr.AwsCustomResource(this, `DescribeFirewall${hashProps(props)}`, {
+      const fwDescription = new cr.AwsCustomResource(this, `DescribeFirewall${hashProps(props)}${props.description}`, {
         onCreate: {
           service: 'NetworkFirewall',
           action: 'describeFirewall',

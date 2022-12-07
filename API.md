@@ -2435,6 +2435,7 @@ const addRoutesProps: AddRoutesProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.AddRoutesProps.property.cidr">cidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.networkFirewallArn">networkFirewallArn</a></code> | <code>string</code> | *No description.* |
@@ -2448,6 +2449,16 @@ public readonly cidr: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddRoutesProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
 
 ---
 
