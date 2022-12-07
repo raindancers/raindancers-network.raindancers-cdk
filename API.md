@@ -1403,7 +1403,7 @@ Create a connect Attachment to Cloudwan for Appliances.
 | <code><a href="#raindancers-network.Evpc.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#raindancers-network.Evpc.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#raindancers-network.Evpc.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#raindancers-network.Evpc.fromLookup">fromLookup</a></code> | Import an existing VPC from by querying the AWS environment this stack is deployed to. |
+| <code><a href="#raindancers-network.Evpc.fromLookup">fromLookup</a></code> | Import an existing VPC by querying the AWS environment this stack is deployed to. |
 | <code><a href="#raindancers-network.Evpc.fromVpcAttributes">fromVpcAttributes</a></code> | Import a VPC by supplying all attributes directly. |
 
 ---
@@ -1466,7 +1466,7 @@ import { Evpc } from 'raindancers-network'
 Evpc.fromLookup(scope: Construct, id: string, options: VpcLookupOptions)
 ```
 
-Import an existing VPC from by querying the AWS environment this stack is deployed to.
+Import an existing VPC by querying the AWS environment this stack is deployed to.
 
 This function only needs to be used to use VPCs not defined in your CDK
 application. If you are looking to share a VPC between stacks, you can
@@ -3085,10 +3085,12 @@ const evpcProps: EvpcProps = { ... }
 | <code><a href="#raindancers-network.EvpcProps.property.enableDnsSupport">enableDnsSupport</a></code> | <code>boolean</code> | Indicates whether the DNS resolution is supported for the VPC. |
 | <code><a href="#raindancers-network.EvpcProps.property.flowLogs">flowLogs</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.FlowLogOptions}</code> | Flow logs to add to this VPC. |
 | <code><a href="#raindancers-network.EvpcProps.property.gatewayEndpoints">gatewayEndpoints</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.GatewayVpcEndpointOptions}</code> | Gateway endpoints to add to this VPC. |
+| <code><a href="#raindancers-network.EvpcProps.property.ipAddresses">ipAddresses</a></code> | <code>aws-cdk-lib.aws_ec2.IIpAddresses</code> | The Provider to use to allocate IP Space to your VPC. |
 | <code><a href="#raindancers-network.EvpcProps.property.maxAzs">maxAzs</a></code> | <code>number</code> | Define the maximum number of AZs to use in this region. |
 | <code><a href="#raindancers-network.EvpcProps.property.natGatewayProvider">natGatewayProvider</a></code> | <code>aws-cdk-lib.aws_ec2.NatProvider</code> | What type of NAT provider to use. |
 | <code><a href="#raindancers-network.EvpcProps.property.natGateways">natGateways</a></code> | <code>number</code> | The number of NAT Gateways/Instances to create. |
 | <code><a href="#raindancers-network.EvpcProps.property.natGatewaySubnets">natGatewaySubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Configures the subnets which will have NAT Gateways/Instances. |
+| <code><a href="#raindancers-network.EvpcProps.property.reservedAzs">reservedAzs</a></code> | <code>number</code> | Define the number of AZs to reserve. |
 | <code><a href="#raindancers-network.EvpcProps.property.subnetConfiguration">subnetConfiguration</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | Configure the subnets to build for each AZ. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpcName">vpcName</a></code> | <code>string</code> | The VPC name. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpnConnections">vpnConnections</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.VpnConnectionOptions}</code> | VPN connections to this VPC. |
@@ -3121,7 +3123,9 @@ Specify this option only if you do not specify `maxAzs`.
 
 ---
 
-##### `cidr`<sup>Optional</sup> <a name="cidr" id="raindancers-network.EvpcProps.property.cidr"></a>
+##### ~~`cidr`~~<sup>Optional</sup> <a name="cidr" id="raindancers-network.EvpcProps.property.cidr"></a>
+
+- *Deprecated:* Use ipAddresses instead
 
 ```typescript
 public readonly cidr: string;
@@ -3216,6 +3220,21 @@ Gateway endpoints to add to this VPC.
 
 ---
 
+##### `ipAddresses`<sup>Optional</sup> <a name="ipAddresses" id="raindancers-network.EvpcProps.property.ipAddresses"></a>
+
+```typescript
+public readonly ipAddresses: IIpAddresses;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.IIpAddresses
+- *Default:* ec2.IpAddresses.cidr
+
+The Provider to use to allocate IP Space to your VPC.
+
+Options include static allocation or from a pool.
+
+---
+
 ##### `maxAzs`<sup>Optional</sup> <a name="maxAzs" id="raindancers-network.EvpcProps.property.maxAzs"></a>
 
 ```typescript
@@ -3294,6 +3313,22 @@ You can pick a specific group of subnets by specifying the group name;
 the picked subnets must be public subnets.
 
 Only necessary if you have more than one public subnet group.
+
+---
+
+##### `reservedAzs`<sup>Optional</sup> <a name="reservedAzs" id="raindancers-network.EvpcProps.property.reservedAzs"></a>
+
+```typescript
+public readonly reservedAzs: number;
+```
+
+- *Type:* number
+- *Default:* 0
+
+Define the number of AZs to reserve.
+
+When specified, the IP space is reserved for the azs but no actual
+resources are provisioned.
 
 ---
 
