@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Andrew Frazer',
   authorAddress: 'andrew.frazer@raindancers.co.nz',
-  cdkVersion: '2.46.0',
+  cdkVersion: '2.50.0',
   defaultReleaseBranch: 'main',
   name: 'raindancers-network',
   repositoryUrl: 'https://github.com/raindancers/raindancers-network.raindancers-cdk',
