@@ -3801,22 +3801,10 @@ const r53ResolverendpointsProps: R53ResolverendpointsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.resolveDomains">resolveDomains</a></code> | <code>string[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
 | <code><a href="#raindancers-network.R53ResolverendpointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetgroup to place the resolvers in. |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
 | <code><a href="#raindancers-network.R53ResolverendpointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the vpc that the resolvers will be placed in. |
-
----
-
-##### `resolveDomains`<sup>Required</sup> <a name="resolveDomains" id="raindancers-network.R53ResolverendpointsProps.property.resolveDomains"></a>
-
-```typescript
-public readonly resolveDomains: string[];
-```
-
-- *Type:* string[]
-
-An array of Internal domains that can be centrally resolved in this VPC.
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.resolveDomains">resolveDomains</a></code> | <code>string[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
 
 ---
 
@@ -3832,18 +3820,6 @@ the subnetgroup to place the resolvers in.
 
 ---
 
-##### `tagValue`<sup>Required</sup> <a name="tagValue" id="raindancers-network.R53ResolverendpointsProps.property.tagValue"></a>
-
-```typescript
-public readonly tagValue: string;
-```
-
-- *Type:* string
-
-Value for Sharing.
-
----
-
 ##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.R53ResolverendpointsProps.property.vpc"></a>
 
 ```typescript
@@ -3853,6 +3829,30 @@ public readonly vpc: Vpc;
 - *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 the vpc that the resolvers will be placed in.
+
+---
+
+##### `resolveDomains`<sup>Optional</sup> <a name="resolveDomains" id="raindancers-network.R53ResolverendpointsProps.property.resolveDomains"></a>
+
+```typescript
+public readonly resolveDomains: string[];
+```
+
+- *Type:* string[]
+
+An array of Internal domains that can be centrally resolved in this VPC.
+
+---
+
+##### `tagValue`<sup>Optional</sup> <a name="tagValue" id="raindancers-network.R53ResolverendpointsProps.property.tagValue"></a>
+
+```typescript
+public readonly tagValue: string;
+```
+
+- *Type:* string
+
+Value for Sharing.
 
 ---
 

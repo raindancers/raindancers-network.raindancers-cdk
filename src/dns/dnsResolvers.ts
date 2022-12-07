@@ -66,7 +66,7 @@ export class R53Resolverendpoints extends constructs.Construct {
       );
     }
 
-    // create a security group for the route resolvers. 
+    // create a security group for the route resolvers.
     const dnsSecurityGroup = new ec2.SecurityGroup(this, 'DNSSecurityGroup', {
       vpc: props.vpc,
       allowAllOutbound: false,
@@ -131,9 +131,9 @@ export class R53Resolverendpoints extends constructs.Construct {
     });
 
 
-    if (props.resolveDomains){
+    if (props.resolveDomains) {
       props.resolveDomains.forEach((domain) => {
-    
+
         var name:string = domain.replace(/\./gi, 'dot');
         name = name.replace(/-/gi, 'dash');
 
@@ -157,10 +157,10 @@ export class R53Resolverendpoints extends constructs.Construct {
           tags: [{
             key: 'r53rshare',
             value: props.tagValue as string,
-          }]
+          }],
         });
 
-      })
+      });
     }
   }
 }
