@@ -34,11 +34,11 @@ export interface R53ResolverendpointsProps {
   /**
 	 * An array of Internal domains that can be centrally resolved in this VPC
 	 */
-  readonly resolveDomains: string[];
+  readonly resolveDomains?: string[] | undefined;
   /**
 	 * Value for Sharing.
 	 */
-  readonly tagValue: string;
+  readonly tagValue?: string | undefined;
 }
 
 /**
@@ -66,6 +66,7 @@ export class R53Resolverendpoints extends constructs.Construct {
       );
     }
 
+    // create a security group for the route resolvers. 
     const dnsSecurityGroup = new ec2.SecurityGroup(this, 'DNSSecurityGroup', {
       vpc: props.vpc,
       allowAllOutbound: false,
@@ -130,36 +131,36 @@ export class R53Resolverendpoints extends constructs.Construct {
     });
 
 
-    //create resolver rules to share org wide.
-    props.resolveDomains.forEach((domain) => {
+    if (props.resolveDomains){
+      props.resolveDomains.forEach((domain) => {
+    
+        var name:string = domain.replace(/\./gi, 'dot');
+        name = name.replace(/-/gi, 'dash');
 
+        const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
+          domainName: domain,
+          ruleType: 'FORWARD',
+          name: name,
+          resolverEndpointId: outBoundResolver.attrResolverEndpointId,
+          targetIps: resolverIps,
+          tags: [{
+            key: 'r53rrule',
+            value: props.tagValue as string,
+          }],
+        });
 
-      var name:string = domain.replace(/\./gi, 'dot');
-      name = name.replace(/-/gi, 'dash');
+        new ram.CfnResourceShare(this, `ResolverRuleShare${domain}`, {
+          name: domain,
+          principals: [this.node.tryGetContext('orgArn')],
+          resourceArns: [resolverrule.attrArn],
+          allowExternalPrincipals: false,
+          tags: [{
+            key: 'r53rshare',
+            value: props.tagValue as string,
+          }]
+        });
 
-      const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
-        domainName: domain,
-        ruleType: 'FORWARD',
-        name: name,
-        resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-        targetIps: resolverIps,
-        tags: [{
-          key: 'r53rrule',
-          value: props.tagValue,
-				  }],
-      });
-
-      new ram.CfnResourceShare(this, `ResolverRuleShare${domain}`, {
-        name: domain,
-        principals: [this.node.tryGetContext('orgArn')],
-        resourceArns: [resolverrule.attrArn],
-        allowExternalPrincipals: false,
-        tags: [{
-          key: 'r53rshare',
-          value: props.tagValue,
-        }],
-
-      });
-    });
+      })
+    }
   }
 }
