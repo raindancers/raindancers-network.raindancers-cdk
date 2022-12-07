@@ -323,6 +323,7 @@ export class EnterpriseVpc extends constructs.Construct {
     });
 
     this.transitGWID = props.transitGateway.attrId;
+    this.transitGWAttachmentID = transitGatewaypeering.getResponseField('TransitGatewayVpcAttachment.TransitGatewayAttachmentId');
     return transitGatewaypeering.getResponseField('TransitGatewayVpcAttachment.TransitGatewayAttachmentId');
 
 
@@ -382,6 +383,7 @@ export class EnterpriseVpc extends constructs.Construct {
                 properties: {
                   transitGatewayId: this.transitGWID,
                   transitGatewayAttachmentId: this.transitGWAttachmentID,
+
                 },
               });
 
