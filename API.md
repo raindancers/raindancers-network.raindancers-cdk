@@ -3785,6 +3785,45 @@ the the vpc where the Network firewall is placed.
 
 ---
 
+### OutboundForwardingRule <a name="OutboundForwardingRule" id="raindancers-network.OutboundForwardingRule"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.OutboundForwardingRule.Initializer"></a>
+
+```typescript
+import { OutboundForwardingRule } from 'raindancers-network'
+
+const outboundForwardingRule: OutboundForwardingRule = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.OutboundForwardingRule.property.domain">domain</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.OutboundForwardingRule.property.forwardTo">forwardTo</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `domain`<sup>Required</sup> <a name="domain" id="raindancers-network.OutboundForwardingRule.property.domain"></a>
+
+```typescript
+public readonly domain: string;
+```
+
+- *Type:* string
+
+---
+
+##### `forwardTo`<sup>Required</sup> <a name="forwardTo" id="raindancers-network.OutboundForwardingRule.property.forwardTo"></a>
+
+```typescript
+public readonly forwardTo: string[];
+```
+
+- *Type:* string[]
+
+---
+
 ### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.R53ResolverendpointsProps"></a>
 
 Properties to for creating inbound resolvers.
@@ -3803,7 +3842,7 @@ const r53ResolverendpointsProps: R53ResolverendpointsProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.R53ResolverendpointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetgroup to place the resolvers in. |
 | <code><a href="#raindancers-network.R53ResolverendpointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the vpc that the resolvers will be placed in. |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.resolveDomains">resolveDomains</a></code> | <code>string[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
+| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.outboundForwardingRules">outboundForwardingRules</a></code> | <code><a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
 | <code><a href="#raindancers-network.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
 
 ---
@@ -3832,13 +3871,13 @@ the vpc that the resolvers will be placed in.
 
 ---
 
-##### `resolveDomains`<sup>Optional</sup> <a name="resolveDomains" id="raindancers-network.R53ResolverendpointsProps.property.resolveDomains"></a>
+##### `outboundForwardingRules`<sup>Optional</sup> <a name="outboundForwardingRules" id="raindancers-network.R53ResolverendpointsProps.property.outboundForwardingRules"></a>
 
 ```typescript
-public readonly resolveDomains: string[];
+public readonly outboundForwardingRules: OutboundForwardingRule[];
 ```
 
-- *Type:* string[]
+- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
 
 An array of Internal domains that can be centrally resolved in this VPC.
 

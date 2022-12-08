@@ -1,10 +1,6 @@
-import * as cdk from 'aws-cdk-lib';
 import {
   aws_ec2 as ec2,
   aws_route53resolver as r53r,
-  custom_resources as cr,
-  aws_logs as logs,
-  aws_ram as ram,
 }
 
   from 'aws-cdk-lib';
@@ -18,6 +14,12 @@ export enum ResolverDirection {
   INBOUND = 'inbound',
   OUTBOUND = 'outbound'
 }
+
+export interface OutboundForwardingRule {
+  readonly domain: string;
+  readonly forwardTo: string[];
+}
+
 
 /**
  * Properties to for creating inbound resolvers.
@@ -34,7 +36,7 @@ export interface R53ResolverendpointsProps {
   /**
 	 * An array of Internal domains that can be centrally resolved in this VPC
 	 */
-  readonly resolveDomains?: string[] | undefined;
+  readonly outboundForwardingRules?: OutboundForwardingRule[] | undefined;
   /**
 	 * Value for Sharing.
 	 */
@@ -89,7 +91,8 @@ export class R53Resolverendpoints extends constructs.Construct {
     });
 
 
-    const inboundResolver = new r53r.CfnResolverEndpoint(this, 'InboundResolver', {
+    //const inboundResolver =
+    new r53r.CfnResolverEndpoint(this, 'InboundResolver', {
       direction: ResolverDirection.INBOUND,
       ipAddresses: dnsipAddresses,
       securityGroupIds: [dnsSecurityGroup.securityGroupId],
@@ -97,68 +100,51 @@ export class R53Resolverendpoints extends constructs.Construct {
     });
 
 
-    /**
-		 * Create Resolver Rules to share across the network
-		 */
+    if (props.outboundForwardingRules) {
+      props.outboundForwardingRules.forEach((rule) => {
 
-    // get endpoint Ip
-    const addRoutev4SdkCall: cr.AwsSdkCall = {
-      service: 'Route53Resolver',
-      action: 'listResolverEndpointIpAddresses',
-      parameters: {
-        ResolverEndpointId: inboundResolver.attrResolverEndpointId,
-      },
-      region: cdk.Aws.REGION,
-      physicalResourceId: cr.PhysicalResourceId.of('InboundRouteResolverIP'),
-    };
-
-    const resolverIP = new cr.AwsCustomResource(this, 'CRendpointresolverips', {
-      onCreate: addRoutev4SdkCall,
-      logRetention: logs.RetentionDays.SEVEN_YEARS,
-      policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
-        resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-      }),
-    });
-
-    const resolverIps: r53r.CfnResolverRule.TargetAddressProperty[] = [];
-
-    props.vpc.availabilityZones.forEach((index) => {
-
-      const targetAddressProperty: r53r.CfnResolverRule.TargetAddressProperty = {
-        ip: resolverIP.getResponseField(`IpAddresses.${index}.Ip`),
-      };
-      resolverIps.push(targetAddressProperty);
-    });
-
-
-    if (props.resolveDomains) {
-      props.resolveDomains.forEach((domain) => {
-
-        var name:string = domain.replace(/\./gi, 'dot');
+        // we have to replace dots and dashes for the name rule. It does not like them!
+        var name:string = rule.domain.replace(/\./gi, 'dot');
         name = name.replace(/-/gi, 'dash');
 
+        // create a list of Targets
+        const resolverIps: r53r.CfnResolverRule.TargetAddressProperty[] = [];
+        rule.forwardTo.forEach((target) => {
+          resolverIps.push({ ip: target });
+        });
+
+        // create a resolver IP address.
         const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
-          domainName: domain,
+          domainName: rule.domain,
           ruleType: 'FORWARD',
           name: name,
           resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-          targetIps: resolverIps,
+          targetIps: resolverIps, // dns servers
           tags: [{
             key: 'r53rrule',
             value: props.tagValue as string,
           }],
         });
 
-        new ram.CfnResourceShare(this, `ResolverRuleShare${domain}`, {
-          name: domain,
-          principals: [this.node.tryGetContext('orgArn')],
-          resourceArns: [resolverrule.attrArn],
-          allowExternalPrincipals: false,
-          tags: [{
-            key: 'r53rshare',
-            value: props.tagValue as string,
-          }],
-        });
+        // Associated the resolver rule with the vpc
+        new r53r.CfnResolverRuleAssociation(this, `${name}ResolverRuleAssn`,
+          {
+            resolverRuleId: resolverrule.attrResolverRuleId,
+            vpcId: props.vpc.vpcId,
+          },
+        );
+
+
+        // new ram.CfnResourceShare(this, `ResolverRuleShare${rule.domain}`, {
+        //   name: rule.domain,
+        //   principals: [this.node.tryGetContext('orgArn')],
+        //   resourceArns: [resolverrule.attrArn],
+        //   allowExternalPrincipals: false,
+        //   tags: [{
+        //     key: 'r53rshare',
+        //     value: props.tagValue as string,
+        //   }],
+        // });
 
       });
     }
