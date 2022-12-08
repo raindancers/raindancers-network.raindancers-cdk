@@ -2400,6 +2400,9 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.R53Resolverendpoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.R53Resolverendpoints.property.inboundResolver">inboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | inbound resolver. |
+| <code><a href="#raindancers-network.R53Resolverendpoints.property.inboundResolversIp">inboundResolversIp</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | list of Resolver IP address's. |
+| <code><a href="#raindancers-network.R53Resolverendpoints.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | outbound resolver. |
 
 ---
 
@@ -2412,6 +2415,42 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `inboundResolver`<sup>Required</sup> <a name="inboundResolver" id="raindancers-network.R53Resolverendpoints.property.inboundResolver"></a>
+
+```typescript
+public readonly inboundResolver: CfnResolverEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
+
+inbound resolver.
+
+---
+
+##### `inboundResolversIp`<sup>Required</sup> <a name="inboundResolversIp" id="raindancers-network.R53Resolverendpoints.property.inboundResolversIp"></a>
+
+```typescript
+public readonly inboundResolversIp: TargetAddressProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]
+
+list of Resolver IP address's.
+
+---
+
+##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.R53Resolverendpoints.property.outboundResolver"></a>
+
+```typescript
+public readonly outboundResolver: CfnResolverEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
+
+outbound resolver.
 
 ---
 

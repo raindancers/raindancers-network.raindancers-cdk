@@ -60,6 +60,13 @@ export interface R53ResolverendpointsProps {
  */
 export class R53Resolverendpoints extends constructs.Construct {
 
+  /** inbound resolver */
+  public inboundResolver: r53r.CfnResolverEndpoint;
+  /** list of Resolver IP address's */
+  public inboundResolversIp: r53r.CfnResolverRule.TargetAddressProperty[];
+  /** outbound resolver */
+  public outboundResolver: r53r.CfnResolverEndpoint;
+
   /**
 	 *
 	 * @param scope the scope in which these resources are craeted
@@ -102,6 +109,8 @@ export class R53Resolverendpoints extends constructs.Construct {
       name: 'OutboundRouteResolver ',
     });
 
+    this.outboundResolver = outBoundResolver;
+
 
     const inboundResolver = new r53r.CfnResolverEndpoint(this, 'InboundResolver', {
       direction: ResolverDirection.INBOUND,
@@ -110,7 +119,8 @@ export class R53Resolverendpoints extends constructs.Construct {
       name: 'InboundRouteResolver',
     });
 
-    inboundResolver.attrResolverEndpointId;
+    this.inboundResolver = inboundResolver;
+
 
     const inboundResolverIPCR = new cr.AwsCustomResource(this, 'getendpointipaddress', {
       onCreate: {
@@ -133,6 +143,9 @@ export class R53Resolverendpoints extends constructs.Construct {
     for (let index = 0; index < props.vpc.availabilityZones.length; index++ ) {
       inboundresolvers.push({ ip: inboundResolverIPCR.getResponseField((`IpAddresses.${index}.Ip`)) });
     }
+
+    this.inboundResolversIp = inboundresolvers;
+
 
     if (props.outboundForwardingRules) {
       props.outboundForwardingRules.forEach((rule) => {
@@ -173,7 +186,7 @@ export class R53Resolverendpoints extends constructs.Construct {
           domainName: rule.domain,
           ruleType: 'FORWARD',
           name: name,
-          resolverEndpointId: outBoundResolver.attrResolverEndpointId,
+          resolverEndpointId: inboundResolver.attrResolverEndpointId,
           targetIps: inboundresolvers, // dns servers
           tags: [{
             key: 'r53rrule',
