@@ -5,7 +5,6 @@ import {
   aws_logs as logs,
   aws_ram as ram,
 }
-
   from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 
@@ -14,13 +13,23 @@ import * as constructs from 'constructs';
  * Direction of Resolver
  */
 export enum ResolverDirection {
+  /**
+   * Resolver is Inbound
+   */
   INBOUND = 'inbound',
+  /**
+   * Resolver is outbound
+   */
   OUTBOUND = 'outbound'
 }
 
 export interface OutboundForwardingRule {
-  readonly domain: string,
-  readonly forwardTo: string[]
+  /**
+   * domain to forward
+   */
+  readonly domain: string;
+  /** array of ip address's to forward request to */
+  readonly forwardTo: string[];
 }
 
 
@@ -101,30 +110,29 @@ export class R53Resolverendpoints extends constructs.Construct {
       name: 'InboundRouteResolver',
     });
 
-    inboundResolver.attrResolverEndpointId
+    inboundResolver.attrResolverEndpointId;
 
     const inboundResolverIPCR = new cr.AwsCustomResource(this, 'getendpointipaddress', {
       onCreate: {
         service: 'Route53Resolver',
         action: 'listResolverEndpointIpAddresses',
         parameters: {
-          ResolverEndpointId: inboundResolver.attrResolverEndpointId
+          ResolverEndpointId: inboundResolver.attrResolverEndpointId,
         },
-        physicalResourceId: cr.PhysicalResourceId.of('inboundresolverip')
+        physicalResourceId: cr.PhysicalResourceId.of('inboundresolverip'),
       },
       logRetention: logs.RetentionDays.ONE_DAY,
       policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
         resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-      })
-    })
+      }),
+    });
 
-    // we will have the same number of ip address's as their are Az's for the vpc, so we can use that to extract the 
-    // ip address out the CR. 
-    var inboundresolvers: r53r.CfnResolverRule.TargetAddressProperty[] = []
-    props.vpc.availabilityZones.forEach((value, index) => {
-      inboundresolvers.push({ip: inboundResolverIPCR.getResponseField((`IpAddresses.${index}.Ip`))})
-    })
-    
+    // we will have the same number of ip address's as their are Az's for the vpc, so we can use that to extract the
+    // ip address out the CR.
+    var inboundresolvers: r53r.CfnResolverRule.TargetAddressProperty[] = [];
+    for (let index = 0; index < props.vpc.availabilityZones.length; index++ ) {
+      inboundresolvers.push({ ip: inboundResolverIPCR.getResponseField((`IpAddresses.${index}.Ip`)) });
+    }
 
     if (props.outboundForwardingRules) {
       props.outboundForwardingRules.forEach((rule) => {
@@ -136,8 +144,8 @@ export class R53Resolverendpoints extends constructs.Construct {
         // create a list of TargetAddress's from the prop.rule
         const resolverIps: r53r.CfnResolverRule.TargetAddressProperty[] = [];
         rule.forwardTo.forEach((target) => {
-          resolverIps.push({ip: target})
-        })
+          resolverIps.push({ ip: target });
+        });
 
         // create a resolver rule for the central vpc
         const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
@@ -145,7 +153,7 @@ export class R53Resolverendpoints extends constructs.Construct {
           ruleType: 'FORWARD',
           name: name,
           resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-          targetIps: resolverIps,     // dns servers
+          targetIps: resolverIps, // dns servers
           tags: [{
             key: 'r53rrule',
             value: props.tagValue as string,
@@ -156,9 +164,9 @@ export class R53Resolverendpoints extends constructs.Construct {
         new r53r.CfnResolverRuleAssociation(this, `${name}ResolverRuleAssn`,
           {
             resolverRuleId: resolverrule.attrResolverRuleId,
-            vpcId: props.vpc.vpcId
-          }
-        )
+            vpcId: props.vpc.vpcId,
+          },
+        );
 
         // create a sharing rule for other vpcs to use, to resolve back to our inbound resolvers.
         const sharedresolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
@@ -166,7 +174,7 @@ export class R53Resolverendpoints extends constructs.Construct {
           ruleType: 'FORWARD',
           name: name,
           resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-          targetIps: inboundresolvers,     // dns servers
+          targetIps: inboundresolvers, // dns servers
           tags: [{
             key: 'r53rrule',
             value: props.tagValue as string,

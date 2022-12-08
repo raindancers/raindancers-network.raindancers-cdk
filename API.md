@@ -3799,8 +3799,8 @@ const outboundForwardingRule: OutboundForwardingRule = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.OutboundForwardingRule.property.domain">domain</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.OutboundForwardingRule.property.forwardTo">forwardTo</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.OutboundForwardingRule.property.domain">domain</a></code> | <code>string</code> | domain to forward. |
+| <code><a href="#raindancers-network.OutboundForwardingRule.property.forwardTo">forwardTo</a></code> | <code>string[]</code> | array of ip address's to forward request to. |
 
 ---
 
@@ -3812,6 +3812,8 @@ public readonly domain: string;
 
 - *Type:* string
 
+domain to forward.
+
 ---
 
 ##### `forwardTo`<sup>Required</sup> <a name="forwardTo" id="raindancers-network.OutboundForwardingRule.property.forwardTo"></a>
@@ -3821,6 +3823,8 @@ public readonly forwardTo: string[];
 ```
 
 - *Type:* string[]
+
+array of ip address's to forward request to.
 
 ---
 
@@ -5282,17 +5286,21 @@ Direction of Resolver.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResolverDirection.INBOUND">INBOUND</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ResolverDirection.OUTBOUND">OUTBOUND</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ResolverDirection.INBOUND">INBOUND</a></code> | Resolver is Inbound. |
+| <code><a href="#raindancers-network.ResolverDirection.OUTBOUND">OUTBOUND</a></code> | Resolver is outbound. |
 
 ---
 
 ##### `INBOUND` <a name="INBOUND" id="raindancers-network.ResolverDirection.INBOUND"></a>
 
+Resolver is Inbound.
+
 ---
 
 
 ##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.ResolverDirection.OUTBOUND"></a>
+
+Resolver is outbound.
 
 ---
 
