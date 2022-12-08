@@ -1,18 +1,17 @@
-# Raindancers Network Construct Library
+# Raindancers Network Construct Library.
 
-The raindancers network package contains  constructs that construct to provide additional network capablitys, particually for using in an enterprise network. .
+The raindancers network package contains  constructs that construct to provide easy to use abstractions, particually for using in an enterprise network, with Transit Gateways, Cloudwan, Network Firewalls, and DNS.
 
 All of the methods that work with ec2.Vpc, work with Evpc.   Refer to [the ec2.Vpc Documentation](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ec2-readme.html)
 
-Note: This Construct Library is now functional, but expect considerable change over time. ..
+Note: This Construct Library is functional, but it is possible that breaking changes could occur.   This construct is highly opinionated, but seeks to solve a wide set of scenerios that its author has faced.   The authors of this construct encourage and welcome PR's.  Please raise an issue to start
 
-The authors of this construct encourage and welcome PR's.  Please raise an issue to start
 
 ```
-import { Evpc } from 'raindancers-cdk.raindancers-network';
+import { EnterpriseVPC } from 'raindancers-cdk.raindancers-network';
 ```
 
-## VPC
+## EnterpriseVPC
 Many projects need a Virtual Private Cloud network.  This can be provided by creating an instance of ```EVpc``` :
 ```
 const shineyEvpc = new Evpc(this, 'EnterpriseVPC');
