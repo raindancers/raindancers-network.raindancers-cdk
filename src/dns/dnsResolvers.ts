@@ -169,7 +169,7 @@ export class R53Resolverendpoints extends constructs.Construct {
         );
 
         // create a sharing rule for other vpcs to use, to resolve back to our inbound resolvers.
-        const sharedresolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
+        const sharedresolverrule = new r53r.CfnResolverRule(this, `${name}SharedResolverRule`, {
           domainName: rule.domain,
           ruleType: 'FORWARD',
           name: name,
