@@ -186,7 +186,7 @@ export class R53Resolverendpoints extends constructs.Construct {
           domainName: rule.domain,
           ruleType: 'FORWARD',
           name: name,
-          resolverEndpointId: inboundResolver.attrResolverEndpointId,
+          resolverEndpointId: outBoundResolver.attrResolverEndpointId,
           targetIps: inboundresolvers, // dns servers
           tags: [{
             key: 'r53rrule',
