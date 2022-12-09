@@ -753,6 +753,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
@@ -768,6 +769,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addR53Zone` <a name="addR53Zone" id="raindancers-network.EnterpriseVpc.addR53Zone"></a>
+
+```typescript
+public addR53Zone(props: AddR53ZoneProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addR53Zone.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddR53ZoneProps">AddR53ZoneProps</a>
+
+---
 
 ##### `addRoutes` <a name="addRoutes" id="raindancers-network.EnterpriseVpc.addRoutes"></a>
 
@@ -2474,6 +2487,45 @@ outbound resolver.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### AddR53ZoneProps <a name="AddR53ZoneProps" id="raindancers-network.AddR53ZoneProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddR53ZoneProps.Initializer"></a>
+
+```typescript
+import { AddR53ZoneProps } from 'raindancers-network'
+
+const addR53ZoneProps: AddR53ZoneProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddR53ZoneProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.AddR53ZoneProps.property.zone">zone</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `centralVpc`<sup>Required</sup> <a name="centralVpc" id="raindancers-network.AddR53ZoneProps.property.centralVpc"></a>
+
+```typescript
+public readonly centralVpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `zone`<sup>Required</sup> <a name="zone" id="raindancers-network.AddR53ZoneProps.property.zone"></a>
+
+```typescript
+public readonly zone: string;
+```
+
+- *Type:* string
+
+---
+
 ### AddRoutesProps <a name="AddRoutesProps" id="raindancers-network.AddRoutesProps"></a>
 
 Propertys for Adding Routes in VPC.
@@ -3105,6 +3157,7 @@ const enterpriseVpcProps: EnterpriseVpcProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpcProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
@@ -3112,6 +3165,16 @@ const enterpriseVpcProps: EnterpriseVpcProps = { ... }
 
 ```typescript
 public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `centralVpc`<sup>Optional</sup> <a name="centralVpc" id="raindancers-network.EnterpriseVpcProps.property.centralVpc"></a>
+
+```typescript
+public readonly centralVpc: Vpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.Vpc

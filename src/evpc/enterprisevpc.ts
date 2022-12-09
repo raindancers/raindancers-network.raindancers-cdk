@@ -9,7 +9,7 @@ import {
   aws_logs as logs,
   custom_resources as cr,
   aws_ram as ram,
-  aws_route53 as r53
+  aws_route53 as r53,
 }
   from 'aws-cdk-lib';
 
@@ -22,8 +22,8 @@ export interface ShareSubnetGroupProps {
 }
 
 export interface AddR53ZoneProps {
-  zone: string
-  centralVpc: ec2.Vpc 
+  readonly zone: string;
+  readonly centralVpc: ec2.Vpc;
 }
 
 /** Properties for flow logs **/
@@ -99,7 +99,7 @@ export interface EnterpriseVpcProps {
   // the vpc
   readonly vpc: ec2.Vpc;
   // a vpc to share r53 internal zones with.
-  readonly centralVpc?: ec2.Vpc
+  readonly centralVpc?: ec2.Vpc;
 }// end of addRoutetoCloudWan
 
 /**
@@ -492,23 +492,23 @@ export class EnterpriseVpc extends constructs.Construct {
     }
   } // end of add routes
 
-  
-    //for other accounts, need to share their accounts across. 
-    // https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/
+
+  //for other accounts, need to share their accounts across.
+  // https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/
 
   public addR53Zone(props: AddR53ZoneProps): void {
 
-    const zone = new r53.PrivateHostedZone(this,`vpcZone${hashProps(props)}`,
+    const zone = new r53.PrivateHostedZone(this, `vpcZone${hashProps(props)}`,
       {
-          zoneName: props.zone,
-          vpc: this.vpc,
-      }
-    )
+        zoneName: props.zone,
+        vpc: this.vpc,
+      },
+    );
     if (props.centralVpc) {
-      zone.addVpc(props.centralVpc)
+      zone.addVpc(props.centralVpc);
     }
   }
- 
+
 }
 
 
