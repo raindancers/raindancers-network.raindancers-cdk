@@ -252,10 +252,10 @@ export class EnterpriseVpc extends constructs.Construct {
       },
     });
 
-    let attachmentSubnetGroup = 'linket';
+    let attachmentSubnetGroup = 'linknet';
 
     // if the subnetGroup name is not defined, it will default to using linknet
-    if (props.attachmentSubnetGroup) {
+    if (!props.attachmentSubnetGroup) {
       attachmentSubnetGroup = 'linknet';
     }
 
