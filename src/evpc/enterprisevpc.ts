@@ -16,8 +16,8 @@ import * as constructs from 'constructs';
 import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 
 export interface ShareSubnetGroupProps {
-  readonly subnetGroups: string [],
-  readonly account: string  
+  readonly subnetGroups: string [];
+  readonly account: string;
 }
 
 
@@ -336,22 +336,21 @@ export class EnterpriseVpc extends constructs.Construct {
   }// end of attachToTransitGateway
 
 
-
   /**
    * Share a subnetGroup with another AWS Account.
    * @param props ShareSubnetGroup
    */
   public shareSubnetGroup (props: ShareSubnetGroupProps): void {
 
-    var subnetarns: string[] = []
+    var subnetarns: string[] = [];
 
     props.subnetGroups.forEach((groupName)=> {
       const selection = this.vpc.selectSubnets({
-        subnetGroupName: groupName 
-      })
+        subnetGroupName: groupName,
+      });
 
       selection.subnets.forEach((subnet) => {
-        subnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`)
+        subnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
       });
 
       new ram.CfnResourceShare(this, `ramshare${hashProps(props)}`, {
@@ -359,8 +358,8 @@ export class EnterpriseVpc extends constructs.Construct {
         allowExternalPrincipals: false,
         principals: [props.account],
         resourceArns: subnetarns,
-      })
-    })
+      });
+    });
   }
 
   /**

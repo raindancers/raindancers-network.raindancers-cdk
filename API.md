@@ -757,7 +757,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
-| <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
 
 ---
 
@@ -831,9 +831,13 @@ Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostic
 public shareSubnetGroup(props: ShareSubnetGroupProps): void
 ```
 
+Share a subnetGroup with another AWS Account.
+
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.shareSubnetGroup.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.ShareSubnetGroupProps">ShareSubnetGroupProps</a>
+
+ShareSubnetGroup.
 
 ---
 
