@@ -2501,18 +2501,8 @@ const addR53ZoneProps: AddR53ZoneProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddR53ZoneProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 | <code><a href="#raindancers-network.AddR53ZoneProps.property.zone">zone</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `centralVpc`<sup>Required</sup> <a name="centralVpc" id="raindancers-network.AddR53ZoneProps.property.centralVpc"></a>
-
-```typescript
-public readonly centralVpc: Vpc;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+| <code><a href="#raindancers-network.AddR53ZoneProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
@@ -2523,6 +2513,16 @@ public readonly zone: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `centralVpc`<sup>Optional</sup> <a name="centralVpc" id="raindancers-network.AddR53ZoneProps.property.centralVpc"></a>
+
+```typescript
+public readonly centralVpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
@@ -3157,7 +3157,6 @@ const enterpriseVpcProps: EnterpriseVpcProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpcProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
@@ -3165,16 +3164,6 @@ const enterpriseVpcProps: EnterpriseVpcProps = { ... }
 
 ```typescript
 public readonly vpc: Vpc;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
-
----
-
-##### `centralVpc`<sup>Optional</sup> <a name="centralVpc" id="raindancers-network.EnterpriseVpcProps.property.centralVpc"></a>
-
-```typescript
-public readonly centralVpc: Vpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.Vpc

@@ -23,7 +23,7 @@ export interface ShareSubnetGroupProps {
 
 export interface AddR53ZoneProps {
   readonly zone: string;
-  readonly centralVpc: ec2.Vpc;
+  readonly centralVpc?: ec2.Vpc | undefined;
 }
 
 /** Properties for flow logs **/
@@ -98,8 +98,7 @@ export enum Destination{
 export interface EnterpriseVpcProps {
   // the vpc
   readonly vpc: ec2.Vpc;
-  // a vpc to share r53 internal zones with.
-  readonly centralVpc?: ec2.Vpc;
+
 }// end of addRoutetoCloudWan
 
 /**
