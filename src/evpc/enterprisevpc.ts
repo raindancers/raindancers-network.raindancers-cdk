@@ -497,7 +497,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public addR53Zone(props: AddR53ZoneProps): void {
 
-    const zone = new r53.PrivateHostedZone(this, `vpcZone${hashProps(props)}`,
+    const zone = new r53.PrivateHostedZone(this, `vpcZone${props.zone}`,
       {
         zoneName: props.zone,
         vpc: this.vpc,
