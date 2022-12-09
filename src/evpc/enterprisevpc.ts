@@ -8,11 +8,17 @@ import {
   aws_networkmanager as networkmanager,
   aws_logs as logs,
   custom_resources as cr,
+  aws_ram as ram,
 }
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
 import { EnterpriseVpcLambda } from './enterprisevpclambdas';
+
+export interface ShareSubnetGroupProps {
+  readonly subnetGroups: string [],
+  readonly account: string  
+}
 
 
 /** Properties for flow logs **/
@@ -329,6 +335,33 @@ export class EnterpriseVpc extends constructs.Construct {
 
   }// end of attachToTransitGateway
 
+
+
+  /**
+   * Share a subnetGroup with another AWS Account.
+   * @param props ShareSubnetGroup
+   */
+  public shareSubnetGroup (props: ShareSubnetGroupProps): void {
+
+    var subnetarns: string[] = []
+
+    props.subnetGroups.forEach((groupName)=> {
+      const selection = this.vpc.selectSubnets({
+        subnetGroupName: groupName 
+      })
+
+      selection.subnets.forEach((subnet) => {
+        subnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`)
+      });
+
+      new ram.CfnResourceShare(this, `ramshare${hashProps(props)}`, {
+        name: props.account + hashProps(props),
+        allowExternalPrincipals: false,
+        principals: [props.account],
+        resourceArns: subnetarns,
+      })
+    })
+  }
 
   /**
 	 * Add routes to SubnetGroups ( by implication their routing tables )

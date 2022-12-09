@@ -757,6 +757,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
+| <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | *No description.* |
 
 ---
 
@@ -821,6 +822,18 @@ Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostic
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.createFlowLog.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.FlowLogProps">FlowLogProps</a>
+
+---
+
+##### `shareSubnetGroup` <a name="shareSubnetGroup" id="raindancers-network.EnterpriseVpc.shareSubnetGroup"></a>
+
+```typescript
+public shareSubnetGroup(props: ShareSubnetGroupProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.shareSubnetGroup.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ShareSubnetGroupProps">ShareSubnetGroupProps</a>
 
 ---
 
@@ -4205,6 +4218,45 @@ public readonly shareWith: string;
 ```
 
 - *Type:* string
+
+---
+
+### ShareSubnetGroupProps <a name="ShareSubnetGroupProps" id="raindancers-network.ShareSubnetGroupProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ShareSubnetGroupProps.Initializer"></a>
+
+```typescript
+import { ShareSubnetGroupProps } from 'raindancers-network'
+
+const shareSubnetGroupProps: ShareSubnetGroupProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ShareSubnetGroupProps.property.account">account</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ShareSubnetGroupProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `account`<sup>Required</sup> <a name="account" id="raindancers-network.ShareSubnetGroupProps.property.account"></a>
+
+```typescript
+public readonly account: string;
+```
+
+- *Type:* string
+
+---
+
+##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.ShareSubnetGroupProps.property.subnetGroups"></a>
+
+```typescript
+public readonly subnetGroups: string[];
+```
+
+- *Type:* string[]
 
 ---
 
