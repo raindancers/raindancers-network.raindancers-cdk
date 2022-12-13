@@ -159,7 +159,6 @@ export interface SegmentAction {
   readonly except?: string[];
   readonly destinationCidrBlocks?: string[];
   readonly destinations?: string[];
-  readonly description: string;
 }
 
 

@@ -37,9 +37,10 @@ export class CoreNetworkSegment extends constructs.Construct {
 
     const segmentAction: {[k: string]: any} = {};
 
-    segmentAction.description = props.description;
+
     segmentAction.action = props.action;
     segmentAction.segment = this.segmentName;
+
     if ( props.action === cloudWanEnum.SegmentActionType.SHARE ) {
       if (props.shareWith === undefined) {
         throw Error ('shareWith must be defined for a share action');
@@ -61,9 +62,7 @@ export class CoreNetworkSegment extends constructs.Construct {
       segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
       segmentAction.destinations = props.destinations;
 
-      if (props.description !== undefined) {
-        segmentAction.description = props.description;
-      }
+
     }
 
     const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
