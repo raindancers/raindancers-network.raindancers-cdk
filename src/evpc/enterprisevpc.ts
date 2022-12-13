@@ -16,6 +16,7 @@ import {
 import * as constructs from 'constructs';
 import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 
+
 export interface ShareSubnetGroupProps {
   readonly subnetGroups: string [];
   readonly account: string;
@@ -359,7 +360,7 @@ export class EnterpriseVpc extends constructs.Construct {
         subnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
       });
 
-      new ram.CfnResourceShare(this, `ramshare${hashProps(props)}`, {
+      new ram.CfnResourceShare(this, `ramshare${groupName}${hashProps(props)}`, {
         name: props.account + hashProps(props),
         allowExternalPrincipals: false,
         principals: [props.account],
@@ -507,7 +508,6 @@ export class EnterpriseVpc extends constructs.Construct {
       zone.addVpc(props.centralVpc);
     }
   }
-
 }
 
 
