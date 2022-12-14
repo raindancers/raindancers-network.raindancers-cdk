@@ -153,6 +153,7 @@ export interface CoreNetworkShare {
  * Segmment ACtions
  */
 export interface SegmentAction {
+  readonly description: string;
   readonly action: SegmentActionType;
   readonly mode?: SegmentActionMode;
   readonly shareWith?: string;

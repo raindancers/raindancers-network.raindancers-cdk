@@ -4198,6 +4198,7 @@ const segmentAction: SegmentAction = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.SegmentAction.property.action">action</a></code> | <code><a href="#raindancers-network.SegmentActionType">SegmentActionType</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SegmentAction.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.SegmentAction.property.destinations">destinations</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.SegmentAction.property.except">except</a></code> | <code>string[]</code> | *No description.* |
@@ -4213,6 +4214,16 @@ public readonly action: SegmentActionType;
 ```
 
 - *Type:* <a href="#raindancers-network.SegmentActionType">SegmentActionType</a>
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.SegmentAction.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
 
 ---
 
