@@ -65,12 +65,15 @@ def on_create_update(event):
 
 	elif 'segmentAction' in props.keys():
 		segmentaction = json.loads(base64.b64decode(props['segmentAction']).decode("utf-8"))
+		description = segmentaction.pop('description')
 		object = {key: serializer.serialize(value) for key, value in segmentaction.items()}
 		
+
+
 		print(object)
 		dynamodb.put_item(
 			Item = {
-				'Name': { 'S': object['segment']['S'] + segmentaction['description'] },
+				'Name': { 'S': object['segment']['S'] + description},
 				'Type': { 'S': 'SEGMENTACTION'},
 				'Object': { 'M': object }
 			},
