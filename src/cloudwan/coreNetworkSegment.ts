@@ -37,21 +37,23 @@ export class CoreNetworkSegment extends constructs.Construct {
 
     const segmentAction: {[k: string]: any} = {};
 
-
+    segmentAction.description = props.description;
     segmentAction.action = props.action;
     segmentAction.segment = this.segmentName;
+
 
     if ( props.action === cloudWanEnum.SegmentActionType.SHARE ) {
       if (props.shareWith === undefined) {
         throw Error ('shareWith must be defined for a share action');
       }
-      segmentAction.mode = cloudWanEnum.SegmentActionMode.ATTACHMENT_ROUTE;
+      segmentAction.mode = props.action;
       segmentAction['share-with'] = props.shareWith;
 
       if (props.except === undefined) {
         segmentAction.except = props.except;
       }
     }
+
 
     if ( props.action === cloudWanEnum.SegmentActionType.CREATE_ROUTE ) {
 
@@ -61,13 +63,13 @@ export class CoreNetworkSegment extends constructs.Construct {
 
       segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
       segmentAction.destinations = props.destinations;
-
-
     }
 
     const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
       serviceToken: this.policyTableServiceToken,
       properties: {
+        // the properties are base64 encoded, so the types make it into the lambda,
+        // the customresource otherwise makes everything a string
         segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
       },
     });
