@@ -65,6 +65,9 @@ export class CoreNetworkSegment extends constructs.Construct {
       segmentAction.destinations = props.destinations;
     }
 
+    console.log('*** segment action ***');
+    console.log(segmentAction);
+
     const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
       serviceToken: this.policyTableServiceToken,
       properties: {

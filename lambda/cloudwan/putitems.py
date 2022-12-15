@@ -68,7 +68,7 @@ def on_create_update(event):
 		segmentaction = json.loads(base64.b64decode(props['segmentAction']).decode("utf-8"))
 		print(segmentaction)
 		object = {key: serializer.serialize(value) for key, value in segmentaction.items()}
-		description = object.pop('description')
+		description = segmentaction.pop('description')
 
 
 		print(object)
