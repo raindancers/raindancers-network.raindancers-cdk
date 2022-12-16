@@ -53,6 +53,8 @@ def on_create(event):
 
 	props = event["ResourceProperties"]
 
+	print(props)
+
 	
 	if props['Destination'] == 'Cloudwan':
 
