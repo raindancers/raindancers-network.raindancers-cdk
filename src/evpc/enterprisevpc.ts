@@ -80,9 +80,9 @@ export interface AddRoutesProps {
   // the destination for the route
   readonly destination: Destination;
   // gatewayloadbalancers
-  readonly networkFirewallArn?: string;
+  readonly networkFirewallArn?: string | undefined;
   // cloudwanName
-  readonly cloudwanName?: string;
+  readonly cloudwanName?: string | undefined;
 
 }// end of addRoutetoCloudWan
 
@@ -447,7 +447,7 @@ export class EnterpriseVpc extends constructs.Construct {
             case Destination.CLOUDWAN: {
 
 
-              if (!props.cloudwanName) {
+              if (props.cloudwanName === undefined) {
                 throw new Error('the cloudwanname must be provided for a cloudwan route');
               }
 
