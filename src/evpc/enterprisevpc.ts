@@ -81,6 +81,8 @@ export interface AddRoutesProps {
   readonly destination: Destination;
   // gatewayloadbalancers
   readonly networkFirewallArn?: string;
+  // cloudwanName
+  readonly cloudwanName?: string;
 
 }// end of addRoutetoCloudWan
 
@@ -444,13 +446,18 @@ export class EnterpriseVpc extends constructs.Construct {
           switch (props.destination) {
             case Destination.CLOUDWAN: {
 
+
+              if (!props.cloudwanName) {
+                throw new Error('the cloudwanname must be provided for a cloudwan route');
+              }
+
               new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
                 serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
                   RouteTableId: routeTableId,
                   Destination: props.destination,
-                  CloudWanName: this.cloudWanName,
+                  CloudWanName: props.cloudwanName,
                 },
               });
               break;

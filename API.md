@@ -2546,6 +2546,7 @@ const addRoutesProps: AddRoutesProps = { ... }
 | <code><a href="#raindancers-network.AddRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddRoutesProps.property.cloudwanName">cloudwanName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddRoutesProps.property.networkFirewallArn">networkFirewallArn</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -2587,6 +2588,16 @@ public readonly subnetGroups: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `cloudwanName`<sup>Optional</sup> <a name="cloudwanName" id="raindancers-network.AddRoutesProps.property.cloudwanName"></a>
+
+```typescript
+public readonly cloudwanName: string;
+```
+
+- *Type:* string
 
 ---
 
