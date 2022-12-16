@@ -1,7 +1,7 @@
 import boto3
 
 ec2 = boto3.client('ec2')
-net_manager = boto3.client('netmanager')
+net_manager = boto3.client('networkmanager')
 
 def on_event(event, context):
 

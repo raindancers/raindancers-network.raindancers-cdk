@@ -457,12 +457,11 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-              const waiter = new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
+              const waiter = new cdk.CustomResource(this, `cloudwanroutewaiter${hashProps(props)}${index}`, {
                 serviceToken: this.tgWaiterProvider.serviceToken,
                 properties: {
                   transitGatewayId: this.transitGWID,
                   transitGatewayAttachmentId: this.transitGWAttachmentID,
-
                 },
               });
 
