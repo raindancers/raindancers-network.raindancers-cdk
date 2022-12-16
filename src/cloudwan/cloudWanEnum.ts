@@ -156,7 +156,7 @@ export interface SegmentAction {
   readonly description: string;
   readonly action: SegmentActionType;
   readonly mode?: SegmentActionMode;
-  readonly shareWith?: string;
+  readonly shareWith?: string | string[];
   readonly except?: string[];
   readonly destinationCidrBlocks?: string[];
   readonly destinations?: string[];

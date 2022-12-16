@@ -41,6 +41,11 @@ export class CoreNetworkSegment extends constructs.Construct {
     segmentAction.action = props.action;
     segmentAction.segment = this.segmentName;
 
+    if (typeof props.shareWith === 'string')
+      if (!(props.shareWith === '*')) {
+        throw new Error("Only * can be provided as a string")
+      }
+
 
     if ( props.action === cloudWanEnum.SegmentActionType.SHARE ) {
       if (props.shareWith === undefined) {
