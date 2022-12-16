@@ -4214,7 +4214,7 @@ const segmentAction: SegmentAction = { ... }
 | <code><a href="#raindancers-network.SegmentAction.property.destinations">destinations</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.SegmentAction.property.except">except</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.SegmentAction.property.mode">mode</a></code> | <code><a href="#raindancers-network.SegmentActionMode">SegmentActionMode</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.shareWith">shareWith</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SegmentAction.property.shareWith">shareWith</a></code> | <code>string \| string[]</code> | *No description.* |
 
 ---
 
@@ -4281,10 +4281,10 @@ public readonly mode: SegmentActionMode;
 ##### `shareWith`<sup>Optional</sup> <a name="shareWith" id="raindancers-network.SegmentAction.property.shareWith"></a>
 
 ```typescript
-public readonly shareWith: string;
+public readonly shareWith: string | string[];
 ```
 
-- *Type:* string
+- *Type:* string | string[]
 
 ---
 
