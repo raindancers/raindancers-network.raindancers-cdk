@@ -276,6 +276,7 @@ export class EnterpriseVpc extends constructs.Construct {
           service: 'NetworkManager',
           action: 'CreateVpcAttachment',
           parameters: {
+            outputPaths: ['VpcAttachment.Attachment.AttachmentId'],
             VpcArn: this.vpc.vpcArn,
             SubnetArns: linknetsubnetarns,
             Options: {
