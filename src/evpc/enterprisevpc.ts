@@ -446,11 +446,6 @@ export class EnterpriseVpc extends constructs.Construct {
           switch (props.destination) {
             case Destination.CLOUDWAN: {
 
-
-              if (props.cloudwanName === undefined) {
-                throw new Error('the cloudwanname must be provided for a cloudwan route');
-              }
-
               new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
                 serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
