@@ -44,6 +44,7 @@ export interface AttachToCloudWanProps {
   //** segmentName */
   readonly segmentName: string;
   readonly attachmentSubnetGroup?: string | undefined;
+  readonly applianceMode?: boolean | undefined;
 }
 /**
  * Propertys for Appliance Mode
@@ -267,23 +268,61 @@ export class EnterpriseVpc extends constructs.Construct {
       linknetsubnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
     }
 
-    const cloudWanVpcAttachmentId = new networkmanager.CfnVpcAttachment(this, 'attachtowan', {
-      coreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string, // is this legit?
-      subnetArns: linknetsubnetarns,
-      tags: [
-			  {
-          key: 'NetworkSegment',
-          value: props.segmentName,
-			  },
-      ],
-      vpcArn: this.vpc.vpcArn,
-    }).attrAttachmentId;
 
-    this.cloudWanVpcAttachmentId = cloudWanVpcAttachmentId;
-    this.cloudWanName = props.coreNetworkName;
-    this.cloudWanSegment = props.segmentName;
+    if ( props.applianceMode === true ) {
 
-    return cloudWanVpcAttachmentId;
+      new cr.AwsCustomResource(this, 'attachtowan', {
+        onCreate: {
+          service: 'NetworkManager',
+          action: 'CreateVpcAttachment',
+          parameters: {
+            VpcArn: this.vpc.vpcArn,
+            SubnetArns: linknetsubnetarns,
+            Options: {
+              ApplianceModeSupport: true,
+            },
+            Tags: [
+              {
+                key: 'NetworkSegment',
+                value: props.segmentName,
+              },
+            ],
+
+          },
+          physicalResourceId: cr.PhysicalResourceId.fromResponse('VpcAttachment.Attachment.AttachmentId'),
+        },
+        onDelete: {
+          service: 'NetworkManager',
+          action: 'deleteAttachment',
+          parameters: {
+            AttachmentId: new cr.PhysicalResourceIdReference(),
+          },
+        },
+        policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+        }),
+        logRetention: logs.RetentionDays.FIVE_DAYS,
+      });
+    } else {
+      const cloudWanVpcAttachmentId = new networkmanager.CfnVpcAttachment(this, 'attachtowan', {
+        coreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string, // is this legit?
+        subnetArns: linknetsubnetarns,
+        tags: [
+          {
+            key: 'NetworkSegment',
+            value: props.segmentName,
+          },
+        ],
+        vpcArn: this.vpc.vpcArn,
+      }).attrAttachmentId;
+
+      this.cloudWanVpcAttachmentId = cloudWanVpcAttachmentId;
+      this.cloudWanName = props.coreNetworkName;
+      this.cloudWanSegment = props.segmentName;
+    }
+
+
+    return this.cloudWanVpcAttachmentId as string;
 
   }// end of attachToCloudwan
 

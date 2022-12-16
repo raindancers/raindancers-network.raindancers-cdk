@@ -2800,6 +2800,7 @@ const attachToCloudWanProps: AttachToCloudWanProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.AttachToCloudWanProps.property.coreNetworkName">coreNetworkName</a></code> | <code>string</code> | corenetworkName. |
 | <code><a href="#raindancers-network.AttachToCloudWanProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AttachToCloudWanProps.property.applianceMode">applianceMode</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#raindancers-network.AttachToCloudWanProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -2823,6 +2824,16 @@ public readonly segmentName: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `applianceMode`<sup>Optional</sup> <a name="applianceMode" id="raindancers-network.AttachToCloudWanProps.property.applianceMode"></a>
+
+```typescript
+public readonly applianceMode: boolean;
+```
+
+- *Type:* boolean
 
 ---
 
