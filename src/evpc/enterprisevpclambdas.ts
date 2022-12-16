@@ -37,6 +37,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'addRoutes.on_event',
       code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+      timeout: cdk.Duration.seconds(899),
     });
 
     addRoutesLambda.addToRolePolicy(
