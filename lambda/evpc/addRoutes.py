@@ -38,7 +38,7 @@ def get_corenetwork_arn(core_network_name):
 				pass
 	
 	try: 
-		return core_network['GlobalNetworkId']
+		return core_network['GlobalNetworkArn']
 	except:
 		raise ValueError(f'Did not find the CoreNetwork {core_network_name}')
 
