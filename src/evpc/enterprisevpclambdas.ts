@@ -48,6 +48,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
           'ec2:CreateRoute',
           'ec2:DeleteRoute',
           'ec2:ReplaceRoute',
+          'networkmanager:ListCoreNetworks',
         ],
       }),
     );
