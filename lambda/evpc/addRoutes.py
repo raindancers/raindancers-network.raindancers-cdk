@@ -60,7 +60,7 @@ def on_create(event):
 
 		ec2.create_route(
 			DestinationCidrBlock = props['cidr'],
-			RouteTableId = ['RouteTableId'],
+			RouteTableId = props['RouteTableId'],
 			CoreNetworkArn=get_corenetwork_arn(props['CloudWanName'])
 		)
 
@@ -76,7 +76,7 @@ def on_delete(event):
 
 		ec2.delete_route(
 			DestinationCidrBlock = props['cidr'],
-			RouteTableId = ['RouteTableId'],
+			RouteTableId = props['RouteTableId'],
 		)
 
 	else:
