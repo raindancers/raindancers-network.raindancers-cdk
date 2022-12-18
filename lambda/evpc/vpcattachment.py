@@ -1,0 +1,50 @@
+import boto3
+
+ec2 = boto3.client("ec2")
+network_manager = boto3.client("networkmanager")
+
+def on_event(event, context):
+	print(event)
+
+	
+	request_type = event['RequestType']
+	if request_type == 'Create': return on_create(event)
+	if request_type == 'Update': return on_create(event)
+	if request_type == 'Delete': return on_create(event)
+	raise Exception("Invalid request type: %s" % request_type)
+
+def on_delete(event):
+	network_manager.delete_attachment(
+		attachment_id = event["PhysicalResourceId"]
+	)
+
+
+def on_create(event):
+
+	props = event['ResourceProperties']
+
+	vpc_attachment = network_manager.create_vpc_attachment(
+    	CoreNetworkId=props['CoreNetworkId'],
+    	VpcArn=props['VpcArn'],
+		SubnetArns=props['SubnetArns'],
+		Options=props['Options'],
+		Tags=props['Tags'],
+	)
+	return { 'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['CoreNetworkArn'] }
+
+
+def is_complete(event, context):
+
+	props = event['ResourceProperties']
+
+	response = network_manager.get_vpc_attachment(
+    	AttachmentId=event["PhysicalResourceId"]
+	)
+	
+	if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
+			return { 'IsComplete': True }	
+	else:
+			return { 'IsComplete': False }
+
+	
+

@@ -20,16 +20,79 @@ export class EnterpriseVpcLambda extends constructs.Construct {
 	 * A check to see if transitgateway is ready to route to.
 	 */
   public readonly tgWaiterProvider: cr.Provider;
+  /**
+   * attach to cloudwan with a water
+   */
+  public readonly attachToCloudwanProvider: cr.Provider;
 
 
   /**
 	 *
 	 * @param scope
 	 * @param id
-	 * @param props
 	 */
   constructor(scope: constructs.Construct, id: string) {
 	  super(scope, id);
+
+    // attach vpc to cloudwan
+    const attachToCloudwan = new aws_lambda.SingletonFunction(this, 'attachtoCloudwan', {
+      uuid: 'FEAD99771132',
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'vpcattachment.on_event',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc'), {
+        bundling: {
+          image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
+          command: [
+            'bash', '-c',
+            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
+          ],
+        },
+      }),
+      timeout: cdk.Duration.seconds(899),
+    });
+
+    attachToCloudwan.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'networkmanager:CreateVPcAttachment',
+        ],
+      }),
+    );
+
+    const isAttachmentComplete = new aws_lambda.SingletonFunction(this, 'isattachmentComplete', {
+      uuid: 'FEAD99771134',
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'vpcattachment.is_complete',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc'), {
+        bundling: {
+          image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
+          command: [
+            'bash', '-c',
+            'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output',
+          ],
+        },
+      }),
+      timeout: cdk.Duration.seconds(899),
+    });
+
+    isAttachmentComplete.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'networkmanager:getVpcAttachment',
+        ],
+      }),
+    );
+
+    this.attachToCloudwanProvider = new cr.Provider(this, 'AttachToCloudwanProvider', {
+      onEventHandler: attachToCloudwan,
+      isCompleteHandler: isAttachmentComplete, // optional async "waiter"
+      logRetention: logs.RetentionDays.ONE_DAY, // default is INFINITE
+    });
+
 
 	  // add  routes lambda
     const addRoutesLambda = new aws_lambda.SingletonFunction(this, 'lookupIdLambda-evpc', {
@@ -57,8 +120,8 @@ export class EnterpriseVpcLambda extends constructs.Construct {
       onEventHandler: addRoutesLambda,
     });
 
-    // transit gateway is ready
 
+    // transit gateway is ready
     const tgwaittofinishOnEvent = new aws_lambda.Function(this, 'tgReadyOnevent', {
 
       runtime: aws_lambda.Runtime.PYTHON_3_9,

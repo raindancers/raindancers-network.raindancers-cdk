@@ -5,7 +5,6 @@ import {
   aws_s3 as s3,
   aws_lambda,
   aws_iam as iam,
-  aws_networkmanager as networkmanager,
   aws_logs as logs,
   custom_resources as cr,
   aws_ram as ram,
@@ -139,6 +138,11 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public readonly tgWaiterProvider: cr.Provider;
 
+  public readonly attachToCloudwanProvider: cr.Provider;
+
+  public vpcAttachmentCR: cdk.CustomResource | undefined;
+
+
   /**
    *
    * @param scope
@@ -154,6 +158,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
     this.addRoutesProvider = crHandlders.addRoutesProvider;
     this.tgWaiterProvider = crHandlders.tgWaiterProvider;
+    this.attachToCloudwanProvider = crHandlders.attachToCloudwanProvider;
 
   }
 
@@ -228,9 +233,9 @@ export class EnterpriseVpc extends constructs.Construct {
 	 * attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
 	 * @param props
 	 */
-  public attachToCloudWan(props: AttachToCloudWanProps): string {
+  public attachToCloudWan(props: AttachToCloudWanProps): void {
 
-
+    // get the coreNetwork Id from the name provided
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-evpc', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'get_core_network_id.on_event',
@@ -256,11 +261,15 @@ export class EnterpriseVpc extends constructs.Construct {
       },
     });
 
-    let attachmentSubnetGroup = 'linknet';
+
+    // find the subnets which to make the cloudwan attachment.
+    let attachmentSubnetGroup = '';
 
     // if the subnetGroup name is not defined, it will default to using linknet
     if (!props.attachmentSubnetGroup) {
       attachmentSubnetGroup = 'linknet';
+    } else {
+      attachmentSubnetGroup = props.attachmentSubnetGroup;
     }
 
 
@@ -271,62 +280,34 @@ export class EnterpriseVpc extends constructs.Construct {
     }
 
 
-    if ( props.applianceMode === true ) {
-
-      new cr.AwsCustomResource(this, 'attachtowan', {
-        onCreate: {
-          service: 'NetworkManager',
-          action: 'createVpcAttachment',
-          outputPaths: ['VpcAttachment.Attachment.AttachmentId'],
-          parameters: {
-            VpcArn: this.vpc.vpcArn,
-            CoreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string,
-            SubnetArns: linknetsubnetarns,
-            Options: {
-              ApplianceModeSupport: true,
-            },
-            Tags: [
-              {
-                Key: 'NetworkSegment',
-                Value: props.segmentName,
-              },
-            ],
-
-          },
-          physicalResourceId: cr.PhysicalResourceId.fromResponse('VpcAttachment.Attachment.AttachmentId'),
-        },
-        onDelete: {
-          service: 'NetworkManager',
-          action: 'deleteAttachment',
-          parameters: {
-            AttachmentId: new cr.PhysicalResourceIdReference(),
-          },
-        },
-        policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
-          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-        }),
-        logRetention: logs.RetentionDays.FIVE_DAYS,
-      });
-    } else {
-      const cloudWanVpcAttachmentId = new networkmanager.CfnVpcAttachment(this, 'attachtowan', {
-        coreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string, // is this legit?
-        subnetArns: linknetsubnetarns,
-        tags: [
-          {
-            key: 'NetworkSegment',
-            value: props.segmentName,
-          },
-        ],
-        vpcArn: this.vpc.vpcArn,
-      }).attrAttachmentId;
-
-      this.cloudWanVpcAttachmentId = cloudWanVpcAttachmentId;
-      this.cloudWanName = props.coreNetworkName;
-      this.cloudWanSegment = props.segmentName;
+    let applianceMode = false;
+    if (props.applianceMode === true) {
+      applianceMode = true;
     }
 
+    // attach the vpc to the cloudwan.
+    // this custom resource has a waiter, so will not complete untill the vpc is in the avaialble state
+    const attachmentCR = new cdk.CustomResource(this, 'attachVPCtoCloudwan', {
+      serviceToken: this.attachToCloudwanProvider.serviceToken,
+      properties:
+      {
+        VpcArn: this.vpc.vpcArn,
+        SubnetArns: linknetsubnetarns,
+        CoreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string,
+        Options: {
+          ApplianceModeSupport: applianceMode,
+        },
+        Tags: [
+          {
+            Key: 'NetworkSegment',
+            Value: props.segmentName,
+          },
+        ],
+      },
+    });
 
-    return this.cloudWanVpcAttachmentId as string;
+
+    this.vpcAttachmentCR = attachmentCR;
 
   }// end of attachToCloudwan
 
@@ -447,7 +428,7 @@ export class EnterpriseVpc extends constructs.Construct {
           switch (props.destination) {
             case Destination.CLOUDWAN: {
 
-              new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
+              const cloudwanroute = new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
                 serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
@@ -456,6 +437,9 @@ export class EnterpriseVpc extends constructs.Construct {
                   CloudWanName: props.cloudwanName,
                 },
               });
+
+              cloudwanroute.node.addDependency(this.attachToCloudWan);
+
               break;
             }
             case Destination.TRANSITGATEWAY: {

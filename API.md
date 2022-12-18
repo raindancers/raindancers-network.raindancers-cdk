@@ -799,7 +799,7 @@ Add routes to SubnetGroups ( by implication their routing tables ).
 ##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.EnterpriseVpc.attachToCloudWan"></a>
 
 ```typescript
-public attachToCloudWan(props: AttachToCloudWanProps): string
+public attachToCloudWan(props: AttachToCloudWanProps): void
 ```
 
 attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
@@ -886,6 +886,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
@@ -893,6 +894,7 @@ Any object.
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
 
 ---
 
@@ -912,6 +914,16 @@ The tree node.
 
 ```typescript
 public readonly addRoutesProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
+
+---
+
+##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider"></a>
+
+```typescript
+public readonly attachToCloudwanProvider: Provider;
 ```
 
 - *Type:* aws-cdk-lib.custom_resources.Provider
@@ -997,6 +1009,16 @@ public readonly transitGWID: string;
 - *Type:* string
 
 The Id of the transitgateway that the VPC is attached to.
+
+---
+
+##### `vpcAttachmentCR`<sup>Optional</sup> <a name="vpcAttachmentCR" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentCR"></a>
+
+```typescript
+public readonly vpcAttachmentCR: CustomResource;
+```
+
+- *Type:* aws-cdk-lib.CustomResource
 
 ---
 
