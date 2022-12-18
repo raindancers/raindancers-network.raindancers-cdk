@@ -438,7 +438,7 @@ export class EnterpriseVpc extends constructs.Construct {
                 },
               });
 
-              cloudwanroute.node.addDependency(this.attachToCloudWan);
+              cloudwanroute.node.addDependency(this.vpcAttachmentCR as cdk.CustomResource);
 
               break;
             }
