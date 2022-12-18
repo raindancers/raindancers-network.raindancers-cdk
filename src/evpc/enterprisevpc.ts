@@ -276,7 +276,7 @@ export class EnterpriseVpc extends constructs.Construct {
       new cr.AwsCustomResource(this, 'attachtowan', {
         onCreate: {
           service: 'NetworkManager',
-          action: 'CreateVpcAttachment',
+          action: 'createVpcAttachment',
           parameters: {
             outputPaths: ['VpcAttachment.Attachment.AttachmentId'],
             VpcArn: this.vpc.vpcArn,
