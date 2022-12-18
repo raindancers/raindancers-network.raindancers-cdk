@@ -277,17 +277,18 @@ export class EnterpriseVpc extends constructs.Construct {
         onCreate: {
           service: 'NetworkManager',
           action: 'createVpcAttachment',
+          outputPaths: ['VpcAttachment.Attachment.AttachmentId'],
           parameters: {
-            outputPaths: ['VpcAttachment.Attachment.AttachmentId'],
             VpcArn: this.vpc.vpcArn,
+            CoreNetworkId: coreNetwork.getAtt('CoreNetworkId') as unknown as string,
             SubnetArns: linknetsubnetarns,
             Options: {
               ApplianceModeSupport: true,
             },
             Tags: [
               {
-                key: 'NetworkSegment',
-                value: props.segmentName,
+                Key: 'NetworkSegment',
+                Value: props.segmentName,
               },
             ],
 
