@@ -1,4 +1,6 @@
 import boto3
+import json
+import base64
 
 ec2 = boto3.client("ec2")
 network_manager = boto3.client("networkmanager")
@@ -21,7 +23,8 @@ def on_delete(event):
 
 def on_create(event):
 
-	props = event['ResourceProperties']
+	props = json.loads(base64.b64decode(event["ResourceProperties"]["props64"]).decode('utf-8'))
+	
 
 	vpc_attachment = network_manager.create_vpc_attachment(
     	CoreNetworkId=props['CoreNetworkId'],
@@ -35,8 +38,7 @@ def on_create(event):
 
 def is_complete(event, context):
 
-	props = event['ResourceProperties']
-
+	
 	response = network_manager.get_vpc_attachment(
     	AttachmentId=event["PhysicalResourceId"]
 	)

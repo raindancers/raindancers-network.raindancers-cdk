@@ -285,11 +285,7 @@ export class EnterpriseVpc extends constructs.Construct {
       applianceMode = true;
     }
 
-    // attach the vpc to the cloudwan.
-    // this custom resource has a waiter, so will not complete untill the vpc is in the avaialble state
-    const attachmentCR = new cdk.CustomResource(this, 'attachVPCtoCloudwan', {
-      serviceToken: this.attachToCloudwanProvider.serviceToken,
-      properties:
+    const props64 = cdk.Fn.base64(cdk.Stack.of(this).toJsonString(
       {
         VpcArn: this.vpc.vpcArn,
         SubnetArns: linknetsubnetarns,
@@ -304,6 +300,13 @@ export class EnterpriseVpc extends constructs.Construct {
           },
         ],
       },
+    ));
+
+    // attach the vpc to the cloudwan.
+    // this custom resource has a waiter, so will not complete untill the vpc is in the avaialble state
+    const attachmentCR = new cdk.CustomResource(this, 'attachVPCtoCloudwan', {
+      serviceToken: this.attachToCloudwanProvider.serviceToken,
+      properties: { props64: props64 },
     });
 
 
