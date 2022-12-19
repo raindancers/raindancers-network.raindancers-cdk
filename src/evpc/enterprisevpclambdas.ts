@@ -93,7 +93,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
       isCompleteHandler: isAttachmentComplete, // optional async "waiter"
       logRetention: logs.RetentionDays.ONE_DAY, // default is INFINITE
       totalTimeout: cdk.Duration.minutes(30),
-      queryInterval: cdk.Duration.seconds(15)
+      queryInterval: cdk.Duration.seconds(15),
     });
 
 
