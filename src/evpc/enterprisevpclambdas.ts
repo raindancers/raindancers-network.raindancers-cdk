@@ -56,8 +56,9 @@ export class EnterpriseVpcLambda extends constructs.Construct {
         effect: iam.Effect.ALLOW,
         resources: ['*'],
         actions: [
-          'networkmanager:CreateVPcAttachment',
+          'networkmanager:CreateVpcAttachment',
           'networkmanager:TagResource',
+          'networkmanager:DeleteVpcAttachment',
           'account:ListRegions',
           'ec2:DescribeRegions',
         ],
