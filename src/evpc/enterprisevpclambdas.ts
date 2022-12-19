@@ -57,6 +57,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
         resources: ['*'],
         actions: [
           'networkmanager:CreateVPcAttachment',
+          'networkmanager:TagResource',
         ],
       }),
     );
