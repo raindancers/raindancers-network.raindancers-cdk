@@ -33,7 +33,7 @@ def on_create(event):
 		Options=props['Options'],
 		Tags=props['Tags'],
 	)
-	return { 'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['CoreNetworkArn'] }
+	return { 'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['AttachmentId'] }
 
 
 def is_complete(event, context):
