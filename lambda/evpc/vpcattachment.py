@@ -3,7 +3,7 @@ import json
 import base64
 
 ec2 = boto3.client("ec2")
-network_manager = boto3.client("networkmanager")
+network_manager = boto3.client('networkmanager', region_name = 'us-west-2')
 
 def on_event(event, context):
 	print(event)
