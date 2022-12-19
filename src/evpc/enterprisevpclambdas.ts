@@ -58,6 +58,8 @@ export class EnterpriseVpcLambda extends constructs.Construct {
         actions: [
           'networkmanager:CreateVPcAttachment',
           'networkmanager:TagResource',
+          'account:ListRegions',
+          'ec2:DescribeRegions',
         ],
       }),
     );
