@@ -152,6 +152,8 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public vpcAttachmentCR: cdk.CustomResource | undefined;
 
+  public vpcAttachmentId: string | undefined;
+
   public cloudWanCoreId: string | undefined;
 
   /**
@@ -324,6 +326,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
     this.vpcAttachmentCR = attachmentCR;
+    this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
     return attachmentCR.getAttString('AttachmentId');
 
@@ -592,7 +595,7 @@ export class EnterpriseVpc extends constructs.Construct {
       segmentAction.action = 'create-route',
       segmentAction.segment = segment,
       segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
-      segmentAction.destinations = this.vpcAttachmentCR?.getAttString('AttachmentId') as string;
+      segmentAction.destinations = this.vpcAttachmentId;
 
 
       const addCoreRoute = new cdk.CustomResource(this, `CloudwanSegmentRoute${segment}`, {
