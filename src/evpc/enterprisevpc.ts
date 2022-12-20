@@ -329,7 +329,13 @@ export class EnterpriseVpc extends constructs.Construct {
     this.vpcAttachmentCR = attachmentCR;
     // this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
+
+    new cdk.CfnOutput(this, 'attachmentId', {
+      value: attachmentCR.getAttString('AttachmentId'),
+    });
+
     return attachmentCR.getAttString('AttachmentId');
+
 
   }// end of attachToCloudwan
 
