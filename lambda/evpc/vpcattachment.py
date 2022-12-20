@@ -44,7 +44,12 @@ def is_complete(event, context):
 	)
 	
 	if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
-			return { 'IsComplete': True }	
+		return { 
+			'IsComplete': True,
+			'Data': {
+				'AttachmentId': event["PhysicalResourceId"]
+			}
+		}
 	else:
 			return { 'IsComplete': False }
 

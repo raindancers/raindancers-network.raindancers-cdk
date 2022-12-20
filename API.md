@@ -753,6 +753,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.EnterpriseVpc.addCoreRoutes">addCoreRoutes</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
@@ -769,6 +770,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addCoreRoutes` <a name="addCoreRoutes" id="raindancers-network.EnterpriseVpc.addCoreRoutes"></a>
+
+```typescript
+public addCoreRoutes(props: AddCoreRoutesProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addCoreRoutes.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddCoreRoutesProps">AddCoreRoutesProps</a>
+
+---
 
 ##### `addR53Zone` <a name="addR53Zone" id="raindancers-network.EnterpriseVpc.addR53Zone"></a>
 
@@ -799,7 +812,7 @@ Add routes to SubnetGroups ( by implication their routing tables ).
 ##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.EnterpriseVpc.attachToCloudWan"></a>
 
 ```typescript
-public attachToCloudWan(props: AttachToCloudWanProps): void
+public attachToCloudWan(props: AttachToCloudWanProps): string
 ```
 
 attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
@@ -889,6 +902,7 @@ Any object.
 | <code><a href="#raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanCoreId">cloudWanCoreId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
@@ -949,6 +963,16 @@ public readonly vpc: Vpc;
 - *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 the ec2.Vpc that is passed in as property.
+
+---
+
+##### `cloudWanCoreId`<sup>Optional</sup> <a name="cloudWanCoreId" id="raindancers-network.EnterpriseVpc.property.cloudWanCoreId"></a>
+
+```typescript
+public readonly cloudWanCoreId: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -2508,6 +2532,78 @@ outbound resolver.
 
 
 ## Structs <a name="Structs" id="Structs"></a>
+
+### AddCoreRoutesProps <a name="AddCoreRoutesProps" id="raindancers-network.AddCoreRoutesProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddCoreRoutesProps.Initializer"></a>
+
+```typescript
+import { AddCoreRoutesProps } from 'raindancers-network'
+
+const addCoreRoutesProps: AddCoreRoutesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.policyTable">policyTable</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.segments">segments</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.AddCoreRoutesProps.property.coreName"></a>
+
+```typescript
+public readonly coreName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddCoreRoutesProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `destinationCidrBlocks`<sup>Required</sup> <a name="destinationCidrBlocks" id="raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks"></a>
+
+```typescript
+public readonly destinationCidrBlocks: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.AddCoreRoutesProps.property.policyTable"></a>
+
+```typescript
+public readonly policyTable: string;
+```
+
+- *Type:* string
+
+---
+
+##### `segments`<sup>Required</sup> <a name="segments" id="raindancers-network.AddCoreRoutesProps.property.segments"></a>
+
+```typescript
+public readonly segments: string[];
+```
+
+- *Type:* string[]
+
+---
 
 ### AddR53ZoneProps <a name="AddR53ZoneProps" id="raindancers-network.AddR53ZoneProps"></a>
 

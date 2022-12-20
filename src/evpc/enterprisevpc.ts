@@ -9,6 +9,7 @@ import {
   custom_resources as cr,
   aws_ram as ram,
   aws_route53 as r53,
+  aws_dynamodb as dynamodb,
 }
   from 'aws-cdk-lib';
 
@@ -65,6 +66,15 @@ export interface AttachToTransitGatewayProps {
 	 readonly attachmentSubnetGroup?: string | undefined;
 }
 
+export interface AddCoreRoutesProps {
+
+  readonly policyTable: string;
+  readonly segments: string[];
+  readonly destinationCidrBlocks: string[];
+  readonly description: string;
+  readonly coreName: string;
+
+}
 
 /**
  * Propertys for Adding Routes in VPC.
@@ -142,6 +152,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public vpcAttachmentCR: cdk.CustomResource | undefined;
 
+  public cloudWanCoreId: string | undefined;
 
   /**
    *
@@ -159,6 +170,7 @@ export class EnterpriseVpc extends constructs.Construct {
     this.addRoutesProvider = crHandlders.addRoutesProvider;
     this.tgWaiterProvider = crHandlders.tgWaiterProvider;
     this.attachToCloudwanProvider = crHandlders.attachToCloudwanProvider;
+
 
   }
 
@@ -233,7 +245,7 @@ export class EnterpriseVpc extends constructs.Construct {
 	 * attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
 	 * @param props
 	 */
-  public attachToCloudWan(props: AttachToCloudWanProps): void {
+  public attachToCloudWan(props: AttachToCloudWanProps): string {
 
     // get the coreNetwork Id from the name provided
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-evpc', {
@@ -261,6 +273,7 @@ export class EnterpriseVpc extends constructs.Construct {
       },
     });
 
+    this.cloudWanCoreId = coreNetwork.getAtt('CoreNetworkId') as unknown as string;
 
     // find the subnets which to make the cloudwan attachment.
     let attachmentSubnetGroup = '';
@@ -311,6 +324,8 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
     this.vpcAttachmentCR = attachmentCR;
+
+    return attachmentCR.getAttString('AttachmentId');
 
   }// end of attachToCloudwan
 
@@ -536,6 +551,103 @@ export class EnterpriseVpc extends constructs.Construct {
     if (props.centralVpc) {
       zone.addVpc(props.centralVpc);
     }
+  }
+
+
+  // policyTable string
+  // segments  string[]
+  // destinations []
+
+  public addCoreRoutes(props: AddCoreRoutesProps): void {
+
+    // import the dynamodb table.
+
+    const policyTable = dynamodb.Table.fromTableName(this, 'policytable', props.policyTable);
+
+    // create the lambda that
+
+    const onEvent = new aws_lambda.Function(this, 'putItems', {
+      environment: { policyTableName: policyTable.tableName },
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'putitems.on_event',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+    });
+
+
+    policyTable.grantFullAccess(onEvent);
+
+    const policyTableProvider = new cr.Provider(this, 'UpdateProvider', {
+      onEventHandler: onEvent,
+      logRetention: logs.RetentionDays.FIVE_DAYS,
+    });
+
+    let pushPolicyDependsOn: cdk.CustomResource[] = [];
+
+    // add routes into segments as required.
+    props.segments.forEach((segment) =>{
+
+      const segmentAction: {[k: string]: any} = {};
+
+      segmentAction.description = props.description;
+      segmentAction.action = 'create-route',
+      segmentAction.segment = segment,
+      segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
+      segmentAction.destinations = this.vpcAttachmentCR?.getAttString('AttachmentId') as string;
+
+
+      const addCoreRoute = new cdk.CustomResource(this, `CloudwanSegmentRoute${segment}`, {
+        serviceToken: policyTableProvider.serviceToken,
+        properties: {
+          segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
+        },
+      });
+
+      pushPolicyDependsOn.push(addCoreRoute);
+    });
+
+    // now update the routetable
+    // this updates the policy
+    const updatePolicyLambda = new aws_lambda.Function(this, 'UpdateCoreNetworkLambda', {
+      environment: { coreNetworkName: props.coreName },
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'updatepolicy.on_event',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+      timeout: cdk.Duration.seconds(899),
+    });
+
+    updatePolicyLambda.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'networkmanager:putCoreNetworkPolicy',
+          'networkmanager:executeCoreNetworkChangeSet',
+          '*',
+        ],
+      }),
+    );
+    // let the lambda have access to the dynamo table.
+    policyTable.grantFullAccess(updatePolicyLambda);
+
+    const PolicyTableUpdateProvider = new cr.Provider(this, 'UpdateProvider', {
+      onEventHandler: updatePolicyLambda,
+      logRetention: logs.RetentionDays.FIVE_DAYS,
+      providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
+    });
+
+    const updatePolicy = new cdk.CustomResource(this, 'UpdatePolicy', {
+      serviceToken: PolicyTableUpdateProvider.serviceToken,
+      properties: {
+        TableName: policyTable.tableName,
+        coreNetworkId: this.cloudWanCoreId,
+        random: new Date().toISOString(),
+      },
+    });
+
+    // we need to force this to not happen till all the updates are done.
+    pushPolicyDependsOn.forEach((resource) => {
+      updatePolicy.node.addDependency(resource);
+    });
   }
 }
 
