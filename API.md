@@ -2558,11 +2558,22 @@ const addCoreRoutesProps: AddCoreRoutesProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.attachmentId">attachmentId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.policyTable">policyTable</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.segments">segments</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `attachmentId`<sup>Required</sup> <a name="attachmentId" id="raindancers-network.AddCoreRoutesProps.property.attachmentId"></a>
+
+```typescript
+public readonly attachmentId: string;
+```
+
+- *Type:* string
 
 ---
 

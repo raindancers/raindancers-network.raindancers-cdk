@@ -33,7 +33,12 @@ def on_create(event):
 		Options=props['Options'],
 		Tags=props['Tags'],
 	)
-	return { 'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['AttachmentId'] }
+	return { 
+		'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['AttachmentId'], 
+		'Data': {
+			'AttachmentId': vpc_attachment['VpcAttachment']['Attachment']['AttachmentId']
+		}
+	}
 
 
 def is_complete(event, context):
@@ -46,9 +51,6 @@ def is_complete(event, context):
 	if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
 		return { 
 			'IsComplete': True,
-			'Data': {
-				'AttachmentId': event["PhysicalResourceId"]
-			}
 		}
 	else:
 			return { 'IsComplete': False }

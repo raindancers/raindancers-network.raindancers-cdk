@@ -73,6 +73,7 @@ export interface AddCoreRoutesProps {
   readonly destinationCidrBlocks: string[];
   readonly description: string;
   readonly coreName: string;
+  readonly attachmentId: string;
 
 }
 
@@ -317,7 +318,7 @@ export class EnterpriseVpc extends constructs.Construct {
       },
     ));
 
-    // attach the vpc to the cloudwan.
+    // attach the vpc to the cloudwaattachToCloudwanProvidern.
     // this custom resource has a waiter, so will not complete untill the vpc is in the avaialble state
     const attachmentCR = new cdk.CustomResource(this, 'attachVPCtoCloudwan', {
       serviceToken: this.attachToCloudwanProvider.serviceToken,
@@ -595,7 +596,7 @@ export class EnterpriseVpc extends constructs.Construct {
       segmentAction.action = 'create-route',
       segmentAction.segment = segment,
       segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
-      segmentAction.destinations = this.vpcAttachmentId;
+      segmentAction.destinations = props.attachmentId;
 
 
       const addCoreRoute = new cdk.CustomResource(this, `CloudwanSegmentRoute${segment}`, {
