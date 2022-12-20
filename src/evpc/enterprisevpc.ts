@@ -153,7 +153,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public vpcAttachmentCR: cdk.CustomResource | undefined;
 
-  public vpcAttachmentId: string | undefined;
+  //public vpcAttachmentId: string | undefined;
 
   public cloudWanCoreId: string | undefined;
 
@@ -327,7 +327,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
     this.vpcAttachmentCR = attachmentCR;
-    this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
+    // this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
     return attachmentCR.getAttString('AttachmentId');
 
