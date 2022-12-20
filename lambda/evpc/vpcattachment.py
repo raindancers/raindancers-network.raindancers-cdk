@@ -33,6 +33,9 @@ def on_create(event):
 		Options=props['Options'],
 		Tags=props['Tags'],
 	)
+
+	print(vpc_attachment)
+
 	return { 
 		'PhysicalResourceId': vpc_attachment['VpcAttachment']['Attachment']['AttachmentId'], 
 		'Data': {
