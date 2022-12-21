@@ -330,10 +330,6 @@ export class EnterpriseVpc extends constructs.Construct {
     // this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
 
-    new cdk.CfnOutput(this, 'attachmentId', {
-      value: attachmentCR.getAttString('AttachmentId'),
-    });
-
     return attachmentCR.getAttString('AttachmentId');
 
 
@@ -617,47 +613,48 @@ export class EnterpriseVpc extends constructs.Construct {
 
     // now update the routetable
     // this updates the policy
-    // const updatePolicyLambda = new aws_lambda.Function(this, 'UpdateCoreNetworkCoreRoutesLambda', {
-    //   environment: { coreNetworkName: props.coreName },
-    //   runtime: aws_lambda.Runtime.PYTHON_3_9,
-    //   handler: 'updatepolicy.on_event',
-    //   code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
-    //   timeout: cdk.Duration.seconds(899),
-    // });
+    const updatePolicyLambda = new aws_lambda.Function(this, 'UpdateCoreNetworkCoreRoutesLambda', {
+      environment: { coreNetworkName: props.coreName },
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'updatepolicy.on_event',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/cloudwan')),
+      timeout: cdk.Duration.seconds(899),
+    });
 
-    // updatePolicyLambda.addToRolePolicy(
-    //   new iam.PolicyStatement({
-    //     effect: iam.Effect.ALLOW,
-    //     resources: ['*'],
-    //     actions: [
-    //       'networkmanager:putCoreNetworkPolicy',
-    //       'networkmanager:executeCoreNetworkChangeSet',
-    //       '*',
-    //     ],
-    //   }),
-    // );
+    updatePolicyLambda.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'networkmanager:putCoreNetworkPolicy',
+          'networkmanager:executeCoreNetworkChangeSet',
+          '*',
+        ],
+      }),
+    );
     // let the lambda have access to the dynamo table.
-    // policyTable.grantFullAccess(updatePolicyLambda);
+    policyTable.grantFullAccess(updatePolicyLambda);
 
-    // const PolicyTableUpdateProvider = new cr.Provider(this, 'UpdateProviderCoreRoutes', {
-    //   onEventHandler: updatePolicyLambda,
-    //   logRetention: logs.RetentionDays.FIVE_DAYS,
-    //   providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
-    // });
+    const PolicyTableUpdateProvider = new cr.Provider(this, 'UpdateProviderCoreRoutes', {
+      onEventHandler: updatePolicyLambda,
+      logRetention: logs.RetentionDays.FIVE_DAYS,
+      providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
+    });
 
-    // const updatePolicy = new cdk.CustomResource(this, 'UpdatePolicyCoreRoutes', {
-    //   serviceToken: PolicyTableUpdateProvider.serviceToken,
-    //   properties: {
-    //     TableName: policyTable.tableName,
-    //     coreNetworkId: this.cloudWanCoreId,
-    //     random: new Date().toISOString(),
-    //   },
-    // });
+    const updatePolicy = new cdk.CustomResource(this, 'UpdatePolicyCoreRoutes', {
+      serviceToken: PolicyTableUpdateProvider.serviceToken,
+      properties: {
+        TableName: policyTable.tableName,
+        coreNetworkId: this.cloudWanCoreId,
+        random: new Date().toISOString(),
+      },
+    });
 
     // we need to force this to not happen till all the updates are done.
-    // pushPolicyDependsOn.forEach((resource) => {
-    //   updatePolicy.node.addDependency(resource);
-    // });
+
+    pushPolicyDependsOn.forEach((resource) => {
+      updatePolicy.node.addDependency(resource);
+    });
   }
 }
 
