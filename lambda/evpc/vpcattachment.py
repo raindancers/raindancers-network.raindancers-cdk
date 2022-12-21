@@ -11,14 +11,19 @@ def on_event(event, context):
 	
 	request_type = event['RequestType']
 	if request_type == 'Create': return on_create(event)
-	if request_type == 'Update': return on_create(event)
-	if request_type == 'Delete': return on_create(event)
+	if request_type == 'Update': return on_update(event)
+	if request_type == 'Delete': return on_delete(event)
 	raise Exception("Invalid request type: %s" % request_type)
 
+
+def on_update(event):
+	print('This resource is immuatable, can not modify')
+
+
 def on_delete(event):
-	network_manager.delete_attachment(
+	print(network_manager.delete_attachment(
 		attachment_id = event["PhysicalResourceId"]
-	)
+	))
 
 
 def on_create(event):
