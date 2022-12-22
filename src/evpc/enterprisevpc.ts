@@ -600,7 +600,7 @@ export class EnterpriseVpc extends constructs.Construct {
       segmentAction.action = 'create-route',
       segmentAction.segment = segment,
       segmentAction['destination-cidr-blocks'] = props.destinationCidrBlocks;
-      segmentAction.destinations = props.attachmentId;
+      segmentAction.destinations = [props.attachmentId];
 
 
       const addCoreRoute = new cdk.CustomResource(this, `CloudwanSegmentRoute${segment}`, {
