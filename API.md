@@ -909,6 +909,7 @@ Any object.
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentId">vpcAttachmentId</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1043,6 +1044,16 @@ public readonly vpcAttachmentCR: CustomResource;
 ```
 
 - *Type:* aws-cdk-lib.CustomResource
+
+---
+
+##### `vpcAttachmentId`<sup>Optional</sup> <a name="vpcAttachmentId" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentId"></a>
+
+```typescript
+public readonly vpcAttachmentId: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -2551,7 +2562,7 @@ const addCoreRoutesProps: AddCoreRoutesProps = { ... }
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.policyTable">policyTable</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddCoreRoutesProps.property.policyTableArn">policyTableArn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.AddCoreRoutesProps.property.segments">segments</a></code> | <code>string[]</code> | *No description.* |
 
 ---
@@ -2596,10 +2607,10 @@ public readonly destinationCidrBlocks: string[];
 
 ---
 
-##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.AddCoreRoutesProps.property.policyTable"></a>
+##### `policyTableArn`<sup>Required</sup> <a name="policyTableArn" id="raindancers-network.AddCoreRoutesProps.property.policyTableArn"></a>
 
 ```typescript
-public readonly policyTable: string;
+public readonly policyTableArn: string;
 ```
 
 - *Type:* string

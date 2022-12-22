@@ -68,7 +68,7 @@ export interface AttachToTransitGatewayProps {
 
 export interface AddCoreRoutesProps {
 
-  readonly policyTable: string;
+  readonly policyTableArn: string;
   readonly segments: string[];
   readonly destinationCidrBlocks: string[];
   readonly description: string;
@@ -153,7 +153,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public vpcAttachmentCR: cdk.CustomResource | undefined;
 
-  //public vpcAttachmentId: string | undefined;
+  public vpcAttachmentId: string | undefined;
 
   public cloudWanCoreId: string | undefined;
 
@@ -327,7 +327,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
     this.vpcAttachmentCR = attachmentCR;
-    // this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
+    this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
 
     return attachmentCR.getAttString('AttachmentId');
@@ -566,9 +566,11 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public addCoreRoutes(props: AddCoreRoutesProps): void {
 
+
     // import the dynamodb table.
 
-    const policyTable = dynamodb.Table.fromTableName(this, 'policytable', props.policyTable);
+
+    const policyTable = dynamodb.Table.fromTableArn(this, 'policytable', props.policyTableArn);
 
     // create the lambda that
 
