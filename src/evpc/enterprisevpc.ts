@@ -570,11 +570,12 @@ export class EnterpriseVpc extends constructs.Construct {
     // import the dynamodb table.
 
 
-    const policyTable = dynamodb.Table.fromTableArn(this, 'policytable', props.policyTableArn);
+    const policyTable = dynamodb.Table.fromTableArn(this, `${props.description}policytable`, props.policyTableArn);
 
     // create the lambda that
 
-    const onEvent = new aws_lambda.Function(this, 'putItems', {
+    const onEvent = new aws_lambda.SingletonFunction(this, `${props.description}putItems`, {
+      uuid: 'AA002244FF',
       environment: { policyTableName: policyTable.tableName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'putitems.on_event',
@@ -584,7 +585,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
     policyTable.grantFullAccess(onEvent);
 
-    const policyTableProvider = new cr.Provider(this, 'UpdateProvider', {
+    const policyTableProvider = new cr.Provider(this, `${props.description}UpdateProvider`, {
       onEventHandler: onEvent,
       logRetention: logs.RetentionDays.FIVE_DAYS,
     });
@@ -603,7 +604,7 @@ export class EnterpriseVpc extends constructs.Construct {
       segmentAction.destinations = [props.attachmentId];
 
 
-      const addCoreRoute = new cdk.CustomResource(this, `CloudwanSegmentRoute${segment}`, {
+      const addCoreRoute = new cdk.CustomResource(this, `${props.description}CloudwanSegmentRoute${segment}`, {
         serviceToken: policyTableProvider.serviceToken,
         properties: {
           segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
@@ -615,7 +616,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
     // now update the routetable
     // this updates the policy
-    const updatePolicyLambda = new aws_lambda.Function(this, 'UpdateCoreNetworkCoreRoutesLambda', {
+    const updatePolicyLambda = new aws_lambda.Function(this, `${props.description}UpdateCoreNetworkCoreRoutesLambda`, {
       environment: { coreNetworkName: props.coreName },
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'updatepolicy.on_event',
@@ -637,18 +638,18 @@ export class EnterpriseVpc extends constructs.Construct {
     // let the lambda have access to the dynamo table.
     policyTable.grantFullAccess(updatePolicyLambda);
 
-    const PolicyTableUpdateProvider = new cr.Provider(this, 'UpdateProviderCoreRoutes', {
+    const PolicyTableUpdateProvider = new cr.Provider(this, `${props.description}UpdateProviderCoreRoutes`, {
       onEventHandler: updatePolicyLambda,
       logRetention: logs.RetentionDays.FIVE_DAYS,
       providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
     });
 
-    const updatePolicy = new cdk.CustomResource(this, 'UpdatePolicyCoreRoutes', {
+    const updatePolicy = new cdk.CustomResource(this, `${props.description}UpdatePolicyCoreRoutes`, {
       serviceToken: PolicyTableUpdateProvider.serviceToken,
       properties: {
         TableName: policyTable.tableName,
         coreNetworkId: this.cloudWanCoreId,
-        random: new Date().toISOString(),
+        random: new Date().toISOString(), // this ensures that the custom resource has a change everytime.
       },
     });
 
