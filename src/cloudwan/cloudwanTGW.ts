@@ -264,7 +264,7 @@ export class CloudWanTGW extends constructs.Construct {
       properties: {
         transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
         PeeringId: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
-        AttachmentTag: props.attachmentTag,
+        AttachmentSegment: props.attachmentSegment,
         CoreNetworkId: coreNetwork.getAttString('CoreNetworkId'),
         EdgeLocation:	cdk.Aws.REGION,
         attachmentIdSSMName: attachmentId.parameterName,

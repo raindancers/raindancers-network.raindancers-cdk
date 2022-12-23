@@ -4495,7 +4495,7 @@ const tGWOnCloudWanProps: TGWOnCloudWanProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn">amazonSideAsn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentTag">attachmentTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
+| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentSegment">attachmentSegment</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudwan">cloudwan</a></code> | <code><a href="#raindancers-network.CoreNetwork">CoreNetwork</a></code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr">cloudWanCidr</a></code> | <code>string[]</code> | *No description.* |
@@ -4514,13 +4514,13 @@ public readonly amazonSideAsn: string;
 
 ---
 
-##### `attachmentTag`<sup>Required</sup> <a name="attachmentTag" id="raindancers-network.TGWOnCloudWanProps.property.attachmentTag"></a>
+##### `attachmentSegment`<sup>Required</sup> <a name="attachmentSegment" id="raindancers-network.TGWOnCloudWanProps.property.attachmentSegment"></a>
 
 ```typescript
-public readonly attachmentTag: Tag;
+public readonly attachmentSegment: string;
 ```
 
-- *Type:* aws-cdk-lib.Tag
+- *Type:* string
 
 ---
 
