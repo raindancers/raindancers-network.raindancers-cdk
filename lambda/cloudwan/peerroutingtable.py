@@ -56,7 +56,7 @@ def is_complete(event, context):
 		attachment = networkmanager.create_transit_gateway_route_table_attachment(
 			PeeringId=props['PeeringId'],
 			TransitGatewayRouteTableArn= props['transitGatewayRouteTableArn'],
-			#Tags=[props['AttachmentTag']]
+			Tags=[props['AttachmentTag']]
 		)
 		
 		ssm.put_parameter(

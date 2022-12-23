@@ -79,9 +79,6 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
 
-    // create a transit gateway that will fit in as a shim between cloud WAN and the egress VPC. this is to
-    // over come the issues with Cloudwan not supporting Appliance Mode, and asymetric routes.
-
     const egressTG = new ec2.CfnTransitGateway(this, 'EgressTg', /* all optional props */ {
       amazonSideAsn: props.amazonSideAsn as unknown as number,
       transitGatewayCidrBlocks: props.tgCidr,
@@ -118,7 +115,8 @@ export class CloudWanTGW extends constructs.Construct {
 
     //get the TG's default routing table, as the attribute is not workign
 
-    const getDefaultRoutingTableId = new cr.AwsCustomResource(this, 'defaultroutingtableId', {
+    //const getDefaultRoutingTableId =
+    new cr.AwsCustomResource(this, 'defaultroutingtableId', {
       onCreate: {
 			  service: 'EC2',
 			  action: 'describeTransitGateways',
@@ -132,7 +130,8 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     });
 
-    const routingtableId = getDefaultRoutingTableId.getResponseField('TransitGateways.0.Options.AssociationDefaultRouteTableId');
+    // put this back
+    // const routingtableId = getDefaultRoutingTableId.getResponseField('TransitGateways.0.Options.AssociationDefaultRouteTableId');
 
 
     this.transitGateway = egressTG;
@@ -148,8 +147,8 @@ export class CloudWanTGW extends constructs.Construct {
     });
 
     // peer the tg to cloudwan.
-    // Checked that this builds and deletes
-    const transitGatewaypeering = new cr.AwsCustomResource(this, 'AttachTGtoCloudWan', {
+    //const transitGatewaypeering =
+    new cr.AwsCustomResource(this, 'AttachTGtoCloudWan', {
       onCreate: {
         service: 'NetworkManager',
         action: 'createTransitGatewayPeering',
@@ -240,7 +239,8 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     );
 
-    const AttachTGRouteTableToCloudwanProvider = new cr.Provider(this, 'isReadyProvider', {
+    //const AttachTGRouteTableToCloudwanProvider =
+    new cr.Provider(this, 'isReadyProvider', {
       onEventHandler: onEvent,
       isCompleteHandler: isPeeringDone, // we have to check to see if Peering is done before we do this next stage
       logRetention: logs.RetentionDays.SEVEN_YEARS, // default is INFINITE
@@ -259,19 +259,20 @@ export class CloudWanTGW extends constructs.Construct {
     attachmentId.grantWrite(onEvent);
 
 
-    const cloudwanTgAttachment = new cdk.CustomResource(this, 'AttachTGRouteTable', {
-      serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
-      properties: {
-        transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
-        PeeringId: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
-        AttachmentTag: props.attachmentTag,
-        CoreNetworkId: coreNetwork.getAttString('CoreNetworkId'),
-        EdgeLocation:	cdk.Aws.REGION,
-        attachmentIdSSMName: attachmentId.parameterName,
-      },
-    });
+    // const cloudwanTgAttachment = new cdk.CustomResource(this, 'AttachTGRouteTable', {
+    //   serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
+    //   properties: {
+    //     transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
+    //     PeeringId: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
+    //     AttachmentTag: props.attachmentTag,
+    //     CoreNetworkId: coreNetwork.getAttString('CoreNetworkId'),
+    //     EdgeLocation:	cdk.Aws.REGION,
+    //     attachmentIdSSMName: attachmentId.parameterName,
+    //   },
+    // });
 
-    this.cloudwanTgAttachmentId = cloudwanTgAttachment.getAttString('AttachmentId');
+    this.cloudwanTgAttachmentId = 'xxx';
+    //cloudwanTgAttachment.getAttString('AttachmentId');
 
 
   }
