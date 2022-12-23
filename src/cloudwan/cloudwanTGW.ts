@@ -38,7 +38,7 @@ export class CloudWanTGW extends constructs.Construct {
   /**
    * the AttachmentId between the Transit Gateway and the cloudwan
    */
-  //public readonly cloudwanTgAttachmentId: string;
+  public readonly cloudwanTgAttachmentId: string;
 
   /**
 	 *
@@ -240,12 +240,12 @@ export class CloudWanTGW extends constructs.Construct {
       }),
     );
 
-    // const AttachTGRouteTableToCloudwanProvider = new cr.Provider(this, 'isReadyProvider', {
-    //   onEventHandler: onEvent,
-    //   isCompleteHandler: isPeeringDone, // we have to check to see if Peering is done before we do this next stage
-    //   logRetention: logs.RetentionDays.SEVEN_YEARS, // default is INFINITE
-    //   queryInterval: cdk.Duration.seconds(30),
-    // });
+    const AttachTGRouteTableToCloudwanProvider = new cr.Provider(this, 'isReadyProvider', {
+      onEventHandler: onEvent,
+      isCompleteHandler: isPeeringDone, // we have to check to see if Peering is done before we do this next stage
+      logRetention: logs.RetentionDays.SEVEN_YEARS, // default is INFINITE
+      queryInterval: cdk.Duration.seconds(30),
+    });
 
 
     // we will place the attachmentId in a SSM parameter as its difficult to lookup with the SDK
@@ -259,26 +259,19 @@ export class CloudWanTGW extends constructs.Construct {
     attachmentId.grantWrite(onEvent);
 
 
-    // const cloudwanTgAttachment = new cdk.CustomResource(this, 'AttachTGRouteTable', {
-    //   serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
-    //   properties: {
-    //     transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
-    //     PeeringId: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
-    //     AttachmentTag: props.attachmentTag,
-    //     CoreNetworkId: coreNetwork.getAttString('CoreNetworkId'),
-    //     EdgeLocation:	cdk.Aws.REGION,
-    //     attachmentIdSSMName: attachmentId.parameterName,
-    //   },
-    // });
-
-    //this.cloudwanTgAttachmentId = cloudwanTgAttachment.getAttString('AttachmentId');
-
-    new cdk.CfnOutput(this, 'outputbuffer1', {
-      value: routingtableId,
+    const cloudwanTgAttachment = new cdk.CustomResource(this, 'AttachTGRouteTable', {
+      serviceToken: AttachTGRouteTableToCloudwanProvider.serviceToken,
+      properties: {
+        transitGatewayRouteTableArn: `arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:transit-gateway-route-table/${routingtableId}`,
+        PeeringId: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
+        AttachmentTag: props.attachmentTag,
+        CoreNetworkId: coreNetwork.getAttString('CoreNetworkId'),
+        EdgeLocation:	cdk.Aws.REGION,
+        attachmentIdSSMName: attachmentId.parameterName,
+      },
     });
-    new cdk.CfnOutput(this, 'out2', {
-      value: transitGatewaypeering.getResponseField('TransitGatewayPeering.Peering.PeeringId'),
-    });
+
+    this.cloudwanTgAttachmentId = cloudwanTgAttachment.getAttString('AttachmentId');
 
 
   }
