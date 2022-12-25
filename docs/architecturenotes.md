@@ -64,7 +64,9 @@ https://github.com/projen/projen
 
 Cloudwan, only provides interfaces to upload, and execute  entire CoreNetwork policys.  This makes it difficult to modify the core network after its intial creation, programatically. 
 
-To overcome the lack of interfaces, rain dancers networks models the core network as a set of items that work together. The properties of the items corrospond to the items in the CoreWan Policy Document Documents ( https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html )
+To overcome the lack of interfaces, the construct models the core network as objects. The properties of the objects corrospond to the items in the CoreWan policy json document ( https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html )
+
+The objects that are created are
 
 * A core configuration, that defines the 'global' configuration items.
 
@@ -78,16 +80,11 @@ The construct writes these items to a dynamodb table, by way of CRUD actions, wh
 
 Using dynamodb tables to hold configuration, was chosen over ssm parameters as the configuraton could easily exceed the maxium size of an ssm parameter. 
 
-<Diagram>
+![Creating Cloudwan Policy](createpolicy.jpg "CreatePolicy")
 
-The corewan construct has two methods share(), and updatePolicy. The share policy method provides a way to make the core wan avaialble to multiple accounts, or principals, ( such as an organisation)
+#### Methods for corewan.
 
-
-
-
-
-
-
+The corewan construct has two methods [`share()`](https://constructs.dev/packages/raindancers-network/v/1.8.18/api/CoreNetwork?lang=typescript#share), and [`updatePolicy()`](https://constructs.dev/packages/raindancers-network/v/1.8.18/api/CoreNetwork?lang=typescript#updatePolicy) The share policy method provides a way to make the core wan avaialble to multiple accounts, or principals, ( such as an organisation)
 
 
 
