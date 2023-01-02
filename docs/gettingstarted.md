@@ -111,13 +111,13 @@ For more details refer to the [CDK Documentation - Bootstrapping ](https://docs.
 
 
 
-### Build A Global Network With CDK
+## Build A Global Network With CDK
 
 In this section, we will write some code that will deploy a global network with cdk.
 
 While The raindancers constructs will allow the construction of various topologys, this example, will build out a simple example.  ( Other examples to be published )
 
-#### examplenet
+### examplenet
 
 Our project will build examplenet.  example net will;
 
@@ -132,89 +132,103 @@ Our project will build examplenet.  example net will;
 - Use the Cidr Block, 10.100.0.0/22 for inside Blocks
 
 
+#### Create a core network
 
+1. Install the raindancer-network construct in our project.    Execute the following `npm install raindancers-network`
 
+1. Open the file `lib\raindancers-network-stack.ts`.  
 
+Note: For reference you can look at the full completed project file, here.  Its recommended to build it yourself, so, you can get familar with the construct. 
 
+* 2.1 At the top of the file, import these packages
 
+```typescript
+import {
+  aws_networkmanager as networkmanager,
+}
+  from 'aws-cdk-lib';
 
+import * as raindancersNetwork from 'raindancers-network';
+```
 
+* 2.2 Add the following code under the super section.  You can edit the values as you need, for example pick regions that match what you need. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const TewhatungaCore = new CloudWan.CoreNetwork(this, 'CoreNetwork', {
+```typescript
+const exampleNet = new raindancersNetwork.CoreNetwork(this, 'CoreNetwork', {
       globalNetwork: new networkmanager.CfnGlobalNetwork(this, 'GlobalNetwork', {
-        description: 'Moe GlobalNetwork',
+        description: 'exampleNet',
       }),
-      policyDescription: 'MoE CoreNetwork',
-      coreName: this.node.tryGetContext('coreNetworkName'),
-
+      policyDescription: 'example net',
+      coreName: 'exampleNet',
 
       asnRanges: [
         '65200-65210',
       ],
-      insideCidrBlocks: ['10.19.248.0/21'],
+      insideCidrBlocks: ['10.100.0.0/22'],
 
       edgeLocations: [
         {
           // sydney
+          'location': 'ap-southeast-1',
+          'asn': 65200,
+          'inside-cidr-blocks': ['10.100.0.0/24'],
+        },
+        {
+          // singapore
           'location': 'ap-southeast-2',
           'asn': 65201,
-          'inside-cidr-blocks': ['10.19.255.0/24'],
-        },
+          'inside-cidr-blocks': ['10.100.1.0/24'],
+        }
       ],
+    });
+```
+
+This configuration details, follow what is required by Cloudwan to configure the CoreNetwork
+
+* 2.3  Add Network Segments to the core Network
+
+```typescript
+    // the segments
+    const redSegment = exampleNet.addSegment({
+      name: 'red',
+      description: 'red Segment',
+      isolateAttachments: false,
+      requireAttachmentAcceptance: false,
+    });
+
+    const blueSegment = exampleNet.addSegment({
+      name: 'blue',
+      description: 'blue Segment',
+      isolateAttachments: false,
+      requireAttachmentAcceptance: false,
     })
 
+    const greenSegment = exampleNet.addSegment({
+      name: 'green',
+      description: 'green Segment',
+      isolateAttachments: false,
+      requireAttachmentAcceptance: false,
+    })
+```
+  The addSegment method has several other configuration options, which may be used to build other configurations.  This configuraiton will make the segments avaialble in all regions that the corenework is configured.
+
+* 2.4 Add Attachment policys to the segments
+```typescript
+
+redSegment.addAttachmentByTagPolicy({
+  ruleNumber: 100,
+});
+
+greenSegment.addAttachmentByTagPolicy({
+  ruleNumber: 200,
+})
+
+blueSegment.addAttachmentByTagPolicy({
+  ruleNumber: 300,
+})
+
+```
+This will build a very simple attachment policy that will allow vpc's to use an attachment Tag  `{'Key':'AttachmentValue', 'Value':<segmentName>}`
+
+
+* 2.5  Add Network Segments to the core Network
