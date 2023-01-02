@@ -10,6 +10,11 @@ import {
   aws_ram as ram,
   aws_route53 as r53,
   aws_dynamodb as dynamodb,
+  aws_stepfunctions_tasks as tasks,
+  aws_events as events,
+  aws_events_targets as targets,
+  aws_sqs as sqs
+  //aws_stepfunctions as sfn
 }
   from 'aws-cdk-lib';
 
@@ -96,6 +101,14 @@ export interface AddRoutesProps {
 
 }// end of addRoutetoCloudWan
 
+export interface CloudWanRoutingProtocolProps { 
+  // a list of the subnetGroups which will participate in Cloudwan Routing Protocol
+  readonly subnetGroups: string[]
+  readonly acceptRouteFilter?: string[] | undefined
+  readonly denyRouteFilter?: string[] | undefined
+}
+
+
 /**
  * The Destinations for Adding Routes
  */
@@ -154,6 +167,9 @@ export class EnterpriseVpc extends constructs.Construct {
   public vpcAttachmentCR: cdk.CustomResource | undefined;
 
   public vpcAttachmentId: string | undefined;
+
+  public vpcAttachmentSegmentName: string | undefined;
+
 
   public cloudWanCoreId: string | undefined;
 
@@ -325,7 +341,7 @@ export class EnterpriseVpc extends constructs.Construct {
       properties: { props64: props64 },
     });
 
-
+    this.vpcAttachmentSegmentName = props.segmentName;
     this.vpcAttachmentCR = attachmentCR;
     this.vpcAttachmentId = attachmentCR.getAttString('AttachmentId');
 
@@ -418,10 +434,91 @@ export class EnterpriseVpc extends constructs.Construct {
   }
 
   /**
-	 * Add routes to SubnetGroups ( by implication their routing tables )
+	 * Enable CloudWanRoutingProtocol
 	 * @param props
 	 */
 
+  public cloudWanRoutingProtocol(props: CloudWanRoutingProtocolProps): void {
+
+    var routeTableIds: string[] = [];
+
+    // get all the routeTableIds for the subnets that will particpate
+    props.subnetGroups.forEach((groupName) => {
+      const selection = this.vpc.selectSubnets({
+        subnetGroupName: groupName,
+      });
+      selection.subnets.forEach((subnet) => {
+        routeTableIds.push(subnet.routeTable.routeTableId);
+      });
+    });
+
+
+    // setCoreRoutesLambda
+    const setCoreRoutes = new aws_lambda.Function(this, 'setCoreRoutesLambda', {
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      logRetention: logs.RetentionDays.ONE_MONTH,
+      handler: 'setcoreroutes.on_event',     // to do
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')), // to do
+      timeout: cdk.Duration.seconds(899),
+      environment: {
+        RouteTableIds: cdk.Stack.of(this).toJsonString(routeTableIds),
+        DenyFilter: cdk.Stack.of(this).toJsonString(props.acceptRouteFilter),
+        AcceptFilter: cdk.Stack.of(this).toJsonString(props.denyRouteFilter),
+        CloudWanCoreId: this.cloudWanCoreId as string
+      }
+    })
+
+    setCoreRoutes.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: ['networkManager'], // TO DO. 
+        resources: ['*'],
+        effect: iam.Effect.ALLOW
+      })
+    )
+
+    const setCoreRoutesProvider = new cr.Provider(this, 'setCoreRoutesProvider', {
+      onEventHandler: setCoreRoutes
+    })
+    const setCoreRoutesCR = new cdk.CustomResource(this, 'setCoreRoutesCR', {
+      serviceToken: setCoreRoutesProvider.serviceToken,
+    })
+    setCoreRoutesCR.node.addDependency(this.vpcAttachmentCR as cdk.CustomResource)
+
+
+    // the lambda needs to run when a topology change occurs. 
+    const topologyChange = new events.Rule(this, 'CoreWanPolicyChange', {
+      description: 'topology Change in CoreNetwork',
+    })
+
+    topologyChange.addEventPattern(
+      {
+        source: ["aws.networkmanager"],
+        detailType: ["Network Manager Policy Update"],
+        detail: {
+          "changeType": "CHANGE-SET-EXECUTED"
+        }
+      }
+    )
+    
+    topologyChange.addTarget(
+      new targets.LambdaFunction(
+        setCoreRoutes, {
+          deadLetterQueue: new sqs.Queue(this, 'topologychangeDLQ'),
+          maxEventAge: cdk.Duration.hours(2), // Optional: set the maxEventAge retry policy
+          retryAttempts: 2, // Optional: set the max number of retry attempts
+        }
+      )
+    );
+ }
+  
+    
+
+
+
+  /**
+	 * Add routes to SubnetGroups ( by implication their routing tables )
+	 * @param props
+	 */
   public addRoutes (props: AddRoutesProps): void {
 
     if ( props.destination === Destination.TRANSITGATEWAY || props.destination === Destination.CLOUDWAN ) {
