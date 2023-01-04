@@ -132,6 +132,7 @@ Our project will build examplenet.  example net will;
 - Use the Cidr Block, 10.100.0.0/22 for inside Blocks
 - the networks in the blue, and green segments will be shared with the red segment
 
+![Cloudwan Topology](cloudwan.png "project Structure")
 
 #### Create a core network
 
