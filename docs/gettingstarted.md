@@ -219,15 +219,15 @@ The configuration details, follow what are required by Cloudwan to configure the
 * 2.4 Add Attachment policys to the segments
 ```typescript
 
-redSegment.addAttachmentByTagPolicy({
+redSegment.addSimpleAttachmentPolicy({
   ruleNumber: 100,
 });
 
-greenSegment.addAttachmentByTagPolicy({
+greenSegment.addSimpleAttachmentPolicy({
   ruleNumber: 200,
 })
 
-blueSegment.addAttachmentByTagPolicy({
+blueSegment.addSimpleAttachmentPolicy({
   ruleNumber: 300,
 })
 
@@ -241,17 +241,17 @@ This will create a simple attachment policy that will allow vpc's to use an atta
 * 2.5  Add actions to the core Network
 
 ```typescript
-redSegment.addSegmentShareAction({
+redSegment.addSimpleShareAction({
   description: 'Share the red segment with everything',
   shareWith: '*'
 });
 
-greenSegment.addSegmentShareAction({
+greenSegment.addSimpleShareAction({
   description: 'Share the green segment with the redSegment',
   shareWith: [redSegment]
 });
 
-blueSegment.addSegmentShareAction({
+blueSegment.addSimpleShareAction({
   description: 'Share the blue segment with the redSegment',
   shareWith: [redSegment]
 });

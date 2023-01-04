@@ -10,10 +10,9 @@ import {
   aws_ram as ram,
   aws_route53 as r53,
   aws_dynamodb as dynamodb,
-  aws_stepfunctions_tasks as tasks,
   aws_events as events,
   aws_events_targets as targets,
-  aws_sqs as sqs
+  aws_sqs as sqs,
   //aws_stepfunctions as sfn
 }
   from 'aws-cdk-lib';
@@ -101,11 +100,11 @@ export interface AddRoutesProps {
 
 }// end of addRoutetoCloudWan
 
-export interface CloudWanRoutingProtocolProps { 
+export interface CloudWanRoutingProtocolProps {
   // a list of the subnetGroups which will participate in Cloudwan Routing Protocol
-  readonly subnetGroups: string[]
-  readonly acceptRouteFilter?: string[] | undefined
-  readonly denyRouteFilter?: string[] | undefined
+  readonly subnetGroups: string[];
+  readonly acceptRouteFilter?: string[] | undefined;
+  readonly denyRouteFilter?: string[] | undefined;
 }
 
 
@@ -457,62 +456,60 @@ export class EnterpriseVpc extends constructs.Construct {
     const setCoreRoutes = new aws_lambda.Function(this, 'setCoreRoutesLambda', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       logRetention: logs.RetentionDays.ONE_MONTH,
-      handler: 'setcoreroutes.on_event',     // to do
+      handler: 'setcoreroutes.on_event', // to do
       code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')), // to do
       timeout: cdk.Duration.seconds(899),
       environment: {
         RouteTableIds: cdk.Stack.of(this).toJsonString(routeTableIds),
         DenyFilter: cdk.Stack.of(this).toJsonString(props.acceptRouteFilter),
         AcceptFilter: cdk.Stack.of(this).toJsonString(props.denyRouteFilter),
-        CloudWanCoreId: this.cloudWanCoreId as string
-      }
-    })
+        CloudWanCoreId: this.cloudWanCoreId as string,
+        AttachmentSegment: this.vpcAttachmentSegmentName as string,
+      },
+    });
 
     setCoreRoutes.addToRolePolicy(
       new iam.PolicyStatement({
-        actions: ['networkManager'], // TO DO. 
+        actions: ['networkManager'], // TO DO.
         resources: ['*'],
-        effect: iam.Effect.ALLOW
-      })
-    )
+        effect: iam.Effect.ALLOW,
+      }),
+    );
 
     const setCoreRoutesProvider = new cr.Provider(this, 'setCoreRoutesProvider', {
-      onEventHandler: setCoreRoutes
-    })
+      onEventHandler: setCoreRoutes,
+    });
     const setCoreRoutesCR = new cdk.CustomResource(this, 'setCoreRoutesCR', {
       serviceToken: setCoreRoutesProvider.serviceToken,
-    })
-    setCoreRoutesCR.node.addDependency(this.vpcAttachmentCR as cdk.CustomResource)
+    });
+    setCoreRoutesCR.node.addDependency(this.vpcAttachmentCR as cdk.CustomResource);
 
 
-    // the lambda needs to run when a topology change occurs. 
+    // the lambda needs to run when a topology change occurs.
     const topologyChange = new events.Rule(this, 'CoreWanPolicyChange', {
       description: 'topology Change in CoreNetwork',
-    })
+    });
 
     topologyChange.addEventPattern(
       {
-        source: ["aws.networkmanager"],
-        detailType: ["Network Manager Policy Update"],
+        source: ['aws.networkmanager'],
+        detailType: ['Network Manager Policy Update'],
         detail: {
-          "changeType": "CHANGE-SET-EXECUTED"
-        }
-      }
-    )
-    
+          changeType: 'CHANGE-SET-EXECUTED',
+        },
+      },
+    );
+
     topologyChange.addTarget(
       new targets.LambdaFunction(
         setCoreRoutes, {
           deadLetterQueue: new sqs.Queue(this, 'topologychangeDLQ'),
           maxEventAge: cdk.Duration.hours(2), // Optional: set the maxEventAge retry policy
           retryAttempts: 2, // Optional: set the max number of retry attempts
-        }
-      )
+        },
+      ),
     );
- }
-  
-    
-
+  }
 
 
   /**

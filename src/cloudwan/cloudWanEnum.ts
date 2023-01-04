@@ -4,6 +4,7 @@ import {
   from 'aws-cdk-lib';
 
 import * as cdk from 'aws-cdk-lib';
+import { CoreNetworkSegment } from './coreNetworkSegment';
 
 
 /**
@@ -132,6 +133,11 @@ export interface AttachmentPolicy {
   readonly conditionLogic?: ConditionLogic;
 }
 
+export interface SimpleAttachmentPolicyProps {
+  readonly ruleNumber: number;
+  readonly account?: string;
+}
+
 /**
  * Properties creating a Corenetwork Segment
  */
@@ -162,6 +168,10 @@ export interface SegmentAction {
   readonly destinations?: string[];
 }
 
+export interface SimpleShareActionProps {
+  readonly description: string;
+  readonly shareWith: CoreNetworkSegment[] | string;
+}
 
 /**
  * CoreNetwork Properties

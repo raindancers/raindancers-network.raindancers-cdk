@@ -28,6 +28,42 @@ export class CoreNetworkSegment extends constructs.Construct {
     this.policyTableServiceToken = props.policyTableServiceToken;
   }
 
+  public addSimpleShareAction(props: cloudWanEnum.SimpleShareActionProps): void {
+
+    if (typeof props.shareWith === 'string') {
+      if (!(props.shareWith === '*')) {
+        throw new Error('Only * can be provided as a string');
+      }
+    }
+
+    const segmentAction: {[k: string]: any} = {};
+
+    segmentAction.description = props.description;
+    segmentAction.action = cloudWanEnum.SegmentActionType.SHARE,
+    segmentAction.mode = cloudWanEnum.SegmentActionMode.ATTACHMENT_ROUTE,
+    segmentAction.segment = this.segmentName;
+
+    if (props.shareWith === '*') {
+      segmentAction['share-with'] = props.shareWith;
+    } else {
+      let segments: string[] = [];
+      props.shareWith.forEach((segment) => {
+        segments.push(segment.segmentName);
+      });
+
+      segmentAction['share-with'] = segments;
+    }
+
+
+  }
+
+  // commonservices.addSegmentAction({
+  //   description: 'sharetoall',
+  //   action: CloudWan.SegmentActionType.SHARE,
+  //   mode: CloudWan.SegmentActionMode.ATTACHMENT_ROUTE,
+  //   shareWith: '*',
+  // });
+
 
   /**
 	 * Add an Action to the Segment, ( Share or Route )
@@ -86,6 +122,51 @@ export class CoreNetworkSegment extends constructs.Construct {
     this.updateDependsOn.push(segmentaction);
   }
 
+
+  public addSimpleAttachmentPolicy(
+    props: cloudWanEnum.SimpleAttachmentPolicyProps,
+  ): void {
+    const attachmentPolicy: {[k: string]: any} = {};
+
+    attachmentPolicy['rule-number'] = Number(props.ruleNumber);
+    attachmentPolicy.conditions = [
+      {
+        type: cloudWanEnum.AttachmentCondition.TAG_VALUE,
+        key: 'NetworkSegment',
+        value: this.segmentName,
+        operator: cloudWanEnum.Operators.EQUALS,
+      },
+    ];
+
+    if (props.account) {
+      attachmentPolicy.conditions.push(
+        {
+          type: cloudWanEnum.AttachmentCondition.ACCOUNT_ID,
+          value: props.account,
+          operator: cloudWanEnum.Operators.EQUALS,
+        },
+      );
+
+      attachmentPolicy['condition-logic'] = cloudWanEnum.ConditionLogic.AND;
+
+    }
+
+    attachmentPolicy.action = {
+      associationMethod: cloudWanEnum.AssociationMethod.CONSTANT,
+      segment: this.segmentName,
+    };
+
+    const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
+      serviceToken: this.policyTableServiceToken,
+      properties: {
+        attachmentPolicy: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(attachmentPolicy)),
+      },
+    });
+
+    this.updateDependsOn?.push(segmentpolicy);
+  }
+
+
   /**
 	 * Add an AttachmentPolicy to a segment
 	 * @param props An attachment policy
@@ -122,6 +203,7 @@ export class CoreNetworkSegment extends constructs.Construct {
     if (props.description !== undefined) {
       attachmentPolicy.description = props.description;
     }
+
 
     const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
       serviceToken: this.policyTableServiceToken,

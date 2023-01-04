@@ -63,30 +63,32 @@ export class RaindancersNetworkStack extends cdk.Stack {
 		})
 
 		// add attachment policys by Tag to the segments
-		redSegment.addAttachmentByTagPolicy({
+		redSegment.addSimpleAttachmentPolicy({
 			ruleNumber: 100,
 		});
 		  
-		greenSegment.addAttachmentByTagPolicy({
+		greenSegment.addSimpleAttachmentPolicy({
 			ruleNumber: 200,
 		})
 		  
-		blueSegment.addAttachmentByTagPolicy({
+		blueSegment.addSimpleAttachmentPolicy({
 			ruleNumber: 300,
 		})
 		
+		
+
 		// add sharing actions to the segments
-		redSegment.addSegmentShareAction({
+		redSegment.addSimpleShareAction({
 			description: 'Share the red segment with everything',
 			shareWith: '*'
 		  });
 		  
-		greenSegment.addSegmentShareAction({
+		greenSegment.addSimpleShareAction({
 			description: 'Share the green segment with the redSegment',
 			shareWith: [redSegment]
 		});
 		  
-		blueSegment.addSegmentShareAction({
+		blueSegment.addSimpleShareAction({
 			description: 'Share the blue segment with the redSegment',
 			shareWith: [redSegment]
 		});

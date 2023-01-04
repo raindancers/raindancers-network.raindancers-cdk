@@ -594,6 +594,8 @@ new CoreNetworkSegment(scope: Construct, id: string, props: ICoreNetworkSegmentP
 | <code><a href="#raindancers-network.CoreNetworkSegment.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#raindancers-network.CoreNetworkSegment.addAttachmentPolicy">addAttachmentPolicy</a></code> | Add an AttachmentPolicy to a segment. |
 | <code><a href="#raindancers-network.CoreNetworkSegment.addSegmentAction">addSegmentAction</a></code> | Add an Action to the Segment, ( Share or Route ). |
+| <code><a href="#raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy">addSimpleAttachmentPolicy</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CoreNetworkSegment.addSimpleShareAction">addSimpleShareAction</a></code> | *No description.* |
 
 ---
 
@@ -634,6 +636,30 @@ Add an Action to the Segment, ( Share or Route ).
 - *Type:* <a href="#raindancers-network.SegmentAction">SegmentAction</a>
 
 segment action.
+
+---
+
+##### `addSimpleAttachmentPolicy` <a name="addSimpleAttachmentPolicy" id="raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy"></a>
+
+```typescript
+public addSimpleAttachmentPolicy(props: SimpleAttachmentPolicyProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.SimpleAttachmentPolicyProps">SimpleAttachmentPolicyProps</a>
+
+---
+
+##### `addSimpleShareAction` <a name="addSimpleShareAction" id="raindancers-network.CoreNetworkSegment.addSimpleShareAction"></a>
+
+```typescript
+public addSimpleShareAction(props: SimpleShareActionProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSimpleShareAction.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.SimpleShareActionProps">SimpleShareActionProps</a>
 
 ---
 
@@ -758,6 +784,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
+| <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
 | <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
 
@@ -837,6 +864,20 @@ Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpo
 
 ---
 
+##### `cloudWanRoutingProtocol` <a name="cloudWanRoutingProtocol" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol"></a>
+
+```typescript
+public cloudWanRoutingProtocol(props: CloudWanRoutingProtocolProps): void
+```
+
+Enable CloudWanRoutingProtocol.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CloudWanRoutingProtocolProps">CloudWanRoutingProtocolProps</a>
+
+---
+
 ##### `createFlowLog` <a name="createFlowLog" id="raindancers-network.EnterpriseVpc.createFlowLog"></a>
 
 ```typescript
@@ -910,6 +951,7 @@ Any object.
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentId">vpcAttachmentId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentSegmentName">vpcAttachmentSegmentName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1051,6 +1093,16 @@ public readonly vpcAttachmentCR: CustomResource;
 
 ```typescript
 public readonly vpcAttachmentId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpcAttachmentSegmentName`<sup>Optional</sup> <a name="vpcAttachmentSegmentName" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentSegmentName"></a>
+
+```typescript
+public readonly vpcAttachmentSegmentName: string;
 ```
 
 - *Type:* string
@@ -3140,6 +3192,56 @@ indicate true for a S3 Gateway Interface.
 
 ---
 
+### CloudWanRoutingProtocolProps <a name="CloudWanRoutingProtocolProps" id="raindancers-network.CloudWanRoutingProtocolProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CloudWanRoutingProtocolProps.Initializer"></a>
+
+```typescript
+import { CloudWanRoutingProtocolProps } from 'raindancers-network'
+
+const cloudWanRoutingProtocolProps: CloudWanRoutingProtocolProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.acceptRouteFilter">acceptRouteFilter</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.denyRouteFilter">denyRouteFilter</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.CloudWanRoutingProtocolProps.property.subnetGroups"></a>
+
+```typescript
+public readonly subnetGroups: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `acceptRouteFilter`<sup>Optional</sup> <a name="acceptRouteFilter" id="raindancers-network.CloudWanRoutingProtocolProps.property.acceptRouteFilter"></a>
+
+```typescript
+public readonly acceptRouteFilter: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `denyRouteFilter`<sup>Optional</sup> <a name="denyRouteFilter" id="raindancers-network.CloudWanRoutingProtocolProps.property.denyRouteFilter"></a>
+
+```typescript
+public readonly denyRouteFilter: string[];
+```
+
+- *Type:* string[]
+
+---
+
 ### CoreNetworkProps <a name="CoreNetworkProps" id="raindancers-network.CoreNetworkProps"></a>
 
 CoreNetwork Properties.
@@ -4475,6 +4577,84 @@ public readonly subnetGroups: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+### SimpleAttachmentPolicyProps <a name="SimpleAttachmentPolicyProps" id="raindancers-network.SimpleAttachmentPolicyProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.SimpleAttachmentPolicyProps.Initializer"></a>
+
+```typescript
+import { SimpleAttachmentPolicyProps } from 'raindancers-network'
+
+const simpleAttachmentPolicyProps: SimpleAttachmentPolicyProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SimpleAttachmentPolicyProps.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.SimpleAttachmentPolicyProps.property.account">account</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.SimpleAttachmentPolicyProps.property.ruleNumber"></a>
+
+```typescript
+public readonly ruleNumber: number;
+```
+
+- *Type:* number
+
+---
+
+##### `account`<sup>Optional</sup> <a name="account" id="raindancers-network.SimpleAttachmentPolicyProps.property.account"></a>
+
+```typescript
+public readonly account: string;
+```
+
+- *Type:* string
+
+---
+
+### SimpleShareActionProps <a name="SimpleShareActionProps" id="raindancers-network.SimpleShareActionProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.SimpleShareActionProps.Initializer"></a>
+
+```typescript
+import { SimpleShareActionProps } from 'raindancers-network'
+
+const simpleShareActionProps: SimpleShareActionProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SimpleShareActionProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SimpleShareActionProps.property.shareWith">shareWith</a></code> | <code>string \| <a href="#raindancers-network.CoreNetworkSegment">CoreNetworkSegment</a>[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.SimpleShareActionProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `shareWith`<sup>Required</sup> <a name="shareWith" id="raindancers-network.SimpleShareActionProps.property.shareWith"></a>
+
+```typescript
+public readonly shareWith: string | CoreNetworkSegment[];
+```
+
+- *Type:* string | <a href="#raindancers-network.CoreNetworkSegment">CoreNetworkSegment</a>[]
 
 ---
 
