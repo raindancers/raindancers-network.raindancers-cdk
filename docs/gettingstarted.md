@@ -130,6 +130,7 @@ Our project will build examplenet.  example net will;
   - blue
 - Use the private Asn Range, 65200 - 65210
 - Use the Cidr Block, 10.100.0.0/22 for inside Blocks
+- the networks in the blue, and green segments will be shared with the red segment
 
 
 #### Create a core network
@@ -231,4 +232,77 @@ blueSegment.addAttachmentByTagPolicy({
 This will build a very simple attachment policy that will allow vpc's to use an attachment Tag  `{'Key':'AttachmentValue', 'Value':<segmentName>}`
 
 
-* 2.5  Add Network Segments to the core Network
+* 2.5  Add actions to the core Network
+
+```typescript
+redSegment.addSegmentShareAction({
+  description: 'Share the red segment with everything',
+  shareWith: '*'
+});
+
+greenSegment.addSegmentShareAction({
+  description: 'Share the green segment with the redSegment',
+  shareWith: [redSegment]
+});
+
+blueSegment.addSegmentShareAction({
+  description: 'Share the blue segment with the redSegment',
+  shareWith: [redSegment]
+});
+```
+This will add sharing actions in the corenetwork policy that will allow the red segment to communicate with the green and blue segments, but the blue and green segments can't communicate directly.
+
+* 2.6 update and execute the network policy
+
+The coreNetwork policy needs to be created, and executed The updatePolicy action creates 
+
+```typescript
+    exampleNet.updatePolicy();
+```
+
+* 2.7 Optionally, Share the Cloudwan network to other accounts or an organisation, so that they can join their vpc's to it, if required. ( note, change to your org)
+
+```typescript
+    exampleNet.share({
+      principals: [
+        'arn:aws:organizations::454817366727:organization/o-xxxxxxxxx'
+      ],
+    });
+```
+
+`lib\raindancers-network-stack.ts` [should look like this now](gettingstarted.ts)
+
+
+#### Synth and deploy
+
+❗**Important Note:**  
+This stack needs to be [deployed in the us-east-1 region](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-share-network.html), so RAM can share it. This may seem unusual, as the globalwan service itself is global, and is based in us-west-2
+
+Open `bin/raindancers-network.ts` and edit it so a environment is set for the stack. It shoudl look like this.    [For more information about setting environments check the AWS CDK documentation](https://docs.aws.amazon.com/cdk/latest/guide/environments.html)
+
+```typescript
+import * as cdk from 'aws-cdk-lib';
+import { RaindancersNetworkStack } from '../lib/raindancers-network-stack';
+
+const app = new cdk.App();
+new RaindancersNetworkStack(app, 'RaindancersNetworkStack', {
+  env: { account: '123456789012', region: 'us-east-1' }
+});
+```
+
+You should now be able to synth and deploy this stack
+
+`cdk synth` - This will synthesise the cloudformation that will be used to deploy this stack. You can inspect the cloudformation templates in the cdk.out folder.
+
+`cdk deploy` - This deploy the stack to the default CLI account.  Depending on your configuration, you may need to use a profile `cdk deploy --profile <youprofile>`
+
+The deployment process will take some time ( as much as 15 minutes), It will prompt you for approval to make security changes.  This is because it is creating IAM roles and policys which are needed by the custom resources that this stack is building.    
+
+Once the stack is deployed, look in the console,  VPC --> Network Manager, and you will be able to see the global networks, core network and policy that has been created, along with the RAM sharing.
+
+[➔ Next: Deploy VPC's which are attached to cloudwan](deployVpcts.md)
+
+
+
+
+
