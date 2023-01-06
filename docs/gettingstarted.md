@@ -1,4 +1,4 @@
-# Raindancers Network - Getting Started with the example projet
+# Raindancers Network - Getting Started with the example project.
 
 
 ## Prequisites
