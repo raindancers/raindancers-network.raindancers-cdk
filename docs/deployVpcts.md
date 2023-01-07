@@ -77,6 +77,23 @@ redVpc.attachToCloudWan({
 })
 ```
 
+* 1.5 Add Default route to the cloudwan
+
+In this example network, we want all our vpcs to route any non local traffic towards the clouwan.   Use the `addRoutes` method on the vpc.  When the vpc is created, every subnet has a route table associated with it. This allows us to specify at a subnet level how routes are set up.  
+
+```typescript
+redVpc.addRoutes({
+		cidr: ['0.0.0.0/0'],
+		description: 'defaultroute',
+		subnetGroups: [
+		  'linknet',
+		  'redsubnet'
+		],
+		destination: raindancersNetwork.Destination.CLOUDWAN,
+		cloudwanName: props?.corenetwork.coreName as string,
+	});
+```	
+
 * 2.1  Create a new file `lib\singaporeVpc.ts`.  This will hold the Vpc's for Sydney. The format of this format follwows the same format. 
 
  ( The complete file is here can be found here  [Github Gist - singaporeVpc.ts](https://gist.github.com/mrpackethead/97106f8860e66199c303b6e1e69aaa99) )
@@ -138,7 +155,7 @@ new SingaporeVpc(app, 'SydneyVPC', {
 
 You can now synth `cdk synth` and deploy `cdk deploy` the stacks.   After deployment, check the Clouwan Networks in the console. You will see that routes have propogated, and that the sydney and singapore Vpc's will be able to to communicate.
 
-
+[➔ Next: Optional, create a Common Managed Egress Firewall using AWS networkfirewall](egress.md)
 
 
 
