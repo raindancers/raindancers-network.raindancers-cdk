@@ -4,6 +4,8 @@ In this section we will create another VPC, that contains AWS Network Firewalls,
 
 The firewall will also provide East/West inspection. ( traffic between core wan network segments ). 
 
+![EgressVPC](egressvpc.png "EgressVPC")
+
 ### Create a egress vpc stack and firewall
 
 The full file for the stack is in [this gist](https://gist.github.com/mrpackethead/b06e0cdf1b4bff1195c61a2c27b16004)

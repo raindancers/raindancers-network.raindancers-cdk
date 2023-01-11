@@ -1,6 +1,6 @@
 # Raindancers Network - Create Vpcs that are attached to a cloudwan vpc
 
-In this example, we will create five new vpcs, two in the singapore region, and three in the sydney region. 
+In this example, we will create five new vpcs, two in the singapore region, and three in the sydney region. It builds on the [previous step]('./gettingstarted.md'), which needs to be completed first.  
 
 ![Add VPC](addvpc.png "AddVPC")
 
@@ -94,7 +94,7 @@ redVpc.addRoutes({
 	});
 ```	
 
-* 2.1  Create a new file `lib\singaporeVpc.ts`.  This will hold the Vpc's for Sydney. The format of this format follwows the same format. 
+* 2.1  Create a new file `lib\singaporeVpc.ts`.  This will hold the Vpc's for Singapore. The format of this file follows the same format as that of Sydney. 
 
  ( The complete file is here can be found here  [Github Gist - singaporeVpc.ts](https://gist.github.com/mrpackethead/97106f8860e66199c303b6e1e69aaa99) )
 
