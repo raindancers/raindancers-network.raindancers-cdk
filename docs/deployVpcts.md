@@ -2,7 +2,7 @@
 
 In this example, we will create five new vpcs, two in the singapore region, and three in the sydney region. 
 
-<diagram>
+![Add VPC](addvpc.png "AddVPC")
 
 There are multiple approaches that could be taken to implement Vpc's, and in fact a project and this example, should only be regarded as an example, not a definative set of rules.
 
