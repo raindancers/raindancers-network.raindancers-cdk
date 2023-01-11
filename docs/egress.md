@@ -230,7 +230,7 @@ This example policy, will;
 - allow http ( tcp 80 ) and https ( tcp 443 ) traffic from any inside host to the internet.    This traffic is further evaulated against a collection of aws managed firewall rules, to prevent activity such as botnets,  malware, worms.     Traffic that is supicous is dropped. 
 - drop any other traffic
 
-The full file is in [this gist]('https://gist.github.com/mrpackethead/957eb2f6af9dbe674efe6d3db98bd3d3')
+The full file is in [this gist](https://gist.github.com/mrpackethead/957eb2f6af9dbe674efe6d3db98bd3d3)
 
 ```typescript
 export class FirewallRules extends constructs.Construct {
