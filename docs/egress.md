@@ -509,6 +509,6 @@ new EgressVpc(app, 'EgressVpc', {
 
 4.1 Synth and Deploy
 
-
+[➔ Next: Optional, create S2S VPN's over Direct Connect](transitgateway.md)
 
 
