@@ -8,7 +8,7 @@ At the time of creation, cloudwan had no integration with DX Gateways.   It seem
 
 The entire file is available [in this gist](https://gist.github.com/mrpackethead/dae981042ac03fa7153f179364431de6)
 
-<diagram>
+![TransitGateway](TG-DX.png "TransitDXTG")
 
 * 1.1 Create a new file 'lib\tgdxs2s.ts'
 
