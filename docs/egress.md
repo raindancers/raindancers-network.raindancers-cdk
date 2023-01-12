@@ -489,6 +489,25 @@ export class FirewallRules extends constructs.Construct {
   }
 }
 ```
+3.1 open and edit `bin/raindancers-network.ts`.
+
+- Import EgressVPC 
+```typescript
+import { EgressVpc } from '../lib/egressVPC';
+```
+- Create an instance of EgressVPC 
+
+```typescript
+new EgressVpc(app, 'EgressVpc', {
+  env: { account: '123456789012', region: 'ap-southeast-1' },
+  corenetwork: core.corenetwork,
+  redSegment: core.redSegment,
+  blueSegment: core.blueSegment,
+  greenSegment: core.greenSegment,
+})
+```
+
+4.1 Synth and Deploy
 
 
 

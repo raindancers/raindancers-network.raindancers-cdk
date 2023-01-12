@@ -9,9 +9,11 @@ To use this project, you'll need the following prerequisties
 1. AWS CLI. The AWS CLI allows you to interact with AWS services from a terminal session. Make sure you have the latest version of the AWS CLI installed on your system. If you need to install this, follow the [User Guide for Version 2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 
-3. Node.js  A version in active long-term support (18.x at this writing) is recommended.
+1. Node.js  A version in active long-term support (18.x at this writing) is recommended.
 
 If you want to use this construct with python, follow the [Python](python.md) instructions.
+
+1. AWS CDK.  [Follow the instructions here](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) 
 
 
 ## To use the construct in Typescript.
