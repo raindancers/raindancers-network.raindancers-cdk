@@ -11,6 +11,7 @@ A getting started example provides guidence in using the constructs in typescrip
 - [Getting Started](./docs/gettingstarted.md)
 - [Deploying VPC with Cloudwan](./docs/deployVpcts.md)
 - [Create A shared Egress VPC, using AWS Network Firewalls](./docs/egress.md)
+- [Transit Gateways and IPSec over DX](./docs/transitgateway.md)
 
 Slack:  A good way to to get help with this construct, is to join the [cdk.dev] (https://cdk.dev/) slack channel.  
 

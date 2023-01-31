@@ -23,3 +23,4 @@ export * from './dns/dnsResolvers';
 
 // firewall
 export * from './nwfirewall/firewall';
+export * from './nwfirewall/firewallPolicy';

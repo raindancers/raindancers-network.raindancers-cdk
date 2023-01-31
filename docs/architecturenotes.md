@@ -23,7 +23,6 @@ The project has developed over time to add additional capablitys, and is expecte
 ## Design Principals
 
 #### Everything is code.
-
 Everything* is code for this project. Everything about the project can be committed to a git repo.   This ensures that every detail of a project is captured.
 
 #### Decompostion

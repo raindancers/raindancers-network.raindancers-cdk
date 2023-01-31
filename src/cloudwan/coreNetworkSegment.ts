@@ -88,7 +88,7 @@ export class CoreNetworkSegment extends constructs.Construct {
       if (props.shareWith === undefined) {
         throw Error ('shareWith must be defined for a share action');
       }
-      segmentAction.mode = props.action;
+      segmentAction.mode = props.mode;
       segmentAction['share-with'] = props.shareWith;
 
       if (props.except === undefined) {

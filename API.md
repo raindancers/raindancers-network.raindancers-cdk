@@ -2062,6 +2062,153 @@ The default subnet configuration if natGateways specified to be 0.
 
 ---
 
+### FirewallPolicy <a name="FirewallPolicy" id="raindancers-network.FirewallPolicy"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.FirewallPolicy.Initializer"></a>
+
+```typescript
+import { FirewallPolicy } from 'raindancers-network'
+
+new FirewallPolicy(scope: Construct, id: string, props: FirewallPolicyProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FirewallPolicyProps">FirewallPolicyProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FirewallPolicy.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FirewallPolicy.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.FirewallPolicyProps">FirewallPolicyProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FirewallPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.FirewallPolicy.addManagedStatefulRules">addManagedStatefulRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicy.addStatelessRuleGroup">addStatelessRuleGroup</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.FirewallPolicy.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addManagedStatefulRules` <a name="addManagedStatefulRules" id="raindancers-network.FirewallPolicy.addManagedStatefulRules"></a>
+
+```typescript
+public addManagedStatefulRules(props: AddStatefulRulesProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.addManagedStatefulRules.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddStatefulRulesProps">AddStatefulRulesProps</a>
+
+---
+
+##### `addStatelessRuleGroup` <a name="addStatelessRuleGroup" id="raindancers-network.FirewallPolicy.addStatelessRuleGroup"></a>
+
+```typescript
+public addStatelessRuleGroup(props: AddStatelessRulesProps): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.addStatelessRuleGroup.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddStatelessRulesProps">AddStatelessRulesProps</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FirewallPolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FirewallPolicy.isConstruct"></a>
+
+```typescript
+import { FirewallPolicy } from 'raindancers-network'
+
+FirewallPolicy.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FirewallPolicy.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FirewallPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.FirewallPolicy.property.firewallpolicy">firewallpolicy</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicy.property.policy">policy</a></code> | <code><a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FirewallPolicy.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `firewallpolicy`<sup>Required</sup> <a name="firewallpolicy" id="raindancers-network.FirewallPolicy.property.firewallpolicy"></a>
+
+```typescript
+public readonly firewallpolicy: CfnFirewallPolicy;
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy
+
+---
+
+##### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.FirewallPolicy.property.policy"></a>
+
+```typescript
+public readonly policy: IFirewallPolicyProperty;
+```
+
+- *Type:* <a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a>
+
+---
+
+
 ### GetTunnelAddressPair <a name="GetTunnelAddressPair" id="raindancers-network.GetTunnelAddressPair"></a>
 
 Allocate a pair of /30 networks CIDRS for use in Ipsec VPN Tunnels.
@@ -2800,6 +2947,84 @@ public readonly networkFirewallArn: string;
 ```
 
 - *Type:* string
+
+---
+
+### AddStatefulRulesProps <a name="AddStatefulRulesProps" id="raindancers-network.AddStatefulRulesProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddStatefulRulesProps.Initializer"></a>
+
+```typescript
+import { AddStatefulRulesProps } from 'raindancers-network'
+
+const addStatefulRulesProps: AddStatefulRulesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddStatefulRulesProps.property.awsManagedRules">awsManagedRules</a></code> | <code><a href="#raindancers-network.ManagedAwsFirewallRules">ManagedAwsFirewallRules</a>[]</code> | *No description.* |
+
+---
+
+##### `awsManagedRules`<sup>Required</sup> <a name="awsManagedRules" id="raindancers-network.AddStatefulRulesProps.property.awsManagedRules"></a>
+
+```typescript
+public readonly awsManagedRules: ManagedAwsFirewallRules[];
+```
+
+- *Type:* <a href="#raindancers-network.ManagedAwsFirewallRules">ManagedAwsFirewallRules</a>[]
+
+---
+
+### AddStatelessRulesProps <a name="AddStatelessRulesProps" id="raindancers-network.AddStatelessRulesProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddStatelessRulesProps.Initializer"></a>
+
+```typescript
+import { AddStatelessRulesProps } from 'raindancers-network'
+
+const addStatelessRulesProps: AddStatelessRulesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddStatelessRulesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddStatelessRulesProps.property.groupName">groupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddStatelessRulesProps.property.rules">rules</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddStatelessRulesProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `groupName`<sup>Required</sup> <a name="groupName" id="raindancers-network.AddStatelessRulesProps.property.groupName"></a>
+
+```typescript
+public readonly groupName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rules`<sup>Required</sup> <a name="rules" id="raindancers-network.AddStatelessRulesProps.property.rules"></a>
+
+```typescript
+public readonly rules: StatelessRuleProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]
 
 ---
 
@@ -3910,6 +4135,78 @@ Name of an internal Route53 Zone that is associated with this voc.
 
 ---
 
+### FirewallPolicyProps <a name="FirewallPolicyProps" id="raindancers-network.FirewallPolicyProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.FirewallPolicyProps.Initializer"></a>
+
+```typescript
+import { FirewallPolicyProps } from 'raindancers-network'
+
+const firewallPolicyProps: FirewallPolicyProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FirewallPolicyProps.property.policyName">policyName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicyProps.property.statefulDefaultActions">statefulDefaultActions</a></code> | <code><a href="#raindancers-network.StatefulDefaultActions">StatefulDefaultActions</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.FirewallPolicyProps.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty</code> | *No description.* |
+
+---
+
+##### `policyName`<sup>Required</sup> <a name="policyName" id="raindancers-network.FirewallPolicyProps.property.policyName"></a>
+
+```typescript
+public readonly policyName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `statefulDefaultActions`<sup>Required</sup> <a name="statefulDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statefulDefaultActions"></a>
+
+```typescript
+public readonly statefulDefaultActions: StatefulDefaultActions[];
+```
+
+- *Type:* <a href="#raindancers-network.StatefulDefaultActions">StatefulDefaultActions</a>[]
+
+---
+
+##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statelessDefaultActions"></a>
+
+```typescript
+public readonly statelessDefaultActions: StatelessActions[];
+```
+
+- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+
+---
+
+##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statelessFragmentDefaultActions"></a>
+
+```typescript
+public readonly statelessFragmentDefaultActions: StatelessActions[];
+```
+
+- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+
+---
+
+##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.FirewallPolicyProps.property.statefulEngineOptions"></a>
+
+```typescript
+public readonly statefulEngineOptions: StatefulEngineOptionsProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty
+
+---
+
 ### FlowLogProps <a name="FlowLogProps" id="raindancers-network.FlowLogProps"></a>
 
 Properties for flow logs *.
@@ -4658,6 +4955,111 @@ public readonly shareWith: string | CoreNetworkSegment[];
 
 ---
 
+### StatelessRuleProps <a name="StatelessRuleProps" id="raindancers-network.StatelessRuleProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.StatelessRuleProps.Initializer"></a>
+
+```typescript
+import { StatelessRuleProps } from 'raindancers-network'
+
+const statelessRuleProps: StatelessRuleProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.actions">actions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.destinationPorts">destinationPorts</a></code> | <code>string \| number[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.destinations">destinations</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.protocols">protocols</a></code> | <code><a href="#raindancers-network.Protocol">Protocol</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.sourcePorts">sourcePorts</a></code> | <code>string \| number[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.sources">sources</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessRuleProps.property.tcpFlags">tcpFlags</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.TCPFlagFieldProperty[]</code> | *No description.* |
+
+---
+
+##### `actions`<sup>Required</sup> <a name="actions" id="raindancers-network.StatelessRuleProps.property.actions"></a>
+
+```typescript
+public readonly actions: StatelessActions[];
+```
+
+- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+
+---
+
+##### `priority`<sup>Required</sup> <a name="priority" id="raindancers-network.StatelessRuleProps.property.priority"></a>
+
+```typescript
+public readonly priority: number;
+```
+
+- *Type:* number
+
+---
+
+##### `destinationPorts`<sup>Optional</sup> <a name="destinationPorts" id="raindancers-network.StatelessRuleProps.property.destinationPorts"></a>
+
+```typescript
+public readonly destinationPorts: string | number[];
+```
+
+- *Type:* string | number[]
+
+---
+
+##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.StatelessRuleProps.property.destinations"></a>
+
+```typescript
+public readonly destinations: AddressProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]
+
+---
+
+##### `protocols`<sup>Optional</sup> <a name="protocols" id="raindancers-network.StatelessRuleProps.property.protocols"></a>
+
+```typescript
+public readonly protocols: Protocol[];
+```
+
+- *Type:* <a href="#raindancers-network.Protocol">Protocol</a>[]
+
+---
+
+##### `sourcePorts`<sup>Optional</sup> <a name="sourcePorts" id="raindancers-network.StatelessRuleProps.property.sourcePorts"></a>
+
+```typescript
+public readonly sourcePorts: string | number[];
+```
+
+- *Type:* string | number[]
+
+---
+
+##### `sources`<sup>Optional</sup> <a name="sources" id="raindancers-network.StatelessRuleProps.property.sources"></a>
+
+```typescript
+public readonly sources: AddressProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]
+
+---
+
+##### `tcpFlags`<sup>Optional</sup> <a name="tcpFlags" id="raindancers-network.StatelessRuleProps.property.tcpFlags"></a>
+
+```typescript
+public readonly tcpFlags: TCPFlagFieldProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.TCPFlagFieldProperty[]
+
+---
+
 ### TGWOnCloudWanProps <a name="TGWOnCloudWanProps" id="raindancers-network.TGWOnCloudWanProps"></a>
 
 Properties for a TWGOnCloudWan.
@@ -5140,6 +5542,50 @@ public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
 
 ---
 
+## Classes <a name="Classes" id="Classes"></a>
+
+### StatelessRule <a name="StatelessRule" id="raindancers-network.StatelessRule"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.StatelessRule.Initializer"></a>
+
+```typescript
+import { StatelessRule } from 'raindancers-network'
+
+new StatelessRule(props: StatelessRuleProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.StatelessRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.StatelessRuleProps">StatelessRuleProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.StatelessRule.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.StatelessRuleProps">StatelessRuleProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.StatelessRule.property.statelessRuleProperty">statelessRuleProperty</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty</code> | *No description.* |
+
+---
+
+##### `statelessRuleProperty`<sup>Required</sup> <a name="statelessRuleProperty" id="raindancers-network.StatelessRule.property.statelessRuleProperty"></a>
+
+```typescript
+public readonly statelessRuleProperty: StatelessRuleProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty
+
+---
+
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
@@ -5187,6 +5633,95 @@ public readonly updateDependsOn: CustomResource[];
 ```
 
 - *Type:* aws-cdk-lib.CustomResource[]
+
+---
+
+### IFirewallPolicyProperty <a name="IFirewallPolicyProperty" id="raindancers-network.IFirewallPolicyProperty"></a>
+
+- *Implemented By:* <a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulDefaultActions">statefulDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty \| aws-cdk-lib.IResolvable</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulRuleGroupReferences">statefulRuleGroupReferences</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulRuleGroupReferenceProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessCustomActions">statelessCustomActions</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.CustomActionProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
+| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessRuleGroupReferences">statelessRuleGroupReferences</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatelessRuleGroupReferenceProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
+
+---
+
+##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessDefaultActions"></a>
+
+```typescript
+public readonly statelessDefaultActions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessFragmentDefaultActions"></a>
+
+```typescript
+public readonly statelessFragmentDefaultActions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `statefulDefaultActions`<sup>Optional</sup> <a name="statefulDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statefulDefaultActions"></a>
+
+```typescript
+public readonly statefulDefaultActions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.IFirewallPolicyProperty.property.statefulEngineOptions"></a>
+
+```typescript
+public readonly statefulEngineOptions: StatefulEngineOptionsProperty | IResolvable;
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty | aws-cdk-lib.IResolvable
+
+---
+
+##### `statefulRuleGroupReferences`<sup>Optional</sup> <a name="statefulRuleGroupReferences" id="raindancers-network.IFirewallPolicyProperty.property.statefulRuleGroupReferences"></a>
+
+```typescript
+public readonly statefulRuleGroupReferences: StatefulRuleGroupReferenceProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulRuleGroupReferenceProperty[]
+
+---
+
+##### `statelessCustomActions`<sup>Optional</sup> <a name="statelessCustomActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessCustomActions"></a>
+
+```typescript
+public readonly statelessCustomActions: IResolvable | CustomActionProperty | IResolvable[];
+```
+
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.CustomActionProperty | aws-cdk-lib.IResolvable[]
+
+---
+
+##### `statelessRuleGroupReferences`<sup>Optional</sup> <a name="statelessRuleGroupReferences" id="raindancers-network.IFirewallPolicyProperty.property.statelessRuleGroupReferences"></a>
+
+```typescript
+public readonly statelessRuleGroupReferences: IResolvable | StatelessRuleGroupReferenceProperty | IResolvable[];
+```
+
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatelessRuleGroupReferenceProperty | aws-cdk-lib.IResolvable[]
 
 ---
 
@@ -5401,6 +5936,135 @@ Use IKEv1.
 ##### `IKEV2` <a name="IKEV2" id="raindancers-network.IkeVersion.IKEV2"></a>
 
 Use IKEv2.
+
+---
+
+
+### ManagedAwsFirewallRules <a name="ManagedAwsFirewallRules" id="raindancers-network.ManagedAwsFirewallRules"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER">MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER">THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER">THREAT_SIGNATURES_DOS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER">THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER">THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER">THREAT_SIGNATURES_FUP_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER">THREAT_SIGNATURES_IOC_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER">THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER">THREAT_SIGNATURES_PHISHING_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER">THREAT_SIGNATURES_SCANNERS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER">THREAT_SIGNATURES_SUSPECT_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER">THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER</a></code> | *No description.* |
+
+---
+
+##### `ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER"></a>
+
+---
+
+
+##### `ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
+
+---
+
+
+##### `MALWARE_DOMAINS_ACTION_ORDER` <a name="MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER"></a>
+
+---
+
+
+##### `BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_BOTNET_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER` <a name="THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_DOS_ACTION_ORDER` <a name="THREAT_SIGNATURES_DOS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_FUP_ACTION_ORDER` <a name="THREAT_SIGNATURES_FUP_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_IOC_ACTION_ORDER` <a name="THREAT_SIGNATURES_IOC_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_MALWARE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_PHISHING_ACTION_ORDER` <a name="THREAT_SIGNATURES_PHISHING_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_SCANNERS_ACTION_ORDER` <a name="THREAT_SIGNATURES_SCANNERS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_SUSPECT_ACTION_ORDER` <a name="THREAT_SIGNATURES_SUSPECT_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER"></a>
+
+---
+
+
+##### `THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER` <a name="THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER"></a>
 
 ---
 
@@ -5767,6 +6431,33 @@ Use Public IPv4 Address Assigned by AWS.
 ---
 
 
+### Protocol <a name="Protocol" id="raindancers-network.Protocol"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Protocol.ICMP">ICMP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Protocol.TCP">TCP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Protocol.UDP">UDP</a></code> | *No description.* |
+
+---
+
+##### `ICMP` <a name="ICMP" id="raindancers-network.Protocol.ICMP"></a>
+
+---
+
+
+##### `TCP` <a name="TCP" id="raindancers-network.Protocol.TCP"></a>
+
+---
+
+
+##### `UDP` <a name="UDP" id="raindancers-network.Protocol.UDP"></a>
+
+---
+
+
 ### ResolverDirection <a name="ResolverDirection" id="raindancers-network.ResolverDirection"></a>
 
 Direction of Resolver.
@@ -5790,6 +6481,27 @@ Resolver is Inbound.
 ##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.ResolverDirection.OUTBOUND"></a>
 
 Resolver is outbound.
+
+---
+
+
+### RuleGroupType <a name="RuleGroupType" id="raindancers-network.RuleGroupType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.RuleGroupType.STATEFUL">STATEFUL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.RuleGroupType.STATELESS">STATELESS</a></code> | *No description.* |
+
+---
+
+##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.RuleGroupType.STATEFUL"></a>
+
+---
+
+
+##### `STATELESS` <a name="STATELESS" id="raindancers-network.RuleGroupType.STATELESS"></a>
 
 ---
 
@@ -5861,6 +6573,66 @@ Do not attempt to startup.
 ---
 
 
+### StatefulDefaultActions <a name="StatefulDefaultActions" id="raindancers-network.StatefulDefaultActions"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StatefulDefaultActions.DROP_STRICT">DROP_STRICT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.StatefulDefaultActions.DROP_ESTABLISHED">DROP_ESTABLISHED</a></code> | *No description.* |
+| <code><a href="#raindancers-network.StatefulDefaultActions.ALERT_STRICT">ALERT_STRICT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.StatefulDefaultActions.ALERT_ESTABLISHED">ALERT_ESTABLISHED</a></code> | *No description.* |
+
+---
+
+##### `DROP_STRICT` <a name="DROP_STRICT" id="raindancers-network.StatefulDefaultActions.DROP_STRICT"></a>
+
+---
+
+
+##### `DROP_ESTABLISHED` <a name="DROP_ESTABLISHED" id="raindancers-network.StatefulDefaultActions.DROP_ESTABLISHED"></a>
+
+---
+
+
+##### `ALERT_STRICT` <a name="ALERT_STRICT" id="raindancers-network.StatefulDefaultActions.ALERT_STRICT"></a>
+
+---
+
+
+##### `ALERT_ESTABLISHED` <a name="ALERT_ESTABLISHED" id="raindancers-network.StatefulDefaultActions.ALERT_ESTABLISHED"></a>
+
+---
+
+
+### StatelessActions <a name="StatelessActions" id="raindancers-network.StatelessActions"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StatelessActions.PASS">PASS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessActions.DROP">DROP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.StatelessActions.STATEFUL">STATEFUL</a></code> | *No description.* |
+
+---
+
+##### `PASS` <a name="PASS" id="raindancers-network.StatelessActions.PASS"></a>
+
+---
+
+
+##### `DROP` <a name="DROP" id="raindancers-network.StatelessActions.DROP"></a>
+
+---
+
+
+##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.StatelessActions.STATEFUL"></a>
+
+---
+
+
 ### TunnelInsideIpVersion <a name="TunnelInsideIpVersion" id="raindancers-network.TunnelInsideIpVersion"></a>
 
 Determine if this is an IPv4 or IPv6 Tunnel.
@@ -5921,6 +6693,39 @@ Checkpoint R77_10.
 
 
 ##### `CISCO_ASR_12_4` <a name="CISCO_ASR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ASR_12_4"></a>
+
+---
+
+
+### WellKnownPorts <a name="WellKnownPorts" id="raindancers-network.WellKnownPorts"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.WellKnownPorts.SSH">SSH</a></code> | *No description.* |
+| <code><a href="#raindancers-network.WellKnownPorts.HTTP">HTTP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.WellKnownPorts.HTTPS">HTTPS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.WellKnownPorts.RDP">RDP</a></code> | *No description.* |
+
+---
+
+##### `SSH` <a name="SSH" id="raindancers-network.WellKnownPorts.SSH"></a>
+
+---
+
+
+##### `HTTP` <a name="HTTP" id="raindancers-network.WellKnownPorts.HTTP"></a>
+
+---
+
+
+##### `HTTPS` <a name="HTTPS" id="raindancers-network.WellKnownPorts.HTTPS"></a>
+
+---
+
+
+##### `RDP` <a name="RDP" id="raindancers-network.WellKnownPorts.RDP"></a>
 
 ---
 

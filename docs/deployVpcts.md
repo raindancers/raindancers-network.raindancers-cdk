@@ -94,7 +94,7 @@ redVpc.addRoutes({
 	});
 ```	
 
-* 2.1  Create a new file `lib\singaporeVpc.ts`.  This will hold the Vpc's for Singapore. The format of this file follows the same format as that of Sydney. 
+* 2.1  Create a new file `lib\singaporeVpc.ts`.  This will hold the Vpc's fgit por Singapore. The format of this file follows the same format as that of Sydney. 
 
  ( The complete file is here can be found here  [Github Gist - singaporeVpc.ts](https://gist.github.com/mrpackethead/97106f8860e66199c303b6e1e69aaa99) )
 

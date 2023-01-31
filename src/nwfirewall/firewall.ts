@@ -107,3 +107,4 @@ export class NetworkFirewall extends constructs.Construct {
 
   } // endof connectToCloudWan
 }// end of class
+
