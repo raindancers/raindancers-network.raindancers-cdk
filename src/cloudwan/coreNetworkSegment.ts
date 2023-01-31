@@ -54,6 +54,19 @@ export class CoreNetworkSegment extends constructs.Construct {
       segmentAction['share-with'] = segments;
     }
 
+    console.log('*** segment action ***');
+    console.log(segmentAction);
+
+    const segmentaction = new cdk.CustomResource(this, `CloudwanSegmentAction${this.segmentName}`, {
+      serviceToken: this.policyTableServiceToken,
+      properties: {
+        // the properties are base64 encoded, so the types make it into the lambda,
+        // the customresource otherwise makes everything a string
+        segmentAction: cdk.Fn.base64(cdk.Stack.of(this).toJsonString(segmentAction)),
+      },
+    });
+
+    this.updateDependsOn.push(segmentaction);
 
   }
 
