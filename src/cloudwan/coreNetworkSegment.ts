@@ -165,9 +165,12 @@ export class CoreNetworkSegment extends constructs.Construct {
     }
 
     attachmentPolicy.action = {
-      associationMethod: cloudWanEnum.AssociationMethod.CONSTANT,
-      segment: this.segmentName,
+      'association-method': cloudWanEnum.AssociationMethod.CONSTANT,
+      'segment': this.segmentName,
     };
+
+    attachmentPolicy.action['association-method'] = cloudWanEnum.AssociationMethod.CONSTANT;
+    attachmentPolicy.action.segment = this.segmentName;
 
     const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
       serviceToken: this.policyTableServiceToken,
@@ -195,8 +198,8 @@ export class CoreNetworkSegment extends constructs.Construct {
       throw Error ('conditionLogic must be set when there is more than 1 condition');
     }
 
-    attachmentPolicy['rule-number'] = Number(props.ruleNumber);
-    attachmentPolicy.conditions = props.conditions;
+    attachmentPolicy['rule-number'] = Number(props.ruleNumber); //ok
+    attachmentPolicy.conditions = props.conditions; // ok
 
 
     //deal to key naming issues.
