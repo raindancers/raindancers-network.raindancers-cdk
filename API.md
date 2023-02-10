@@ -2209,6 +2209,116 @@ public readonly policy: IFirewallPolicyProperty;
 ---
 
 
+### FQDNStatefulRule <a name="FQDNStatefulRule" id="raindancers-network.FQDNStatefulRule"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.FQDNStatefulRule.Initializer"></a>
+
+```typescript
+import { FQDNStatefulRule } from 'raindancers-network'
+
+new FQDNStatefulRule(scope: Construct, id: string, props: FQDNStatefulRuleProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FQDNStatefulRule.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.FQDNStatefulRule.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FQDNStatefulRule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FQDNStatefulRule.isConstruct"></a>
+
+```typescript
+import { FQDNStatefulRule } from 'raindancers-network'
+
+FQDNStatefulRule.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FQDNStatefulRule.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FQDNStatefulRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.FQDNStatefulRule.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FQDNStatefulRule.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="raindancers-network.FQDNStatefulRule.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### GetTunnelAddressPair <a name="GetTunnelAddressPair" id="raindancers-network.GetTunnelAddressPair"></a>
 
 Allocate a pair of /30 networks CIDRS for use in Ipsec VPN Tunnels.
@@ -2595,6 +2705,138 @@ Firewall ID.
 ---
 
 
+### PrefixList <a name="PrefixList" id="raindancers-network.PrefixList"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.PrefixList.Initializer"></a>
+
+```typescript
+import { PrefixList } from 'raindancers-network'
+
+new PrefixList(scope: Construct, id: string, props: PrefixListProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PrefixListProps">PrefixListProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PrefixList.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PrefixList.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrefixList.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.PrefixListProps">PrefixListProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.PrefixList.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PrefixList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PrefixList.isConstruct"></a>
+
+```typescript
+import { PrefixList } from 'raindancers-network'
+
+PrefixList.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PrefixList.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixList.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.PrefixList.property.prefixlist">prefixlist</a></code> | <code>aws-cdk-lib.aws_ec2.CfnPrefixList</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixList.property.prefixlistArn">prefixlistArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixList.property.prefixListSet">prefixListSet</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PrefixList.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `prefixlist`<sup>Required</sup> <a name="prefixlist" id="raindancers-network.PrefixList.property.prefixlist"></a>
+
+```typescript
+public readonly prefixlist: CfnPrefixList;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.CfnPrefixList
+
+---
+
+##### `prefixlistArn`<sup>Required</sup> <a name="prefixlistArn" id="raindancers-network.PrefixList.property.prefixlistArn"></a>
+
+```typescript
+public readonly prefixlistArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `prefixListSet`<sup>Required</sup> <a name="prefixListSet" id="raindancers-network.PrefixList.property.prefixListSet"></a>
+
+```typescript
+public readonly prefixListSet: PrefixListSetInterface;
+```
+
+- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>
+
+---
+
+
 ### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
 
 Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
@@ -2737,6 +2979,230 @@ public readonly outboundResolver: CfnResolverEndpoint;
 - *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
 
 outbound resolver.
+
+---
+
+
+### StatefulRuleDatabase <a name="StatefulRuleDatabase" id="raindancers-network.StatefulRuleDatabase"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.StatefulRuleDatabase.Initializer"></a>
+
+```typescript
+import { StatefulRuleDatabase } from 'raindancers-network'
+
+new StatefulRuleDatabase(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.StatefulRuleDatabase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.StatefulRuleDatabase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.StatefulRuleDatabase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.StatefulRuleDatabase.isConstruct"></a>
+
+```typescript
+import { StatefulRuleDatabase } from 'raindancers-network'
+
+StatefulRuleDatabase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.StatefulRuleDatabase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.property.crudServiceToken">crudServiceToken</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.StatefulRuleDatabase.property.policyTable">policyTable</a></code> | <code>aws-cdk-lib.aws_dynamodb.Table</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.StatefulRuleDatabase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `crudServiceToken`<sup>Required</sup> <a name="crudServiceToken" id="raindancers-network.StatefulRuleDatabase.property.crudServiceToken"></a>
+
+```typescript
+public readonly crudServiceToken: string;
+```
+
+- *Type:* string
+
+---
+
+##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.StatefulRuleDatabase.property.policyTable"></a>
+
+```typescript
+public readonly policyTable: Table;
+```
+
+- *Type:* aws-cdk-lib.aws_dynamodb.Table
+
+---
+
+
+### SuricataRuleGroup <a name="SuricataRuleGroup" id="raindancers-network.SuricataRuleGroup"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.SuricataRuleGroup.Initializer"></a>
+
+```typescript
+import { SuricataRuleGroup } from 'raindancers-network'
+
+new SuricataRuleGroup(scope: Construct, id: string, props: SuricataRuleGroupProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.SuricataRuleGroupProps">SuricataRuleGroupProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.SuricataRuleGroupProps">SuricataRuleGroupProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.SuricataRuleGroup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.SuricataRuleGroup.isConstruct"></a>
+
+```typescript
+import { SuricataRuleGroup } from 'raindancers-network'
+
+SuricataRuleGroup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.SuricataRuleGroup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.SuricataRuleGroup.property.ruleGroupArn">ruleGroupArn</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.SuricataRuleGroup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `ruleGroupArn`<sup>Required</sup> <a name="ruleGroupArn" id="raindancers-network.SuricataRuleGroup.property.ruleGroupArn"></a>
+
+```typescript
+public readonly ruleGroupArn: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -3414,6 +3880,45 @@ public readonly s3GatewayInterface: boolean;
 - *Type:* boolean
 
 indicate true for a S3 Gateway Interface.
+
+---
+
+### CidrType <a name="CidrType" id="raindancers-network.CidrType"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CidrType.Initializer"></a>
+
+```typescript
+import { CidrType } from 'raindancers-network'
+
+const cidrType: CidrType = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CidrType.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CidrType.property.description">description</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.CidrType.property.cidr"></a>
+
+```typescript
+public readonly cidr: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.CidrType.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -4150,7 +4655,6 @@ const firewallPolicyProps: FirewallPolicyProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.FirewallPolicyProps.property.policyName">policyName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicyProps.property.statefulDefaultActions">statefulDefaultActions</a></code> | <code><a href="#raindancers-network.StatefulDefaultActions">StatefulDefaultActions</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.FirewallPolicyProps.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty</code> | *No description.* |
@@ -4164,16 +4668,6 @@ public readonly policyName: string;
 ```
 
 - *Type:* string
-
----
-
-##### `statefulDefaultActions`<sup>Required</sup> <a name="statefulDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statefulDefaultActions"></a>
-
-```typescript
-public readonly statefulDefaultActions: StatefulDefaultActions[];
-```
-
-- *Type:* <a href="#raindancers-network.StatefulDefaultActions">StatefulDefaultActions</a>[]
 
 ---
 
@@ -4262,6 +4756,133 @@ public readonly oneMinuteFlowLogs: boolean;
 - *Type:* boolean
 
 1 minute resolution.
+
+---
+
+### FQDNStatefulRuleProps <a name="FQDNStatefulRuleProps" id="raindancers-network.FQDNStatefulRuleProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.FQDNStatefulRuleProps.Initializer"></a>
+
+```typescript
+import { FQDNStatefulRuleProps } from 'raindancers-network'
+
+const fQDNStatefulRuleProps: FQDNStatefulRuleProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.fqdn">fqdn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.FQDNStatefulRuleProps.property.action"></a>
+
+```typescript
+public readonly action: StatefulAction;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulAction">StatefulAction</a>
+
+---
+
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.FQDNStatefulRuleProps.property.destination"></a>
+
+```typescript
+public readonly destination: string | PrefixList;
+```
+
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+
+---
+
+##### `destPort`<sup>Required</sup> <a name="destPort" id="raindancers-network.FQDNStatefulRuleProps.property.destPort"></a>
+
+```typescript
+public readonly destPort: string;
+```
+
+- *Type:* string
+
+---
+
+##### `direction`<sup>Required</sup> <a name="direction" id="raindancers-network.FQDNStatefulRuleProps.property.direction"></a>
+
+```typescript
+public readonly direction: Direction;
+```
+
+- *Type:* <a href="#raindancers-network.Direction">Direction</a>
+
+---
+
+##### `protocol`<sup>Required</sup> <a name="protocol" id="raindancers-network.FQDNStatefulRuleProps.property.protocol"></a>
+
+```typescript
+public readonly protocol: FWProtocol;
+```
+
+- *Type:* <a href="#raindancers-network.FWProtocol">FWProtocol</a>
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.FQDNStatefulRuleProps.property.source"></a>
+
+```typescript
+public readonly source: string | PrefixList;
+```
+
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+
+---
+
+##### `srcPort`<sup>Required</sup> <a name="srcPort" id="raindancers-network.FQDNStatefulRuleProps.property.srcPort"></a>
+
+```typescript
+public readonly srcPort: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fqdn`<sup>Required</sup> <a name="fqdn" id="raindancers-network.FQDNStatefulRuleProps.property.fqdn"></a>
+
+```typescript
+public readonly fqdn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase"></a>
+
+```typescript
+public readonly rulesDatabase: StatefulRuleDatabase;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
+
+---
+
+##### `priority`<sup>Optional</sup> <a name="priority" id="raindancers-network.FQDNStatefulRuleProps.property.priority"></a>
+
+```typescript
+public readonly priority: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -4497,6 +5118,106 @@ array of ip address's to forward request to.
 
 ---
 
+### PrefixListProps <a name="PrefixListProps" id="raindancers-network.PrefixListProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PrefixListProps.Initializer"></a>
+
+```typescript
+import { PrefixListProps } from 'raindancers-network'
+
+const prefixListProps: PrefixListProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixListProps.property.addressFamily">addressFamily</a></code> | <code><a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a></code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixListProps.property.entries">entries</a></code> | <code><a href="#raindancers-network.CidrType">CidrType</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixListProps.property.maxEntries">maxEntries</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `addressFamily`<sup>Required</sup> <a name="addressFamily" id="raindancers-network.PrefixListProps.property.addressFamily"></a>
+
+```typescript
+public readonly addressFamily: IPAddressFamily;
+```
+
+- *Type:* <a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a>
+
+---
+
+##### `entries`<sup>Required</sup> <a name="entries" id="raindancers-network.PrefixListProps.property.entries"></a>
+
+```typescript
+public readonly entries: CidrType[];
+```
+
+- *Type:* <a href="#raindancers-network.CidrType">CidrType</a>[]
+
+---
+
+##### `maxEntries`<sup>Required</sup> <a name="maxEntries" id="raindancers-network.PrefixListProps.property.maxEntries"></a>
+
+```typescript
+public readonly maxEntries: number;
+```
+
+- *Type:* number
+
+---
+
+##### `prefixListName`<sup>Required</sup> <a name="prefixListName" id="raindancers-network.PrefixListProps.property.prefixListName"></a>
+
+```typescript
+public readonly prefixListName: string;
+```
+
+- *Type:* string
+
+---
+
+### PrefixListSetInterface <a name="PrefixListSetInterface" id="raindancers-network.PrefixListSetInterface"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PrefixListSetInterface.Initializer"></a>
+
+```typescript
+import { PrefixListSetInterface } from 'raindancers-network'
+
+const prefixListSetInterface: PrefixListSetInterface = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixListSetInterface.property.arn">arn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixListSetInterface.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.PrefixListSetInterface.property.arn"></a>
+
+```typescript
+public readonly arn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.PrefixListSetInterface.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.R53ResolverendpointsProps"></a>
 
 Properties to for creating inbound resolvers.
@@ -4565,6 +5286,34 @@ public readonly tagValue: string;
 - *Type:* string
 
 Value for Sharing.
+
+---
+
+### ReferenceSetsProps <a name="ReferenceSetsProps" id="raindancers-network.ReferenceSetsProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ReferenceSetsProps.Initializer"></a>
+
+```typescript
+import { ReferenceSetsProps } from 'raindancers-network'
+
+const referenceSetsProps: ReferenceSetsProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ReferenceSetsProps.property.prefixlists">prefixlists</a></code> | <code><a href="#raindancers-network.PrefixList">PrefixList</a>[]</code> | *No description.* |
+
+---
+
+##### `prefixlists`<sup>Required</sup> <a name="prefixlists" id="raindancers-network.ReferenceSetsProps.property.prefixlists"></a>
+
+```typescript
+public readonly prefixlists: PrefixList[];
+```
+
+- *Type:* <a href="#raindancers-network.PrefixList">PrefixList</a>[]
 
 ---
 
@@ -5060,6 +5809,183 @@ public readonly tcpFlags: TCPFlagFieldProperty[];
 
 ---
 
+### SuricataRuleGroupProps <a name="SuricataRuleGroupProps" id="raindancers-network.SuricataRuleGroupProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.SuricataRuleGroupProps.Initializer"></a>
+
+```typescript
+import { SuricataRuleGroupProps } from 'raindancers-network'
+
+const suricataRuleGroupProps: SuricataRuleGroupProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.capacity">capacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.ruleGroupName">ruleGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.suricataRules">suricataRules</a></code> | <code><a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.referenceSets">referenceSets</a></code> | <code><a href="#raindancers-network.ReferenceSets">ReferenceSets</a></code> | *No description.* |
+
+---
+
+##### `capacity`<sup>Required</sup> <a name="capacity" id="raindancers-network.SuricataRuleGroupProps.property.capacity"></a>
+
+```typescript
+public readonly capacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `ruleGroupName`<sup>Required</sup> <a name="ruleGroupName" id="raindancers-network.SuricataRuleGroupProps.property.ruleGroupName"></a>
+
+```typescript
+public readonly ruleGroupName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.SuricataRuleGroupProps.property.rulesDatabase"></a>
+
+```typescript
+public readonly rulesDatabase: StatefulRuleDatabase;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
+
+---
+
+##### `suricataRules`<sup>Required</sup> <a name="suricataRules" id="raindancers-network.SuricataRuleGroupProps.property.suricataRules"></a>
+
+```typescript
+public readonly suricataRules: FQDNStatefulRule[];
+```
+
+- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.SuricataRuleGroupProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `referenceSets`<sup>Optional</sup> <a name="referenceSets" id="raindancers-network.SuricataRuleGroupProps.property.referenceSets"></a>
+
+```typescript
+public readonly referenceSets: ReferenceSets;
+```
+
+- *Type:* <a href="#raindancers-network.ReferenceSets">ReferenceSets</a>
+
+---
+
+### SuricataRuleProps <a name="SuricataRuleProps" id="raindancers-network.SuricataRuleProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.SuricataRuleProps.Initializer"></a>
+
+```typescript
+import { SuricataRuleProps } from 'raindancers-network'
+
+const suricataRuleProps: SuricataRuleProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.SuricataRuleProps.property.action"></a>
+
+```typescript
+public readonly action: StatefulAction;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulAction">StatefulAction</a>
+
+---
+
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.SuricataRuleProps.property.destination"></a>
+
+```typescript
+public readonly destination: string | PrefixList;
+```
+
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+
+---
+
+##### `destPort`<sup>Required</sup> <a name="destPort" id="raindancers-network.SuricataRuleProps.property.destPort"></a>
+
+```typescript
+public readonly destPort: string;
+```
+
+- *Type:* string
+
+---
+
+##### `direction`<sup>Required</sup> <a name="direction" id="raindancers-network.SuricataRuleProps.property.direction"></a>
+
+```typescript
+public readonly direction: Direction;
+```
+
+- *Type:* <a href="#raindancers-network.Direction">Direction</a>
+
+---
+
+##### `protocol`<sup>Required</sup> <a name="protocol" id="raindancers-network.SuricataRuleProps.property.protocol"></a>
+
+```typescript
+public readonly protocol: FWProtocol;
+```
+
+- *Type:* <a href="#raindancers-network.FWProtocol">FWProtocol</a>
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.SuricataRuleProps.property.source"></a>
+
+```typescript
+public readonly source: string | PrefixList;
+```
+
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+
+---
+
+##### `srcPort`<sup>Required</sup> <a name="srcPort" id="raindancers-network.SuricataRuleProps.property.srcPort"></a>
+
+```typescript
+public readonly srcPort: string;
+```
+
+- *Type:* string
+
+---
+
 ### TGWOnCloudWanProps <a name="TGWOnCloudWanProps" id="raindancers-network.TGWOnCloudWanProps"></a>
 
 Properties for a TWGOnCloudWan.
@@ -5544,6 +6470,49 @@ public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
 
 ## Classes <a name="Classes" id="Classes"></a>
 
+### ReferenceSets <a name="ReferenceSets" id="raindancers-network.ReferenceSets"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.ReferenceSets.Initializer"></a>
+
+```typescript
+import { ReferenceSets } from 'raindancers-network'
+
+new ReferenceSets(props: ReferenceSetsProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ReferenceSets.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ReferenceSetsProps">ReferenceSetsProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ReferenceSets.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ReferenceSetsProps">ReferenceSetsProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ReferenceSets.property.ipSetReference">ipSetReference</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]</code> | *No description.* |
+
+---
+
+##### `ipSetReference`<sup>Required</sup> <a name="ipSetReference" id="raindancers-network.ReferenceSets.property.ipSetReference"></a>
+
+```typescript
+public readonly ipSetReference: PrefixListSetInterface[];
+```
+
+- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]
+
+---
+
+
 ### StatelessRule <a name="StatelessRule" id="raindancers-network.StatelessRule"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.StatelessRule.Initializer"></a>
@@ -5878,6 +6847,31 @@ route to the transitGateway that the vpc is attached to.
 ---
 
 
+### Direction <a name="Direction" id="raindancers-network.Direction"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Direction.OUTBOUND">OUTBOUND</a></code> | Traffic allowed from Src to destination only. |
+| <code><a href="#raindancers-network.Direction.BOTH">BOTH</a></code> | Traffic allowed in both directions. |
+
+---
+
+##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.Direction.OUTBOUND"></a>
+
+Traffic allowed from Src to destination only.
+
+---
+
+
+##### `BOTH` <a name="BOTH" id="raindancers-network.Direction.BOTH"></a>
+
+Traffic allowed in both directions.
+
+---
+
+
 ### DPDTimeoutAction <a name="DPDTimeoutAction" id="raindancers-network.DPDTimeoutAction"></a>
 
 Dead Peer Detection Timeout Actions.
@@ -5913,6 +6907,51 @@ Restart The Session.
 ---
 
 
+### FWProtocol <a name="FWProtocol" id="raindancers-network.FWProtocol"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FWProtocol.TCP">TCP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FWProtocol.UPD">UPD</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FWProtocol.ICMP">ICMP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FWProtocol.IP">IP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FWProtocol.HTTP">HTTP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FWProtocol.TLS">TLS</a></code> | *No description.* |
+
+---
+
+##### `TCP` <a name="TCP" id="raindancers-network.FWProtocol.TCP"></a>
+
+---
+
+
+##### `UPD` <a name="UPD" id="raindancers-network.FWProtocol.UPD"></a>
+
+---
+
+
+##### `ICMP` <a name="ICMP" id="raindancers-network.FWProtocol.ICMP"></a>
+
+---
+
+
+##### `IP` <a name="IP" id="raindancers-network.FWProtocol.IP"></a>
+
+---
+
+
+##### `HTTP` <a name="HTTP" id="raindancers-network.FWProtocol.HTTP"></a>
+
+---
+
+
+##### `TLS` <a name="TLS" id="raindancers-network.FWProtocol.TLS"></a>
+
+---
+
+
 ### IkeVersion <a name="IkeVersion" id="raindancers-network.IkeVersion"></a>
 
 Ike Version for S2S VPN.
@@ -5936,6 +6975,27 @@ Use IKEv1.
 ##### `IKEV2` <a name="IKEV2" id="raindancers-network.IkeVersion.IKEV2"></a>
 
 Use IKEv2.
+
+---
+
+
+### IPAddressFamily <a name="IPAddressFamily" id="raindancers-network.IPAddressFamily"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.IPAddressFamily.IPV4">IPV4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.IPAddressFamily.IPV6">IPV6</a></code> | *No description.* |
+
+---
+
+##### `IPV4` <a name="IPV4" id="raindancers-network.IPAddressFamily.IPV4"></a>
+
+---
+
+
+##### `IPV6` <a name="IPV6" id="raindancers-network.IPAddressFamily.IPV6"></a>
 
 ---
 
@@ -6569,6 +7629,49 @@ AWS end to Intiate Startup.
 ##### `ADD` <a name="ADD" id="raindancers-network.StartupAction.ADD"></a>
 
 Do not attempt to startup.
+
+---
+
+
+### StatefulAction <a name="StatefulAction" id="raindancers-network.StatefulAction"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.StatefulAction.PASS">PASS</a></code> | Traffic will pass. |
+| <code><a href="#raindancers-network.StatefulAction.DROP">DROP</a></code> | Traffic will be droped silently. |
+| <code><a href="#raindancers-network.StatefulAction.REJECT">REJECT</a></code> | Traffic will be dropped, and a TCP reset sent to the source. |
+| <code><a href="#raindancers-network.StatefulAction.ALERT">ALERT</a></code> | Raises an alert according to the firewalls logging/alert. |
+
+---
+
+##### `PASS` <a name="PASS" id="raindancers-network.StatefulAction.PASS"></a>
+
+Traffic will pass.
+
+---
+
+
+##### `DROP` <a name="DROP" id="raindancers-network.StatefulAction.DROP"></a>
+
+Traffic will be droped silently.
+
+Note, When will cause a timeout for TCP, Consider using REJECT
+
+---
+
+
+##### `REJECT` <a name="REJECT" id="raindancers-network.StatefulAction.REJECT"></a>
+
+Traffic will be dropped, and a TCP reset sent to the source.
+
+---
+
+
+##### `ALERT` <a name="ALERT" id="raindancers-network.StatefulAction.ALERT"></a>
+
+Raises an alert according to the firewalls logging/alert.
 
 ---
 

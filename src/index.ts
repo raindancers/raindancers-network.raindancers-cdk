@@ -24,3 +24,5 @@ export * from './dns/dnsResolvers';
 // firewall
 export * from './nwfirewall/firewall';
 export * from './nwfirewall/firewallPolicy';
+export * from './nwfirewall/suricataRule';
+export * from './nwfirewall/statefuldatabase';

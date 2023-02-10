@@ -86,12 +86,12 @@ export interface StatelessRuleProps{
   readonly tcpFlags?: undefined | firewall.CfnRuleGroup.TCPFlagFieldProperty[];
 }
 
+
 export interface FirewallPolicyProps {
   readonly policyName: string;
 
   readonly statelessDefaultActions: StatelessActions[];
   readonly statelessFragmentDefaultActions: StatelessActions[];
-  readonly statefulDefaultActions: StatefulDefaultActions[];
   readonly statefulEngineOptions?: undefined | firewall.CfnFirewallPolicy.StatefulEngineOptionsProperty;
 
   //readonly statefulRuleGroupReferences? undefined
@@ -121,7 +121,6 @@ export class FirewallPolicy extends constructs.Construct {
     var policy = {
       statelessDefaultActions: props.statelessDefaultActions,
       statelessFragmentDefaultActions: props.statelessFragmentDefaultActions,
-      statefulDefaultActions: props.statefulDefaultActions,
       statefulEngineOptions: props.statefulEngineOptions,
     };
     this.policy = policy;
@@ -156,7 +155,7 @@ export class FirewallPolicy extends constructs.Construct {
 
   public addStatelessRuleGroup(props: AddStatelessRulesProps ): void {
 
-    var capacity: number = 0;
+    var capacity: number = 1000;
 
     new firewall.CfnRuleGroup(this, props.groupName, {
       capacity: capacity,
@@ -172,6 +171,8 @@ export class FirewallPolicy extends constructs.Construct {
       },
     });
   }
+
+
 }
 
 export class StatelessRule {
@@ -223,6 +224,7 @@ export class StatelessRule {
     };
   }
 }
+
 
 function checkports(port: string | number) {
 
