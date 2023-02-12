@@ -9,7 +9,6 @@ import {
 import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 import { StatefulRuleDatabase } from './statefuldatabase';
-
 export enum StatefulAction {
   /**
    * Traffic will pass
@@ -69,9 +68,18 @@ export interface FQDNStatefulRuleProps extends SuricataRuleProps {
   readonly rulesDatabase: StatefulRuleDatabase;
 }
 
+export interface PrefixListSetInterface {
+  readonly arn: string;
+  readonly name: string;
+}
+
+type PrefixListSet = PrefixListSetInterface
+
+
 export class FQDNStatefulRule extends constructs.Construct {
 
   public uuid: string;
+  public prefixListSet: PrefixListSet[] = [];
 
   constructor(scope: constructs.Construct, id: string, props: FQDNStatefulRuleProps) {
     super( scope, id);
@@ -102,8 +110,10 @@ export class FQDNStatefulRule extends constructs.Construct {
     }
 
     let source = '';
+
     if (props.source instanceof PrefixList) {
       source = '@' + props.source.prefixlist.prefixListName;
+      this.prefixListSet.push(props.source.prefixListSet);
     } else {
       source = props.source as string;
     }
@@ -111,10 +121,10 @@ export class FQDNStatefulRule extends constructs.Construct {
     let destination = '';
     if (props.destination instanceof PrefixList) {
       destination = '@' + props.destination.prefixlist.prefixListName;
+      this.prefixListSet.push(props.destination.prefixListSet);
     } else {
       destination = props.destination as string;
     }
-    '';
 
     var rule = ''.concat(
       props.action, ' ', //drop
@@ -135,6 +145,9 @@ export class FQDNStatefulRule extends constructs.Construct {
     });
 
     this.uuid = suricataRule.getAttString('UUID');
+
+    console.log('*******prefixlistset**********');
+    console.log(this.prefixListSet);
   }
 }
 
@@ -150,13 +163,6 @@ export interface CidrType {
 }
 
 type CidrList = CidrType[];
-
-export interface PrefixListSetInterface {
-  readonly arn: string;
-  readonly name: string;
-}
-
-type PrefixListSet = PrefixListSetInterface
 
 
 export interface PrefixListProps {
@@ -190,35 +196,22 @@ export class PrefixList extends constructs.Construct {
 }
 
 
-export interface ReferenceSetsProps {
-  readonly prefixlists: PrefixList[];
-}
-
-export class ReferenceSets {
-
-  public readonly ipSetReference: PrefixListSet[];
-
-  constructor(props: ReferenceSetsProps) {
-    this.ipSetReference = [];
-    props.prefixlists.forEach((prefixlist) => {
-      this.ipSetReference.push(prefixlist.prefixListSet);
-    });
-  }
-}
-
-
 export interface SuricataRuleGroupProps{
   readonly ruleGroupName: string;
   readonly description?: string | undefined;
-  readonly suricataRules: FQDNStatefulRule[]; // add ohter kinds of rules in here.
+  readonly suricataRules?: FQDNStatefulRule[]; // add ohter kinds of rules in here.
   readonly capacity: number;
   readonly rulesDatabase: StatefulRuleDatabase;
-  readonly referenceSets?: ReferenceSets | undefined;
 }
 
 export class SuricataRuleGroup extends constructs.Construct {
 
   public readonly ruleGroupArn: string;
+
+  private ruleprefixlists: PrefixListSet[] =[];
+  private ruleuuidlist: string[] = [];
+
+
   constructor(scope: constructs.Construct, id: string, props: SuricataRuleGroupProps) {
     super( scope, id);
 
@@ -269,21 +262,7 @@ export class SuricataRuleGroup extends constructs.Construct {
       }),
     );
 
-    let ruleuuidlist: string[] = [];
-
-    props.suricataRules.forEach((rule) => {
-      ruleuuidlist.push(rule.uuid);
-    });
-
-
-    let referenceSets:PrefixListSet[];
-
-    if (props.referenceSets) {
-      referenceSets = props.referenceSets.ipSetReference;
-    } else {
-      referenceSets = [];
-    }
-
+    console.log('referencesets:', this.ruleprefixlists);
 
     const suricataRuleCr = new cdk.CustomResource(this, `${props.ruleGroupName}customresource`, {
       serviceToken: new cr.Provider(this, `${props.ruleGroupName}serviceprovider`, {
@@ -293,14 +272,21 @@ export class SuricataRuleGroup extends constructs.Construct {
         Capacity: props.capacity,
         RuleGroupName: props.ruleGroupName,
         Description: props.description,
-        Rules: ruleuuidlist,
-        ReferenceSets: referenceSets,
+        Rules: this.ruleuuidlist,
+        ReferenceSets: this.ruleprefixlists, // TODO.  DEDUPLICATE AND Check that There is no Prefixes named the same. 
       },
     });
 
     this.ruleGroupArn = suricataRuleCr.getAttString('RuleGroupArn');
+  }
 
+  public addRule(props: FQDNStatefulRule): void {
 
+    this.ruleuuidlist.push(props.uuid);
+
+    props.prefixListSet.forEach((plset) => {
+      console.log(plset);
+      this.ruleprefixlists.push(plset);
+    });
   }
 }
-

@@ -2292,6 +2292,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.FQDNStatefulRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.FQDNStatefulRule.property.prefixListSet">prefixListSet</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRule.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -2305,6 +2306,16 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `prefixListSet`<sup>Required</sup> <a name="prefixListSet" id="raindancers-network.FQDNStatefulRule.property.prefixListSet"></a>
+
+```typescript
+public readonly prefixListSet: PrefixListSetInterface[];
+```
+
+- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]
 
 ---
 
@@ -3138,6 +3149,7 @@ new SuricataRuleGroup(scope: Construct, id: string, props: SuricataRuleGroupProp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#raindancers-network.SuricataRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.SuricataRuleGroup.addRule">addRule</a></code> | *No description.* |
 
 ---
 
@@ -3148,6 +3160,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addRule` <a name="addRule" id="raindancers-network.SuricataRuleGroup.addRule"></a>
+
+```typescript
+public addRule(props: FQDNStatefulRule): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SuricataRuleGroup.addRule.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -5289,34 +5313,6 @@ Value for Sharing.
 
 ---
 
-### ReferenceSetsProps <a name="ReferenceSetsProps" id="raindancers-network.ReferenceSetsProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.ReferenceSetsProps.Initializer"></a>
-
-```typescript
-import { ReferenceSetsProps } from 'raindancers-network'
-
-const referenceSetsProps: ReferenceSetsProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.ReferenceSetsProps.property.prefixlists">prefixlists</a></code> | <code><a href="#raindancers-network.PrefixList">PrefixList</a>[]</code> | *No description.* |
-
----
-
-##### `prefixlists`<sup>Required</sup> <a name="prefixlists" id="raindancers-network.ReferenceSetsProps.property.prefixlists"></a>
-
-```typescript
-public readonly prefixlists: PrefixList[];
-```
-
-- *Type:* <a href="#raindancers-network.PrefixList">PrefixList</a>[]
-
----
-
 ### SampleConfig <a name="SampleConfig" id="raindancers-network.SampleConfig"></a>
 
 An interface that defines a set of Sample Configurations.
@@ -5826,9 +5822,8 @@ const suricataRuleGroupProps: SuricataRuleGroupProps = { ... }
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.capacity">capacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.ruleGroupName">ruleGroupName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.suricataRules">suricataRules</a></code> | <code><a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.referenceSets">referenceSets</a></code> | <code><a href="#raindancers-network.ReferenceSets">ReferenceSets</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.suricataRules">suricataRules</a></code> | <code><a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]</code> | *No description.* |
 
 ---
 
@@ -5862,16 +5857,6 @@ public readonly rulesDatabase: StatefulRuleDatabase;
 
 ---
 
-##### `suricataRules`<sup>Required</sup> <a name="suricataRules" id="raindancers-network.SuricataRuleGroupProps.property.suricataRules"></a>
-
-```typescript
-public readonly suricataRules: FQDNStatefulRule[];
-```
-
-- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]
-
----
-
 ##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.SuricataRuleGroupProps.property.description"></a>
 
 ```typescript
@@ -5882,13 +5867,13 @@ public readonly description: string;
 
 ---
 
-##### `referenceSets`<sup>Optional</sup> <a name="referenceSets" id="raindancers-network.SuricataRuleGroupProps.property.referenceSets"></a>
+##### `suricataRules`<sup>Optional</sup> <a name="suricataRules" id="raindancers-network.SuricataRuleGroupProps.property.suricataRules"></a>
 
 ```typescript
-public readonly referenceSets: ReferenceSets;
+public readonly suricataRules: FQDNStatefulRule[];
 ```
 
-- *Type:* <a href="#raindancers-network.ReferenceSets">ReferenceSets</a>
+- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]
 
 ---
 
@@ -6469,49 +6454,6 @@ public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
-
-### ReferenceSets <a name="ReferenceSets" id="raindancers-network.ReferenceSets"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.ReferenceSets.Initializer"></a>
-
-```typescript
-import { ReferenceSets } from 'raindancers-network'
-
-new ReferenceSets(props: ReferenceSetsProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.ReferenceSets.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ReferenceSetsProps">ReferenceSetsProps</a></code> | *No description.* |
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ReferenceSets.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.ReferenceSetsProps">ReferenceSetsProps</a>
-
----
-
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.ReferenceSets.property.ipSetReference">ipSetReference</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]</code> | *No description.* |
-
----
-
-##### `ipSetReference`<sup>Required</sup> <a name="ipSetReference" id="raindancers-network.ReferenceSets.property.ipSetReference"></a>
-
-```typescript
-public readonly ipSetReference: PrefixListSetInterface[];
-```
-
-- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]
-
----
-
 
 ### StatelessRule <a name="StatelessRule" id="raindancers-network.StatelessRule"></a>
 
