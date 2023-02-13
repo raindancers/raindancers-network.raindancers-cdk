@@ -4,6 +4,7 @@ import {
   aws_lambda,
   aws_iam as iam,
   aws_ec2 as ec2,
+  aws_ram as ram,
 }
   from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
@@ -53,6 +54,7 @@ export type SrcDstPort = string;
 
 
 export interface SuricataRuleProps{
+  readonly name: string;
   readonly action: StatefulAction;
   readonly protocol: FWProtocol;
   readonly source: SrcDstAddr;
@@ -65,7 +67,7 @@ export interface SuricataRuleProps{
 export interface FQDNStatefulRuleProps extends SuricataRuleProps {
   readonly fqdn: string;
   readonly priority?: number | undefined;
-  readonly rulesDatabase: StatefulRuleDatabase;
+  readonly rulesDatabase?: StatefulRuleDatabase | undefined;
 }
 
 export interface PrefixListSetInterface {
@@ -138,7 +140,7 @@ export class FQDNStatefulRule extends constructs.Construct {
     );
 
     const suricataRule = new cdk.CustomResource(this, `${id}customresource`, {
-      serviceToken: props.rulesDatabase.crudServiceToken,
+      serviceToken: props.rulesDatabase?.crudServiceToken as string,
       properties: {
         Rule: rule,
       },
@@ -157,19 +159,16 @@ export enum IPAddressFamily {
   IPV6 = 'IPv6'
 }
 
-export interface CidrType {
-  readonly cidr: string;
-  readonly description?: string;
-}
-
-type CidrList = CidrType[];
-
 
 export interface PrefixListProps {
   readonly addressFamily: IPAddressFamily;
   readonly prefixListName: string;
   readonly maxEntries: number;
-  readonly entries: CidrList;
+}
+
+export interface PrefixListEntry {
+  readonly cidr: string;
+  readonly description: string;
 }
 
 
@@ -179,6 +178,8 @@ export class PrefixList extends constructs.Construct {
   public readonly prefixlistArn: string;
   public readonly prefixListSet: PrefixListSet;
 
+  private entries: PrefixListEntry[] = [];
+
   constructor(scope: constructs.Construct, id: string, props: PrefixListProps) {
     super( scope, id);
 
@@ -186,13 +187,28 @@ export class PrefixList extends constructs.Construct {
       addressFamily: props.addressFamily,
       prefixListName: props.prefixListName,
       maxEntries: props.maxEntries,
-      entries: props.entries,
+      entries: this.entries,
     });
 
     this.prefixlistArn = this.prefixlist.attrArn;
     this.prefixListSet = { arn: this.prefixlist.attrArn, name: props.prefixListName };
 
   }
+
+  public addEC2Instance(props: ec2.Instance): void {
+
+    this.entries.push(
+      {
+        cidr: props.instancePrivateIp + '/32',
+        description: props.instancePrivateDnsName,
+      },
+    );
+  }
+}
+
+export interface NWFWRulesEngine {
+  readonly firewallAccount: string;
+  readonly rulesDatabase: StatefulRuleDatabase;
 }
 
 
@@ -201,7 +217,8 @@ export interface SuricataRuleGroupProps{
   readonly description?: string | undefined;
   readonly suricataRules?: FQDNStatefulRule[]; // add ohter kinds of rules in here.
   readonly capacity: number;
-  readonly rulesDatabase: StatefulRuleDatabase;
+  readonly networkFirewallEngine: NWFWRulesEngine;
+  //readonly rulesDatabase: StatefulRuleDatabase;
 }
 
 export class SuricataRuleGroup extends constructs.Construct {
@@ -210,10 +227,13 @@ export class SuricataRuleGroup extends constructs.Construct {
 
   private ruleprefixlists: PrefixListSet[] =[];
   private ruleuuidlist: string[] = [];
+  private rulesDatabase: StatefulRuleDatabase;
 
 
   constructor(scope: constructs.Construct, id: string, props: SuricataRuleGroupProps) {
     super( scope, id);
+
+    this.rulesDatabase = props.networkFirewallEngine.rulesDatabase;
 
     const suricataRuleGroupLambda = new aws_lambda.Function(this, 'fqdnLambda', {
       timeout: cdk.Duration.seconds(300),
@@ -229,7 +249,7 @@ export class SuricataRuleGroup extends constructs.Construct {
         },
       }),
       environment: {
-        TableName: props.rulesDatabase.policyTable.tableName,
+        TableName: props.networkFirewallEngine.rulesDatabase.policyTable.tableName,
       },
     });
 
@@ -249,13 +269,13 @@ export class SuricataRuleGroup extends constructs.Construct {
     );
 
 
-    props.rulesDatabase.policyTable.grantReadData(suricataRuleGroupLambda);
+    props.networkFirewallEngine.rulesDatabase.policyTable.grantReadData(suricataRuleGroupLambda);
 
     // this is not permitted by default in 'read?'
     suricataRuleGroupLambda.addToRolePolicy(
       new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
-        resources: [props.rulesDatabase.policyTable.tableArn],
+        resources: [props.networkFirewallEngine.rulesDatabase.policyTable.tableArn],
         actions: [
           'dynamodb:PartiQLSelect',
         ],
@@ -273,18 +293,48 @@ export class SuricataRuleGroup extends constructs.Construct {
         RuleGroupName: props.ruleGroupName,
         Description: props.description,
         Rules: this.ruleuuidlist,
-        ReferenceSets: this.ruleprefixlists, // TODO.  DEDUPLICATE AND Check that There is no Prefixes named the same. 
+        ReferenceSets: this.ruleprefixlists, // TODO.  DEDUPLICATE AND Check that There is no Prefixes named the same.
+        //console.log([...new Map(this.ruleprefixlists.map((item) => [item.arn, item])).values()]);
       },
     });
 
     this.ruleGroupArn = suricataRuleCr.getAttString('RuleGroupArn');
+
+    new ram.CfnResourceShare(this, 'shareRuleGroup', {
+      name: props.ruleGroupName,
+      allowExternalPrincipals: false,
+      principals: [props.networkFirewallEngine.firewallAccount],
+      resourceArns: [this.ruleGroupArn],
+    });
   }
 
-  public addRule(props: FQDNStatefulRule): void {
+  public addRule(props: FQDNStatefulRuleProps): void {
 
-    this.ruleuuidlist.push(props.uuid);
+    let priority = 1;
+    if (props.priority) {
+      priority = props.priority;
+    }
 
-    props.prefixListSet.forEach((plset) => {
+    let rulesDatabase: StatefulRuleDatabase = this.rulesDatabase;
+
+    const ruleToAdd = new FQDNStatefulRule(this, props.name + 'FQDNRule', {
+      name: props.name,
+      action: props.action,
+      protocol: props.protocol,
+      source: props.source,
+      destination: props.destination,
+      srcPort: props.srcPort,
+      destPort: props.destPort,
+      direction: props.direction,
+      fqdn: props.fqdn,
+      priority: priority,
+      rulesDatabase: rulesDatabase,
+
+    });
+
+    this.ruleuuidlist.push(ruleToAdd.uuid);
+
+    ruleToAdd.prefixListSet.forEach((plset) => {
       console.log(plset);
       this.ruleprefixlists.push(plset);
     });

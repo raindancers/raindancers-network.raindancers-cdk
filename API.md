@@ -2757,6 +2757,7 @@ new PrefixList(scope: Construct, id: string, props: PrefixListProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#raindancers-network.PrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.PrefixList.addEC2Instance">addEC2Instance</a></code> | *No description.* |
 
 ---
 
@@ -2767,6 +2768,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addEC2Instance` <a name="addEC2Instance" id="raindancers-network.PrefixList.addEC2Instance"></a>
+
+```typescript
+public addEC2Instance(props: Instance): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrefixList.addEC2Instance.parameter.props"></a>
+
+- *Type:* aws-cdk-lib.aws_ec2.Instance
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -3164,12 +3177,12 @@ Returns a string representation of this construct.
 ##### `addRule` <a name="addRule" id="raindancers-network.SuricataRuleGroup.addRule"></a>
 
 ```typescript
-public addRule(props: FQDNStatefulRule): void
+public addRule(props: FQDNStatefulRuleProps): void
 ```
 
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SuricataRuleGroup.addRule.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>
+- *Type:* <a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a>
 
 ---
 
@@ -3904,45 +3917,6 @@ public readonly s3GatewayInterface: boolean;
 - *Type:* boolean
 
 indicate true for a S3 Gateway Interface.
-
----
-
-### CidrType <a name="CidrType" id="raindancers-network.CidrType"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.CidrType.Initializer"></a>
-
-```typescript
-import { CidrType } from 'raindancers-network'
-
-const cidrType: CidrType = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.CidrType.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CidrType.property.description">description</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.CidrType.property.cidr"></a>
-
-```typescript
-public readonly cidr: string;
-```
-
-- *Type:* string
-
----
-
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.CidrType.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -4801,12 +4775,13 @@ const fQDNStatefulRuleProps: FQDNStatefulRuleProps = { ... }
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.fqdn">fqdn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
 
 ---
 
@@ -4850,6 +4825,16 @@ public readonly direction: Direction;
 
 ---
 
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.FQDNStatefulRuleProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ##### `protocol`<sup>Required</sup> <a name="protocol" id="raindancers-network.FQDNStatefulRuleProps.property.protocol"></a>
 
 ```typescript
@@ -4890,16 +4875,6 @@ public readonly fqdn: string;
 
 ---
 
-##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase"></a>
-
-```typescript
-public readonly rulesDatabase: StatefulRuleDatabase;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
-
----
-
 ##### `priority`<sup>Optional</sup> <a name="priority" id="raindancers-network.FQDNStatefulRuleProps.property.priority"></a>
 
 ```typescript
@@ -4907,6 +4882,16 @@ public readonly priority: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `rulesDatabase`<sup>Optional</sup> <a name="rulesDatabase" id="raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase"></a>
+
+```typescript
+public readonly rulesDatabase: StatefulRuleDatabase;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
 
 ---
 
@@ -5099,6 +5084,45 @@ the the vpc where the Network firewall is placed.
 
 ---
 
+### NWFWRulesEngine <a name="NWFWRulesEngine" id="raindancers-network.NWFWRulesEngine"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.NWFWRulesEngine.Initializer"></a>
+
+```typescript
+import { NWFWRulesEngine } from 'raindancers-network'
+
+const nWFWRulesEngine: NWFWRulesEngine = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.NWFWRulesEngine.property.firewallAccount">firewallAccount</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.NWFWRulesEngine.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
+
+---
+
+##### `firewallAccount`<sup>Required</sup> <a name="firewallAccount" id="raindancers-network.NWFWRulesEngine.property.firewallAccount"></a>
+
+```typescript
+public readonly firewallAccount: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.NWFWRulesEngine.property.rulesDatabase"></a>
+
+```typescript
+public readonly rulesDatabase: StatefulRuleDatabase;
+```
+
+- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
+
+---
+
 ### OutboundForwardingRule <a name="OutboundForwardingRule" id="raindancers-network.OutboundForwardingRule"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.OutboundForwardingRule.Initializer"></a>
@@ -5142,6 +5166,45 @@ array of ip address's to forward request to.
 
 ---
 
+### PrefixListEntry <a name="PrefixListEntry" id="raindancers-network.PrefixListEntry"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PrefixListEntry.Initializer"></a>
+
+```typescript
+import { PrefixListEntry } from 'raindancers-network'
+
+const prefixListEntry: PrefixListEntry = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixListEntry.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PrefixListEntry.property.description">description</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.PrefixListEntry.property.cidr"></a>
+
+```typescript
+public readonly cidr: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.PrefixListEntry.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
 ### PrefixListProps <a name="PrefixListProps" id="raindancers-network.PrefixListProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.PrefixListProps.Initializer"></a>
@@ -5157,7 +5220,6 @@ const prefixListProps: PrefixListProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.PrefixListProps.property.addressFamily">addressFamily</a></code> | <code><a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a></code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixListProps.property.entries">entries</a></code> | <code><a href="#raindancers-network.CidrType">CidrType</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.PrefixListProps.property.maxEntries">maxEntries</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.PrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
 
@@ -5170,16 +5232,6 @@ public readonly addressFamily: IPAddressFamily;
 ```
 
 - *Type:* <a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a>
-
----
-
-##### `entries`<sup>Required</sup> <a name="entries" id="raindancers-network.PrefixListProps.property.entries"></a>
-
-```typescript
-public readonly entries: CidrType[];
-```
-
-- *Type:* <a href="#raindancers-network.CidrType">CidrType</a>[]
 
 ---
 
@@ -5820,8 +5872,8 @@ const suricataRuleGroupProps: SuricataRuleGroupProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.capacity">capacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.networkFirewallEngine">networkFirewallEngine</a></code> | <code><a href="#raindancers-network.NWFWRulesEngine">NWFWRulesEngine</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.ruleGroupName">ruleGroupName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleGroupProps.property.suricataRules">suricataRules</a></code> | <code><a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]</code> | *No description.* |
 
@@ -5837,6 +5889,16 @@ public readonly capacity: number;
 
 ---
 
+##### `networkFirewallEngine`<sup>Required</sup> <a name="networkFirewallEngine" id="raindancers-network.SuricataRuleGroupProps.property.networkFirewallEngine"></a>
+
+```typescript
+public readonly networkFirewallEngine: NWFWRulesEngine;
+```
+
+- *Type:* <a href="#raindancers-network.NWFWRulesEngine">NWFWRulesEngine</a>
+
+---
+
 ##### `ruleGroupName`<sup>Required</sup> <a name="ruleGroupName" id="raindancers-network.SuricataRuleGroupProps.property.ruleGroupName"></a>
 
 ```typescript
@@ -5844,16 +5906,6 @@ public readonly ruleGroupName: string;
 ```
 
 - *Type:* string
-
----
-
-##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.SuricataRuleGroupProps.property.rulesDatabase"></a>
-
-```typescript
-public readonly rulesDatabase: StatefulRuleDatabase;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
 
 ---
 
@@ -5895,6 +5947,7 @@ const suricataRuleProps: SuricataRuleProps = { ... }
 | <code><a href="#raindancers-network.SuricataRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
@@ -5938,6 +5991,16 @@ public readonly direction: Direction;
 ```
 
 - *Type:* <a href="#raindancers-network.Direction">Direction</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.SuricataRuleProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
 
 ---
 
