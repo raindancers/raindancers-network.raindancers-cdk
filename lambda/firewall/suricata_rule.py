@@ -74,7 +74,7 @@ def on_update(event):
 	ruleset = ''
 	for ruleUUID in props['Rules']:
 		suricata_rule = dynamodb.execute_statement(
-			Statement = f'SELECT * FROM \"{os.environ["policyTableName"]}\" WHERE UUID = {ruleUUID}'
+			Statement = f'SELECT * FROM \"{os.environ["TableName"]}\" WHERE UUID = {ruleUUID}'
 		)['Items']
 
 		rule = suricata_rule['SuricataRule']['S']

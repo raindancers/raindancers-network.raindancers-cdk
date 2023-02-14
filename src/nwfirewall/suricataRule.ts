@@ -293,8 +293,8 @@ export class SuricataRuleGroup extends constructs.Construct {
         RuleGroupName: props.ruleGroupName,
         Description: props.description,
         Rules: this.ruleuuidlist,
-        ReferenceSets: this.ruleprefixlists, // TODO.  DEDUPLICATE AND Check that There is no Prefixes named the same.
-        //console.log([...new Map(this.ruleprefixlists.map((item) => [item.arn, item])).values()]);
+        //ReferenceSets: deduplicateReferenceSets(this.ruleprefixlists),  why doe'snt this work?
+        ReferenceSets: this.ruleprefixlists,
       },
     });
 
@@ -340,3 +340,21 @@ export class SuricataRuleGroup extends constructs.Construct {
     });
   }
 }
+
+// function deduplicateReferenceSets(prefixlistSet:PrefixListSetInterface[]): PrefixListSetInterface[] {
+
+//   const unique = [...new Set(prefixlistSet.map(item => item.name))];
+//   unique.forEach((setname) => {
+//     const filtered = prefixlistSet.filter((obj) => {
+//       return obj.name === setname;
+//     });
+//     if (filtered.length > 1) {
+//       console.log(filtered);
+//       const uniqueArn = [...new Set(filtered.map(item => item.arn))];
+//       if (uniqueArn.length > 1) {
+//         throw Error(`Reference Set names must be unique. Set name ${setname} has been used more than once`);
+//       }
+//     }
+//   });
+//   return [...new Map(prefixlistSet.map((item) => [item.arn, item])).values()];
+// }
