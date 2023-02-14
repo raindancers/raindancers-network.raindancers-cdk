@@ -223,12 +223,12 @@ export interface SuricataRuleGroupProps{
 
 export class SuricataRuleGroup extends constructs.Construct {
 
-  public readonly ruleGroupArn: string;
+  public ruleGroupArn: string = '';
 
   private ruleprefixlists: PrefixListSet[] =[];
   private ruleuuidlist: string[] = [];
   private rulesDatabase: StatefulRuleDatabase;
-
+  private crLambda: aws_lambda.Function;
 
   constructor(scope: constructs.Construct, id: string, props: SuricataRuleGroupProps) {
     super( scope, id);
@@ -252,6 +252,8 @@ export class SuricataRuleGroup extends constructs.Construct {
         TableName: props.networkFirewallEngine.rulesDatabase.policyTable.tableName,
       },
     });
+
+    this.crLambda = suricataRuleGroupLambda;
 
     suricataRuleGroupLambda.addToRolePolicy(
       new iam.PolicyStatement({
@@ -286,17 +288,17 @@ export class SuricataRuleGroup extends constructs.Construct {
 
     const suricataRuleCr = new cdk.CustomResource(this, `${props.ruleGroupName}customresource`, {
       serviceToken: new cr.Provider(this, `${props.ruleGroupName}serviceprovider`, {
-        onEventHandler: suricataRuleGroupLambda,
+        onEventHandler: this.crLambda,
       }).serviceToken,
       properties: {
         Capacity: props.capacity,
         RuleGroupName: props.ruleGroupName,
         Description: props.description,
         Rules: this.ruleuuidlist,
-        //ReferenceSets: deduplicateReferenceSets(this.ruleprefixlists),  why doe'snt this work?
         ReferenceSets: this.ruleprefixlists,
       },
     });
+
 
     this.ruleGroupArn = suricataRuleCr.getAttString('RuleGroupArn');
 
@@ -306,7 +308,10 @@ export class SuricataRuleGroup extends constructs.Construct {
       principals: [props.networkFirewallEngine.firewallAccount],
       resourceArns: [this.ruleGroupArn],
     });
+
+
   }
+
 
   public addRule(props: FQDNStatefulRuleProps): void {
 
@@ -336,25 +341,33 @@ export class SuricataRuleGroup extends constructs.Construct {
 
     ruleToAdd.prefixListSet.forEach((plset) => {
       console.log(plset);
-      this.ruleprefixlists.push(plset);
+
+      // need to check if adding this to to the ruleprefix list is bad.
+      const checklist = this.ruleprefixlists;
+      checklist.push(plset);
+      const errorCheck = checkForDuplicateNamedPL(checklist); // this will raise an error if there is one
+      if (errorCheck.length > this.ruleprefixlists.length) { // we had a new unique one, so we can add it
+        this.ruleprefixlists.push(plset);
+      }
+
     });
   }
 }
 
-// function deduplicateReferenceSets(prefixlistSet:PrefixListSetInterface[]): PrefixListSetInterface[] {
+function checkForDuplicateNamedPL(prefixlistSet:PrefixListSetInterface[]): PrefixListSetInterface[] {
 
-//   const unique = [...new Set(prefixlistSet.map(item => item.name))];
-//   unique.forEach((setname) => {
-//     const filtered = prefixlistSet.filter((obj) => {
-//       return obj.name === setname;
-//     });
-//     if (filtered.length > 1) {
-//       console.log(filtered);
-//       const uniqueArn = [...new Set(filtered.map(item => item.arn))];
-//       if (uniqueArn.length > 1) {
-//         throw Error(`Reference Set names must be unique. Set name ${setname} has been used more than once`);
-//       }
-//     }
-//   });
-//   return [...new Map(prefixlistSet.map((item) => [item.arn, item])).values()];
-// }
+  const unique = [...new Set(prefixlistSet.map(item => item.name))];
+  unique.forEach((setname) => {
+    const filtered = prefixlistSet.filter((obj) => {
+      return obj.name === setname;
+    });
+    if (filtered.length > 1) {
+      console.log(filtered);
+      const uniqueArn = [...new Set(filtered.map(item => item.arn))];
+      if (uniqueArn.length > 1) {
+        throw Error(`Reference Set names must be unique. Set name ${setname} has been used more than once`);
+      }
+    }
+  });
+  return [...new Map(prefixlistSet.map((item) => [item.arn, item])).values()];
+}
