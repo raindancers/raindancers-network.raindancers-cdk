@@ -9,6 +9,7 @@ import {
   from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
+import { DynamicTagResourceGroup, DynamicTagResourceGroupSet } from './resourceGroups';
 import { StatefulRuleDatabase } from './statefuldatabase';
 export enum StatefulAction {
   /**
@@ -49,7 +50,7 @@ export enum Direction {
   BOTH = '<>'
 }
 
-export type SrcDstAddr = string | PrefixList;
+export type SrcDstAddr = string | PrefixList | DynamicTagResourceGroup;
 export type SrcDstPort = string;
 
 
@@ -75,6 +76,11 @@ export interface PrefixListSetInterface {
   readonly name: string;
 }
 
+export interface ReferenceSet {
+  readonly arn: string;
+  readonly name: string;
+}
+
 type PrefixListSet = PrefixListSetInterface
 
 
@@ -82,6 +88,8 @@ export class FQDNStatefulRule extends constructs.Construct {
 
   public uuid: string;
   public prefixListSet: PrefixListSet[] = [];
+  public resourceGroupSets: DynamicTagResourceGroupSet[] = [];
+
 
   constructor(scope: constructs.Construct, id: string, props: FQDNStatefulRuleProps) {
     super( scope, id);
@@ -98,9 +106,6 @@ export class FQDNStatefulRule extends constructs.Construct {
     if (props.action == StatefulAction.PASS) {
       matchingMessage = 'matching allowed FQDNs';
     }
-    // the sid and version will get processed by the custom resource
-    //drop tls @example any -> $EXTERNAL_NET any (tls.sni; content:"evil.com"; startswith; nocase; endswith; msg:"matching TLS denylisted FQDNs"; priority:1; flow:to_server, established; sid:1; rev:1;)
-    //drop http @example any -> $EXTERNAL_NET any (http.host; content:"evil.com"; startswith; endswith; msg:"matching HTTP denylisted FQDNs"; priority:1; flow:to_server, established; sid:2; rev:1;)
 
     var options: string = '';
     if (props.protocol === FWProtocol.HTTP) {
@@ -116,6 +121,9 @@ export class FQDNStatefulRule extends constructs.Construct {
     if (props.source instanceof PrefixList) {
       source = '@' + props.source.prefixlist.prefixListName;
       this.prefixListSet.push(props.source.prefixListSet);
+    } else if (props.source instanceof DynamicTagResourceGroup) {
+      source = '@' + props.source.name;
+      this.resourceGroupSets.push({ name: props.source.name, arn: props.source.groupArn });
     } else {
       source = props.source as string;
     }
@@ -124,6 +132,10 @@ export class FQDNStatefulRule extends constructs.Construct {
     if (props.destination instanceof PrefixList) {
       destination = '@' + props.destination.prefixlist.prefixListName;
       this.prefixListSet.push(props.destination.prefixListSet);
+    } else if (props.destination instanceof DynamicTagResourceGroup) {
+      source = '@' + props.destination;
+      this.resourceGroupSets.push({ name: props.destination.name, arn: props.destination.groupArn });
+
     } else {
       destination = props.destination as string;
     }
@@ -225,7 +237,7 @@ export class SuricataRuleGroup extends constructs.Construct {
 
   public ruleGroupArn: string = '';
 
-  private ruleprefixlists: PrefixListSet[] =[];
+  private ruleReferenceSets: ReferenceSet[] =[];
   private ruleuuidlist: string[] = [];
   private rulesDatabase: StatefulRuleDatabase;
   private crLambda: aws_lambda.Function;
@@ -284,7 +296,6 @@ export class SuricataRuleGroup extends constructs.Construct {
       }),
     );
 
-    console.log('referencesets:', this.ruleprefixlists);
 
     const suricataRuleCr = new cdk.CustomResource(this, `${props.ruleGroupName}customresource`, {
       serviceToken: new cr.Provider(this, `${props.ruleGroupName}serviceprovider`, {
@@ -295,7 +306,7 @@ export class SuricataRuleGroup extends constructs.Construct {
         RuleGroupName: props.ruleGroupName,
         Description: props.description,
         Rules: this.ruleuuidlist,
-        ReferenceSets: this.ruleprefixlists,
+        ReferenceSets: this.ruleReferenceSets,
       },
     });
 
@@ -322,6 +333,7 @@ export class SuricataRuleGroup extends constructs.Construct {
 
     let rulesDatabase: StatefulRuleDatabase = this.rulesDatabase;
 
+    // create a new rule, and insert it in the table.
     const ruleToAdd = new FQDNStatefulRule(this, props.name + 'FQDNRule', {
       name: props.name,
       action: props.action,
@@ -337,20 +349,27 @@ export class SuricataRuleGroup extends constructs.Construct {
 
     });
 
+
     this.ruleuuidlist.push(ruleToAdd.uuid);
 
+
+    // add prefixlists to the RulereferenceSets
     ruleToAdd.prefixListSet.forEach((plset) => {
-      console.log(plset);
 
       // need to check if adding this to to the ruleprefix list is bad.
-      const checklist = this.ruleprefixlists;
+      const checklist = this.ruleReferenceSets;
       checklist.push(plset);
       const errorCheck = checkForDuplicateNamedPL(checklist); // this will raise an error if there is one
-      if (errorCheck.length > this.ruleprefixlists.length) { // we had a new unique one, so we can add it
-        this.ruleprefixlists.push(plset);
+      if (errorCheck.length > this.ruleReferenceSets.length) { // we had a new unique one, so we can add it
+        this.ruleReferenceSets.push(plset);
       }
-
     });
+
+    // add TagGroups: TODO. THis needs some validation.
+    ruleToAdd.resourceGroupSets.forEach((resourceGroup) => {
+      this.ruleReferenceSets.push(resourceGroup);
+    });
+
   }
 }
 

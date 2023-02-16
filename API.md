@@ -736,6 +736,140 @@ the name for the segment.
 ---
 
 
+### DynamicTagResourceGroup <a name="DynamicTagResourceGroup" id="raindancers-network.DynamicTagResourceGroup"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.DynamicTagResourceGroup.Initializer"></a>
+
+```typescript
+import { DynamicTagResourceGroup } from 'raindancers-network'
+
+new DynamicTagResourceGroup(scope: Construct, id: string, props: DynamicTagResourceGroupProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.DynamicTagResourceGroupProps">DynamicTagResourceGroupProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.DynamicTagResourceGroupProps">DynamicTagResourceGroupProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.addTagFilter">addTagFilter</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.DynamicTagResourceGroup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addTagFilter` <a name="addTagFilter" id="raindancers-network.DynamicTagResourceGroup.addTagFilter"></a>
+
+```typescript
+public addTagFilter(props: TagFilter): void
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.DynamicTagResourceGroup.addTagFilter.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.TagFilter">TagFilter</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.DynamicTagResourceGroup.isConstruct"></a>
+
+```typescript
+import { DynamicTagResourceGroup } from 'raindancers-network'
+
+DynamicTagResourceGroup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.DynamicTagResourceGroup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.groupArn">groupArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.DynamicTagResourceGroup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `groupArn`<sup>Required</sup> <a name="groupArn" id="raindancers-network.DynamicTagResourceGroup.property.groupArn"></a>
+
+```typescript
+public readonly groupArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroup.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### EnterpriseVpc <a name="EnterpriseVpc" id="raindancers-network.EnterpriseVpc"></a>
 
 Enteprise VPC's take the stock ec2.Vpc and provide numerous convience methods primarly related to connecting to internal networks.
@@ -2293,6 +2427,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#raindancers-network.FQDNStatefulRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#raindancers-network.FQDNStatefulRule.property.prefixListSet">prefixListSet</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRule.property.resourceGroupSets">resourceGroupSets</a></code> | <code><a href="#raindancers-network.DynamicTagResourceGroupSet">DynamicTagResourceGroupSet</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRule.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -2316,6 +2451,16 @@ public readonly prefixListSet: PrefixListSetInterface[];
 ```
 
 - *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]
+
+---
+
+##### `resourceGroupSets`<sup>Required</sup> <a name="resourceGroupSets" id="raindancers-network.FQDNStatefulRule.property.resourceGroupSets"></a>
+
+```typescript
+public readonly resourceGroupSets: DynamicTagResourceGroupSet[];
+```
+
+- *Type:* <a href="#raindancers-network.DynamicTagResourceGroupSet">DynamicTagResourceGroupSet</a>[]
 
 ---
 
@@ -4132,6 +4277,84 @@ public readonly tags: Tag[];
 
 ---
 
+### DynamicTagResourceGroupProps <a name="DynamicTagResourceGroupProps" id="raindancers-network.DynamicTagResourceGroupProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupProps.Initializer"></a>
+
+```typescript
+import { DynamicTagResourceGroupProps } from 'raindancers-network'
+
+const dynamicTagResourceGroupProps: DynamicTagResourceGroupProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroupProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.DynamicTagResourceGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroupProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.DynamicTagResourceGroupProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+### DynamicTagResourceGroupSet <a name="DynamicTagResourceGroupSet" id="raindancers-network.DynamicTagResourceGroupSet"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupSet.Initializer"></a>
+
+```typescript
+import { DynamicTagResourceGroupSet } from 'raindancers-network'
+
+const dynamicTagResourceGroupSet: DynamicTagResourceGroupSet = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DynamicTagResourceGroupSet.property.arn">arn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.DynamicTagResourceGroupSet.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.DynamicTagResourceGroupSet.property.arn"></a>
+
+```typescript
+public readonly arn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroupSet.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ### EnterpriseVpcProps <a name="EnterpriseVpcProps" id="raindancers-network.EnterpriseVpcProps"></a>
 
 Propertys for an Enterprise VPC.
@@ -4772,12 +4995,12 @@ const fQDNStatefulRuleProps: FQDNStatefulRuleProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.fqdn">fqdn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
@@ -4798,10 +5021,10 @@ public readonly action: StatefulAction;
 ##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.FQDNStatefulRuleProps.property.destination"></a>
 
 ```typescript
-public readonly destination: string | PrefixList;
+public readonly destination: string | PrefixList | DynamicTagResourceGroup;
 ```
 
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
 
 ---
 
@@ -4848,10 +5071,10 @@ public readonly protocol: FWProtocol;
 ##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.FQDNStatefulRuleProps.property.source"></a>
 
 ```typescript
-public readonly source: string | PrefixList;
+public readonly source: string | PrefixList | DynamicTagResourceGroup;
 ```
 
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
 
 ---
 
@@ -5362,6 +5585,45 @@ public readonly tagValue: string;
 - *Type:* string
 
 Value for Sharing.
+
+---
+
+### ReferenceSet <a name="ReferenceSet" id="raindancers-network.ReferenceSet"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ReferenceSet.Initializer"></a>
+
+```typescript
+import { ReferenceSet } from 'raindancers-network'
+
+const referenceSet: ReferenceSet = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ReferenceSet.property.arn">arn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ReferenceSet.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.ReferenceSet.property.arn"></a>
+
+```typescript
+public readonly arn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ReferenceSet.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -5944,12 +6206,12 @@ const suricataRuleProps: SuricataRuleProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.SuricataRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
 | <code><a href="#raindancers-network.SuricataRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -5967,10 +6229,10 @@ public readonly action: StatefulAction;
 ##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.SuricataRuleProps.property.destination"></a>
 
 ```typescript
-public readonly destination: string | PrefixList;
+public readonly destination: string | PrefixList | DynamicTagResourceGroup;
 ```
 
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
 
 ---
 
@@ -6017,10 +6279,10 @@ public readonly protocol: FWProtocol;
 ##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.SuricataRuleProps.property.source"></a>
 
 ```typescript
-public readonly source: string | PrefixList;
+public readonly source: string | PrefixList | DynamicTagResourceGroup;
 ```
 
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a>
+- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
 
 ---
 
@@ -6031,6 +6293,45 @@ public readonly srcPort: string;
 ```
 
 - *Type:* string
+
+---
+
+### TagFilter <a name="TagFilter" id="raindancers-network.TagFilter"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.TagFilter.Initializer"></a>
+
+```typescript
+import { TagFilter } from 'raindancers-network'
+
+const tagFilter: TagFilter = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.TagFilter.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.TagFilter.property.values">values</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `key`<sup>Required</sup> <a name="key" id="raindancers-network.TagFilter.property.key"></a>
+
+```typescript
+public readonly key: string;
+```
+
+- *Type:* string
+
+---
+
+##### `values`<sup>Required</sup> <a name="values" id="raindancers-network.TagFilter.property.values"></a>
+
+```typescript
+public readonly values: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -7546,6 +7847,27 @@ Resolver is Inbound.
 ##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.ResolverDirection.OUTBOUND"></a>
 
 Resolver is outbound.
+
+---
+
+
+### ResourceGroupQueryTypes <a name="ResourceGroupQueryTypes" id="raindancers-network.ResourceGroupQueryTypes"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ResourceGroupQueryTypes.TAG_FILTER_1_0">TAG_FILTER_1_0</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ResourceGroupQueryTypes.CLOUDFORMATION_STACK_1_0">CLOUDFORMATION_STACK_1_0</a></code> | *No description.* |
+
+---
+
+##### `TAG_FILTER_1_0` <a name="TAG_FILTER_1_0" id="raindancers-network.ResourceGroupQueryTypes.TAG_FILTER_1_0"></a>
+
+---
+
+
+##### `CLOUDFORMATION_STACK_1_0` <a name="CLOUDFORMATION_STACK_1_0" id="raindancers-network.ResourceGroupQueryTypes.CLOUDFORMATION_STACK_1_0"></a>
 
 ---
 
