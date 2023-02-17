@@ -5,7 +5,7 @@ import {
 import * as constructs from 'constructs';
 
 export enum ResourceGroupQueryTypes {
-  TAG_FILTER_1_0 = 'TAG_FILTER_1_0',
+  TAG_FILTERS_1_0 = 'TAG_FILTERS_1_0',
   CLOUDFORMATION_STACK_1_0 = 'CLOUDFORMATION_STACK_1_0'
 }
 
@@ -39,16 +39,24 @@ export class DynamicTagResourceGroup extends constructs.Construct {
     const cfnGroup = new resourcegroups.CfnGroup(this, 'CfnGroup', {
       name: props.name, // // this needs to be unique across the AWS REGION.  TODO. See if we can make this qunie
       description: props.description,
+      configuration: [
+        {
+          parameters: [],
+          type: 'AWS::NetworkFirewall::RuleGroup',
+        },
+
+      ],
       resourceQuery: {
         query: {
-          // only these types are supoorted.
+          // only these types are supoorted
+          // https://docs.aws.amazon.com/network-firewall/latest/developerguide/resource-group-creating.html
           resourceTypeFilters: [
             'AWS::EC2::Instance',
-            'AWS::EC2::InstanceNetworkInterface',
+            'AWS::EC2::NetworkInterface',
           ],
           tagFilters: this.tagFilters,
         },
-        type: ResourceGroupQueryTypes.TAG_FILTER_1_0,
+        type: ResourceGroupQueryTypes.TAG_FILTERS_1_0,
       },
     });
 

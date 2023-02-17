@@ -160,8 +160,7 @@ export class FQDNStatefulRule extends constructs.Construct {
 
     this.uuid = suricataRule.getAttString('UUID');
 
-    console.log('*******prefixlistset**********');
-    console.log(this.prefixListSet);
+
   }
 }
 
@@ -278,6 +277,8 @@ export class SuricataRuleGroup extends constructs.Construct {
           'network-firewall:UpdateRuleGroup',
           'iam:CreateServiceLinkedRole',
           'ec2:GetManagedPrefixListEntries',
+          'resource-groups:Get*',
+          'resource-groups:List*',
         ],
       }),
     );
@@ -381,7 +382,6 @@ function checkForDuplicateNamedPL(prefixlistSet:PrefixListSetInterface[]): Prefi
       return obj.name === setname;
     });
     if (filtered.length > 1) {
-      console.log(filtered);
       const uniqueArn = [...new Set(filtered.map(item => item.arn))];
       if (uniqueArn.length > 1) {
         throw Error(`Reference Set names must be unique. Set name ${setname} has been used more than once`);

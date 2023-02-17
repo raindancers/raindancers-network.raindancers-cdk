@@ -1,0 +1,15 @@
+[{"Type": "AWS::NetworkFirewall::RuleGroup", "Parameters": []}]
+
+
+aws resource-groups create-group \
+    --name tagGroup3 \
+    --resource-query '{"Type": "TAG_FILTERS_1_0", "Query": "{\"ResourceTypeFilters\": [\"AWS::EC2::Instance\"], \"TagFilters\": [{\"Key\": \"FirewallResourceGroup\", \"Values\": [\"Group1"]}]}"}' \
+    --configuration '[{"Type": "AWS::NetworkFirewall::RuleGroup", "Parameters": []}]' \
+    --profile swamp2
+
+
+    aws resource-groups create-group \
+    --name test-group \
+    --resource-query '{"Type": "TAG_FILTERS_1_0", "Query": "{\"ResourceTypeFilters\": [\"AWS::EC2::Instance\"], \"TagFilters\": [{\"Key\": \"environment\", \"Values\": [\"production\"]}]}"}' \
+    --configuration '[{"Type": "AWS::NetworkFirewall::RuleGroup", "Parameters": []}]'
+    

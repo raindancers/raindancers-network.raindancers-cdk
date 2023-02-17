@@ -7857,12 +7857,12 @@ Resolver is outbound.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResourceGroupQueryTypes.TAG_FILTER_1_0">TAG_FILTER_1_0</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ResourceGroupQueryTypes.TAG_FILTERS_1_0">TAG_FILTERS_1_0</a></code> | *No description.* |
 | <code><a href="#raindancers-network.ResourceGroupQueryTypes.CLOUDFORMATION_STACK_1_0">CLOUDFORMATION_STACK_1_0</a></code> | *No description.* |
 
 ---
 
-##### `TAG_FILTER_1_0` <a name="TAG_FILTER_1_0" id="raindancers-network.ResourceGroupQueryTypes.TAG_FILTER_1_0"></a>
+##### `TAG_FILTERS_1_0` <a name="TAG_FILTERS_1_0" id="raindancers-network.ResourceGroupQueryTypes.TAG_FILTERS_1_0"></a>
 
 ---
 
