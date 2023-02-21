@@ -13,6 +13,9 @@ export interface ForwardingRulesProps {
   vpc: ec2.Vpc;
 }
 
+/**
+ * create forwarding rules and associate them with a vpc
+ */
 export class ForwardingRules extends constructs.Construct {
 
   constructor(scope: constructs.Construct, id: string, props: ForwardingRulesProps) {
