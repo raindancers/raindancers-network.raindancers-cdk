@@ -5096,6 +5096,7 @@ const forwardingRulesProps: ForwardingRulesProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.ForwardingRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.ForwardingRulesProps.property.resolverId">resolverId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.ForwardingRulesProps.property.resolverIP">resolverIP</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.ForwardingRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
@@ -5108,6 +5109,16 @@ public readonly domains: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `resolverId`<sup>Required</sup> <a name="resolverId" id="raindancers-network.ForwardingRulesProps.property.resolverId"></a>
+
+```typescript
+public readonly resolverId: string;
+```
+
+- *Type:* string
 
 ---
 

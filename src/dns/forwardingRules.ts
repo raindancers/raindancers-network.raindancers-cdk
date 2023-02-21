@@ -11,6 +11,7 @@ export interface ForwardingRulesProps {
   readonly resolverIP: string[];
   readonly domains: string[];
   readonly vpc: ec2.Vpc;
+  readonly resolverId: string;
 }
 
 /**
@@ -30,6 +31,7 @@ export class ForwardingRules extends constructs.Construct {
 
       // create the resolver rule
       let resolverRule = new r53r.CfnResolverRule(this, `r53r${domain}`, {
+        resolverEndpointId: props.resolverId,
         domainName: domain,
         ruleType: 'FORWARD',
         targetIps: targetIps,
