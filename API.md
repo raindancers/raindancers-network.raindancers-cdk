@@ -2343,6 +2343,107 @@ public readonly policy: IFirewallPolicyProperty;
 ---
 
 
+### ForwardingRules <a name="ForwardingRules" id="raindancers-network.ForwardingRules"></a>
+
+create forwarding rules and associate them with a vpc.
+
+#### Initializers <a name="Initializers" id="raindancers-network.ForwardingRules.Initializer"></a>
+
+```typescript
+import { ForwardingRules } from 'raindancers-network'
+
+new ForwardingRules(scope: Construct, id: string, props: ForwardingRulesProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ForwardingRulesProps">ForwardingRulesProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ForwardingRules.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ForwardingRules.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ForwardingRules.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ForwardingRulesProps">ForwardingRulesProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ForwardingRules.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.ForwardingRules.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ForwardingRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ForwardingRules.isConstruct"></a>
+
+```typescript
+import { ForwardingRules } from 'raindancers-network'
+
+ForwardingRules.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ForwardingRules.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ForwardingRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ForwardingRules.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### FQDNStatefulRule <a name="FQDNStatefulRule" id="raindancers-network.FQDNStatefulRule"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.FQDNStatefulRule.Initializer"></a>
@@ -4977,6 +5078,56 @@ public readonly oneMinuteFlowLogs: boolean;
 - *Type:* boolean
 
 1 minute resolution.
+
+---
+
+### ForwardingRulesProps <a name="ForwardingRulesProps" id="raindancers-network.ForwardingRulesProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ForwardingRulesProps.Initializer"></a>
+
+```typescript
+import { ForwardingRulesProps } from 'raindancers-network'
+
+const forwardingRulesProps: ForwardingRulesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ForwardingRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.ForwardingRulesProps.property.resolverIP">resolverIP</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.ForwardingRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.ForwardingRulesProps.property.domains"></a>
+
+```typescript
+public readonly domains: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `resolverIP`<sup>Required</sup> <a name="resolverIP" id="raindancers-network.ForwardingRulesProps.property.resolverIP"></a>
+
+```typescript
+public readonly resolverIP: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ForwardingRulesProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 ---
 

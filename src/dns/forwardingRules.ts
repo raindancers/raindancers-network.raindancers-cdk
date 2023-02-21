@@ -8,13 +8,13 @@ import * as constructs from 'constructs';
 
 
 export interface ForwardingRulesProps {
-  resolverIP: string[];
-  domains: string[];
-  vpc: ec2.Vpc;
+  readonly resolverIP: string[];
+  readonly domains: string[];
+  readonly vpc: ec2.Vpc;
 }
 
 /**
- * create forwarding rules and associate them with a vpc
+ * create forwarding rules and associate them with a vpc.
  */
 export class ForwardingRules extends constructs.Construct {
 
