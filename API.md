@@ -2,6 +2,107 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### AssociateSharedResolverRule <a name="AssociateSharedResolverRule" id="raindancers-network.AssociateSharedResolverRule"></a>
+
+Associate a resolver rule that has been shared to this account.
+
+#### Initializers <a name="Initializers" id="raindancers-network.AssociateSharedResolverRule.Initializer"></a>
+
+```typescript
+import { AssociateSharedResolverRule } from 'raindancers-network'
+
+new AssociateSharedResolverRule(scope: Construct, id: string, props: AssociateSharedResolverRuleProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AssociateSharedResolverRuleProps">AssociateSharedResolverRuleProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AssociateSharedResolverRuleProps">AssociateSharedResolverRuleProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.AssociateSharedResolverRule.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AssociateSharedResolverRule.isConstruct"></a>
+
+```typescript
+import { AssociateSharedResolverRule } from 'raindancers-network'
+
+AssociateSharedResolverRule.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AssociateSharedResolverRule.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AssociateSharedResolverRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AssociateSharedResolverRule.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### AwsServiceEndPoints <a name="AwsServiceEndPoints" id="raindancers-network.AwsServiceEndPoints"></a>
 
 Provisions a set of AWS Service Endpoints in a VPC.
@@ -3774,6 +3875,49 @@ public readonly rules: StatelessRuleProperty[];
 ```
 
 - *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]
+
+---
+
+### AssociateSharedResolverRuleProps <a name="AssociateSharedResolverRuleProps" id="raindancers-network.AssociateSharedResolverRuleProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AssociateSharedResolverRuleProps.Initializer"></a>
+
+```typescript
+import { AssociateSharedResolverRuleProps } from 'raindancers-network'
+
+const associateSharedResolverRuleProps: AssociateSharedResolverRuleProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AssociateSharedResolverRuleProps.property.domainNames">domainNames</a></code> | <code>string[]</code> | domainNames which are to be associated. |
+| <code><a href="#raindancers-network.AssociateSharedResolverRuleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The VPC which will be assocaited with the ResolverRules. |
+
+---
+
+##### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.AssociateSharedResolverRuleProps.property.domainNames"></a>
+
+```typescript
+public readonly domainNames: string[];
+```
+
+- *Type:* string[]
+
+domainNames which are to be associated.
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.AssociateSharedResolverRuleProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+The VPC which will be assocaited with the ResolverRules.
 
 ---
 

@@ -1,8 +1,10 @@
 import {
   aws_route53resolver as r53r,
   aws_ec2 as ec2,
+  custom_resources as cr,
 }
   from 'aws-cdk-lib';
+
 
 import * as constructs from 'constructs';
 
@@ -43,6 +45,58 @@ export class ForwardingRules extends constructs.Construct {
       });
 
     });
+
+  }
+}
+
+export interface AssociateSharedResolverRuleProps {
+
+  /**
+   * domainNames which are to be associated
+   */
+  readonly domainNames: string[];
+  /**
+   * The VPC which will be assocaited with the ResolverRules
+   */
+  readonly vpc: ec2.Vpc;
+
+}
+
+/**
+ * Associate a resolver rule that has been shared to this account
+ */
+export class AssociateSharedResolverRule extends constructs.Construct {
+
+  constructor(scope: constructs.Construct, id: string, props: AssociateSharedResolverRuleProps) {
+	  super(scope, id);
+
+    props.domainNames.forEach((domain) => {
+
+      const resolverRule = new cr.AwsCustomResource(this, `lookupResolverId'${domain}`, {
+        onCreate: {
+          service: '...',
+          action: 'listResolverRules',
+          parameters: {
+            Filters: {
+              Name: 'DomainName',
+              Values: [`${domain}.`],
+            },
+          },
+        },
+        policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+        }),
+      });
+
+      const resolverRuleId = resolverRule.getResponseField('ResolverRules.0.Id');
+
+      new r53r.CfnResolverRuleAssociation(this, `${domain}ResolverRuleAssociation`, {
+        resolverRuleId: resolverRuleId,
+        vpcId: props.vpc.vpcId,
+      });
+
+    });
+
 
   }
 }
