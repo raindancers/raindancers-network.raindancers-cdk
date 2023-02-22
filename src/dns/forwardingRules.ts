@@ -74,7 +74,7 @@ export class AssociateSharedResolverRule extends constructs.Construct {
 
       const resolverRule = new cr.AwsCustomResource(this, `lookupResolverId'${domain}`, {
         onCreate: {
-          service: '...',
+          service: 'Route53Resolver',
           action: 'listResolverRules',
           parameters: {
             Filters: {
