@@ -77,10 +77,12 @@ export class AssociateSharedResolverRule extends constructs.Construct {
           service: 'Route53Resolver',
           action: 'listResolverRules',
           parameters: {
-            Filters: {
-              Name: 'DomainName',
-              Values: [`${domain}.`],
-            },
+            Filters: [
+              {
+                Name: 'DomainName',
+                Values: [`${domain}.`],
+              },
+            ],
           },
           physicalResourceId: cr.PhysicalResourceId.fromResponse('ResolverRules.0.Id'),
         },
