@@ -82,6 +82,7 @@ export class AssociateSharedResolverRule extends constructs.Construct {
               Values: [`${domain}.`],
             },
           },
+          physicalResourceId: cr.PhysicalResourceId.fromResponse('ResolverRules.0.Id'),
         },
         policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
           resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
