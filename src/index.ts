@@ -28,3 +28,6 @@ export * from './nwfirewall/firewallPolicy';
 export * from './nwfirewall/suricataRule';
 export * from './nwfirewall/statefuldatabase';
 export * from './nwfirewall/resourceGroups';
+
+// ssm
+export * from './ssm/manageEC2';

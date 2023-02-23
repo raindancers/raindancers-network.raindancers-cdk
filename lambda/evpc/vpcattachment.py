@@ -22,7 +22,7 @@ def on_update(event):
 
 def on_delete(event):
 	print(network_manager.delete_attachment(
-		attachment_id = event["PhysicalResourceId"]
+		AttachmentId = event["PhysicalResourceId"]
 	))
 
 
@@ -56,6 +56,12 @@ def is_complete(event, context):
     	AttachmentId=event["PhysicalResourceId"]
 	)
 	
+	print('IsCompleteHandler', response)
+
+	if response['VpcAttachment']['Attachment']['State'] == 'FAILED':
+		print(response)
+		raise ValueError('VPC Attachment Failed')
+
 	if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
 		return { 
 			'IsComplete': True,
