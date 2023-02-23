@@ -31,3 +31,6 @@ export * from './nwfirewall/resourceGroups';
 
 // ssm
 export * from './ssm/manageEC2';
+
+//cloudwatch
+//export * from './cloudwatch/monitorUser';

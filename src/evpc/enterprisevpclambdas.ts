@@ -62,6 +62,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
           'networkmanager:DeleteAttachment',
           'account:ListRegions',
           'ec2:DescribeRegions',
+          'iam:CreateServiceLinkedRole',
         ],
       }),
     );
