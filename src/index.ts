@@ -34,3 +34,6 @@ export * from './ssm/manageEC2';
 
 //cloudwatch
 //export * from './cloudwatch/monitorUser';
+
+// ec2
+export * from './ec2/imdvs2';

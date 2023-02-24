@@ -971,6 +971,107 @@ public readonly name: string;
 ---
 
 
+### EnforceImdsv2 <a name="EnforceImdsv2" id="raindancers-network.EnforceImdsv2"></a>
+
+Enforces the use of IMDSv2, without causing replacement of the Instance.
+
+#### Initializers <a name="Initializers" id="raindancers-network.EnforceImdsv2.Initializer"></a>
+
+```typescript
+import { EnforceImdsv2 } from 'raindancers-network'
+
+new EnforceImdsv2(scope: Construct, id: string, props: EnforceImdsv2Props)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnforceImdsv2Props">EnforceImdsv2Props</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnforceImdsv2.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnforceImdsv2.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnforceImdsv2.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.EnforceImdsv2Props">EnforceImdsv2Props</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnforceImdsv2.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.EnforceImdsv2.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnforceImdsv2.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnforceImdsv2.isConstruct"></a>
+
+```typescript
+import { EnforceImdsv2 } from 'raindancers-network'
+
+EnforceImdsv2.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnforceImdsv2.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnforceImdsv2.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnforceImdsv2.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### EnterpriseVpc <a name="EnterpriseVpc" id="raindancers-network.EnterpriseVpc"></a>
 
 Enteprise VPC's take the stock ec2.Vpc and provide numerous convience methods primarly related to connecting to internal networks.
@@ -4698,6 +4799,36 @@ public readonly name: string;
 ```
 
 - *Type:* string
+
+---
+
+### EnforceImdsv2Props <a name="EnforceImdsv2Props" id="raindancers-network.EnforceImdsv2Props"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.EnforceImdsv2Props.Initializer"></a>
+
+```typescript
+import { EnforceImdsv2Props } from 'raindancers-network'
+
+const enforceImdsv2Props: EnforceImdsv2Props = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnforceImdsv2Props.property.instances">instances</a></code> | <code>aws-cdk-lib.aws_ec2.Instance \| aws-cdk-lib.aws_ec2.Instance[]</code> | ec2 Instance or Instances. |
+
+---
+
+##### `instances`<sup>Required</sup> <a name="instances" id="raindancers-network.EnforceImdsv2Props.property.instances"></a>
+
+```typescript
+public readonly instances: Instance | Instance[];
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Instance | aws-cdk-lib.aws_ec2.Instance[]
+
+ec2 Instance or Instances.
 
 ---
 
