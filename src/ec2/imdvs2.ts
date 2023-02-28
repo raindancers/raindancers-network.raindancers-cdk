@@ -11,7 +11,7 @@ export interface EnforceImdsv2Props{
   /**
 	 * ec2 Instance or Instances
 	 */
-  readonly instances: ec2.Instance[] | ec2.Instance;
+  	readonly instances: ec2.Instance[] | ec2.Instance;
 }
 /**
  * Enforces the use of IMDSv2, without causing replacement of the Instance.
@@ -21,7 +21,7 @@ export class EnforceImdsv2 extends constructs.Construct {
   constructor(scope: constructs.Construct, id: string, props: EnforceImdsv2Props) {
     super(scope, id);
 
-
+    // make an array if needed
     let instances = [];
     if (props.instances instanceof ec2.Instance) {
       instances = [props.instances];

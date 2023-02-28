@@ -24,11 +24,11 @@ export class UpdateSSMAgent extends constructs.Construct {
     new ssm.CfnAssociation(this, 'updateSSMagent', {
       targets: [
         {
-          key: 'InstancedIds',
+          key: 'InstanceIds',
           values: [props.instance.instanceId],
         },
       ],
-      name: 'Periodic-SSM-Agent-Update',
+      name: 'AWS-UpdateSSMAgent',
       associationName: 'SystemAssociationForSsmAgentUpdate',
       scheduleExpression: 'rate(7 days)',
       maxConcurrency: '1',

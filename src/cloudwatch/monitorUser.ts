@@ -2,6 +2,7 @@ import {
   aws_ec2 as ec2,
   //aws_ssm as ssm,
   aws_iam as iam,
+  aws_cloudtrail as cloudtrail,
 }
   from 'aws-cdk-lib';
 
@@ -23,14 +24,16 @@ export interface MonitorUserProps {
 /**
    * Monitor a user account that is using Long Term Credentials to check if it is being used from a location that is not expected
    */
-export class UpdateSSMAgent extends constructs.Construct {
+export class MonitorUser extends constructs.Construct {
 
   constructor(scope: constructs.Construct, id: string, props: MonitorUserProps) {
 	  super(scope, id);
 
-    console.log(props.user);
-
-
+    //const userTrail =
+    new cloudtrail.Trail(this, 'userCloudTrail', {
+      trailName: `${props.user.userName}-Logging`,
+      sendToCloudWatchLogs: true,
+    });
   }
 }
 

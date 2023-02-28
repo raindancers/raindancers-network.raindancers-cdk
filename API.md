@@ -210,6 +210,116 @@ The tree node.
 ---
 
 
+### CentralAccountAssnRole <a name="CentralAccountAssnRole" id="raindancers-network.CentralAccountAssnRole"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CentralAccountAssnRole.Initializer"></a>
+
+```typescript
+import { CentralAccountAssnRole } from 'raindancers-network'
+
+new CentralAccountAssnRole(scope: Construct, id: string, props: CentralAccountAssnRoleProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CentralAccountAssnRoleProps">CentralAccountAssnRoleProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CentralAccountAssnRoleProps">CentralAccountAssnRoleProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CentralAccountAssnRole.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CentralAccountAssnRole.isConstruct"></a>
+
+```typescript
+import { CentralAccountAssnRole } from 'raindancers-network'
+
+CentralAccountAssnRole.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CentralAccountAssnRole.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CentralAccountAssnRole.property.assnRole">assnRole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CentralAccountAssnRole.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `assnRole`<sup>Required</sup> <a name="assnRole" id="raindancers-network.CentralAccountAssnRole.property.assnRole"></a>
+
+```typescript
+public readonly assnRole: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+
 ### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.CloudWanTGW"></a>
 
 Create a TransitGateway That is attached to Cloudwan.
@@ -1442,6 +1552,118 @@ public readonly vpcAttachmentSegmentName: string;
 ```
 
 - *Type:* string
+
+---
+
+
+### EnterpriseZone <a name="EnterpriseZone" id="raindancers-network.EnterpriseZone"></a>
+
+create forwarding rules and associate them with a vpc.
+
+#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseZone.Initializer"></a>
+
+```typescript
+import { EnterpriseZone } from 'raindancers-network'
+
+new EnterpriseZone(scope: Construct, id: string, props: EnterpriseZoneProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnterpriseZoneProps">EnterpriseZoneProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseZone.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseZone.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseZone.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.EnterpriseZoneProps">EnterpriseZoneProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseZone.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.EnterpriseZone.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseZone.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseZone.isConstruct"></a>
+
+```typescript
+import { EnterpriseZone } from 'raindancers-network'
+
+EnterpriseZone.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseZone.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseZone.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.EnterpriseZone.property.privateZone">privateZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseZone.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `privateZone`<sup>Required</sup> <a name="privateZone" id="raindancers-network.EnterpriseZone.property.privateZone"></a>
+
+```typescript
+public readonly privateZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
 
 ---
 
@@ -4512,6 +4734,84 @@ indicate true for a S3 Gateway Interface.
 
 ---
 
+### CentralAccount <a name="CentralAccount" id="raindancers-network.CentralAccount"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CentralAccount.Initializer"></a>
+
+```typescript
+import { CentralAccount } from 'raindancers-network'
+
+const centralAccount: CentralAccount = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralAccount.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralAccount.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="raindancers-network.CentralAccount.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `roleArn`<sup>Required</sup> <a name="roleArn" id="raindancers-network.CentralAccount.property.roleArn"></a>
+
+```typescript
+public readonly roleArn: string;
+```
+
+- *Type:* string
+
+---
+
+### CentralAccountAssnRoleProps <a name="CentralAccountAssnRoleProps" id="raindancers-network.CentralAccountAssnRoleProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CentralAccountAssnRoleProps.Initializer"></a>
+
+```typescript
+import { CentralAccountAssnRoleProps } from 'raindancers-network'
+
+const centralAccountAssnRoleProps: CentralAccountAssnRoleProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `orgId`<sup>Required</sup> <a name="orgId" id="raindancers-network.CentralAccountAssnRoleProps.property.orgId"></a>
+
+```typescript
+public readonly orgId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CentralAccountAssnRoleProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
 ### CloudWanRoutingProtocolProps <a name="CloudWanRoutingProtocolProps" id="raindancers-network.CloudWanRoutingProtocolProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CloudWanRoutingProtocolProps.Initializer"></a>
@@ -4859,6 +5159,67 @@ public readonly vpc: Vpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+### EnterpriseZoneProps <a name="EnterpriseZoneProps" id="raindancers-network.EnterpriseZoneProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.EnterpriseZoneProps.Initializer"></a>
+
+```typescript
+import { EnterpriseZoneProps } from 'raindancers-network'
+
+const enterpriseZoneProps: EnterpriseZoneProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.centralAccount">centralAccount</a></code> | <code><a href="#raindancers-network.CentralAccount">CentralAccount</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.remoteVpc">remoteVpc</a></code> | <code><a href="#raindancers-network.RemoteVpc">RemoteVpc</a></code> | *No description.* |
+
+---
+
+##### `centralAccount`<sup>Required</sup> <a name="centralAccount" id="raindancers-network.EnterpriseZoneProps.property.centralAccount"></a>
+
+```typescript
+public readonly centralAccount: CentralAccount;
+```
+
+- *Type:* <a href="#raindancers-network.CentralAccount">CentralAccount</a>
+
+---
+
+##### `enterpriseDomainName`<sup>Required</sup> <a name="enterpriseDomainName" id="raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName"></a>
+
+```typescript
+public readonly enterpriseDomainName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `localVpc`<sup>Required</sup> <a name="localVpc" id="raindancers-network.EnterpriseZoneProps.property.localVpc"></a>
+
+```typescript
+public readonly localVpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `remoteVpc`<sup>Required</sup> <a name="remoteVpc" id="raindancers-network.EnterpriseZoneProps.property.remoteVpc"></a>
+
+```typescript
+public readonly remoteVpc: RemoteVpc;
+```
+
+- *Type:* <a href="#raindancers-network.RemoteVpc">RemoteVpc</a>
 
 ---
 
@@ -6159,6 +6520,45 @@ public readonly arn: string;
 
 ```typescript
 public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+### RemoteVpc <a name="RemoteVpc" id="raindancers-network.RemoteVpc"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.RemoteVpc.Initializer"></a>
+
+```typescript
+import { RemoteVpc } from 'raindancers-network'
+
+const remoteVpc: RemoteVpc = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.RemoteVpc.property.vpcId">vpcId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RemoteVpc.property.vpcRegion">vpcRegion</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `vpcId`<sup>Required</sup> <a name="vpcId" id="raindancers-network.RemoteVpc.property.vpcId"></a>
+
+```typescript
+public readonly vpcId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpcRegion`<sup>Required</sup> <a name="vpcRegion" id="raindancers-network.RemoteVpc.property.vpcRegion"></a>
+
+```typescript
+public readonly vpcRegion: string;
 ```
 
 - *Type:* string
