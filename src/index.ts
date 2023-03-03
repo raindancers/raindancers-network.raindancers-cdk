@@ -38,3 +38,8 @@ export * from './ssm/manageEC2';
 
 // ec2
 export * from './ec2/imdvs2';
+
+// crowdstrike
+export * from './crowdstrike/crowdstrikeRegionInfo';
+export * from './crowdstrike/crowdstrike';
+export * from './crowdstrike/crowdstrikeNLBendpoint';

@@ -947,6 +947,393 @@ the name for the segment.
 ---
 
 
+### CrowdStrikeExtendedEndpoint <a name="CrowdStrikeExtendedEndpoint" id="raindancers-network.CrowdStrikeExtendedEndpoint"></a>
+
+This will.
+
+#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer"></a>
+
+```typescript
+import { CrowdStrikeExtendedEndpoint } from 'raindancers-network'
+
+new CrowdStrikeExtendedEndpoint(scope: Construct, id: string, props: CrowdStrikeExtendedEndpointProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps">CrowdStrikeExtendedEndpointProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeExtendedEndpointProps">CrowdStrikeExtendedEndpointProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrowdStrikeExtendedEndpoint.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct"></a>
+
+```typescript
+import { CrowdStrikeExtendedEndpoint } from 'raindancers-network'
+
+CrowdStrikeExtendedEndpoint.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone">downloadZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone">proxyZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.download"></a>
+
+```typescript
+public readonly download: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `downloadZone`<sup>Required</sup> <a name="downloadZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone"></a>
+
+```typescript
+public readonly downloadZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy"></a>
+
+```typescript
+public readonly proxy: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `proxyZone`<sup>Required</sup> <a name="proxyZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone"></a>
+
+```typescript
+public readonly proxyZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+
+### CrowdStrikeNLB <a name="CrowdStrikeNLB" id="raindancers-network.CrowdStrikeNLB"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikeNLB.Initializer"></a>
+
+```typescript
+import { CrowdStrikeNLB } from 'raindancers-network'
+
+new CrowdStrikeNLB(scope: Construct, id: string, props: CrowdStrikeNLBProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikeNLBProps">CrowdStrikeNLBProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeNLBProps">CrowdStrikeNLBProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrowdStrikeNLB.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikeNLB.isConstruct"></a>
+
+```typescript
+import { CrowdStrikeNLB } from 'raindancers-network'
+
+CrowdStrikeNLB.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikeNLB.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeNLB.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikeNLB.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
+### CrowdStrikePrivateLinkEndpoint <a name="CrowdStrikePrivateLinkEndpoint" id="raindancers-network.CrowdStrikePrivateLinkEndpoint"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer"></a>
+
+```typescript
+import { CrowdStrikePrivateLinkEndpoint } from 'raindancers-network'
+
+new CrowdStrikePrivateLinkEndpoint(scope: Construct, id: string, props: CrowdStrikePrivateLinkEndpointProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps">CrowdStrikePrivateLinkEndpointProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps">CrowdStrikePrivateLinkEndpointProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct"></a>
+
+```typescript
+import { CrowdStrikePrivateLinkEndpoint } from 'raindancers-network'
+
+CrowdStrikePrivateLinkEndpoint.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone">downloadhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone">proxyhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download"></a>
+
+```typescript
+public readonly download: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone"></a>
+
+```typescript
+public readonly downloadhostedZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy"></a>
+
+```typescript
+public readonly proxy: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone"></a>
+
+```typescript
+public readonly proxyhostedZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+
 ### DynamicTagResourceGroup <a name="DynamicTagResourceGroup" id="raindancers-network.DynamicTagResourceGroup"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.DynamicTagResourceGroup.Initializer"></a>
@@ -5024,6 +5411,265 @@ public readonly tags: Tag[];
 
 ---
 
+### CrowdStrikeExtendedEndpointProps <a name="CrowdStrikeExtendedEndpointProps" id="raindancers-network.CrowdStrikeExtendedEndpointProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeExtendedEndpointProps.Initializer"></a>
+
+```typescript
+import { CrowdStrikeExtendedEndpointProps } from 'raindancers-network'
+
+const crowdStrikeExtendedEndpointProps: CrowdStrikeExtendedEndpointProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc">peeringVpc</a></code> | <code><a href="#raindancers-network.VpcRegionId">VpcRegionId</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc">useELBInPeeredVpc</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr">vpccidr</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `crowdstrikeCloud`<sup>Required</sup> <a name="crowdstrikeCloud" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud"></a>
+
+```typescript
+public readonly crowdstrikeCloud: CrowdStrikeCloud;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
+
+The EC2 Instance that will be udpated.
+
+---
+
+##### `peeringVpc`<sup>Optional</sup> <a name="peeringVpc" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc"></a>
+
+```typescript
+public readonly peeringVpc: VpcRegionId;
+```
+
+- *Type:* <a href="#raindancers-network.VpcRegionId">VpcRegionId</a>
+
+---
+
+##### `useELBInPeeredVpc`<sup>Optional</sup> <a name="useELBInPeeredVpc" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc"></a>
+
+```typescript
+public readonly useELBInPeeredVpc: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `vpccidr`<sup>Optional</sup> <a name="vpccidr" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr"></a>
+
+```typescript
+public readonly vpccidr: string;
+```
+
+- *Type:* string
+
+---
+
+### CrowdStrikeNLBProps <a name="CrowdStrikeNLBProps" id="raindancers-network.CrowdStrikeNLBProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeNLBProps.Initializer"></a>
+
+```typescript
+import { CrowdStrikeNLBProps } from 'raindancers-network'
+
+const crowdStrikeNLBProps: CrowdStrikeNLBProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone">downloadhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone">proxyhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeNLBProps.property.download"></a>
+
+```typescript
+public readonly download: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone"></a>
+
+```typescript
+public readonly downloadhostedZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeNLBProps.property.proxy"></a>
+
+```typescript
+public readonly proxy: InterfaceVpcEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+
+---
+
+##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone"></a>
+
+```typescript
+public readonly proxyhostedZone: PrivateHostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+
+---
+
+##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.CrowdStrikeNLBProps.property.subnetGroupName"></a>
+
+```typescript
+public readonly subnetGroupName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CrowdStrikeNLBProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+### CrowdStrikePrivateLinkEndpointProps <a name="CrowdStrikePrivateLinkEndpointProps" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.Initializer"></a>
+
+```typescript
+import { CrowdStrikePrivateLinkEndpointProps } from 'raindancers-network'
+
+const crowdStrikePrivateLinkEndpointProps: CrowdStrikePrivateLinkEndpointProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud">crowdStrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.subnets">subnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB">peeredwithNLB</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `crowdStrikeCloud`<sup>Required</sup> <a name="crowdStrikeCloud" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud"></a>
+
+```typescript
+public readonly crowdStrikeCloud: CrowdStrikeCloud;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
+
+---
+
+##### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.subnets"></a>
+
+```typescript
+public readonly subnets: SubnetSelection;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+The EC2 Instance that will be udpated.
+
+---
+
+##### `peeredwithNLB`<sup>Optional</sup> <a name="peeredwithNLB" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB"></a>
+
+```typescript
+public readonly peeredwithNLB: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+### CrowdStrikeServices <a name="CrowdStrikeServices" id="raindancers-network.CrowdStrikeServices"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeServices.Initializer"></a>
+
+```typescript
+import { CrowdStrikeServices } from 'raindancers-network'
+
+const crowdStrikeServices: CrowdStrikeServices = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeServices.property.awsRegion">awsRegion</a></code> | <code><a href="#raindancers-network.CrowdStrikeRegion">CrowdStrikeRegion</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeServices.property.downloadServer">downloadServer</a></code> | <code><a href="#raindancers-network.Endpoint">Endpoint</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeServices.property.sensorProxy">sensorProxy</a></code> | <code><a href="#raindancers-network.Endpoint">Endpoint</a></code> | *No description.* |
+
+---
+
+##### `awsRegion`<sup>Required</sup> <a name="awsRegion" id="raindancers-network.CrowdStrikeServices.property.awsRegion"></a>
+
+```typescript
+public readonly awsRegion: CrowdStrikeRegion;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeRegion">CrowdStrikeRegion</a>
+
+---
+
+##### `downloadServer`<sup>Required</sup> <a name="downloadServer" id="raindancers-network.CrowdStrikeServices.property.downloadServer"></a>
+
+```typescript
+public readonly downloadServer: Endpoint;
+```
+
+- *Type:* <a href="#raindancers-network.Endpoint">Endpoint</a>
+
+---
+
+##### `sensorProxy`<sup>Required</sup> <a name="sensorProxy" id="raindancers-network.CrowdStrikeServices.property.sensorProxy"></a>
+
+```typescript
+public readonly sensorProxy: Endpoint;
+```
+
+- *Type:* <a href="#raindancers-network.Endpoint">Endpoint</a>
+
+---
+
 ### DynamicTagResourceGroupProps <a name="DynamicTagResourceGroupProps" id="raindancers-network.DynamicTagResourceGroupProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupProps.Initializer"></a>
@@ -5096,6 +5742,45 @@ public readonly arn: string;
 
 ```typescript
 public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+### Endpoint <a name="Endpoint" id="raindancers-network.Endpoint"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.Endpoint.Initializer"></a>
+
+```typescript
+import { Endpoint } from 'raindancers-network'
+
+const endpoint: Endpoint = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Endpoint.property.dnsName">dnsName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.Endpoint.property.vpcEndpointName">vpcEndpointName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `dnsName`<sup>Required</sup> <a name="dnsName" id="raindancers-network.Endpoint.property.dnsName"></a>
+
+```typescript
+public readonly dnsName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpcEndpointName`<sup>Required</sup> <a name="vpcEndpointName" id="raindancers-network.Endpoint.property.vpcEndpointName"></a>
+
+```typescript
+public readonly vpcEndpointName: string;
 ```
 
 - *Type:* string
@@ -7399,6 +8084,45 @@ The EC2 Instance that will be udpated.
 
 ---
 
+### VpcRegionId <a name="VpcRegionId" id="raindancers-network.VpcRegionId"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.VpcRegionId.Initializer"></a>
+
+```typescript
+import { VpcRegionId } from 'raindancers-network'
+
+const vpcRegionId: VpcRegionId = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.VpcRegionId.property.peeringVpcId">peeringVpcId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.VpcRegionId.property.peerVpcRegion">peerVpcRegion</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `peeringVpcId`<sup>Required</sup> <a name="peeringVpcId" id="raindancers-network.VpcRegionId.property.peeringVpcId"></a>
+
+```typescript
+public readonly peeringVpcId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `peerVpcRegion`<sup>Required</sup> <a name="peerVpcRegion" id="raindancers-network.VpcRegionId.property.peerVpcRegion"></a>
+
+```typescript
+public readonly peerVpcRegion: string;
+```
+
+- *Type:* string
+
+---
+
 ### VpnProps <a name="VpnProps" id="raindancers-network.VpnProps"></a>
 
 Properties for S2S VPN.
@@ -7787,6 +8511,81 @@ public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
 
 ## Classes <a name="Classes" id="Classes"></a>
 
+### CrowdStrikePrivateLink <a name="CrowdStrikePrivateLink" id="raindancers-network.CrowdStrikePrivateLink"></a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLink.toString">toString</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrowdStrikePrivateLink.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.value">value</a></code> | <code><a href="#raindancers-network.CrowdStrikeServices">CrowdStrikeServices</a></code> | *No description.* |
+
+---
+
+##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.CrowdStrikePrivateLink.property.value"></a>
+
+```typescript
+public readonly value: CrowdStrikeServices;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeServices">CrowdStrikeServices</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.EU1">EU1</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.US1">US1</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.US2">US2</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
+
+---
+
+##### `EU1`<sup>Required</sup> <a name="EU1" id="raindancers-network.CrowdStrikePrivateLink.property.EU1"></a>
+
+```typescript
+public readonly EU1: CrowdStrikePrivateLink;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+
+---
+
+##### `US1`<sup>Required</sup> <a name="US1" id="raindancers-network.CrowdStrikePrivateLink.property.US1"></a>
+
+```typescript
+public readonly US1: CrowdStrikePrivateLink;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+
+---
+
+##### `US2`<sup>Required</sup> <a name="US2" id="raindancers-network.CrowdStrikePrivateLink.property.US2"></a>
+
+```typescript
+public readonly US2: CrowdStrikePrivateLink;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+
+---
+
 ### StatelessRule <a name="StatelessRule" id="raindancers-network.StatelessRule"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.StatelessRule.Initializer"></a>
@@ -8084,6 +8883,60 @@ Conditon Logic.
 
 
 ##### `OR` <a name="OR" id="raindancers-network.ConditionLogic.OR"></a>
+
+---
+
+
+### CrowdStrikeCloud <a name="CrowdStrikeCloud" id="raindancers-network.CrowdStrikeCloud"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeCloud.US1">US1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeCloud.US2">US2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeCloud.EU1">EU1</a></code> | *No description.* |
+
+---
+
+##### `US1` <a name="US1" id="raindancers-network.CrowdStrikeCloud.US1"></a>
+
+---
+
+
+##### `US2` <a name="US2" id="raindancers-network.CrowdStrikeCloud.US2"></a>
+
+---
+
+
+##### `EU1` <a name="EU1" id="raindancers-network.CrowdStrikeCloud.EU1"></a>
+
+---
+
+
+### CrowdStrikeRegion <a name="CrowdStrikeRegion" id="raindancers-network.CrowdStrikeRegion"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrowdStrikeRegion.US_WEST_1">US_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeRegion.US_WEST_2">US_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeRegion.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
+
+---
+
+##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.CrowdStrikeRegion.US_WEST_1"></a>
+
+---
+
+
+##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.CrowdStrikeRegion.US_WEST_2"></a>
+
+---
+
+
+##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.CrowdStrikeRegion.EU_CENTRAL_1"></a>
 
 ---
 
