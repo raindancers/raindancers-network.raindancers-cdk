@@ -54,17 +54,16 @@ export class CrowdStrikeExtendedEndpoint extends constructs.Construct {
 
     const crowdstrikeVPC = new EnterpriseVpc(this, 'EVPC', {
       vpc: new ec2.Vpc(this, 'VPC', {
-
-			  ipAddresses: ec2.IpAddresses.cidr(cidr),
-			  maxAzs: 2,
-			  vpcName: 'CrowdstrikeVPC' + props.crowdstrikeCloud,
-			  subnetConfiguration: [
+        ipAddresses: ec2.IpAddresses.cidr(cidr),
+        maxAzs: 2,
+        vpcName: 'CrowdstrikeVPC' + props.crowdstrikeCloud,
+        subnetConfiguration: [
           {
-				  name: 'inside',
-				  subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
-				  cidrMask: 27,
+            name: 'inside',
+            subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
+            cidrMask: 27,
           },
-			  ],
+        ],
       }),
     });
 
@@ -177,7 +176,7 @@ export class CrowdStrikeNLB extends constructs.Construct {
         service: 'EC2',
         action: 'describeNetworkInterfaces',
         parameters: {
-				  NetworkInterfaceIds: props.proxy.vpcEndpointNetworkInterfaceIds,
+          NetworkInterfaceIds: props.proxy.vpcEndpointNetworkInterfaceIds,
         },
         physicalResourceId: cr.PhysicalResourceId.of('proxyEni'),
       },
@@ -218,18 +217,17 @@ export class CrowdStrikeNLB extends constructs.Construct {
 
     const downloadEni = new cr.AwsCustomResource(this, 'DescribeNetworkInterfaces', {
       onCreate: {
-			  service: 'EC2',
-			  action: 'describeNetworkInterfaces',
-			  parameters: {
+        service: 'EC2',
+        action: 'describeNetworkInterfaces',
+        parameters: {
           NetworkInterfaceIds: props.download.vpcEndpointNetworkInterfaceIds,
-			  },
-			  physicalResourceId: cr.PhysicalResourceId.of('downloadEni'),
+        },
+        physicalResourceId: cr.PhysicalResourceId.of('downloadEni'),
       },
       policy: cr.AwsCustomResourcePolicy.fromSdkCalls(
-			  { resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE },
+        { resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE },
       ),
-		  },
-    );
+    });
 
     const downloadtargets = [
       new elbv2_targets.IpTarget(downloadEni.getResponseField('NetworkInterfaces.0.PrivateIpAddress')),
@@ -258,7 +256,5 @@ export class CrowdStrikeNLB extends constructs.Construct {
       zone: props.downloadhostedZone,
       target: r53.RecordTarget.fromAlias(new r53targets.LoadBalancerTarget(Proxyloadbalancer)),
     });
-
-
   }
 }
