@@ -1032,10 +1032,12 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone">downloadZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone">proxyZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone">downloadZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZoneName">downloadZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone">proxyZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZoneName">proxyZoneName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1054,40 +1056,60 @@ The tree node.
 ##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.download"></a>
 
 ```typescript
-public readonly download: InterfaceVpcEndpoint;
+public readonly download: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `downloadZone`<sup>Required</sup> <a name="downloadZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone"></a>
 
 ```typescript
-public readonly downloadZone: PrivateHostedZone;
+public readonly downloadZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `downloadZoneName`<sup>Required</sup> <a name="downloadZoneName" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZoneName"></a>
+
+```typescript
+public readonly downloadZoneName: string;
+```
+
+- *Type:* string
 
 ---
 
 ##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy"></a>
 
 ```typescript
-public readonly proxy: InterfaceVpcEndpoint;
+public readonly proxy: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `proxyZone`<sup>Required</sup> <a name="proxyZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone"></a>
 
 ```typescript
-public readonly proxyZone: PrivateHostedZone;
+public readonly proxyZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `proxyZoneName`<sup>Required</sup> <a name="proxyZoneName" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZoneName"></a>
+
+```typescript
+public readonly proxyZoneName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -1274,10 +1296,12 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone">downloadhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone">proxyhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1296,40 +1320,60 @@ The tree node.
 ##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download"></a>
 
 ```typescript
-public readonly download: InterfaceVpcEndpoint;
+public readonly download: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone"></a>
 
 ```typescript
-public readonly downloadhostedZone: PrivateHostedZone;
+public readonly downloadhostedZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName"></a>
+
+```typescript
+public readonly downloadhostedZoneName: string;
+```
+
+- *Type:* string
 
 ---
 
 ##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy"></a>
 
 ```typescript
-public readonly proxy: InterfaceVpcEndpoint;
+public readonly proxy: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone"></a>
 
 ```typescript
-public readonly proxyhostedZone: PrivateHostedZone;
+public readonly proxyhostedZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName"></a>
+
+```typescript
+public readonly proxyhostedZoneName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -5425,7 +5469,7 @@ const crowdStrikeExtendedEndpointProps: CrowdStrikeExtendedEndpointProps = { ...
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | aws  The EC2 Instance that will be udpated. |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc">peeringVpc</a></code> | <code><a href="#raindancers-network.VpcRegionId">VpcRegionId</a></code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc">useELBInPeeredVpc</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr">vpccidr</a></code> | <code>string</code> | *No description.* |
@@ -5440,7 +5484,7 @@ public readonly crowdstrikeCloud: CrowdStrikeCloud;
 
 - *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
 
-The EC2 Instance that will be udpated.
+aws  The EC2 Instance that will be udpated.
 
 ---
 
@@ -5488,52 +5532,107 @@ const crowdStrikeNLBProps: CrowdStrikeNLBProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.download">download</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone">downloadhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxy">proxy</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone">proxyhostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.crowdstrikeRegion">crowdstrikeRegion</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.routeresolverEndpoints">routeresolverEndpoints</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `crowdstrikeRegion`<sup>Required</sup> <a name="crowdstrikeRegion" id="raindancers-network.CrowdStrikeNLBProps.property.crowdstrikeRegion"></a>
+
+```typescript
+public readonly crowdstrikeRegion: CrowdStrikeCloud;
+```
+
+- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
 
 ---
 
 ##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeNLBProps.property.download"></a>
 
 ```typescript
-public readonly download: InterfaceVpcEndpoint;
+public readonly download: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone"></a>
 
 ```typescript
-public readonly downloadhostedZone: PrivateHostedZone;
+public readonly downloadhostedZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZoneName"></a>
+
+```typescript
+public readonly downloadhostedZoneName: string;
+```
+
+- *Type:* string
 
 ---
 
 ##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeNLBProps.property.proxy"></a>
 
 ```typescript
-public readonly proxy: InterfaceVpcEndpoint;
+public readonly proxy: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpoint
+- *Type:* string
 
 ---
 
 ##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone"></a>
 
 ```typescript
-public readonly proxyhostedZone: PrivateHostedZone;
+public readonly proxyhostedZone: string;
 ```
 
-- *Type:* aws-cdk-lib.aws_route53.PrivateHostedZone
+- *Type:* string
+
+---
+
+##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZoneName"></a>
+
+```typescript
+public readonly proxyhostedZoneName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.CrowdStrikeNLBProps.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+---
+
+##### `routeresolverEndpoints`<sup>Required</sup> <a name="routeresolverEndpoints" id="raindancers-network.CrowdStrikeNLBProps.property.routeresolverEndpoints"></a>
+
+```typescript
+public readonly routeresolverEndpoints: R53Resolverendpoints;
+```
+
+- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
 
 ---
 

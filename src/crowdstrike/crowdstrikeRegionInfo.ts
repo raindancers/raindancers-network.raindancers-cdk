@@ -45,7 +45,7 @@ export class CrowdStrikePrivateLink {
       },
       downloadServer: {
         dnsName: 'lfodown01-gyr-maverick.cloudsink.net',
-        vpcEndpointName: 'com.amazonaws.vpce.us-west-2.vpce-svc-0e11def2d8620ae74	us-west-2',
+        vpcEndpointName: 'com.amazonaws.vpce.us-west-2.vpce-svc-0e11def2d8620ae74',
       },
       awsRegion: CrowdStrikeRegion.US_WEST_2,
 	  },

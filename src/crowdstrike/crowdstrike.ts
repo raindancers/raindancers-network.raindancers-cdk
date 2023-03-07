@@ -22,10 +22,12 @@ export interface CrowdStrikePrivateLinkEndpointProps {
 
 export class CrowdStrikePrivateLinkEndpoint extends constructs.Construct {
 
-  downloadhostedZone: r53.PrivateHostedZone;
-  proxyhostedZone: r53.PrivateHostedZone;
-  proxy: ec2.InterfaceVpcEndpoint;
-  download: ec2.InterfaceVpcEndpoint;
+  downloadhostedZone: string;//r53.PrivateHostedZone;
+  downloadhostedZoneName: string;
+  proxyhostedZone: string; //r53.PrivateHostedZone;
+  proxyhostedZoneName: string;
+  proxy: string; //ec2.InterfaceVpcEndpoint;
+  download: string; //ec2.InterfaceVpcEndpoint;
 
 
   constructor(scope: constructs.Construct, id: string, props: CrowdStrikePrivateLinkEndpointProps) {
@@ -47,39 +49,49 @@ export class CrowdStrikePrivateLinkEndpoint extends constructs.Construct {
         throw new Error('InternalError ⏰');
     }
 
-    this.proxy = new ec2.InterfaceVpcEndpoint(this, 'CrowdstrikeSensorProxyEndpoint', {
+    const proxy = new ec2.InterfaceVpcEndpoint(this, 'CrowdstrikeSensorProxyEndpoint', {
       vpc: props.vpc,
       service: new ec2.InterfaceVpcEndpointService(endpoint.value.sensorProxy.vpcEndpointName),
       subnets: props.subnets,
     });
 
-    this.download = new ec2.InterfaceVpcEndpoint(this, 'CrowdstrikeDownloadServerEndpoint', {
+    this.proxy = proxy.vpcEndpointId;
+
+    const download = new ec2.InterfaceVpcEndpoint(this, 'CrowdstrikeDownloadServerEndpoint', {
       vpc: props.vpc,
       service: new ec2.InterfaceVpcEndpointService(endpoint.value.downloadServer.vpcEndpointName),
       subnets: props.subnets,
     });
 
+    this.download = download.vpcEndpointId;
 
-    this.proxyhostedZone = new r53.PrivateHostedZone(this, 'sensorproxyZone', {
+
+    const proxyhostedZone = new r53.PrivateHostedZone(this, 'sensorproxyZone', {
       vpc: props.vpc,
       zoneName: endpoint.value.sensorProxy.dnsName,
     });
 
-    this.downloadhostedZone = new r53.PrivateHostedZone(this, 'downloadZone', {
+    this.proxyhostedZone = proxyhostedZone.hostedZoneId;
+    this.proxyhostedZoneName = endpoint.value.sensorProxy.dnsName;
+
+    const downloadhostedZone = new r53.PrivateHostedZone(this, 'downloadZone', {
       vpc: props.vpc,
       zoneName: endpoint.value.downloadServer.dnsName,
     });
 
+    this.downloadhostedZone = downloadhostedZone.hostedZoneId;
+    this.downloadhostedZoneName = endpoint.value.downloadServer.dnsName;
+
     if ( !props.peeredwithNLB) {
 
       new r53.ARecord(this, 'proxyarecord', {
-        zone: this.proxyhostedZone,
-        target: r53.RecordTarget.fromAlias(new targets.InterfaceVpcEndpointTarget(this.proxy)),
+        zone: proxyhostedZone,
+        target: r53.RecordTarget.fromAlias(new targets.InterfaceVpcEndpointTarget(proxy)),
       });
 
       new r53.ARecord(this, 'downloadrecord', {
-        zone: this.downloadhostedZone,
-        target: r53.RecordTarget.fromAlias(new targets.InterfaceVpcEndpointTarget(this.download)),
+        zone: downloadhostedZone,
+        target: r53.RecordTarget.fromAlias(new targets.InterfaceVpcEndpointTarget(download)),
       });
     }
   }
