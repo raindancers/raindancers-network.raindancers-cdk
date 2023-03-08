@@ -5469,7 +5469,7 @@ const crowdStrikeExtendedEndpointProps: CrowdStrikeExtendedEndpointProps = { ...
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | aws  The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | aws The EC2 Instance that will be udpated. |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc">peeringVpc</a></code> | <code><a href="#raindancers-network.VpcRegionId">VpcRegionId</a></code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc">useELBInPeeredVpc</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr">vpccidr</a></code> | <code>string</code> | *No description.* |
@@ -5484,7 +5484,7 @@ public readonly crowdstrikeCloud: CrowdStrikeCloud;
 
 - *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
 
-aws  The EC2 Instance that will be udpated.
+aws The EC2 Instance that will be udpated.
 
 ---
 
