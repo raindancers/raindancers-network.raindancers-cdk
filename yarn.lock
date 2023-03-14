@@ -25,7 +25,7 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.78.tgz#dc500bdd5534ca3390d5be7764ca8916c76e6d5d"
   integrity sha512-NMGFaszbLkLQlxIJ0ydyO+P78cgTEUleGt1nn3CSRyuBHoYkHNGAcY2JUxTFhQc3/AZuq1x4w87zqh7eAOTyTw==
 
-"@aws-cdk/aws-redshift-alpha@^2.67.0-alpha.0":
+"@aws-cdk/aws-redshift-alpha@2.67.0-alpha.0":
   version "2.67.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-redshift-alpha/-/aws-redshift-alpha-2.67.0-alpha.0.tgz#5ca1463dd1e3aaf7bc018a90f26574f3270f11c8"
   integrity sha512-tfzV75N8X/jlikH0HdtOpiYTNKykay/Vs/WshBQlH8IzSvzllTxr0ykjdjMbymLGxZlsllwjAOqm0poEltr7bw==

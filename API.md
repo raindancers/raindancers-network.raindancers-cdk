@@ -2,6 +2,201 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### Assignment <a name="Assignment" id="raindancers-network.Assignment"></a>
+
+- *Implements:* <a href="#raindancers-network.IAssignment">IAssignment</a>
+
+The assignment construct.
+
+Has no import method because there is no attributes to import.
+
+#### Initializers <a name="Initializers" id="raindancers-network.Assignment.Initializer"></a>
+
+```typescript
+import { Assignment } from 'raindancers-network'
+
+new Assignment(scope: Construct, id: string, props: AssignmentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Assignment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.Assignment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.Assignment.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AssignmentProps">AssignmentProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Assignment.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Assignment.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.Assignment.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AssignmentProps">AssignmentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Assignment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.Assignment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.Assignment.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.Assignment.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.Assignment.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Assignment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.Assignment.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#raindancers-network.Assignment.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.Assignment.isConstruct"></a>
+
+```typescript
+import { Assignment } from 'raindancers-network'
+
+Assignment.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.Assignment.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.Assignment.isOwnedResource"></a>
+
+```typescript
+import { Assignment } from 'raindancers-network'
+
+Assignment.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Assignment.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="raindancers-network.Assignment.isResource"></a>
+
+```typescript
+import { Assignment } from 'raindancers-network'
+
+Assignment.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Assignment.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Assignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.Assignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.Assignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.Assignment.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.Assignment.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.Assignment.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+
 ### AssociateSharedResolverRule <a name="AssociateSharedResolverRule" id="raindancers-network.AssociateSharedResolverRule"></a>
 
 Associate a resolver rule that has been shared to this account.
@@ -1378,6 +1573,219 @@ public readonly proxyhostedZoneName: string;
 ---
 
 
+### DataLakeBucket <a name="DataLakeBucket" id="raindancers-network.DataLakeBucket"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.DataLakeBucket.Initializer"></a>
+
+```typescript
+import { DataLakeBucket } from 'raindancers-network'
+
+new DataLakeBucket(scope: Construct, id: string, props: DataLakeBucketProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DataLakeBucket.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.DataLakeBucket.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.DataLakeBucket.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.DataLakeBucketProps">DataLakeBucketProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.DataLakeBucket.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.DataLakeBucket.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.DataLakeBucket.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.DataLakeBucketProps">DataLakeBucketProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DataLakeBucket.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.DataLakeBucket.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DataLakeBucket.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.DataLakeBucket.isConstruct"></a>
+
+```typescript
+import { DataLakeBucket } from 'raindancers-network'
+
+DataLakeBucket.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.DataLakeBucket.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DataLakeBucket.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.DataLakeBucket.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.DataLakeBucket.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.DataLakeBucket.property.bucket"></a>
+
+```typescript
+public readonly bucket: Bucket;
+```
+
+- *Type:* aws-cdk-lib.aws_s3.Bucket
+
+---
+
+
+### DatalakeUserPolicy <a name="DatalakeUserPolicy" id="raindancers-network.DatalakeUserPolicy"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.DatalakeUserPolicy.Initializer"></a>
+
+```typescript
+import { DatalakeUserPolicy } from 'raindancers-network'
+
+new DatalakeUserPolicy(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.DatalakeUserPolicy.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.DatalakeUserPolicy.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.DatalakeUserPolicy.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.DatalakeUserPolicy.isConstruct"></a>
+
+```typescript
+import { DatalakeUserPolicy } from 'raindancers-network'
+
+DatalakeUserPolicy.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.DatalakeUserPolicy.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.DatalakeUserPolicy.property.managedPolicy">managedPolicy</a></code> | <code>aws-cdk-lib.aws_iam.ManagedPolicy</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.DatalakeUserPolicy.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `managedPolicy`<sup>Required</sup> <a name="managedPolicy" id="raindancers-network.DatalakeUserPolicy.property.managedPolicy"></a>
+
+```typescript
+public readonly managedPolicy: ManagedPolicy;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.ManagedPolicy
+
+---
+
+
 ### DynamicTagResourceGroup <a name="DynamicTagResourceGroup" id="raindancers-network.DynamicTagResourceGroup"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.DynamicTagResourceGroup.Initializer"></a>
@@ -1662,6 +2070,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
+| <code><a href="#raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList">createAndShareSubnetPrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
 | <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
 
@@ -1752,6 +2161,30 @@ Enable CloudWanRoutingProtocol.
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.CloudWanRoutingProtocolProps">CloudWanRoutingProtocolProps</a>
+
+---
+
+##### `createAndShareSubnetPrefixList` <a name="createAndShareSubnetPrefixList" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList"></a>
+
+```typescript
+public createAndShareSubnetPrefixList(name: string, subnets: SubnetSelection, orgArn: string): CfnPrefixList
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.subnets"></a>
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
+
+---
+
+###### `orgArn`<sup>Required</sup> <a name="orgArn" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.orgArn"></a>
+
+- *Type:* string
 
 ---
 
@@ -3051,6 +3484,118 @@ The default subnet configuration if natGateways specified to be 0.
 
 ---
 
+### FindPrefixList <a name="FindPrefixList" id="raindancers-network.FindPrefixList"></a>
+
+Enforces the use of IMDSv2, without causing replacement of the Instance.
+
+#### Initializers <a name="Initializers" id="raindancers-network.FindPrefixList.Initializer"></a>
+
+```typescript
+import { FindPrefixList } from 'raindancers-network'
+
+new FindPrefixList(scope: Construct, id: string, props: FindPrefixListProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FindPrefixListProps">FindPrefixListProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FindPrefixList.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FindPrefixList.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FindPrefixList.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.FindPrefixListProps">FindPrefixListProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FindPrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.FindPrefixList.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.FindPrefixList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FindPrefixList.isConstruct"></a>
+
+```typescript
+import { FindPrefixList } from 'raindancers-network'
+
+FindPrefixList.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FindPrefixList.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FindPrefixList.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.FindPrefixList.property.prefixListId">prefixListId</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FindPrefixList.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `prefixListId`<sup>Required</sup> <a name="prefixListId" id="raindancers-network.FindPrefixList.property.prefixListId"></a>
+
+```typescript
+public readonly prefixListId: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### FirewallPolicy <a name="FirewallPolicy" id="raindancers-network.FirewallPolicy"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.FirewallPolicy.Initializer"></a>
@@ -3671,6 +4216,109 @@ returns the created ipam Pool.
 ---
 
 
+### LakeFormationWorkFlowRole <a name="LakeFormationWorkFlowRole" id="raindancers-network.LakeFormationWorkFlowRole"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.LakeFormationWorkFlowRole.Initializer"></a>
+
+```typescript
+import { LakeFormationWorkFlowRole } from 'raindancers-network'
+
+new LakeFormationWorkFlowRole(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.LakeFormationWorkFlowRole.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.LakeFormationWorkFlowRole.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.LakeFormationWorkFlowRole.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.LakeFormationWorkFlowRole.isConstruct"></a>
+
+```typescript
+import { LakeFormationWorkFlowRole } from 'raindancers-network'
+
+LakeFormationWorkFlowRole.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.LakeFormationWorkFlowRole.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.LakeFormationWorkFlowRole.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.LakeFormationWorkFlowRole.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `role`<sup>Required</sup> <a name="role" id="raindancers-network.LakeFormationWorkFlowRole.property.role"></a>
+
+```typescript
+public readonly role: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+
 ### NetworkFirewall <a name="NetworkFirewall" id="raindancers-network.NetworkFirewall"></a>
 
 Creates Network Firewalls.
@@ -3813,6 +4461,286 @@ public readonly firewallId: string;
 - *Type:* string
 
 Firewall ID.
+
+---
+
+
+### PermissionSet <a name="PermissionSet" id="raindancers-network.PermissionSet"></a>
+
+- *Implements:* <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.PermissionSet.Initializer"></a>
+
+```typescript
+import { PermissionSet } from 'raindancers-network'
+
+new PermissionSet(scope: Construct, id: string, props: PermissionSetProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PermissionSetProps">PermissionSetProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PermissionSet.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PermissionSet.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.PermissionSetProps">PermissionSetProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PermissionSet.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.PermissionSet.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#raindancers-network.PermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.PermissionSet.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.PermissionSet.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.PermissionSet.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `grant` <a name="grant" id="raindancers-network.PermissionSet.grant"></a>
+
+```typescript
+public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
+```
+
+Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance.
+
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.grant.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.PermissionSet.grant.parameter.assignmentOptions"></a>
+
+- *Type:* <a href="#raindancers-network.AssignmentOptions">AssignmentOptions</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PermissionSet.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.PermissionSet.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#raindancers-network.PermissionSet.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#raindancers-network.PermissionSet.fromPermissionSetArn">fromPermissionSetArn</a></code> | Reference an existing permission set by ARN. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PermissionSet.isConstruct"></a>
+
+```typescript
+import { PermissionSet } from 'raindancers-network'
+
+PermissionSet.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PermissionSet.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.PermissionSet.isOwnedResource"></a>
+
+```typescript
+import { PermissionSet } from 'raindancers-network'
+
+PermissionSet.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.PermissionSet.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="raindancers-network.PermissionSet.isResource"></a>
+
+```typescript
+import { PermissionSet } from 'raindancers-network'
+
+PermissionSet.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.PermissionSet.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `fromPermissionSetArn` <a name="fromPermissionSetArn" id="raindancers-network.PermissionSet.fromPermissionSetArn"></a>
+
+```typescript
+import { PermissionSet } from 'raindancers-network'
+
+PermissionSet.fromPermissionSetArn(scope: Construct, id: string, permissionSetArn: string)
+```
+
+Reference an existing permission set by ARN.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.permissionSetArn"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.PermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.PermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.PermissionSet.property.cfnPermissionSet">cfnPermissionSet</a></code> | <code>aws-cdk-lib.aws_sso.CfnPermissionSet</code> | The underlying CfnPermissionSet resource. |
+| <code><a href="#raindancers-network.PermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.PermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance the permission set belongs to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PermissionSet.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.PermissionSet.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.PermissionSet.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `cfnPermissionSet`<sup>Required</sup> <a name="cfnPermissionSet" id="raindancers-network.PermissionSet.property.cfnPermissionSet"></a>
+
+```typescript
+public readonly cfnPermissionSet: CfnPermissionSet;
+```
+
+- *Type:* aws-cdk-lib.aws_sso.CfnPermissionSet
+
+The underlying CfnPermissionSet resource.
+
+---
+
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSet.property.permissionSetArn"></a>
+
+```typescript
+public readonly permissionSetArn: string;
+```
+
+- *Type:* string
+
+The permission set ARN of the permission set.
+
+---
+
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSet.property.ssoInstanceArn"></a>
+
+```typescript
+public readonly ssoInstanceArn: string;
+```
+
+- *Type:* string
+
+The SSO instance the permission set belongs to.
 
 ---
 
@@ -3962,6 +4890,140 @@ public readonly prefixListSet: PrefixListSetInterface;
 ---
 
 
+### PrivateRedshiftCluster <a name="PrivateRedshiftCluster" id="raindancers-network.PrivateRedshiftCluster"></a>
+
+* Creates a PrivateRedShiftCluster.
+
+#### Initializers <a name="Initializers" id="raindancers-network.PrivateRedshiftCluster.Initializer"></a>
+
+```typescript
+import { PrivateRedshiftCluster } from 'raindancers-network'
+
+new PrivateRedshiftCluster(scope: Construct, id: string, props: RedshiftClusterProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.RedshiftClusterProps">RedshiftClusterProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.RedshiftClusterProps">RedshiftClusterProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.PrivateRedshiftCluster.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PrivateRedshiftCluster.isConstruct"></a>
+
+```typescript
+import { PrivateRedshiftCluster } from 'raindancers-network'
+
+PrivateRedshiftCluster.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PrivateRedshiftCluster.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.clusterParameters">clusterParameters</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.clusterSecurityGroup">clusterSecurityGroup</a></code> | <code>aws-cdk-lib.aws_ec2.SecurityGroup</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PrivateRedshiftCluster.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.PrivateRedshiftCluster.property.cluster"></a>
+
+```typescript
+public readonly cluster: Cluster;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.Cluster
+
+---
+
+##### `clusterParameters`<sup>Required</sup> <a name="clusterParameters" id="raindancers-network.PrivateRedshiftCluster.property.clusterParameters"></a>
+
+```typescript
+public readonly clusterParameters: ClusterParameterGroup;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.ClusterParameterGroup
+
+---
+
+##### `clusterSecurityGroup`<sup>Required</sup> <a name="clusterSecurityGroup" id="raindancers-network.PrivateRedshiftCluster.property.clusterSecurityGroup"></a>
+
+```typescript
+public readonly clusterSecurityGroup: SecurityGroup;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.SecurityGroup
+
+---
+
+
 ### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
 
 Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
@@ -4104,6 +5166,116 @@ public readonly outboundResolver: CfnResolverEndpoint;
 - *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
 
 outbound resolver.
+
+---
+
+
+### SSOLakeFormationAdministrator <a name="SSOLakeFormationAdministrator" id="raindancers-network.SSOLakeFormationAdministrator"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.SSOLakeFormationAdministrator.Initializer"></a>
+
+```typescript
+import { SSOLakeFormationAdministrator } from 'raindancers-network'
+
+new SSOLakeFormationAdministrator(scope: Construct, id: string, props: SSOLakeFormationAdministratorProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.SSOLakeFormationAdministratorProps">SSOLakeFormationAdministratorProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SSOLakeFormationAdministrator.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.SSOLakeFormationAdministratorProps">SSOLakeFormationAdministratorProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.SSOLakeFormationAdministrator.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.SSOLakeFormationAdministrator.isConstruct"></a>
+
+```typescript
+import { SSOLakeFormationAdministrator } from 'raindancers-network'
+
+SSOLakeFormationAdministrator.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.SSOLakeFormationAdministrator.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministrator.property.managedPolicy">managedPolicy</a></code> | <code>aws-cdk-lib.aws_iam.ManagedPolicy</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.SSOLakeFormationAdministrator.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `managedPolicy`<sup>Required</sup> <a name="managedPolicy" id="raindancers-network.SSOLakeFormationAdministrator.property.managedPolicy"></a>
+
+```typescript
+public readonly managedPolicy: ManagedPolicy;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.ManagedPolicy
 
 ---
 
@@ -4730,6 +5902,150 @@ public readonly rules: StatelessRuleProperty[];
 ```
 
 - *Type:* aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]
+
+---
+
+### AssignmentAttributes <a name="AssignmentAttributes" id="raindancers-network.AssignmentAttributes"></a>
+
+Attributes for an assignment of which there are none.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AssignmentAttributes.Initializer"></a>
+
+```typescript
+import { AssignmentAttributes } from 'raindancers-network'
+
+const assignmentAttributes: AssignmentAttributes = { ... }
+```
+
+
+### AssignmentOptions <a name="AssignmentOptions" id="raindancers-network.AssignmentOptions"></a>
+
+The options for creating an assignment.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AssignmentOptions.Initializer"></a>
+
+```typescript
+import { AssignmentOptions } from 'raindancers-network'
+
+const assignmentOptions: AssignmentOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AssignmentOptions.property.principal">principal</a></code> | <code><a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a></code> | The principal to assign the permission set to. |
+| <code><a href="#raindancers-network.AssignmentOptions.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
+| <code><a href="#raindancers-network.AssignmentOptions.property.targetType">targetType</a></code> | <code><a href="#raindancers-network.TargetTypes">TargetTypes</a></code> | The entity type for which the assignment will be created. |
+
+---
+
+##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.AssignmentOptions.property.principal"></a>
+
+```typescript
+public readonly principal: PrincipalProperty;
+```
+
+- *Type:* <a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a>
+
+The principal to assign the permission set to.
+
+---
+
+##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.AssignmentOptions.property.targetId"></a>
+
+```typescript
+public readonly targetId: string;
+```
+
+- *Type:* string
+
+The target id the permission set will be assigned to.
+
+---
+
+##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.AssignmentOptions.property.targetType"></a>
+
+```typescript
+public readonly targetType: TargetTypes;
+```
+
+- *Type:* <a href="#raindancers-network.TargetTypes">TargetTypes</a>
+- *Default:* TargetTypes.AWS_ACCOUNT
+
+The entity type for which the assignment will be created.
+
+---
+
+### AssignmentProps <a name="AssignmentProps" id="raindancers-network.AssignmentProps"></a>
+
+The properties of a new assignment.
+
+#### Initializer <a name="Initializer" id="raindancers-network.AssignmentProps.Initializer"></a>
+
+```typescript
+import { AssignmentProps } from 'raindancers-network'
+
+const assignmentProps: AssignmentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AssignmentProps.property.principal">principal</a></code> | <code><a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a></code> | The principal to assign the permission set to. |
+| <code><a href="#raindancers-network.AssignmentProps.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
+| <code><a href="#raindancers-network.AssignmentProps.property.targetType">targetType</a></code> | <code><a href="#raindancers-network.TargetTypes">TargetTypes</a></code> | The entity type for which the assignment will be created. |
+| <code><a href="#raindancers-network.AssignmentProps.property.permissionSet">permissionSet</a></code> | <code><a href="#raindancers-network.IPermissionSet">IPermissionSet</a></code> | The permission set to assign to the principal. |
+
+---
+
+##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.AssignmentProps.property.principal"></a>
+
+```typescript
+public readonly principal: PrincipalProperty;
+```
+
+- *Type:* <a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a>
+
+The principal to assign the permission set to.
+
+---
+
+##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.AssignmentProps.property.targetId"></a>
+
+```typescript
+public readonly targetId: string;
+```
+
+- *Type:* string
+
+The target id the permission set will be assigned to.
+
+---
+
+##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.AssignmentProps.property.targetType"></a>
+
+```typescript
+public readonly targetType: TargetTypes;
+```
+
+- *Type:* <a href="#raindancers-network.TargetTypes">TargetTypes</a>
+- *Default:* TargetTypes.AWS_ACCOUNT
+
+The entity type for which the assignment will be created.
+
+---
+
+##### `permissionSet`<sup>Required</sup> <a name="permissionSet" id="raindancers-network.AssignmentProps.property.permissionSet"></a>
+
+```typescript
+public readonly permissionSet: IPermissionSet;
+```
+
+- *Type:* <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
+
+The permission set to assign to the principal.
 
 ---
 
@@ -5769,6 +7085,83 @@ public readonly sensorProxy: Endpoint;
 
 ---
 
+### CustomerManagedPolicyReference <a name="CustomerManagedPolicyReference" id="raindancers-network.CustomerManagedPolicyReference"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CustomerManagedPolicyReference.Initializer"></a>
+
+```typescript
+import { CustomerManagedPolicyReference } from 'raindancers-network'
+
+const customerManagedPolicyReference: CustomerManagedPolicyReference = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CustomerManagedPolicyReference.property.name">name</a></code> | <code>string</code> | The name of the IAM policy that you have configured in each account where you want to deploy your permission set. |
+| <code><a href="#raindancers-network.CustomerManagedPolicyReference.property.path">path</a></code> | <code>string</code> | The path to the IAM policy that you have configured in each account where you want to deploy your permission set. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CustomerManagedPolicyReference.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The name of the IAM policy that you have configured in each account where you want to deploy your permission set.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-name](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-name)
+
+---
+
+##### `path`<sup>Optional</sup> <a name="path" id="raindancers-network.CustomerManagedPolicyReference.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The path to the IAM policy that you have configured in each account where you want to deploy your permission set.
+
+The default is `/` . For more information, see [Friendly names and paths](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names) in the *IAM User Guide* .
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-path](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-path)
+
+---
+
+### DataLakeBucketProps <a name="DataLakeBucketProps" id="raindancers-network.DataLakeBucketProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.DataLakeBucketProps.Initializer"></a>
+
+```typescript
+import { DataLakeBucketProps } from 'raindancers-network'
+
+const dataLakeBucketProps: DataLakeBucketProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.DataLakeBucketProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DataLakeBucketProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ### DynamicTagResourceGroupProps <a name="DynamicTagResourceGroupProps" id="raindancers-network.DynamicTagResourceGroupProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupProps.Initializer"></a>
@@ -6483,6 +7876,34 @@ Name of an internal Route53 Zone that is associated with this voc.
 
 ---
 
+### FindPrefixListProps <a name="FindPrefixListProps" id="raindancers-network.FindPrefixListProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.FindPrefixListProps.Initializer"></a>
+
+```typescript
+import { FindPrefixListProps } from 'raindancers-network'
+
+const findPrefixListProps: FindPrefixListProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.FindPrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `prefixListName`<sup>Required</sup> <a name="prefixListName" id="raindancers-network.FindPrefixListProps.property.prefixListName"></a>
+
+```typescript
+public readonly prefixListName: string;
+```
+
+- *Type:* string
+
+---
+
 ### FirewallPolicyProps <a name="FirewallPolicyProps" id="raindancers-network.FirewallPolicyProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.FirewallPolicyProps.Initializer"></a>
@@ -7072,6 +8493,300 @@ array of ip address's to forward request to.
 
 ---
 
+### PermissionBoundary <a name="PermissionBoundary" id="raindancers-network.PermissionBoundary"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PermissionBoundary.Initializer"></a>
+
+```typescript
+import { PermissionBoundary } from 'raindancers-network'
+
+const permissionBoundary: PermissionBoundary = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PermissionBoundary.property.customerManagedPolicyReference">customerManagedPolicyReference</a></code> | <code>aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty \| aws-cdk-lib.IResolvable</code> | Specifies the name and path of a customer managed policy. |
+| <code><a href="#raindancers-network.PermissionBoundary.property.managedPolicyArn">managedPolicyArn</a></code> | <code>string</code> | The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary. |
+
+---
+
+##### `customerManagedPolicyReference`<sup>Optional</sup> <a name="customerManagedPolicyReference" id="raindancers-network.PermissionBoundary.property.customerManagedPolicyReference"></a>
+
+```typescript
+public readonly customerManagedPolicyReference: CustomerManagedPolicyReferenceProperty | IResolvable;
+```
+
+- *Type:* aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty | aws-cdk-lib.IResolvable
+
+Specifies the name and path of a customer managed policy.
+
+You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-customermanagedpolicyreference](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-customermanagedpolicyreference)
+
+---
+
+##### `managedPolicyArn`<sup>Optional</sup> <a name="managedPolicyArn" id="raindancers-network.PermissionBoundary.property.managedPolicyArn"></a>
+
+```typescript
+public readonly managedPolicyArn: string;
+```
+
+- *Type:* string
+
+The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-managedpolicyarn](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-managedpolicyarn)
+
+---
+
+### PermissionSetAttributes <a name="PermissionSetAttributes" id="raindancers-network.PermissionSetAttributes"></a>
+
+Attributes for a permission set.
+
+#### Initializer <a name="Initializer" id="raindancers-network.PermissionSetAttributes.Initializer"></a>
+
+```typescript
+import { PermissionSetAttributes } from 'raindancers-network'
+
+const permissionSetAttributes: PermissionSetAttributes = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PermissionSetAttributes.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.PermissionSetAttributes.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
+
+---
+
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSetAttributes.property.permissionSetArn"></a>
+
+```typescript
+public readonly permissionSetArn: string;
+```
+
+- *Type:* string
+
+The permission set ARN of the permission set.
+
+Such as
+`arn:aws:sso:::permissionSet/ins-instanceid/ps-permissionsetid`.
+
+---
+
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSetAttributes.property.ssoInstanceArn"></a>
+
+```typescript
+public readonly ssoInstanceArn: string;
+```
+
+- *Type:* string
+
+The SSO instance ARN of the permission set.
+
+---
+
+### PermissionSetProps <a name="PermissionSetProps" id="raindancers-network.PermissionSetProps"></a>
+
+The properties of a new permission set.
+
+#### Initializer <a name="Initializer" id="raindancers-network.PermissionSetProps.Initializer"></a>
+
+```typescript
+import { PermissionSetProps } from 'raindancers-network'
+
+const permissionSetProps: PermissionSetProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PermissionSetProps.property.name">name</a></code> | <code>string</code> | The name of the permission set. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The ARN of the SSO instance under which the operation will be executed. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.awsManagedPolicies">awsManagedPolicies</a></code> | <code>aws-cdk-lib.aws_iam.IManagedPolicy[]</code> | The AWS managed policies to attach to the `PermissionSet`. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.customerManagedPolicyReferences">customerManagedPolicyReferences</a></code> | <code><a href="#raindancers-network.CustomerManagedPolicyReference">CustomerManagedPolicyReference</a>[]</code> | Specifies the names and paths of a customer managed policy. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.description">description</a></code> | <code>string</code> | The description of the `PermissionSet`. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.inlinePolicy">inlinePolicy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyDocument</code> | The IAM inline policy that is attached to the permission set. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code><a href="#raindancers-network.PermissionBoundary">PermissionBoundary</a></code> | Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.relayStateType">relayStateType</a></code> | <code>string</code> | Used to redirect users within the application during the federation authentication process. |
+| <code><a href="#raindancers-network.PermissionSetProps.property.sessionDuration">sessionDuration</a></code> | <code>aws-cdk-lib.Duration</code> | The length of time that the application user sessions are valid for. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.PermissionSetProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The name of the permission set.
+
+---
+
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSetProps.property.ssoInstanceArn"></a>
+
+```typescript
+public readonly ssoInstanceArn: string;
+```
+
+- *Type:* string
+
+The ARN of the SSO instance under which the operation will be executed.
+
+---
+
+##### `awsManagedPolicies`<sup>Optional</sup> <a name="awsManagedPolicies" id="raindancers-network.PermissionSetProps.property.awsManagedPolicies"></a>
+
+```typescript
+public readonly awsManagedPolicies: IManagedPolicy[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.IManagedPolicy[]
+- *Default:* No AWS managed policies
+
+The AWS managed policies to attach to the `PermissionSet`.
+
+---
+
+##### `customerManagedPolicyReferences`<sup>Optional</sup> <a name="customerManagedPolicyReferences" id="raindancers-network.PermissionSetProps.property.customerManagedPolicyReferences"></a>
+
+```typescript
+public readonly customerManagedPolicyReferences: CustomerManagedPolicyReference[];
+```
+
+- *Type:* <a href="#raindancers-network.CustomerManagedPolicyReference">CustomerManagedPolicyReference</a>[]
+- *Default:* No customer managed policies
+
+Specifies the names and paths of a customer managed policy.
+
+You must have an IAM policy that matches the name and path in each
+AWS account where you want to deploy your permission set.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.PermissionSetProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* No description
+
+The description of the `PermissionSet`.
+
+---
+
+##### `inlinePolicy`<sup>Optional</sup> <a name="inlinePolicy" id="raindancers-network.PermissionSetProps.property.inlinePolicy"></a>
+
+```typescript
+public readonly inlinePolicy: PolicyDocument;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyDocument
+- *Default:* No inline policy
+
+The IAM inline policy that is attached to the permission set.
+
+---
+
+##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="raindancers-network.PermissionSetProps.property.permissionsBoundary"></a>
+
+```typescript
+public readonly permissionsBoundary: PermissionBoundary;
+```
+
+- *Type:* <a href="#raindancers-network.PermissionBoundary">PermissionBoundary</a>
+- *Default:* No permissions boundary
+
+Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary.
+
+Specify either
+customerManagedPolicyReference to use the name and path of a customer
+managed policy, or managedPolicy to use the ARN of an AWS managed
+policy.
+
+A permissions boundary represents the maximum permissions that any
+policy can grant your role. For more information, see Permissions boundaries
+for IAM entities in the AWS Identity and Access Management User Guide.
+
+> [https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html)
+
+---
+
+##### `relayStateType`<sup>Optional</sup> <a name="relayStateType" id="raindancers-network.PermissionSetProps.property.relayStateType"></a>
+
+```typescript
+public readonly relayStateType: string;
+```
+
+- *Type:* string
+- *Default:* No redirection
+
+Used to redirect users within the application during the federation authentication process.
+
+By default, when a user signs into the AWS access portal, chooses an account,
+and then chooses the role that AWS creates from the assigned permission set,
+IAM Identity Center redirects the user’s browser to the AWS Management Console.
+
+You can change this behavior by setting the relay state to a different console
+URL. Setting the relay state enables you to provide the user with quick access
+to the console that is most appropriate for their role. For example, you can
+set the relay state to the Amazon EC2 console URL (https://console.aws.amazon.com/ec2/)
+to redirect the user to that console when they choose the Amazon EC2
+administrator role.
+
+> [https://docs.aws.amazon.com/singlesignon/latest/userguide/howtopermrelaystate.html](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtopermrelaystate.html)
+
+---
+
+##### `sessionDuration`<sup>Optional</sup> <a name="sessionDuration" id="raindancers-network.PermissionSetProps.property.sessionDuration"></a>
+
+```typescript
+public readonly sessionDuration: Duration;
+```
+
+- *Type:* aws-cdk-lib.Duration
+
+The length of time that the application user sessions are valid for.
+
+---
+
+### PrefixCidr <a name="PrefixCidr" id="raindancers-network.PrefixCidr"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PrefixCidr.Initializer"></a>
+
+```typescript
+import { PrefixCidr } from 'raindancers-network'
+
+const prefixCidr: PrefixCidr = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrefixCidr.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.PrefixCidr.property.cidr"></a>
+
+```typescript
+public readonly cidr: string;
+```
+
+- *Type:* string
+
+---
+
 ### PrefixListEntry <a name="PrefixListEntry" id="raindancers-network.PrefixListEntry"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.PrefixListEntry.Initializer"></a>
@@ -7200,6 +8915,49 @@ public readonly name: string;
 
 ---
 
+### PrincipalProperty <a name="PrincipalProperty" id="raindancers-network.PrincipalProperty"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.PrincipalProperty.Initializer"></a>
+
+```typescript
+import { PrincipalProperty } from 'raindancers-network'
+
+const principalProperty: PrincipalProperty = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.PrincipalProperty.property.principalId">principalId</a></code> | <code>string</code> | The id of the principal. |
+| <code><a href="#raindancers-network.PrincipalProperty.property.principalType">principalType</a></code> | <code><a href="#raindancers-network.PrincipalTypes">PrincipalTypes</a></code> | The type of the principal. |
+
+---
+
+##### `principalId`<sup>Required</sup> <a name="principalId" id="raindancers-network.PrincipalProperty.property.principalId"></a>
+
+```typescript
+public readonly principalId: string;
+```
+
+- *Type:* string
+
+The id of the principal.
+
+---
+
+##### `principalType`<sup>Required</sup> <a name="principalType" id="raindancers-network.PrincipalProperty.property.principalType"></a>
+
+```typescript
+public readonly principalType: PrincipalTypes;
+```
+
+- *Type:* <a href="#raindancers-network.PrincipalTypes">PrincipalTypes</a>
+
+The type of the principal.
+
+---
+
 ### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.R53ResolverendpointsProps"></a>
 
 Properties to for creating inbound resolvers.
@@ -7268,6 +9026,144 @@ public readonly tagValue: string;
 - *Type:* string
 
 Value for Sharing.
+
+---
+
+### RedshiftClusterProps <a name="RedshiftClusterProps" id="raindancers-network.RedshiftClusterProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.RedshiftClusterProps.Initializer"></a>
+
+```typescript
+import { RedshiftClusterProps } from 'raindancers-network'
+
+const redshiftClusterProps: RedshiftClusterProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.defaultrole">defaultrole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.logging">logging</a></code> | <code>@aws-cdk/aws-redshift-alpha.LoggingProperties</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.masterUser">masterUser</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.subnetGroup">subnetGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterSubnetGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.defaultDBName">defaultDBName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.nodes">nodes</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.nodeType">nodeType</a></code> | <code>@aws-cdk/aws-redshift-alpha.NodeType</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.parameterGroup">parameterGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.preferredMaintenanceWindow">preferredMaintenanceWindow</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.removalPolicy">removalPolicy</a></code> | <code>aws-cdk-lib.RemovalPolicy</code> | *No description.* |
+
+---
+
+##### `defaultrole`<sup>Required</sup> <a name="defaultrole" id="raindancers-network.RedshiftClusterProps.property.defaultrole"></a>
+
+```typescript
+public readonly defaultrole: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+##### `logging`<sup>Required</sup> <a name="logging" id="raindancers-network.RedshiftClusterProps.property.logging"></a>
+
+```typescript
+public readonly logging: LoggingProperties;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.LoggingProperties
+
+---
+
+##### `masterUser`<sup>Required</sup> <a name="masterUser" id="raindancers-network.RedshiftClusterProps.property.masterUser"></a>
+
+```typescript
+public readonly masterUser: string;
+```
+
+- *Type:* string
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.RedshiftClusterProps.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: ClusterSubnetGroup;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.ClusterSubnetGroup
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.RedshiftClusterProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: IVpc | Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `defaultDBName`<sup>Optional</sup> <a name="defaultDBName" id="raindancers-network.RedshiftClusterProps.property.defaultDBName"></a>
+
+```typescript
+public readonly defaultDBName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `nodes`<sup>Optional</sup> <a name="nodes" id="raindancers-network.RedshiftClusterProps.property.nodes"></a>
+
+```typescript
+public readonly nodes: number;
+```
+
+- *Type:* number
+
+---
+
+##### `nodeType`<sup>Optional</sup> <a name="nodeType" id="raindancers-network.RedshiftClusterProps.property.nodeType"></a>
+
+```typescript
+public readonly nodeType: NodeType;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.NodeType
+
+---
+
+##### `parameterGroup`<sup>Optional</sup> <a name="parameterGroup" id="raindancers-network.RedshiftClusterProps.property.parameterGroup"></a>
+
+```typescript
+public readonly parameterGroup: ClusterParameterGroup;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.ClusterParameterGroup
+
+---
+
+##### `preferredMaintenanceWindow`<sup>Optional</sup> <a name="preferredMaintenanceWindow" id="raindancers-network.RedshiftClusterProps.property.preferredMaintenanceWindow"></a>
+
+```typescript
+public readonly preferredMaintenanceWindow: string;
+```
+
+- *Type:* string
+
+---
+
+##### `removalPolicy`<sup>Optional</sup> <a name="removalPolicy" id="raindancers-network.RedshiftClusterProps.property.removalPolicy"></a>
+
+```typescript
+public readonly removalPolicy: RemovalPolicy;
+```
+
+- *Type:* aws-cdk-lib.RemovalPolicy
 
 ---
 
@@ -7733,6 +9629,36 @@ public readonly shareWith: string | CoreNetworkSegment[];
 ```
 
 - *Type:* string | <a href="#raindancers-network.CoreNetworkSegment">CoreNetworkSegment</a>[]
+
+---
+
+### SSOLakeFormationAdministratorProps <a name="SSOLakeFormationAdministratorProps" id="raindancers-network.SSOLakeFormationAdministratorProps"></a>
+
+This Policy gets used inside a permissions set for SSO.
+
+#### Initializer <a name="Initializer" id="raindancers-network.SSOLakeFormationAdministratorProps.Initializer"></a>
+
+```typescript
+import { SSOLakeFormationAdministratorProps } from 'raindancers-network'
+
+const sSOLakeFormationAdministratorProps: SSOLakeFormationAdministratorProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SSOLakeFormationAdministratorProps.property.workFlowRole">workFlowRole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+
+---
+
+##### `workFlowRole`<sup>Required</sup> <a name="workFlowRole" id="raindancers-network.SSOLakeFormationAdministratorProps.property.workFlowRole"></a>
+
+```typescript
+public readonly workFlowRole: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
 
 ---
 
@@ -8730,6 +10656,70 @@ public readonly statelessRuleProperty: StatelessRuleProperty;
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
+### IAssignment <a name="IAssignment" id="raindancers-network.IAssignment"></a>
+
+- *Extends:* aws-cdk-lib.IResource
+
+- *Implemented By:* <a href="#raindancers-network.Assignment">Assignment</a>, <a href="#raindancers-network.IAssignment">IAssignment</a>
+
+The resource interface for an AWS SSO assignment.
+
+This interface has no attributes because the resulting resource has none.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IAssignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.IAssignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.IAssignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IAssignment.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.IAssignment.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.IAssignment.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
 ### ICoreNetworkSegmentProps <a name="ICoreNetworkSegmentProps" id="raindancers-network.ICoreNetworkSegmentProps"></a>
 
 - *Implemented By:* <a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a>
@@ -8863,6 +10853,124 @@ public readonly statelessRuleGroupReferences: IResolvable | StatelessRuleGroupRe
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatelessRuleGroupReferenceProperty | aws-cdk-lib.IResolvable[]
+
+---
+
+### IPermissionSet <a name="IPermissionSet" id="raindancers-network.IPermissionSet"></a>
+
+- *Extends:* aws-cdk-lib.IResource
+
+- *Implemented By:* <a href="#raindancers-network.PermissionSet">PermissionSet</a>, <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
+
+The resource interface for an AWS SSO permission set.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.IPermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
+
+---
+
+##### `grant` <a name="grant" id="raindancers-network.IPermissionSet.grant"></a>
+
+```typescript
+public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
+```
+
+Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance.
+
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.IPermissionSet.grant.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.IPermissionSet.grant.parameter.assignmentOptions"></a>
+
+- *Type:* <a href="#raindancers-network.AssignmentOptions">AssignmentOptions</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.IPermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.IPermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.IPermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.IPermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.IPermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IPermissionSet.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.IPermissionSet.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.IPermissionSet.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.IPermissionSet.property.permissionSetArn"></a>
+
+```typescript
+public readonly permissionSetArn: string;
+```
+
+- *Type:* string
+
+The permission set ARN of the permission set.
+
+Such as
+`arn:aws:sso:::permissionSet/ins-instanceid/ps-permissionsetid`.
+
+---
+
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.IPermissionSet.property.ssoInstanceArn"></a>
+
+```typescript
+public readonly ssoInstanceArn: string;
+```
+
+- *Type:* string
+
+The SSO instance ARN of the permission set.
 
 ---
 
@@ -9717,6 +11825,27 @@ Use Public IPv4 Address Assigned by AWS.
 ---
 
 
+### PrincipalTypes <a name="PrincipalTypes" id="raindancers-network.PrincipalTypes"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.PrincipalTypes.USER">USER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.PrincipalTypes.GROUP">GROUP</a></code> | *No description.* |
+
+---
+
+##### `USER` <a name="USER" id="raindancers-network.PrincipalTypes.USER"></a>
+
+---
+
+
+##### `GROUP` <a name="GROUP" id="raindancers-network.PrincipalTypes.GROUP"></a>
+
+---
+
+
 ### Protocol <a name="Protocol" id="raindancers-network.Protocol"></a>
 
 #### Members <a name="Members" id="Members"></a>
@@ -9979,6 +12108,21 @@ Raises an alert according to the firewalls logging/alert.
 
 
 ##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.StatelessActions.STATEFUL"></a>
+
+---
+
+
+### TargetTypes <a name="TargetTypes" id="raindancers-network.TargetTypes"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.TargetTypes.AWS_ACCOUNT">AWS_ACCOUNT</a></code> | *No description.* |
+
+---
+
+##### `AWS_ACCOUNT` <a name="AWS_ACCOUNT" id="raindancers-network.TargetTypes.AWS_ACCOUNT"></a>
 
 ---
 

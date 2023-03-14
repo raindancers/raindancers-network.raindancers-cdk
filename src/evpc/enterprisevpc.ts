@@ -120,6 +120,10 @@ export enum Destination{
   NWFIREWALL = 'NetworkFirewall'
 }
 
+export interface PrefixCidr {
+  readonly cidr: string;
+}
+
 /** Propertys for an Enterprise VPC */
 export interface EnterpriseVpcProps {
   // the vpc
@@ -191,6 +195,43 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
   }
+  // ['arn:aws:organizations::12346789012:organization/o-123456}']
+
+  public createAndShareSubnetPrefixList(name: string, subnets: ec2.SubnetSelection, orgArn: string): ec2.CfnPrefixList {
+
+    let cidrs: PrefixCidr[] = [];
+
+    this.vpc.selectSubnets(subnets).subnets.forEach((subnet) => {
+      //const subnet = ec2.Subnet.fromSubnetId(this, `subnet${subnetId}`, subnetId);
+      cidrs.push({ cidr: subnet.ipv4CidrBlock });
+    });
+
+
+    const prefixList = new ec2.CfnPrefixList(this, `${name}`, {
+      addressFamily: 'IPv4',
+      maxEntries: cidrs.length,
+      prefixListName: name,
+      entries: cidrs,
+      tags: [{
+        key: 'PrefixListName',
+        value: name,
+      }],
+    });
+
+    new ram.CfnResourceShare(this, `${name}shareprefix`, {
+      name: `${name}PLShare`,
+      allowExternalPrincipals: false,
+      principals: [orgArn],
+      resourceArns: [prefixList.attrArn],
+      tags: [{
+        key: 'PrefixListName',
+        value: name,
+      }],
+    });
+
+    return prefixList;
+
+  };
 
 
   /**

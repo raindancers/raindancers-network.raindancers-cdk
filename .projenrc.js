@@ -13,10 +13,22 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'VPC',
     'Cloudwan',
     'NetworkFirewall',
+    'CrowdStrike',
+    'DNS',
+    'Security',
+    'IPAM',
+    'SSM',
+    'Redshift',
   ],
   license: 'Apache-2.0',
   deps: [
-    '@aws-cdk/aws-redshift-alpha@^2.67.0-alpha.0',
+    '@aws-cdk/aws-redshift-alpha@2.67.0-alpha.0',
+  ],
+  devDeps: [
+    '@aws-cdk/aws-redshift-alpha@2.67.0-alpha.0',
+  ],
+  peerDeps: [
+    '@aws-cdk/aws-redshift-alpha@2.67.0-alpha.0',
   ],
   stability: 'experimental',
   publishToPypi: {
