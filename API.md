@@ -5170,6 +5170,118 @@ outbound resolver.
 ---
 
 
+### ResolveSubnetGroupName <a name="ResolveSubnetGroupName" id="raindancers-network.ResolveSubnetGroupName"></a>
+
+Creates a period task to update the SSM Agent on an EC2 Instance.
+
+#### Initializers <a name="Initializers" id="raindancers-network.ResolveSubnetGroupName.Initializer"></a>
+
+```typescript
+import { ResolveSubnetGroupName } from 'raindancers-network'
+
+new ResolveSubnetGroupName(scope: Construct, id: string, props: ResolveSubnetGroupNameProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ResolveSubnetGroupNameProps">ResolveSubnetGroupNameProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ResolveSubnetGroupNameProps">ResolveSubnetGroupNameProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.ResolveSubnetGroupName.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ResolveSubnetGroupName.isConstruct"></a>
+
+```typescript
+import { ResolveSubnetGroupName } from 'raindancers-network'
+
+ResolveSubnetGroupName.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ResolveSubnetGroupName.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ResolveSubnetGroupName.property.subnetSelection">subnetSelection</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ResolveSubnetGroupName.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `subnetSelection`<sup>Required</sup> <a name="subnetSelection" id="raindancers-network.ResolveSubnetGroupName.property.subnetSelection"></a>
+
+```typescript
+public readonly subnetSelection: SubnetSelection;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
+
+---
+
+
 ### SSOLakeFormationAdministrator <a name="SSOLakeFormationAdministrator" id="raindancers-network.SSOLakeFormationAdministrator"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.SSOLakeFormationAdministrator.Initializer"></a>
@@ -9242,6 +9354,56 @@ public readonly vpcRegion: string;
 ```
 
 - *Type:* string
+
+---
+
+### ResolveSubnetGroupNameProps <a name="ResolveSubnetGroupNameProps" id="raindancers-network.ResolveSubnetGroupNameProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ResolveSubnetGroupNameProps.Initializer"></a>
+
+```typescript
+import { ResolveSubnetGroupNameProps } from 'raindancers-network'
+
+const resolveSubnetGroupNameProps: ResolveSubnetGroupNameProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.azcount">azcount</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `azcount`<sup>Required</sup> <a name="azcount" id="raindancers-network.ResolveSubnetGroupNameProps.property.azcount"></a>
+
+```typescript
+public readonly azcount: number;
+```
+
+- *Type:* number
+
+---
+
+##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.ResolveSubnetGroupNameProps.property.subnetGroupName"></a>
+
+```typescript
+public readonly subnetGroupName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ResolveSubnetGroupNameProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: IVpc | Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 

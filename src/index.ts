@@ -1,6 +1,7 @@
 // the Evpc constructs
 export * from './evpc/evpc';
 export * from './evpc/enterprisevpc';
+export * from './evpc/resolveSubnetGroupNames';
 
 // the ipam constructs
 export * from './ipam/ipam';
@@ -39,6 +40,7 @@ export * from './ssm/manageEC2';
 // ec2
 export * from './ec2/imdvs2';
 export * from './ec2/prefixlist';
+
 
 // crowdstrike
 export * from './crowdstrike/crowdstrikeRegionInfo';
