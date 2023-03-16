@@ -1,0 +1,90 @@
+{
+    "Clusters": [
+        {
+            "ClusterIdentifier": "nu-pitar",
+            "NodeType": "ra3.4xlarge",
+            "ClusterStatus": "available",
+            "ClusterAvailabilityStatus": "Available",
+            "MasterUsername": "pitaradmin",
+            "DBName": "nupitar-dev",
+            "Endpoint": {
+                "Address": "nu-pitar.c2xfsmpg2qja.ap-southeast-2.redshift.amazonaws.com",
+                "Port": 5439
+            },
+            "ClusterCreateTime": "2022-09-26T23:18:36.521000+00:00",
+            "AutomatedSnapshotRetentionPeriod": 1,
+            "ManualSnapshotRetentionPeriod": 100,
+            "ClusterSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-005a15d6a33bf5a03",
+                    "Status": "active"
+                }
+            ],
+            "ClusterParameterGroups": [
+                {
+                    "ParameterGroupName": "default.redshift-1.0",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "ClusterSubnetGroupName": "redshiftsubnet",
+            "VpcId": "vpc-0943c9e6307209382",
+            "AvailabilityZone": "ap-southeast-2a",
+            "PreferredMaintenanceWindow": "wed:14:30-wed:15:00",
+            "PendingModifiedValues": {},
+            "ClusterVersion": "1.0",
+            "AllowVersionUpgrade": true,
+            "NumberOfNodes": 2,
+            "PubliclyAccessible": false,
+            "Encrypted": true,
+            "RestoreStatus": {
+                "Status": "completed",
+                "CurrentRestoreRateInMegaBytesPerSecond": 0.0,
+                "SnapshotSizeInMegaBytes": 0,
+                "ProgressInMegaBytes": 0,
+                "ElapsedTimeInSeconds": 0,
+                "EstimatedTimeToCompletionInSeconds": 0
+            },
+            "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsXgyTR3s84FTxfeeQGTuXoeiWYlYFrRiw5MqSZ1iBdamN6YrliF9n9uFOSpJpbZdzJ+0KP251VabvFpoyiBUSnd0F83o/KOox5+Hc9vlWyp+ni01vl0p6n13zXD8VLWxZqz4J0t90951nIonQiy6m+CWFVuymYA9Sg4eKQlepqHdipeloQKrjYz15qmrWtF5J4vM+mi6mGppaYOmxNc2eobEoBMDQE3wPfPIvHM/k1ijGDIiauANq31VmGWD9s/Jj+T8YZ9gEfQ3woyb0LQoxiDZxyyf20nfrmx7tLXSrgH9Qls53zHnTs9sVt+uYqsOGY7ypu2vIxmIf94I3ErF/ Amazon-Redshift\n",
+            "ClusterNodes": [
+                {
+                    "NodeRole": "LEADER",
+                    "PrivateIPAddress": "10.18.3.76"
+                },
+                {
+                    "NodeRole": "COMPUTE-0",
+                    "PrivateIPAddress": "10.18.3.72"
+                },
+                {
+                    "NodeRole": "COMPUTE-1",
+                    "PrivateIPAddress": "10.18.3.70"
+                }
+            ],
+            "ClusterRevisionNumber": "47357",
+            "Tags": [],
+            "KmsKeyId": "arn:aws:kms:ap-southeast-2:264687573214:key/acc0457c-2c23-48d7-b56e-a7de8ba42180",
+            "EnhancedVpcRouting": true,
+            "IamRoles": [
+                {
+                    "IamRoleArn": "arn:aws:iam::264687573214:role/ca-redshift-api",
+                    "ApplyStatus": "in-sync"
+                },
+                {
+                    "IamRoleArn": "arn:aws:iam::264687573214:role/MOE-RedshiftCluster",
+                    "ApplyStatus": "in-sync"
+                }
+            ],
+            "MaintenanceTrackName": "current",
+            "ElasticResizeNumberOfNodeOptions": "[3,4,5,6,7,8]",
+            "DeferredMaintenanceWindows": [],
+            "NextMaintenanceWindowStartTime": "2023-03-22T14:30:00+00:00",
+            "AvailabilityZoneRelocationStatus": "disabled",
+            "ClusterNamespaceArn": "arn:aws:redshift:ap-southeast-2:264687573214:namespace:2e895999-e1c0-444a-8fa2-2d246cc892a1",
+            "TotalStorageCapacityInMegaBytes": 256000000,
+            "AquaConfiguration": {
+                "AquaStatus": "disabled",
+                "AquaConfigurationStatus": "auto"
+            }
+        }
+    ]
+}

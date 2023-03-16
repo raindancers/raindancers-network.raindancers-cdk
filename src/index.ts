@@ -59,3 +59,7 @@ export * from './lakeformation/lakeformation';
 // sso
 
 export * from './sso/index';
+
+//power bi
+
+export * from './mspowerbigateway';
