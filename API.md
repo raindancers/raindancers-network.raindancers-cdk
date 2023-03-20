@@ -5945,12 +5945,12 @@ Returns a string representation of this construct.
 ##### `addDatabase` <a name="addDatabase" id="raindancers-network.PrivateRedshiftCluster.addDatabase"></a>
 
 ```typescript
-public addDatabase(props: RedShiftDatabaseProps): void
+public addDatabase(databaseName: string): RedShiftDatabase
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrivateRedshiftCluster.addDatabase.parameter.props"></a>
+###### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.PrivateRedshiftCluster.addDatabase.parameter.databaseName"></a>
 
-- *Type:* <a href="#raindancers-network.RedShiftDatabaseProps">RedShiftDatabaseProps</a>
+- *Type:* string
 
 ---
 
@@ -6176,6 +6176,148 @@ public readonly outboundResolver: CfnResolverEndpoint;
 - *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
 
 outbound resolver.
+
+---
+
+
+### RedShiftDatabase <a name="RedShiftDatabase" id="raindancers-network.RedShiftDatabase"></a>
+
+Create a Database in a Redshift Cluster.
+
+#### Initializers <a name="Initializers" id="raindancers-network.RedShiftDatabase.Initializer"></a>
+
+```typescript
+import { RedShiftDatabase } from 'raindancers-network'
+
+new RedShiftDatabase(scope: Construct, id: string, props: RedShiftDatabaseProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.RedShiftDatabaseProps">RedShiftDatabaseProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.RedShiftDatabase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.RedShiftDatabase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.RedShiftDatabase.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.RedShiftDatabaseProps">RedShiftDatabaseProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.RedShiftDatabase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.RedShiftDatabase.executeSQLStatement">executeSQLStatement</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.RedShiftDatabase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `executeSQLStatement` <a name="executeSQLStatement" id="raindancers-network.RedShiftDatabase.executeSQLStatement"></a>
+
+```typescript
+public executeSQLStatement(statementName: string, sql: string): void
+```
+
+###### `statementName`<sup>Required</sup> <a name="statementName" id="raindancers-network.RedShiftDatabase.executeSQLStatement.parameter.statementName"></a>
+
+- *Type:* string
+
+---
+
+###### `sql`<sup>Required</sup> <a name="sql" id="raindancers-network.RedShiftDatabase.executeSQLStatement.parameter.sql"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.RedShiftDatabase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.RedShiftDatabase.isConstruct"></a>
+
+```typescript
+import { RedShiftDatabase } from 'raindancers-network'
+
+RedShiftDatabase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.RedShiftDatabase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.RedShiftDatabase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.RedShiftDatabase.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
+| <code><a href="#raindancers-network.RedShiftDatabase.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.RedShiftDatabase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.RedShiftDatabase.property.cluster"></a>
+
+```typescript
+public readonly cluster: Cluster;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.Cluster
+
+---
+
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.RedShiftDatabase.property.databaseName"></a>
+
+```typescript
+public readonly databaseName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -10616,6 +10758,7 @@ const redshiftClusterProps: RedshiftClusterProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#raindancers-network.RedshiftClusterProps.property.clusterName">clusterName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.defaultrole">defaultrole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.logging">logging</a></code> | <code>@aws-cdk/aws-redshift-alpha.LoggingProperties</code> | *No description.* |
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.masterUser">masterUser</a></code> | <code>string</code> | *No description.* |
@@ -10627,6 +10770,16 @@ const redshiftClusterProps: RedshiftClusterProps = { ... }
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.parameterGroup">parameterGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.preferredMaintenanceWindow">preferredMaintenanceWindow</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.RedshiftClusterProps.property.removalPolicy">removalPolicy</a></code> | <code>aws-cdk-lib.RemovalPolicy</code> | *No description.* |
+
+---
+
+##### `clusterName`<sup>Required</sup> <a name="clusterName" id="raindancers-network.RedshiftClusterProps.property.clusterName"></a>
+
+```typescript
+public readonly clusterName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -10754,7 +10907,20 @@ const redShiftDatabaseProps: RedShiftDatabaseProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.RedShiftDatabaseProps.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | which cluster will the database be created in. |
+| <code><a href="#raindancers-network.RedShiftDatabaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | A name for the database. |
+
+---
+
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.RedShiftDatabaseProps.property.cluster"></a>
+
+```typescript
+public readonly cluster: Cluster;
+```
+
+- *Type:* @aws-cdk/aws-redshift-alpha.Cluster
+
+which cluster will the database be created in.
 
 ---
 
@@ -10765,6 +10931,8 @@ public readonly databaseName: string;
 ```
 
 - *Type:* string
+
+A name for the database.
 
 ---
 

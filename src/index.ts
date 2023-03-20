@@ -49,7 +49,7 @@ export * from './crowdstrike/crowdstrikeNLBendpoint';
 
 // redshift
 
-export * from './redshift/redshift';
+export * from './redshift/index';
 
 // lakeformation
 

@@ -3,6 +3,7 @@ import {
   aws_ec2 as ec2,
   aws_secretsmanager as secretmanager,
   aws_iam as iam,
+
   //custom_resources as cr,
 }
   from 'aws-cdk-lib';
@@ -10,13 +11,10 @@ import {
 import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 
-
-export interface RedShiftDatabaseProps{
-  readonly databaseName: string;
-}
-
+import { RedShiftDatabase } from './database';
 
 export interface RedshiftClusterProps {
+  readonly clusterName: string;
   readonly masterUser: string;
   readonly vpc: ec2.Vpc | ec2.IVpc;
   readonly logging: redshift.LoggingProperties;
@@ -57,6 +55,7 @@ export class PrivateRedshiftCluster extends constructs.Construct {
     });
 
     this.cluster = new redshift.Cluster(this, 'Redshift', {
+      clusterName: props.clusterName,
       masterUser: {
         masterUsername: props.masterUser,
         masterPassword: masterpassword.secretValue,
@@ -70,7 +69,7 @@ export class PrivateRedshiftCluster extends constructs.Construct {
       encrypted: true,
       loggingProperties: props.logging,
       enhancedVpcRouting: true,
-      defaultDatabaseName: props.defaultDBName,
+      defaultDatabaseName: 'DefaultDatabase',
       nodeType: props.nodeType,
       numberOfNodes: props.nodes,
       parameterGroup: props.parameterGroup,
@@ -81,35 +80,11 @@ export class PrivateRedshiftCluster extends constructs.Construct {
     });
   }
 
-  public addDatabase(props: RedShiftDatabaseProps): void {
+  public addDatabase(databaseName: string): RedShiftDatabase {
 
-    new cdk.CfnOutput(this, 'database', {
-      value: props.databaseName,
+    return new RedShiftDatabase(this, `${databaseName}Database`, {
+      databaseName: databaseName,
+      cluster: this.cluster,
     });
-
-    // const database = new cr.AwsCustomResource(this, 'aws-custom', {
-    //   onCreate: {
-    //     service: 'RedshiftData',
-    //     action: 'executeStatement',
-    //     parameters: {
-    //       ClusterIdentifier: this.cluster.
-    //       Sql: '...',
-    //       Secr
-    //     },
-    //     physicalResourceId: cr.PhysicalResourceId.of('...'),
-    //   },
-    //   onUpdate: {
-    //     service: 'RedshiftData',
-    //     action: 'executeStatement',
-    //     parameters: {
-    //       text: '...',
-    //       resourceId: new cr.PhysicalResourceIdReference(),
-    //     },
-    //   },
-    //   policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
-    //     resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-    //   }),
-    // })
-
   }
 }
