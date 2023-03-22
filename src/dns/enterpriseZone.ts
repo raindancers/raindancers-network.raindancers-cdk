@@ -106,7 +106,7 @@ export class EnterpriseZone extends constructs.Construct {
           VPCRegion: remoteVpc.vpcRegion,
           CentralAccountRole: props.centralAccount.roleArn,
         },
-        serviceToken: new cr.Provider(this, 'associateProvider', {
+        serviceToken: new cr.Provider(this, `${remoteVpc.vpcId}associateProvider`, {
           onEventHandler: associateCentralVpcwithZone,
         }).serviceToken,
       });
