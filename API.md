@@ -515,6 +515,105 @@ public readonly assnRole: Role;
 ---
 
 
+### CentralResolverRules <a name="CentralResolverRules" id="raindancers-network.CentralResolverRules"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CentralResolverRules.Initializer"></a>
+
+```typescript
+import { CentralResolverRules } from 'raindancers-network'
+
+new CentralResolverRules(scope: Construct, id: string, props: CentralResolverRulesProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CentralResolverRulesProps">CentralResolverRulesProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CentralResolverRules.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CentralResolverRules.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CentralResolverRules.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CentralResolverRulesProps">CentralResolverRulesProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CentralResolverRules.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CentralResolverRules.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CentralResolverRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CentralResolverRules.isConstruct"></a>
+
+```typescript
+import { CentralResolverRules } from 'raindancers-network'
+
+CentralResolverRules.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CentralResolverRules.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralResolverRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CentralResolverRules.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.CloudWanTGW"></a>
 
 Create a TransitGateway That is attached to Cloudwan.
@@ -7823,6 +7922,45 @@ public readonly vpc: Vpc;
 
 ---
 
+### CentralResolverRulesProps <a name="CentralResolverRulesProps" id="raindancers-network.CentralResolverRulesProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CentralResolverRulesProps.Initializer"></a>
+
+```typescript
+import { CentralResolverRulesProps } from 'raindancers-network'
+
+const centralResolverRulesProps: CentralResolverRulesProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CentralResolverRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralResolverRulesProps.property.resolvers">resolvers</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
+
+---
+
+##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.CentralResolverRulesProps.property.domains"></a>
+
+```typescript
+public readonly domains: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `resolvers`<sup>Required</sup> <a name="resolvers" id="raindancers-network.CentralResolverRulesProps.property.resolvers"></a>
+
+```typescript
+public readonly resolvers: R53Resolverendpoints;
+```
+
+- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
+
+---
+
 ### CloudWanRoutingProtocolProps <a name="CloudWanRoutingProtocolProps" id="raindancers-network.CloudWanRoutingProtocolProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CloudWanRoutingProtocolProps.Initializer"></a>
@@ -8620,7 +8758,7 @@ const enterpriseZoneProps: EnterpriseZoneProps = { ... }
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.centralAccount">centralAccount</a></code> | <code><a href="#raindancers-network.CentralAccount">CentralAccount</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.remoteVpc">remoteVpc</a></code> | <code><a href="#raindancers-network.RemoteVpc">RemoteVpc</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.remoteVpc">remoteVpc</a></code> | <code><a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]</code> | *No description.* |
 
 ---
 
@@ -8657,10 +8795,10 @@ public readonly localVpc: Vpc;
 ##### `remoteVpc`<sup>Required</sup> <a name="remoteVpc" id="raindancers-network.EnterpriseZoneProps.property.remoteVpc"></a>
 
 ```typescript
-public readonly remoteVpc: RemoteVpc;
+public readonly remoteVpc: RemoteVpc[];
 ```
 
-- *Type:* <a href="#raindancers-network.RemoteVpc">RemoteVpc</a>
+- *Type:* <a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]
 
 ---
 

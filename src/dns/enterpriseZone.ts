@@ -27,7 +27,7 @@ export interface CentralAccount {
 export interface EnterpriseZoneProps {
   readonly enterpriseDomainName: string;
   readonly localVpc: ec2.Vpc;
-  readonly remoteVpc: RemoteVpc;
+  readonly remoteVpc: RemoteVpc[];
   readonly centralAccount: CentralAccount;
 }
 
@@ -47,71 +47,72 @@ export class EnterpriseZone extends constructs.Construct {
       vpc: props.localVpc,
     });
 
-    // create an association authorisization tp a
-    //aws route53 create-vpc-association-authorization --hosted-zone-id <hosted-zone-id> --vpc VPCRegion=<region>,VPCId=<vpc-id> --region us-east-1
-    const createAssn = new cr.AwsCustomResource(this, 'createR53Assn', {
-      onCreate: {
-        service: 'Route53',
-        action: 'createVPCAssociationAuthorization',
-        parameters: {
-          HostedZoneId: this.privateZone.hostedZoneId,
-          VPC: {
-            VPCId: props.remoteVpc.vpcId,
-            VPCRegion: props.remoteVpc.vpcRegion,
+    props.remoteVpc.forEach((remoteVpc) => {
+      // create an association authorisization tp a
+      //aws route53 create-vpc-association-authorization --hosted-zone-id <hosted-zone-id> --vpc VPCRegion=<region>,VPCId=<vpc-id> --region us-east-1
+      const createAssn = new cr.AwsCustomResource(this, `createR53Assn${remoteVpc.vpcId}`, {
+        onCreate: {
+          service: 'Route53',
+          action: 'createVPCAssociationAuthorization',
+          parameters: {
+            HostedZoneId: this.privateZone.hostedZoneId,
+            VPC: {
+              VPCId: remoteVpc.vpcId,
+              VPCRegion: remoteVpc.vpcRegion,
+            },
+          },
+          physicalResourceId: cr.PhysicalResourceId.of(props.enterpriseDomainName),
+        },
+        onDelete: {
+          service: 'Route53',
+          action: 'deleteVPCAssociationAuthorization',
+          parameters: {
+            HostedZoneId: this.privateZone.hostedZoneId,
+            VPC: {
+              VPCId: remoteVpc.vpcId,
+              VPCRegion: remoteVpc.vpcRegion,
+            },
           },
         },
-        physicalResourceId: cr.PhysicalResourceId.of(props.enterpriseDomainName),
-      },
-      onDelete: {
-        service: 'Route53',
-        action: 'deleteVPCAssociationAuthorization',
-        parameters: {
-          HostedZoneId: this.privateZone.hostedZoneId,
-          VPC: {
-            VPCId: props.remoteVpc.vpcId,
-            VPCRegion: props.remoteVpc.vpcRegion,
-          },
+        logRetention: logs.RetentionDays.ONE_DAY,
+        policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
+          resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
+        }),
+      });
+
+
+      const associateCentralVpcwithZone = new aws_lambda.Function(this, `${remoteVpc.vpcId}associateLambda`, {
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        logRetention: logs.RetentionDays.ONE_MONTH,
+        handler: 'associateCentralVPC.on_event',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/dns')),
+        timeout: cdk.Duration.seconds(899),
+      });
+
+      // this lambda will assume a role in the central account, so it does not need any local permissions
+      associateCentralVpcwithZone.addToRolePolicy(
+        new iam.PolicyStatement({
+          actions: ['sts:AssumeRole'],
+          effect: iam.Effect.ALLOW,
+          resources: [props.centralAccount.roleArn],
+        }),
+      );
+
+      const associateVPCCustomResources = new cdk.CustomResource(this, `${remoteVpc.vpcId}associateVPCcustomResources`, {
+        resourceType: 'Custom::AssociateInternalZone',
+        properties: {
+          ZoneId: this.privateZone.hostedZoneId, // this is the zone
+          VPCId: remoteVpc.vpcId,
+          VPCRegion: remoteVpc.vpcRegion,
+          CentralAccountRole: props.centralAccount.roleArn,
         },
-      },
-      logRetention: logs.RetentionDays.ONE_DAY,
-      policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
-        resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,
-      }),
+        serviceToken: new cr.Provider(this, 'associateProvider', {
+          onEventHandler: associateCentralVpcwithZone,
+        }).serviceToken,
+      });
+
+      associateVPCCustomResources.node.addDependency(createAssn);
     });
-
-
-    const associateCentralVpcwithZone = new aws_lambda.Function(this, 'associateLambda', {
-      runtime: aws_lambda.Runtime.PYTHON_3_9,
-      logRetention: logs.RetentionDays.ONE_MONTH,
-      handler: 'associateCentralVPC.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/dns')),
-      timeout: cdk.Duration.seconds(899),
-    });
-
-    // this lambda will assume a role in the central account, so it does not need any local permissions
-    associateCentralVpcwithZone.addToRolePolicy(
-      new iam.PolicyStatement({
-        actions: ['sts:AssumeRole'],
-        effect: iam.Effect.ALLOW,
-        resources: [props.centralAccount.roleArn],
-      }),
-    );
-
-    const associateVPCCustomResources = new cdk.CustomResource(this, 'associateVPCcustomResources', {
-      resourceType: 'Custom::AssociateInternalZone',
-      properties: {
-        ZoneId: this.privateZone.hostedZoneId, // this is the zone
-        VPCId: props.remoteVpc.vpcId,
-        VPCRegion: props.remoteVpc.vpcRegion,
-        CentralAccountRole: props.centralAccount.roleArn,
-      },
-      serviceToken: new cr.Provider(this, 'associateProvider', {
-        onEventHandler: associateCentralVpcwithZone,
-      }).serviceToken,
-    });
-
-    associateVPCCustomResources.node.addDependency(createAssn);
-
   }
 }
 

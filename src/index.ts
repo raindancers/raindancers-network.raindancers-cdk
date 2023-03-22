@@ -23,6 +23,7 @@ export * from './endpoints/awsServiceEndpoints';
 export * from './dns/dnsResolvers';
 export * from './dns/forwardingRules';
 export * from './dns/enterpriseZone';
+export * from './dns/resolverRules';
 
 // firewall
 export * from './nwfirewall/firewall';
