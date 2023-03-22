@@ -49,7 +49,8 @@ export class RedShiftDatabase extends constructs.Construct {
     }));
 
     new cdk.CustomResource(this, `AddDatabaseCR${props.databaseName}`, {
-      serviceToken: new cr.Provider(this, `AddDatabaseCR${props.databaseName}`, {
+      resourceType: 'Custom::RedshiftDatabase',
+      serviceToken: new cr.Provider(this, `AddDatabaseProvider${props.databaseName}`, {
         onEventHandler: addDatabaseLambda,
       }).serviceToken,
       properties: {
@@ -64,7 +65,7 @@ export class RedShiftDatabase extends constructs.Construct {
 
   public executeSQLStatement(statementName: string, sql: string): void {
 
-    const addDatabaseLambda = new cdk.aws_lambda.SingletonFunction(this, 'addDatabaseFunction', {
+    const executeSQLLambda = new cdk.aws_lambda.SingletonFunction(this, 'executeSQLFunction', {
       uuid: 'af1a295c-b69c-45bf-9bee-d9944a9da811',
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'executesql.on_event',
@@ -72,7 +73,7 @@ export class RedShiftDatabase extends constructs.Construct {
       timeout: cdk.Duration.seconds(900),
 	  });
 
-	  addDatabaseLambda.addToRolePolicy(new iam.PolicyStatement({
+	  executeSQLLambda.addToRolePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
 		  'redshift:GetClusterCredentialsWithIAM',
@@ -81,21 +82,19 @@ export class RedShiftDatabase extends constructs.Construct {
       resources: ['*'],
 	  }));
 
-	  new cdk.CustomResource(this, `AddDatabaseCR${statementName}`, {
+	  new cdk.CustomResource(this, `ExecuteSQL${statementName}`, {
+      resourceType: 'Custom::ExecuteSQLStatment',
       serviceToken: new cr.Provider(this, `ExecuteSQL-${statementName}`, {
-		  onEventHandler: addDatabaseLambda,
+        onEventHandler: executeSQLLambda,
       }).serviceToken,
       properties: {
-		  StatementName: statementName,
-		  ClusterIdentifier: this.cluster.clusterName,
-		  DatabaseName: this.databaseName,
-		  Sql: sql,
+        StatementName: statementName,
+        ClusterIdentifier: this.cluster.clusterName,
+        DatabaseName: this.databaseName,
+        Sql: sql,
       },
 	  });
-
-
   }
-
 
 }
 
