@@ -130,3 +130,46 @@ export class EnterpriseZone extends constructs.Construct {
     });
   }
 }
+
+export interface CentralAccountAssnRoleProps {
+  readonly vpc: ec2.Vpc;
+  readonly orgId: string;
+}
+
+export class CentralAccountAssnRole extends constructs.Construct {
+
+  public readonly assnRole: iam.Role;
+
+  constructor(scope: constructs.Construct, id: string, props: CentralAccountAssnRoleProps) {
+	  super(scope, id);
+
+    // create the role
+
+    this.assnRole = new iam.Role(this, 'r53assnrole', {
+      assumedBy: new iam.OrganizationPrincipal(props.orgId),
+      description: 'Role is assumed by lambdas in accounts to associate their zone',
+      roleName: 'r53assn',
+      externalIds: ['R53Assn'],
+    });
+
+
+    // add permissions
+    this.assnRole.addToPolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: [
+          'route53:DisassociateVPCFromHostedZone',
+          'route53:AssociateVPCWithHostedZone',
+          'ec2:DescribeVpcs',
+        ],
+        resources: ['*'],
+      }),
+    );
+
+    new cdk.CfnOutput(this, 'R53RouteAssnRole', {
+      value: this.assnRole.roleArn,
+    });
+
+  }
+
+}
