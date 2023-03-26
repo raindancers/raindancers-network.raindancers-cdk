@@ -5,7 +5,7 @@ import {
 }
   from 'aws-cdk-lib';
 
-
+import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 
 
@@ -72,6 +72,10 @@ export class AssociateSharedResolverRule extends constructs.Construct {
 
     props.domainNames.forEach((domain) => {
 
+      var zoneName = domain.replace(/\./gi, 'dot');
+      zoneName = zoneName.replace(/-/gi, 'dash');
+      const region = cdk.Aws.REGION.replace(/-/gi, '');
+
       const resolverRule = new cr.AwsCustomResource(this, `lookupResolverId'${domain}`, {
         onCreate: {
           service: 'Route53Resolver',
@@ -81,6 +85,10 @@ export class AssociateSharedResolverRule extends constructs.Construct {
               {
                 Name: 'DomainName',
                 Values: [`${domain}.`],
+              },
+              {
+                Name: 'Name',
+                Values: [`${zoneName}${region}`],
               },
             ],
           },

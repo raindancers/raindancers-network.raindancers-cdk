@@ -2,8 +2,10 @@ import {
   aws_route53resolver as r53r,
 }
   from 'aws-cdk-lib';
+import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 import { R53Resolverendpoints } from './dnsResolvers';
+
 
 export interface CentralResolverRulesProps {
   readonly domains: string[];
@@ -18,11 +20,12 @@ export class CentralResolverRules extends constructs.Construct {
 	  props.domains.forEach((domain) => {
       var zoneName = domain.replace(/\./gi, 'dot');
       zoneName = zoneName.replace(/-/gi, 'dash');
+      const region = cdk.Aws.REGION.replace(/-/gi, '');
 
       new r53r.CfnResolverRule(this, `${zoneName}SharedResolverRule`, {
         domainName: domain,
         ruleType: 'FORWARD',
-        name: zoneName,
+        name: `${zoneName}${region}`,
         resolverEndpointId: props.resolvers.outboundResolver.attrResolverEndpointId,
         targetIps: props.resolvers.inboundResolversIp,
         tags: [{
