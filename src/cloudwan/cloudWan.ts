@@ -17,6 +17,7 @@ import * as cloudWanEnum from './cloudWanEnum';
 import { CloudWanCorePolicyTable } from './cloudWanPolicyTable';
 import { CoreNetworkSegment } from './coreNetworkSegment';
 
+
 /**
  * Create a CoreNework for a Cloudwan
  */
@@ -69,6 +70,7 @@ export class CoreNetwork extends constructs.Construct {
 
     const policyTable = new CloudWanCorePolicyTable(this, 'PolicyTable', {
       coreName: props.coreName,
+      noTableBackup: props.nonProduction,
     });
 
 

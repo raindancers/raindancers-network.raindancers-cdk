@@ -8033,6 +8033,7 @@ const coreNetworkProps: CoreNetworkProps = { ... }
 | <code><a href="#raindancers-network.CoreNetworkProps.property.globalNetwork">globalNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnGlobalNetwork</code> | Which Global Network. |
 | <code><a href="#raindancers-network.CoreNetworkProps.property.policyDescription">policyDescription</a></code> | <code>string</code> | a decription for the policy Document. |
 | <code><a href="#raindancers-network.CoreNetworkProps.property.insideCidrBlocks">insideCidrBlocks</a></code> | <code>string[]</code> | List of InsideCidr Blocks. |
+| <code><a href="#raindancers-network.CoreNetworkProps.property.nonProduction">nonProduction</a></code> | <code>boolean</code> | If this is a non production stack, backups will not be made. |
 | <code><a href="#raindancers-network.CoreNetworkProps.property.vpnEcmpSupport">vpnEcmpSupport</a></code> | <code>boolean</code> | support VpnECmp. |
 
 ---
@@ -8106,6 +8107,18 @@ public readonly insideCidrBlocks: string[];
 - *Type:* string[]
 
 List of InsideCidr Blocks.
+
+---
+
+##### `nonProduction`<sup>Optional</sup> <a name="nonProduction" id="raindancers-network.CoreNetworkProps.property.nonProduction"></a>
+
+```typescript
+public readonly nonProduction: boolean;
+```
+
+- *Type:* boolean
+
+If this is a non production stack, backups will not be made.
 
 ---
 

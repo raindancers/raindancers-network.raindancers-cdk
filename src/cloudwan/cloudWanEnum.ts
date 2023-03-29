@@ -199,4 +199,9 @@ export interface CoreNetworkProps {
 	 * List of InsideCidr Blocks
 	 */
   readonly insideCidrBlocks?: string[];
+  /**
+   * If this is a non production stack, backups will not be
+   * made
+   */
+  readonly nonProduction?: boolean | undefined;
 }
