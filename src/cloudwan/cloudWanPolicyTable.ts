@@ -18,7 +18,13 @@ export interface PolicyTableProps {
 	 * the name of the core
 	 */
   coreName: string;
+  /**
+   * By default a Backup Vault is created, for the dynamo table.
+   * However for Lab/test situations that s
+   */
+  noTableBackup?: boolean | undefined;
 }
+
 /**
  * Create a DynamoDB table and associated lambdas to contain the objects that are contained in the Cloudwan Core Network.
  * Do not call this class directly, it is called by CoreNetwork
@@ -48,15 +54,18 @@ export class CloudWanCorePolicyTable extends constructs.Construct {
       pointInTimeRecovery: true,
 
     });
-    // create a back up for the Policy Table.
-    backup.BackupPlan.dailyWeeklyMonthly5YearRetention(this, 'policytablebackup').addSelection(
-      'Selection',
-      {
-        resources: [
-          backup.BackupResource.fromDynamoDbTable(policyTable),
-        ],
-      },
-    );
+
+    if (!(props?.noTableBackup && props?.noTableBackup === true)) {
+      // create a back up for the Policy Table.
+      backup.BackupPlan.dailyWeeklyMonthly5YearRetention(this, 'policytablebackup').addSelection(
+        'Selection',
+        {
+          resources: [
+            backup.BackupResource.fromDynamoDbTable(policyTable),
+          ],
+        },
+      );
+    };
 
     // create the lambda
     const onEvent = new aws_lambda.Function(this, 'putItems', {
