@@ -20,7 +20,7 @@ export interface PolicyTableProps {
   coreName: string;
   /**
    * By default a Backup Vault is created, for the dynamo table.
-   * However for Lab/test situations that s
+   * However for Lab/test situations that results in left over resources in a destroy
    */
   noTableBackup?: boolean | undefined;
 }
@@ -55,7 +55,9 @@ export class CloudWanCorePolicyTable extends constructs.Construct {
 
     });
 
-    if (!(props?.noTableBackup && props?.noTableBackup === true)) {
+    // Create a backup table unless it has been deliberately opted-out
+    // t
+    if (!(props.noTableBackup ?? true === true)) {
       // create a back up for the Policy Table.
       backup.BackupPlan.dailyWeeklyMonthly5YearRetention(this, 'policytablebackup').addSelection(
         'Selection',

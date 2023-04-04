@@ -1,6 +1,7 @@
 // the Evpc constructs
 export * from './evpc/evpc';
 export * from './evpc/enterprisevpc';
+export * from './evpc/enterprisevpclambdas';
 export * from './evpc/resolveSubnetGroupNames';
 
 // the ipam constructs

@@ -2519,6 +2519,137 @@ public readonly vpcAttachmentSegmentName: string;
 ---
 
 
+### EnterpriseVpcLambda <a name="EnterpriseVpcLambda" id="raindancers-network.EnterpriseVpcLambda"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseVpcLambda.Initializer"></a>
+
+```typescript
+import { EnterpriseVpcLambda } from 'raindancers-network'
+
+new EnterpriseVpcLambda(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseVpcLambda.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseVpcLambda.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.EnterpriseVpcLambda.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseVpcLambda.isConstruct"></a>
+
+```typescript
+import { EnterpriseVpcLambda } from 'raindancers-network'
+
+EnterpriseVpcLambda.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseVpcLambda.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A custom resource to use for adding routes. |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | attach to cloudwan with a water. |
+| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A check to see if transitgateway is ready to route to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseVpcLambda.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.EnterpriseVpcLambda.property.addRoutesProvider"></a>
+
+```typescript
+public readonly addRoutesProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
+
+A custom resource to use for adding routes.
+
+---
+
+##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.EnterpriseVpcLambda.property.attachToCloudwanProvider"></a>
+
+```typescript
+public readonly attachToCloudwanProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
+
+attach to cloudwan with a water.
+
+---
+
+##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.EnterpriseVpcLambda.property.tgWaiterProvider"></a>
+
+```typescript
+public readonly tgWaiterProvider: Provider;
+```
+
+- *Type:* aws-cdk-lib.custom_resources.Provider
+
+A check to see if transitgateway is ready to route to.
+
+---
+
+
 ### EnterpriseZone <a name="EnterpriseZone" id="raindancers-network.EnterpriseZone"></a>
 
 create forwarding rules and associate them with a vpc.
