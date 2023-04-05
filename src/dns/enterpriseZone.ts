@@ -134,6 +134,7 @@ export class EnterpriseZone extends constructs.Construct {
 export interface CentralAccountAssnRoleProps {
   readonly vpc: ec2.Vpc;
   readonly orgId: string;
+  readonly roleName?: string | undefined;
 }
 
 export class CentralAccountAssnRole extends constructs.Construct {
@@ -148,7 +149,7 @@ export class CentralAccountAssnRole extends constructs.Construct {
     this.assnRole = new iam.Role(this, 'r53assnrole', {
       assumedBy: new iam.OrganizationPrincipal(props.orgId),
       description: 'Role is assumed by lambdas in accounts to associate their zone',
-      roleName: 'r53assn',
+      roleName: ( props.roleName ?? 'r53assn' ),
       externalIds: ['R53Assn'],
     });
 

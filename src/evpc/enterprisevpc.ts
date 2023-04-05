@@ -9,17 +9,78 @@ import {
   custom_resources as cr,
   aws_ram as ram,
   aws_route53 as r53,
+  aws_route53resolver as r53r,
   aws_dynamodb as dynamodb,
   aws_events as events,
   aws_events_targets as targets,
   aws_sqs as sqs,
+  aws_networkfirewall as firewall,
   //aws_stepfunctions as sfn
 }
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
+import { R53Resolverendpoints, ConditionalForwarder, OutboundForwardingRule } from '../dns/dnsResolvers';
+import { CentralAccountAssnRole } from '../dns/enterpriseZone';
+import { CentralResolverRules } from '../dns/resolverRules';
+import { AwsServiceEndPoints } from '../endpoints/awsServiceEndpoints';
+import { NetworkFirewall } from '../nwfirewall/firewall';
 import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 
+
+export interface ESubnetGroup
+{
+  readonly name: string;
+  readonly subnetType: ec2.SubnetType;
+  readonly cidrMask: number;
+}
+
+export interface ESubnetGroupProps {
+  readonly name: string;
+  readonly subnetType: ec2.SubnetType;
+  readonly cidrMask: number;
+}
+
+export class SubnetGroup extends constructs.Construct {
+
+  subnet: ESubnetGroup;
+
+  constructor(scope: constructs.Construct, id: string, props: ESubnetGroupProps) {
+    super(scope, id);
+
+    const mysubnet: ESubnetGroup= {
+      name: props.name,
+      subnetType: props.subnetType,
+      cidrMask: props.cidrMask,
+    };
+
+    this.subnet = mysubnet;
+  }
+}
+
+
+export interface AddAwsServiceEndPointsProps {
+  readonly services: ec2.InterfaceVpcEndpointAwsService[];
+  readonly subnetGroup: SubnetGroup;
+  readonly dynamoDbGateway?: boolean | undefined;
+  readonly s3GatewayInterface?: boolean | undefined;
+}
+
+export enum SubnetWildCards {
+  ALLSUBNETS = 'ALLSUBNETS'
+}
+
+export interface Route {
+  readonly cidr?: string;
+  readonly subnet?: SubnetGroup | SubnetWildCards;
+  readonly destination: Destination;
+  readonly description: string;
+}
+
+export interface RouterGroup {
+  readonly subnetGroup: SubnetGroup;
+  readonly routes: Route[];
+}
 
 export interface ShareSubnetGroupProps {
   readonly subnetGroups: string [];
@@ -107,7 +168,6 @@ export interface CloudWanRoutingProtocolProps {
   readonly denyRouteFilter?: string[] | undefined;
 }
 
-
 /**
  * The Destinations for Adding Routes
  */
@@ -124,10 +184,15 @@ export interface PrefixCidr {
   readonly cidr: string;
 }
 
+export interface EvpcProps extends ec2.VpcProps {
+  readonly subnetGroups?: SubnetGroup[];
+}
+
 /** Propertys for an Enterprise VPC */
 export interface EnterpriseVpcProps {
   // the vpc
-  readonly vpc: ec2.Vpc;
+  readonly vpc?: ec2.Vpc;
+  readonly evpc?: EvpcProps;
 
 }// end of addRoutetoCloudWan
 
@@ -173,8 +238,13 @@ export class EnterpriseVpc extends constructs.Construct {
 
   public vpcAttachmentSegmentName: string | undefined;
 
-
   public cloudWanCoreId: string | undefined;
+
+  public subnetConfiguration: SubnetGroup[] = [];
+
+  public firewallArn: string | undefined;
+
+  public r53endpointResolvers: R53Resolverendpoints | undefined;
 
   /**
    *
@@ -185,7 +255,26 @@ export class EnterpriseVpc extends constructs.Construct {
   constructor(scope: constructs.Construct, id: string, props: EnterpriseVpcProps) {
     super(scope, id);
 
-    this.vpc = props.vpc;
+    if (props.vpc && props.evpc) {
+      throw new Error('Can not have both vpc and evpc defined');
+    }
+
+    if (props.vpc) {
+      this.vpc = props.vpc;
+    } else {
+      // this is an evpc configuration..
+
+      // if (!(props.evpc?.subnetGroups)) {
+      //   throw new Error('An Evpc must have a subnetGroup property');
+      // }
+
+      console.log(props.evpc);
+
+      this.vpc = new ec2.Vpc(this, 'evpc', {
+        ...props.evpc,
+      });
+	  }
+
 
     const crHandlders = new EnterpriseVpcLambda(this, 'vpclambda');
 
@@ -193,9 +282,192 @@ export class EnterpriseVpc extends constructs.Construct {
     this.tgWaiterProvider = crHandlders.tgWaiterProvider;
     this.attachToCloudwanProvider = crHandlders.attachToCloudwanProvider;
 
+  }
+
+  public addSubnet(name: string, subnetType: ec2.SubnetType, cidrMask: number ): SubnetGroup {
+
+    const subnet = new SubnetGroup(this, name, {
+      name: name,
+      subnetType: subnetType,
+      cidrMask: cidrMask,
+    });
+
+    console.log(subnet);
+
+    this.subnetConfiguration.push(subnet);
+
+    return subnet;
+
+  };
+
+  /**
+   * Add a collection of service endpopints to the VPC
+   * @param props
+   */
+  public addServiceEndpoints(props: AddAwsServiceEndPointsProps): void {
+
+    new AwsServiceEndPoints(this, 'AWSEndpoints', {
+      services: props.services,
+      subnetGroup: props.subnetGroup.subnet.name, // TODO. This class needs updating so it can take the SubnetNetGroup Type
+      vpc: this.vpc,
+      dynamoDBGatewayInterface: props.dynamoDbGateway,
+      s3GatewayInterface: props.s3GatewayInterface,
+    });
+  }
+
+  public addNetworkFirewall(firewallName: string, firewallPolicy: firewall.CfnFirewallPolicy, subnet: SubnetGroup): void {
+
+    const nwFirewall = new NetworkFirewall(this, 'Aparua', {
+      firewallName: firewallName,
+      firewallPolicy: firewallPolicy,
+      subnetGroup: subnet.subnet.name,
+      vpc: this.vpc,
+    });
+
+    this.firewallArn = nwFirewall.firewallArn;
+  }
+
+  public addPrivateHostedZone(zonename: string): r53.HostedZone {
+    const zone = new r53.PrivateHostedZone(this, `privateZone${zonename}`, {
+      zoneName: zonename,
+      vpc: this.vpc,
+    });
+
+    return zone;
+  }
+
+  public addR53Resolvers(subnet: SubnetGroup): R53Resolverendpoints {
+
+    const r53Resolvers = new R53Resolverendpoints(
+      this,
+      'RouteResolvers',
+      {
+        vpc: this.vpc,
+        subnetGroup: subnet.subnet.name,
+      },
+    );
+    this.r53endpointResolvers = r53Resolvers;
+
+    return r53Resolvers;
+  }
+
+  public addCentralResolverRules(domains: string[]): void {
+
+    new CentralResolverRules(this, 'centralResolverRules', {
+      domains: domains,
+      resolvers: this.r53endpointResolvers as R53Resolverendpoints,
+    });
+  }
+
+  public addConditionalFowardingRules(forwardingRules: OutboundForwardingRule[]): void {
+
+    new ConditionalForwarder(this, 'ConditionalForwarder', {
+      outboundResolver: this.r53endpointResolvers?.outboundResolver as r53r.CfnResolverEndpoint,
+      vpc: this.vpc,
+      inboundResolverTargets: this.r53endpointResolvers?.inboundResolversIp as r53r.CfnResolverRule.TargetAddressProperty[],
+      forwardingRules: forwardingRules,
+    });
 
   }
-  // ['arn:aws:organizations::12346789012:organization/o-123456}']
+
+  public addCrossAccountR53AssociationRole(rolename?: string | undefined): void {
+    new CentralAccountAssnRole(this, 'assnRole', {
+      vpc: this.vpc,
+      orgId: this.node.tryGetContext('orgId'),
+      roleName: rolename,
+    });
+  }
+
+
+  /**
+   * This is a convience method to present the routing for the Vpc in a simpler format,
+   * than the addRoutes Method, which it calls.
+   * @param routerGroups
+   */
+  public router(routerGroups: RouterGroup[]): void {
+
+    // Extract all the subnets, these will be tokens
+    let allSubnetGroups: SubnetGroup[] = [];
+    routerGroups.forEach((routerGroup)=> {
+      allSubnetGroups.push(routerGroup.subnetGroup);
+    });
+
+    // let subnets: ec2.ISubnet[] = [];
+    // allSubnetGroups.forEach((subnetGroup) => {
+    //   subnets.concat(this.vpc.selectSubnets({ subnetGroupName: subnetGroup.subnet.name }).subnets);
+    // });
+
+    // allSubnetCidrs is a list of subnets, from which to create routes
+    // let allSubnetCidrs: string[] = [];
+    // subnets.forEach((subnet) => {
+    //   allSubnetCidrs.push(subnet.ipv4CidrBlock);
+    // });
+
+
+    //
+    routerGroups.forEach((routerGroup) => {
+      routerGroup.routes.forEach((route) => {
+
+        // Sanity Check the inputs
+        // only one of cidr or subnet can be supplied
+        if (!(route.cidr || route.subnet)) {
+          throw new Error('Only One of cidr or subnet can be supplied');
+        }
+
+        let routecidr: string[] = [];
+
+        // if a subnet is supplied, it can be be a SubnetWildCard or a subnet.
+        if (route.cidr) {
+          routecidr.push(route.cidr as string);
+        } else {
+          // if the wild card is used; we need to create routes for all subnets, except
+          // for the subnet where this is being routed from.
+          if (route.subnet === SubnetWildCards.ALLSUBNETS) {
+
+            // remove  the calling subnet from the wildcard list
+            let subnetsNotMe = allSubnetGroups;
+            subnetsNotMe.splice(subnetsNotMe.findIndex(item => item === routerGroup.subnetGroup));
+
+            // get the subnetIds
+            let subnets: ec2.ISubnet[] = [];
+            allSubnetGroups.forEach((subnetGroup) => {
+              subnets.concat(this.vpc.selectSubnets({ subnetGroupName: subnetGroup.subnet.name }).subnets);
+            });
+
+            // allSubnetCidrs is a list of subnets, from which to create routes
+            let allSubnetCidrs: string[] = [];
+            subnets.forEach((subnet) => {
+              allSubnetCidrs.push(subnet.ipv4CidrBlock);
+            });
+
+            routecidr.concat(allSubnetCidrs);
+          // if the subnets are supplied
+          } else {
+            let subnets: ec2.ISubnet[] = [];
+            subnets = this.vpc.selectSubnets({ subnetGroupName: route.subnet?.subnet.name }).subnets;
+            let subnetGroupCidrs: string[] = [];
+            subnets.forEach((subnet) => {
+              subnetGroupCidrs.push(subnet.ipv4CidrBlock);
+            });
+            routecidr.concat(subnetGroupCidrs);
+          }
+        }
+        // .addRoutes takes a list of cidrs, and will deal to them so that traffic reamins symetric.
+        this.addRoutes({
+          cidr: routecidr,
+          description: route.description,
+          subnetGroups: [routerGroup.subnetGroup.subnet.name],
+          destination: route.destination,
+          // destination: network.Destination.NWFIREWALL,
+          // networkFirewallArn: aparua.firewallArn,
+          // destination: network.Destination.CLOUDWAN,
+          // cloudwanName: props.cloudWan.coreName
+
+        });
+
+      });
+    });
+  }
 
   public createAndShareSubnetPrefixList(name: string, subnets: ec2.SubnetSelection, orgArn: string): ec2.CfnPrefixList {
 
@@ -305,6 +577,8 @@ export class EnterpriseVpc extends constructs.Construct {
 	 * @param props
 	 */
   public attachToCloudWan(props: AttachToCloudWanProps): string {
+
+    this.cloudWanName = props.coreNetworkName;
 
     // get the coreNetwork Id from the name provided
     const lookupIdLambda = new aws_lambda.Function(this, 'lookupIdLambda-evpc', {
@@ -593,7 +867,7 @@ export class EnterpriseVpc extends constructs.Construct {
                   cidr: network,
                   RouteTableId: routeTableId,
                   Destination: props.destination,
-                  CloudWanName: props.cloudwanName,
+                  CloudWanName: this.cloudWanName,
                 },
               });
 
@@ -644,7 +918,7 @@ export class EnterpriseVpc extends constructs.Construct {
           service: 'NetworkFirewall',
           action: 'describeFirewall',
           parameters: {
-            FirewallArn: props.networkFirewallArn,
+            FirewallArn: this.firewallArn,
           },
           region: cdk.Aws.REGION,
           physicalResourceId: cr.PhysicalResourceId.of('DescribeFirewall'),

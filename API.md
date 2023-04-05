@@ -836,6 +836,105 @@ the AttachmentId between the Transit Gateway and DX ( if any ).
 ---
 
 
+### ConditionalForwarder <a name="ConditionalForwarder" id="raindancers-network.ConditionalForwarder"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.ConditionalForwarder.Initializer"></a>
+
+```typescript
+import { ConditionalForwarder } from 'raindancers-network'
+
+new ConditionalForwarder(scope: Construct, id: string, props: ConditionalForwarderProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ConditionalForwarderProps">ConditionalForwarderProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ConditionalForwarder.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ConditionalForwarder.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ConditionalForwarder.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ConditionalForwarderProps">ConditionalForwarderProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ConditionalForwarder.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.ConditionalForwarder.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.ConditionalForwarder.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ConditionalForwarder.isConstruct"></a>
+
+```typescript
+import { ConditionalForwarder } from 'raindancers-network'
+
+ConditionalForwarder.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ConditionalForwarder.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ConditionalForwarder.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ConditionalForwarder.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### CoreNetwork <a name="CoreNetwork" id="raindancers-network.CoreNetwork"></a>
 
 Create a CoreNework for a Cloudwan.
@@ -2163,14 +2262,23 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#raindancers-network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.EnterpriseVpc.addCentralResolverRules">addCentralResolverRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.addConditionalFowardingRules">addConditionalFowardingRules</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addCoreRoutes">addCoreRoutes</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole">addCrossAccountR53AssociationRole</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.addNetworkFirewall">addNetworkFirewall</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.addPrivateHostedZone">addPrivateHostedZone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.addR53Resolvers">addR53Resolvers</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
+| <code><a href="#raindancers-network.EnterpriseVpc.addServiceEndpoints">addServiceEndpoints</a></code> | Add a collection of service endpopints to the VPC. |
+| <code><a href="#raindancers-network.EnterpriseVpc.addSubnet">addSubnet</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
 | <code><a href="#raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList">createAndShareSubnetPrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
+| <code><a href="#raindancers-network.EnterpriseVpc.router">router</a></code> | This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls. |
 | <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
 
 ---
@@ -2183,6 +2291,30 @@ public toString(): string
 
 Returns a string representation of this construct.
 
+##### `addCentralResolverRules` <a name="addCentralResolverRules" id="raindancers-network.EnterpriseVpc.addCentralResolverRules"></a>
+
+```typescript
+public addCentralResolverRules(domains: string[]): void
+```
+
+###### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.EnterpriseVpc.addCentralResolverRules.parameter.domains"></a>
+
+- *Type:* string[]
+
+---
+
+##### `addConditionalFowardingRules` <a name="addConditionalFowardingRules" id="raindancers-network.EnterpriseVpc.addConditionalFowardingRules"></a>
+
+```typescript
+public addConditionalFowardingRules(forwardingRules: OutboundForwardingRule[]): void
+```
+
+###### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.EnterpriseVpc.addConditionalFowardingRules.parameter.forwardingRules"></a>
+
+- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
+
+---
+
 ##### `addCoreRoutes` <a name="addCoreRoutes" id="raindancers-network.EnterpriseVpc.addCoreRoutes"></a>
 
 ```typescript
@@ -2192,6 +2324,66 @@ public addCoreRoutes(props: AddCoreRoutesProps): void
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addCoreRoutes.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.AddCoreRoutesProps">AddCoreRoutesProps</a>
+
+---
+
+##### `addCrossAccountR53AssociationRole` <a name="addCrossAccountR53AssociationRole" id="raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole"></a>
+
+```typescript
+public addCrossAccountR53AssociationRole(rolename?: string): void
+```
+
+###### `rolename`<sup>Optional</sup> <a name="rolename" id="raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole.parameter.rolename"></a>
+
+- *Type:* string
+
+---
+
+##### `addNetworkFirewall` <a name="addNetworkFirewall" id="raindancers-network.EnterpriseVpc.addNetworkFirewall"></a>
+
+```typescript
+public addNetworkFirewall(firewallName: string, firewallPolicy: CfnFirewallPolicy, subnet: SubnetGroup): void
+```
+
+###### `firewallName`<sup>Required</sup> <a name="firewallName" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.firewallName"></a>
+
+- *Type:* string
+
+---
+
+###### `firewallPolicy`<sup>Required</sup> <a name="firewallPolicy" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.firewallPolicy"></a>
+
+- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy
+
+---
+
+###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.subnet"></a>
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+
+---
+
+##### `addPrivateHostedZone` <a name="addPrivateHostedZone" id="raindancers-network.EnterpriseVpc.addPrivateHostedZone"></a>
+
+```typescript
+public addPrivateHostedZone(zonename: string): HostedZone
+```
+
+###### `zonename`<sup>Required</sup> <a name="zonename" id="raindancers-network.EnterpriseVpc.addPrivateHostedZone.parameter.zonename"></a>
+
+- *Type:* string
+
+---
+
+##### `addR53Resolvers` <a name="addR53Resolvers" id="raindancers-network.EnterpriseVpc.addR53Resolvers"></a>
+
+```typescript
+public addR53Resolvers(subnet: SubnetGroup): R53Resolverendpoints
+```
+
+###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.EnterpriseVpc.addR53Resolvers.parameter.subnet"></a>
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
 
 ---
 
@@ -2218,6 +2410,44 @@ Add routes to SubnetGroups ( by implication their routing tables ).
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addRoutes.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.AddRoutesProps">AddRoutesProps</a>
+
+---
+
+##### `addServiceEndpoints` <a name="addServiceEndpoints" id="raindancers-network.EnterpriseVpc.addServiceEndpoints"></a>
+
+```typescript
+public addServiceEndpoints(props: AddAwsServiceEndPointsProps): void
+```
+
+Add a collection of service endpopints to the VPC.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addServiceEndpoints.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddAwsServiceEndPointsProps">AddAwsServiceEndPointsProps</a>
+
+---
+
+##### `addSubnet` <a name="addSubnet" id="raindancers-network.EnterpriseVpc.addSubnet"></a>
+
+```typescript
+public addSubnet(name: string, subnetType: SubnetType, cidrMask: number): SubnetGroup
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.subnetType"></a>
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetType
+
+---
+
+###### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.cidrMask"></a>
+
+- *Type:* number
 
 ---
 
@@ -2301,6 +2531,20 @@ Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostic
 
 ---
 
+##### `router` <a name="router" id="raindancers-network.EnterpriseVpc.router"></a>
+
+```typescript
+public router(routerGroups: RouterGroup[]): void
+```
+
+This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls.
+
+###### `routerGroups`<sup>Required</sup> <a name="routerGroups" id="raindancers-network.EnterpriseVpc.router.parameter.routerGroups"></a>
+
+- *Type:* <a href="#raindancers-network.RouterGroup">RouterGroup</a>[]
+
+---
+
 ##### `shareSubnetGroup` <a name="shareSubnetGroup" id="raindancers-network.EnterpriseVpc.shareSubnetGroup"></a>
 
 ```typescript
@@ -2352,10 +2596,13 @@ Any object.
 | <code><a href="#raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.subnetConfiguration">subnetConfiguration</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanCoreId">cloudWanCoreId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.firewallArn">firewallArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.property.r53endpointResolvers">r53endpointResolvers</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
 | <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
@@ -2418,6 +2665,16 @@ the ec2.Vpc that is passed in as property.
 
 ---
 
+##### `subnetConfiguration`<sup>Required</sup> <a name="subnetConfiguration" id="raindancers-network.EnterpriseVpc.property.subnetConfiguration"></a>
+
+```typescript
+public readonly subnetConfiguration: SubnetGroup[];
+```
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]
+
+---
+
 ##### `cloudWanCoreId`<sup>Optional</sup> <a name="cloudWanCoreId" id="raindancers-network.EnterpriseVpc.property.cloudWanCoreId"></a>
 
 ```typescript
@@ -2461,6 +2718,26 @@ public readonly cloudWanVpcAttachmentId: string;
 - *Type:* string
 
 AttachmentId when the vpc is attached to a Cloudwan.
+
+---
+
+##### `firewallArn`<sup>Optional</sup> <a name="firewallArn" id="raindancers-network.EnterpriseVpc.property.firewallArn"></a>
+
+```typescript
+public readonly firewallArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `r53endpointResolvers`<sup>Optional</sup> <a name="r53endpointResolvers" id="raindancers-network.EnterpriseVpc.property.r53endpointResolvers"></a>
+
+```typescript
+public readonly r53endpointResolvers: R53Resolverendpoints;
+```
+
+- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
 
 ---
 
@@ -2761,958 +3038,6 @@ public readonly privateZone: PrivateHostedZone;
 
 ---
 
-
-### Evpc <a name="Evpc" id="raindancers-network.Evpc"></a>
-
-Extends the ec2.Vpc construct to provide additional functionality - support for using AWS IPAM - methods for integration - Flow logs and Athena Querys - Create and share 53 zones.
-
-#### Initializers <a name="Initializers" id="raindancers-network.Evpc.Initializer"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-new Evpc(scope: Construct, id: string, props?: EvpcProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.Evpc.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EvpcProps">EvpcProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Evpc.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Optional</sup> <a name="props" id="raindancers-network.Evpc.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.EvpcProps">EvpcProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.Evpc.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.Evpc.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
-| <code><a href="#raindancers-network.Evpc.addClientVpnEndpoint">addClientVpnEndpoint</a></code> | Adds a new client VPN endpoint to this VPC. |
-| <code><a href="#raindancers-network.Evpc.addFlowLog">addFlowLog</a></code> | Adds a new flow log to this VPC. |
-| <code><a href="#raindancers-network.Evpc.addGatewayEndpoint">addGatewayEndpoint</a></code> | Adds a new gateway endpoint to this VPC. |
-| <code><a href="#raindancers-network.Evpc.addInterfaceEndpoint">addInterfaceEndpoint</a></code> | Adds a new interface endpoint to this VPC. |
-| <code><a href="#raindancers-network.Evpc.addVpnConnection">addVpnConnection</a></code> | Adds a new VPN connection to this VPC. |
-| <code><a href="#raindancers-network.Evpc.enableVpnGateway">enableVpnGateway</a></code> | Adds a VPN Gateway to this VPC. |
-| <code><a href="#raindancers-network.Evpc.selectSubnets">selectSubnets</a></code> | Returns IDs of selected subnets. |
-| <code><a href="#raindancers-network.Evpc.addRouteForPrivateSubnetstoCloudWan">addRouteForPrivateSubnetstoCloudWan</a></code> | Add a route to routing tables attached to the private subnets. |
-| <code><a href="#raindancers-network.Evpc.addRouteForPrivateSubnetstoinstance">addRouteForPrivateSubnetstoinstance</a></code> | Add routes in private Subnets to a instance. |
-| <code><a href="#raindancers-network.Evpc.addRouteForPrivateSubnetstoTransitGateway">addRouteForPrivateSubnetstoTransitGateway</a></code> | Add routes for Private Subnets to a Transit Gateway. |
-| <code><a href="#raindancers-network.Evpc.addRouteForPublicSubnetstoCloudWan">addRouteForPublicSubnetstoCloudWan</a></code> | Add routes to routing tables associated with publicSubnets to Cloudwan. |
-| <code><a href="#raindancers-network.Evpc.addRoutetoFirewall">addRoutetoFirewall</a></code> | Add routes to point at Network Firewalls, for specific subnetGroups. |
-| <code><a href="#raindancers-network.Evpc.associateSharedRoute53ResolverRules">associateSharedRoute53ResolverRules</a></code> | Associate any rules shared to this vpc. |
-| <code><a href="#raindancers-network.Evpc.associateVPCZonewithCentralVPC">associateVPCZonewithCentralVPC</a></code> | Associate the internal R53 Zone with the Central VPC, for Org wide resolution. |
-| <code><a href="#raindancers-network.Evpc.attachToCloudWan">attachToCloudWan</a></code> | Attach the VPC to a cloud wan segment. |
-| <code><a href="#raindancers-network.Evpc.attachVpcToTGApplianceMode">attachVpcToTGApplianceMode</a></code> | Attach a VPC to a Transit Gateway in Appliance mode. |
-| <code><a href="#raindancers-network.Evpc.createConnectAttachment">createConnectAttachment</a></code> | Create a connect Attachment to Cloudwan for Appliances. |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.Evpc.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.Evpc.applyRemovalPolicy"></a>
-
-```typescript
-public applyRemovalPolicy(policy: RemovalPolicy): void
-```
-
-Apply the given removal policy to this resource.
-
-The Removal Policy controls what happens to this resource when it stops
-being managed by CloudFormation, either because you've removed it from the
-CDK application or because you've made a change that requires the resource
-to be replaced.
-
-The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
-account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
-
-###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.Evpc.applyRemovalPolicy.parameter.policy"></a>
-
-- *Type:* aws-cdk-lib.RemovalPolicy
-
----
-
-##### `addClientVpnEndpoint` <a name="addClientVpnEndpoint" id="raindancers-network.Evpc.addClientVpnEndpoint"></a>
-
-```typescript
-public addClientVpnEndpoint(id: string, options: ClientVpnEndpointOptions): ClientVpnEndpoint
-```
-
-Adds a new client VPN endpoint to this VPC.
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.addClientVpnEndpoint.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.addClientVpnEndpoint.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.ClientVpnEndpointOptions
-
----
-
-##### `addFlowLog` <a name="addFlowLog" id="raindancers-network.Evpc.addFlowLog"></a>
-
-```typescript
-public addFlowLog(id: string, options?: FlowLogOptions): FlowLog
-```
-
-Adds a new flow log to this VPC.
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.addFlowLog.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Optional</sup> <a name="options" id="raindancers-network.Evpc.addFlowLog.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.FlowLogOptions
-
----
-
-##### `addGatewayEndpoint` <a name="addGatewayEndpoint" id="raindancers-network.Evpc.addGatewayEndpoint"></a>
-
-```typescript
-public addGatewayEndpoint(id: string, options: GatewayVpcEndpointOptions): GatewayVpcEndpoint
-```
-
-Adds a new gateway endpoint to this VPC.
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.addGatewayEndpoint.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.addGatewayEndpoint.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.GatewayVpcEndpointOptions
-
----
-
-##### `addInterfaceEndpoint` <a name="addInterfaceEndpoint" id="raindancers-network.Evpc.addInterfaceEndpoint"></a>
-
-```typescript
-public addInterfaceEndpoint(id: string, options: InterfaceVpcEndpointOptions): InterfaceVpcEndpoint
-```
-
-Adds a new interface endpoint to this VPC.
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.addInterfaceEndpoint.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.addInterfaceEndpoint.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpointOptions
-
----
-
-##### `addVpnConnection` <a name="addVpnConnection" id="raindancers-network.Evpc.addVpnConnection"></a>
-
-```typescript
-public addVpnConnection(id: string, options: VpnConnectionOptions): VpnConnection
-```
-
-Adds a new VPN connection to this VPC.
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.addVpnConnection.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.addVpnConnection.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.VpnConnectionOptions
-
----
-
-##### `enableVpnGateway` <a name="enableVpnGateway" id="raindancers-network.Evpc.enableVpnGateway"></a>
-
-```typescript
-public enableVpnGateway(options: EnableVpnGatewayOptions): void
-```
-
-Adds a VPN Gateway to this VPC.
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.enableVpnGateway.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.EnableVpnGatewayOptions
-
----
-
-##### `selectSubnets` <a name="selectSubnets" id="raindancers-network.Evpc.selectSubnets"></a>
-
-```typescript
-public selectSubnets(selection?: SubnetSelection): SelectedSubnets
-```
-
-Returns IDs of selected subnets.
-
-###### `selection`<sup>Optional</sup> <a name="selection" id="raindancers-network.Evpc.selectSubnets.parameter.selection"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
-
----
-
-##### `addRouteForPrivateSubnetstoCloudWan` <a name="addRouteForPrivateSubnetstoCloudWan" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoCloudWan"></a>
-
-```typescript
-public addRouteForPrivateSubnetstoCloudWan(destinationCidr: string, coreNetworkId: string): void
-```
-
-Add a route to routing tables attached to the private subnets.
-
-###### `destinationCidr`<sup>Required</sup> <a name="destinationCidr" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoCloudWan.parameter.destinationCidr"></a>
-
-- *Type:* string
-
-cidr eg, 0.0.0.0/0.
-
----
-
-###### `coreNetworkId`<sup>Required</sup> <a name="coreNetworkId" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoCloudWan.parameter.coreNetworkId"></a>
-
-- *Type:* string
-
----
-
-##### `addRouteForPrivateSubnetstoinstance` <a name="addRouteForPrivateSubnetstoinstance" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoinstance"></a>
-
-```typescript
-public addRouteForPrivateSubnetstoinstance(destinationCidr: string, instanceId: string): void
-```
-
-Add routes in private Subnets to a instance.
-
-Use this for routing to a network appliance.
-
-###### `destinationCidr`<sup>Required</sup> <a name="destinationCidr" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoinstance.parameter.destinationCidr"></a>
-
-- *Type:* string
-
----
-
-###### `instanceId`<sup>Required</sup> <a name="instanceId" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoinstance.parameter.instanceId"></a>
-
-- *Type:* string
-
----
-
-##### `addRouteForPrivateSubnetstoTransitGateway` <a name="addRouteForPrivateSubnetstoTransitGateway" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoTransitGateway"></a>
-
-```typescript
-public addRouteForPrivateSubnetstoTransitGateway(destinationCidr: string, TransitGatewayId: string): void
-```
-
-Add routes for Private Subnets to a Transit Gateway.
-
-###### `destinationCidr`<sup>Required</sup> <a name="destinationCidr" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoTransitGateway.parameter.destinationCidr"></a>
-
-- *Type:* string
-
----
-
-###### `TransitGatewayId`<sup>Required</sup> <a name="TransitGatewayId" id="raindancers-network.Evpc.addRouteForPrivateSubnetstoTransitGateway.parameter.TransitGatewayId"></a>
-
-- *Type:* string
-
----
-
-##### `addRouteForPublicSubnetstoCloudWan` <a name="addRouteForPublicSubnetstoCloudWan" id="raindancers-network.Evpc.addRouteForPublicSubnetstoCloudWan"></a>
-
-```typescript
-public addRouteForPublicSubnetstoCloudWan(destinationCidr: string, coreNetworkId: string): void
-```
-
-Add routes to routing tables associated with publicSubnets to Cloudwan.
-
-###### `destinationCidr`<sup>Required</sup> <a name="destinationCidr" id="raindancers-network.Evpc.addRouteForPublicSubnetstoCloudWan.parameter.destinationCidr"></a>
-
-- *Type:* string
-
----
-
-###### `coreNetworkId`<sup>Required</sup> <a name="coreNetworkId" id="raindancers-network.Evpc.addRouteForPublicSubnetstoCloudWan.parameter.coreNetworkId"></a>
-
-- *Type:* string
-
----
-
-##### `addRoutetoFirewall` <a name="addRoutetoFirewall" id="raindancers-network.Evpc.addRoutetoFirewall"></a>
-
-```typescript
-public addRoutetoFirewall(destinationCidr: string, subnetgroup: string, fwArn: string): void
-```
-
-Add routes to point at Network Firewalls, for specific subnetGroups.
-
-this will place routes on a per AZ basis
-
-###### `destinationCidr`<sup>Required</sup> <a name="destinationCidr" id="raindancers-network.Evpc.addRoutetoFirewall.parameter.destinationCidr"></a>
-
-- *Type:* string
-
----
-
-###### `subnetgroup`<sup>Required</sup> <a name="subnetgroup" id="raindancers-network.Evpc.addRoutetoFirewall.parameter.subnetgroup"></a>
-
-- *Type:* string
-
----
-
-###### `fwArn`<sup>Required</sup> <a name="fwArn" id="raindancers-network.Evpc.addRoutetoFirewall.parameter.fwArn"></a>
-
-- *Type:* string
-
----
-
-##### `associateSharedRoute53ResolverRules` <a name="associateSharedRoute53ResolverRules" id="raindancers-network.Evpc.associateSharedRoute53ResolverRules"></a>
-
-```typescript
-public associateSharedRoute53ResolverRules(owner: string, updatetopic?: Topic): void
-```
-
-Associate any rules shared to this vpc.
-
-###### `owner`<sup>Required</sup> <a name="owner" id="raindancers-network.Evpc.associateSharedRoute53ResolverRules.parameter.owner"></a>
-
-- *Type:* string
-
----
-
-###### `updatetopic`<sup>Optional</sup> <a name="updatetopic" id="raindancers-network.Evpc.associateSharedRoute53ResolverRules.parameter.updatetopic"></a>
-
-- *Type:* aws-cdk-lib.aws_sns.Topic
-
----
-
-##### `associateVPCZonewithCentralVPC` <a name="associateVPCZonewithCentralVPC" id="raindancers-network.Evpc.associateVPCZonewithCentralVPC"></a>
-
-```typescript
-public associateVPCZonewithCentralVPC(): void
-```
-
-Associate the internal R53 Zone with the Central VPC, for Org wide resolution.
-
-##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.Evpc.attachToCloudWan"></a>
-
-```typescript
-public attachToCloudWan(coreNetworkName: string, segment: string): string
-```
-
-Attach the VPC to a cloud wan segment.
-
-###### `coreNetworkName`<sup>Required</sup> <a name="coreNetworkName" id="raindancers-network.Evpc.attachToCloudWan.parameter.coreNetworkName"></a>
-
-- *Type:* string
-
----
-
-###### `segment`<sup>Required</sup> <a name="segment" id="raindancers-network.Evpc.attachToCloudWan.parameter.segment"></a>
-
-- *Type:* string
-
----
-
-##### `attachVpcToTGApplianceMode` <a name="attachVpcToTGApplianceMode" id="raindancers-network.Evpc.attachVpcToTGApplianceMode"></a>
-
-```typescript
-public attachVpcToTGApplianceMode(transitGateway: CfnTransitGateway, cidrs?: string[]): string
-```
-
-Attach a VPC to a Transit Gateway in Appliance mode.
-
-Primarly used when the VPC is being used as a centralised egress with firewalls
-A workaround to the problem of their not being support for Appliance mode connections to cloudwan
-
-###### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.Evpc.attachVpcToTGApplianceMode.parameter.transitGateway"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.CfnTransitGateway
-
----
-
-###### `cidrs`<sup>Optional</sup> <a name="cidrs" id="raindancers-network.Evpc.attachVpcToTGApplianceMode.parameter.cidrs"></a>
-
-- *Type:* string[]
-
----
-
-##### `createConnectAttachment` <a name="createConnectAttachment" id="raindancers-network.Evpc.createConnectAttachment"></a>
-
-```typescript
-public createConnectAttachment(coreNetworkId: string, transportAttachmentId: string): string
-```
-
-Create a connect Attachment to Cloudwan for Appliances.
-
-###### `coreNetworkId`<sup>Required</sup> <a name="coreNetworkId" id="raindancers-network.Evpc.createConnectAttachment.parameter.coreNetworkId"></a>
-
-- *Type:* string
-
----
-
-###### `transportAttachmentId`<sup>Required</sup> <a name="transportAttachmentId" id="raindancers-network.Evpc.createConnectAttachment.parameter.transportAttachmentId"></a>
-
-- *Type:* string
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.Evpc.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#raindancers-network.Evpc.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
-| <code><a href="#raindancers-network.Evpc.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#raindancers-network.Evpc.fromLookup">fromLookup</a></code> | Import an existing VPC by querying the AWS environment this stack is deployed to. |
-| <code><a href="#raindancers-network.Evpc.fromVpcAttributes">fromVpcAttributes</a></code> | Import a VPC by supplying all attributes directly. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.Evpc.isConstruct"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-Evpc.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.Evpc.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.Evpc.isOwnedResource"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-Evpc.isOwnedResource(construct: IConstruct)
-```
-
-Returns true if the construct was created by CDK, and false otherwise.
-
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Evpc.isOwnedResource.parameter.construct"></a>
-
-- *Type:* constructs.IConstruct
-
----
-
-##### `isResource` <a name="isResource" id="raindancers-network.Evpc.isResource"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-Evpc.isResource(construct: IConstruct)
-```
-
-Check whether the given construct is a Resource.
-
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Evpc.isResource.parameter.construct"></a>
-
-- *Type:* constructs.IConstruct
-
----
-
-##### `fromLookup` <a name="fromLookup" id="raindancers-network.Evpc.fromLookup"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-Evpc.fromLookup(scope: Construct, id: string, options: VpcLookupOptions)
-```
-
-Import an existing VPC by querying the AWS environment this stack is deployed to.
-
-This function only needs to be used to use VPCs not defined in your CDK
-application. If you are looking to share a VPC between stacks, you can
-pass the `Vpc` object between stacks and use it as normal.
-
-Calling this method will lead to a lookup when the CDK CLI is executed.
-You can therefore not use any values that will only be available at
-CloudFormation execution time (i.e., Tokens).
-
-The VPC information will be cached in `cdk.context.json` and the same VPC
-will be used on future runs. To refresh the lookup, you will have to
-evict the value from the cache using the `cdk context` command. See
-https://docs.aws.amazon.com/cdk/latest/guide/context.html for more information.
-
-###### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Evpc.fromLookup.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.fromLookup.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="raindancers-network.Evpc.fromLookup.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.VpcLookupOptions
-
----
-
-##### `fromVpcAttributes` <a name="fromVpcAttributes" id="raindancers-network.Evpc.fromVpcAttributes"></a>
-
-```typescript
-import { Evpc } from 'raindancers-network'
-
-Evpc.fromVpcAttributes(scope: Construct, id: string, attrs: VpcAttributes)
-```
-
-Import a VPC by supplying all attributes directly.
-
-NOTE: using `fromVpcAttributes()` with deploy-time parameters (like a `Fn.importValue()` or
-`CfnParameter` to represent a list of subnet IDs) sometimes accidentally works. It happens
-to work for constructs that need a list of subnets (like `AutoScalingGroup` and `eks.Cluster`)
-but it does not work for constructs that need individual subnets (like
-`Instance`). See https://github.com/aws/aws-cdk/issues/4118 for more
-information.
-
-Prefer to use `Vpc.fromLookup()` instead.
-
-###### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Evpc.fromVpcAttributes.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Evpc.fromVpcAttributes.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `attrs`<sup>Required</sup> <a name="attrs" id="raindancers-network.Evpc.fromVpcAttributes.parameter.attrs"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.VpcAttributes
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.Evpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.Evpc.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#raindancers-network.Evpc.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#raindancers-network.Evpc.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | AZs for this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.dnsHostnamesEnabled">dnsHostnamesEnabled</a></code> | <code>boolean</code> | Indicates if instances launched in this VPC will have public DNS hostnames. |
-| <code><a href="#raindancers-network.Evpc.property.dnsSupportEnabled">dnsSupportEnabled</a></code> | <code>boolean</code> | Indicates if DNS support is enabled for this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.internetConnectivityEstablished">internetConnectivityEstablished</a></code> | <code>constructs.IDependable</code> | Dependencies for internet connectivity. |
-| <code><a href="#raindancers-network.Evpc.property.isolatedSubnets">isolatedSubnets</a></code> | <code>aws-cdk-lib.aws_ec2.ISubnet[]</code> | List of isolated subnets in this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.privateSubnets">privateSubnets</a></code> | <code>aws-cdk-lib.aws_ec2.ISubnet[]</code> | List of private subnets in this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.publicSubnets">publicSubnets</a></code> | <code>aws-cdk-lib.aws_ec2.ISubnet[]</code> | List of public subnets in this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.vpcArn">vpcArn</a></code> | <code>string</code> | Arn of this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.vpcCidrBlock">vpcCidrBlock</a></code> | <code>string</code> | CIDR range for this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.vpcCidrBlockAssociations">vpcCidrBlockAssociations</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.property.vpcDefaultNetworkAcl">vpcDefaultNetworkAcl</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.property.vpcDefaultSecurityGroup">vpcDefaultSecurityGroup</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.property.vpcId">vpcId</a></code> | <code>string</code> | Identifier for this VPC. |
-| <code><a href="#raindancers-network.Evpc.property.vpcIpv6CidrBlocks">vpcIpv6CidrBlocks</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.Evpc.property.internetGatewayId">internetGatewayId</a></code> | <code>string</code> | Internet Gateway for the VPC. |
-| <code><a href="#raindancers-network.Evpc.property.vpnGatewayId">vpnGatewayId</a></code> | <code>string</code> | Returns the id of the VPN Gateway (if enabled). |
-| <code><a href="#raindancers-network.Evpc.property.lookUpProvider">lookUpProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | Custom resource provider for looking up Cloudwan. |
-| <code><a href="#raindancers-network.Evpc.property.centralResolvingVpc">centralResolvingVpc</a></code> | <code>boolean</code> | If this is a private zone. |
-| <code><a href="#raindancers-network.Evpc.property.ipamAllocationId">ipamAllocationId</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMAllocation</code> | the Ipam Allocation provider for this vpc. |
-| <code><a href="#raindancers-network.Evpc.property.linknetSubnetIds">linknetSubnetIds</a></code> | <code>string[]</code> | list of subnetIds that are used for connecting to the Cloudwan. |
-| <code><a href="#raindancers-network.Evpc.property.privateR53Zone">privateR53Zone</a></code> | <code>aws-cdk-lib.aws_route53.HostedZone</code> | Private Zone. |
-| <code><a href="#raindancers-network.Evpc.property.privateR53ZoneId">privateR53ZoneId</a></code> | <code>string</code> | Private Zone Id. |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.Evpc.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.Evpc.property.env"></a>
-
-```typescript
-public readonly env: ResourceEnvironment;
-```
-
-- *Type:* aws-cdk-lib.ResourceEnvironment
-
-The environment this resource belongs to.
-
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
-
----
-
-##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.Evpc.property.stack"></a>
-
-```typescript
-public readonly stack: Stack;
-```
-
-- *Type:* aws-cdk-lib.Stack
-
-The stack in which this resource is defined.
-
----
-
-##### `availabilityZones`<sup>Required</sup> <a name="availabilityZones" id="raindancers-network.Evpc.property.availabilityZones"></a>
-
-```typescript
-public readonly availabilityZones: string[];
-```
-
-- *Type:* string[]
-
-AZs for this VPC.
-
----
-
-##### `dnsHostnamesEnabled`<sup>Required</sup> <a name="dnsHostnamesEnabled" id="raindancers-network.Evpc.property.dnsHostnamesEnabled"></a>
-
-```typescript
-public readonly dnsHostnamesEnabled: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if instances launched in this VPC will have public DNS hostnames.
-
----
-
-##### `dnsSupportEnabled`<sup>Required</sup> <a name="dnsSupportEnabled" id="raindancers-network.Evpc.property.dnsSupportEnabled"></a>
-
-```typescript
-public readonly dnsSupportEnabled: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if DNS support is enabled for this VPC.
-
----
-
-##### `internetConnectivityEstablished`<sup>Required</sup> <a name="internetConnectivityEstablished" id="raindancers-network.Evpc.property.internetConnectivityEstablished"></a>
-
-```typescript
-public readonly internetConnectivityEstablished: IDependable;
-```
-
-- *Type:* constructs.IDependable
-
-Dependencies for internet connectivity.
-
----
-
-##### `isolatedSubnets`<sup>Required</sup> <a name="isolatedSubnets" id="raindancers-network.Evpc.property.isolatedSubnets"></a>
-
-```typescript
-public readonly isolatedSubnets: ISubnet[];
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.ISubnet[]
-
-List of isolated subnets in this VPC.
-
----
-
-##### `privateSubnets`<sup>Required</sup> <a name="privateSubnets" id="raindancers-network.Evpc.property.privateSubnets"></a>
-
-```typescript
-public readonly privateSubnets: ISubnet[];
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.ISubnet[]
-
-List of private subnets in this VPC.
-
----
-
-##### `publicSubnets`<sup>Required</sup> <a name="publicSubnets" id="raindancers-network.Evpc.property.publicSubnets"></a>
-
-```typescript
-public readonly publicSubnets: ISubnet[];
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.ISubnet[]
-
-List of public subnets in this VPC.
-
----
-
-##### `vpcArn`<sup>Required</sup> <a name="vpcArn" id="raindancers-network.Evpc.property.vpcArn"></a>
-
-```typescript
-public readonly vpcArn: string;
-```
-
-- *Type:* string
-
-Arn of this VPC.
-
----
-
-##### `vpcCidrBlock`<sup>Required</sup> <a name="vpcCidrBlock" id="raindancers-network.Evpc.property.vpcCidrBlock"></a>
-
-```typescript
-public readonly vpcCidrBlock: string;
-```
-
-- *Type:* string
-
-CIDR range for this VPC.
-
----
-
-##### `vpcCidrBlockAssociations`<sup>Required</sup> <a name="vpcCidrBlockAssociations" id="raindancers-network.Evpc.property.vpcCidrBlockAssociations"></a>
-
-```typescript
-public readonly vpcCidrBlockAssociations: string[];
-```
-
-- *Type:* string[]
-
----
-
-##### `vpcDefaultNetworkAcl`<sup>Required</sup> <a name="vpcDefaultNetworkAcl" id="raindancers-network.Evpc.property.vpcDefaultNetworkAcl"></a>
-
-```typescript
-public readonly vpcDefaultNetworkAcl: string;
-```
-
-- *Type:* string
-
----
-
-##### `vpcDefaultSecurityGroup`<sup>Required</sup> <a name="vpcDefaultSecurityGroup" id="raindancers-network.Evpc.property.vpcDefaultSecurityGroup"></a>
-
-```typescript
-public readonly vpcDefaultSecurityGroup: string;
-```
-
-- *Type:* string
-
----
-
-##### `vpcId`<sup>Required</sup> <a name="vpcId" id="raindancers-network.Evpc.property.vpcId"></a>
-
-```typescript
-public readonly vpcId: string;
-```
-
-- *Type:* string
-
-Identifier for this VPC.
-
----
-
-##### `vpcIpv6CidrBlocks`<sup>Required</sup> <a name="vpcIpv6CidrBlocks" id="raindancers-network.Evpc.property.vpcIpv6CidrBlocks"></a>
-
-```typescript
-public readonly vpcIpv6CidrBlocks: string[];
-```
-
-- *Type:* string[]
-
----
-
-##### `internetGatewayId`<sup>Optional</sup> <a name="internetGatewayId" id="raindancers-network.Evpc.property.internetGatewayId"></a>
-
-```typescript
-public readonly internetGatewayId: string;
-```
-
-- *Type:* string
-
-Internet Gateway for the VPC.
-
-Note that in case the VPC is configured only
-with ISOLATED subnets, this attribute will be `undefined`.
-
----
-
-##### `vpnGatewayId`<sup>Optional</sup> <a name="vpnGatewayId" id="raindancers-network.Evpc.property.vpnGatewayId"></a>
-
-```typescript
-public readonly vpnGatewayId: string;
-```
-
-- *Type:* string
-
-Returns the id of the VPN Gateway (if enabled).
-
----
-
-##### `lookUpProvider`<sup>Required</sup> <a name="lookUpProvider" id="raindancers-network.Evpc.property.lookUpProvider"></a>
-
-```typescript
-public readonly lookUpProvider: Provider;
-```
-
-- *Type:* aws-cdk-lib.custom_resources.Provider
-
-Custom resource provider for looking up Cloudwan.
-
----
-
-##### `centralResolvingVpc`<sup>Optional</sup> <a name="centralResolvingVpc" id="raindancers-network.Evpc.property.centralResolvingVpc"></a>
-
-```typescript
-public readonly centralResolvingVpc: boolean;
-```
-
-- *Type:* boolean
-
-If this is a private zone.
-
----
-
-##### `ipamAllocationId`<sup>Optional</sup> <a name="ipamAllocationId" id="raindancers-network.Evpc.property.ipamAllocationId"></a>
-
-```typescript
-public readonly ipamAllocationId: CfnIPAMAllocation;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.CfnIPAMAllocation
-
-the Ipam Allocation provider for this vpc.
-
----
-
-##### `linknetSubnetIds`<sup>Optional</sup> <a name="linknetSubnetIds" id="raindancers-network.Evpc.property.linknetSubnetIds"></a>
-
-```typescript
-public readonly linknetSubnetIds: string[];
-```
-
-- *Type:* string[]
-
-list of subnetIds that are used for connecting to the Cloudwan.
-
----
-
-##### `privateR53Zone`<sup>Optional</sup> <a name="privateR53Zone" id="raindancers-network.Evpc.property.privateR53Zone"></a>
-
-```typescript
-public readonly privateR53Zone: HostedZone;
-```
-
-- *Type:* aws-cdk-lib.aws_route53.HostedZone
-
-Private Zone.
-
----
-
-##### `privateR53ZoneId`<sup>Optional</sup> <a name="privateR53ZoneId" id="raindancers-network.Evpc.property.privateR53ZoneId"></a>
-
-```typescript
-public readonly privateR53ZoneId: string;
-```
-
-- *Type:* string
-
-Private Zone Id.
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.Evpc.property.DEFAULT_CIDR_RANGE">DEFAULT_CIDR_RANGE</a></code> | <code>string</code> | The default CIDR range used when creating VPCs. |
-| <code><a href="#raindancers-network.Evpc.property.DEFAULT_SUBNETS">DEFAULT_SUBNETS</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | The default subnet configuration. |
-| <code><a href="#raindancers-network.Evpc.property.DEFAULT_SUBNETS_NO_NAT">DEFAULT_SUBNETS_NO_NAT</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | The default subnet configuration if natGateways specified to be 0. |
-
----
-
-##### `DEFAULT_CIDR_RANGE`<sup>Required</sup> <a name="DEFAULT_CIDR_RANGE" id="raindancers-network.Evpc.property.DEFAULT_CIDR_RANGE"></a>
-
-```typescript
-public readonly DEFAULT_CIDR_RANGE: string;
-```
-
-- *Type:* string
-
-The default CIDR range used when creating VPCs.
-
-This can be overridden using VpcProps when creating a VPCNetwork resource.
-e.g. new VpcResource(this, { cidr: '192.168.0.0./16' })
-
----
-
-##### `DEFAULT_SUBNETS`<sup>Required</sup> <a name="DEFAULT_SUBNETS" id="raindancers-network.Evpc.property.DEFAULT_SUBNETS"></a>
-
-```typescript
-public readonly DEFAULT_SUBNETS: SubnetConfiguration[];
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetConfiguration[]
-
-The default subnet configuration.
-
-1 Public and 1 Private subnet per AZ evenly split
-
----
-
-##### `DEFAULT_SUBNETS_NO_NAT`<sup>Required</sup> <a name="DEFAULT_SUBNETS_NO_NAT" id="raindancers-network.Evpc.property.DEFAULT_SUBNETS_NO_NAT"></a>
-
-```typescript
-public readonly DEFAULT_SUBNETS_NO_NAT: SubnetConfiguration[];
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetConfiguration[]
-
-The default subnet configuration if natGateways specified to be 0.
-
-1 Public and 1 Isolated Subnet per AZ evenly split
-
----
 
 ### FindPrefixList <a name="FindPrefixList" id="raindancers-network.FindPrefixList"></a>
 
@@ -6888,6 +6213,116 @@ public readonly policyTable: Table;
 ---
 
 
+### SubnetGroup <a name="SubnetGroup" id="raindancers-network.SubnetGroup"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.SubnetGroup.Initializer"></a>
+
+```typescript
+import { SubnetGroup } from 'raindancers-network'
+
+new SubnetGroup(scope: Construct, id: string, props: ESubnetGroupProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ESubnetGroupProps">ESubnetGroupProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.SubnetGroup.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.SubnetGroup.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SubnetGroup.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.ESubnetGroupProps">ESubnetGroupProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SubnetGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.SubnetGroup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SubnetGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.SubnetGroup.isConstruct"></a>
+
+```typescript
+import { SubnetGroup } from 'raindancers-network'
+
+SubnetGroup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.SubnetGroup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.SubnetGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.SubnetGroup.property.subnet">subnet</a></code> | <code><a href="#raindancers-network.ESubnetGroup">ESubnetGroup</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.SubnetGroup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.SubnetGroup.property.subnet"></a>
+
+```typescript
+public readonly subnet: ESubnetGroup;
+```
+
+- *Type:* <a href="#raindancers-network.ESubnetGroup">ESubnetGroup</a>
+
+---
+
+
 ### SuricataRuleGroup <a name="SuricataRuleGroup" id="raindancers-network.SuricataRuleGroup"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.SuricataRuleGroup.Initializer"></a>
@@ -7113,6 +6548,67 @@ The tree node.
 
 
 ## Structs <a name="Structs" id="Structs"></a>
+
+### AddAwsServiceEndPointsProps <a name="AddAwsServiceEndPointsProps" id="raindancers-network.AddAwsServiceEndPointsProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddAwsServiceEndPointsProps.Initializer"></a>
+
+```typescript
+import { AddAwsServiceEndPointsProps } from 'raindancers-network'
+
+const addAwsServiceEndPointsProps: AddAwsServiceEndPointsProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.dynamoDbGateway">dynamoDbGateway</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.AddAwsServiceEndPointsProps.property.services"></a>
+
+```typescript
+public readonly services: InterfaceVpcEndpointAwsService[];
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.AddAwsServiceEndPointsProps.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: SubnetGroup;
+```
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+
+---
+
+##### `dynamoDbGateway`<sup>Optional</sup> <a name="dynamoDbGateway" id="raindancers-network.AddAwsServiceEndPointsProps.property.dynamoDbGateway"></a>
+
+```typescript
+public readonly dynamoDbGateway: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.AddAwsServiceEndPointsProps.property.s3GatewayInterface"></a>
+
+```typescript
+public readonly s3GatewayInterface: boolean;
+```
+
+- *Type:* boolean
+
+---
 
 ### AddCoreRoutesProps <a name="AddCoreRoutesProps" id="raindancers-network.AddCoreRoutesProps"></a>
 
@@ -8030,6 +7526,7 @@ const centralAccountAssnRoleProps: CentralAccountAssnRoleProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -8050,6 +7547,16 @@ public readonly vpc: Vpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.CentralAccountAssnRoleProps.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -8139,6 +7646,67 @@ public readonly denyRouteFilter: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+### ConditionalForwarderProps <a name="ConditionalForwarderProps" id="raindancers-network.ConditionalForwarderProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ConditionalForwarderProps.Initializer"></a>
+
+```typescript
+import { ConditionalForwarderProps } from 'raindancers-network'
+
+const conditionalForwarderProps: ConditionalForwarderProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ConditionalForwarderProps.property.forwardingRules">forwardingRules</a></code> | <code><a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionalForwarderProps.property.inboundResolverTargets">inboundResolverTargets</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionalForwarderProps.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.ConditionalForwarderProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+
+---
+
+##### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.ConditionalForwarderProps.property.forwardingRules"></a>
+
+```typescript
+public readonly forwardingRules: OutboundForwardingRule[];
+```
+
+- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
+
+---
+
+##### `inboundResolverTargets`<sup>Required</sup> <a name="inboundResolverTargets" id="raindancers-network.ConditionalForwarderProps.property.inboundResolverTargets"></a>
+
+```typescript
+public readonly inboundResolverTargets: TargetAddressProperty[];
+```
+
+- *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]
+
+---
+
+##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.ConditionalForwarderProps.property.outboundResolver"></a>
+
+```typescript
+public readonly outboundResolver: CfnResolverEndpoint;
+```
+
+- *Type:* aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ConditionalForwarderProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
@@ -8871,11 +8439,22 @@ const enterpriseVpcProps: EnterpriseVpcProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#raindancers-network.EnterpriseVpcProps.property.evpc">evpc</a></code> | <code><a href="#raindancers-network.EvpcProps">EvpcProps</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.EnterpriseVpcProps.property.vpc"></a>
+##### `evpc`<sup>Optional</sup> <a name="evpc" id="raindancers-network.EnterpriseVpcProps.property.evpc"></a>
+
+```typescript
+public readonly evpc: EvpcProps;
+```
+
+- *Type:* <a href="#raindancers-network.EvpcProps">EvpcProps</a>
+
+---
+
+##### `vpc`<sup>Optional</sup> <a name="vpc" id="raindancers-network.EnterpriseVpcProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: Vpc;
@@ -8946,9 +8525,107 @@ public readonly remoteVpc: RemoteVpc[];
 
 ---
 
-### EvpcProps <a name="EvpcProps" id="raindancers-network.EvpcProps"></a>
+### ESubnetGroup <a name="ESubnetGroup" id="raindancers-network.ESubnetGroup"></a>
 
-Properties for Creating an enterprise Vpc which extend ec2.Vpc.
+#### Initializer <a name="Initializer" id="raindancers-network.ESubnetGroup.Initializer"></a>
+
+```typescript
+import { ESubnetGroup } from 'raindancers-network'
+
+const eSubnetGroup: ESubnetGroup = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ESubnetGroup.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.ESubnetGroup.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ESubnetGroup.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
+
+---
+
+##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.ESubnetGroup.property.cidrMask"></a>
+
+```typescript
+public readonly cidrMask: number;
+```
+
+- *Type:* number
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ESubnetGroup.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.ESubnetGroup.property.subnetType"></a>
+
+```typescript
+public readonly subnetType: SubnetType;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetType
+
+---
+
+### ESubnetGroupProps <a name="ESubnetGroupProps" id="raindancers-network.ESubnetGroupProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.ESubnetGroupProps.Initializer"></a>
+
+```typescript
+import { ESubnetGroupProps } from 'raindancers-network'
+
+const eSubnetGroupProps: ESubnetGroupProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.ESubnetGroupProps.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.ESubnetGroupProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ESubnetGroupProps.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
+
+---
+
+##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.ESubnetGroupProps.property.cidrMask"></a>
+
+```typescript
+public readonly cidrMask: number;
+```
+
+- *Type:* number
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ESubnetGroupProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.ESubnetGroupProps.property.subnetType"></a>
+
+```typescript
+public readonly subnetType: SubnetType;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.SubnetType
+
+---
+
+### EvpcProps <a name="EvpcProps" id="raindancers-network.EvpcProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.EvpcProps.Initializer"></a>
 
@@ -8981,14 +8658,7 @@ const evpcProps: EvpcProps = { ... }
 | <code><a href="#raindancers-network.EvpcProps.property.vpnGateway">vpnGateway</a></code> | <code>boolean</code> | Indicates whether a VPN gateway should be created and attached to this VPC. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpnGatewayAsn">vpnGatewayAsn</a></code> | <code>number</code> | The private Autonomous System Number (ASN) for the VPN gateway. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpnRoutePropagation">vpnRoutePropagation</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection[]</code> | Where to propagate VPN routes. |
-| <code><a href="#raindancers-network.EvpcProps.property.attachToCoreNetworkSegment">attachToCoreNetworkSegment</a></code> | <code>string</code> | the cloudwan core network segment name that this vpc will be attached to. |
-| <code><a href="#raindancers-network.EvpcProps.property.centralResolvingVpc">centralResolvingVpc</a></code> | <code>boolean</code> | Set true if this is the central resolving Vpc. |
-| <code><a href="#raindancers-network.EvpcProps.property.disableFlowlog">disableFlowlog</a></code> | <code>boolean</code> | Set true to disable centralised Flow Logs. |
-| <code><a href="#raindancers-network.EvpcProps.property.internetGateway">internetGateway</a></code> | <code>boolean</code> | An Internet Gateway will only be created if true. |
-| <code><a href="#raindancers-network.EvpcProps.property.ipamPoolId">ipamPoolId</a></code> | <code>string</code> | the ipam pool id that the Vpc's allocation will get created in. |
-| <code><a href="#raindancers-network.EvpcProps.property.netmaskLength">netmaskLength</a></code> | <code>number</code> | a netmask value that is in the range 16 to 28. |
-| <code><a href="#raindancers-network.EvpcProps.property.oneMinuteFlowLogs">oneMinuteFlowLogs</a></code> | <code>boolean</code> | Set true for 1 minute aggregation on flow logs. |
-| <code><a href="#raindancers-network.EvpcProps.property.r53InternalZoneName">r53InternalZoneName</a></code> | <code>string</code> | Name of an internal Route53 Zone that is associated with this voc. |
+| <code><a href="#raindancers-network.EvpcProps.property.subnetGroups">subnetGroups</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]</code> | *No description.* |
 
 ---
 
@@ -9324,101 +8994,13 @@ Where to propagate VPN routes.
 
 ---
 
-##### `attachToCoreNetworkSegment`<sup>Optional</sup> <a name="attachToCoreNetworkSegment" id="raindancers-network.EvpcProps.property.attachToCoreNetworkSegment"></a>
+##### `subnetGroups`<sup>Optional</sup> <a name="subnetGroups" id="raindancers-network.EvpcProps.property.subnetGroups"></a>
 
 ```typescript
-public readonly attachToCoreNetworkSegment: string;
+public readonly subnetGroups: SubnetGroup[];
 ```
 
-- *Type:* string
-
-the cloudwan core network segment name that this vpc will be attached to.
-
----
-
-##### `centralResolvingVpc`<sup>Optional</sup> <a name="centralResolvingVpc" id="raindancers-network.EvpcProps.property.centralResolvingVpc"></a>
-
-```typescript
-public readonly centralResolvingVpc: boolean;
-```
-
-- *Type:* boolean
-
-Set true if this is the central resolving Vpc.
-
----
-
-##### `disableFlowlog`<sup>Optional</sup> <a name="disableFlowlog" id="raindancers-network.EvpcProps.property.disableFlowlog"></a>
-
-```typescript
-public readonly disableFlowlog: boolean;
-```
-
-- *Type:* boolean
-
-Set true to disable centralised Flow Logs.
-
----
-
-##### `internetGateway`<sup>Optional</sup> <a name="internetGateway" id="raindancers-network.EvpcProps.property.internetGateway"></a>
-
-```typescript
-public readonly internetGateway: boolean;
-```
-
-- *Type:* boolean
-
-An Internet Gateway will only be created if true.
-
----
-
-##### `ipamPoolId`<sup>Optional</sup> <a name="ipamPoolId" id="raindancers-network.EvpcProps.property.ipamPoolId"></a>
-
-```typescript
-public readonly ipamPoolId: string;
-```
-
-- *Type:* string
-
-the ipam pool id that the Vpc's allocation will get created in.
-
----
-
-##### `netmaskLength`<sup>Optional</sup> <a name="netmaskLength" id="raindancers-network.EvpcProps.property.netmaskLength"></a>
-
-```typescript
-public readonly netmaskLength: number;
-```
-
-- *Type:* number
-
-a netmask value that is in the range 16 to 28.
-
----
-
-##### `oneMinuteFlowLogs`<sup>Optional</sup> <a name="oneMinuteFlowLogs" id="raindancers-network.EvpcProps.property.oneMinuteFlowLogs"></a>
-
-```typescript
-public readonly oneMinuteFlowLogs: boolean;
-```
-
-- *Type:* boolean
-
-Set true for 1 minute aggregation on flow logs.
-
-(default is 10 minutes )
-
----
-
-##### `r53InternalZoneName`<sup>Optional</sup> <a name="r53InternalZoneName" id="raindancers-network.EvpcProps.property.r53InternalZoneName"></a>
-
-```typescript
-public readonly r53InternalZoneName: string;
-```
-
-- *Type:* string
-
-Name of an internal Route53 Zone that is associated with this voc.
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]
 
 ---
 
@@ -11343,6 +10925,106 @@ public readonly vpc: IVpc | Vpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+### Route <a name="Route" id="raindancers-network.Route"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.Route.Initializer"></a>
+
+```typescript
+import { Route } from 'raindancers-network'
+
+const route: Route = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Route.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.Route.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
+| <code><a href="#raindancers-network.Route.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.Route.property.subnet">subnet</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a> \| <a href="#raindancers-network.SubnetWildCards">SubnetWildCards</a></code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.Route.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.Route.property.destination"></a>
+
+```typescript
+public readonly destination: Destination;
+```
+
+- *Type:* <a href="#raindancers-network.Destination">Destination</a>
+
+---
+
+##### `cidr`<sup>Optional</sup> <a name="cidr" id="raindancers-network.Route.property.cidr"></a>
+
+```typescript
+public readonly cidr: string;
+```
+
+- *Type:* string
+
+---
+
+##### `subnet`<sup>Optional</sup> <a name="subnet" id="raindancers-network.Route.property.subnet"></a>
+
+```typescript
+public readonly subnet: SubnetGroup | SubnetWildCards;
+```
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a> | <a href="#raindancers-network.SubnetWildCards">SubnetWildCards</a>
+
+---
+
+### RouterGroup <a name="RouterGroup" id="raindancers-network.RouterGroup"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.RouterGroup.Initializer"></a>
+
+```typescript
+import { RouterGroup } from 'raindancers-network'
+
+const routerGroup: RouterGroup = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.RouterGroup.property.routes">routes</a></code> | <code><a href="#raindancers-network.Route">Route</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.RouterGroup.property.subnetGroup">subnetGroup</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a></code> | *No description.* |
+
+---
+
+##### `routes`<sup>Required</sup> <a name="routes" id="raindancers-network.RouterGroup.property.routes"></a>
+
+```typescript
+public readonly routes: Route[];
+```
+
+- *Type:* <a href="#raindancers-network.Route">Route</a>[]
+
+---
+
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.RouterGroup.property.subnetGroup"></a>
+
+```typescript
+public readonly subnetGroup: SubnetGroup;
+```
+
+- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
 
 ---
 
@@ -14209,6 +13891,21 @@ Raises an alert according to the firewalls logging/alert.
 
 
 ##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.StatelessActions.STATEFUL"></a>
+
+---
+
+
+### SubnetWildCards <a name="SubnetWildCards" id="raindancers-network.SubnetWildCards"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.SubnetWildCards.ALLSUBNETS">ALLSUBNETS</a></code> | *No description.* |
+
+---
+
+##### `ALLSUBNETS` <a name="ALLSUBNETS" id="raindancers-network.SubnetWildCards.ALLSUBNETS"></a>
 
 ---
 

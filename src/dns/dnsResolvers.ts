@@ -145,68 +145,65 @@ export class R53Resolverendpoints extends constructs.Construct {
     }
 
     this.inboundResolversIp = inboundresolvers;
+  }
+}
 
+export interface ConditionalForwarderProps {
+  readonly forwardingRules: OutboundForwardingRule[];
+  readonly outboundResolver: r53r.CfnResolverEndpoint;
+  readonly inboundResolverTargets: r53r.CfnResolverRule.TargetAddressProperty[];
+  readonly vpc: ec2.Vpc;
+}
 
-    if (props.outboundForwardingRules) {
-      props.outboundForwardingRules.forEach((rule) => {
+export class ConditionalForwarder extends constructs.Construct {
 
-        // we have to replace dots and dashes for the name rule. It does not like them!
-        var name:string = rule.domain.replace(/\./gi, 'dot');
-        name = name.replace(/-/gi, 'dash');
+  constructor(scope: constructs.Construct, id: string, props: ConditionalForwarderProps) {
+    super(scope, id);
 
-        // create a list of TargetAddress's from the prop.rule
-        const resolverIps: r53r.CfnResolverRule.TargetAddressProperty[] = [];
-        rule.forwardTo.forEach((target) => {
-          resolverIps.push({ ip: target });
-        });
+    props.forwardingRules.forEach((rule) => {
 
-        // create a resolver rule for the central vpc
-        const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
-          domainName: rule.domain,
-          ruleType: 'FORWARD',
-          name: name,
-          resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-          targetIps: resolverIps, // dns servers
-          tags: [{
-            key: 'r53rrule',
-            value: props.tagValue as string,
-          }],
-        });
+      // we have to replace dots and dashes for the name rule. It does not like them!
+      var name:string = rule.domain.replace(/\./gi, 'dot');
+      name = name.replace(/-/gi, 'dash');
 
-        // Associated the resolver rule with the vpc
-        new r53r.CfnResolverRuleAssociation(this, `${name}ResolverRuleAssn`,
-          {
-            resolverRuleId: resolverrule.attrResolverRuleId,
-            vpcId: props.vpc.vpcId,
-          },
-        );
-
-        // create a sharing rule for other vpcs to use, to resolve back to our inbound resolvers.
-        const sharedresolverrule = new r53r.CfnResolverRule(this, `${name}SharedResolverRule`, {
-          domainName: rule.domain,
-          ruleType: 'FORWARD',
-          name: name,
-          resolverEndpointId: outBoundResolver.attrResolverEndpointId,
-          targetIps: inboundresolvers, // dns servers
-          tags: [{
-            key: 'r53rrule',
-            value: props.tagValue as string,
-          }],
-        });
-
-
-        new ram.CfnResourceShare(this, `ResolverRuleShare${rule.domain}`, {
-          name: rule.domain,
-          principals: [this.node.tryGetContext('orgArn')],
-          resourceArns: [sharedresolverrule.attrArn],
-          allowExternalPrincipals: false,
-          tags: [{
-            key: 'r53rshare',
-            value: props.tagValue as string,
-          }],
-        });
-
+      // create a list of TargetAddress's from the prop.rule
+      const resolverIps: r53r.CfnResolverRule.TargetAddressProperty[] = [];
+      rule.forwardTo.forEach((target) => {
+        resolverIps.push({ ip: target });
       });
-    }
+
+      // create a resolver rule for the central vpc
+      const resolverrule = new r53r.CfnResolverRule(this, `${name}ResolverRule`, {
+        domainName: rule.domain,
+        ruleType: 'FORWARD',
+        name: name,
+        resolverEndpointId: props.outboundResolver.attrResolverEndpointId,
+        targetIps: resolverIps, // dns servers
+      });
+
+      // Associated the resolver rule with the vpc
+      new r53r.CfnResolverRuleAssociation(this, `${name}ResolverRuleAssn`,
+        {
+          resolverRuleId: resolverrule.attrResolverRuleId,
+          vpcId: props.vpc.vpcId,
+        },
+      );
+
+      // create a sharing rule for other vpcs to use, to resolve back to our inbound resolvers.
+      const sharedresolverrule = new r53r.CfnResolverRule(this, `${name}SharedResolverRule`, {
+        domainName: rule.domain,
+        ruleType: 'FORWARD',
+        name: name,
+        resolverEndpointId: props.outboundResolver.attrResolverEndpointId,
+        targetIps: props.inboundResolverTargets, // dns servers
+      });
+
+      new ram.CfnResourceShare(this, `ResolverRuleShare${rule.domain}`, {
+        name: rule.domain,
+        principals: [this.node.tryGetContext('orgArn')],
+        resourceArns: [sharedresolverrule.attrArn],
+        allowExternalPrincipals: false,
+      });
+    });
   }
 }
