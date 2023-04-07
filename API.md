@@ -2272,7 +2272,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
 | <code><a href="#raindancers-network.EnterpriseVpc.addServiceEndpoints">addServiceEndpoints</a></code> | Add a collection of service endpopints to the VPC. |
-| <code><a href="#raindancers-network.EnterpriseVpc.addSubnet">addSubnet</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.attachAWSManagedDNSFirewallRules">attachAWSManagedDNSFirewallRules</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
@@ -2427,29 +2427,11 @@ Add a collection of service endpopints to the VPC.
 
 ---
 
-##### `addSubnet` <a name="addSubnet" id="raindancers-network.EnterpriseVpc.addSubnet"></a>
+##### `attachAWSManagedDNSFirewallRules` <a name="attachAWSManagedDNSFirewallRules" id="raindancers-network.EnterpriseVpc.attachAWSManagedDNSFirewallRules"></a>
 
 ```typescript
-public addSubnet(name: string, subnetType: SubnetType, cidrMask: number): SubnetGroup
+public attachAWSManagedDNSFirewallRules(): void
 ```
-
-###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.name"></a>
-
-- *Type:* string
-
----
-
-###### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.subnetType"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetType
-
----
-
-###### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.EnterpriseVpc.addSubnet.parameter.cidrMask"></a>
-
-- *Type:* number
-
----
 
 ##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.EnterpriseVpc.attachToCloudWan"></a>
 

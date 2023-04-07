@@ -20,6 +20,7 @@ import {
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
+import { AwsManagedDNSFirewallRuleGroup } from '../dns/dnsfirewall';
 import { R53Resolverendpoints, ConditionalForwarder, OutboundForwardingRule } from '../dns/dnsResolvers';
 import { CentralAccountAssnRole } from '../dns/enterpriseZone';
 import { CentralResolverRules } from '../dns/resolverRules';
@@ -284,21 +285,15 @@ export class EnterpriseVpc extends constructs.Construct {
 
   }
 
-  public addSubnet(name: string, subnetType: ec2.SubnetType, cidrMask: number ): SubnetGroup {
+  public attachAWSManagedDNSFirewallRules(): void {
 
-    const subnet = new SubnetGroup(this, name, {
-      name: name,
-      subnetType: subnetType,
-      cidrMask: cidrMask,
+    const awsManagedDNSFirewallGroup = new AwsManagedDNSFirewallRuleGroup(this, 'ManagedFirewallRuleGroup');
+
+    new r53r.CfnResolverRuleAssociation(this, 'MyCfnResolverRuleAssociation', {
+      resolverRuleId: awsManagedDNSFirewallGroup.resolverRuleId,
+      vpcId: this.vpc.vpcId,
     });
-
-    console.log(subnet);
-
-    this.subnetConfiguration.push(subnet);
-
-    return subnet;
-
-  };
+  }
 
   /**
    * Add a collection of service endpopints to the VPC
