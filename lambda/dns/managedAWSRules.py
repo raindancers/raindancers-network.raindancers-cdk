@@ -15,22 +15,24 @@ def on_create(event):
 	r53r = boto3.client('route53resolver')
 
 	firewall_domain_lists = []
+	
 	response = r53r.list_firewall_domain_lists()
-
-	firewall_domain_lists.append(response['FirewallDomainLists'])
-
+	firewall_domain_lists.extend(response['FirewallDomainLists'])
+	
 	while 'NextToken' in response.keys():
 		response = r53r.list_firewall_domain_lists(
 			NextToken = response['NextToken']
 		)
 		firewall_domain_lists.extend(response['FirewallDomainLists'])
-		
 	
 	managed_rule_ids = []
-
-	for list in firewall_domain_lists:
-		if list['Name'] in props['awsManagedRules']:
-			managed_rule_ids.append(list['Id'])
+	for domain_list in firewall_domain_lists:
+		print(domain_list, '\n')
+		if domain_list['Name'] in props['awsManagedRules']:
+			managed_rule_ids.append(domain_list['Id'])
+		
+	
+	print(managed_rule_ids)
 
 	return { 
 		'Data': {

@@ -5,7 +5,7 @@ import {
 }
   from 'aws-cdk-lib';
 
-import * as cdk from 'aws-cdk-lib';
+//import * as cdk from 'aws-cdk-lib';
 import * as constructs from 'constructs';
 
 
@@ -74,7 +74,7 @@ export class AssociateSharedResolverRule extends constructs.Construct {
 
       var zoneName = domain.replace(/\./gi, 'dot');
       zoneName = zoneName.replace(/-/gi, 'dash');
-      const region = cdk.Aws.REGION.replace(/-/gi, '');
+      //const region = cdk.Aws.REGION.replace(/-/gi, '');
 
       const resolverRule = new cr.AwsCustomResource(this, `lookupResolverId'${domain}`, {
         onCreate: {
@@ -86,13 +86,9 @@ export class AssociateSharedResolverRule extends constructs.Construct {
                 Name: 'DomainName',
                 Values: [`${domain}.`],
               },
-              {
-                Name: 'Name',
-                Values: [`${zoneName}${region}`],
-              },
             ],
           },
-          physicalResourceId: cr.PhysicalResourceId.fromResponse('ResolverRules.0.Id'),
+          physicalResourceId: cr.PhysicalResourceId.of('resolverId'),
         },
         policy: cr.AwsCustomResourcePolicy.fromSdkCalls({
           resources: cr.AwsCustomResourcePolicy.ANY_RESOURCE,

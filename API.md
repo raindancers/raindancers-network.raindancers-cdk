@@ -298,6 +298,109 @@ The tree node.
 ---
 
 
+### AwsManagedDNSFirewallRuleGroup <a name="AwsManagedDNSFirewallRuleGroup" id="raindancers-network.AwsManagedDNSFirewallRuleGroup"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer"></a>
+
+```typescript
+import { AwsManagedDNSFirewallRuleGroup } from 'raindancers-network'
+
+new AwsManagedDNSFirewallRuleGroup(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct"></a>
+
+```typescript
+import { AwsManagedDNSFirewallRuleGroup } from 'raindancers-network'
+
+AwsManagedDNSFirewallRuleGroup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId">resolverRuleId</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `resolverRuleId`<sup>Required</sup> <a name="resolverRuleId" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId"></a>
+
+```typescript
+public readonly resolverRuleId: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### AwsServiceEndPoints <a name="AwsServiceEndPoints" id="raindancers-network.AwsServiceEndPoints"></a>
 
 Provisions a set of AWS Service Endpoints in a VPC.
@@ -1336,6 +1439,292 @@ public readonly segmentName: string;
 - *Type:* string
 
 the name for the segment.
+
+---
+
+
+### CrossRegionParameterReader <a name="CrossRegionParameterReader" id="raindancers-network.CrossRegionParameterReader"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterReader.Initializer"></a>
+
+```typescript
+import { CrossRegionParameterReader } from 'raindancers-network'
+
+new CrossRegionParameterReader(scope: Construct, name: string, props: CrossRegionParameterReaderProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrossRegionParameterReaderProps">CrossRegionParameterReaderProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CrossRegionParameterReaderProps">CrossRegionParameterReaderProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.getResponseField">getResponseField</a></code> | Returns response data for the AWS SDK call as string. |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.getResponseFieldReference">getResponseFieldReference</a></code> | Returns response data for the AWS SDK call. |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.parameterValue">parameterValue</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrossRegionParameterReader.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `getResponseField` <a name="getResponseField" id="raindancers-network.CrossRegionParameterReader.getResponseField"></a>
+
+```typescript
+public getResponseField(dataPath: string): string
+```
+
+Returns response data for the AWS SDK call as string.
+
+Example for S3 / listBucket : 'Buckets.0.Name'
+
+Note that you cannot use this method if `ignoreErrorCodesMatching`
+is configured for any of the SDK calls. This is because in such a case,
+the response data might not exist, and will cause a CloudFormation deploy time error.
+
+###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.CrossRegionParameterReader.getResponseField.parameter.dataPath"></a>
+
+- *Type:* string
+
+the path to the data.
+
+---
+
+##### `getResponseFieldReference` <a name="getResponseFieldReference" id="raindancers-network.CrossRegionParameterReader.getResponseFieldReference"></a>
+
+```typescript
+public getResponseFieldReference(dataPath: string): Reference
+```
+
+Returns response data for the AWS SDK call.
+
+Example for S3 / listBucket : 'Buckets.0.Name'
+
+Use `Token.asXxx` to encode the returned `Reference` as a specific type or
+use the convenience `getDataString` for string attributes.
+
+Note that you cannot use this method if `ignoreErrorCodesMatching`
+is configured for any of the SDK calls. This is because in such a case,
+the response data might not exist, and will cause a CloudFormation deploy time error.
+
+###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.CrossRegionParameterReader.getResponseFieldReference.parameter.dataPath"></a>
+
+- *Type:* string
+
+the path to the data.
+
+---
+
+##### `parameterValue` <a name="parameterValue" id="raindancers-network.CrossRegionParameterReader.parameterValue"></a>
+
+```typescript
+public parameterValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrossRegionParameterReader.isConstruct"></a>
+
+```typescript
+import { CrossRegionParameterReader } from 'raindancers-network'
+
+CrossRegionParameterReader.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrossRegionParameterReader.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrossRegionParameterReader.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="raindancers-network.CrossRegionParameterReader.property.grantPrincipal"></a>
+
+```typescript
+public readonly grantPrincipal: IPrincipal;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.IPrincipal
+
+The principal to grant permissions to.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID">PROVIDER_FUNCTION_UUID</a></code> | <code>string</code> | The uuid of the custom resource provider singleton lambda function. |
+
+---
+
+##### `PROVIDER_FUNCTION_UUID`<sup>Required</sup> <a name="PROVIDER_FUNCTION_UUID" id="raindancers-network.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID"></a>
+
+```typescript
+public readonly PROVIDER_FUNCTION_UUID: string;
+```
+
+- *Type:* string
+
+The uuid of the custom resource provider singleton lambda function.
+
+---
+
+### CrossRegionParameterWriter <a name="CrossRegionParameterWriter" id="raindancers-network.CrossRegionParameterWriter"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterWriter.Initializer"></a>
+
+```typescript
+import { CrossRegionParameterWriter } from 'raindancers-network'
+
+new CrossRegionParameterWriter(scope: Construct, id: string, props: CrossRegionParameterWriterProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrossRegionParameterWriterProps">CrossRegionParameterWriterProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.CrossRegionParameterWriterProps">CrossRegionParameterWriterProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.CrossRegionParameterWriter.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrossRegionParameterWriter.isConstruct"></a>
+
+```typescript
+import { CrossRegionParameterWriter } from 'raindancers-network'
+
+CrossRegionParameterWriter.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrossRegionParameterWriter.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterWriter.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrossRegionParameterWriter.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
 
 ---
 
@@ -7867,6 +8256,134 @@ public readonly tags: Tag[];
 
 ---
 
+### CrossRegionParameterReaderProps <a name="CrossRegionParameterReaderProps" id="raindancers-network.CrossRegionParameterReaderProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionParameterReaderProps.Initializer"></a>
+
+```typescript
+import { CrossRegionParameterReaderProps } from 'raindancers-network'
+
+const crossRegionParameterReaderProps: CrossRegionParameterReaderProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterReaderProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterReaderProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.CrossRegionParameterReaderProps.property.parameterName"></a>
+
+```typescript
+public readonly parameterName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.CrossRegionParameterReaderProps.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+---
+
+### CrossRegionParameterWriterProps <a name="CrossRegionParameterWriterProps" id="raindancers-network.CrossRegionParameterWriterProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionParameterWriterProps.Initializer"></a>
+
+```typescript
+import { CrossRegionParameterWriterProps } from 'raindancers-network'
+
+const crossRegionParameterWriterProps: CrossRegionParameterWriterProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.value">value</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.CrossRegionParameterWriterProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.CrossRegionParameterWriterProps.property.parameterName"></a>
+
+```typescript
+public readonly parameterName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.CrossRegionParameterWriterProps.property.value"></a>
+
+```typescript
+public readonly value: string;
+```
+
+- *Type:* string
+
+---
+
+### CrossRegionVpc <a name="CrossRegionVpc" id="raindancers-network.CrossRegionVpc"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionVpc.Initializer"></a>
+
+```typescript
+import { CrossRegionVpc } from 'raindancers-network'
+
+const crossRegionVpc: CrossRegionVpc = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossRegionVpc.property.vpcIdSSmParamter">vpcIdSSmParamter</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossRegionVpc.property.vpcRegion">vpcRegion</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `vpcIdSSmParamter`<sup>Required</sup> <a name="vpcIdSSmParamter" id="raindancers-network.CrossRegionVpc.property.vpcIdSSmParamter"></a>
+
+```typescript
+public readonly vpcIdSSmParamter: string;
+```
+
+- *Type:* string
+
+---
+
+##### `vpcRegion`<sup>Required</sup> <a name="vpcRegion" id="raindancers-network.CrossRegionVpc.property.vpcRegion"></a>
+
+```typescript
+public readonly vpcRegion: string;
+```
+
+- *Type:* string
+
+---
+
 ### CrowdStrikeExtendedEndpointProps <a name="CrowdStrikeExtendedEndpointProps" id="raindancers-network.CrowdStrikeExtendedEndpointProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeExtendedEndpointProps.Initializer"></a>
@@ -8464,6 +8981,7 @@ const enterpriseZoneProps: EnterpriseZoneProps = { ... }
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.remoteVpc">remoteVpc</a></code> | <code><a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.crossRegionVpc">crossRegionVpc</a></code> | <code><a href="#raindancers-network.CrossRegionVpc">CrossRegionVpc</a>[]</code> | *No description.* |
 
 ---
 
@@ -8504,6 +9022,16 @@ public readonly remoteVpc: RemoteVpc[];
 ```
 
 - *Type:* <a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]
+
+---
+
+##### `crossRegionVpc`<sup>Optional</sup> <a name="crossRegionVpc" id="raindancers-network.EnterpriseZoneProps.property.crossRegionVpc"></a>
+
+```typescript
+public readonly crossRegionVpc: CrossRegionVpc[];
+```
+
+- *Type:* <a href="#raindancers-network.CrossRegionVpc">CrossRegionVpc</a>[]
 
 ---
 
@@ -12967,6 +13495,60 @@ Traffic allowed from Src to destination only.
 ##### `BOTH` <a name="BOTH" id="raindancers-network.Direction.BOTH"></a>
 
 Traffic allowed in both directions.
+
+---
+
+
+### DNSFirewallActions <a name="DNSFirewallActions" id="raindancers-network.DNSFirewallActions"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DNSFirewallActions.ALLOW">ALLOW</a></code> | *No description.* |
+| <code><a href="#raindancers-network.DNSFirewallActions.BLOCK">BLOCK</a></code> | *No description.* |
+| <code><a href="#raindancers-network.DNSFirewallActions.ALERT">ALERT</a></code> | *No description.* |
+
+---
+
+##### `ALLOW` <a name="ALLOW" id="raindancers-network.DNSFirewallActions.ALLOW"></a>
+
+---
+
+
+##### `BLOCK` <a name="BLOCK" id="raindancers-network.DNSFirewallActions.BLOCK"></a>
+
+---
+
+
+##### `ALERT` <a name="ALERT" id="raindancers-network.DNSFirewallActions.ALERT"></a>
+
+---
+
+
+### DNSFirewallBlockResponse <a name="DNSFirewallBlockResponse" id="raindancers-network.DNSFirewallBlockResponse"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.DNSFirewallBlockResponse.NODATA">NODATA</a></code> | *No description.* |
+| <code><a href="#raindancers-network.DNSFirewallBlockResponse.NXDOMAIN">NXDOMAIN</a></code> | *No description.* |
+| <code><a href="#raindancers-network.DNSFirewallBlockResponse.OVERRIDE">OVERRIDE</a></code> | *No description.* |
+
+---
+
+##### `NODATA` <a name="NODATA" id="raindancers-network.DNSFirewallBlockResponse.NODATA"></a>
+
+---
+
+
+##### `NXDOMAIN` <a name="NXDOMAIN" id="raindancers-network.DNSFirewallBlockResponse.NXDOMAIN"></a>
+
+---
+
+
+##### `OVERRIDE` <a name="OVERRIDE" id="raindancers-network.DNSFirewallBlockResponse.OVERRIDE"></a>
 
 ---
 

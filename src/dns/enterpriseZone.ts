@@ -9,10 +9,17 @@ import {
 } from 'aws-cdk-lib';
 
 import * as cdk from 'aws-cdk-lib';
-
 import * as constructs from 'constructs';
+
+import * as crossRegionParameters from '../ssm/ssmParameterReader';
+
 export interface RemoteVpc {
   readonly vpcId: string;
+  readonly vpcRegion: string;
+}
+
+export interface CrossRegionVpc {
+  readonly vpcIdSSmParamter: string;
   readonly vpcRegion: string;
 }
 
@@ -25,6 +32,7 @@ export interface EnterpriseZoneProps {
   readonly enterpriseDomainName: string;
   readonly localVpc: ec2.Vpc;
   readonly remoteVpc: RemoteVpc[];
+  readonly crossRegionVpc?: CrossRegionVpc[];
   readonly centralAccount: CentralAccount;
 }
 
@@ -49,7 +57,37 @@ export class EnterpriseZone extends constructs.Construct {
       vpc: props.localVpc,
     });
 
-    props.remoteVpc.forEach((remoteVpc, index) => {
+    let vpcToAssociate: RemoteVpc[] = [];
+    props.remoteVpc.forEach((remoteVpc) => {
+      vpcToAssociate.push(
+        {
+          vpcId: remoteVpc.vpcId,
+          vpcRegion: remoteVpc.vpcRegion,
+        },
+      );
+    });
+
+    if (props.crossRegionVpc) {
+      props.crossRegionVpc.forEach((crossRegionVpc, index) => {
+
+        const crossRegionVpcID = new crossRegionParameters.CrossRegionParameterReader(this, `crossregionVpcID0${index}`, {
+          region: crossRegionVpc.vpcRegion,
+          parameterName: crossRegionVpc.vpcIdSSmParamter,
+        });
+
+        // get the vpcId from SSM.
+
+        vpcToAssociate.push(
+          {
+            vpcId: crossRegionVpcID.parameterValue(),
+            vpcRegion: crossRegionVpc.vpcRegion,
+          },
+        );
+      });
+    };
+
+
+    vpcToAssociate.forEach((remoteVpc, index) => {
       // create an association authorisization tp a
       //aws route53 create-vpc-association-authorization --hosted-zone-id <hosted-zone-id> --vpc VPCRegion=<region>,VPCId=<vpc-id> --region us-east-1
       const createAssn = new cr.AwsCustomResource(
@@ -149,7 +187,7 @@ export class CentralAccountAssnRole extends constructs.Construct {
     this.assnRole = new iam.Role(this, 'r53assnrole', {
       assumedBy: new iam.OrganizationPrincipal(props.orgId),
       description: 'Role is assumed by lambdas in accounts to associate their zone',
-      roleName: ( props.roleName ?? 'r53assn' ),
+      roleName: ( props.roleName ?? 'r53assnRole' ),
       externalIds: ['R53Assn'],
     });
 

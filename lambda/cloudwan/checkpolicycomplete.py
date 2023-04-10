@@ -1,6 +1,3 @@
-
-
-
 from time import sleep
 import boto3
 

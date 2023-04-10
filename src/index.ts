@@ -25,6 +25,7 @@ export * from './dns/dnsResolvers';
 export * from './dns/forwardingRules';
 export * from './dns/enterpriseZone';
 export * from './dns/resolverRules';
+export * from './dns/dnsfirewall';
 
 // firewall
 export * from './nwfirewall/firewall';
@@ -35,6 +36,7 @@ export * from './nwfirewall/resourceGroups';
 
 // ssm
 export * from './ssm/manageEC2';
+export * from './ssm/ssmParameterReader';
 
 //cloudwatch
 //export * from './cloudwatch/monitorUser';

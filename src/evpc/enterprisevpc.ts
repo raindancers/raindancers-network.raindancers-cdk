@@ -289,10 +289,72 @@ export class EnterpriseVpc extends constructs.Construct {
 
     const awsManagedDNSFirewallGroup = new AwsManagedDNSFirewallRuleGroup(this, 'ManagedFirewallRuleGroup');
 
-    new r53r.CfnResolverRuleAssociation(this, 'MyCfnResolverRuleAssociation', {
+    // The creation of the firewall Rule Group is aysyncrhonous, and it is possible that it will not be ready
+    // to associate immediately after it is created, despite Cloudformation thinking that it is complete
+    // A custom resource with a iscomplete handler is used to create a waiter.
+
+    const checkDNSFirewallRuleGroupIsReadyFn = new aws_lambda.Function(
+      this,
+      'checkDNSFirewallRuleGroupIsReadyFn',
+      {
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        logRetention: logs.RetentionDays.ONE_MONTH,
+        handler: 'checkDNSFirewallRuleGroupIsReadyFn.on_event',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/dns')),
+        timeout: cdk.Duration.seconds(899),
+      },
+    );
+
+    const checkDNSFirewallRuleGroupisCompleteFn = new aws_lambda.Function(
+      this,
+      'checkDNSFirewallRuleGroupIsCompleteFn',
+      {
+        runtime: aws_lambda.Runtime.PYTHON_3_9,
+        logRetention: logs.RetentionDays.ONE_MONTH,
+        handler: 'checkDNSFirewallRuleGroupIsReadyFn.is_complete',
+        code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/dns')),
+        timeout: cdk.Duration.seconds(899),
+      },
+    );
+
+    // aws route53resolver get-firewall-rule-group
+
+    checkDNSFirewallRuleGroupisCompleteFn.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: ['route53resolver:GetFirewallRuleGroup'],
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+      }),
+    );
+
+    const checkDNSFirewallRuleGroupIsReadyCr = new cdk.CustomResource(
+      this,
+      'checkDNSFirewallRuleGroupIsReadyCr',
+      {
+        resourceType: 'Custom::AssociateInternalZone',
+        properties: {
+          ResolverRuleId: awsManagedDNSFirewallGroup.resolverRuleId,
+        },
+        serviceToken: new cr.Provider(this, 'checkDNSFirewallRuleGroupIsReadyProvider', {
+          onEventHandler: checkDNSFirewallRuleGroupIsReadyFn,
+          isCompleteHandler: checkDNSFirewallRuleGroupisCompleteFn,
+          totalTimeout: cdk.Duration.minutes(119),
+          queryInterval: cdk.Duration.seconds(10),
+          logRetention: logs.RetentionDays.TWO_YEARS,
+          providerFunctionName: cdk.PhysicalName.GENERATE_IF_NEEDED,
+        }).serviceToken,
+      },
+    );
+
+    const assn = new r53r.CfnResolverRuleAssociation(this, 'DNSFirewallWallAssociation', {
       resolverRuleId: awsManagedDNSFirewallGroup.resolverRuleId,
       vpcId: this.vpc.vpcId,
     });
+
+    // Cloudformation has no way to know that the Association can not happen untill the Is ready check is done.
+    // so a dependency needs to be added
+    assn.node.addDependency(checkDNSFirewallRuleGroupIsReadyCr);
+
   }
 
   /**
@@ -529,6 +591,7 @@ export class EnterpriseVpc extends constructs.Construct {
       const athenaResultsBucket = new s3.Bucket(this, 'AthenaFlowLogResults', {
         blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
         removalPolicy: cdk.RemovalPolicy.DESTROY,
+        autoDeleteObjects: true,
       });
 
 
