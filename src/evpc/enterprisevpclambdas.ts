@@ -97,7 +97,7 @@ export class EnterpriseVpcLambda extends constructs.Construct {
       onEventHandler: attachToCloudwan,
       isCompleteHandler: isAttachmentComplete, // optional async "waiter"
       logRetention: logs.RetentionDays.ONE_DAY, // default is INFINITE
-      totalTimeout: cdk.Duration.minutes(30),
+      totalTimeout: cdk.Duration.minutes(15),
       queryInterval: cdk.Duration.seconds(15),
     });
 

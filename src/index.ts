@@ -55,10 +55,6 @@ export * from './crowdstrike/crowdstrikeNLBendpoint';
 
 export * from './redshift/index';
 
-// lakeformation
-
-export * from './lakeformation/lakeformation';
-
 
 // sso
 
@@ -67,3 +63,4 @@ export * from './sso/index';
 //power bi
 
 export * from './mspowerbigateway';
+

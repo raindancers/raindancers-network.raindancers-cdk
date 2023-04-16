@@ -21,9 +21,9 @@ def on_update(event):
 
 
 def on_delete(event):
-	print(network_manager.delete_attachment(
-		AttachmentId = event["PhysicalResourceId"]
-	))
+
+	print('deleting Attachment:', event["PhysicalResourceId"])
+	network_manager.delete_attachment(AttachmentId = event["PhysicalResourceId"])
 
 
 def on_create(event):
@@ -51,23 +51,30 @@ def on_create(event):
 
 def is_complete(event, context):
 
-	
-	response = network_manager.get_vpc_attachment(
-    	AttachmentId=event["PhysicalResourceId"]
-	)
-	
-	print('IsCompleteHandler', response)
+	print('EVENT:',event)
+	request_type = event['RequestType']
 
-	if response['VpcAttachment']['Attachment']['State'] == 'FAILED':
-		print(response)
-		raise ValueError('VPC Attachment Failed')
+	if request_type == 'Create':
 
-	if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
-		return { 
-			'IsComplete': True,
-		}
-	else:
+		response = network_manager.get_vpc_attachment(
+			AttachmentId=event["PhysicalResourceId"]
+		)
+		
+		print('IsCompleteHandler', response)
+
+		if response['VpcAttachment']['Attachment']['State'] == 'FAILED':
+			print(response)
+			raise ValueError('VPC Attachment Failed')
+
+		if response['VpcAttachment']['Attachment']['State'] == 'AVAILABLE':
+			return { 
+				'IsComplete': True,
+			}
+		else:
 			return { 'IsComplete': False }
+				
 
 	
+	if request_type in ['Update', 'Delete']:
+		return { 'IsComplete': True }
 
