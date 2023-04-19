@@ -56,6 +56,10 @@ def is_complete(event, context):
 
 	if request_type == 'Create':
 
+		props = json.loads(base64.b64decode(event["ResourceProperties"]["props64"]).decode('utf-8'))				
+
+
+
 		response = network_manager.get_vpc_attachment(
 			AttachmentId=event["PhysicalResourceId"]
 		)
@@ -74,7 +78,22 @@ def is_complete(event, context):
 			return { 'IsComplete': False }
 				
 
+	if request_type == 'Delete':
+
+		# if the attachment still exisits, deletion is not yet compelte. 
+		# if this lookup call is sucessful, the attachment still exisits, so
+		# deletion is not yet complete.  If it does fail, we know its gone
+		try:
+			response = network_manager.get_vpc_attachment(
+				AttachmentId=event["PhysicalResourceId"]
+			)
+			return { 'IsComplete': False }
+		
+		except:
+
+			return { 'IsComplete': True}
+
 	
-	if request_type in ['Update', 'Delete']:
+	if request_type == 'Update':
 		return { 'IsComplete': True }
 

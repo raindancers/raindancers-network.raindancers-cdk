@@ -600,6 +600,7 @@ export class EnterpriseVpc extends constructs.Construct {
         code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
         runtime: aws_lambda.Runtime.PYTHON_3_9,
         handler: 'flowlogintegration.on_event',
+        timeout: cdk.Duration.seconds(300),
       });
 
       athenaLogsHandler.addToRolePolicy(
@@ -653,8 +654,31 @@ export class EnterpriseVpc extends constructs.Construct {
       }),
     );
 
+
+    // check to see if the coreNetwork is ready.
+    const isReadyFn = new aws_lambda.Function(this, 'isreadyFn', {
+      runtime: aws_lambda.Runtime.PYTHON_3_9,
+      handler: 'get_core_network_id.is_complete',
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/evpc')),
+    });
+
+    isReadyFn.addToRolePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'networkmanager:GetCoreNetwork',
+          'networkmanager:ListCoreNetworks',
+        ],
+      }),
+    );
+
     const networkManagerProvider = new cr.Provider(this, 'NetworkManagerProvider', {
       onEventHandler: lookupIdLambda,
+      isCompleteHandler: isReadyFn,
+      queryInterval: cdk.Duration.seconds(15),
+      totalTimeout: cdk.Duration.minutes(119),
+      logRetention: logs.RetentionDays.TWO_YEARS,
     });
 
     const coreNetwork = new cdk.CustomResource(this, 'idfinderCR', {
@@ -663,6 +687,7 @@ export class EnterpriseVpc extends constructs.Construct {
 			  CoreNetworkName: props.coreNetworkName,
       },
     });
+
 
     this.cloudWanCoreId = coreNetwork.getAtt('CoreNetworkId') as unknown as string;
 
