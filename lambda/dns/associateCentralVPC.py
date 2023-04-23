@@ -31,15 +31,30 @@ def on_event(event, context):
 def on_create_update(event):
 
 	props = event["ResourceProperties"]
-	print("Associating Zone: %s" % props)
+	
+	#find the vpc
+	route53 = boto3.client('route53')
+	ec2 = boto3.client('ec2', region_name= props['Region'])
+	
+	print(props['SearchTagKey'], props['SearchTagValue'])
 
-	route53 = getroute53client(props["CentralAccountRole"])
+	vpc_id = ec2.describe_vpcs(
+		Filters=[
+			{
+				"Name":  f"tag:{props['SearchTagKey']}",
+				"Values": [
+					props['SearchTagValue'],
+				],
+			},
+		]
+	)['Vpcs'][0]['VpcId']
 
+	#Associate the Zone with the Central VPC
 	route53.associate_vpc_with_hosted_zone(
 		HostedZoneId = props['ZoneId'],
 		VPC = { 
-			"VPCId": props['VPCId'],
-			"VPCRegion": props['VPCRegion']
+			"VPCId":  vpc_id,
+			"VPCRegion": props['Region']
 		}
 	)
 
@@ -47,13 +62,28 @@ def on_create_update(event):
 def on_delete(event):
 
 	props = event["ResourceProperties"]
-	route53 = getroute53client(props["CentralAccountRole"])
 
+	#find the vpc
+	route53 = boto3.client('route53')
+	ec2 = boto3.client('ec2', region_name= props['Region'])
+	
+	vpc_id = ec2.describe_vpcs(
+		Filters=[
+			{
+				"Name":  f"tag:{props['SearchTagKey']}",
+				"Values": [
+					props['SearchTagValue'],
+				],
+			},
+		]
+	)['Vpcs'][0]['VpcId']
+
+	# desassoicate the vpc
 	route53.disassociate_vpc_from_hosted_zone(
 		HostedZoneId = props['ZoneId'],
-		VPC = { 
-			"VPCId": props['VPCId'],
-			"VPCRegion": props['VPCRegion']
+		VPC = {
+			"VPCId": vpc_id,
+			"VPCRegion": props['Region']
 		}
 	)
 	

@@ -1,5 +1,6 @@
 import {
   aws_route53resolver as r53r,
+  aws_ec2 as ec2,
 }
   from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
@@ -10,6 +11,8 @@ import { R53Resolverendpoints } from './dnsResolvers';
 export interface CentralResolverRulesProps {
   readonly domains: string[];
   readonly resolvers: R53Resolverendpoints;
+  readonly vpc: ec2.Vpc;
+  readonly vpcSearchTag?: cdk.Tag | undefined;
 }
 
 export class CentralResolverRules extends constructs.Construct {
@@ -33,6 +36,12 @@ export class CentralResolverRules extends constructs.Construct {
           value: domain,
         }],
       });
+
+      // if a searchTag is not provided use the default.
+      const searchTag = props.vpcSearchTag ?? new cdk.Tag('centralVPCSearchTag', 'RegionalDNSHub');
+
+      // tag the vpc as a central resolver rule.
+      cdk.Tags.of(props.vpc).add(searchTag.key, searchTag.value);
 
 	 });
   }

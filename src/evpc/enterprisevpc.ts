@@ -15,19 +15,30 @@ import {
   aws_events_targets as targets,
   aws_sqs as sqs,
   aws_networkfirewall as firewall,
-  //aws_stepfunctions as sfn
+  aws_route53 as route53,
 }
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
 import { AwsManagedDNSFirewallRuleGroup } from '../dns/dnsfirewall';
 import { R53Resolverendpoints, ConditionalForwarder, OutboundForwardingRule } from '../dns/dnsResolvers';
-import { CentralAccountAssnRole } from '../dns/enterpriseZone';
+import { EnterpriseZone, CentralAccountAssnRole, HubVpc } from '../dns/enterpriseZone';
 import { CentralResolverRules } from '../dns/resolverRules';
 import { AwsServiceEndPoints } from '../endpoints/awsServiceEndpoints';
 import { NetworkFirewall } from '../nwfirewall/firewall';
 import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 
+interface RouteTableMeta {
+  readonly routeTableId: string;
+  readonly groupName: string;
+}
+
+
+export interface AddEnterprizeZoneProps {
+  readonly domainname: string;
+  readonly hubVpcs: HubVpc[];
+  readonly isHubVpc?: boolean | undefined;
+}
 
 export interface ESubnetGroup
 {
@@ -269,7 +280,6 @@ export class EnterpriseVpc extends constructs.Construct {
       //   throw new Error('An Evpc must have a subnetGroup property');
       // }
 
-      console.log(props.evpc);
 
       this.vpc = new ec2.Vpc(this, 'evpc', {
         ...props.evpc,
@@ -283,6 +293,25 @@ export class EnterpriseVpc extends constructs.Construct {
     this.tgWaiterProvider = crHandlders.tgWaiterProvider;
     this.attachToCloudwanProvider = crHandlders.attachToCloudwanProvider;
 
+  }
+
+  public createAndAttachR53EnterprizeZone(props: AddEnterprizeZoneProps ): route53.PrivateHostedZone {
+
+    const zone = new EnterpriseZone(this, `EnterpriseZone${props.domainname}`, {
+      enterpriseDomainName: props.domainname,
+      localVpc: this.vpc,
+      hubVpcs: props.hubVpcs,
+    });
+
+    return zone.privateZone;
+  }
+
+  public createAndAttachR53PrivateZone(zoneName: string): r53.PrivateHostedZone {
+
+    return new r53.PrivateHostedZone(this, `privatezone${zoneName}`, {
+      zoneName: zoneName,
+      vpc: this.vpc,
+    });
   }
 
   public attachAWSManagedDNSFirewallRules(): void {
@@ -408,11 +437,14 @@ export class EnterpriseVpc extends constructs.Construct {
     return r53Resolvers;
   }
 
-  public addCentralResolverRules(domains: string[]): void {
+  public addCentralResolverRules(domains: string[], searchTag?: cdk.Tag | undefined ): void {
 
     new CentralResolverRules(this, 'centralResolverRules', {
       domains: domains,
       resolvers: this.r53endpointResolvers as R53Resolverendpoints,
+      vpc: this.vpc,
+      vpcSearchTag: searchTag,
+
     });
   }
 
@@ -449,34 +481,24 @@ export class EnterpriseVpc extends constructs.Construct {
       allSubnetGroups.push(routerGroup.subnetGroup);
     });
 
-    // let subnets: ec2.ISubnet[] = [];
-    // allSubnetGroups.forEach((subnetGroup) => {
-    //   subnets.concat(this.vpc.selectSubnets({ subnetGroupName: subnetGroup.subnet.name }).subnets);
-    // });
-
-    // allSubnetCidrs is a list of subnets, from which to create routes
-    // let allSubnetCidrs: string[] = [];
-    // subnets.forEach((subnet) => {
-    //   allSubnetCidrs.push(subnet.ipv4CidrBlock);
-    // });
-
-
-    //
     routerGroups.forEach((routerGroup) => {
       routerGroup.routes.forEach((route) => {
 
         // Sanity Check the inputs
         // only one of cidr or subnet can be supplied
         if (!(route.cidr || route.subnet)) {
-          throw new Error('Only One of cidr or subnet can be supplied');
+          throw new Error('Only one of cidr or subnet can be supplied');
         }
 
         let routecidr: string[] = [];
 
         // if a subnet is supplied, it can be be a SubnetWildCard or a subnet.
+        // if its a cidr, add it to the cidrs
         if (route.cidr) {
           routecidr.push(route.cidr as string);
+        // it must be a subnet route
         } else {
+
           // if the wild card is used; we need to create routes for all subnets, except
           // for the subnet where this is being routed from.
           if (route.subnet === SubnetWildCards.ALLSUBNETS) {
@@ -510,6 +532,8 @@ export class EnterpriseVpc extends constructs.Construct {
           }
         }
         // .addRoutes takes a list of cidrs, and will deal to them so that traffic reamins symetric.
+
+
         this.addRoutes({
           cidr: routecidr,
           description: route.description,
@@ -916,17 +940,22 @@ export class EnterpriseVpc extends constructs.Construct {
 	 */
   public addRoutes (props: AddRoutesProps): void {
 
+
     if ( props.destination === Destination.TRANSITGATEWAY || props.destination === Destination.CLOUDWAN ) {
 
-      var routeTableIds: string[] = [];
+      var routeTableIds: RouteTableMeta[] = [];
 
       // get all the routeTableIds for the subnets
       props.subnetGroups.forEach((groupName) => {
-        const selection = this.vpc.selectSubnets({
-          subnetGroupName: groupName,
-        });
+
+        // array of subnets
+        const selection = this.vpc.selectSubnets({ subnetGroupName: groupName });
+
         selection.subnets.forEach((subnet) => {
-          routeTableIds.push(subnet.routeTable.routeTableId);
+          routeTableIds.push({
+            routeTableId: subnet.routeTable.routeTableId,
+            groupName: groupName,
+          });
         });
       });
 
@@ -934,7 +963,7 @@ export class EnterpriseVpc extends constructs.Construct {
       // check that the cidrs are valid
       const ipRegex = new RegExp('(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([1-3][0-2]$|[0-2][0-9]$|0?[0-9]$)');
 
-
+      // iterate over the route tables.
       routeTableIds.forEach((routeTableId, index) => {
         props.cidr.forEach((network) => {
           if (ipRegex.test(network) === false) {
@@ -944,11 +973,12 @@ export class EnterpriseVpc extends constructs.Construct {
           switch (props.destination) {
             case Destination.CLOUDWAN: {
 
-              const cloudwanroute = new cdk.CustomResource(this, `cloudwanroute${hashProps(props)}${index}`, {
+
+              const cloudwanroute = new cdk.CustomResource(this, `${routeTableId.groupName}${index}cloudwanroute${network}`, {
                 serviceToken: this.addRoutesProvider.serviceToken,
                 properties: {
                   cidr: network,
-                  RouteTableId: routeTableId,
+                  RouteTableId: routeTableId.routeTableId,
                   Destination: props.destination,
                   CloudWanName: this.cloudWanName,
                 },
@@ -960,7 +990,7 @@ export class EnterpriseVpc extends constructs.Construct {
             }
             case Destination.TRANSITGATEWAY: {
 
-              const waiter = new cdk.CustomResource(this, `cloudwanroutewaiter${hashProps(props)}${index}`, {
+              const waiter = new cdk.CustomResource(this, `t${routeTableId.groupName}${index}tgwaiter${network}`, {
                 serviceToken: this.tgWaiterProvider.serviceToken,
                 properties: {
                   transitGatewayId: this.transitGWID,
@@ -968,8 +998,8 @@ export class EnterpriseVpc extends constructs.Construct {
                 },
               });
 
-              const transitgatewayroute = new ec2.CfnRoute(this, `transitgatewayroute${hashProps(props)}${index}`, {
-                routeTableId: routeTableId,
+              const transitgatewayroute = new ec2.CfnRoute(this, `${routeTableId.groupName}${index}tgroute${network}`, {
+                routeTableId: routeTableId.routeTableId,
                 destinationCidrBlock: network,
                 transitGatewayId: this.transitGWID,
               });
@@ -1155,7 +1185,7 @@ export class EnterpriseVpc extends constructs.Construct {
 
 
 // this provides a unique string based on the props
-function hashProps(props: object): string {
+function hashProps(props: object | string): string {
   const str = JSON.stringify(props);
   var h: number = 0;
   for (var i = 0; i < str.length; i++) {

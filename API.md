@@ -2452,6 +2452,8 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
 | <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
+| <code><a href="#raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone">createAndAttachR53EnterprizeZone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone">createAndAttachR53PrivateZone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList">createAndShareSubnetPrefixList</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
 | <code><a href="#raindancers-network.EnterpriseVpc.router">router</a></code> | This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls. |
@@ -2470,12 +2472,18 @@ Returns a string representation of this construct.
 ##### `addCentralResolverRules` <a name="addCentralResolverRules" id="raindancers-network.EnterpriseVpc.addCentralResolverRules"></a>
 
 ```typescript
-public addCentralResolverRules(domains: string[]): void
+public addCentralResolverRules(domains: string[], searchTag?: Tag): void
 ```
 
 ###### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.EnterpriseVpc.addCentralResolverRules.parameter.domains"></a>
 
 - *Type:* string[]
+
+---
+
+###### `searchTag`<sup>Optional</sup> <a name="searchTag" id="raindancers-network.EnterpriseVpc.addCentralResolverRules.parameter.searchTag"></a>
+
+- *Type:* aws-cdk-lib.Tag
 
 ---
 
@@ -2648,6 +2656,30 @@ Enable CloudWanRoutingProtocol.
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.CloudWanRoutingProtocolProps">CloudWanRoutingProtocolProps</a>
+
+---
+
+##### `createAndAttachR53EnterprizeZone` <a name="createAndAttachR53EnterprizeZone" id="raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone"></a>
+
+```typescript
+public createAndAttachR53EnterprizeZone(props: AddEnterprizeZoneProps): PrivateHostedZone
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone.parameter.props"></a>
+
+- *Type:* <a href="#raindancers-network.AddEnterprizeZoneProps">AddEnterprizeZoneProps</a>
+
+---
+
+##### `createAndAttachR53PrivateZone` <a name="createAndAttachR53PrivateZone" id="raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone"></a>
+
+```typescript
+public createAndAttachR53PrivateZone(zoneName: string): PrivateHostedZone
+```
+
+###### `zoneName`<sup>Required</sup> <a name="zoneName" id="raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone.parameter.zoneName"></a>
+
+- *Type:* string
 
 ---
 
@@ -6638,6 +6670,56 @@ public readonly segments: string[];
 
 ---
 
+### AddEnterprizeZoneProps <a name="AddEnterprizeZoneProps" id="raindancers-network.AddEnterprizeZoneProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.AddEnterprizeZoneProps.Initializer"></a>
+
+```typescript
+import { AddEnterprizeZoneProps } from 'raindancers-network'
+
+const addEnterprizeZoneProps: AddEnterprizeZoneProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.domainname">domainname</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.hubVpcs">hubVpcs</a></code> | <code><a href="#raindancers-network.HubVpc">HubVpc</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.isHubVpc">isHubVpc</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `domainname`<sup>Required</sup> <a name="domainname" id="raindancers-network.AddEnterprizeZoneProps.property.domainname"></a>
+
+```typescript
+public readonly domainname: string;
+```
+
+- *Type:* string
+
+---
+
+##### `hubVpcs`<sup>Required</sup> <a name="hubVpcs" id="raindancers-network.AddEnterprizeZoneProps.property.hubVpcs"></a>
+
+```typescript
+public readonly hubVpcs: HubVpc[];
+```
+
+- *Type:* <a href="#raindancers-network.HubVpc">HubVpc</a>[]
+
+---
+
+##### `isHubVpc`<sup>Optional</sup> <a name="isHubVpc" id="raindancers-network.AddEnterprizeZoneProps.property.isHubVpc"></a>
+
+```typescript
+public readonly isHubVpc: boolean;
+```
+
+- *Type:* boolean
+
+---
+
 ### AddR53ZoneProps <a name="AddR53ZoneProps" id="raindancers-network.AddR53ZoneProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.AddR53ZoneProps.Initializer"></a>
@@ -7416,45 +7498,6 @@ indicate true for a S3 Gateway Interface.
 
 ---
 
-### CentralAccount <a name="CentralAccount" id="raindancers-network.CentralAccount"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.CentralAccount.Initializer"></a>
-
-```typescript
-import { CentralAccount } from 'raindancers-network'
-
-const centralAccount: CentralAccount = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.CentralAccount.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralAccount.property.roleArn">roleArn</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `accountId`<sup>Required</sup> <a name="accountId" id="raindancers-network.CentralAccount.property.accountId"></a>
-
-```typescript
-public readonly accountId: string;
-```
-
-- *Type:* string
-
----
-
-##### `roleArn`<sup>Required</sup> <a name="roleArn" id="raindancers-network.CentralAccount.property.roleArn"></a>
-
-```typescript
-public readonly roleArn: string;
-```
-
-- *Type:* string
-
----
-
 ### CentralAccountAssnRoleProps <a name="CentralAccountAssnRoleProps" id="raindancers-network.CentralAccountAssnRoleProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CentralAccountAssnRoleProps.Initializer"></a>
@@ -7521,6 +7564,8 @@ const centralResolverRulesProps: CentralResolverRulesProps = { ... }
 | --- | --- | --- |
 | <code><a href="#raindancers-network.CentralResolverRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#raindancers-network.CentralResolverRulesProps.property.resolvers">resolvers</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
+| <code><a href="#raindancers-network.CentralResolverRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.CentralResolverRulesProps.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
 
 ---
 
@@ -7541,6 +7586,26 @@ public readonly resolvers: R53Resolverendpoints;
 ```
 
 - *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
+
+---
+
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CentralResolverRulesProps.property.vpc"></a>
+
+```typescript
+public readonly vpc: Vpc;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Vpc
+
+---
+
+##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.CentralResolverRulesProps.property.vpcSearchTag"></a>
+
+```typescript
+public readonly vpcSearchTag: Tag;
+```
+
+- *Type:* aws-cdk-lib.Tag
 
 ---
 
@@ -7830,6 +7895,45 @@ public readonly tags: Tag[];
 
 ---
 
+### CrossAccountProps <a name="CrossAccountProps" id="raindancers-network.CrossAccountProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.CrossAccountProps.Initializer"></a>
+
+```typescript
+import { CrossAccountProps } from 'raindancers-network'
+
+const crossAccountProps: CrossAccountProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.CrossAccountProps.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.CrossAccountProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="raindancers-network.CrossAccountProps.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.CrossAccountProps.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+---
+
 ### CrossRegionParameterReaderProps <a name="CrossRegionParameterReaderProps" id="raindancers-network.CrossRegionParameterReaderProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CrossRegionParameterReaderProps.Initializer"></a>
@@ -7913,45 +8017,6 @@ public readonly parameterName: string;
 
 ```typescript
 public readonly value: string;
-```
-
-- *Type:* string
-
----
-
-### CrossRegionVpc <a name="CrossRegionVpc" id="raindancers-network.CrossRegionVpc"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionVpc.Initializer"></a>
-
-```typescript
-import { CrossRegionVpc } from 'raindancers-network'
-
-const crossRegionVpc: CrossRegionVpc = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionVpc.property.vpcIdSSmParamter">vpcIdSSmParamter</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionVpc.property.vpcRegion">vpcRegion</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `vpcIdSSmParamter`<sup>Required</sup> <a name="vpcIdSSmParamter" id="raindancers-network.CrossRegionVpc.property.vpcIdSSmParamter"></a>
-
-```typescript
-public readonly vpcIdSSmParamter: string;
-```
-
-- *Type:* string
-
----
-
-##### `vpcRegion`<sup>Required</sup> <a name="vpcRegion" id="raindancers-network.CrossRegionVpc.property.vpcRegion"></a>
-
-```typescript
-public readonly vpcRegion: string;
 ```
 
 - *Type:* string
@@ -8523,21 +8588,9 @@ const enterpriseZoneProps: EnterpriseZoneProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.centralAccount">centralAccount</a></code> | <code><a href="#raindancers-network.CentralAccount">CentralAccount</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.remoteVpc">remoteVpc</a></code> | <code><a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.crossRegionVpc">crossRegionVpc</a></code> | <code><a href="#raindancers-network.CrossRegionVpc">CrossRegionVpc</a>[]</code> | *No description.* |
-
----
-
-##### `centralAccount`<sup>Required</sup> <a name="centralAccount" id="raindancers-network.EnterpriseZoneProps.property.centralAccount"></a>
-
-```typescript
-public readonly centralAccount: CentralAccount;
-```
-
-- *Type:* <a href="#raindancers-network.CentralAccount">CentralAccount</a>
+| <code><a href="#raindancers-network.EnterpriseZoneProps.property.hubVpcs">hubVpcs</a></code> | <code><a href="#raindancers-network.HubVpc">HubVpc</a>[]</code> | *No description.* |
 
 ---
 
@@ -8561,23 +8614,13 @@ public readonly localVpc: Vpc;
 
 ---
 
-##### `remoteVpc`<sup>Required</sup> <a name="remoteVpc" id="raindancers-network.EnterpriseZoneProps.property.remoteVpc"></a>
+##### `hubVpcs`<sup>Optional</sup> <a name="hubVpcs" id="raindancers-network.EnterpriseZoneProps.property.hubVpcs"></a>
 
 ```typescript
-public readonly remoteVpc: RemoteVpc[];
+public readonly hubVpcs: HubVpc[];
 ```
 
-- *Type:* <a href="#raindancers-network.RemoteVpc">RemoteVpc</a>[]
-
----
-
-##### `crossRegionVpc`<sup>Optional</sup> <a name="crossRegionVpc" id="raindancers-network.EnterpriseZoneProps.property.crossRegionVpc"></a>
-
-```typescript
-public readonly crossRegionVpc: CrossRegionVpc[];
-```
-
-- *Type:* <a href="#raindancers-network.CrossRegionVpc">CrossRegionVpc</a>[]
+- *Type:* <a href="#raindancers-network.HubVpc">HubVpc</a>[]
 
 ---
 
@@ -9448,6 +9491,58 @@ public readonly name: string;
 - *Type:* string
 
 The Name used by IPAM to record the allocation.
+
+---
+
+### HubVpc <a name="HubVpc" id="raindancers-network.HubVpc"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.HubVpc.Initializer"></a>
+
+```typescript
+import { HubVpc } from 'raindancers-network'
+
+const hubVpc: HubVpc = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.HubVpc.property.region">region</a></code> | <code>string</code> | what region is the central account in. |
+| <code><a href="#raindancers-network.HubVpc.property.crossAccount">crossAccount</a></code> | <code><a href="#raindancers-network.CrossAccountProps">CrossAccountProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.HubVpc.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.HubVpc.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+what region is the central account in.
+
+---
+
+##### `crossAccount`<sup>Optional</sup> <a name="crossAccount" id="raindancers-network.HubVpc.property.crossAccount"></a>
+
+```typescript
+public readonly crossAccount: CrossAccountProps;
+```
+
+- *Type:* <a href="#raindancers-network.CrossAccountProps">CrossAccountProps</a>
+
+---
+
+##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.HubVpc.property.vpcSearchTag"></a>
+
+```typescript
+public readonly vpcSearchTag: Tag;
+```
+
+- *Type:* aws-cdk-lib.Tag
 
 ---
 
@@ -10889,45 +10984,6 @@ public readonly arn: string;
 
 ```typescript
 public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-### RemoteVpc <a name="RemoteVpc" id="raindancers-network.RemoteVpc"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.RemoteVpc.Initializer"></a>
-
-```typescript
-import { RemoteVpc } from 'raindancers-network'
-
-const remoteVpc: RemoteVpc = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.RemoteVpc.property.vpcId">vpcId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RemoteVpc.property.vpcRegion">vpcRegion</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `vpcId`<sup>Required</sup> <a name="vpcId" id="raindancers-network.RemoteVpc.property.vpcId"></a>
-
-```typescript
-public readonly vpcId: string;
-```
-
-- *Type:* string
-
----
-
-##### `vpcRegion`<sup>Required</sup> <a name="vpcRegion" id="raindancers-network.RemoteVpc.property.vpcRegion"></a>
-
-```typescript
-public readonly vpcRegion: string;
 ```
 
 - *Type:* string
