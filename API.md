@@ -2448,6 +2448,7 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 | <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
 | <code><a href="#raindancers-network.EnterpriseVpc.addServiceEndpoints">addServiceEndpoints</a></code> | Add a collection of service endpopints to the VPC. |
+| <code><a href="#raindancers-network.EnterpriseVpc.associateSharedResolverRules">associateSharedResolverRules</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachAWSManagedDNSFirewallRules">attachAWSManagedDNSFirewallRules</a></code> | *No description.* |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
 | <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
@@ -2608,6 +2609,18 @@ Add a collection of service endpopints to the VPC.
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addServiceEndpoints.parameter.props"></a>
 
 - *Type:* <a href="#raindancers-network.AddAwsServiceEndPointsProps">AddAwsServiceEndPointsProps</a>
+
+---
+
+##### `associateSharedResolverRules` <a name="associateSharedResolverRules" id="raindancers-network.EnterpriseVpc.associateSharedResolverRules"></a>
+
+```typescript
+public associateSharedResolverRules(domainNames: string[]): void
+```
+
+###### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.EnterpriseVpc.associateSharedResolverRules.parameter.domainNames"></a>
+
+- *Type:* string[]
 
 ---
 

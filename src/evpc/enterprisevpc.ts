@@ -23,6 +23,7 @@ import * as constructs from 'constructs';
 import { AwsManagedDNSFirewallRuleGroup } from '../dns/dnsfirewall';
 import { R53Resolverendpoints, ConditionalForwarder, OutboundForwardingRule } from '../dns/dnsResolvers';
 import { EnterpriseZone, CentralAccountAssnRole, HubVpc } from '../dns/enterpriseZone';
+import { AssociateSharedResolverRule } from '../dns/forwardingRules';
 import { CentralResolverRules } from '../dns/resolverRules';
 import { AwsServiceEndPoints } from '../endpoints/awsServiceEndpoints';
 import { NetworkFirewall } from '../nwfirewall/firewall';
@@ -292,6 +293,16 @@ export class EnterpriseVpc extends constructs.Construct {
     this.addRoutesProvider = crHandlders.addRoutesProvider;
     this.tgWaiterProvider = crHandlders.tgWaiterProvider;
     this.attachToCloudwanProvider = crHandlders.attachToCloudwanProvider;
+
+  }
+
+  public associateSharedResolverRules(domainNames: string[]): void {
+
+    new AssociateSharedResolverRule(this, 'r53associationRules', {
+      domainNames: domainNames,
+      vpc: this.vpc,
+    });
+
 
   }
 
