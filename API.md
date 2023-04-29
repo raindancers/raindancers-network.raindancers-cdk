@@ -12949,6 +12949,177 @@ Attachment Conditions.
 ---
 
 
+### AwsRegions <a name="AwsRegions" id="raindancers-network.AwsRegions"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.AwsRegions.US_EAST_1">US_EAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.US_EAST_2">US_EAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.US_WEST_1">US_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.US_WEST_2">US_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AF_SOUTH_1">AF_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_EAST_1">AP_EAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTH_1">AP_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTH_2">AP_SOUTH_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_1">AP_SOUTHEAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_2">AP_SOUTHEAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_3">AP_SOUTHEAST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_4">AP_SOUTHEAST_4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_1">AP_NORTHEAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_2">AP_NORTHEAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_3">AP_NORTHEAST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.CA_CENTRAL_1">CA_CENTRAL_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_SOUTH_1">EU_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_WEST_1">EU_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_WEST_2">EU_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_WEST_3">EU_WEST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_SOUTH_2">EU_SOUTH_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_NORTH_1">EU_NORTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.EU_CENTRAL_2">EU_CENTRAL_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.ME_SOUTH_1">ME_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.ME_CENTRAL">ME_CENTRAL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.AwsRegions.SA_EAST_1">SA_EAST_1</a></code> | *No description.* |
+
+---
+
+##### `US_EAST_1` <a name="US_EAST_1" id="raindancers-network.AwsRegions.US_EAST_1"></a>
+
+---
+
+
+##### `US_EAST_2` <a name="US_EAST_2" id="raindancers-network.AwsRegions.US_EAST_2"></a>
+
+---
+
+
+##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.AwsRegions.US_WEST_1"></a>
+
+---
+
+
+##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.AwsRegions.US_WEST_2"></a>
+
+---
+
+
+##### `AF_SOUTH_1` <a name="AF_SOUTH_1" id="raindancers-network.AwsRegions.AF_SOUTH_1"></a>
+
+---
+
+
+##### `AP_EAST_1` <a name="AP_EAST_1" id="raindancers-network.AwsRegions.AP_EAST_1"></a>
+
+---
+
+
+##### `AP_SOUTH_1` <a name="AP_SOUTH_1" id="raindancers-network.AwsRegions.AP_SOUTH_1"></a>
+
+---
+
+
+##### `AP_SOUTH_2` <a name="AP_SOUTH_2" id="raindancers-network.AwsRegions.AP_SOUTH_2"></a>
+
+---
+
+
+##### `AP_SOUTHEAST_1` <a name="AP_SOUTHEAST_1" id="raindancers-network.AwsRegions.AP_SOUTHEAST_1"></a>
+
+---
+
+
+##### `AP_SOUTHEAST_2` <a name="AP_SOUTHEAST_2" id="raindancers-network.AwsRegions.AP_SOUTHEAST_2"></a>
+
+---
+
+
+##### `AP_SOUTHEAST_3` <a name="AP_SOUTHEAST_3" id="raindancers-network.AwsRegions.AP_SOUTHEAST_3"></a>
+
+---
+
+
+##### `AP_SOUTHEAST_4` <a name="AP_SOUTHEAST_4" id="raindancers-network.AwsRegions.AP_SOUTHEAST_4"></a>
+
+---
+
+
+##### `AP_NORTHEAST_1` <a name="AP_NORTHEAST_1" id="raindancers-network.AwsRegions.AP_NORTHEAST_1"></a>
+
+---
+
+
+##### `AP_NORTHEAST_2` <a name="AP_NORTHEAST_2" id="raindancers-network.AwsRegions.AP_NORTHEAST_2"></a>
+
+---
+
+
+##### `AP_NORTHEAST_3` <a name="AP_NORTHEAST_3" id="raindancers-network.AwsRegions.AP_NORTHEAST_3"></a>
+
+---
+
+
+##### `CA_CENTRAL_1` <a name="CA_CENTRAL_1" id="raindancers-network.AwsRegions.CA_CENTRAL_1"></a>
+
+---
+
+
+##### `EU_SOUTH_1` <a name="EU_SOUTH_1" id="raindancers-network.AwsRegions.EU_SOUTH_1"></a>
+
+---
+
+
+##### `EU_WEST_1` <a name="EU_WEST_1" id="raindancers-network.AwsRegions.EU_WEST_1"></a>
+
+---
+
+
+##### `EU_WEST_2` <a name="EU_WEST_2" id="raindancers-network.AwsRegions.EU_WEST_2"></a>
+
+---
+
+
+##### `EU_WEST_3` <a name="EU_WEST_3" id="raindancers-network.AwsRegions.EU_WEST_3"></a>
+
+---
+
+
+##### `EU_SOUTH_2` <a name="EU_SOUTH_2" id="raindancers-network.AwsRegions.EU_SOUTH_2"></a>
+
+---
+
+
+##### `EU_NORTH_1` <a name="EU_NORTH_1" id="raindancers-network.AwsRegions.EU_NORTH_1"></a>
+
+---
+
+
+##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.AwsRegions.EU_CENTRAL_1"></a>
+
+---
+
+
+##### `EU_CENTRAL_2` <a name="EU_CENTRAL_2" id="raindancers-network.AwsRegions.EU_CENTRAL_2"></a>
+
+---
+
+
+##### `ME_SOUTH_1` <a name="ME_SOUTH_1" id="raindancers-network.AwsRegions.ME_SOUTH_1"></a>
+
+---
+
+
+##### `ME_CENTRAL` <a name="ME_CENTRAL" id="raindancers-network.AwsRegions.ME_CENTRAL"></a>
+
+---
+
+
+##### `SA_EAST_1` <a name="SA_EAST_1" id="raindancers-network.AwsRegions.SA_EAST_1"></a>
+
+---
+
+
 ### ConditionLogic <a name="ConditionLogic" id="raindancers-network.ConditionLogic"></a>
 
 Conditon Logic.
