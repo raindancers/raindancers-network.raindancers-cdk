@@ -1,7 +1,6 @@
 // the Evpc constructs
 
 export * from './aws/regions';
-
 //export * from './evpc/evpc';
 export * from './evpc/enterprisevpc';
 export * from './evpc/enterprisevpclambdas';
