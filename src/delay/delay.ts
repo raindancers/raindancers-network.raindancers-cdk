@@ -16,7 +16,7 @@ export class Delay extends constructs.Construct {
     const delay = new aws_lambda.Function(this, 'onevent', {
       runtime: aws_lambda.Runtime.PYTHON_3_9,
       handler: 'delay.on_event',
-      code: aws_lambda.Code.fromAsset(path.join(__dirname, './')),
+      code: aws_lambda.Code.fromAsset(path.join(__dirname, '../../lambda/delay')),
       timeout: cdk.Duration.seconds(899),
     });
 
