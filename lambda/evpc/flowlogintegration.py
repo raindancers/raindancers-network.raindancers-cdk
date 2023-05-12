@@ -58,6 +58,8 @@ def on_delete(event):
 
 	props = event["ResourceProperties"]
 
+	
+
 	cf.delete_stack(
 		StackName = f"AthenaFlowLogs-{props['VpcName']}",
 	)

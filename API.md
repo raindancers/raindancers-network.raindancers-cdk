@@ -1443,6 +1443,257 @@ the name for the segment.
 ---
 
 
+### Crawler <a name="Crawler" id="raindancers-network.glue.Crawler"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.Crawler.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.Crawler(scope: Construct, id: string, props: CrawlerProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.Crawler.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.Crawler.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.Crawler.Initializer.parameter.props">props</a></code> | <code>raindancers-network.glue.CrawlerProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.Crawler.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.Crawler.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.Crawler.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.CrawlerProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.Crawler.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.glue.Crawler.addClassifiers">addClassifiers</a></code> | This will add classifers to the crawler. |
+| <code><a href="#raindancers-network.glue.Crawler.addConfiguration">addConfiguration</a></code> | set crawler Configuration. |
+| <code><a href="#raindancers-network.glue.Crawler.addCrawlerSecurityConfiguration">addCrawlerSecurityConfiguration</a></code> | add CrawlerSecurity Configuration. |
+| <code><a href="#raindancers-network.glue.Crawler.addRecrawlBehaviour">addRecrawlBehaviour</a></code> | Set the recall  policy for the crawler. |
+| <code><a href="#raindancers-network.glue.Crawler.addSchedule">addSchedule</a></code> | add schedule for the crawler. |
+| <code><a href="#raindancers-network.glue.Crawler.addSchemaChangePolicy">addSchemaChangePolicy</a></code> | Enable SchemaChangPolicy. |
+| <code><a href="#raindancers-network.glue.Crawler.addTablePrefix">addTablePrefix</a></code> | add table prefix for the crawler. |
+| <code><a href="#raindancers-network.glue.Crawler.enableLineage">enableLineage</a></code> | Enable Lineage for the Crawler. |
+| <code><a href="#raindancers-network.glue.Crawler.useWithLakeFormation">useWithLakeFormation</a></code> | Use the crawler with lakeFormation Permissions. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.Crawler.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addClassifiers` <a name="addClassifiers" id="raindancers-network.glue.Crawler.addClassifiers"></a>
+
+```typescript
+public addClassifiers(props: AddClassifiersProps): void
+```
+
+This will add classifers to the crawler.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.Crawler.addClassifiers.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.AddClassifiersProps
+
+addClassifierProps.
+
+---
+
+##### `addConfiguration` <a name="addConfiguration" id="raindancers-network.glue.Crawler.addConfiguration"></a>
+
+```typescript
+public addConfiguration(configuration: string): void
+```
+
+set crawler Configuration.
+
+###### `configuration`<sup>Required</sup> <a name="configuration" id="raindancers-network.glue.Crawler.addConfiguration.parameter.configuration"></a>
+
+- *Type:* string
+
+---
+
+##### `addCrawlerSecurityConfiguration` <a name="addCrawlerSecurityConfiguration" id="raindancers-network.glue.Crawler.addCrawlerSecurityConfiguration"></a>
+
+```typescript
+public addCrawlerSecurityConfiguration(configuration: string): void
+```
+
+add CrawlerSecurity Configuration.
+
+###### `configuration`<sup>Required</sup> <a name="configuration" id="raindancers-network.glue.Crawler.addCrawlerSecurityConfiguration.parameter.configuration"></a>
+
+- *Type:* string
+
+---
+
+##### `addRecrawlBehaviour` <a name="addRecrawlBehaviour" id="raindancers-network.glue.Crawler.addRecrawlBehaviour"></a>
+
+```typescript
+public addRecrawlBehaviour(recallpolicy: RecrawlPolicy): void
+```
+
+Set the recall  policy for the crawler.
+
+###### `recallpolicy`<sup>Required</sup> <a name="recallpolicy" id="raindancers-network.glue.Crawler.addRecrawlBehaviour.parameter.recallpolicy"></a>
+
+- *Type:* raindancers-network.glue.RecrawlPolicy
+
+RecrawlPolicy.
+
+---
+
+##### `addSchedule` <a name="addSchedule" id="raindancers-network.glue.Crawler.addSchedule"></a>
+
+```typescript
+public addSchedule(schedule: string): void
+```
+
+add schedule for the crawler.
+
+###### `schedule`<sup>Required</sup> <a name="schedule" id="raindancers-network.glue.Crawler.addSchedule.parameter.schedule"></a>
+
+- *Type:* string
+
+---
+
+##### `addSchemaChangePolicy` <a name="addSchemaChangePolicy" id="raindancers-network.glue.Crawler.addSchemaChangePolicy"></a>
+
+```typescript
+public addSchemaChangePolicy(schemaChangePolicy: SchemaChangePolicy): void
+```
+
+Enable SchemaChangPolicy.
+
+###### `schemaChangePolicy`<sup>Required</sup> <a name="schemaChangePolicy" id="raindancers-network.glue.Crawler.addSchemaChangePolicy.parameter.schemaChangePolicy"></a>
+
+- *Type:* raindancers-network.glue.SchemaChangePolicy
+
+---
+
+##### `addTablePrefix` <a name="addTablePrefix" id="raindancers-network.glue.Crawler.addTablePrefix"></a>
+
+```typescript
+public addTablePrefix(tablePrefix: string): void
+```
+
+add table prefix for the crawler.
+
+###### `tablePrefix`<sup>Required</sup> <a name="tablePrefix" id="raindancers-network.glue.Crawler.addTablePrefix.parameter.tablePrefix"></a>
+
+- *Type:* string
+
+---
+
+##### `enableLineage` <a name="enableLineage" id="raindancers-network.glue.Crawler.enableLineage"></a>
+
+```typescript
+public enableLineage(lineage: CrawlerLineageSettings): void
+```
+
+Enable Lineage for the Crawler.
+
+###### `lineage`<sup>Required</sup> <a name="lineage" id="raindancers-network.glue.Crawler.enableLineage.parameter.lineage"></a>
+
+- *Type:* raindancers-network.glue.CrawlerLineageSettings
+
+---
+
+##### `useWithLakeFormation` <a name="useWithLakeFormation" id="raindancers-network.glue.Crawler.useWithLakeFormation"></a>
+
+```typescript
+public useWithLakeFormation(props: LakeFormationConfiguration): void
+```
+
+Use the crawler with lakeFormation Permissions.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.Crawler.useWithLakeFormation.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.LakeFormationConfiguration
+
+LakeFormationConfiguration.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.Crawler.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.Crawler.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.Crawler.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.Crawler.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.Crawler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.Crawler.property.parameters">parameters</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.Crawler.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `parameters`<sup>Required</sup> <a name="parameters" id="raindancers-network.glue.Crawler.property.parameters"></a>
+
+```typescript
+public readonly parameters: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
 ### CrossRegionParameterReader <a name="CrossRegionParameterReader" id="raindancers-network.CrossRegionParameterReader"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterReader.Initializer"></a>
@@ -2153,6 +2404,109 @@ public readonly proxyhostedZone: string;
 
 ```typescript
 public readonly proxyhostedZoneName: string;
+```
+
+- *Type:* string
+
+---
+
+
+### Delay <a name="Delay" id="raindancers-network.Delay"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.Delay.Initializer"></a>
+
+```typescript
+import { Delay } from 'raindancers-network'
+
+new Delay(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Delay.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.Delay.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Delay.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Delay.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Delay.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.Delay.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.Delay.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.Delay.isConstruct"></a>
+
+```typescript
+import { Delay } from 'raindancers-network'
+
+Delay.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.Delay.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.Delay.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.Delay.property.delayProviderServiceToken">delayProviderServiceToken</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.Delay.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `delayProviderServiceToken`<sup>Required</sup> <a name="delayProviderServiceToken" id="raindancers-network.Delay.property.delayProviderServiceToken"></a>
+
+```typescript
+public readonly delayProviderServiceToken: string;
 ```
 
 - *Type:* string
@@ -3854,6 +4208,250 @@ returns 2 cidr blocks as an array to be used by an IPsec Tunnel.
 ---
 
 
+### GlueClassifier <a name="GlueClassifier" id="raindancers-network.glue.GlueClassifier"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.GlueClassifier.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.GlueClassifier(scope: Construct, id: string, props: GlueClassifierProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifier.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifier.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifier.Initializer.parameter.props">props</a></code> | <code>raindancers-network.glue.GlueClassifierProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.GlueClassifier.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.GlueClassifier.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.GlueClassifier.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.GlueClassifierProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifier.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.GlueClassifier.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifier.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.GlueClassifier.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.GlueClassifier.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.GlueClassifier.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifier.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.GlueClassifier.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.GlueClassifier.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.glue.GlueClassifier.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+
+### GlueDataBase <a name="GlueDataBase" id="raindancers-network.glue.GlueDataBase"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.GlueDataBase.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.GlueDataBase(scope: Construct, id: string, props: DataBaseProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.GlueDataBase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueDataBase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueDataBase.Initializer.parameter.props">props</a></code> | <code>raindancers-network.glue.DataBaseProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.GlueDataBase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.GlueDataBase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.GlueDataBase.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.DataBaseProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.GlueDataBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.glue.GlueDataBase.addCrawler">addCrawler</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.GlueDataBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addCrawler` <a name="addCrawler" id="raindancers-network.glue.GlueDataBase.addCrawler"></a>
+
+```typescript
+public addCrawler(props: CrawlerProps): Crawler
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.GlueDataBase.addCrawler.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.CrawlerProps
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.GlueDataBase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.GlueDataBase.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.GlueDataBase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.GlueDataBase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.GlueDataBase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.GlueDataBase.property.database">database</a></code> | <code>aws-cdk-lib.aws_glue.CfnDatabase</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueDataBase.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.GlueDataBase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `database`<sup>Required</sup> <a name="database" id="raindancers-network.glue.GlueDataBase.property.database"></a>
+
+```typescript
+public readonly database: CfnDatabase;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnDatabase
+
+---
+
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.glue.GlueDataBase.property.databaseName"></a>
+
+```typescript
+public readonly databaseName: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### IpsecTunnelPool <a name="IpsecTunnelPool" id="raindancers-network.IpsecTunnelPool"></a>
 
 Creates an IPAM pool to assign address's for IPsec VPNS.
@@ -3970,6 +4568,261 @@ public readonly ipampool: CfnIPAMPool;
 - *Type:* aws-cdk-lib.aws_ec2.CfnIPAMPool
 
 returns the created ipam Pool.
+
+---
+
+
+### JDBCTarget <a name="JDBCTarget" id="raindancers-network.glue.JDBCTarget"></a>
+
+This class is incomplete.
+
+It will not run. the Class needs to exisit
+so, as the add crawler method requires it.
+TODO:
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.JDBCTarget.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.JDBCTarget(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.JDBCTarget.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.JDBCTarget.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.JDBCTarget.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.JDBCTarget.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.JDBCTarget.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.JDBCTarget.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.JDBCTarget.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.JDBCTarget.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.JDBCTarget.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.JDBCTarget.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.JDBCTarget.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.JDBCTarget.property.target">target</a></code> | <code>raindancers-network.glue.IJDBCTargetObject</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.JDBCTarget.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `target`<sup>Required</sup> <a name="target" id="raindancers-network.glue.JDBCTarget.property.target"></a>
+
+```typescript
+public readonly target: IJDBCTargetObject;
+```
+
+- *Type:* raindancers-network.glue.IJDBCTargetObject
+
+---
+
+
+### LakeFormation <a name="LakeFormation" id="raindancers-network.lakeformation.LakeFormation"></a>
+
+Create a Class for the methods the methods that we use to operate on our 'Datalake'.
+
+#### Initializers <a name="Initializers" id="raindancers-network.lakeformation.LakeFormation.Initializer"></a>
+
+```typescript
+import { lakeformation } from 'raindancers-network'
+
+new lakeformation.LakeFormation(scope: Construct, id: string, props: LakeFormationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.Initializer.parameter.props">props</a></code> | <code>raindancers-network.lakeformation.LakeFormationProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.lakeformation.LakeFormation.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.lakeformation.LakeFormation.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.lakeformation.LakeFormation.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.lakeformation.LakeFormationProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.addDatabase">addDatabase</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.addNewBucketToLakeFormation">addNewBucketToLakeFormation</a></code> | Create a new bucket and associate it to the the Lakeformation. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.lakeformation.LakeFormation.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addDatabase` <a name="addDatabase" id="raindancers-network.lakeformation.LakeFormation.addDatabase"></a>
+
+```typescript
+public addDatabase(props: AddDatabaseProps): GlueDataBase
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.lakeformation.LakeFormation.addDatabase.parameter.props"></a>
+
+- *Type:* raindancers-network.lakeformation.AddDatabaseProps
+
+AddDatabaseProps.
+
+---
+
+##### `addNewBucketToLakeFormation` <a name="addNewBucketToLakeFormation" id="raindancers-network.lakeformation.LakeFormation.addNewBucketToLakeFormation"></a>
+
+```typescript
+public addNewBucketToLakeFormation(props: AddNewBucketToLakeFormationProps): Bucket
+```
+
+Create a new bucket and associate it to the the Lakeformation.
+
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.lakeformation.LakeFormation.addNewBucketToLakeFormation.parameter.props"></a>
+
+- *Type:* raindancers-network.lakeformation.AddNewBucketToLakeFormationProps
+
+AddNewBucketToLakeFormationProps.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.lakeformation.LakeFormation.isConstruct"></a>
+
+```typescript
+import { lakeformation } from 'raindancers-network'
+
+lakeformation.LakeFormation.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.lakeformation.LakeFormation.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.lakeformation.LakeFormation.property.nonproduction">nonproduction</a></code> | <code>boolean</code> | Used to determine if buckets are backedup, and protected from Stack Destruction. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.lakeformation.LakeFormation.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `nonproduction`<sup>Optional</sup> <a name="nonproduction" id="raindancers-network.lakeformation.LakeFormation.property.nonproduction"></a>
+
+```typescript
+public readonly nonproduction: boolean;
+```
+
+- *Type:* boolean
+
+Used to determine if buckets are backedup, and protected from Stack Destruction.
 
 ---
 
@@ -6089,6 +6942,127 @@ public readonly subnetSelection: SubnetSelection;
 ---
 
 
+### S3Target <a name="S3Target" id="raindancers-network.glue.S3Target"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.S3Target.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.S3Target(scope: Construct, id: string, props: S3TargetProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.S3Target.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3Target.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3Target.Initializer.parameter.props">props</a></code> | <code>raindancers-network.glue.S3TargetProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.S3Target.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.S3Target.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.S3Target.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.glue.S3TargetProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.S3Target.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.S3Target.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.S3Target.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.S3Target.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.S3Target.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.S3Target.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.S3Target.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.S3Target.property.s3Arn">s3Arn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3Target.property.target">target</a></code> | <code>raindancers-network.glue.IS3TargetObject</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.S3Target.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `s3Arn`<sup>Required</sup> <a name="s3Arn" id="raindancers-network.glue.S3Target.property.s3Arn"></a>
+
+```typescript
+public readonly s3Arn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `target`<sup>Required</sup> <a name="target" id="raindancers-network.glue.S3Target.property.target"></a>
+
+```typescript
+public readonly target: IS3TargetObject;
+```
+
+- *Type:* raindancers-network.glue.IS3TargetObject
+
+---
+
+
 ### StatefulRuleDatabase <a name="StatefulRuleDatabase" id="raindancers-network.StatefulRuleDatabase"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.StatefulRuleDatabase.Initializer"></a>
@@ -6600,6 +7574,34 @@ public readonly s3GatewayInterface: boolean;
 
 ---
 
+### AddClassifiersProps <a name="AddClassifiersProps" id="raindancers-network.glue.AddClassifiersProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.AddClassifiersProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const addClassifiersProps: glue.AddClassifiersProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.AddClassifiersProps.property.classifiers">classifiers</a></code> | <code>raindancers-network.glue.GlueClassifier[]</code> | *No description.* |
+
+---
+
+##### `classifiers`<sup>Required</sup> <a name="classifiers" id="raindancers-network.glue.AddClassifiersProps.property.classifiers"></a>
+
+```typescript
+public readonly classifiers: GlueClassifier[];
+```
+
+- *Type:* raindancers-network.glue.GlueClassifier[]
+
+---
+
 ### AddCoreRoutesProps <a name="AddCoreRoutesProps" id="raindancers-network.AddCoreRoutesProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.AddCoreRoutesProps.Initializer"></a>
@@ -6683,6 +7685,38 @@ public readonly segments: string[];
 
 ---
 
+### AddDatabaseProps <a name="AddDatabaseProps" id="raindancers-network.lakeformation.AddDatabaseProps"></a>
+
+Glue Database that holds ingest Tables.
+
+#### Initializer <a name="Initializer" id="raindancers-network.lakeformation.AddDatabaseProps.Initializer"></a>
+
+```typescript
+import { lakeformation } from 'raindancers-network'
+
+const addDatabaseProps: lakeformation.AddDatabaseProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.lakeformation.AddDatabaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | Name for database. |
+
+---
+
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.lakeformation.AddDatabaseProps.property.databaseName"></a>
+
+```typescript
+public readonly databaseName: string;
+```
+
+- *Type:* string
+
+Name for database.
+
+---
+
 ### AddEnterprizeZoneProps <a name="AddEnterprizeZoneProps" id="raindancers-network.AddEnterprizeZoneProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.AddEnterprizeZoneProps.Initializer"></a>
@@ -6730,6 +7764,68 @@ public readonly isHubVpc: boolean;
 ```
 
 - *Type:* boolean
+
+---
+
+### AddNewBucketToLakeFormationProps <a name="AddNewBucketToLakeFormationProps" id="raindancers-network.lakeformation.AddNewBucketToLakeFormationProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.Initializer"></a>
+
+```typescript
+import { lakeformation } from 'raindancers-network'
+
+const addNewBucketToLakeFormationProps: lakeformation.AddNewBucketToLakeFormationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.name">name</a></code> | <code>string</code> | Name of Bucket. |
+| <code><a href="#raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.lifecycleRules">lifecycleRules</a></code> | <code>aws-cdk-lib.aws_s3.LifecycleRule[]</code> | Lifecycle Rules for objects that are stored in the Bucket. |
+| <code><a href="#raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | and optional role to use to join the Lake. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Name of Bucket.
+
+---
+
+##### `lifecycleRules`<sup>Optional</sup> <a name="lifecycleRules" id="raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.lifecycleRules"></a>
+
+```typescript
+public readonly lifecycleRules: LifecycleRule[];
+```
+
+- *Type:* aws-cdk-lib.aws_s3.LifecycleRule[]
+
+Lifecycle Rules for objects that are stored in the Bucket.
+
+This will default to lifeccyle pattern that will
+eventually move unused obejects to glacier.
+
+---
+
+##### `role`<sup>Optional</sup> <a name="role" id="raindancers-network.lakeformation.AddNewBucketToLakeFormationProps.property.role"></a>
+
+```typescript
+public readonly role: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+and optional role to use to join the Lake.
+
+This will default the the standard Service rule, if not
+specified, which is the recommended approach.
 
 ---
 
@@ -7908,6 +9004,89 @@ public readonly tags: Tag[];
 
 ---
 
+### CrawlerProps <a name="CrawlerProps" id="raindancers-network.glue.CrawlerProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.CrawlerProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const crawlerProps: glue.CrawlerProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.jdbcTargets">jdbcTargets</a></code> | <code>raindancers-network.glue.JDBCTarget[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerProps.property.s3Targets">s3Targets</a></code> | <code>raindancers-network.glue.S3Target[]</code> | *No description.* |
+
+---
+
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.glue.CrawlerProps.property.databaseName"></a>
+
+```typescript
+public readonly databaseName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.glue.CrawlerProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `role`<sup>Required</sup> <a name="role" id="raindancers-network.glue.CrawlerProps.property.role"></a>
+
+```typescript
+public readonly role: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.glue.CrawlerProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `jdbcTargets`<sup>Optional</sup> <a name="jdbcTargets" id="raindancers-network.glue.CrawlerProps.property.jdbcTargets"></a>
+
+```typescript
+public readonly jdbcTargets: JDBCTarget[];
+```
+
+- *Type:* raindancers-network.glue.JDBCTarget[]
+
+---
+
+##### `s3Targets`<sup>Optional</sup> <a name="s3Targets" id="raindancers-network.glue.CrawlerProps.property.s3Targets"></a>
+
+```typescript
+public readonly s3Targets: S3Target[];
+```
+
+- *Type:* raindancers-network.glue.S3Target[]
+
+---
+
 ### CrossAccountProps <a name="CrossAccountProps" id="raindancers-network.CrossAccountProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.CrossAccountProps.Initializer"></a>
@@ -8396,6 +9575,34 @@ The path to the IAM policy that you have configured in each account where you wa
 The default is `/` . For more information, see [Friendly names and paths](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names) in the *IAM User Guide* .
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-path](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-customermanagedpolicyreference.html#cfn-sso-permissionset-customermanagedpolicyreference-path)
+
+---
+
+### DataBaseProps <a name="DataBaseProps" id="raindancers-network.glue.DataBaseProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.DataBaseProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const dataBaseProps: glue.DataBaseProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.DataBaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.glue.DataBaseProps.property.databaseName"></a>
+
+```typescript
+public readonly databaseName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -9507,6 +10714,34 @@ The Name used by IPAM to record the allocation.
 
 ---
 
+### GlueClassifierProps <a name="GlueClassifierProps" id="raindancers-network.glue.GlueClassifierProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.GlueClassifierProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const glueClassifierProps: glue.GlueClassifierProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.glue.GlueClassifierProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ### HubVpc <a name="HubVpc" id="raindancers-network.HubVpc"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.HubVpc.Initializer"></a>
@@ -9629,6 +10864,168 @@ public readonly name: string;
 - *Type:* string
 
 the name used by IPAM to identify the pool.
+
+---
+
+### JDBCTargetProps <a name="JDBCTargetProps" id="raindancers-network.glue.JDBCTargetProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.JDBCTargetProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const jDBCTargetProps: glue.JDBCTargetProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.JDBCTargetProps.property.enableAdditionalMetadata">enableAdditionalMetadata</a></code> | <code>raindancers-network.glue.MetaDataTypes[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.JDBCTargetProps.property.connectionName">connectionName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.JDBCTargetProps.property.exclusions">exclusions</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `enableAdditionalMetadata`<sup>Required</sup> <a name="enableAdditionalMetadata" id="raindancers-network.glue.JDBCTargetProps.property.enableAdditionalMetadata"></a>
+
+```typescript
+public readonly enableAdditionalMetadata: MetaDataTypes[];
+```
+
+- *Type:* raindancers-network.glue.MetaDataTypes[]
+
+---
+
+##### `connectionName`<sup>Optional</sup> <a name="connectionName" id="raindancers-network.glue.JDBCTargetProps.property.connectionName"></a>
+
+```typescript
+public readonly connectionName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exclusions`<sup>Optional</sup> <a name="exclusions" id="raindancers-network.glue.JDBCTargetProps.property.exclusions"></a>
+
+```typescript
+public readonly exclusions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### LakeFormationConfiguration <a name="LakeFormationConfiguration" id="raindancers-network.glue.LakeFormationConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.LakeFormationConfiguration.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const lakeFormationConfiguration: glue.LakeFormationConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.LakeFormationConfiguration.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.LakeFormationConfiguration.property.useLakeFormationCredentials">useLakeFormationCredentials</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `accountId`<sup>Optional</sup> <a name="accountId" id="raindancers-network.glue.LakeFormationConfiguration.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `useLakeFormationCredentials`<sup>Optional</sup> <a name="useLakeFormationCredentials" id="raindancers-network.glue.LakeFormationConfiguration.property.useLakeFormationCredentials"></a>
+
+```typescript
+public readonly useLakeFormationCredentials: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+### LakeFormationProps <a name="LakeFormationProps" id="raindancers-network.lakeformation.LakeFormationProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.lakeformation.LakeFormationProps.Initializer"></a>
+
+```typescript
+import { lakeformation } from 'raindancers-network'
+
+const lakeFormationProps: lakeformation.LakeFormationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.lakeformation.LakeFormationProps.property.makeCdkExecRoleLakeAdmin">makeCdkExecRoleLakeAdmin</a></code> | <code>boolean</code> | The cdk exec role will be creating Datalake Objects so will require permission. |
+| <code><a href="#raindancers-network.lakeformation.LakeFormationProps.property.nonproduction">nonproduction</a></code> | <code>boolean</code> | Opt out of Mechanisms for high data protection, that are appropriate for production. |
+
+---
+
+##### `makeCdkExecRoleLakeAdmin`<sup>Optional</sup> <a name="makeCdkExecRoleLakeAdmin" id="raindancers-network.lakeformation.LakeFormationProps.property.makeCdkExecRoleLakeAdmin"></a>
+
+```typescript
+public readonly makeCdkExecRoleLakeAdmin: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+The cdk exec role will be creating Datalake Objects so will require permission.
+
+---
+
+##### `nonproduction`<sup>Optional</sup> <a name="nonproduction" id="raindancers-network.lakeformation.LakeFormationProps.property.nonproduction"></a>
+
+```typescript
+public readonly nonproduction: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Opt out of Mechanisms for high data protection, that are appropriate for production.
+
+---
+
+### LineageConfiguration <a name="LineageConfiguration" id="raindancers-network.glue.LineageConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.LineageConfiguration.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const lineageConfiguration: glue.LineageConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.LineageConfiguration.property.crawlerLineageSettings">crawlerLineageSettings</a></code> | <code>raindancers-network.glue.CrawlerLineageSettings</code> | *No description.* |
+
+---
+
+##### `crawlerLineageSettings`<sup>Required</sup> <a name="crawlerLineageSettings" id="raindancers-network.glue.LineageConfiguration.property.crawlerLineageSettings"></a>
+
+```typescript
+public readonly crawlerLineageSettings: CrawlerLineageSettings;
+```
+
+- *Type:* raindancers-network.glue.CrawlerLineageSettings
 
 ---
 
@@ -10772,6 +12169,34 @@ Value for Sharing.
 
 ---
 
+### RecrawlPolicy <a name="RecrawlPolicy" id="raindancers-network.glue.RecrawlPolicy"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.RecrawlPolicy.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const recrawlPolicy: glue.RecrawlPolicy = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.RecrawlPolicy.property.recrawlBehavior">recrawlBehavior</a></code> | <code>raindancers-network.glue.RecrawlBehavior</code> | *No description.* |
+
+---
+
+##### `recrawlBehavior`<sup>Required</sup> <a name="recrawlBehavior" id="raindancers-network.glue.RecrawlPolicy.property.recrawlBehavior"></a>
+
+```typescript
+public readonly recrawlBehavior: RecrawlBehavior;
+```
+
+- *Type:* raindancers-network.glue.RecrawlBehavior
+
+---
+
 ### RedshiftClusterProps <a name="RedshiftClusterProps" id="raindancers-network.RedshiftClusterProps"></a>
 
 #### Initializer <a name="Initializer" id="raindancers-network.RedshiftClusterProps.Initializer"></a>
@@ -11153,6 +12578,128 @@ public readonly subnetGroup: SubnetGroup;
 
 ---
 
+### S3Path <a name="S3Path" id="raindancers-network.glue.S3Path"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.S3Path.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const s3Path: glue.S3Path = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.S3Path.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3Path.property.path">path</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.glue.S3Path.property.bucket"></a>
+
+```typescript
+public readonly bucket: Bucket;
+```
+
+- *Type:* aws-cdk-lib.aws_s3.Bucket
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="raindancers-network.glue.S3Path.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+---
+
+### S3TargetProps <a name="S3TargetProps" id="raindancers-network.glue.S3TargetProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.S3TargetProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const s3TargetProps: glue.S3TargetProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.path">path</a></code> | <code>raindancers-network.glue.S3Path</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.connectionName">connectionName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.dlqEventQueue">dlqEventQueue</a></code> | <code>aws-cdk-lib.aws_sqs.Queue</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.eventQueue">eventQueue</a></code> | <code>aws-cdk-lib.aws_sqs.Queue</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.exclusions">exclusions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.S3TargetProps.property.sampleSize">sampleSize</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="raindancers-network.glue.S3TargetProps.property.path"></a>
+
+```typescript
+public readonly path: S3Path;
+```
+
+- *Type:* raindancers-network.glue.S3Path
+
+---
+
+##### `connectionName`<sup>Optional</sup> <a name="connectionName" id="raindancers-network.glue.S3TargetProps.property.connectionName"></a>
+
+```typescript
+public readonly connectionName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `dlqEventQueue`<sup>Optional</sup> <a name="dlqEventQueue" id="raindancers-network.glue.S3TargetProps.property.dlqEventQueue"></a>
+
+```typescript
+public readonly dlqEventQueue: Queue;
+```
+
+- *Type:* aws-cdk-lib.aws_sqs.Queue
+
+---
+
+##### `eventQueue`<sup>Optional</sup> <a name="eventQueue" id="raindancers-network.glue.S3TargetProps.property.eventQueue"></a>
+
+```typescript
+public readonly eventQueue: Queue;
+```
+
+- *Type:* aws-cdk-lib.aws_sqs.Queue
+
+---
+
+##### `exclusions`<sup>Optional</sup> <a name="exclusions" id="raindancers-network.glue.S3TargetProps.property.exclusions"></a>
+
+```typescript
+public readonly exclusions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `sampleSize`<sup>Optional</sup> <a name="sampleSize" id="raindancers-network.glue.S3TargetProps.property.sampleSize"></a>
+
+```typescript
+public readonly sampleSize: number;
+```
+
+- *Type:* number
+
+---
+
 ### SampleConfig <a name="SampleConfig" id="raindancers-network.SampleConfig"></a>
 
 An interface that defines a set of Sample Configurations.
@@ -11208,6 +12755,45 @@ public readonly ikeVersion: IkeVersion;
 - *Type:* <a href="#raindancers-network.IkeVersion">IkeVersion</a>
 
 create configs for IKE1 or IKE2.
+
+---
+
+### SchemaChangePolicy <a name="SchemaChangePolicy" id="raindancers-network.glue.SchemaChangePolicy"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.SchemaChangePolicy.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const schemaChangePolicy: glue.SchemaChangePolicy = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.SchemaChangePolicy.property.deleteBehavior">deleteBehavior</a></code> | <code>raindancers-network.glue.DeleteBehavior</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.SchemaChangePolicy.property.updateBehavior">updateBehavior</a></code> | <code>raindancers-network.glue.UpdateBehavior</code> | *No description.* |
+
+---
+
+##### `deleteBehavior`<sup>Required</sup> <a name="deleteBehavior" id="raindancers-network.glue.SchemaChangePolicy.property.deleteBehavior"></a>
+
+```typescript
+public readonly deleteBehavior: DeleteBehavior;
+```
+
+- *Type:* raindancers-network.glue.DeleteBehavior
+
+---
+
+##### `updateBehavior`<sup>Required</sup> <a name="updateBehavior" id="raindancers-network.glue.SchemaChangePolicy.property.updateBehavior"></a>
+
+```typescript
+public readonly updateBehavior: UpdateBehavior;
+```
+
+- *Type:* raindancers-network.glue.UpdateBehavior
 
 ---
 
@@ -12734,6 +14320,62 @@ public readonly statelessRuleGroupReferences: IResolvable | StatelessRuleGroupRe
 
 ---
 
+### IJDBCTargetObject <a name="IJDBCTargetObject" id="raindancers-network.glue.IJDBCTargetObject"></a>
+
+- *Implemented By:* raindancers-network.glue.IJDBCTargetObject
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.IJDBCTargetObject.property.connectionName">connectionName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IJDBCTargetObject.property.enableAdditionalMetadata">enableAdditionalMetadata</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IJDBCTargetObject.property.exclusions">exclusions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IJDBCTargetObject.property.path">path</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `connectionName`<sup>Optional</sup> <a name="connectionName" id="raindancers-network.glue.IJDBCTargetObject.property.connectionName"></a>
+
+```typescript
+public readonly connectionName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `enableAdditionalMetadata`<sup>Optional</sup> <a name="enableAdditionalMetadata" id="raindancers-network.glue.IJDBCTargetObject.property.enableAdditionalMetadata"></a>
+
+```typescript
+public readonly enableAdditionalMetadata: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `exclusions`<sup>Optional</sup> <a name="exclusions" id="raindancers-network.glue.IJDBCTargetObject.property.exclusions"></a>
+
+```typescript
+public readonly exclusions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `path`<sup>Optional</sup> <a name="path" id="raindancers-network.glue.IJDBCTargetObject.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+---
+
 ### IPermissionSet <a name="IPermissionSet" id="raindancers-network.IPermissionSet"></a>
 
 - *Extends:* aws-cdk-lib.IResource
@@ -12849,6 +14491,84 @@ public readonly ssoInstanceArn: string;
 - *Type:* string
 
 The SSO instance ARN of the permission set.
+
+---
+
+### IS3TargetObject <a name="IS3TargetObject" id="raindancers-network.glue.IS3TargetObject"></a>
+
+- *Implemented By:* raindancers-network.glue.IS3TargetObject
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.path">path</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.connectionName">connectionName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.dlqEventQueueArn">dlqEventQueueArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.eventQueueArn">eventQueueArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.exclusions">exclusions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.IS3TargetObject.property.sampleSize">sampleSize</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="raindancers-network.glue.IS3TargetObject.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+---
+
+##### `connectionName`<sup>Optional</sup> <a name="connectionName" id="raindancers-network.glue.IS3TargetObject.property.connectionName"></a>
+
+```typescript
+public readonly connectionName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `dlqEventQueueArn`<sup>Optional</sup> <a name="dlqEventQueueArn" id="raindancers-network.glue.IS3TargetObject.property.dlqEventQueueArn"></a>
+
+```typescript
+public readonly dlqEventQueueArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `eventQueueArn`<sup>Optional</sup> <a name="eventQueueArn" id="raindancers-network.glue.IS3TargetObject.property.eventQueueArn"></a>
+
+```typescript
+public readonly eventQueueArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exclusions`<sup>Optional</sup> <a name="exclusions" id="raindancers-network.glue.IS3TargetObject.property.exclusions"></a>
+
+```typescript
+public readonly exclusions: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `sampleSize`<sup>Optional</sup> <a name="sampleSize" id="raindancers-network.glue.IS3TargetObject.property.sampleSize"></a>
+
+```typescript
+public readonly sampleSize: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -13143,6 +14863,27 @@ Conditon Logic.
 ---
 
 
+### CrawlerLineageSettings <a name="CrawlerLineageSettings" id="raindancers-network.glue.CrawlerLineageSettings"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerLineageSettings.ENABLE">ENABLE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerLineageSettings.DISABLE">DISABLE</a></code> | *No description.* |
+
+---
+
+##### `ENABLE` <a name="ENABLE" id="raindancers-network.glue.CrawlerLineageSettings.ENABLE"></a>
+
+---
+
+
+##### `DISABLE` <a name="DISABLE" id="raindancers-network.glue.CrawlerLineageSettings.DISABLE"></a>
+
+---
+
+
 ### CrowdStrikeCloud <a name="CrowdStrikeCloud" id="raindancers-network.CrowdStrikeCloud"></a>
 
 #### Members <a name="Members" id="Members"></a>
@@ -13193,6 +14934,33 @@ Conditon Logic.
 
 
 ##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.CrowdStrikeRegion.EU_CENTRAL_1"></a>
+
+---
+
+
+### DeleteBehavior <a name="DeleteBehavior" id="raindancers-network.glue.DeleteBehavior"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.DeleteBehavior.LOG">LOG</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.DeleteBehavior.DELETE_FROM_DATABASE">DELETE_FROM_DATABASE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.DeleteBehavior.DEPRECATE_IN_DATABASE">DEPRECATE_IN_DATABASE</a></code> | *No description.* |
+
+---
+
+##### `LOG` <a name="LOG" id="raindancers-network.glue.DeleteBehavior.LOG"></a>
+
+---
+
+
+##### `DELETE_FROM_DATABASE` <a name="DELETE_FROM_DATABASE" id="raindancers-network.glue.DeleteBehavior.DELETE_FROM_DATABASE"></a>
+
+---
+
+
+##### `DEPRECATE_IN_DATABASE` <a name="DEPRECATE_IN_DATABASE" id="raindancers-network.glue.DeleteBehavior.DEPRECATE_IN_DATABASE"></a>
 
 ---
 
@@ -13566,6 +15334,27 @@ Use IKEv2.
 ---
 
 
+### MetaDataTypes <a name="MetaDataTypes" id="raindancers-network.glue.MetaDataTypes"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.MetaDataTypes.COMMENTS">COMMENTS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.MetaDataTypes.RAWTYPES">RAWTYPES</a></code> | *No description.* |
+
+---
+
+##### `COMMENTS` <a name="COMMENTS" id="raindancers-network.glue.MetaDataTypes.COMMENTS"></a>
+
+---
+
+
+##### `RAWTYPES` <a name="RAWTYPES" id="raindancers-network.glue.MetaDataTypes.RAWTYPES"></a>
+
+---
+
+
 ### Operators <a name="Operators" id="raindancers-network.Operators"></a>
 
 Operatior COnditons for Attachments.
@@ -13624,6 +15413,95 @@ Use Private IPv4 Address from the Transit Gateways IP address Pool.
 ##### `PUBLIC` <a name="PUBLIC" id="raindancers-network.OutsideIpAddressType.PUBLIC"></a>
 
 Use Public IPv4 Address Assigned by AWS.
+
+---
+
+
+### Permissions <a name="Permissions" id="raindancers-network.lakeformation.Permissions"></a>
+
+Permissions that can be used as part of a LakeFormation Permissions refer https://docs.aws.amazon.com/lake-formation/latest/APIReference/API_GrantPermissions.html.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.lakeformation.Permissions.ALL">ALL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.SELECT">SELECT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.ALTER">ALTER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.DROP">DROP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.DELETE">DELETE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.INSERT">INSERT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.DESCRIBE">DESCRIBE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.CREATE_DATABASE">CREATE_DATABASE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.CREATE_TABLE">CREATE_TABLE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.DATA_LOCATION_ACCESS">DATA_LOCATION_ACCESS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.CREATE_TAG">CREATE_TAG</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.ASSOCIATE">ASSOCIATE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.lakeformation.Permissions.CREATE_TABLE_READ_WRITE">CREATE_TABLE_READ_WRITE</a></code> | *No description.* |
+
+---
+
+##### `ALL` <a name="ALL" id="raindancers-network.lakeformation.Permissions.ALL"></a>
+
+---
+
+
+##### `SELECT` <a name="SELECT" id="raindancers-network.lakeformation.Permissions.SELECT"></a>
+
+---
+
+
+##### `ALTER` <a name="ALTER" id="raindancers-network.lakeformation.Permissions.ALTER"></a>
+
+---
+
+
+##### `DROP` <a name="DROP" id="raindancers-network.lakeformation.Permissions.DROP"></a>
+
+---
+
+
+##### `DELETE` <a name="DELETE" id="raindancers-network.lakeformation.Permissions.DELETE"></a>
+
+---
+
+
+##### `INSERT` <a name="INSERT" id="raindancers-network.lakeformation.Permissions.INSERT"></a>
+
+---
+
+
+##### `DESCRIBE` <a name="DESCRIBE" id="raindancers-network.lakeformation.Permissions.DESCRIBE"></a>
+
+---
+
+
+##### `CREATE_DATABASE` <a name="CREATE_DATABASE" id="raindancers-network.lakeformation.Permissions.CREATE_DATABASE"></a>
+
+---
+
+
+##### `CREATE_TABLE` <a name="CREATE_TABLE" id="raindancers-network.lakeformation.Permissions.CREATE_TABLE"></a>
+
+---
+
+
+##### `DATA_LOCATION_ACCESS` <a name="DATA_LOCATION_ACCESS" id="raindancers-network.lakeformation.Permissions.DATA_LOCATION_ACCESS"></a>
+
+---
+
+
+##### `CREATE_TAG` <a name="CREATE_TAG" id="raindancers-network.lakeformation.Permissions.CREATE_TAG"></a>
+
+---
+
+
+##### `ASSOCIATE` <a name="ASSOCIATE" id="raindancers-network.lakeformation.Permissions.ASSOCIATE"></a>
+
+---
+
+
+##### `CREATE_TABLE_READ_WRITE` <a name="CREATE_TABLE_READ_WRITE" id="raindancers-network.lakeformation.Permissions.CREATE_TABLE_READ_WRITE"></a>
 
 ---
 
@@ -13976,6 +15854,33 @@ Use Public IPv4 Address Assigned by AWS.
 ---
 
 
+### RecrawlBehavior <a name="RecrawlBehavior" id="raindancers-network.glue.RecrawlBehavior"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.RecrawlBehavior.CRAWL_EVERYTHING">CRAWL_EVERYTHING</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.RecrawlBehavior.CRAWL_NEW_FOLDERS_ONLY">CRAWL_NEW_FOLDERS_ONLY</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.RecrawlBehavior.CRAWL_EVENT_MODE">CRAWL_EVENT_MODE</a></code> | *No description.* |
+
+---
+
+##### `CRAWL_EVERYTHING` <a name="CRAWL_EVERYTHING" id="raindancers-network.glue.RecrawlBehavior.CRAWL_EVERYTHING"></a>
+
+---
+
+
+##### `CRAWL_NEW_FOLDERS_ONLY` <a name="CRAWL_NEW_FOLDERS_ONLY" id="raindancers-network.glue.RecrawlBehavior.CRAWL_NEW_FOLDERS_ONLY"></a>
+
+---
+
+
+##### `CRAWL_EVENT_MODE` <a name="CRAWL_EVENT_MODE" id="raindancers-network.glue.RecrawlBehavior.CRAWL_EVENT_MODE"></a>
+
+---
+
+
 ### ResolverDirection <a name="ResolverDirection" id="raindancers-network.ResolverDirection"></a>
 
 Direction of Resolver.
@@ -14268,6 +16173,27 @@ Use IPv4.
 ##### `IPV6` <a name="IPV6" id="raindancers-network.TunnelInsideIpVersion.IPV6"></a>
 
 Use IPv6.
+
+---
+
+
+### UpdateBehavior <a name="UpdateBehavior" id="raindancers-network.glue.UpdateBehavior"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.UpdateBehavior.LOG">LOG</a></code> | *No description.* |
+| <code><a href="#raindancers-network.glue.UpdateBehavior.UPDATE_IN_DATABASE">UPDATE_IN_DATABASE</a></code> | *No description.* |
+
+---
+
+##### `LOG` <a name="LOG" id="raindancers-network.glue.UpdateBehavior.LOG"></a>
+
+---
+
+
+##### `UPDATE_IN_DATABASE` <a name="UPDATE_IN_DATABASE" id="raindancers-network.glue.UpdateBehavior.UPDATE_IN_DATABASE"></a>
 
 ---
 

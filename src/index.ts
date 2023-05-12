@@ -66,3 +66,13 @@ export * from './sso/index';
 
 export * from './mspowerbigateway';
 
+// delay
+export * from './delay/delay';
+
+// glue
+
+export * as glue from './glue/index';
+
+// lakeformation
+
+export * as lakeformation from './lakeformation/index';
