@@ -67,7 +67,7 @@ export * from './sso/index';
 export * from './mspowerbigateway';
 
 // delay
-export * from './delay/delay';
+export * as delay from './delay/index';
 
 // glue
 

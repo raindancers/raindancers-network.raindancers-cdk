@@ -2411,30 +2411,30 @@ public readonly proxyhostedZoneName: string;
 ---
 
 
-### Delay <a name="Delay" id="raindancers-network.Delay"></a>
+### Delay <a name="Delay" id="raindancers-network.delay.Delay"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.Delay.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.delay.Delay.Initializer"></a>
 
 ```typescript
-import { Delay } from 'raindancers-network'
+import { delay } from 'raindancers-network'
 
-new Delay(scope: Construct, id: string)
+new delay.Delay(scope: Construct, id: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Delay.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.Delay.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.delay.Delay.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.delay.Delay.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Delay.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.delay.Delay.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Delay.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.delay.Delay.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -2444,11 +2444,11 @@ new Delay(scope: Construct, id: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Delay.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.delay.Delay.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.Delay.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.delay.Delay.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2460,21 +2460,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Delay.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.delay.Delay.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.Delay.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.delay.Delay.isConstruct"></a>
 
 ```typescript
-import { Delay } from 'raindancers-network'
+import { delay } from 'raindancers-network'
 
-Delay.isConstruct(x: any)
+delay.Delay.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.Delay.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.delay.Delay.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2486,12 +2486,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Delay.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.Delay.property.delayProviderServiceToken">delayProviderServiceToken</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.delay.Delay.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.delay.Delay.property.delayProviderServiceToken">delayProviderServiceToken</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.Delay.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.delay.Delay.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2503,7 +2503,7 @@ The tree node.
 
 ---
 
-##### `delayProviderServiceToken`<sup>Required</sup> <a name="delayProviderServiceToken" id="raindancers-network.Delay.property.delayProviderServiceToken"></a>
+##### `delayProviderServiceToken`<sup>Required</sup> <a name="delayProviderServiceToken" id="raindancers-network.delay.Delay.property.delayProviderServiceToken"></a>
 
 ```typescript
 public readonly delayProviderServiceToken: string;
