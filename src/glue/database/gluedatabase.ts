@@ -2,11 +2,20 @@ import * as cdk from 'aws-cdk-lib';
 import {
   aws_lakeformation as aws_lakeformation,
   aws_glue,
+  aws_iam as iam,
 } from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
 import * as lakeformation from '../../lakeformation/index';
 import * as glue from '../index';
+
+export interface AddCrawlerProps {
+  readonly name: string;
+  readonly role: iam.Role;
+  readonly s3Targets?: glue.S3Target[] | undefined;
+  readonly jdbcTargets?: glue.JDBCTarget[];
+  readonly description?: string | undefined;
+}
 
 
 export interface DataBaseProps {
@@ -33,7 +42,7 @@ export class GlueDataBase extends constructs.Construct {
     });
   }
 
-  public addCrawler(props: glue.CrawlerProps): glue.Crawler {
+  public addCrawler(props: AddCrawlerProps): glue.Crawler {
 
     // validate that the props provided are valid
     if (props.s3Targets && props.jdbcTargets) {
@@ -78,7 +87,7 @@ export class GlueDataBase extends constructs.Construct {
     const dataCrawler = new glue.Crawler(this, `crawler${props.name}`, {
       name: props.name,
       role: props.role,
-	  databaseName: this.databaseName,
+      databaseName: this.databaseName,
       description: props.description,
       s3Targets: props.s3Targets,
       jdbcTargets: props.jdbcTargets,

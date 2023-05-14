@@ -76,3 +76,7 @@ export * as glue from './glue/index';
 // lakeformation
 
 export * as lakeformation from './lakeformation/index';
+
+// api lambda
+
+export * as apilambda from './apiLambda/index';

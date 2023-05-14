@@ -1694,6 +1694,109 @@ public readonly parameters: {[ key: string ]: any};
 ---
 
 
+### CrawlerRole <a name="CrawlerRole" id="raindancers-network.glue.CrawlerRole"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.glue.CrawlerRole.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+new glue.CrawlerRole(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.CrawlerRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.glue.CrawlerRole.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.glue.CrawlerRole.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerRole.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.glue.CrawlerRole.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.glue.CrawlerRole.isConstruct"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+glue.CrawlerRole.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.glue.CrawlerRole.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.CrawlerRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.glue.CrawlerRole.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.glue.CrawlerRole.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `role`<sup>Required</sup> <a name="role" id="raindancers-network.glue.CrawlerRole.property.role"></a>
+
+```typescript
+public readonly role: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+
 ### CrossRegionParameterReader <a name="CrossRegionParameterReader" id="raindancers-network.CrossRegionParameterReader"></a>
 
 #### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterReader.Initializer"></a>
@@ -4374,12 +4477,12 @@ Returns a string representation of this construct.
 ##### `addCrawler` <a name="addCrawler" id="raindancers-network.glue.GlueDataBase.addCrawler"></a>
 
 ```typescript
-public addCrawler(props: CrawlerProps): Crawler
+public addCrawler(props: AddCrawlerProps): Crawler
 ```
 
 ###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.glue.GlueDataBase.addCrawler.parameter.props"></a>
 
-- *Type:* raindancers-network.glue.CrawlerProps
+- *Type:* raindancers-network.glue.AddCrawlerProps
 
 ---
 
@@ -6542,6 +6645,116 @@ public readonly clusterSecurityGroup: SecurityGroup;
 ---
 
 
+### PythonApiIngestToS3 <a name="PythonApiIngestToS3" id="raindancers-network.apilambda.PythonApiIngestToS3"></a>
+
+#### Initializers <a name="Initializers" id="raindancers-network.apilambda.PythonApiIngestToS3.Initializer"></a>
+
+```typescript
+import { apilambda } from 'raindancers-network'
+
+new apilambda.PythonApiIngestToS3(scope: Construct, id: string, props: PythonApiIngestToS3Props)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.props">props</a></code> | <code>raindancers-network.apilambda.PythonApiIngestToS3Props</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.apilambda.PythonApiIngestToS3.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.apilambda.PythonApiIngestToS3Props
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="raindancers-network.apilambda.PythonApiIngestToS3.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.apilambda.PythonApiIngestToS3.isConstruct"></a>
+
+```typescript
+import { apilambda } from 'raindancers-network'
+
+apilambda.PythonApiIngestToS3.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.apilambda.PythonApiIngestToS3.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3.property.function">function</a></code> | <code>aws-cdk-lib.aws_lambda.Function</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.apilambda.PythonApiIngestToS3.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `function`<sup>Required</sup> <a name="function" id="raindancers-network.apilambda.PythonApiIngestToS3.property.function"></a>
+
+```typescript
+public readonly function: Function;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Function
+
+---
+
+
 ### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
 
 Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
@@ -7682,6 +7895,78 @@ public readonly segments: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+### AddCrawlerProps <a name="AddCrawlerProps" id="raindancers-network.glue.AddCrawlerProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.glue.AddCrawlerProps.Initializer"></a>
+
+```typescript
+import { glue } from 'raindancers-network'
+
+const addCrawlerProps: glue.AddCrawlerProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.glue.AddCrawlerProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.AddCrawlerProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.AddCrawlerProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.AddCrawlerProps.property.jdbcTargets">jdbcTargets</a></code> | <code>raindancers-network.glue.JDBCTarget[]</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.AddCrawlerProps.property.s3Targets">s3Targets</a></code> | <code>raindancers-network.glue.S3Target[]</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.glue.AddCrawlerProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `role`<sup>Required</sup> <a name="role" id="raindancers-network.glue.AddCrawlerProps.property.role"></a>
+
+```typescript
+public readonly role: Role;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.glue.AddCrawlerProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `jdbcTargets`<sup>Optional</sup> <a name="jdbcTargets" id="raindancers-network.glue.AddCrawlerProps.property.jdbcTargets"></a>
+
+```typescript
+public readonly jdbcTargets: JDBCTarget[];
+```
+
+- *Type:* raindancers-network.glue.JDBCTarget[]
+
+---
+
+##### `s3Targets`<sup>Optional</sup> <a name="s3Targets" id="raindancers-network.glue.AddCrawlerProps.property.s3Targets"></a>
+
+```typescript
+public readonly s3Targets: S3Target[];
+```
+
+- *Type:* raindancers-network.glue.S3Target[]
 
 ---
 
@@ -12095,6 +12380,89 @@ public readonly principalType: PrincipalTypes;
 - *Type:* <a href="#raindancers-network.PrincipalTypes">PrincipalTypes</a>
 
 The type of the principal.
+
+---
+
+### PythonApiIngestToS3Props <a name="PythonApiIngestToS3Props" id="raindancers-network.apilambda.PythonApiIngestToS3Props"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.apilambda.PythonApiIngestToS3Props.Initializer"></a>
+
+```typescript
+import { apilambda } from 'raindancers-network'
+
+const pythonApiIngestToS3Props: apilambda.PythonApiIngestToS3Props = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.codeSource">codeSource</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.handler">handler</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.ingestBucket">ingestBucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>aws-cdk-lib.aws_secretsmanager.Secret[]</code> | *No description.* |
+
+---
+
+##### `codeSource`<sup>Required</sup> <a name="codeSource" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.codeSource"></a>
+
+```typescript
+public readonly codeSource: string;
+```
+
+- *Type:* string
+
+---
+
+##### `handler`<sup>Required</sup> <a name="handler" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.handler"></a>
+
+```typescript
+public readonly handler: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ingestBucket`<sup>Required</sup> <a name="ingestBucket" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.ingestBucket"></a>
+
+```typescript
+public readonly ingestBucket: Bucket;
+```
+
+- *Type:* aws-cdk-lib.aws_s3.Bucket
+
+---
+
+##### `envVars`<sup>Optional</sup> <a name="envVars" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars"></a>
+
+```typescript
+public readonly envVars: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `runtime`<sup>Optional</sup> <a name="runtime" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.runtime"></a>
+
+```typescript
+public readonly runtime: Runtime;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Runtime
+
+---
+
+##### `secrets`<sup>Optional</sup> <a name="secrets" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets"></a>
+
+```typescript
+public readonly secrets: Secret[];
+```
+
+- *Type:* aws-cdk-lib.aws_secretsmanager.Secret[]
 
 ---
 
