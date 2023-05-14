@@ -1,3 +1,4 @@
+import * as cdk from 'aws-cdk-lib';
 import {
   aws_iam as iam,
 } from 'aws-cdk-lib';
@@ -12,7 +13,8 @@ export class CrawlerRole extends constructs.Construct {
     super(scope, id);
 
     const crawlerRole = new iam.Role(this, 'crawlerRole', {
-	  assumedBy: new iam.ServicePrincipal('glue.amazonaws.com'),
+	    assumedBy: new iam.ServicePrincipal('glue.amazonaws.com'),
+      roleName: cdk.PhysicalName.GENERATE_IF_NEEDED,
     });
 
     // add additonal permissions as required.

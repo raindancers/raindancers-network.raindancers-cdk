@@ -138,6 +138,7 @@ export class LakeFormation extends constructs.Construct {
     const lifecycleRules = (props.lifecycleRules ?? defaultLifeCycleRules);
 
     bucket = new s3.Bucket(this, props.name, {
+      bucketName: cdk.PhysicalName.GENERATE_IF_NEEDED,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED, // this is wrong.
       autoDeleteObjects: autoDeleteObjects,

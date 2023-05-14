@@ -3,6 +3,7 @@ import {
   aws_logs as logs,
   aws_s3 as s3,
   aws_lambda,
+  aws_iam,
   aws_secretsmanager as secretsmanager,
 } from 'aws-cdk-lib';
 
@@ -24,7 +25,17 @@ export class PythonApiIngestToS3 extends constructs.Construct {
   constructor(scope: constructs.Construct, id: string, props: PythonApiIngestToS3Props) {
     super(scope, id);
 
+    const lambdaExecutionRole: aws_iam.Role = new aws_iam.Role(this, 'LambdaExecutionRole', {
+      roleName: `${id}-lambda-execution-role}`,
+      assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
+    });
+
+    lambdaExecutionRole.addManagedPolicy(
+      aws_iam.ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaBasicExecutionRole'),
+    );
+
     this.function = new aws_lambda.Function(this, 'Function', {
+      role: lambdaExecutionRole,
       code: aws_lambda.Code.fromAsset(
         props.codeSource,
         {
