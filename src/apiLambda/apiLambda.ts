@@ -26,7 +26,7 @@ export class PythonApiIngestToS3 extends constructs.Construct {
     super(scope, id);
 
     const lambdaExecutionRole: aws_iam.Role = new aws_iam.Role(this, 'LambdaExecutionRole', {
-      roleName: `${id}-lambda-execution-role}`,
+      roleName: `${id}-lambda-execution-role`,
       assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
     });
 
