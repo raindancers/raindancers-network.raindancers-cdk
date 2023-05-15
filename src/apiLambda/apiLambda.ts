@@ -41,7 +41,7 @@ export class PythonApiIngestToS3 extends constructs.Construct {
         props.codeSource,
         {
           bundling: {
-            image: aws_lambda.Runtime.PYTHON_3_9.bundlingImage,
+            image: aws_lambda.Runtime.PYTHON_3_10.bundlingImage,
             command: [
               'bash',
               '-c',
@@ -50,7 +50,7 @@ export class PythonApiIngestToS3 extends constructs.Construct {
           },
         },
 	  ),
-      runtime: props.runtime ?? aws_lambda.Runtime.PYTHON_3_9,
+      runtime: props.runtime ?? aws_lambda.Runtime.PYTHON_3_10,
       handler: props.handler,
       architecture: aws_lambda.Architecture.ARM_64,
       deadLetterQueueEnabled: true,

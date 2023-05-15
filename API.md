@@ -5565,6 +5565,7 @@ new PowerBIGatewayZoo(scope: Construct, id: string, props: PowerBIGatewayZooProp
 | <code><a href="#raindancers-network.PowerBIGatewayZoo.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
 | <code><a href="#raindancers-network.PowerBIGatewayZoo.splitArn">splitArn</a></code> | Splits the provided ARN into its components. |
 | <code><a href="#raindancers-network.PowerBIGatewayZoo.toJsonString">toJsonString</a></code> | Convert an object, potentially containing tokens, to a JSON string. |
+| <code><a href="#raindancers-network.PowerBIGatewayZoo.toYamlString">toYamlString</a></code> | Convert an object, potentially containing tokens, to a YAML string. |
 
 ---
 
@@ -5728,11 +5729,11 @@ Instead, the process takes two deployments:
 ### Deployment 1: break the relationship
 
 - Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
-   stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
-   remove the Lambda Function altogether).
+  stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
+  remove the Lambda Function altogether).
 - In the `ProducerStack` class, call `this.exportValue(this.bucket.bucketName)`. This
-   will make sure the CloudFormation Export continues to exist while the relationship
-   between the two stacks is being broken.
+  will make sure the CloudFormation Export continues to exist while the relationship
+  between the two stacks is being broken.
 - Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
 
 ### Deployment 2: remove the bucket resource
@@ -5769,7 +5770,7 @@ into the generated ARN at the location that component corresponds to.
 
 The ARN will be formatted as follows:
 
-   arn:{partition}:{service}:{region}:{account}:{resource}{sep}{resource-name}
+  arn:{partition}:{service}:{region}:{account}:{resource}{sep}{resource-name}
 
 The required ARN pieces that are omitted will be taken from the stack that
 the 'scope' is attached to. If all ARN pieces are supplied, the supplied scope
@@ -5946,6 +5947,20 @@ Convert an object, potentially containing tokens, to a JSON string.
 
 ---
 
+##### `toYamlString` <a name="toYamlString" id="raindancers-network.PowerBIGatewayZoo.toYamlString"></a>
+
+```typescript
+public toYamlString(obj: any): string
+```
+
+Convert an object, potentially containing tokens, to a YAML string.
+
+###### `obj`<sup>Required</sup> <a name="obj" id="raindancers-network.PowerBIGatewayZoo.toYamlString.parameter.obj"></a>
+
+- *Type:* any
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -6065,10 +6080,10 @@ The AWS account into which this stack will be deployed.
 This value is resolved according to the following rules:
 
 1. The value provided to `env.account` when the stack is defined. This can
-    either be a concrete account (e.g. `585695031111`) or the
-    `Aws.ACCOUNT_ID` token.
+   either be a concrete account (e.g. `585695031111`) or the
+   `Aws.ACCOUNT_ID` token.
 3. `Aws.ACCOUNT_ID`, which represents the CloudFormation intrinsic reference
-    `{ "Ref": "AWS::AccountId" }` encoded as a string token.
+   `{ "Ref": "AWS::AccountId" }` encoded as a string token.
 
 Preferably, you should use the return value as an opaque string and not
 attempt to parse it to implement your logic. If you do, you must first
@@ -6213,10 +6228,10 @@ The AWS region into which this stack will be deployed (e.g. `us-west-2`).
 This value is resolved according to the following rules:
 
 1. The value provided to `env.region` when the stack is defined. This can
-    either be a concrete region (e.g. `us-west-2`) or the `Aws.REGION`
-    token.
+   either be a concrete region (e.g. `us-west-2`) or the `Aws.REGION`
+   token.
 3. `Aws.REGION`, which is represents the CloudFormation intrinsic reference
-    `{ "Ref": "AWS::Region" }` encoded as a string token.
+   `{ "Ref": "AWS::Region" }` encoded as a string token.
 
 Preferably, you should use the return value as an opaque string and not
 attempt to parse it to implement your logic. If you do, you must first
@@ -10274,6 +10289,7 @@ const evpcProps: EvpcProps = { ... }
 | <code><a href="#raindancers-network.EvpcProps.property.natGateways">natGateways</a></code> | <code>number</code> | The number of NAT Gateways/Instances to create. |
 | <code><a href="#raindancers-network.EvpcProps.property.natGatewaySubnets">natGatewaySubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Configures the subnets which will have NAT Gateways/Instances. |
 | <code><a href="#raindancers-network.EvpcProps.property.reservedAzs">reservedAzs</a></code> | <code>number</code> | Define the number of AZs to reserve. |
+| <code><a href="#raindancers-network.EvpcProps.property.restrictDefaultSecurityGroup">restrictDefaultSecurityGroup</a></code> | <code>boolean</code> | If set to true then the default inbound & outbound rules will be removed from the default security group. |
 | <code><a href="#raindancers-network.EvpcProps.property.subnetConfiguration">subnetConfiguration</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | Configure the subnets to build for each AZ. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpcName">vpcName</a></code> | <code>string</code> | The VPC name. |
 | <code><a href="#raindancers-network.EvpcProps.property.vpnConnections">vpnConnections</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.VpnConnectionOptions}</code> | VPN connections to this VPC. |
@@ -10508,6 +10524,19 @@ resources are provisioned.
 
 ---
 
+##### `restrictDefaultSecurityGroup`<sup>Optional</sup> <a name="restrictDefaultSecurityGroup" id="raindancers-network.EvpcProps.property.restrictDefaultSecurityGroup"></a>
+
+```typescript
+public readonly restrictDefaultSecurityGroup: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true if '@aws-cdk/aws-ec2:restrictDefaultSecurityGroup' is enabled, false otherwise
+
+If set to true then the default inbound & outbound rules will be removed from the default security group.
+
+---
+
 ##### `subnetConfiguration`<sup>Optional</sup> <a name="subnetConfiguration" id="raindancers-network.EvpcProps.property.subnetConfiguration"></a>
 
 ```typescript
@@ -10527,23 +10556,23 @@ subnet in each AZ provide the following:
 
 ```ts
 new ec2.Vpc(this, 'VPC', {
-   subnetConfiguration: [
-      {
-        cidrMask: 24,
-        name: 'ingress',
-        subnetType: ec2.SubnetType.PUBLIC,
-      },
-      {
-        cidrMask: 24,
-        name: 'application',
-        subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS,
-      },
-      {
-        cidrMask: 28,
-        name: 'rds',
-        subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
-      }
-   ]
+  subnetConfiguration: [
+     {
+       cidrMask: 24,
+       name: 'ingress',
+       subnetType: ec2.SubnetType.PUBLIC,
+     },
+     {
+       cidrMask: 24,
+       name: 'application',
+       subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS,
+     },
+     {
+       cidrMask: 28,
+       name: 'rds',
+       subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
+     }
+  ]
 });
 ```
 
@@ -11499,7 +11528,7 @@ const permissionBoundary: PermissionBoundary = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionBoundary.property.customerManagedPolicyReference">customerManagedPolicyReference</a></code> | <code>aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty \| aws-cdk-lib.IResolvable</code> | Specifies the name and path of a customer managed policy. |
+| <code><a href="#raindancers-network.PermissionBoundary.property.customerManagedPolicyReference">customerManagedPolicyReference</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty</code> | Specifies the name and path of a customer managed policy. |
 | <code><a href="#raindancers-network.PermissionBoundary.property.managedPolicyArn">managedPolicyArn</a></code> | <code>string</code> | The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary. |
 
 ---
@@ -11507,10 +11536,10 @@ const permissionBoundary: PermissionBoundary = { ... }
 ##### `customerManagedPolicyReference`<sup>Optional</sup> <a name="customerManagedPolicyReference" id="raindancers-network.PermissionBoundary.property.customerManagedPolicyReference"></a>
 
 ```typescript
-public readonly customerManagedPolicyReference: CustomerManagedPolicyReferenceProperty | IResolvable;
+public readonly customerManagedPolicyReference: IResolvable | CustomerManagedPolicyReferenceProperty;
 ```
 
-- *Type:* aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty | aws-cdk-lib.IResolvable
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty
 
 Specifies the name and path of a customer managed policy.
 

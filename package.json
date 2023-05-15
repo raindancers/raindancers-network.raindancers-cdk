@@ -36,12 +36,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/aws-redshift-alpha": "2.67.0-alpha.0",
+    "@aws-cdk/aws-redshift-alpha": "2.79.0-alpha.0",
     "@types/jest": "^27",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.67.0",
+    "aws-cdk-lib": "2.79.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
@@ -60,12 +60,12 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-redshift-alpha": "2.67.0-alpha.0",
-    "aws-cdk-lib": "^2.67.0",
+    "@aws-cdk/aws-redshift-alpha": "2.79.0-alpha.0",
+    "aws-cdk-lib": "^2.79.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-redshift-alpha": "2.67.0-alpha.0"
+    "@aws-cdk/aws-redshift-alpha": "2.79.0-alpha.0"
   },
   "resolutions": {
     "@types/prettier": "2.6.0",
