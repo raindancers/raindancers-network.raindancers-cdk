@@ -13,7 +13,7 @@ export interface PythonApiIngestToS3Props {
   readonly codeSource: string;
   readonly handler: string;
   readonly ingestBucket: s3.Bucket;
-  readonly secrets?: secretsmanager.Secret[] | undefined;
+  readonly secrets?: (secretsmanager.Secret | secretsmanager.ISecret)[] | undefined;
   readonly runtime?: aws_lambda.Runtime | undefined;
   readonly envVars?: {[key: string]: string} | undefined;
 }

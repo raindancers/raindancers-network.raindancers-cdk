@@ -12402,7 +12402,7 @@ const pythonApiIngestToS3Props: apilambda.PythonApiIngestToS3Props = { ... }
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.ingestBucket">ingestBucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | *No description.* |
-| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>aws-cdk-lib.aws_secretsmanager.Secret[]</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>aws-cdk-lib.aws_secretsmanager.ISecret \| aws-cdk-lib.aws_secretsmanager.Secret[]</code> | *No description.* |
 
 ---
 
@@ -12459,10 +12459,10 @@ public readonly runtime: Runtime;
 ##### `secrets`<sup>Optional</sup> <a name="secrets" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets"></a>
 
 ```typescript
-public readonly secrets: Secret[];
+public readonly secrets: ISecret | Secret[];
 ```
 
-- *Type:* aws-cdk-lib.aws_secretsmanager.Secret[]
+- *Type:* aws-cdk-lib.aws_secretsmanager.ISecret | aws-cdk-lib.aws_secretsmanager.Secret[]
 
 ---
 
