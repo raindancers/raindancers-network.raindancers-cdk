@@ -6,6 +6,8 @@ import {
   aws_iam as iam,
   aws_secretsmanager as secretsmanager,
 } from 'aws-cdk-lib';
+import { LambdaDataSource } from 'aws-cdk-lib/aws-appsync';
+import { Effect } from 'aws-cdk-lib/aws-iam';
 
 import * as constructs from 'constructs';
 
@@ -14,8 +16,13 @@ export interface PythonApiIngestToS3Props {
   readonly handler: string;
   readonly ingestBucket: s3.Bucket;
   readonly secrets?: (secretsmanager.Secret | secretsmanager.ISecret)[] | undefined;
+  readonly architecture?: aws_lambda.Architecture | undefined;
   readonly runtime?: aws_lambda.Runtime | undefined;
   readonly envVars?: {[key: string]: string} | undefined;
+  readonly timeOut?: cdk.Duration | undefined;
+  readonly memorySize?: number | undefined;
+  readonly retryAttempts?: number | undefined;
+  readonly deadLetterQueueEnabled?: boolean | undefined;
 }
 
 export class PythonApiIngestToS3 extends constructs.Construct {
@@ -35,6 +42,14 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
     );
 
+    lambdaExecutionRole.addToPolicy(new iam.PolicyStatement(
+      {
+        actions: ['kms:Decrypt'],
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+      },
+    ));
+
     this.function = new aws_lambda.Function(this, 'Function', {
       role: lambdaExecutionRole,
       code: aws_lambda.Code.fromAsset(
@@ -52,13 +67,13 @@ export class PythonApiIngestToS3 extends constructs.Construct {
 	  ),
       runtime: props.runtime ?? aws_lambda.Runtime.PYTHON_3_10,
       handler: props.handler,
-      architecture: aws_lambda.Architecture.ARM_64,
-      deadLetterQueueEnabled: true,
-	  environment: props.envVars,
+      architecture: props.architecture ?? aws_lambda.Architecture.X86_64,
+      deadLetterQueueEnabled: props.deadLetterQueueEnabled ?? true,
+      environment: props.envVars,
       logRetention: logs.RetentionDays.TWO_YEARS,
-      memorySize: 512,
-      retryAttempts: 2,
-      timeout: cdk.Duration.seconds(300),
+      memorySize: props.memorySize ?? 512,
+      retryAttempts: props.retryAttempts ?? 2,
+      timeout: props.timeOut ?? cdk.Duration.seconds(300),
     });
 
     props.ingestBucket.grantReadWrite(this.function);
