@@ -3,7 +3,7 @@ import {
   aws_logs as logs,
   aws_s3 as s3,
   aws_lambda,
-  aws_iam,
+  aws_iam as iam,
   aws_secretsmanager as secretsmanager,
 } from 'aws-cdk-lib';
 
@@ -25,14 +25,26 @@ export class PythonApiIngestToS3 extends constructs.Construct {
   constructor(scope: constructs.Construct, id: string, props: PythonApiIngestToS3Props) {
     super(scope, id);
 
-    const lambdaExecutionRole: aws_iam.Role = new aws_iam.Role(this, 'LambdaExecutionRole', {
+    const lambdaExecutionRole: iam.Role = new iam.Role(this, 'LambdaExecutionRole', {
       roleName: `${id}-lambda-execution-role`,
-      assumedBy: new aws_iam.ServicePrincipal('lambda.amazonaws.com'),
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
     });
 
-    lambdaExecutionRole.addManagedPolicy(
-      aws_iam.ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaBasicExecutionRole'),
+
+    const lambdaPolicy = new iam.PolicyStatement(
+      {
+        effect: iam.Effect.ALLOW,
+        actions: [
+          'logs:CreateLogGroup',
+          'logs:CreateLogStream',
+          'logs:PutLogEvents',
+        ],
+        resources: ['*'],
+      },
     );
+
+    lambdaExecutionRole.addToPolicy(lambdaPolicy);
+
 
     this.function = new aws_lambda.Function(this, 'Function', {
       role: lambdaExecutionRole,
