@@ -35,22 +35,6 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
     );
 
-
-    const lambdaPolicy = new iam.PolicyStatement(
-      {
-        effect: iam.Effect.ALLOW,
-        actions: [
-          'logs:CreateLogGroup',
-          'logs:CreateLogStream',
-          'logs:PutLogEvents',
-        ],
-        resources: ['*'],
-      },
-    );
-
-    lambdaExecutionRole.addToPolicy(lambdaPolicy);
-
-
     this.function = new aws_lambda.Function(this, 'Function', {
       role: lambdaExecutionRole,
       code: aws_lambda.Code.fromAsset(
