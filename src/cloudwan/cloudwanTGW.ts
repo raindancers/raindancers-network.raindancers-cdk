@@ -14,8 +14,8 @@ import {
 import * as constructs from 'constructs';
 
 
-import { GetTunnelAddressPair } from '../ipam/ipam';
 import * as CloudWanTGWProps from './cloudwanTGWProps';
+import { GetTunnelAddressPair } from '../ipam/ipam';
 
 
 /**

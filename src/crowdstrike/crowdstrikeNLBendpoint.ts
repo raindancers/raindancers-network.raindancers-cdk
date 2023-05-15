@@ -18,10 +18,10 @@ import * as cdk from 'aws-cdk-lib';
 
 
 import * as constructs from 'constructs';
-import { R53Resolverendpoints } from '../dns/dnsResolvers';
-import { EnterpriseVpc } from '../evpc/enterprisevpc';
 import { CrowdStrikePrivateLinkEndpoint } from './crowdstrike';
 import { CrowdStrikeCloud } from './crowdstrikeRegionInfo';
+import { R53Resolverendpoints } from '../dns/dnsResolvers';
+import { EnterpriseVpc } from '../evpc/enterprisevpc';
 
 export interface VpcRegionId {
   readonly peeringVpcId: string;

@@ -20,6 +20,7 @@ import {
   from 'aws-cdk-lib';
 
 import * as constructs from 'constructs';
+import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 import { AwsManagedDNSFirewallRuleGroup } from '../dns/dnsfirewall';
 import { R53Resolverendpoints, ConditionalForwarder, OutboundForwardingRule } from '../dns/dnsResolvers';
 import { EnterpriseZone, CentralAccountAssnRole, HubVpc } from '../dns/enterpriseZone';
@@ -27,7 +28,6 @@ import { AssociateSharedResolverRule } from '../dns/forwardingRules';
 import { CentralResolverRules } from '../dns/resolverRules';
 import { AwsServiceEndPoints } from '../endpoints/awsServiceEndpoints';
 import { NetworkFirewall } from '../nwfirewall/firewall';
-import { EnterpriseVpcLambda } from './enterprisevpclambdas';
 
 interface RouteTableMeta {
   readonly routeTableId: string;
