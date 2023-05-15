@@ -30,6 +30,11 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
     });
 
+    //note the inclusion of 'service role'.
+    lambdaExecutionRole.addManagedPolicy(
+      iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
+    );
+
 
     const lambdaPolicy = new iam.PolicyStatement(
       {
