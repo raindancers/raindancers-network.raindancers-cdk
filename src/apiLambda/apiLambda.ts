@@ -5,9 +5,8 @@ import {
   aws_lambda,
   aws_iam as iam,
   aws_secretsmanager as secretsmanager,
+  aws_kms as kms,
 } from 'aws-cdk-lib';
-import { LambdaDataSource } from 'aws-cdk-lib/aws-appsync';
-import { Effect } from 'aws-cdk-lib/aws-iam';
 
 import * as constructs from 'constructs';
 
@@ -16,6 +15,7 @@ export interface PythonApiIngestToS3Props {
   readonly handler: string;
   readonly ingestBucket: s3.Bucket;
   readonly secrets?: (secretsmanager.Secret | secretsmanager.ISecret)[] | undefined;
+  readonly kms?: kms.Key[];
   readonly architecture?: aws_lambda.Architecture | undefined;
   readonly runtime?: aws_lambda.Runtime | undefined;
   readonly envVars?: {[key: string]: string} | undefined;
@@ -42,13 +42,22 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
     );
 
-    lambdaExecutionRole.addToPolicy(new iam.PolicyStatement(
-      {
-        actions: ['kms:Decrypt'],
-        effect: iam.Effect.ALLOW,
-        resources: ['*'],
-      },
-    ));
+    if (props.kms) {
+
+      const kmsArnList: string[] = [];
+
+      props.kms.forEach((key) => {
+        kmsArnList.push(key.keyArn);
+      });
+
+      lambdaExecutionRole.addToPolicy(new iam.PolicyStatement(
+        {
+          actions: ['kms:Decrypt'],
+          effect: iam.Effect.ALLOW,
+          resources: kmsArnList,
+        },
+      ));
+    }
 
     this.function = new aws_lambda.Function(this, 'Function', {
       role: lambdaExecutionRole,

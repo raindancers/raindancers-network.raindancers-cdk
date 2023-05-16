@@ -12447,9 +12447,15 @@ const pythonApiIngestToS3Props: apilambda.PythonApiIngestToS3Props = { ... }
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.codeSource">codeSource</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.handler">handler</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.ingestBucket">ingestBucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.deadLetterQueueEnabled">deadLetterQueueEnabled</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.kms">kms</a></code> | <code>aws-cdk-lib.aws_kms.Key[]</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.memorySize">memorySize</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.retryAttempts">retryAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>aws-cdk-lib.aws_secretsmanager.ISecret \| aws-cdk-lib.aws_secretsmanager.Secret[]</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.timeOut">timeOut</a></code> | <code>aws-cdk-lib.Duration</code> | *No description.* |
 
 ---
 
@@ -12483,6 +12489,26 @@ public readonly ingestBucket: Bucket;
 
 ---
 
+##### `architecture`<sup>Optional</sup> <a name="architecture" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.architecture"></a>
+
+```typescript
+public readonly architecture: Architecture;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Architecture
+
+---
+
+##### `deadLetterQueueEnabled`<sup>Optional</sup> <a name="deadLetterQueueEnabled" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.deadLetterQueueEnabled"></a>
+
+```typescript
+public readonly deadLetterQueueEnabled: boolean;
+```
+
+- *Type:* boolean
+
+---
+
 ##### `envVars`<sup>Optional</sup> <a name="envVars" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars"></a>
 
 ```typescript
@@ -12490,6 +12516,36 @@ public readonly envVars: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+
+---
+
+##### `kms`<sup>Optional</sup> <a name="kms" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.kms"></a>
+
+```typescript
+public readonly kms: Key[];
+```
+
+- *Type:* aws-cdk-lib.aws_kms.Key[]
+
+---
+
+##### `memorySize`<sup>Optional</sup> <a name="memorySize" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.memorySize"></a>
+
+```typescript
+public readonly memorySize: number;
+```
+
+- *Type:* number
+
+---
+
+##### `retryAttempts`<sup>Optional</sup> <a name="retryAttempts" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.retryAttempts"></a>
+
+```typescript
+public readonly retryAttempts: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -12510,6 +12566,16 @@ public readonly secrets: ISecret | Secret[];
 ```
 
 - *Type:* aws-cdk-lib.aws_secretsmanager.ISecret | aws-cdk-lib.aws_secretsmanager.Secret[]
+
+---
+
+##### `timeOut`<sup>Optional</sup> <a name="timeOut" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.timeOut"></a>
+
+```typescript
+public readonly timeOut: Duration;
+```
+
+- *Type:* aws-cdk-lib.Duration
 
 ---
 
