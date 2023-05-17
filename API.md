@@ -12450,11 +12450,10 @@ const pythonApiIngestToS3Props: apilambda.PythonApiIngestToS3Props = { ... }
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.deadLetterQueueEnabled">deadLetterQueueEnabled</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.envVars">envVars</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.kms">kms</a></code> | <code>aws-cdk-lib.aws_kms.Key[]</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.memorySize">memorySize</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.retryAttempts">retryAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | *No description.* |
-| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>aws-cdk-lib.aws_secretsmanager.ISecret \| aws-cdk-lib.aws_secretsmanager.Secret[]</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets">secrets</a></code> | <code>raindancers-network.apilambda.SecretNames[]</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.PythonApiIngestToS3Props.property.timeOut">timeOut</a></code> | <code>aws-cdk-lib.Duration</code> | *No description.* |
 
 ---
@@ -12519,16 +12518,6 @@ public readonly envVars: {[ key: string ]: string};
 
 ---
 
-##### `kms`<sup>Optional</sup> <a name="kms" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.kms"></a>
-
-```typescript
-public readonly kms: Key[];
-```
-
-- *Type:* aws-cdk-lib.aws_kms.Key[]
-
----
-
 ##### `memorySize`<sup>Optional</sup> <a name="memorySize" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.memorySize"></a>
 
 ```typescript
@@ -12562,10 +12551,10 @@ public readonly runtime: Runtime;
 ##### `secrets`<sup>Optional</sup> <a name="secrets" id="raindancers-network.apilambda.PythonApiIngestToS3Props.property.secrets"></a>
 
 ```typescript
-public readonly secrets: ISecret | Secret[];
+public readonly secrets: SecretNames[];
 ```
 
-- *Type:* aws-cdk-lib.aws_secretsmanager.ISecret | aws-cdk-lib.aws_secretsmanager.Secret[]
+- *Type:* raindancers-network.apilambda.SecretNames[]
 
 ---
 
@@ -13275,6 +13264,45 @@ public readonly updateBehavior: UpdateBehavior;
 ```
 
 - *Type:* raindancers-network.glue.UpdateBehavior
+
+---
+
+### SecretNames <a name="SecretNames" id="raindancers-network.apilambda.SecretNames"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.apilambda.SecretNames.Initializer"></a>
+
+```typescript
+import { apilambda } from 'raindancers-network'
+
+const secretNames: apilambda.SecretNames = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#raindancers-network.apilambda.SecretNames.property.environment">environment</a></code> | <code>aws-cdk-lib.Environment</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.SecretNames.property.secretName">secretName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="raindancers-network.apilambda.SecretNames.property.environment"></a>
+
+```typescript
+public readonly environment: Environment;
+```
+
+- *Type:* aws-cdk-lib.Environment
+
+---
+
+##### `secretName`<sup>Required</sup> <a name="secretName" id="raindancers-network.apilambda.SecretNames.property.secretName"></a>
+
+```typescript
+public readonly secretName: string;
+```
+
+- *Type:* string
 
 ---
 
