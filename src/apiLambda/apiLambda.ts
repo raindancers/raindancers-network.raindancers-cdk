@@ -10,6 +10,7 @@ import {
 import * as constructs from 'constructs';
 
 export interface SecretNames {
+  readonly name: string;
   readonly environment: cdk.Environment;
   readonly secretName: string;
 }
@@ -54,6 +55,7 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       },
     ));
 
+
     this.function = new aws_lambda.Function(this, 'Function', {
       role: lambdaExecutionRole,
       code: aws_lambda.Code.fromAsset(
@@ -80,15 +82,17 @@ export class PythonApiIngestToS3 extends constructs.Construct {
       timeout: props.timeOut ?? cdk.Duration.seconds(300),
     });
 
-    props.ingestBucket.grantReadWrite(this.function);
-
     if (props.secrets) {
       props.secrets.forEach((secret) => {
-        const partialArn :string = 'arn:aws:secretsmanager:' + secret.environment.region + ':' + secret.environment.account + ':' + secret.secretName;
-        const secretFromPartialArn = secretsmanager.Secret.fromSecretPartialArn(this, 'SecretFromPartialArn', partialArn);
+        const partialArn :string = 'arn:aws:secretsmanager:' + secret.environment.region + ':' + secret.environment.account + ':secret:' + secret.secretName;
+        console.log('partialArn: ' + partialArn);
+        const secretFromPartialArn = secretsmanager.Secret.fromSecretPartialArn(this, `SecretFromPartialArn-${secret.secretName}`, partialArn);
         secretFromPartialArn.grantRead(this.function);
+
       });
     };
+
+    props.ingestBucket.grantReadWrite(this.function);
 
   }
 }

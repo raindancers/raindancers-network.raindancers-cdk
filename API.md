@@ -13282,6 +13282,7 @@ const secretNames: apilambda.SecretNames = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.apilambda.SecretNames.property.environment">environment</a></code> | <code>aws-cdk-lib.Environment</code> | *No description.* |
+| <code><a href="#raindancers-network.apilambda.SecretNames.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.apilambda.SecretNames.property.secretName">secretName</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -13293,6 +13294,16 @@ public readonly environment: Environment;
 ```
 
 - *Type:* aws-cdk-lib.Environment
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.apilambda.SecretNames.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
 
 ---
 
