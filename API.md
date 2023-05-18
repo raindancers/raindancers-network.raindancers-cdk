@@ -4413,6 +4413,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#raindancers-network.glue.GlueClassifier.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#raindancers-network.glue.GlueClassifier.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifier.property.classifier">classifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier</code> | *No description.* |
 
 ---
 
@@ -4435,6 +4436,16 @@ public readonly name: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `classifier`<sup>Optional</sup> <a name="classifier" id="raindancers-network.glue.GlueClassifier.property.classifier"></a>
+
+```typescript
+public readonly classifier: CfnClassifier;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnClassifier
 
 ---
 
@@ -11061,6 +11072,11 @@ const glueClassifierProps: glue.GlueClassifierProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.type">type</a></code> | <code>raindancers-network.glue.GlueClassifierType</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.csvClassifier">csvClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.CsvClassifierProperty</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.grokClassifier">grokClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.GrokClassifierProperty</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.jsonClassifier">jsonClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.JsonClassifierProperty</code> | *No description.* |
+| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.xmlClassifier">xmlClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.XMLClassifierProperty</code> | *No description.* |
 
 ---
 
@@ -11071,6 +11087,56 @@ public readonly name: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="raindancers-network.glue.GlueClassifierProps.property.type"></a>
+
+```typescript
+public readonly type: GlueClassifierType;
+```
+
+- *Type:* raindancers-network.glue.GlueClassifierType
+
+---
+
+##### `csvClassifier`<sup>Optional</sup> <a name="csvClassifier" id="raindancers-network.glue.GlueClassifierProps.property.csvClassifier"></a>
+
+```typescript
+public readonly csvClassifier: CsvClassifierProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnClassifier.CsvClassifierProperty
+
+---
+
+##### `grokClassifier`<sup>Optional</sup> <a name="grokClassifier" id="raindancers-network.glue.GlueClassifierProps.property.grokClassifier"></a>
+
+```typescript
+public readonly grokClassifier: GrokClassifierProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnClassifier.GrokClassifierProperty
+
+---
+
+##### `jsonClassifier`<sup>Optional</sup> <a name="jsonClassifier" id="raindancers-network.glue.GlueClassifierProps.property.jsonClassifier"></a>
+
+```typescript
+public readonly jsonClassifier: JsonClassifierProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnClassifier.JsonClassifierProperty
+
+---
+
+##### `xmlClassifier`<sup>Optional</sup> <a name="xmlClassifier" id="raindancers-network.glue.GlueClassifierProps.property.xmlClassifier"></a>
+
+```typescript
+public readonly xmlClassifier: XMLClassifierProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_glue.CfnClassifier.XMLClassifierProperty
 
 ---
 
@@ -15673,6 +15739,47 @@ Restart The Session.
 
 
 ##### `TLS` <a name="TLS" id="raindancers-network.FWProtocol.TLS"></a>
+
+---
+
+
+### GlueClassifierType <a name="GlueClassifierType" id="raindancers-network.glue.GlueClassifierType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#raindancers-network.glue.GlueClassifierType.CSV">CSV</a></code> | A classifier for comma-separated values (CSV). |
+| <code><a href="#raindancers-network.glue.GlueClassifierType.GROK">GROK</a></code> | A classifier that uses grok. |
+| <code><a href="#raindancers-network.glue.GlueClassifierType.JSON">JSON</a></code> | A classifier for JSON content. |
+| <code><a href="#raindancers-network.glue.GlueClassifierType.XML">XML</a></code> | A classifier for XML content. |
+
+---
+
+##### `CSV` <a name="CSV" id="raindancers-network.glue.GlueClassifierType.CSV"></a>
+
+A classifier for comma-separated values (CSV).
+
+---
+
+
+##### `GROK` <a name="GROK" id="raindancers-network.glue.GlueClassifierType.GROK"></a>
+
+A classifier that uses grok.
+
+---
+
+
+##### `JSON` <a name="JSON" id="raindancers-network.glue.GlueClassifierType.JSON"></a>
+
+A classifier for JSON content.
+
+---
+
+
+##### `XML` <a name="XML" id="raindancers-network.glue.GlueClassifierType.XML"></a>
+
+A classifier for XML content.
 
 ---
 
