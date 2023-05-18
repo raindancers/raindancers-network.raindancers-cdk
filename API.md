@@ -11071,22 +11071,11 @@ const glueClassifierProps: glue.GlueClassifierProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.glue.GlueClassifierProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.type">type</a></code> | <code>raindancers-network.glue.GlueClassifierType</code> | *No description.* |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.csvClassifier">csvClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.CsvClassifierProperty</code> | *No description.* |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.grokClassifier">grokClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.GrokClassifierProperty</code> | *No description.* |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.jsonClassifier">jsonClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.JsonClassifierProperty</code> | *No description.* |
 | <code><a href="#raindancers-network.glue.GlueClassifierProps.property.xmlClassifier">xmlClassifier</a></code> | <code>aws-cdk-lib.aws_glue.CfnClassifier.XMLClassifierProperty</code> | *No description.* |
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.glue.GlueClassifierProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
 
 ---
 

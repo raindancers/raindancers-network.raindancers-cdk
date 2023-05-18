@@ -26,7 +26,6 @@ export enum GlueClassifierType {
 
 
 export interface GlueClassifierProps {
-  readonly name: string;
   readonly type: GlueClassifierType;
   readonly csvClassifier?: glue.CfnClassifier.CsvClassifierProperty;
   readonly grokClassifier?: glue.CfnClassifier.GrokClassifierProperty | undefined;
