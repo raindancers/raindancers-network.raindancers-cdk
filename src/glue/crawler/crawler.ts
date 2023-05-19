@@ -111,22 +111,6 @@ export class Crawler extends constructs.Construct {
       });
       targets.JdbcTargets = jdbcTargets;
     }
-
-    // const pascalCaseKeys = (obj: any): any => {
-    //   if (typeof obj !== 'object') {
-    //     return obj;
-    //   }
-    //   if (Array.isArray(obj)) {
-    //     return obj.map(pascalCaseKeys);
-    //   }
-    //   if (obj === null) {
-    //     return null;
-    //   }
-    //   const entries = Object.entries(obj);
-    //   const mappedEntries = entries.map(([k, v]) => [`${k.slice(0, 1).toUpperCase()}${k.slice(1)}`, pascalCaseKeys(v)] as const);
-    //   return Object.fromEntries(mappedEntries);
-    // };
-
     console.log(targets);
 
     // these are the mandatory paramters
@@ -230,7 +214,7 @@ export class Crawler extends constructs.Construct {
    * @param schemaChangePolicy
    */
   public addSchemaChangePolicy(schemaChangePolicy: SchemaChangePolicy): void {
-    this.parameters.SchemaChangePolicy = schemaChangePolicy;
+    this.parameters.SchemaChangePolicy = pascalCaseKeys(schemaChangePolicy);
   }
   /**
    * set crawler Configuration
