@@ -25,7 +25,7 @@ export interface HubVpc {
 
 export interface EnterpriseZoneProps {
   readonly enterpriseDomainName: string;
-  readonly localVpc: ec2.Vpc;
+  readonly localVpc: ec2.Vpc | ec2.IVpc;
   readonly hubVpcs: HubVpc[] | undefined;
 }
 
@@ -68,7 +68,7 @@ export class EnterpriseZone extends constructs.Construct {
 }
 
 export interface CentralAccountAssnRoleProps {
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   readonly orgId: string;
   readonly roleName?: string | undefined;
 }

@@ -74,7 +74,13 @@ export interface AttachmentPolicyAction
 	 * The Segment this applies to
 	 */
   readonly segment?: string;
+
+  /**
+   * Does this require approval
+   */
+  readonly requireAcceptance?: boolean;
 }
+
 
 /**
  * Segment Properties

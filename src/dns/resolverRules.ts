@@ -11,7 +11,7 @@ import { R53Resolverendpoints } from './dnsResolvers';
 export interface CentralResolverRulesProps {
   readonly domains: string[];
   readonly resolvers: R53Resolverendpoints;
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   readonly vpcSearchTag?: cdk.Tag | undefined;
 }
 

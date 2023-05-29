@@ -20,45 +20,45 @@ This construct is published as a ready to import module for both typescript and 
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### Assignment <a name="Assignment" id="raindancers-network.Assignment"></a>
+### Assignment <a name="Assignment" id="raindancers-network.sso.Assignment"></a>
 
-- *Implements:* <a href="#raindancers-network.IAssignment">IAssignment</a>
+- *Implements:* raindancers-network.sso.IAssignment
 
 The assignment construct.
 
 Has no import method because there is no attributes to import.
 
-#### Initializers <a name="Initializers" id="raindancers-network.Assignment.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.sso.Assignment.Initializer"></a>
 
 ```typescript
-import { Assignment } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-new Assignment(scope: Construct, id: string, props: AssignmentProps)
+new sso.Assignment(scope: Construct, id: string, props: AssignmentProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Assignment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.Assignment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Assignment.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AssignmentProps">AssignmentProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.sso.Assignment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.sso.Assignment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.sso.Assignment.Initializer.parameter.props">props</a></code> | <code>raindancers-network.sso.AssignmentProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.Assignment.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.sso.Assignment.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.Assignment.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.sso.Assignment.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.Assignment.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.sso.Assignment.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AssignmentProps">AssignmentProps</a>
+- *Type:* raindancers-network.sso.AssignmentProps
 
 ---
 
@@ -66,12 +66,12 @@ new Assignment(scope: Construct, id: string, props: AssignmentProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Assignment.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.Assignment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#raindancers-network.sso.Assignment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.sso.Assignment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.Assignment.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.sso.Assignment.toString"></a>
 
 ```typescript
 public toString(): string
@@ -79,7 +79,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.Assignment.applyRemovalPolicy"></a>
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.sso.Assignment.applyRemovalPolicy"></a>
 
 ```typescript
 public applyRemovalPolicy(policy: RemovalPolicy): void
@@ -95,7 +95,7 @@ to be replaced.
 The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
 account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 
-###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.Assignment.applyRemovalPolicy.parameter.policy"></a>
+###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.sso.Assignment.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
 
@@ -105,23 +105,23 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Assignment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#raindancers-network.Assignment.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
-| <code><a href="#raindancers-network.Assignment.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#raindancers-network.sso.Assignment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.sso.Assignment.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#raindancers-network.sso.Assignment.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.Assignment.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.sso.Assignment.isConstruct"></a>
 
 ```typescript
-import { Assignment } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-Assignment.isConstruct(x: any)
+sso.Assignment.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.Assignment.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.sso.Assignment.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -129,33 +129,33 @@ Any object.
 
 ---
 
-##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.Assignment.isOwnedResource"></a>
+##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.sso.Assignment.isOwnedResource"></a>
 
 ```typescript
-import { Assignment } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-Assignment.isOwnedResource(construct: IConstruct)
+sso.Assignment.isOwnedResource(construct: IConstruct)
 ```
 
 Returns true if the construct was created by CDK, and false otherwise.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Assignment.isOwnedResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.sso.Assignment.isOwnedResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `isResource` <a name="isResource" id="raindancers-network.Assignment.isResource"></a>
+##### `isResource` <a name="isResource" id="raindancers-network.sso.Assignment.isResource"></a>
 
 ```typescript
-import { Assignment } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-Assignment.isResource(construct: IConstruct)
+sso.Assignment.isResource(construct: IConstruct)
 ```
 
 Check whether the given construct is a Resource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.Assignment.isResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.sso.Assignment.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -165,13 +165,13 @@ Check whether the given construct is a Resource.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Assignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.Assignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#raindancers-network.Assignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.sso.Assignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.sso.Assignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.sso.Assignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.Assignment.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.sso.Assignment.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -183,7 +183,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.Assignment.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.sso.Assignment.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -202,7 +202,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.Assignment.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.sso.Assignment.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -215,41 +215,41 @@ The stack in which this resource is defined.
 ---
 
 
-### AssociateSharedResolverRule <a name="AssociateSharedResolverRule" id="raindancers-network.AssociateSharedResolverRule"></a>
+### AssociateSharedResolverRule <a name="AssociateSharedResolverRule" id="raindancers-network.dns.AssociateSharedResolverRule"></a>
 
 Associate a resolver rule that has been shared to this account.
 
-#### Initializers <a name="Initializers" id="raindancers-network.AssociateSharedResolverRule.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.AssociateSharedResolverRule.Initializer"></a>
 
 ```typescript
-import { AssociateSharedResolverRule } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new AssociateSharedResolverRule(scope: Construct, id: string, props: AssociateSharedResolverRuleProps)
+new dns.AssociateSharedResolverRule(scope: Construct, id: string, props: AssociateSharedResolverRuleProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AssociateSharedResolverRuleProps">AssociateSharedResolverRuleProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.AssociateSharedResolverRuleProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.AssociateSharedResolverRule.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.AssociateSharedResolverRule.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AssociateSharedResolverRuleProps">AssociateSharedResolverRuleProps</a>
+- *Type:* raindancers-network.dns.AssociateSharedResolverRuleProps
 
 ---
 
@@ -257,11 +257,11 @@ new AssociateSharedResolverRule(scope: Construct, id: string, props: AssociateSh
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.AssociateSharedResolverRule.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.AssociateSharedResolverRule.toString"></a>
 
 ```typescript
 public toString(): string
@@ -273,21 +273,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AssociateSharedResolverRule.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.AssociateSharedResolverRule.isConstruct"></a>
 
 ```typescript
-import { AssociateSharedResolverRule } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-AssociateSharedResolverRule.isConstruct(x: any)
+dns.AssociateSharedResolverRule.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AssociateSharedResolverRule.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.AssociateSharedResolverRule.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -299,11 +299,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AssociateSharedResolverRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AssociateSharedResolverRule.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.AssociateSharedResolverRule.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -316,30 +316,30 @@ The tree node.
 ---
 
 
-### AwsManagedDNSFirewallRuleGroup <a name="AwsManagedDNSFirewallRuleGroup" id="raindancers-network.AwsManagedDNSFirewallRuleGroup"></a>
+### AwsManagedDNSFirewallRuleGroup <a name="AwsManagedDNSFirewallRuleGroup" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.Initializer"></a>
 
 ```typescript
-import { AwsManagedDNSFirewallRuleGroup } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new AwsManagedDNSFirewallRuleGroup(scope: Construct, id: string)
+new dns.AwsManagedDNSFirewallRuleGroup(scope: Construct, id: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -349,11 +349,11 @@ new AwsManagedDNSFirewallRuleGroup(scope: Construct, id: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.toString"></a>
 
 ```typescript
 public toString(): string
@@ -365,21 +365,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.isConstruct"></a>
 
 ```typescript
-import { AwsManagedDNSFirewallRuleGroup } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-AwsManagedDNSFirewallRuleGroup.isConstruct(x: any)
+dns.AwsManagedDNSFirewallRuleGroup.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -391,12 +391,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId">resolverRuleId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId">resolverRuleId</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -408,7 +408,7 @@ The tree node.
 
 ---
 
-##### `resolverRuleId`<sup>Required</sup> <a name="resolverRuleId" id="raindancers-network.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId"></a>
+##### `resolverRuleId`<sup>Required</sup> <a name="resolverRuleId" id="raindancers-network.dns.AwsManagedDNSFirewallRuleGroup.property.resolverRuleId"></a>
 
 ```typescript
 public readonly resolverRuleId: string;
@@ -419,27 +419,27 @@ public readonly resolverRuleId: string;
 ---
 
 
-### AwsServiceEndPoints <a name="AwsServiceEndPoints" id="raindancers-network.AwsServiceEndPoints"></a>
+### AwsServiceEndPoints <a name="AwsServiceEndPoints" id="raindancers-network.endpoints.AwsServiceEndPoints"></a>
 
 Provisions a set of AWS Service Endpoints in a VPC.
 
-#### Initializers <a name="Initializers" id="raindancers-network.AwsServiceEndPoints.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.endpoints.AwsServiceEndPoints.Initializer"></a>
 
 ```typescript
-import { AwsServiceEndPoints } from 'raindancers-network'
+import { endpoints } from 'raindancers-network'
 
-new AwsServiceEndPoints(scope: Construct, id: string, props: AwsServiceEndPointsProps)
+new endpoints.AwsServiceEndPoints(scope: Construct, id: string, props: AwsServiceEndPointsProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope that this construct is created in. |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.id">id</a></code> | <code>string</code> | Id for the construct. |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.AwsServiceEndPointsProps">AwsServiceEndPointsProps</a></code> | AWSServiceEndpoints. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope that this construct is created in. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.id">id</a></code> | <code>string</code> | Id for the construct. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.props">props</a></code> | <code>raindancers-network.endpoints.AwsServiceEndPointsProps</code> | AWSServiceEndpoints. |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -447,7 +447,7 @@ The scope that this construct is created in.
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -455,9 +455,9 @@ Id for the construct.
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.AwsServiceEndPoints.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.endpoints.AwsServiceEndPoints.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AwsServiceEndPointsProps">AwsServiceEndPointsProps</a>
+- *Type:* raindancers-network.endpoints.AwsServiceEndPointsProps
 
 AWSServiceEndpoints.
 
@@ -467,11 +467,11 @@ AWSServiceEndpoints.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.AwsServiceEndPoints.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.endpoints.AwsServiceEndPoints.toString"></a>
 
 ```typescript
 public toString(): string
@@ -483,21 +483,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.AwsServiceEndPoints.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.endpoints.AwsServiceEndPoints.isConstruct"></a>
 
 ```typescript
-import { AwsServiceEndPoints } from 'raindancers-network'
+import { endpoints } from 'raindancers-network'
 
-AwsServiceEndPoints.isConstruct(x: any)
+endpoints.AwsServiceEndPoints.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.AwsServiceEndPoints.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.endpoints.AwsServiceEndPoints.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -509,11 +509,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AwsServiceEndPoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.AwsServiceEndPoints.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.endpoints.AwsServiceEndPoints.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -526,39 +526,39 @@ The tree node.
 ---
 
 
-### CentralAccountAssnRole <a name="CentralAccountAssnRole" id="raindancers-network.CentralAccountAssnRole"></a>
+### CentralAccountAssnRole <a name="CentralAccountAssnRole" id="raindancers-network.dns.CentralAccountAssnRole"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CentralAccountAssnRole.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.CentralAccountAssnRole.Initializer"></a>
 
 ```typescript
-import { CentralAccountAssnRole } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new CentralAccountAssnRole(scope: Construct, id: string, props: CentralAccountAssnRoleProps)
+new dns.CentralAccountAssnRole(scope: Construct, id: string, props: CentralAccountAssnRoleProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CentralAccountAssnRoleProps">CentralAccountAssnRoleProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.CentralAccountAssnRoleProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CentralAccountAssnRole.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.CentralAccountAssnRole.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CentralAccountAssnRoleProps">CentralAccountAssnRoleProps</a>
+- *Type:* raindancers-network.dns.CentralAccountAssnRoleProps
 
 ---
 
@@ -566,11 +566,11 @@ new CentralAccountAssnRole(scope: Construct, id: string, props: CentralAccountAs
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CentralAccountAssnRole.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.CentralAccountAssnRole.toString"></a>
 
 ```typescript
 public toString(): string
@@ -582,21 +582,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CentralAccountAssnRole.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.CentralAccountAssnRole.isConstruct"></a>
 
 ```typescript
-import { CentralAccountAssnRole } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-CentralAccountAssnRole.isConstruct(x: any)
+dns.CentralAccountAssnRole.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CentralAccountAssnRole.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.CentralAccountAssnRole.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -608,12 +608,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CentralAccountAssnRole.property.assnRole">assnRole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRole.property.assnRole">assnRole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CentralAccountAssnRole.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.CentralAccountAssnRole.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -625,7 +625,7 @@ The tree node.
 
 ---
 
-##### `assnRole`<sup>Required</sup> <a name="assnRole" id="raindancers-network.CentralAccountAssnRole.property.assnRole"></a>
+##### `assnRole`<sup>Required</sup> <a name="assnRole" id="raindancers-network.dns.CentralAccountAssnRole.property.assnRole"></a>
 
 ```typescript
 public readonly assnRole: Role;
@@ -636,39 +636,39 @@ public readonly assnRole: Role;
 ---
 
 
-### CentralResolverRules <a name="CentralResolverRules" id="raindancers-network.CentralResolverRules"></a>
+### CentralResolverRules <a name="CentralResolverRules" id="raindancers-network.dns.CentralResolverRules"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CentralResolverRules.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.CentralResolverRules.Initializer"></a>
 
 ```typescript
-import { CentralResolverRules } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new CentralResolverRules(scope: Construct, id: string, props: CentralResolverRulesProps)
+new dns.CentralResolverRules(scope: Construct, id: string, props: CentralResolverRulesProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralResolverRules.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CentralResolverRulesProps">CentralResolverRulesProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.CentralResolverRulesProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CentralResolverRules.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.CentralResolverRules.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CentralResolverRules.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.CentralResolverRules.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CentralResolverRules.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.CentralResolverRules.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CentralResolverRulesProps">CentralResolverRulesProps</a>
+- *Type:* raindancers-network.dns.CentralResolverRulesProps
 
 ---
 
@@ -676,11 +676,11 @@ new CentralResolverRules(scope: Construct, id: string, props: CentralResolverRul
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CentralResolverRules.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CentralResolverRules.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.CentralResolverRules.toString"></a>
 
 ```typescript
 public toString(): string
@@ -692,21 +692,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CentralResolverRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CentralResolverRules.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.CentralResolverRules.isConstruct"></a>
 
 ```typescript
-import { CentralResolverRules } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-CentralResolverRules.isConstruct(x: any)
+dns.CentralResolverRules.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CentralResolverRules.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.CentralResolverRules.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -718,11 +718,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralResolverRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.CentralResolverRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CentralResolverRules.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.CentralResolverRules.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -735,27 +735,27 @@ The tree node.
 ---
 
 
-### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.CloudWanTGW"></a>
+### CloudWanTGW <a name="CloudWanTGW" id="raindancers-network.cloudwan.CloudWanTGW"></a>
 
 Create a TransitGateway That is attached to Cloudwan.
 
-#### Initializers <a name="Initializers" id="raindancers-network.CloudWanTGW.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.cloudwan.CloudWanTGW.Initializer"></a>
 
 ```typescript
-import { CloudWanTGW } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-new CloudWanTGW(scope: Construct, id: string, props: TGWOnCloudWanProps)
+new cloudwan.CloudWanTGW(scope: Construct, id: string, props: TGWOnCloudWanProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which the resource is c. |
-| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CloudWanTGW.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.TGWOnCloudWanProps">TGWOnCloudWanProps</a></code> | TGWOnCloudWanProps. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which the resource is c. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.props">props</a></code> | <code>raindancers-network.cloudwan.TGWOnCloudWanProps</code> | TGWOnCloudWanProps. |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CloudWanTGW.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -763,15 +763,15 @@ scope in which the resource is c.
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CloudWanTGW.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CloudWanTGW.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CloudWanTGW.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.TGWOnCloudWanProps">TGWOnCloudWanProps</a>
+- *Type:* raindancers-network.cloudwan.TGWOnCloudWanProps
 
 TGWOnCloudWanProps.
 
@@ -781,14 +781,14 @@ TGWOnCloudWanProps.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CloudWanTGW.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.CloudWanTGW.addDXGateway">addDXGateway</a></code> | provision a DX Gateway and attach it to the transit gateway. |
-| <code><a href="#raindancers-network.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties. |
-| <code><a href="#raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation">createDirectConnectGatewayAssociation</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.addDXGateway">addDXGateway</a></code> | provision a DX Gateway and attach it to the transit gateway. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.adds2sVPN">adds2sVPN</a></code> | Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.createDirectConnectGatewayAssociation">createDirectConnectGatewayAssociation</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CloudWanTGW.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.cloudwan.CloudWanTGW.toString"></a>
 
 ```typescript
 public toString(): string
@@ -796,7 +796,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addDXGateway` <a name="addDXGateway" id="raindancers-network.CloudWanTGW.addDXGateway"></a>
+##### `addDXGateway` <a name="addDXGateway" id="raindancers-network.cloudwan.CloudWanTGW.addDXGateway"></a>
 
 ```typescript
 public addDXGateway(dxgatewayname: string, dxgatewayASN: number): string
@@ -804,7 +804,7 @@ public addDXGateway(dxgatewayname: string, dxgatewayASN: number): string
 
 provision a DX Gateway and attach it to the transit gateway.
 
-###### `dxgatewayname`<sup>Required</sup> <a name="dxgatewayname" id="raindancers-network.CloudWanTGW.addDXGateway.parameter.dxgatewayname"></a>
+###### `dxgatewayname`<sup>Required</sup> <a name="dxgatewayname" id="raindancers-network.cloudwan.CloudWanTGW.addDXGateway.parameter.dxgatewayname"></a>
 
 - *Type:* string
 
@@ -812,7 +812,7 @@ The name of the dxgateway.
 
 ---
 
-###### `dxgatewayASN`<sup>Required</sup> <a name="dxgatewayASN" id="raindancers-network.CloudWanTGW.addDXGateway.parameter.dxgatewayASN"></a>
+###### `dxgatewayASN`<sup>Required</sup> <a name="dxgatewayASN" id="raindancers-network.cloudwan.CloudWanTGW.addDXGateway.parameter.dxgatewayASN"></a>
 
 - *Type:* number
 
@@ -820,7 +820,7 @@ An ASN for the Dxgateway.
 
 ---
 
-##### `adds2sVPN` <a name="adds2sVPN" id="raindancers-network.CloudWanTGW.adds2sVPN"></a>
+##### `adds2sVPN` <a name="adds2sVPN" id="raindancers-network.cloudwan.CloudWanTGW.adds2sVPN"></a>
 
 ```typescript
 public adds2sVPN(name: string, vpnprops: VpnProps): void
@@ -828,7 +828,7 @@ public adds2sVPN(name: string, vpnprops: VpnProps): void
 
 Creates a Site To Site IPSec VPN between the Transit Gateway and Customer Gateway, using a defined set of VPn Properties.
 
-###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CloudWanTGW.adds2sVPN.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.cloudwan.CloudWanTGW.adds2sVPN.parameter.name"></a>
 
 - *Type:* string
 
@@ -836,21 +836,21 @@ A name to identify the vpn.
 
 ---
 
-###### `vpnprops`<sup>Required</sup> <a name="vpnprops" id="raindancers-network.CloudWanTGW.adds2sVPN.parameter.vpnprops"></a>
+###### `vpnprops`<sup>Required</sup> <a name="vpnprops" id="raindancers-network.cloudwan.CloudWanTGW.adds2sVPN.parameter.vpnprops"></a>
 
-- *Type:* <a href="#raindancers-network.VpnProps">VpnProps</a>
+- *Type:* raindancers-network.cloudwan.VpnProps
 
 the vpn properties.
 
 ---
 
-##### `createDirectConnectGatewayAssociation` <a name="createDirectConnectGatewayAssociation" id="raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation"></a>
+##### `createDirectConnectGatewayAssociation` <a name="createDirectConnectGatewayAssociation" id="raindancers-network.cloudwan.CloudWanTGW.createDirectConnectGatewayAssociation"></a>
 
 ```typescript
 public createDirectConnectGatewayAssociation(dxgatewayId: string): string
 ```
 
-###### `dxgatewayId`<sup>Required</sup> <a name="dxgatewayId" id="raindancers-network.CloudWanTGW.createDirectConnectGatewayAssociation.parameter.dxgatewayId"></a>
+###### `dxgatewayId`<sup>Required</sup> <a name="dxgatewayId" id="raindancers-network.cloudwan.CloudWanTGW.createDirectConnectGatewayAssociation.parameter.dxgatewayId"></a>
 
 - *Type:* string
 
@@ -862,21 +862,21 @@ Id of a DX gateway that.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CloudWanTGW.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CloudWanTGW.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.cloudwan.CloudWanTGW.isConstruct"></a>
 
 ```typescript
-import { CloudWanTGW } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-CloudWanTGW.isConstruct(x: any)
+cloudwan.CloudWanTGW.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CloudWanTGW.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.cloudwan.CloudWanTGW.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -888,15 +888,15 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CloudWanTGW.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId">cloudwanTgAttachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and the cloudwan. |
-| <code><a href="#raindancers-network.CloudWanTGW.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | The created Transit Gateway. |
-| <code><a href="#raindancers-network.CloudWanTGW.property.tgcidr">tgcidr</a></code> | <code>string[]</code> | The Cidr Ranges assigned to the transit Gateway. |
-| <code><a href="#raindancers-network.CloudWanTGW.property.tgDXattachmentId">tgDXattachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and DX ( if any ). |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.property.cloudwanTgAttachmentId">cloudwanTgAttachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and the cloudwan. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | The created Transit Gateway. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.property.tgcidr">tgcidr</a></code> | <code>string[]</code> | The Cidr Ranges assigned to the transit Gateway. |
+| <code><a href="#raindancers-network.cloudwan.CloudWanTGW.property.tgDXattachmentId">tgDXattachmentId</a></code> | <code>string</code> | the AttachmentId between the Transit Gateway and DX ( if any ). |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CloudWanTGW.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.cloudwan.CloudWanTGW.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -908,7 +908,7 @@ The tree node.
 
 ---
 
-##### `cloudwanTgAttachmentId`<sup>Required</sup> <a name="cloudwanTgAttachmentId" id="raindancers-network.CloudWanTGW.property.cloudwanTgAttachmentId"></a>
+##### `cloudwanTgAttachmentId`<sup>Required</sup> <a name="cloudwanTgAttachmentId" id="raindancers-network.cloudwan.CloudWanTGW.property.cloudwanTgAttachmentId"></a>
 
 ```typescript
 public readonly cloudwanTgAttachmentId: string;
@@ -920,7 +920,7 @@ the AttachmentId between the Transit Gateway and the cloudwan.
 
 ---
 
-##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.CloudWanTGW.property.transitGateway"></a>
+##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.cloudwan.CloudWanTGW.property.transitGateway"></a>
 
 ```typescript
 public readonly transitGateway: CfnTransitGateway;
@@ -932,7 +932,7 @@ The created Transit Gateway.
 
 ---
 
-##### `tgcidr`<sup>Optional</sup> <a name="tgcidr" id="raindancers-network.CloudWanTGW.property.tgcidr"></a>
+##### `tgcidr`<sup>Optional</sup> <a name="tgcidr" id="raindancers-network.cloudwan.CloudWanTGW.property.tgcidr"></a>
 
 ```typescript
 public readonly tgcidr: string[];
@@ -944,7 +944,7 @@ The Cidr Ranges assigned to the transit Gateway.
 
 ---
 
-##### `tgDXattachmentId`<sup>Optional</sup> <a name="tgDXattachmentId" id="raindancers-network.CloudWanTGW.property.tgDXattachmentId"></a>
+##### `tgDXattachmentId`<sup>Optional</sup> <a name="tgDXattachmentId" id="raindancers-network.cloudwan.CloudWanTGW.property.tgDXattachmentId"></a>
 
 ```typescript
 public readonly tgDXattachmentId: string;
@@ -957,39 +957,39 @@ the AttachmentId between the Transit Gateway and DX ( if any ).
 ---
 
 
-### ConditionalForwarder <a name="ConditionalForwarder" id="raindancers-network.ConditionalForwarder"></a>
+### ConditionalForwarder <a name="ConditionalForwarder" id="raindancers-network.dns.ConditionalForwarder"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.ConditionalForwarder.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.ConditionalForwarder.Initializer"></a>
 
 ```typescript
-import { ConditionalForwarder } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new ConditionalForwarder(scope: Construct, id: string, props: ConditionalForwarderProps)
+new dns.ConditionalForwarder(scope: Construct, id: string, props: ConditionalForwarderProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionalForwarder.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ConditionalForwarderProps">ConditionalForwarderProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.ConditionalForwarderProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ConditionalForwarder.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.ConditionalForwarder.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ConditionalForwarder.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.ConditionalForwarder.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ConditionalForwarder.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.ConditionalForwarder.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.ConditionalForwarderProps">ConditionalForwarderProps</a>
+- *Type:* raindancers-network.dns.ConditionalForwarderProps
 
 ---
 
@@ -997,11 +997,11 @@ new ConditionalForwarder(scope: Construct, id: string, props: ConditionalForward
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ConditionalForwarder.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.ConditionalForwarder.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.ConditionalForwarder.toString"></a>
 
 ```typescript
 public toString(): string
@@ -1013,21 +1013,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ConditionalForwarder.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ConditionalForwarder.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.ConditionalForwarder.isConstruct"></a>
 
 ```typescript
-import { ConditionalForwarder } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-ConditionalForwarder.isConstruct(x: any)
+dns.ConditionalForwarder.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ConditionalForwarder.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.ConditionalForwarder.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -1039,11 +1039,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ConditionalForwarder.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.ConditionalForwarder.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ConditionalForwarder.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.ConditionalForwarder.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -1056,41 +1056,41 @@ The tree node.
 ---
 
 
-### CoreNetwork <a name="CoreNetwork" id="raindancers-network.CoreNetwork"></a>
+### CoreNetwork <a name="CoreNetwork" id="raindancers-network.cloudwan.CoreNetwork"></a>
 
 Create a CoreNework for a Cloudwan.
 
-#### Initializers <a name="Initializers" id="raindancers-network.CoreNetwork.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.cloudwan.CoreNetwork.Initializer"></a>
 
 ```typescript
-import { CoreNetwork } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-new CoreNetwork(scope: Construct, id: string, props: CoreNetworkProps)
+new cloudwan.CoreNetwork(scope: Construct, id: string, props: CoreNetworkProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetwork.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CoreNetworkProps">CoreNetworkProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.props">props</a></code> | <code>raindancers-network.cloudwan.CoreNetworkProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CoreNetwork.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CoreNetwork.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetwork.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CoreNetworkProps">CoreNetworkProps</a>
+- *Type:* raindancers-network.cloudwan.CoreNetworkProps
 
 ---
 
@@ -1098,14 +1098,14 @@ new CoreNetwork(scope: Construct, id: string, props: CoreNetworkProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CoreNetwork.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.CoreNetwork.addSegment">addSegment</a></code> | Add a segment to the core network. |
-| <code><a href="#raindancers-network.CoreNetwork.share">share</a></code> | Create a CoreNetwork Sharing. |
-| <code><a href="#raindancers-network.CoreNetwork.updatePolicy">updatePolicy</a></code> | Update the corewan policy after actions, segments are added. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.addSegment">addSegment</a></code> | Add a segment to the core network. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.share">share</a></code> | Create a CoreNetwork Sharing. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.updatePolicy">updatePolicy</a></code> | Update the corewan policy after actions, segments are added. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CoreNetwork.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.cloudwan.CoreNetwork.toString"></a>
 
 ```typescript
 public toString(): string
@@ -1113,7 +1113,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addSegment` <a name="addSegment" id="raindancers-network.CoreNetwork.addSegment"></a>
+##### `addSegment` <a name="addSegment" id="raindancers-network.cloudwan.CoreNetwork.addSegment"></a>
 
 ```typescript
 public addSegment(props: Segment): CoreNetworkSegment
@@ -1121,15 +1121,15 @@ public addSegment(props: Segment): CoreNetworkSegment
 
 Add a segment to the core network.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.addSegment.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetwork.addSegment.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.Segment">Segment</a>
+- *Type:* raindancers-network.cloudwan.Segment
 
 properties of the segment.
 
 ---
 
-##### `share` <a name="share" id="raindancers-network.CoreNetwork.share"></a>
+##### `share` <a name="share" id="raindancers-network.cloudwan.CoreNetwork.share"></a>
 
 ```typescript
 public share(props: CoreNetworkShare): void
@@ -1137,15 +1137,15 @@ public share(props: CoreNetworkShare): void
 
 Create a CoreNetwork Sharing.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetwork.share.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetwork.share.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CoreNetworkShare">CoreNetworkShare</a>
+- *Type:* raindancers-network.cloudwan.CoreNetworkShare
 
 Share properties.
 
 ---
 
-##### `updatePolicy` <a name="updatePolicy" id="raindancers-network.CoreNetwork.updatePolicy"></a>
+##### `updatePolicy` <a name="updatePolicy" id="raindancers-network.cloudwan.CoreNetwork.updatePolicy"></a>
 
 ```typescript
 public updatePolicy(): void
@@ -1157,21 +1157,21 @@ Update the corewan policy after actions, segments are added.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CoreNetwork.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CoreNetwork.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.cloudwan.CoreNetwork.isConstruct"></a>
 
 ```typescript
-import { CoreNetwork } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-CoreNetwork.isConstruct(x: any)
+cloudwan.CoreNetwork.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CoreNetwork.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.cloudwan.CoreNetwork.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -1183,17 +1183,17 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetwork.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CoreNetwork.property.cfnCoreNetwork">cfnCoreNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnCoreNetwork</code> | The corenetwork object. |
-| <code><a href="#raindancers-network.CoreNetwork.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetwork.property.policyTable">policyTable</a></code> | <code>aws-cdk-lib.aws_dynamodb.Table</code> | THe dynamo table holding the policy. |
-| <code><a href="#raindancers-network.CoreNetwork.property.policyTableName">policyTableName</a></code> | <code>string</code> | Name of the Dynamo Table holding the policy. |
-| <code><a href="#raindancers-network.CoreNetwork.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | The policyTable Lamba's Service Token. |
-| <code><a href="#raindancers-network.CoreNetwork.property.updateProviderToken">updateProviderToken</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.cfnCoreNetwork">cfnCoreNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnCoreNetwork</code> | The corenetwork object. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.policyTable">policyTable</a></code> | <code>aws-cdk-lib.aws_dynamodb.Table</code> | THe dynamo table holding the policy. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.policyTableName">policyTableName</a></code> | <code>string</code> | Name of the Dynamo Table holding the policy. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | The policyTable Lamba's Service Token. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetwork.property.updateProviderToken">updateProviderToken</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CoreNetwork.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.cloudwan.CoreNetwork.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -1205,7 +1205,7 @@ The tree node.
 
 ---
 
-##### `cfnCoreNetwork`<sup>Required</sup> <a name="cfnCoreNetwork" id="raindancers-network.CoreNetwork.property.cfnCoreNetwork"></a>
+##### `cfnCoreNetwork`<sup>Required</sup> <a name="cfnCoreNetwork" id="raindancers-network.cloudwan.CoreNetwork.property.cfnCoreNetwork"></a>
 
 ```typescript
 public readonly cfnCoreNetwork: CfnCoreNetwork;
@@ -1217,7 +1217,7 @@ The corenetwork object.
 
 ---
 
-##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.CoreNetwork.property.coreName"></a>
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.cloudwan.CoreNetwork.property.coreName"></a>
 
 ```typescript
 public readonly coreName: string;
@@ -1227,7 +1227,7 @@ public readonly coreName: string;
 
 ---
 
-##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.CoreNetwork.property.policyTable"></a>
+##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.cloudwan.CoreNetwork.property.policyTable"></a>
 
 ```typescript
 public readonly policyTable: Table;
@@ -1239,7 +1239,7 @@ THe dynamo table holding the policy.
 
 ---
 
-##### `policyTableName`<sup>Required</sup> <a name="policyTableName" id="raindancers-network.CoreNetwork.property.policyTableName"></a>
+##### `policyTableName`<sup>Required</sup> <a name="policyTableName" id="raindancers-network.cloudwan.CoreNetwork.property.policyTableName"></a>
 
 ```typescript
 public readonly policyTableName: string;
@@ -1251,7 +1251,7 @@ Name of the Dynamo Table holding the policy.
 
 ---
 
-##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.CoreNetwork.property.policyTableServiceToken"></a>
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.cloudwan.CoreNetwork.property.policyTableServiceToken"></a>
 
 ```typescript
 public readonly policyTableServiceToken: string;
@@ -1263,7 +1263,7 @@ The policyTable Lamba's Service Token.
 
 ---
 
-##### `updateProviderToken`<sup>Required</sup> <a name="updateProviderToken" id="raindancers-network.CoreNetwork.property.updateProviderToken"></a>
+##### `updateProviderToken`<sup>Required</sup> <a name="updateProviderToken" id="raindancers-network.cloudwan.CoreNetwork.property.updateProviderToken"></a>
 
 ```typescript
 public readonly updateProviderToken: string;
@@ -1274,41 +1274,41 @@ public readonly updateProviderToken: string;
 ---
 
 
-### CoreNetworkSegment <a name="CoreNetworkSegment" id="raindancers-network.CoreNetworkSegment"></a>
+### CoreNetworkSegment <a name="CoreNetworkSegment" id="raindancers-network.cloudwan.CoreNetworkSegment"></a>
 
 Create a Network Segment in a core network.
 
-#### Initializers <a name="Initializers" id="raindancers-network.CoreNetworkSegment.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.cloudwan.CoreNetworkSegment.Initializer"></a>
 
 ```typescript
-import { CoreNetworkSegment } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-new CoreNetworkSegment(scope: Construct, id: string, props: ICoreNetworkSegmentProps)
+new cloudwan.CoreNetworkSegment(scope: Construct, id: string, props: ICoreNetworkSegmentProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetworkSegment.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.props">props</a></code> | <code>raindancers-network.cloudwan.ICoreNetworkSegmentProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetworkSegment.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a>
+- *Type:* raindancers-network.cloudwan.ICoreNetworkSegmentProps
 
 ---
 
@@ -1316,15 +1316,15 @@ new CoreNetworkSegment(scope: Construct, id: string, props: ICoreNetworkSegmentP
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkSegment.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.CoreNetworkSegment.addAttachmentPolicy">addAttachmentPolicy</a></code> | Add an AttachmentPolicy to a segment. |
-| <code><a href="#raindancers-network.CoreNetworkSegment.addSegmentAction">addSegmentAction</a></code> | Add an Action to the Segment, ( Share or Route ). |
-| <code><a href="#raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy">addSimpleAttachmentPolicy</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetworkSegment.addSimpleShareAction">addSimpleShareAction</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.addAttachmentPolicy">addAttachmentPolicy</a></code> | Add an AttachmentPolicy to a segment. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.addSegmentAction">addSegmentAction</a></code> | Add an Action to the Segment, ( Share or Route ). |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.addSimpleAttachmentPolicy">addSimpleAttachmentPolicy</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.addSimpleShareAction">addSimpleShareAction</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CoreNetworkSegment.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.cloudwan.CoreNetworkSegment.toString"></a>
 
 ```typescript
 public toString(): string
@@ -1332,7 +1332,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addAttachmentPolicy` <a name="addAttachmentPolicy" id="raindancers-network.CoreNetworkSegment.addAttachmentPolicy"></a>
+##### `addAttachmentPolicy` <a name="addAttachmentPolicy" id="raindancers-network.cloudwan.CoreNetworkSegment.addAttachmentPolicy"></a>
 
 ```typescript
 public addAttachmentPolicy(props: AttachmentPolicy): void
@@ -1340,15 +1340,15 @@ public addAttachmentPolicy(props: AttachmentPolicy): void
 
 Add an AttachmentPolicy to a segment.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addAttachmentPolicy.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetworkSegment.addAttachmentPolicy.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AttachmentPolicy">AttachmentPolicy</a>
+- *Type:* raindancers-network.cloudwan.AttachmentPolicy
 
 An attachment policy.
 
 ---
 
-##### `addSegmentAction` <a name="addSegmentAction" id="raindancers-network.CoreNetworkSegment.addSegmentAction"></a>
+##### `addSegmentAction` <a name="addSegmentAction" id="raindancers-network.cloudwan.CoreNetworkSegment.addSegmentAction"></a>
 
 ```typescript
 public addSegmentAction(props: SegmentAction): void
@@ -1356,35 +1356,35 @@ public addSegmentAction(props: SegmentAction): void
 
 Add an Action to the Segment, ( Share or Route ).
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSegmentAction.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetworkSegment.addSegmentAction.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.SegmentAction">SegmentAction</a>
+- *Type:* raindancers-network.cloudwan.SegmentAction
 
 segment action.
 
 ---
 
-##### `addSimpleAttachmentPolicy` <a name="addSimpleAttachmentPolicy" id="raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy"></a>
+##### `addSimpleAttachmentPolicy` <a name="addSimpleAttachmentPolicy" id="raindancers-network.cloudwan.CoreNetworkSegment.addSimpleAttachmentPolicy"></a>
 
 ```typescript
 public addSimpleAttachmentPolicy(props: SimpleAttachmentPolicyProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSimpleAttachmentPolicy.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetworkSegment.addSimpleAttachmentPolicy.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.SimpleAttachmentPolicyProps">SimpleAttachmentPolicyProps</a>
+- *Type:* raindancers-network.cloudwan.SimpleAttachmentPolicyProps
 
 ---
 
-##### `addSimpleShareAction` <a name="addSimpleShareAction" id="raindancers-network.CoreNetworkSegment.addSimpleShareAction"></a>
+##### `addSimpleShareAction` <a name="addSimpleShareAction" id="raindancers-network.cloudwan.CoreNetworkSegment.addSimpleShareAction"></a>
 
 ```typescript
 public addSimpleShareAction(props: SimpleShareActionProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CoreNetworkSegment.addSimpleShareAction.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.cloudwan.CoreNetworkSegment.addSimpleShareAction.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.SimpleShareActionProps">SimpleShareActionProps</a>
+- *Type:* raindancers-network.cloudwan.SimpleShareActionProps
 
 ---
 
@@ -1392,21 +1392,21 @@ public addSimpleShareAction(props: SimpleShareActionProps): void
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkSegment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CoreNetworkSegment.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.cloudwan.CoreNetworkSegment.isConstruct"></a>
 
 ```typescript
-import { CoreNetworkSegment } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-CoreNetworkSegment.isConstruct(x: any)
+cloudwan.CoreNetworkSegment.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CoreNetworkSegment.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.cloudwan.CoreNetworkSegment.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -1418,13 +1418,13 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkSegment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CoreNetworkSegment.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | Service token for. |
-| <code><a href="#raindancers-network.CoreNetworkSegment.property.segmentName">segmentName</a></code> | <code>string</code> | the name for the segment. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | Service token for. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkSegment.property.segmentName">segmentName</a></code> | <code>string</code> | the name for the segment. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CoreNetworkSegment.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.cloudwan.CoreNetworkSegment.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -1436,7 +1436,7 @@ The tree node.
 
 ---
 
-##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.CoreNetworkSegment.property.policyTableServiceToken"></a>
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.cloudwan.CoreNetworkSegment.property.policyTableServiceToken"></a>
 
 ```typescript
 public readonly policyTableServiceToken: string;
@@ -1448,7 +1448,7 @@ Service token for.
 
 ---
 
-##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.CoreNetworkSegment.property.segmentName"></a>
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.cloudwan.CoreNetworkSegment.property.segmentName"></a>
 
 ```typescript
 public readonly segmentName: string;
@@ -1815,39 +1815,39 @@ public readonly role: Role;
 ---
 
 
-### CrossRegionParameterReader <a name="CrossRegionParameterReader" id="raindancers-network.CrossRegionParameterReader"></a>
+### CrossRegionParameterReader <a name="CrossRegionParameterReader" id="raindancers-network.ssm.CrossRegionParameterReader"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterReader.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ssm.CrossRegionParameterReader.Initializer"></a>
 
 ```typescript
-import { CrossRegionParameterReader } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-new CrossRegionParameterReader(scope: Construct, name: string, props: CrossRegionParameterReaderProps)
+new ssm.CrossRegionParameterReader(scope: Construct, name: string, props: CrossRegionParameterReaderProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrossRegionParameterReaderProps">CrossRegionParameterReaderProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ssm.CrossRegionParameterReaderProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.name"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrossRegionParameterReader.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ssm.CrossRegionParameterReader.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CrossRegionParameterReaderProps">CrossRegionParameterReaderProps</a>
+- *Type:* raindancers-network.ssm.CrossRegionParameterReaderProps
 
 ---
 
@@ -1855,14 +1855,14 @@ new CrossRegionParameterReader(scope: Construct, name: string, props: CrossRegio
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.getResponseField">getResponseField</a></code> | Returns response data for the AWS SDK call as string. |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.getResponseFieldReference">getResponseFieldReference</a></code> | Returns response data for the AWS SDK call. |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.parameterValue">parameterValue</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.getResponseField">getResponseField</a></code> | Returns response data for the AWS SDK call as string. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.getResponseFieldReference">getResponseFieldReference</a></code> | Returns response data for the AWS SDK call. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.parameterValue">parameterValue</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrossRegionParameterReader.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ssm.CrossRegionParameterReader.toString"></a>
 
 ```typescript
 public toString(): string
@@ -1870,7 +1870,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `getResponseField` <a name="getResponseField" id="raindancers-network.CrossRegionParameterReader.getResponseField"></a>
+##### `getResponseField` <a name="getResponseField" id="raindancers-network.ssm.CrossRegionParameterReader.getResponseField"></a>
 
 ```typescript
 public getResponseField(dataPath: string): string
@@ -1884,7 +1884,7 @@ Note that you cannot use this method if `ignoreErrorCodesMatching`
 is configured for any of the SDK calls. This is because in such a case,
 the response data might not exist, and will cause a CloudFormation deploy time error.
 
-###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.CrossRegionParameterReader.getResponseField.parameter.dataPath"></a>
+###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.ssm.CrossRegionParameterReader.getResponseField.parameter.dataPath"></a>
 
 - *Type:* string
 
@@ -1892,7 +1892,7 @@ the path to the data.
 
 ---
 
-##### `getResponseFieldReference` <a name="getResponseFieldReference" id="raindancers-network.CrossRegionParameterReader.getResponseFieldReference"></a>
+##### `getResponseFieldReference` <a name="getResponseFieldReference" id="raindancers-network.ssm.CrossRegionParameterReader.getResponseFieldReference"></a>
 
 ```typescript
 public getResponseFieldReference(dataPath: string): Reference
@@ -1909,7 +1909,7 @@ Note that you cannot use this method if `ignoreErrorCodesMatching`
 is configured for any of the SDK calls. This is because in such a case,
 the response data might not exist, and will cause a CloudFormation deploy time error.
 
-###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.CrossRegionParameterReader.getResponseFieldReference.parameter.dataPath"></a>
+###### `dataPath`<sup>Required</sup> <a name="dataPath" id="raindancers-network.ssm.CrossRegionParameterReader.getResponseFieldReference.parameter.dataPath"></a>
 
 - *Type:* string
 
@@ -1917,7 +1917,7 @@ the path to the data.
 
 ---
 
-##### `parameterValue` <a name="parameterValue" id="raindancers-network.CrossRegionParameterReader.parameterValue"></a>
+##### `parameterValue` <a name="parameterValue" id="raindancers-network.ssm.CrossRegionParameterReader.parameterValue"></a>
 
 ```typescript
 public parameterValue(): string
@@ -1927,21 +1927,21 @@ public parameterValue(): string
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrossRegionParameterReader.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ssm.CrossRegionParameterReader.isConstruct"></a>
 
 ```typescript
-import { CrossRegionParameterReader } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-CrossRegionParameterReader.isConstruct(x: any)
+ssm.CrossRegionParameterReader.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrossRegionParameterReader.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ssm.CrossRegionParameterReader.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -1953,12 +1953,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrossRegionParameterReader.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ssm.CrossRegionParameterReader.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -1970,7 +1970,7 @@ The tree node.
 
 ---
 
-##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="raindancers-network.CrossRegionParameterReader.property.grantPrincipal"></a>
+##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="raindancers-network.ssm.CrossRegionParameterReader.property.grantPrincipal"></a>
 
 ```typescript
 public readonly grantPrincipal: IPrincipal;
@@ -1986,11 +1986,11 @@ The principal to grant permissions to.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID">PROVIDER_FUNCTION_UUID</a></code> | <code>string</code> | The uuid of the custom resource provider singleton lambda function. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID">PROVIDER_FUNCTION_UUID</a></code> | <code>string</code> | The uuid of the custom resource provider singleton lambda function. |
 
 ---
 
-##### `PROVIDER_FUNCTION_UUID`<sup>Required</sup> <a name="PROVIDER_FUNCTION_UUID" id="raindancers-network.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID"></a>
+##### `PROVIDER_FUNCTION_UUID`<sup>Required</sup> <a name="PROVIDER_FUNCTION_UUID" id="raindancers-network.ssm.CrossRegionParameterReader.property.PROVIDER_FUNCTION_UUID"></a>
 
 ```typescript
 public readonly PROVIDER_FUNCTION_UUID: string;
@@ -2002,39 +2002,39 @@ The uuid of the custom resource provider singleton lambda function.
 
 ---
 
-### CrossRegionParameterWriter <a name="CrossRegionParameterWriter" id="raindancers-network.CrossRegionParameterWriter"></a>
+### CrossRegionParameterWriter <a name="CrossRegionParameterWriter" id="raindancers-network.ssm.CrossRegionParameterWriter"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CrossRegionParameterWriter.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ssm.CrossRegionParameterWriter.Initializer"></a>
 
 ```typescript
-import { CrossRegionParameterWriter } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-new CrossRegionParameterWriter(scope: Construct, id: string, props: CrossRegionParameterWriterProps)
+new ssm.CrossRegionParameterWriter(scope: Construct, id: string, props: CrossRegionParameterWriterProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrossRegionParameterWriterProps">CrossRegionParameterWriterProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ssm.CrossRegionParameterWriterProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrossRegionParameterWriter.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ssm.CrossRegionParameterWriter.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CrossRegionParameterWriterProps">CrossRegionParameterWriterProps</a>
+- *Type:* raindancers-network.ssm.CrossRegionParameterWriterProps
 
 ---
 
@@ -2042,11 +2042,11 @@ new CrossRegionParameterWriter(scope: Construct, id: string, props: CrossRegionP
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrossRegionParameterWriter.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ssm.CrossRegionParameterWriter.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2058,21 +2058,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrossRegionParameterWriter.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ssm.CrossRegionParameterWriter.isConstruct"></a>
 
 ```typescript
-import { CrossRegionParameterWriter } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-CrossRegionParameterWriter.isConstruct(x: any)
+ssm.CrossRegionParameterWriter.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrossRegionParameterWriter.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ssm.CrossRegionParameterWriter.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2084,11 +2084,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterWriter.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriter.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrossRegionParameterWriter.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ssm.CrossRegionParameterWriter.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2101,41 +2101,41 @@ The tree node.
 ---
 
 
-### CrowdStrikeExtendedEndpoint <a name="CrowdStrikeExtendedEndpoint" id="raindancers-network.CrowdStrikeExtendedEndpoint"></a>
+### CrowdStrikeExtendedEndpoint <a name="CrowdStrikeExtendedEndpoint" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint"></a>
 
 This will.
 
-#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer"></a>
 
 ```typescript
-import { CrowdStrikeExtendedEndpoint } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-new CrowdStrikeExtendedEndpoint(scope: Construct, id: string, props: CrowdStrikeExtendedEndpointProps)
+new crowdstrike.CrowdStrikeExtendedEndpoint(scope: Construct, id: string, props: CrowdStrikeExtendedEndpointProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps">CrowdStrikeExtendedEndpointProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.props">props</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikeExtendedEndpoint.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeExtendedEndpointProps">CrowdStrikeExtendedEndpointProps</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps
 
 ---
 
@@ -2143,11 +2143,11 @@ new CrowdStrikeExtendedEndpoint(scope: Construct, id: string, props: CrowdStrike
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrowdStrikeExtendedEndpoint.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2159,21 +2159,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.isConstruct"></a>
 
 ```typescript
-import { CrowdStrikeExtendedEndpoint } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-CrowdStrikeExtendedEndpoint.isConstruct(x: any)
+crowdstrike.CrowdStrikeExtendedEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikeExtendedEndpoint.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2185,17 +2185,17 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone">downloadZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZoneName">downloadZoneName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone">proxyZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZoneName">proxyZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.downloadZone">downloadZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.downloadZoneName">downloadZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxyZone">proxyZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxyZoneName">proxyZoneName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2207,7 +2207,7 @@ The tree node.
 
 ---
 
-##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.download"></a>
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.download"></a>
 
 ```typescript
 public readonly download: string;
@@ -2217,7 +2217,7 @@ public readonly download: string;
 
 ---
 
-##### `downloadZone`<sup>Required</sup> <a name="downloadZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZone"></a>
+##### `downloadZone`<sup>Required</sup> <a name="downloadZone" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.downloadZone"></a>
 
 ```typescript
 public readonly downloadZone: string;
@@ -2227,7 +2227,7 @@ public readonly downloadZone: string;
 
 ---
 
-##### `downloadZoneName`<sup>Required</sup> <a name="downloadZoneName" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.downloadZoneName"></a>
+##### `downloadZoneName`<sup>Required</sup> <a name="downloadZoneName" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.downloadZoneName"></a>
 
 ```typescript
 public readonly downloadZoneName: string;
@@ -2237,7 +2237,7 @@ public readonly downloadZoneName: string;
 
 ---
 
-##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxy"></a>
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxy"></a>
 
 ```typescript
 public readonly proxy: string;
@@ -2247,7 +2247,7 @@ public readonly proxy: string;
 
 ---
 
-##### `proxyZone`<sup>Required</sup> <a name="proxyZone" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZone"></a>
+##### `proxyZone`<sup>Required</sup> <a name="proxyZone" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxyZone"></a>
 
 ```typescript
 public readonly proxyZone: string;
@@ -2257,7 +2257,7 @@ public readonly proxyZone: string;
 
 ---
 
-##### `proxyZoneName`<sup>Required</sup> <a name="proxyZoneName" id="raindancers-network.CrowdStrikeExtendedEndpoint.property.proxyZoneName"></a>
+##### `proxyZoneName`<sup>Required</sup> <a name="proxyZoneName" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpoint.property.proxyZoneName"></a>
 
 ```typescript
 public readonly proxyZoneName: string;
@@ -2268,39 +2268,39 @@ public readonly proxyZoneName: string;
 ---
 
 
-### CrowdStrikeNLB <a name="CrowdStrikeNLB" id="raindancers-network.CrowdStrikeNLB"></a>
+### CrowdStrikeNLB <a name="CrowdStrikeNLB" id="raindancers-network.crowdstrike.CrowdStrikeNLB"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikeNLB.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer"></a>
 
 ```typescript
-import { CrowdStrikeNLB } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-new CrowdStrikeNLB(scope: Construct, id: string, props: CrowdStrikeNLBProps)
+new crowdstrike.CrowdStrikeNLB(scope: Construct, id: string, props: CrowdStrikeNLBProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikeNLBProps">CrowdStrikeNLBProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.props">props</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeNLBProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikeNLB.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.crowdstrike.CrowdStrikeNLB.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeNLBProps">CrowdStrikeNLBProps</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeNLBProps
 
 ---
 
@@ -2308,11 +2308,11 @@ new CrowdStrikeNLB(scope: Construct, id: string, props: CrowdStrikeNLBProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrowdStrikeNLB.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.crowdstrike.CrowdStrikeNLB.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2324,21 +2324,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikeNLB.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.crowdstrike.CrowdStrikeNLB.isConstruct"></a>
 
 ```typescript
-import { CrowdStrikeNLB } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-CrowdStrikeNLB.isConstruct(x: any)
+crowdstrike.CrowdStrikeNLB.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikeNLB.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.crowdstrike.CrowdStrikeNLB.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2350,11 +2350,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLB.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLB.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikeNLB.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.crowdstrike.CrowdStrikeNLB.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2367,39 +2367,39 @@ The tree node.
 ---
 
 
-### CrowdStrikePrivateLinkEndpoint <a name="CrowdStrikePrivateLinkEndpoint" id="raindancers-network.CrowdStrikePrivateLinkEndpoint"></a>
+### CrowdStrikePrivateLinkEndpoint <a name="CrowdStrikePrivateLinkEndpoint" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer"></a>
 
 ```typescript
-import { CrowdStrikePrivateLinkEndpoint } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-new CrowdStrikePrivateLinkEndpoint(scope: Construct, id: string, props: CrowdStrikePrivateLinkEndpointProps)
+new crowdstrike.CrowdStrikePrivateLinkEndpoint(scope: Construct, id: string, props: CrowdStrikePrivateLinkEndpointProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps">CrowdStrikePrivateLinkEndpointProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props">props</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps">CrowdStrikePrivateLinkEndpointProps</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps
 
 ---
 
@@ -2407,11 +2407,11 @@ new CrowdStrikePrivateLinkEndpoint(scope: Construct, id: string, props: CrowdStr
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2423,21 +2423,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.isConstruct"></a>
 
 ```typescript
-import { CrowdStrikePrivateLinkEndpoint } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-CrowdStrikePrivateLinkEndpoint.isConstruct(x: any)
+crowdstrike.CrowdStrikePrivateLinkEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2449,17 +2449,17 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2471,7 +2471,7 @@ The tree node.
 
 ---
 
-##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.download"></a>
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.download"></a>
 
 ```typescript
 public readonly download: string;
@@ -2481,7 +2481,7 @@ public readonly download: string;
 
 ---
 
-##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone"></a>
+##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZone"></a>
 
 ```typescript
 public readonly downloadhostedZone: string;
@@ -2491,7 +2491,7 @@ public readonly downloadhostedZone: string;
 
 ---
 
-##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName"></a>
+##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.downloadhostedZoneName"></a>
 
 ```typescript
 public readonly downloadhostedZoneName: string;
@@ -2501,7 +2501,7 @@ public readonly downloadhostedZoneName: string;
 
 ---
 
-##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxy"></a>
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxy"></a>
 
 ```typescript
 public readonly proxy: string;
@@ -2511,7 +2511,7 @@ public readonly proxy: string;
 
 ---
 
-##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone"></a>
+##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZone"></a>
 
 ```typescript
 public readonly proxyhostedZone: string;
@@ -2521,7 +2521,7 @@ public readonly proxyhostedZone: string;
 
 ---
 
-##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName"></a>
+##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpoint.property.proxyhostedZoneName"></a>
 
 ```typescript
 public readonly proxyhostedZoneName: string;
@@ -2635,175 +2635,41 @@ public readonly delayProviderServiceToken: string;
 ---
 
 
-### DynamicTagResourceGroup <a name="DynamicTagResourceGroup" id="raindancers-network.DynamicTagResourceGroup"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.DynamicTagResourceGroup.Initializer"></a>
-
-```typescript
-import { DynamicTagResourceGroup } from 'raindancers-network'
-
-new DynamicTagResourceGroup(scope: Construct, id: string, props: DynamicTagResourceGroupProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.DynamicTagResourceGroupProps">DynamicTagResourceGroupProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.DynamicTagResourceGroup.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.DynamicTagResourceGroupProps">DynamicTagResourceGroupProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.addTagFilter">addTagFilter</a></code> | *No description.* |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.DynamicTagResourceGroup.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addTagFilter` <a name="addTagFilter" id="raindancers-network.DynamicTagResourceGroup.addTagFilter"></a>
-
-```typescript
-public addTagFilter(props: TagFilter): void
-```
-
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.DynamicTagResourceGroup.addTagFilter.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.TagFilter">TagFilter</a>
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.DynamicTagResourceGroup.isConstruct"></a>
-
-```typescript
-import { DynamicTagResourceGroup } from 'raindancers-network'
-
-DynamicTagResourceGroup.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.DynamicTagResourceGroup.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.groupArn">groupArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.DynamicTagResourceGroup.property.name">name</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.DynamicTagResourceGroup.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `groupArn`<sup>Required</sup> <a name="groupArn" id="raindancers-network.DynamicTagResourceGroup.property.groupArn"></a>
-
-```typescript
-public readonly groupArn: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroup.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-
-### EnforceImdsv2 <a name="EnforceImdsv2" id="raindancers-network.EnforceImdsv2"></a>
+### EnforceImdsv2 <a name="EnforceImdsv2" id="raindancers-network.ec2.EnforceImdsv2"></a>
 
 Enforces the use of IMDSv2, without causing replacement of the Instance.
 
-#### Initializers <a name="Initializers" id="raindancers-network.EnforceImdsv2.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ec2.EnforceImdsv2.Initializer"></a>
 
 ```typescript
-import { EnforceImdsv2 } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-new EnforceImdsv2(scope: Construct, id: string, props: EnforceImdsv2Props)
+new ec2.EnforceImdsv2(scope: Construct, id: string, props: EnforceImdsv2Props)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnforceImdsv2.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnforceImdsv2Props">EnforceImdsv2Props</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ec2.EnforceImdsv2Props</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnforceImdsv2.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnforceImdsv2.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnforceImdsv2.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ec2.EnforceImdsv2.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.EnforceImdsv2Props">EnforceImdsv2Props</a>
+- *Type:* raindancers-network.ec2.EnforceImdsv2Props
 
 ---
 
@@ -2811,11 +2677,11 @@ new EnforceImdsv2(scope: Construct, id: string, props: EnforceImdsv2Props)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnforceImdsv2.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.EnforceImdsv2.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ec2.EnforceImdsv2.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2827,21 +2693,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnforceImdsv2.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnforceImdsv2.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ec2.EnforceImdsv2.isConstruct"></a>
 
 ```typescript
-import { EnforceImdsv2 } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-EnforceImdsv2.isConstruct(x: any)
+ec2.EnforceImdsv2.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnforceImdsv2.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ec2.EnforceImdsv2.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -2853,11 +2719,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnforceImdsv2.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnforceImdsv2.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ec2.EnforceImdsv2.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -2870,41 +2736,41 @@ The tree node.
 ---
 
 
-### EnterpriseVpc <a name="EnterpriseVpc" id="raindancers-network.EnterpriseVpc"></a>
+### EnterpriseVpc <a name="EnterpriseVpc" id="raindancers-network.network.EnterpriseVpc"></a>
 
 Enteprise VPC's take the stock ec2.Vpc and provide numerous convience methods primarly related to connecting to internal networks.
 
-#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseVpc.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.network.EnterpriseVpc.Initializer"></a>
 
 ```typescript
-import { EnterpriseVpc } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
+new network.EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnterpriseVpcProps">EnterpriseVpcProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.Initializer.parameter.props">props</a></code> | <code>raindancers-network.network.EnterpriseVpcProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseVpc.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.network.EnterpriseVpc.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseVpc.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.network.EnterpriseVpc.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.EnterpriseVpcProps">EnterpriseVpcProps</a>
+- *Type:* raindancers-network.network.EnterpriseVpcProps
 
 ---
 
@@ -2912,32 +2778,32 @@ new EnterpriseVpc(scope: Construct, id: string, props: EnterpriseVpcProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.EnterpriseVpc.addCentralResolverRules">addCentralResolverRules</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addConditionalFowardingRules">addConditionalFowardingRules</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addCoreRoutes">addCoreRoutes</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole">addCrossAccountR53AssociationRole</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addNetworkFirewall">addNetworkFirewall</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addPrivateHostedZone">addPrivateHostedZone</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addR53Resolvers">addR53Resolvers</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
-| <code><a href="#raindancers-network.EnterpriseVpc.addServiceEndpoints">addServiceEndpoints</a></code> | Add a collection of service endpopints to the VPC. |
-| <code><a href="#raindancers-network.EnterpriseVpc.associateSharedResolverRules">associateSharedResolverRules</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.attachAWSManagedDNSFirewallRules">attachAWSManagedDNSFirewallRules</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
-| <code><a href="#raindancers-network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
-| <code><a href="#raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
-| <code><a href="#raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone">createAndAttachR53EnterprizeZone</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone">createAndAttachR53PrivateZone</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList">createAndShareSubnetPrefixList</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
-| <code><a href="#raindancers-network.EnterpriseVpc.router">router</a></code> | This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls. |
-| <code><a href="#raindancers-network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addCentralResolverRules">addCentralResolverRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addConditionalFowardingRules">addConditionalFowardingRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addCoreRoutes">addCoreRoutes</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addCrossAccountR53AssociationRole">addCrossAccountR53AssociationRole</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addNetworkFirewall">addNetworkFirewall</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addPrivateHostedZone">addPrivateHostedZone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addR53Resolvers">addR53Resolvers</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addR53Zone">addR53Zone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addRoutes">addRoutes</a></code> | Add routes to SubnetGroups ( by implication their routing tables ). |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.addServiceEndpoints">addServiceEndpoints</a></code> | Add a collection of service endpopints to the VPC. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.associateSharedResolverRules">associateSharedResolverRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.attachAWSManagedDNSFirewallRules">attachAWSManagedDNSFirewallRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.attachToCloudWan">attachToCloudWan</a></code> | attachToCloudWan will attach a VPC to CloudWan, in a particular Segment. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.attachToTransitGateway">attachToTransitGateway</a></code> | Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.cloudWanRoutingProtocol">cloudWanRoutingProtocol</a></code> | Enable CloudWanRoutingProtocol. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.createAndAttachR53EnterprizeZone">createAndAttachR53EnterprizeZone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.createAndAttachR53PrivateZone">createAndAttachR53PrivateZone</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.createAndShareSubnetPrefixList">createAndShareSubnetPrefixList</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.createFlowLog">createFlowLog</a></code> | Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.router">router</a></code> | This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.shareSubnetGroup">shareSubnetGroup</a></code> | Share a subnetGroup with another AWS Account. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.EnterpriseVpc.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.network.EnterpriseVpc.toString"></a>
 
 ```typescript
 public toString(): string
@@ -2945,121 +2811,121 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addCentralResolverRules` <a name="addCentralResolverRules" id="raindancers-network.EnterpriseVpc.addCentralResolverRules"></a>
+##### `addCentralResolverRules` <a name="addCentralResolverRules" id="raindancers-network.network.EnterpriseVpc.addCentralResolverRules"></a>
 
 ```typescript
 public addCentralResolverRules(domains: string[], searchTag?: Tag): void
 ```
 
-###### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.EnterpriseVpc.addCentralResolverRules.parameter.domains"></a>
+###### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.network.EnterpriseVpc.addCentralResolverRules.parameter.domains"></a>
 
 - *Type:* string[]
 
 ---
 
-###### `searchTag`<sup>Optional</sup> <a name="searchTag" id="raindancers-network.EnterpriseVpc.addCentralResolverRules.parameter.searchTag"></a>
+###### `searchTag`<sup>Optional</sup> <a name="searchTag" id="raindancers-network.network.EnterpriseVpc.addCentralResolverRules.parameter.searchTag"></a>
 
 - *Type:* aws-cdk-lib.Tag
 
 ---
 
-##### `addConditionalFowardingRules` <a name="addConditionalFowardingRules" id="raindancers-network.EnterpriseVpc.addConditionalFowardingRules"></a>
+##### `addConditionalFowardingRules` <a name="addConditionalFowardingRules" id="raindancers-network.network.EnterpriseVpc.addConditionalFowardingRules"></a>
 
 ```typescript
 public addConditionalFowardingRules(forwardingRules: OutboundForwardingRule[]): void
 ```
 
-###### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.EnterpriseVpc.addConditionalFowardingRules.parameter.forwardingRules"></a>
+###### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.network.EnterpriseVpc.addConditionalFowardingRules.parameter.forwardingRules"></a>
 
-- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
+- *Type:* raindancers-network.dns.OutboundForwardingRule[]
 
 ---
 
-##### `addCoreRoutes` <a name="addCoreRoutes" id="raindancers-network.EnterpriseVpc.addCoreRoutes"></a>
+##### `addCoreRoutes` <a name="addCoreRoutes" id="raindancers-network.network.EnterpriseVpc.addCoreRoutes"></a>
 
 ```typescript
 public addCoreRoutes(props: AddCoreRoutesProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addCoreRoutes.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.addCoreRoutes.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddCoreRoutesProps">AddCoreRoutesProps</a>
+- *Type:* raindancers-network.network.AddCoreRoutesProps
 
 ---
 
-##### `addCrossAccountR53AssociationRole` <a name="addCrossAccountR53AssociationRole" id="raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole"></a>
+##### `addCrossAccountR53AssociationRole` <a name="addCrossAccountR53AssociationRole" id="raindancers-network.network.EnterpriseVpc.addCrossAccountR53AssociationRole"></a>
 
 ```typescript
 public addCrossAccountR53AssociationRole(rolename?: string): void
 ```
 
-###### `rolename`<sup>Optional</sup> <a name="rolename" id="raindancers-network.EnterpriseVpc.addCrossAccountR53AssociationRole.parameter.rolename"></a>
+###### `rolename`<sup>Optional</sup> <a name="rolename" id="raindancers-network.network.EnterpriseVpc.addCrossAccountR53AssociationRole.parameter.rolename"></a>
 
 - *Type:* string
 
 ---
 
-##### `addNetworkFirewall` <a name="addNetworkFirewall" id="raindancers-network.EnterpriseVpc.addNetworkFirewall"></a>
+##### `addNetworkFirewall` <a name="addNetworkFirewall" id="raindancers-network.network.EnterpriseVpc.addNetworkFirewall"></a>
 
 ```typescript
 public addNetworkFirewall(firewallName: string, firewallPolicy: CfnFirewallPolicy, subnet: SubnetGroup): void
 ```
 
-###### `firewallName`<sup>Required</sup> <a name="firewallName" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.firewallName"></a>
+###### `firewallName`<sup>Required</sup> <a name="firewallName" id="raindancers-network.network.EnterpriseVpc.addNetworkFirewall.parameter.firewallName"></a>
 
 - *Type:* string
 
 ---
 
-###### `firewallPolicy`<sup>Required</sup> <a name="firewallPolicy" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.firewallPolicy"></a>
+###### `firewallPolicy`<sup>Required</sup> <a name="firewallPolicy" id="raindancers-network.network.EnterpriseVpc.addNetworkFirewall.parameter.firewallPolicy"></a>
 
 - *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy
 
 ---
 
-###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.EnterpriseVpc.addNetworkFirewall.parameter.subnet"></a>
+###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.network.EnterpriseVpc.addNetworkFirewall.parameter.subnet"></a>
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+- *Type:* raindancers-network.network.SubnetGroup
 
 ---
 
-##### `addPrivateHostedZone` <a name="addPrivateHostedZone" id="raindancers-network.EnterpriseVpc.addPrivateHostedZone"></a>
+##### `addPrivateHostedZone` <a name="addPrivateHostedZone" id="raindancers-network.network.EnterpriseVpc.addPrivateHostedZone"></a>
 
 ```typescript
 public addPrivateHostedZone(zonename: string): HostedZone
 ```
 
-###### `zonename`<sup>Required</sup> <a name="zonename" id="raindancers-network.EnterpriseVpc.addPrivateHostedZone.parameter.zonename"></a>
+###### `zonename`<sup>Required</sup> <a name="zonename" id="raindancers-network.network.EnterpriseVpc.addPrivateHostedZone.parameter.zonename"></a>
 
 - *Type:* string
 
 ---
 
-##### `addR53Resolvers` <a name="addR53Resolvers" id="raindancers-network.EnterpriseVpc.addR53Resolvers"></a>
+##### `addR53Resolvers` <a name="addR53Resolvers" id="raindancers-network.network.EnterpriseVpc.addR53Resolvers"></a>
 
 ```typescript
 public addR53Resolvers(subnet: SubnetGroup): R53Resolverendpoints
 ```
 
-###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.EnterpriseVpc.addR53Resolvers.parameter.subnet"></a>
+###### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.network.EnterpriseVpc.addR53Resolvers.parameter.subnet"></a>
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+- *Type:* raindancers-network.network.SubnetGroup
 
 ---
 
-##### `addR53Zone` <a name="addR53Zone" id="raindancers-network.EnterpriseVpc.addR53Zone"></a>
+##### `addR53Zone` <a name="addR53Zone" id="raindancers-network.network.EnterpriseVpc.addR53Zone"></a>
 
 ```typescript
 public addR53Zone(props: AddR53ZoneProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addR53Zone.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.addR53Zone.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddR53ZoneProps">AddR53ZoneProps</a>
+- *Type:* raindancers-network.network.AddR53ZoneProps
 
 ---
 
-##### `addRoutes` <a name="addRoutes" id="raindancers-network.EnterpriseVpc.addRoutes"></a>
+##### `addRoutes` <a name="addRoutes" id="raindancers-network.network.EnterpriseVpc.addRoutes"></a>
 
 ```typescript
 public addRoutes(props: AddRoutesProps): void
@@ -3067,13 +2933,13 @@ public addRoutes(props: AddRoutesProps): void
 
 Add routes to SubnetGroups ( by implication their routing tables ).
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addRoutes.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.addRoutes.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddRoutesProps">AddRoutesProps</a>
+- *Type:* raindancers-network.network.AddRoutesProps
 
 ---
 
-##### `addServiceEndpoints` <a name="addServiceEndpoints" id="raindancers-network.EnterpriseVpc.addServiceEndpoints"></a>
+##### `addServiceEndpoints` <a name="addServiceEndpoints" id="raindancers-network.network.EnterpriseVpc.addServiceEndpoints"></a>
 
 ```typescript
 public addServiceEndpoints(props: AddAwsServiceEndPointsProps): void
@@ -3081,31 +2947,31 @@ public addServiceEndpoints(props: AddAwsServiceEndPointsProps): void
 
 Add a collection of service endpopints to the VPC.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.addServiceEndpoints.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.addServiceEndpoints.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddAwsServiceEndPointsProps">AddAwsServiceEndPointsProps</a>
+- *Type:* raindancers-network.network.AddAwsServiceEndPointsProps
 
 ---
 
-##### `associateSharedResolverRules` <a name="associateSharedResolverRules" id="raindancers-network.EnterpriseVpc.associateSharedResolverRules"></a>
+##### `associateSharedResolverRules` <a name="associateSharedResolverRules" id="raindancers-network.network.EnterpriseVpc.associateSharedResolverRules"></a>
 
 ```typescript
 public associateSharedResolverRules(domainNames: string[]): void
 ```
 
-###### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.EnterpriseVpc.associateSharedResolverRules.parameter.domainNames"></a>
+###### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.network.EnterpriseVpc.associateSharedResolverRules.parameter.domainNames"></a>
 
 - *Type:* string[]
 
 ---
 
-##### `attachAWSManagedDNSFirewallRules` <a name="attachAWSManagedDNSFirewallRules" id="raindancers-network.EnterpriseVpc.attachAWSManagedDNSFirewallRules"></a>
+##### `attachAWSManagedDNSFirewallRules` <a name="attachAWSManagedDNSFirewallRules" id="raindancers-network.network.EnterpriseVpc.attachAWSManagedDNSFirewallRules"></a>
 
 ```typescript
 public attachAWSManagedDNSFirewallRules(): void
 ```
 
-##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.EnterpriseVpc.attachToCloudWan"></a>
+##### `attachToCloudWan` <a name="attachToCloudWan" id="raindancers-network.network.EnterpriseVpc.attachToCloudWan"></a>
 
 ```typescript
 public attachToCloudWan(props: AttachToCloudWanProps): string
@@ -3113,13 +2979,13 @@ public attachToCloudWan(props: AttachToCloudWanProps): string
 
 attachToCloudWan will attach a VPC to CloudWan, in a particular Segment.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.attachToCloudWan.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.attachToCloudWan.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AttachToCloudWanProps">AttachToCloudWanProps</a>
+- *Type:* raindancers-network.network.AttachToCloudWanProps
 
 ---
 
-##### `attachToTransitGateway` <a name="attachToTransitGateway" id="raindancers-network.EnterpriseVpc.attachToTransitGateway"></a>
+##### `attachToTransitGateway` <a name="attachToTransitGateway" id="raindancers-network.network.EnterpriseVpc.attachToTransitGateway"></a>
 
 ```typescript
 public attachToTransitGateway(props: AttachToTransitGatewayProps): string
@@ -3127,13 +2993,13 @@ public attachToTransitGateway(props: AttachToTransitGatewayProps): string
 
 Attach a vpc to a transit gateway, possibly in appliance mode Its intended purpose is provide a.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.attachToTransitGateway.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.attachToTransitGateway.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AttachToTransitGatewayProps">AttachToTransitGatewayProps</a>
+- *Type:* raindancers-network.network.AttachToTransitGatewayProps
 
 ---
 
-##### `cloudWanRoutingProtocol` <a name="cloudWanRoutingProtocol" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol"></a>
+##### `cloudWanRoutingProtocol` <a name="cloudWanRoutingProtocol" id="raindancers-network.network.EnterpriseVpc.cloudWanRoutingProtocol"></a>
 
 ```typescript
 public cloudWanRoutingProtocol(props: CloudWanRoutingProtocolProps): void
@@ -3141,61 +3007,61 @@ public cloudWanRoutingProtocol(props: CloudWanRoutingProtocolProps): void
 
 Enable CloudWanRoutingProtocol.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.cloudWanRoutingProtocol.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.cloudWanRoutingProtocol.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.CloudWanRoutingProtocolProps">CloudWanRoutingProtocolProps</a>
+- *Type:* raindancers-network.network.CloudWanRoutingProtocolProps
 
 ---
 
-##### `createAndAttachR53EnterprizeZone` <a name="createAndAttachR53EnterprizeZone" id="raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone"></a>
+##### `createAndAttachR53EnterprizeZone` <a name="createAndAttachR53EnterprizeZone" id="raindancers-network.network.EnterpriseVpc.createAndAttachR53EnterprizeZone"></a>
 
 ```typescript
 public createAndAttachR53EnterprizeZone(props: AddEnterprizeZoneProps): PrivateHostedZone
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.createAndAttachR53EnterprizeZone.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.createAndAttachR53EnterprizeZone.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddEnterprizeZoneProps">AddEnterprizeZoneProps</a>
+- *Type:* raindancers-network.network.AddEnterprizeZoneProps
 
 ---
 
-##### `createAndAttachR53PrivateZone` <a name="createAndAttachR53PrivateZone" id="raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone"></a>
+##### `createAndAttachR53PrivateZone` <a name="createAndAttachR53PrivateZone" id="raindancers-network.network.EnterpriseVpc.createAndAttachR53PrivateZone"></a>
 
 ```typescript
 public createAndAttachR53PrivateZone(zoneName: string): PrivateHostedZone
 ```
 
-###### `zoneName`<sup>Required</sup> <a name="zoneName" id="raindancers-network.EnterpriseVpc.createAndAttachR53PrivateZone.parameter.zoneName"></a>
+###### `zoneName`<sup>Required</sup> <a name="zoneName" id="raindancers-network.network.EnterpriseVpc.createAndAttachR53PrivateZone.parameter.zoneName"></a>
 
 - *Type:* string
 
 ---
 
-##### `createAndShareSubnetPrefixList` <a name="createAndShareSubnetPrefixList" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList"></a>
+##### `createAndShareSubnetPrefixList` <a name="createAndShareSubnetPrefixList" id="raindancers-network.network.EnterpriseVpc.createAndShareSubnetPrefixList"></a>
 
 ```typescript
 public createAndShareSubnetPrefixList(name: string, subnets: SubnetSelection, orgArn: string): CfnPrefixList
 ```
 
-###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="raindancers-network.network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.name"></a>
 
 - *Type:* string
 
 ---
 
-###### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.subnets"></a>
+###### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.subnets"></a>
 
 - *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
 
 ---
 
-###### `orgArn`<sup>Required</sup> <a name="orgArn" id="raindancers-network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.orgArn"></a>
+###### `orgArn`<sup>Required</sup> <a name="orgArn" id="raindancers-network.network.EnterpriseVpc.createAndShareSubnetPrefixList.parameter.orgArn"></a>
 
 - *Type:* string
 
 ---
 
-##### `createFlowLog` <a name="createFlowLog" id="raindancers-network.EnterpriseVpc.createFlowLog"></a>
+##### `createFlowLog` <a name="createFlowLog" id="raindancers-network.network.EnterpriseVpc.createFlowLog"></a>
 
 ```typescript
 public createFlowLog(props: FlowLogProps): void
@@ -3203,13 +3069,13 @@ public createFlowLog(props: FlowLogProps): void
 
 Create Enterprise VPC Flow Logs (to central log account) and advanced diagnostics with Athena Querys.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.createFlowLog.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.createFlowLog.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.FlowLogProps">FlowLogProps</a>
+- *Type:* raindancers-network.network.FlowLogProps
 
 ---
 
-##### `router` <a name="router" id="raindancers-network.EnterpriseVpc.router"></a>
+##### `router` <a name="router" id="raindancers-network.network.EnterpriseVpc.router"></a>
 
 ```typescript
 public router(routerGroups: RouterGroup[]): void
@@ -3217,13 +3083,13 @@ public router(routerGroups: RouterGroup[]): void
 
 This is a convience method to present the routing for the Vpc in a simpler format, than the addRoutes Method, which it calls.
 
-###### `routerGroups`<sup>Required</sup> <a name="routerGroups" id="raindancers-network.EnterpriseVpc.router.parameter.routerGroups"></a>
+###### `routerGroups`<sup>Required</sup> <a name="routerGroups" id="raindancers-network.network.EnterpriseVpc.router.parameter.routerGroups"></a>
 
-- *Type:* <a href="#raindancers-network.RouterGroup">RouterGroup</a>[]
+- *Type:* raindancers-network.network.RouterGroup[]
 
 ---
 
-##### `shareSubnetGroup` <a name="shareSubnetGroup" id="raindancers-network.EnterpriseVpc.shareSubnetGroup"></a>
+##### `shareSubnetGroup` <a name="shareSubnetGroup" id="raindancers-network.network.EnterpriseVpc.shareSubnetGroup"></a>
 
 ```typescript
 public shareSubnetGroup(props: ShareSubnetGroupProps): void
@@ -3231,9 +3097,9 @@ public shareSubnetGroup(props: ShareSubnetGroupProps): void
 
 Share a subnetGroup with another AWS Account.
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseVpc.shareSubnetGroup.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.EnterpriseVpc.shareSubnetGroup.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.ShareSubnetGroupProps">ShareSubnetGroupProps</a>
+- *Type:* raindancers-network.network.ShareSubnetGroupProps
 
 ShareSubnetGroup.
 
@@ -3243,21 +3109,21 @@ ShareSubnetGroup.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpc.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseVpc.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.network.EnterpriseVpc.isConstruct"></a>
 
 ```typescript
-import { EnterpriseVpc } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-EnterpriseVpc.isConstruct(x: any)
+network.EnterpriseVpc.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseVpc.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.network.EnterpriseVpc.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -3269,27 +3135,27 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.subnetConfiguration">subnetConfiguration</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanCoreId">cloudWanCoreId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.firewallArn">firewallArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.r53endpointResolvers">r53endpointResolvers</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentId">vpcAttachmentId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpc.property.vpcAttachmentSegmentName">vpcAttachmentSegmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | the ec2.Vpc that is passed in as property. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.subnetConfiguration">subnetConfiguration</a></code> | <code>raindancers-network.network.SubnetGroup[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.cloudWanCoreId">cloudWanCoreId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.cloudWanName">cloudWanName</a></code> | <code>string</code> | the Name of the cloudwan that the VPC is attached to. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.cloudWanSegment">cloudWanSegment</a></code> | <code>string</code> | the Name of the Cloudwan segment that the vpc is attached to. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.cloudWanVpcAttachmentId">cloudWanVpcAttachmentId</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a Cloudwan. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.firewallArn">firewallArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.r53endpointResolvers">r53endpointResolvers</a></code> | <code>raindancers-network.dns.R53Resolverendpoints</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.transitGWAttachmentID">transitGWAttachmentID</a></code> | <code>string</code> | AttachmentId when the vpc is attached to a transitGateway. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.transitGWID">transitGWID</a></code> | <code>string</code> | The Id of the transitgateway that the VPC is attached to. |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.vpcAttachmentCR">vpcAttachmentCR</a></code> | <code>aws-cdk-lib.CustomResource</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.vpcAttachmentId">vpcAttachmentId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpc.property.vpcAttachmentSegmentName">vpcAttachmentSegmentName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseVpc.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.network.EnterpriseVpc.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -3301,7 +3167,7 @@ The tree node.
 
 ---
 
-##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.EnterpriseVpc.property.addRoutesProvider"></a>
+##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.network.EnterpriseVpc.property.addRoutesProvider"></a>
 
 ```typescript
 public readonly addRoutesProvider: Provider;
@@ -3311,7 +3177,7 @@ public readonly addRoutesProvider: Provider;
 
 ---
 
-##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.EnterpriseVpc.property.attachToCloudwanProvider"></a>
+##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.network.EnterpriseVpc.property.attachToCloudwanProvider"></a>
 
 ```typescript
 public readonly attachToCloudwanProvider: Provider;
@@ -3321,7 +3187,7 @@ public readonly attachToCloudwanProvider: Provider;
 
 ---
 
-##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.EnterpriseVpc.property.tgWaiterProvider"></a>
+##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.network.EnterpriseVpc.property.tgWaiterProvider"></a>
 
 ```typescript
 public readonly tgWaiterProvider: Provider;
@@ -3331,29 +3197,29 @@ public readonly tgWaiterProvider: Provider;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.EnterpriseVpc.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.network.EnterpriseVpc.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 the ec2.Vpc that is passed in as property.
 
 ---
 
-##### `subnetConfiguration`<sup>Required</sup> <a name="subnetConfiguration" id="raindancers-network.EnterpriseVpc.property.subnetConfiguration"></a>
+##### `subnetConfiguration`<sup>Required</sup> <a name="subnetConfiguration" id="raindancers-network.network.EnterpriseVpc.property.subnetConfiguration"></a>
 
 ```typescript
 public readonly subnetConfiguration: SubnetGroup[];
 ```
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]
+- *Type:* raindancers-network.network.SubnetGroup[]
 
 ---
 
-##### `cloudWanCoreId`<sup>Optional</sup> <a name="cloudWanCoreId" id="raindancers-network.EnterpriseVpc.property.cloudWanCoreId"></a>
+##### `cloudWanCoreId`<sup>Optional</sup> <a name="cloudWanCoreId" id="raindancers-network.network.EnterpriseVpc.property.cloudWanCoreId"></a>
 
 ```typescript
 public readonly cloudWanCoreId: string;
@@ -3363,7 +3229,7 @@ public readonly cloudWanCoreId: string;
 
 ---
 
-##### `cloudWanName`<sup>Optional</sup> <a name="cloudWanName" id="raindancers-network.EnterpriseVpc.property.cloudWanName"></a>
+##### `cloudWanName`<sup>Optional</sup> <a name="cloudWanName" id="raindancers-network.network.EnterpriseVpc.property.cloudWanName"></a>
 
 ```typescript
 public readonly cloudWanName: string;
@@ -3375,7 +3241,7 @@ the Name of the cloudwan that the VPC is attached to.
 
 ---
 
-##### `cloudWanSegment`<sup>Optional</sup> <a name="cloudWanSegment" id="raindancers-network.EnterpriseVpc.property.cloudWanSegment"></a>
+##### `cloudWanSegment`<sup>Optional</sup> <a name="cloudWanSegment" id="raindancers-network.network.EnterpriseVpc.property.cloudWanSegment"></a>
 
 ```typescript
 public readonly cloudWanSegment: string;
@@ -3387,7 +3253,7 @@ the Name of the Cloudwan segment that the vpc is attached to.
 
 ---
 
-##### `cloudWanVpcAttachmentId`<sup>Optional</sup> <a name="cloudWanVpcAttachmentId" id="raindancers-network.EnterpriseVpc.property.cloudWanVpcAttachmentId"></a>
+##### `cloudWanVpcAttachmentId`<sup>Optional</sup> <a name="cloudWanVpcAttachmentId" id="raindancers-network.network.EnterpriseVpc.property.cloudWanVpcAttachmentId"></a>
 
 ```typescript
 public readonly cloudWanVpcAttachmentId: string;
@@ -3399,7 +3265,7 @@ AttachmentId when the vpc is attached to a Cloudwan.
 
 ---
 
-##### `firewallArn`<sup>Optional</sup> <a name="firewallArn" id="raindancers-network.EnterpriseVpc.property.firewallArn"></a>
+##### `firewallArn`<sup>Optional</sup> <a name="firewallArn" id="raindancers-network.network.EnterpriseVpc.property.firewallArn"></a>
 
 ```typescript
 public readonly firewallArn: string;
@@ -3409,17 +3275,17 @@ public readonly firewallArn: string;
 
 ---
 
-##### `r53endpointResolvers`<sup>Optional</sup> <a name="r53endpointResolvers" id="raindancers-network.EnterpriseVpc.property.r53endpointResolvers"></a>
+##### `r53endpointResolvers`<sup>Optional</sup> <a name="r53endpointResolvers" id="raindancers-network.network.EnterpriseVpc.property.r53endpointResolvers"></a>
 
 ```typescript
 public readonly r53endpointResolvers: R53Resolverendpoints;
 ```
 
-- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
+- *Type:* raindancers-network.dns.R53Resolverendpoints
 
 ---
 
-##### `transitGWAttachmentID`<sup>Optional</sup> <a name="transitGWAttachmentID" id="raindancers-network.EnterpriseVpc.property.transitGWAttachmentID"></a>
+##### `transitGWAttachmentID`<sup>Optional</sup> <a name="transitGWAttachmentID" id="raindancers-network.network.EnterpriseVpc.property.transitGWAttachmentID"></a>
 
 ```typescript
 public readonly transitGWAttachmentID: string;
@@ -3431,7 +3297,7 @@ AttachmentId when the vpc is attached to a transitGateway.
 
 ---
 
-##### `transitGWID`<sup>Optional</sup> <a name="transitGWID" id="raindancers-network.EnterpriseVpc.property.transitGWID"></a>
+##### `transitGWID`<sup>Optional</sup> <a name="transitGWID" id="raindancers-network.network.EnterpriseVpc.property.transitGWID"></a>
 
 ```typescript
 public readonly transitGWID: string;
@@ -3443,7 +3309,7 @@ The Id of the transitgateway that the VPC is attached to.
 
 ---
 
-##### `vpcAttachmentCR`<sup>Optional</sup> <a name="vpcAttachmentCR" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentCR"></a>
+##### `vpcAttachmentCR`<sup>Optional</sup> <a name="vpcAttachmentCR" id="raindancers-network.network.EnterpriseVpc.property.vpcAttachmentCR"></a>
 
 ```typescript
 public readonly vpcAttachmentCR: CustomResource;
@@ -3453,7 +3319,7 @@ public readonly vpcAttachmentCR: CustomResource;
 
 ---
 
-##### `vpcAttachmentId`<sup>Optional</sup> <a name="vpcAttachmentId" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentId"></a>
+##### `vpcAttachmentId`<sup>Optional</sup> <a name="vpcAttachmentId" id="raindancers-network.network.EnterpriseVpc.property.vpcAttachmentId"></a>
 
 ```typescript
 public readonly vpcAttachmentId: string;
@@ -3463,7 +3329,7 @@ public readonly vpcAttachmentId: string;
 
 ---
 
-##### `vpcAttachmentSegmentName`<sup>Optional</sup> <a name="vpcAttachmentSegmentName" id="raindancers-network.EnterpriseVpc.property.vpcAttachmentSegmentName"></a>
+##### `vpcAttachmentSegmentName`<sup>Optional</sup> <a name="vpcAttachmentSegmentName" id="raindancers-network.network.EnterpriseVpc.property.vpcAttachmentSegmentName"></a>
 
 ```typescript
 public readonly vpcAttachmentSegmentName: string;
@@ -3474,30 +3340,30 @@ public readonly vpcAttachmentSegmentName: string;
 ---
 
 
-### EnterpriseVpcLambda <a name="EnterpriseVpcLambda" id="raindancers-network.EnterpriseVpcLambda"></a>
+### EnterpriseVpcLambda <a name="EnterpriseVpcLambda" id="raindancers-network.network.EnterpriseVpcLambda"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseVpcLambda.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.network.EnterpriseVpcLambda.Initializer"></a>
 
 ```typescript
-import { EnterpriseVpcLambda } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-new EnterpriseVpcLambda(scope: Construct, id: string)
+new network.EnterpriseVpcLambda(scope: Construct, id: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseVpcLambda.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.network.EnterpriseVpcLambda.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseVpcLambda.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.network.EnterpriseVpcLambda.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -3507,11 +3373,11 @@ new EnterpriseVpcLambda(scope: Construct, id: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.EnterpriseVpcLambda.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.network.EnterpriseVpcLambda.toString"></a>
 
 ```typescript
 public toString(): string
@@ -3523,21 +3389,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseVpcLambda.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.network.EnterpriseVpcLambda.isConstruct"></a>
 
 ```typescript
-import { EnterpriseVpcLambda } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-EnterpriseVpcLambda.isConstruct(x: any)
+network.EnterpriseVpcLambda.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseVpcLambda.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.network.EnterpriseVpcLambda.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -3549,14 +3415,14 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A custom resource to use for adding routes. |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | attach to cloudwan with a water. |
-| <code><a href="#raindancers-network.EnterpriseVpcLambda.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A check to see if transitgateway is ready to route to. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.property.addRoutesProvider">addRoutesProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A custom resource to use for adding routes. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.property.attachToCloudwanProvider">attachToCloudwanProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | attach to cloudwan with a water. |
+| <code><a href="#raindancers-network.network.EnterpriseVpcLambda.property.tgWaiterProvider">tgWaiterProvider</a></code> | <code>aws-cdk-lib.custom_resources.Provider</code> | A check to see if transitgateway is ready to route to. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseVpcLambda.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.network.EnterpriseVpcLambda.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -3568,7 +3434,7 @@ The tree node.
 
 ---
 
-##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.EnterpriseVpcLambda.property.addRoutesProvider"></a>
+##### `addRoutesProvider`<sup>Required</sup> <a name="addRoutesProvider" id="raindancers-network.network.EnterpriseVpcLambda.property.addRoutesProvider"></a>
 
 ```typescript
 public readonly addRoutesProvider: Provider;
@@ -3580,7 +3446,7 @@ A custom resource to use for adding routes.
 
 ---
 
-##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.EnterpriseVpcLambda.property.attachToCloudwanProvider"></a>
+##### `attachToCloudwanProvider`<sup>Required</sup> <a name="attachToCloudwanProvider" id="raindancers-network.network.EnterpriseVpcLambda.property.attachToCloudwanProvider"></a>
 
 ```typescript
 public readonly attachToCloudwanProvider: Provider;
@@ -3592,7 +3458,7 @@ attach to cloudwan with a water.
 
 ---
 
-##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.EnterpriseVpcLambda.property.tgWaiterProvider"></a>
+##### `tgWaiterProvider`<sup>Required</sup> <a name="tgWaiterProvider" id="raindancers-network.network.EnterpriseVpcLambda.property.tgWaiterProvider"></a>
 
 ```typescript
 public readonly tgWaiterProvider: Provider;
@@ -3605,41 +3471,41 @@ A check to see if transitgateway is ready to route to.
 ---
 
 
-### EnterpriseZone <a name="EnterpriseZone" id="raindancers-network.EnterpriseZone"></a>
+### EnterpriseZone <a name="EnterpriseZone" id="raindancers-network.dns.EnterpriseZone"></a>
 
 create forwarding rules and associate them with a vpc.
 
-#### Initializers <a name="Initializers" id="raindancers-network.EnterpriseZone.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.EnterpriseZone.Initializer"></a>
 
 ```typescript
-import { EnterpriseZone } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new EnterpriseZone(scope: Construct, id: string, props: EnterpriseZoneProps)
+new dns.EnterpriseZone(scope: Construct, id: string, props: EnterpriseZoneProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZone.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.EnterpriseZoneProps">EnterpriseZoneProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.EnterpriseZoneProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.EnterpriseZone.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.EnterpriseZone.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.EnterpriseZone.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.EnterpriseZone.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.EnterpriseZone.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.EnterpriseZone.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.EnterpriseZoneProps">EnterpriseZoneProps</a>
+- *Type:* raindancers-network.dns.EnterpriseZoneProps
 
 ---
 
@@ -3647,11 +3513,11 @@ new EnterpriseZone(scope: Construct, id: string, props: EnterpriseZoneProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZone.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.EnterpriseZone.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.EnterpriseZone.toString"></a>
 
 ```typescript
 public toString(): string
@@ -3663,21 +3529,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZone.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.EnterpriseZone.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.EnterpriseZone.isConstruct"></a>
 
 ```typescript
-import { EnterpriseZone } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-EnterpriseZone.isConstruct(x: any)
+dns.EnterpriseZone.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.EnterpriseZone.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.EnterpriseZone.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -3689,12 +3555,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZone.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.EnterpriseZone.property.privateZone">privateZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.EnterpriseZone.property.privateZone">privateZone</a></code> | <code>aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.EnterpriseZone.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.EnterpriseZone.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -3706,7 +3572,7 @@ The tree node.
 
 ---
 
-##### `privateZone`<sup>Required</sup> <a name="privateZone" id="raindancers-network.EnterpriseZone.property.privateZone"></a>
+##### `privateZone`<sup>Required</sup> <a name="privateZone" id="raindancers-network.dns.EnterpriseZone.property.privateZone"></a>
 
 ```typescript
 public readonly privateZone: PrivateHostedZone;
@@ -3717,41 +3583,41 @@ public readonly privateZone: PrivateHostedZone;
 ---
 
 
-### FindPrefixList <a name="FindPrefixList" id="raindancers-network.FindPrefixList"></a>
+### FindPrefixList <a name="FindPrefixList" id="raindancers-network.ec2.FindPrefixList"></a>
 
 Enforces the use of IMDSv2, without causing replacement of the Instance.
 
-#### Initializers <a name="Initializers" id="raindancers-network.FindPrefixList.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ec2.FindPrefixList.Initializer"></a>
 
 ```typescript
-import { FindPrefixList } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-new FindPrefixList(scope: Construct, id: string, props: FindPrefixListProps)
+new ec2.FindPrefixList(scope: Construct, id: string, props: FindPrefixListProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FindPrefixList.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FindPrefixListProps">FindPrefixListProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ec2.FindPrefixListProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FindPrefixList.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ec2.FindPrefixList.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FindPrefixList.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ec2.FindPrefixList.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FindPrefixList.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ec2.FindPrefixList.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.FindPrefixListProps">FindPrefixListProps</a>
+- *Type:* raindancers-network.ec2.FindPrefixListProps
 
 ---
 
@@ -3759,11 +3625,11 @@ new FindPrefixList(scope: Construct, id: string, props: FindPrefixListProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.FindPrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.FindPrefixList.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ec2.FindPrefixList.toString"></a>
 
 ```typescript
 public toString(): string
@@ -3775,21 +3641,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.FindPrefixList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FindPrefixList.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ec2.FindPrefixList.isConstruct"></a>
 
 ```typescript
-import { FindPrefixList } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-FindPrefixList.isConstruct(x: any)
+ec2.FindPrefixList.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FindPrefixList.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ec2.FindPrefixList.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -3801,12 +3667,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FindPrefixList.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.FindPrefixList.property.prefixListId">prefixListId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ec2.FindPrefixList.property.prefixListId">prefixListId</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FindPrefixList.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ec2.FindPrefixList.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -3818,7 +3684,7 @@ The tree node.
 
 ---
 
-##### `prefixListId`<sup>Required</sup> <a name="prefixListId" id="raindancers-network.FindPrefixList.property.prefixListId"></a>
+##### `prefixListId`<sup>Required</sup> <a name="prefixListId" id="raindancers-network.ec2.FindPrefixList.property.prefixListId"></a>
 
 ```typescript
 public readonly prefixListId: string;
@@ -3829,39 +3695,39 @@ public readonly prefixListId: string;
 ---
 
 
-### FirewallPolicy <a name="FirewallPolicy" id="raindancers-network.FirewallPolicy"></a>
+### FirewallPolicy <a name="FirewallPolicy" id="raindancers-network.firewall.FirewallPolicy"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.FirewallPolicy.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.firewall.FirewallPolicy.Initializer"></a>
 
 ```typescript
-import { FirewallPolicy } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-new FirewallPolicy(scope: Construct, id: string, props: FirewallPolicyProps)
+new firewall.FirewallPolicy(scope: Construct, id: string, props: FirewallPolicyProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicy.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FirewallPolicyProps">FirewallPolicyProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.Initializer.parameter.props">props</a></code> | <code>raindancers-network.firewall.FirewallPolicyProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FirewallPolicy.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.firewall.FirewallPolicy.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FirewallPolicy.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.firewall.FirewallPolicy.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.firewall.FirewallPolicy.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.FirewallPolicyProps">FirewallPolicyProps</a>
+- *Type:* raindancers-network.firewall.FirewallPolicyProps
 
 ---
 
@@ -3869,13 +3735,13 @@ new FirewallPolicy(scope: Construct, id: string, props: FirewallPolicyProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.FirewallPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.FirewallPolicy.addManagedStatefulRules">addManagedStatefulRules</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicy.addStatelessRuleGroup">addStatelessRuleGroup</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.addManagedStatefulRules">addManagedStatefulRules</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.addStatelessRuleGroup">addStatelessRuleGroup</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.FirewallPolicy.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.firewall.FirewallPolicy.toString"></a>
 
 ```typescript
 public toString(): string
@@ -3883,27 +3749,27 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addManagedStatefulRules` <a name="addManagedStatefulRules" id="raindancers-network.FirewallPolicy.addManagedStatefulRules"></a>
+##### `addManagedStatefulRules` <a name="addManagedStatefulRules" id="raindancers-network.firewall.FirewallPolicy.addManagedStatefulRules"></a>
 
 ```typescript
 public addManagedStatefulRules(props: AddStatefulRulesProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.addManagedStatefulRules.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.firewall.FirewallPolicy.addManagedStatefulRules.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddStatefulRulesProps">AddStatefulRulesProps</a>
+- *Type:* raindancers-network.firewall.AddStatefulRulesProps
 
 ---
 
-##### `addStatelessRuleGroup` <a name="addStatelessRuleGroup" id="raindancers-network.FirewallPolicy.addStatelessRuleGroup"></a>
+##### `addStatelessRuleGroup` <a name="addStatelessRuleGroup" id="raindancers-network.firewall.FirewallPolicy.addStatelessRuleGroup"></a>
 
 ```typescript
 public addStatelessRuleGroup(props: AddStatelessRulesProps): void
 ```
 
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FirewallPolicy.addStatelessRuleGroup.parameter.props"></a>
+###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.firewall.FirewallPolicy.addStatelessRuleGroup.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.AddStatelessRulesProps">AddStatelessRulesProps</a>
+- *Type:* raindancers-network.firewall.AddStatelessRulesProps
 
 ---
 
@@ -3911,21 +3777,21 @@ public addStatelessRuleGroup(props: AddStatelessRulesProps): void
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.FirewallPolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FirewallPolicy.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.firewall.FirewallPolicy.isConstruct"></a>
 
 ```typescript
-import { FirewallPolicy } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-FirewallPolicy.isConstruct(x: any)
+firewall.FirewallPolicy.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FirewallPolicy.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.firewall.FirewallPolicy.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -3937,13 +3803,13 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FirewallPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.FirewallPolicy.property.firewallpolicy">firewallpolicy</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicy.property.policy">policy</a></code> | <code><a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.property.firewallpolicy">firewallpolicy</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicy.property.policy">policy</a></code> | <code>raindancers-network.firewall.IFirewallPolicyProperty</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FirewallPolicy.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.firewall.FirewallPolicy.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -3955,7 +3821,7 @@ The tree node.
 
 ---
 
-##### `firewallpolicy`<sup>Required</sup> <a name="firewallpolicy" id="raindancers-network.FirewallPolicy.property.firewallpolicy"></a>
+##### `firewallpolicy`<sup>Required</sup> <a name="firewallpolicy" id="raindancers-network.firewall.FirewallPolicy.property.firewallpolicy"></a>
 
 ```typescript
 public readonly firewallpolicy: CfnFirewallPolicy;
@@ -3965,52 +3831,52 @@ public readonly firewallpolicy: CfnFirewallPolicy;
 
 ---
 
-##### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.FirewallPolicy.property.policy"></a>
+##### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.firewall.FirewallPolicy.property.policy"></a>
 
 ```typescript
 public readonly policy: IFirewallPolicyProperty;
 ```
 
-- *Type:* <a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a>
+- *Type:* raindancers-network.firewall.IFirewallPolicyProperty
 
 ---
 
 
-### ForwardingRules <a name="ForwardingRules" id="raindancers-network.ForwardingRules"></a>
+### ForwardingRules <a name="ForwardingRules" id="raindancers-network.dns.ForwardingRules"></a>
 
 create forwarding rules and associate them with a vpc.
 
-#### Initializers <a name="Initializers" id="raindancers-network.ForwardingRules.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.ForwardingRules.Initializer"></a>
 
 ```typescript
-import { ForwardingRules } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new ForwardingRules(scope: Construct, id: string, props: ForwardingRulesProps)
+new dns.ForwardingRules(scope: Construct, id: string, props: ForwardingRulesProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ForwardingRules.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ForwardingRulesProps">ForwardingRulesProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRules.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRules.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRules.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.ForwardingRulesProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ForwardingRules.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.ForwardingRules.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ForwardingRules.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.ForwardingRules.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ForwardingRules.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.ForwardingRules.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.ForwardingRulesProps">ForwardingRulesProps</a>
+- *Type:* raindancers-network.dns.ForwardingRulesProps
 
 ---
 
@@ -4018,11 +3884,11 @@ new ForwardingRules(scope: Construct, id: string, props: ForwardingRulesProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ForwardingRules.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.ForwardingRules.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.ForwardingRules.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.ForwardingRules.toString"></a>
 
 ```typescript
 public toString(): string
@@ -4034,21 +3900,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ForwardingRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.ForwardingRules.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ForwardingRules.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.ForwardingRules.isConstruct"></a>
 
 ```typescript
-import { ForwardingRules } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-ForwardingRules.isConstruct(x: any)
+dns.ForwardingRules.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ForwardingRules.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.ForwardingRules.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -4060,11 +3926,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ForwardingRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.ForwardingRules.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ForwardingRules.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.ForwardingRules.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -4077,159 +3943,27 @@ The tree node.
 ---
 
 
-### FQDNStatefulRule <a name="FQDNStatefulRule" id="raindancers-network.FQDNStatefulRule"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.FQDNStatefulRule.Initializer"></a>
-
-```typescript
-import { FQDNStatefulRule } from 'raindancers-network'
-
-new FQDNStatefulRule(scope: Construct, id: string, props: FQDNStatefulRuleProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.FQDNStatefulRule.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.FQDNStatefulRule.toString">toString</a></code> | Returns a string representation of this construct. |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.FQDNStatefulRule.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.FQDNStatefulRule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.FQDNStatefulRule.isConstruct"></a>
-
-```typescript
-import { FQDNStatefulRule } from 'raindancers-network'
-
-FQDNStatefulRule.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.FQDNStatefulRule.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.FQDNStatefulRule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.FQDNStatefulRule.property.prefixListSet">prefixListSet</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRule.property.resourceGroupSets">resourceGroupSets</a></code> | <code><a href="#raindancers-network.DynamicTagResourceGroupSet">DynamicTagResourceGroupSet</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRule.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.FQDNStatefulRule.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `prefixListSet`<sup>Required</sup> <a name="prefixListSet" id="raindancers-network.FQDNStatefulRule.property.prefixListSet"></a>
-
-```typescript
-public readonly prefixListSet: PrefixListSetInterface[];
-```
-
-- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>[]
-
----
-
-##### `resourceGroupSets`<sup>Required</sup> <a name="resourceGroupSets" id="raindancers-network.FQDNStatefulRule.property.resourceGroupSets"></a>
-
-```typescript
-public readonly resourceGroupSets: DynamicTagResourceGroupSet[];
-```
-
-- *Type:* <a href="#raindancers-network.DynamicTagResourceGroupSet">DynamicTagResourceGroupSet</a>[]
-
----
-
-##### `uuid`<sup>Required</sup> <a name="uuid" id="raindancers-network.FQDNStatefulRule.property.uuid"></a>
-
-```typescript
-public readonly uuid: string;
-```
-
-- *Type:* string
-
----
-
-
-### GetTunnelAddressPair <a name="GetTunnelAddressPair" id="raindancers-network.GetTunnelAddressPair"></a>
+### GetTunnelAddressPair <a name="GetTunnelAddressPair" id="raindancers-network.ipam.GetTunnelAddressPair"></a>
 
 Allocate a pair of /30 networks CIDRS for use in Ipsec VPN Tunnels.
 
-#### Initializers <a name="Initializers" id="raindancers-network.GetTunnelAddressPair.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ipam.GetTunnelAddressPair.Initializer"></a>
 
 ```typescript
-import { GetTunnelAddressPair } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-new GetTunnelAddressPair(scope: Construct, id: string, props: GetTunnelAddressPairProps)
+new ipam.GetTunnelAddressPair(scope: Construct, id: string, props: GetTunnelAddressPairProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is created. |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.id">id</a></code> | <code>string</code> | scope id of the resoruce. |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.GetTunnelAddressPairProps">GetTunnelAddressPairProps</a></code> | resource properties. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is created. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.id">id</a></code> | <code>string</code> | scope id of the resoruce. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ipam.GetTunnelAddressPairProps</code> | resource properties. |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -4237,7 +3971,7 @@ scope in which this resource is created.
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -4245,9 +3979,9 @@ scope id of the resoruce.
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.GetTunnelAddressPair.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ipam.GetTunnelAddressPair.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.GetTunnelAddressPairProps">GetTunnelAddressPairProps</a>
+- *Type:* raindancers-network.ipam.GetTunnelAddressPairProps
 
 resource properties.
 
@@ -4257,11 +3991,11 @@ resource properties.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.GetTunnelAddressPair.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ipam.GetTunnelAddressPair.toString"></a>
 
 ```typescript
 public toString(): string
@@ -4273,21 +4007,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.GetTunnelAddressPair.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ipam.GetTunnelAddressPair.isConstruct"></a>
 
 ```typescript
-import { GetTunnelAddressPair } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-GetTunnelAddressPair.isConstruct(x: any)
+ipam.GetTunnelAddressPair.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.GetTunnelAddressPair.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ipam.GetTunnelAddressPair.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -4299,12 +4033,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.GetTunnelAddressPair.property.assignedCidrPair">assignedCidrPair</a></code> | <code>string[]</code> | returns 2 cidr blocks as an array to be used by an IPsec Tunnel. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPair.property.assignedCidrPair">assignedCidrPair</a></code> | <code>string[]</code> | returns 2 cidr blocks as an array to be used by an IPsec Tunnel. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.GetTunnelAddressPair.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ipam.GetTunnelAddressPair.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -4316,7 +4050,7 @@ The tree node.
 
 ---
 
-##### `assignedCidrPair`<sup>Required</sup> <a name="assignedCidrPair" id="raindancers-network.GetTunnelAddressPair.property.assignedCidrPair"></a>
+##### `assignedCidrPair`<sup>Required</sup> <a name="assignedCidrPair" id="raindancers-network.ipam.GetTunnelAddressPair.property.assignedCidrPair"></a>
 
 ```typescript
 public readonly assignedCidrPair: string[];
@@ -4584,27 +4318,27 @@ public readonly databaseName: string;
 ---
 
 
-### IpsecTunnelPool <a name="IpsecTunnelPool" id="raindancers-network.IpsecTunnelPool"></a>
+### IpsecTunnelPool <a name="IpsecTunnelPool" id="raindancers-network.ipam.IpsecTunnelPool"></a>
 
 Creates an IPAM pool to assign address's for IPsec VPNS.
 
-#### Initializers <a name="Initializers" id="raindancers-network.IpsecTunnelPool.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ipam.IpsecTunnelPool.Initializer"></a>
 
 ```typescript
-import { IpsecTunnelPool } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-new IpsecTunnelPool(scope: Construct, id: string, props: IpsecTunnelPoolProps)
+new ipam.IpsecTunnelPool(scope: Construct, id: string, props: IpsecTunnelPoolProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is defined. |
-| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.id">id</a></code> | <code>string</code> | id of the resource. |
-| <code><a href="#raindancers-network.IpsecTunnelPool.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.IpsecTunnelPoolProps">IpsecTunnelPoolProps</a></code> | resource properties. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | scope in which this resource is defined. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.id">id</a></code> | <code>string</code> | id of the resource. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ipam.IpsecTunnelPoolProps</code> | resource properties. |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -4612,7 +4346,7 @@ scope in which this resource is defined.
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -4620,9 +4354,9 @@ id of the resource.
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.IpsecTunnelPool.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ipam.IpsecTunnelPool.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.IpsecTunnelPoolProps">IpsecTunnelPoolProps</a>
+- *Type:* raindancers-network.ipam.IpsecTunnelPoolProps
 
 resource properties.
 
@@ -4632,11 +4366,11 @@ resource properties.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.IpsecTunnelPool.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.IpsecTunnelPool.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ipam.IpsecTunnelPool.toString"></a>
 
 ```typescript
 public toString(): string
@@ -4648,21 +4382,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.IpsecTunnelPool.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.IpsecTunnelPool.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ipam.IpsecTunnelPool.isConstruct"></a>
 
 ```typescript
-import { IpsecTunnelPool } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-IpsecTunnelPool.isConstruct(x: any)
+ipam.IpsecTunnelPool.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.IpsecTunnelPool.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ipam.IpsecTunnelPool.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -4674,12 +4408,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IpsecTunnelPool.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.IpsecTunnelPool.property.ipampool">ipampool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | returns the created ipam Pool. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPool.property.ipampool">ipampool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | returns the created ipam Pool. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IpsecTunnelPool.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ipam.IpsecTunnelPool.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -4691,7 +4425,7 @@ The tree node.
 
 ---
 
-##### `ipampool`<sup>Required</sup> <a name="ipampool" id="raindancers-network.IpsecTunnelPool.property.ipampool"></a>
+##### `ipampool`<sup>Required</sup> <a name="ipampool" id="raindancers-network.ipam.IpsecTunnelPool.property.ipampool"></a>
 
 ```typescript
 public readonly ipampool: CfnIPAMPool;
@@ -4959,47 +4693,41 @@ Used to determine if buckets are backedup, and protected from Stack Destruction.
 ---
 
 
-### NetworkFirewall <a name="NetworkFirewall" id="raindancers-network.NetworkFirewall"></a>
+### PermissionSet <a name="PermissionSet" id="raindancers-network.sso.PermissionSet"></a>
 
-Creates Network Firewalls.
+- *Implements:* raindancers-network.sso.IPermissionSet
 
-#### Initializers <a name="Initializers" id="raindancers-network.NetworkFirewall.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.sso.PermissionSet.Initializer"></a>
 
 ```typescript
-import { NetworkFirewall } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-new NetworkFirewall(scope: Construct, id: string, props: NetworkFirewallProps)
+new sso.PermissionSet(scope: Construct, id: string, props: PermissionSetProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | Scope. |
-| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.id">id</a></code> | <code>string</code> | id. |
-| <code><a href="#raindancers-network.NetworkFirewall.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.NetworkFirewallProps">NetworkFirewallProps</a></code> | props. |
+| <code><a href="#raindancers-network.sso.PermissionSet.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.sso.PermissionSet.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.sso.PermissionSet.Initializer.parameter.props">props</a></code> | <code>raindancers-network.sso.PermissionSetProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.NetworkFirewall.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.sso.PermissionSet.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
-Scope.
-
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.NetworkFirewall.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.sso.PermissionSet.Initializer.parameter.id"></a>
 
 - *Type:* string
 
-id.
-
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.NetworkFirewall.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.sso.PermissionSet.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.NetworkFirewallProps">NetworkFirewallProps</a>
-
-props.
+- *Type:* raindancers-network.sso.PermissionSetProps
 
 ---
 
@@ -5007,11 +4735,13 @@ props.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.NetworkFirewall.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.sso.PermissionSet.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.sso.PermissionSet.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#raindancers-network.sso.PermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.NetworkFirewall.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.sso.PermissionSet.toString"></a>
 
 ```typescript
 public toString(): string
@@ -5019,149 +4749,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.NetworkFirewall.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.NetworkFirewall.isConstruct"></a>
-
-```typescript
-import { NetworkFirewall } from 'raindancers-network'
-
-NetworkFirewall.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.NetworkFirewall.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.NetworkFirewall.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.NetworkFirewall.property.endPointIds">endPointIds</a></code> | <code>string[]</code> | Gateway Endpoints for the Firewalls. |
-| <code><a href="#raindancers-network.NetworkFirewall.property.firewallArn">firewallArn</a></code> | <code>string</code> | Arn of the firewall. |
-| <code><a href="#raindancers-network.NetworkFirewall.property.firewallId">firewallId</a></code> | <code>string</code> | Firewall ID. |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.NetworkFirewall.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `endPointIds`<sup>Required</sup> <a name="endPointIds" id="raindancers-network.NetworkFirewall.property.endPointIds"></a>
-
-```typescript
-public readonly endPointIds: string[];
-```
-
-- *Type:* string[]
-
-Gateway Endpoints for the Firewalls.
-
----
-
-##### `firewallArn`<sup>Required</sup> <a name="firewallArn" id="raindancers-network.NetworkFirewall.property.firewallArn"></a>
-
-```typescript
-public readonly firewallArn: string;
-```
-
-- *Type:* string
-
-Arn of the firewall.
-
----
-
-##### `firewallId`<sup>Required</sup> <a name="firewallId" id="raindancers-network.NetworkFirewall.property.firewallId"></a>
-
-```typescript
-public readonly firewallId: string;
-```
-
-- *Type:* string
-
-Firewall ID.
-
----
-
-
-### PermissionSet <a name="PermissionSet" id="raindancers-network.PermissionSet"></a>
-
-- *Implements:* <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.PermissionSet.Initializer"></a>
-
-```typescript
-import { PermissionSet } from 'raindancers-network'
-
-new PermissionSet(scope: Construct, id: string, props: PermissionSetProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PermissionSet.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PermissionSetProps">PermissionSetProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PermissionSet.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PermissionSet.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.PermissionSetProps">PermissionSetProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PermissionSet.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.PermissionSet.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
-| <code><a href="#raindancers-network.PermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.PermissionSet.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.PermissionSet.applyRemovalPolicy"></a>
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="raindancers-network.sso.PermissionSet.applyRemovalPolicy"></a>
 
 ```typescript
 public applyRemovalPolicy(policy: RemovalPolicy): void
@@ -5177,13 +4765,13 @@ to be replaced.
 The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
 account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 
-###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.PermissionSet.applyRemovalPolicy.parameter.policy"></a>
+###### `policy`<sup>Required</sup> <a name="policy" id="raindancers-network.sso.PermissionSet.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
 
 ---
 
-##### `grant` <a name="grant" id="raindancers-network.PermissionSet.grant"></a>
+##### `grant` <a name="grant" id="raindancers-network.sso.PermissionSet.grant"></a>
 
 ```typescript
 public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
@@ -5191,15 +4779,15 @@ public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
 
 Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance.
 
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.grant.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.sso.PermissionSet.grant.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.PermissionSet.grant.parameter.assignmentOptions"></a>
+###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.sso.PermissionSet.grant.parameter.assignmentOptions"></a>
 
-- *Type:* <a href="#raindancers-network.AssignmentOptions">AssignmentOptions</a>
+- *Type:* raindancers-network.sso.AssignmentOptions
 
 ---
 
@@ -5207,24 +4795,24 @@ Grant this permission set to a given principal for a given targetId (AWS account
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.PermissionSet.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#raindancers-network.PermissionSet.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
-| <code><a href="#raindancers-network.PermissionSet.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#raindancers-network.PermissionSet.fromPermissionSetArn">fromPermissionSetArn</a></code> | Reference an existing permission set by ARN. |
+| <code><a href="#raindancers-network.sso.PermissionSet.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.sso.PermissionSet.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#raindancers-network.sso.PermissionSet.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#raindancers-network.sso.PermissionSet.fromPermissionSetArn">fromPermissionSetArn</a></code> | Reference an existing permission set by ARN. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PermissionSet.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.sso.PermissionSet.isConstruct"></a>
 
 ```typescript
-import { PermissionSet } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-PermissionSet.isConstruct(x: any)
+sso.PermissionSet.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PermissionSet.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.sso.PermissionSet.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -5232,61 +4820,61 @@ Any object.
 
 ---
 
-##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.PermissionSet.isOwnedResource"></a>
+##### `isOwnedResource` <a name="isOwnedResource" id="raindancers-network.sso.PermissionSet.isOwnedResource"></a>
 
 ```typescript
-import { PermissionSet } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-PermissionSet.isOwnedResource(construct: IConstruct)
+sso.PermissionSet.isOwnedResource(construct: IConstruct)
 ```
 
 Returns true if the construct was created by CDK, and false otherwise.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.PermissionSet.isOwnedResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.sso.PermissionSet.isOwnedResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `isResource` <a name="isResource" id="raindancers-network.PermissionSet.isResource"></a>
+##### `isResource` <a name="isResource" id="raindancers-network.sso.PermissionSet.isResource"></a>
 
 ```typescript
-import { PermissionSet } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-PermissionSet.isResource(construct: IConstruct)
+sso.PermissionSet.isResource(construct: IConstruct)
 ```
 
 Check whether the given construct is a Resource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.PermissionSet.isResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.sso.PermissionSet.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `fromPermissionSetArn` <a name="fromPermissionSetArn" id="raindancers-network.PermissionSet.fromPermissionSetArn"></a>
+##### `fromPermissionSetArn` <a name="fromPermissionSetArn" id="raindancers-network.sso.PermissionSet.fromPermissionSetArn"></a>
 
 ```typescript
-import { PermissionSet } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-PermissionSet.fromPermissionSetArn(scope: Construct, id: string, permissionSetArn: string)
+sso.PermissionSet.fromPermissionSetArn(scope: Construct, id: string, permissionSetArn: string)
 ```
 
 Reference an existing permission set by ARN.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.sso.PermissionSet.fromPermissionSetArn.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.sso.PermissionSet.fromPermissionSetArn.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSet.fromPermissionSetArn.parameter.permissionSetArn"></a>
+###### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.sso.PermissionSet.fromPermissionSetArn.parameter.permissionSetArn"></a>
 
 - *Type:* string
 
@@ -5296,16 +4884,16 @@ Reference an existing permission set by ARN.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.PermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#raindancers-network.PermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#raindancers-network.PermissionSet.property.cfnPermissionSet">cfnPermissionSet</a></code> | <code>aws-cdk-lib.aws_sso.CfnPermissionSet</code> | The underlying CfnPermissionSet resource. |
-| <code><a href="#raindancers-network.PermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
-| <code><a href="#raindancers-network.PermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance the permission set belongs to. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.cfnPermissionSet">cfnPermissionSet</a></code> | <code>aws-cdk-lib.aws_sso.CfnPermissionSet</code> | The underlying CfnPermissionSet resource. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.sso.PermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance the permission set belongs to. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PermissionSet.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.sso.PermissionSet.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -5317,7 +4905,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.PermissionSet.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.sso.PermissionSet.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -5336,7 +4924,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.PermissionSet.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.sso.PermissionSet.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -5348,7 +4936,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### `cfnPermissionSet`<sup>Required</sup> <a name="cfnPermissionSet" id="raindancers-network.PermissionSet.property.cfnPermissionSet"></a>
+##### `cfnPermissionSet`<sup>Required</sup> <a name="cfnPermissionSet" id="raindancers-network.sso.PermissionSet.property.cfnPermissionSet"></a>
 
 ```typescript
 public readonly cfnPermissionSet: CfnPermissionSet;
@@ -5360,7 +4948,7 @@ The underlying CfnPermissionSet resource.
 
 ---
 
-##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSet.property.permissionSetArn"></a>
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.sso.PermissionSet.property.permissionSetArn"></a>
 
 ```typescript
 public readonly permissionSetArn: string;
@@ -5372,7 +4960,7 @@ The permission set ARN of the permission set.
 
 ---
 
-##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSet.property.ssoInstanceArn"></a>
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.sso.PermissionSet.property.ssoInstanceArn"></a>
 
 ```typescript
 public readonly ssoInstanceArn: string;
@@ -5385,1198 +4973,41 @@ The SSO instance the permission set belongs to.
 ---
 
 
-### PowerBiGateway <a name="PowerBiGateway" id="raindancers-network.PowerBiGateway"></a>
-
-* Creates an Instance of a Power BI Gateway.
-
-#### Initializers <a name="Initializers" id="raindancers-network.PowerBiGateway.Initializer"></a>
-
-```typescript
-import { PowerBiGateway } from 'raindancers-network'
-
-new PowerBiGateway(scope: Construct, id: string, props: PowerBiGatewayProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBiGateway.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGateway.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGateway.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PowerBiGatewayProps">PowerBiGatewayProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PowerBiGateway.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PowerBiGateway.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PowerBiGateway.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.PowerBiGatewayProps">PowerBiGatewayProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PowerBiGateway.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.PowerBiGateway.addEgressRule">addEgressRule</a></code> | *No description.* |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.PowerBiGateway.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addEgressRule` <a name="addEgressRule" id="raindancers-network.PowerBiGateway.addEgressRule"></a>
-
-```typescript
-public addEgressRule(peer: IPeer, connection: Port, description?: string): void
-```
-
-###### `peer`<sup>Required</sup> <a name="peer" id="raindancers-network.PowerBiGateway.addEgressRule.parameter.peer"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.IPeer
-
----
-
-###### `connection`<sup>Required</sup> <a name="connection" id="raindancers-network.PowerBiGateway.addEgressRule.parameter.connection"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.Port
-
----
-
-###### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.PowerBiGateway.addEgressRule.parameter.description"></a>
-
-- *Type:* string
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PowerBiGateway.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PowerBiGateway.isConstruct"></a>
-
-```typescript
-import { PowerBiGateway } from 'raindancers-network'
-
-PowerBiGateway.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PowerBiGateway.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBiGateway.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.PowerBiGateway.property.instance">instance</a></code> | <code>aws-cdk-lib.aws_ec2.Instance</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PowerBiGateway.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `instance`<sup>Required</sup> <a name="instance" id="raindancers-network.PowerBiGateway.property.instance"></a>
-
-```typescript
-public readonly instance: Instance;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.Instance
-
----
-
-
-### PowerBIGatewayZoo <a name="PowerBIGatewayZoo" id="raindancers-network.PowerBIGatewayZoo"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.PowerBIGatewayZoo.Initializer"></a>
-
-```typescript
-import { PowerBIGatewayZoo } from 'raindancers-network'
-
-new PowerBIGatewayZoo(scope: Construct, id: string, props: PowerBIGatewayZooProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PowerBIGatewayZooProps">PowerBIGatewayZooProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PowerBIGatewayZoo.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PowerBIGatewayZoo.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PowerBIGatewayZoo.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.PowerBIGatewayZooProps">PowerBIGatewayZooProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.addMetadata">addMetadata</a></code> | Adds an arbitary key-value pair, with information you want to record about the stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.exportStringListValue">exportStringListValue</a></code> | Create a CloudFormation Export for a string list value. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.exportValue">exportValue</a></code> | Create a CloudFormation Export for a string value. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.formatArn">formatArn</a></code> | Creates an ARN from components. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.getLogicalId">getLogicalId</a></code> | Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.regionalFact">regionalFact</a></code> | Look up a fact value for the given fact for the region of this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.renameLogicalId">renameLogicalId</a></code> | Rename a generated logical identities. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.reportMissingContextKey">reportMissingContextKey</a></code> | Indicate that a context key was expected. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.splitArn">splitArn</a></code> | Splits the provided ARN into its components. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.toJsonString">toJsonString</a></code> | Convert an object, potentially containing tokens, to a JSON string. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.toYamlString">toYamlString</a></code> | Convert an object, potentially containing tokens, to a YAML string. |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.PowerBIGatewayZoo.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addDependency` <a name="addDependency" id="raindancers-network.PowerBIGatewayZoo.addDependency"></a>
-
-```typescript
-public addDependency(target: Stack, reason?: string): void
-```
-
-Add a dependency between this stack and another stack.
-
-This can be used to define dependencies between any two stacks within an
-app, and also supports nested stacks.
-
-###### `target`<sup>Required</sup> <a name="target" id="raindancers-network.PowerBIGatewayZoo.addDependency.parameter.target"></a>
-
-- *Type:* aws-cdk-lib.Stack
-
----
-
-###### `reason`<sup>Optional</sup> <a name="reason" id="raindancers-network.PowerBIGatewayZoo.addDependency.parameter.reason"></a>
-
-- *Type:* string
-
----
-
-##### `addMetadata` <a name="addMetadata" id="raindancers-network.PowerBIGatewayZoo.addMetadata"></a>
-
-```typescript
-public addMetadata(key: string, value: any): void
-```
-
-Adds an arbitary key-value pair, with information you want to record about the stack.
-
-These get translated to the Metadata section of the generated template.
-
-> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html)
-
-###### `key`<sup>Required</sup> <a name="key" id="raindancers-network.PowerBIGatewayZoo.addMetadata.parameter.key"></a>
-
-- *Type:* string
-
----
-
-###### `value`<sup>Required</sup> <a name="value" id="raindancers-network.PowerBIGatewayZoo.addMetadata.parameter.value"></a>
-
-- *Type:* any
-
----
-
-##### `addTransform` <a name="addTransform" id="raindancers-network.PowerBIGatewayZoo.addTransform"></a>
-
-```typescript
-public addTransform(transform: string): void
-```
-
-Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template.
-
-Duplicate values are removed when stack is synthesized.
-
-> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html)
-
-*Example*
-
-```typescript
-declare const stack: Stack;
-
-stack.addTransform('AWS::Serverless-2016-10-31')
-```
-
-
-###### `transform`<sup>Required</sup> <a name="transform" id="raindancers-network.PowerBIGatewayZoo.addTransform.parameter.transform"></a>
-
-- *Type:* string
-
-The transform to add.
-
----
-
-##### `exportStringListValue` <a name="exportStringListValue" id="raindancers-network.PowerBIGatewayZoo.exportStringListValue"></a>
-
-```typescript
-public exportStringListValue(exportedValue: any, options?: ExportValueOptions): string[]
-```
-
-Create a CloudFormation Export for a string list value.
-
-Returns a string list representing the corresponding `Fn.importValue()`
-expression for this Export. The export expression is automatically wrapped with an
-`Fn::Join` and the import value with an `Fn::Split`, since CloudFormation can only
-export strings. You can control the name for the export by passing the `name` option.
-
-If you don't supply a value for `name`, the value you're exporting must be
-a Resource attribute (for example: `bucket.bucketName`) and it will be
-given the same name as the automatic cross-stack reference that would be created
-if you used the attribute in another Stack.
-
-One of the uses for this method is to *remove* the relationship between
-two Stacks established by automatic cross-stack references. It will
-temporarily ensure that the CloudFormation Export still exists while you
-remove the reference from the consuming stack. After that, you can remove
-the resource and the manual export.
-
-See `exportValue` for an example of this process.
-
-###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="raindancers-network.PowerBIGatewayZoo.exportStringListValue.parameter.exportedValue"></a>
-
-- *Type:* any
-
----
-
-###### `options`<sup>Optional</sup> <a name="options" id="raindancers-network.PowerBIGatewayZoo.exportStringListValue.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.ExportValueOptions
-
----
-
-##### `exportValue` <a name="exportValue" id="raindancers-network.PowerBIGatewayZoo.exportValue"></a>
-
-```typescript
-public exportValue(exportedValue: any, options?: ExportValueOptions): string
-```
-
-Create a CloudFormation Export for a string value.
-
-Returns a string representing the corresponding `Fn.importValue()`
-expression for this Export. You can control the name for the export by
-passing the `name` option.
-
-If you don't supply a value for `name`, the value you're exporting must be
-a Resource attribute (for example: `bucket.bucketName`) and it will be
-given the same name as the automatic cross-stack reference that would be created
-if you used the attribute in another Stack.
-
-One of the uses for this method is to *remove* the relationship between
-two Stacks established by automatic cross-stack references. It will
-temporarily ensure that the CloudFormation Export still exists while you
-remove the reference from the consuming stack. After that, you can remove
-the resource and the manual export.
-
-## Example
-
-Here is how the process works. Let's say there are two stacks,
-`producerStack` and `consumerStack`, and `producerStack` has a bucket
-called `bucket`, which is referenced by `consumerStack` (perhaps because
-an AWS Lambda Function writes into it, or something like that).
-
-It is not safe to remove `producerStack.bucket` because as the bucket is being
-deleted, `consumerStack` might still be using it.
-
-Instead, the process takes two deployments:
-
-### Deployment 1: break the relationship
-
-- Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
-  stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
-  remove the Lambda Function altogether).
-- In the `ProducerStack` class, call `this.exportValue(this.bucket.bucketName)`. This
-  will make sure the CloudFormation Export continues to exist while the relationship
-  between the two stacks is being broken.
-- Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
-
-### Deployment 2: remove the bucket resource
-
-- You are now free to remove the `bucket` resource from `producerStack`.
-- Don't forget to remove the `exportValue()` call as well.
-- Deploy again (this time only the `producerStack` will be changed -- the bucket will be deleted).
-
-###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="raindancers-network.PowerBIGatewayZoo.exportValue.parameter.exportedValue"></a>
-
-- *Type:* any
-
----
-
-###### `options`<sup>Optional</sup> <a name="options" id="raindancers-network.PowerBIGatewayZoo.exportValue.parameter.options"></a>
-
-- *Type:* aws-cdk-lib.ExportValueOptions
-
----
-
-##### `formatArn` <a name="formatArn" id="raindancers-network.PowerBIGatewayZoo.formatArn"></a>
-
-```typescript
-public formatArn(components: ArnComponents): string
-```
-
-Creates an ARN from components.
-
-If `partition`, `region` or `account` are not specified, the stack's
-partition, region and account will be used.
-
-If any component is the empty string, an empty string will be inserted
-into the generated ARN at the location that component corresponds to.
-
-The ARN will be formatted as follows:
-
-  arn:{partition}:{service}:{region}:{account}:{resource}{sep}{resource-name}
-
-The required ARN pieces that are omitted will be taken from the stack that
-the 'scope' is attached to. If all ARN pieces are supplied, the supplied scope
-can be 'undefined'.
-
-###### `components`<sup>Required</sup> <a name="components" id="raindancers-network.PowerBIGatewayZoo.formatArn.parameter.components"></a>
-
-- *Type:* aws-cdk-lib.ArnComponents
-
----
-
-##### `getLogicalId` <a name="getLogicalId" id="raindancers-network.PowerBIGatewayZoo.getLogicalId"></a>
-
-```typescript
-public getLogicalId(element: CfnElement): string
-```
-
-Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource.
-
-This method is called when a `CfnElement` is created and used to render the
-initial logical identity of resources. Logical ID renames are applied at
-this stage.
-
-This method uses the protected method `allocateLogicalId` to render the
-logical ID for an element. To modify the naming scheme, extend the `Stack`
-class and override this method.
-
-###### `element`<sup>Required</sup> <a name="element" id="raindancers-network.PowerBIGatewayZoo.getLogicalId.parameter.element"></a>
-
-- *Type:* aws-cdk-lib.CfnElement
-
-The CloudFormation element for which a logical identity is needed.
-
----
-
-##### `regionalFact` <a name="regionalFact" id="raindancers-network.PowerBIGatewayZoo.regionalFact"></a>
-
-```typescript
-public regionalFact(factName: string, defaultValue?: string): string
-```
-
-Look up a fact value for the given fact for the region of this stack.
-
-Will return a definite value only if the region of the current stack is resolved.
-If not, a lookup map will be added to the stack and the lookup will be done at
-CDK deployment time.
-
-What regions will be included in the lookup map is controlled by the
-`@aws-cdk/core:target-partitions` context value: it must be set to a list
-of partitions, and only regions from the given partitions will be included.
-If no such context key is set, all regions will be included.
-
-This function is intended to be used by construct library authors. Application
-builders can rely on the abstractions offered by construct libraries and do
-not have to worry about regional facts.
-
-If `defaultValue` is not given, it is an error if the fact is unknown for
-the given region.
-
-###### `factName`<sup>Required</sup> <a name="factName" id="raindancers-network.PowerBIGatewayZoo.regionalFact.parameter.factName"></a>
-
-- *Type:* string
-
----
-
-###### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="raindancers-network.PowerBIGatewayZoo.regionalFact.parameter.defaultValue"></a>
-
-- *Type:* string
-
----
-
-##### `renameLogicalId` <a name="renameLogicalId" id="raindancers-network.PowerBIGatewayZoo.renameLogicalId"></a>
-
-```typescript
-public renameLogicalId(oldId: string, newId: string): void
-```
-
-Rename a generated logical identities.
-
-To modify the naming scheme strategy, extend the `Stack` class and
-override the `allocateLogicalId` method.
-
-###### `oldId`<sup>Required</sup> <a name="oldId" id="raindancers-network.PowerBIGatewayZoo.renameLogicalId.parameter.oldId"></a>
-
-- *Type:* string
-
----
-
-###### `newId`<sup>Required</sup> <a name="newId" id="raindancers-network.PowerBIGatewayZoo.renameLogicalId.parameter.newId"></a>
-
-- *Type:* string
-
----
-
-##### `reportMissingContextKey` <a name="reportMissingContextKey" id="raindancers-network.PowerBIGatewayZoo.reportMissingContextKey"></a>
-
-```typescript
-public reportMissingContextKey(report: MissingContext): void
-```
-
-Indicate that a context key was expected.
-
-Contains instructions which will be emitted into the cloud assembly on how
-the key should be supplied.
-
-###### `report`<sup>Required</sup> <a name="report" id="raindancers-network.PowerBIGatewayZoo.reportMissingContextKey.parameter.report"></a>
-
-- *Type:* aws-cdk-lib.cloud_assembly_schema.MissingContext
-
-The set of parameters needed to obtain the context.
-
----
-
-##### `resolve` <a name="resolve" id="raindancers-network.PowerBIGatewayZoo.resolve"></a>
-
-```typescript
-public resolve(obj: any): any
-```
-
-Resolve a tokenized value in the context of the current stack.
-
-###### `obj`<sup>Required</sup> <a name="obj" id="raindancers-network.PowerBIGatewayZoo.resolve.parameter.obj"></a>
-
-- *Type:* any
-
----
-
-##### `splitArn` <a name="splitArn" id="raindancers-network.PowerBIGatewayZoo.splitArn"></a>
-
-```typescript
-public splitArn(arn: string, arnFormat: ArnFormat): ArnComponents
-```
-
-Splits the provided ARN into its components.
-
-Works both if 'arn' is a string like 'arn:aws:s3:::bucket',
-and a Token representing a dynamic CloudFormation expression
-(in which case the returned components will also be dynamic CloudFormation expressions,
-encoded as Tokens).
-
-###### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.PowerBIGatewayZoo.splitArn.parameter.arn"></a>
-
-- *Type:* string
-
-the ARN to split into its components.
-
----
-
-###### `arnFormat`<sup>Required</sup> <a name="arnFormat" id="raindancers-network.PowerBIGatewayZoo.splitArn.parameter.arnFormat"></a>
-
-- *Type:* aws-cdk-lib.ArnFormat
-
-the expected format of 'arn' - depends on what format the service 'arn' represents uses.
-
----
-
-##### `toJsonString` <a name="toJsonString" id="raindancers-network.PowerBIGatewayZoo.toJsonString"></a>
-
-```typescript
-public toJsonString(obj: any, space?: number): string
-```
-
-Convert an object, potentially containing tokens, to a JSON string.
-
-###### `obj`<sup>Required</sup> <a name="obj" id="raindancers-network.PowerBIGatewayZoo.toJsonString.parameter.obj"></a>
-
-- *Type:* any
-
----
-
-###### `space`<sup>Optional</sup> <a name="space" id="raindancers-network.PowerBIGatewayZoo.toJsonString.parameter.space"></a>
-
-- *Type:* number
-
----
-
-##### `toYamlString` <a name="toYamlString" id="raindancers-network.PowerBIGatewayZoo.toYamlString"></a>
-
-```typescript
-public toYamlString(obj: any): string
-```
-
-Convert an object, potentially containing tokens, to a YAML string.
-
-###### `obj`<sup>Required</sup> <a name="obj" id="raindancers-network.PowerBIGatewayZoo.toYamlString.parameter.obj"></a>
-
-- *Type:* any
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.isStack">isStack</a></code> | Return whether the given object is a Stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.of">of</a></code> | Looks up the first stack scope in which `construct` is defined. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PowerBIGatewayZoo.isConstruct"></a>
-
-```typescript
-import { PowerBIGatewayZoo } from 'raindancers-network'
-
-PowerBIGatewayZoo.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PowerBIGatewayZoo.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-##### `isStack` <a name="isStack" id="raindancers-network.PowerBIGatewayZoo.isStack"></a>
-
-```typescript
-import { PowerBIGatewayZoo } from 'raindancers-network'
-
-PowerBIGatewayZoo.isStack(x: any)
-```
-
-Return whether the given object is a Stack.
-
-We do attribute detection since we can't reliably use 'instanceof'.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PowerBIGatewayZoo.isStack.parameter.x"></a>
-
-- *Type:* any
-
----
-
-##### `of` <a name="of" id="raindancers-network.PowerBIGatewayZoo.of"></a>
-
-```typescript
-import { PowerBIGatewayZoo } from 'raindancers-network'
-
-PowerBIGatewayZoo.of(construct: IConstruct)
-```
-
-Looks up the first stack scope in which `construct` is defined.
-
-Fails if there is no stack up the tree.
-
-###### `construct`<sup>Required</sup> <a name="construct" id="raindancers-network.PowerBIGatewayZoo.of.parameter.construct"></a>
-
-- *Type:* constructs.IConstruct
-
-The construct to start the search from.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.account">account</a></code> | <code>string</code> | The AWS account into which this stack will be deployed. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.artifactId">artifactId</a></code> | <code>string</code> | The ID of the cloud assembly artifact for this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.bundlingRequired">bundlingRequired</a></code> | <code>boolean</code> | Indicates whether the stack requires bundling or not. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.dependencies">dependencies</a></code> | <code>aws-cdk-lib.Stack[]</code> | Return the stacks this stack depends on. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.environment">environment</a></code> | <code>string</code> | The environment coordinates in which this stack is deployed. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.nested">nested</a></code> | <code>boolean</code> | Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | Returns the list of notification Amazon Resource Names (ARNs) for the current stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.partition">partition</a></code> | <code>string</code> | The partition in which this stack is defined. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.region">region</a></code> | <code>string</code> | The AWS region into which this stack will be deployed (e.g. `us-west-2`). |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.stackId">stackId</a></code> | <code>string</code> | The ID of the stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.stackName">stackName</a></code> | <code>string</code> | The concrete CloudFormation physical stack name. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method for this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | Tags to be applied to the stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.templateFile">templateFile</a></code> | <code>string</code> | The name of the CloudFormation template file emitted to the output directory during synthesis. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.templateOptions">templateOptions</a></code> | <code>aws-cdk-lib.ITemplateOptions</code> | Options for CloudFormation template (like version, transform, description). |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.urlSuffix">urlSuffix</a></code> | <code>string</code> | The Amazon domain suffix for the region in which this stack is defined. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
-| <code><a href="#raindancers-network.PowerBIGatewayZoo.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PowerBIGatewayZoo.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `account`<sup>Required</sup> <a name="account" id="raindancers-network.PowerBIGatewayZoo.property.account"></a>
-
-```typescript
-public readonly account: string;
-```
-
-- *Type:* string
-
-The AWS account into which this stack will be deployed.
-
-This value is resolved according to the following rules:
-
-1. The value provided to `env.account` when the stack is defined. This can
-   either be a concrete account (e.g. `585695031111`) or the
-   `Aws.ACCOUNT_ID` token.
-3. `Aws.ACCOUNT_ID`, which represents the CloudFormation intrinsic reference
-   `{ "Ref": "AWS::AccountId" }` encoded as a string token.
-
-Preferably, you should use the return value as an opaque string and not
-attempt to parse it to implement your logic. If you do, you must first
-check that it is a concrete value an not an unresolved token. If this
-value is an unresolved token (`Token.isUnresolved(stack.account)` returns
-`true`), this implies that the user wishes that this stack will synthesize
-into a **account-agnostic template**. In this case, your code should either
-fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
-implement some other region-agnostic behavior.
-
----
-
-##### `artifactId`<sup>Required</sup> <a name="artifactId" id="raindancers-network.PowerBIGatewayZoo.property.artifactId"></a>
-
-```typescript
-public readonly artifactId: string;
-```
-
-- *Type:* string
-
-The ID of the cloud assembly artifact for this stack.
-
----
-
-##### `availabilityZones`<sup>Required</sup> <a name="availabilityZones" id="raindancers-network.PowerBIGatewayZoo.property.availabilityZones"></a>
-
-```typescript
-public readonly availabilityZones: string[];
-```
-
-- *Type:* string[]
-
-Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack.
-
-If the stack is environment-agnostic (either account and/or region are
-tokens), this property will return an array with 2 tokens that will resolve
-at deploy-time to the first two availability zones returned from CloudFormation's
-`Fn::GetAZs` intrinsic function.
-
-If they are not available in the context, returns a set of dummy values and
-reports them as missing, and let the CLI resolve them by calling EC2
-`DescribeAvailabilityZones` on the target environment.
-
-To specify a different strategy for selecting availability zones override this method.
-
----
-
-##### `bundlingRequired`<sup>Required</sup> <a name="bundlingRequired" id="raindancers-network.PowerBIGatewayZoo.property.bundlingRequired"></a>
-
-```typescript
-public readonly bundlingRequired: boolean;
-```
-
-- *Type:* boolean
-
-Indicates whether the stack requires bundling or not.
-
----
-
-##### `dependencies`<sup>Required</sup> <a name="dependencies" id="raindancers-network.PowerBIGatewayZoo.property.dependencies"></a>
-
-```typescript
-public readonly dependencies: Stack[];
-```
-
-- *Type:* aws-cdk-lib.Stack[]
-
-Return the stacks this stack depends on.
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="raindancers-network.PowerBIGatewayZoo.property.environment"></a>
-
-```typescript
-public readonly environment: string;
-```
-
-- *Type:* string
-
-The environment coordinates in which this stack is deployed.
-
-In the form
-`aws://account/region`. Use `stack.account` and `stack.region` to obtain
-the specific values, no need to parse.
-
-You can use this value to determine if two stacks are targeting the same
-environment.
-
-If either `stack.account` or `stack.region` are not concrete values (e.g.
-`Aws.ACCOUNT_ID` or `Aws.REGION`) the special strings `unknown-account` and/or
-`unknown-region` will be used respectively to indicate this stack is
-region/account-agnostic.
-
----
-
-##### `nested`<sup>Required</sup> <a name="nested" id="raindancers-network.PowerBIGatewayZoo.property.nested"></a>
-
-```typescript
-public readonly nested: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent.
-
----
-
-##### `notificationArns`<sup>Required</sup> <a name="notificationArns" id="raindancers-network.PowerBIGatewayZoo.property.notificationArns"></a>
-
-```typescript
-public readonly notificationArns: string[];
-```
-
-- *Type:* string[]
-
-Returns the list of notification Amazon Resource Names (ARNs) for the current stack.
-
----
-
-##### `partition`<sup>Required</sup> <a name="partition" id="raindancers-network.PowerBIGatewayZoo.property.partition"></a>
-
-```typescript
-public readonly partition: string;
-```
-
-- *Type:* string
-
-The partition in which this stack is defined.
-
----
-
-##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.PowerBIGatewayZoo.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-
-The AWS region into which this stack will be deployed (e.g. `us-west-2`).
-
-This value is resolved according to the following rules:
-
-1. The value provided to `env.region` when the stack is defined. This can
-   either be a concrete region (e.g. `us-west-2`) or the `Aws.REGION`
-   token.
-3. `Aws.REGION`, which is represents the CloudFormation intrinsic reference
-   `{ "Ref": "AWS::Region" }` encoded as a string token.
-
-Preferably, you should use the return value as an opaque string and not
-attempt to parse it to implement your logic. If you do, you must first
-check that it is a concrete value an not an unresolved token. If this
-value is an unresolved token (`Token.isUnresolved(stack.region)` returns
-`true`), this implies that the user wishes that this stack will synthesize
-into a **region-agnostic template**. In this case, your code should either
-fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
-implement some other region-agnostic behavior.
-
----
-
-##### `stackId`<sup>Required</sup> <a name="stackId" id="raindancers-network.PowerBIGatewayZoo.property.stackId"></a>
-
-```typescript
-public readonly stackId: string;
-```
-
-- *Type:* string
-
-The ID of the stack.
-
----
-
-*Example*
-
-```typescript
-// After resolving, looks like
-'arn:aws:cloudformation:us-west-2:123456789012:stack/teststack/51af3dc0-da77-11e4-872e-1234567db123'
-```
-
-
-##### `stackName`<sup>Required</sup> <a name="stackName" id="raindancers-network.PowerBIGatewayZoo.property.stackName"></a>
-
-```typescript
-public readonly stackName: string;
-```
-
-- *Type:* string
-
-The concrete CloudFormation physical stack name.
-
-This is either the name defined explicitly in the `stackName` prop or
-allocated based on the stack's location in the construct tree. Stacks that
-are directly defined under the app use their construct `id` as their stack
-name. Stacks that are defined deeper within the tree will use a hashed naming
-scheme based on the construct path to ensure uniqueness.
-
-If you wish to obtain the deploy-time AWS::StackName intrinsic,
-you can use `Aws.STACK_NAME` directly.
-
----
-
-##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="raindancers-network.PowerBIGatewayZoo.property.synthesizer"></a>
-
-```typescript
-public readonly synthesizer: IStackSynthesizer;
-```
-
-- *Type:* aws-cdk-lib.IStackSynthesizer
-
-Synthesis method for this stack.
-
----
-
-##### `tags`<sup>Required</sup> <a name="tags" id="raindancers-network.PowerBIGatewayZoo.property.tags"></a>
-
-```typescript
-public readonly tags: TagManager;
-```
-
-- *Type:* aws-cdk-lib.TagManager
-
-Tags to be applied to the stack.
-
----
-
-##### `templateFile`<sup>Required</sup> <a name="templateFile" id="raindancers-network.PowerBIGatewayZoo.property.templateFile"></a>
-
-```typescript
-public readonly templateFile: string;
-```
-
-- *Type:* string
-
-The name of the CloudFormation template file emitted to the output directory during synthesis.
-
-Example value: `MyStack.template.json`
-
----
-
-##### `templateOptions`<sup>Required</sup> <a name="templateOptions" id="raindancers-network.PowerBIGatewayZoo.property.templateOptions"></a>
-
-```typescript
-public readonly templateOptions: ITemplateOptions;
-```
-
-- *Type:* aws-cdk-lib.ITemplateOptions
-
-Options for CloudFormation template (like version, transform, description).
-
----
-
-##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="raindancers-network.PowerBIGatewayZoo.property.urlSuffix"></a>
-
-```typescript
-public readonly urlSuffix: string;
-```
-
-- *Type:* string
-
-The Amazon domain suffix for the region in which this stack is defined.
-
----
-
-##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="raindancers-network.PowerBIGatewayZoo.property.nestedStackParent"></a>
-
-```typescript
-public readonly nestedStackParent: Stack;
-```
-
-- *Type:* aws-cdk-lib.Stack
-
-If this is a nested stack, returns it's parent stack.
-
----
-
-##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="raindancers-network.PowerBIGatewayZoo.property.nestedStackResource"></a>
-
-```typescript
-public readonly nestedStackResource: CfnResource;
-```
-
-- *Type:* aws-cdk-lib.CfnResource
-
-If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource.
-
-`undefined` for top-level (non-nested) stacks.
-
----
-
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="raindancers-network.PowerBIGatewayZoo.property.terminationProtection"></a>
-
-```typescript
-public readonly terminationProtection: boolean;
-```
-
-- *Type:* boolean
-
-Whether termination protection is enabled for this stack.
-
----
-
-
-### PrefixList <a name="PrefixList" id="raindancers-network.PrefixList"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.PrefixList.Initializer"></a>
-
-```typescript
-import { PrefixList } from 'raindancers-network'
-
-new PrefixList(scope: Construct, id: string, props: PrefixListProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixList.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.PrefixListProps">PrefixListProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PrefixList.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PrefixList.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrefixList.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.PrefixListProps">PrefixListProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PrefixList.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.PrefixList.addEC2Instance">addEC2Instance</a></code> | *No description.* |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.PrefixList.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addEC2Instance` <a name="addEC2Instance" id="raindancers-network.PrefixList.addEC2Instance"></a>
-
-```typescript
-public addEC2Instance(props: Instance): void
-```
-
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrefixList.addEC2Instance.parameter.props"></a>
-
-- *Type:* aws-cdk-lib.aws_ec2.Instance
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.PrefixList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PrefixList.isConstruct"></a>
-
-```typescript
-import { PrefixList } from 'raindancers-network'
-
-PrefixList.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PrefixList.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixList.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.PrefixList.property.prefixlist">prefixlist</a></code> | <code>aws-cdk-lib.aws_ec2.CfnPrefixList</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixList.property.prefixlistArn">prefixlistArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixList.property.prefixListSet">prefixListSet</a></code> | <code><a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a></code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PrefixList.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `prefixlist`<sup>Required</sup> <a name="prefixlist" id="raindancers-network.PrefixList.property.prefixlist"></a>
-
-```typescript
-public readonly prefixlist: CfnPrefixList;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.CfnPrefixList
-
----
-
-##### `prefixlistArn`<sup>Required</sup> <a name="prefixlistArn" id="raindancers-network.PrefixList.property.prefixlistArn"></a>
-
-```typescript
-public readonly prefixlistArn: string;
-```
-
-- *Type:* string
-
----
-
-##### `prefixListSet`<sup>Required</sup> <a name="prefixListSet" id="raindancers-network.PrefixList.property.prefixListSet"></a>
-
-```typescript
-public readonly prefixListSet: PrefixListSetInterface;
-```
-
-- *Type:* <a href="#raindancers-network.PrefixListSetInterface">PrefixListSetInterface</a>
-
----
-
-
-### PrivateRedshiftCluster <a name="PrivateRedshiftCluster" id="raindancers-network.PrivateRedshiftCluster"></a>
+### PrivateRedshiftCluster <a name="PrivateRedshiftCluster" id="raindancers-network.redshift.PrivateRedshiftCluster"></a>
 
 * Creates a PrivateRedShiftCluster.
 
-#### Initializers <a name="Initializers" id="raindancers-network.PrivateRedshiftCluster.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.redshift.PrivateRedshiftCluster.Initializer"></a>
 
 ```typescript
-import { PrivateRedshiftCluster } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-new PrivateRedshiftCluster(scope: Construct, id: string, props: RedshiftClusterProps)
+new redshift.PrivateRedshiftCluster(scope: Construct, id: string, props: RedshiftClusterProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.RedshiftClusterProps">RedshiftClusterProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.props">props</a></code> | <code>raindancers-network.redshift.RedshiftClusterProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.PrivateRedshiftCluster.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.redshift.PrivateRedshiftCluster.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.RedshiftClusterProps">RedshiftClusterProps</a>
+- *Type:* raindancers-network.redshift.RedshiftClusterProps
 
 ---
 
@@ -6584,12 +5015,12 @@ new PrivateRedshiftCluster(scope: Construct, id: string, props: RedshiftClusterP
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.addDatabase">addDatabase</a></code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.addDatabase">addDatabase</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.PrivateRedshiftCluster.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.redshift.PrivateRedshiftCluster.toString"></a>
 
 ```typescript
 public toString(): string
@@ -6597,13 +5028,13 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addDatabase` <a name="addDatabase" id="raindancers-network.PrivateRedshiftCluster.addDatabase"></a>
+##### `addDatabase` <a name="addDatabase" id="raindancers-network.redshift.PrivateRedshiftCluster.addDatabase"></a>
 
 ```typescript
 public addDatabase(databaseName: string): RedShiftDatabase
 ```
 
-###### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.PrivateRedshiftCluster.addDatabase.parameter.databaseName"></a>
+###### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.redshift.PrivateRedshiftCluster.addDatabase.parameter.databaseName"></a>
 
 - *Type:* string
 
@@ -6613,21 +5044,21 @@ public addDatabase(databaseName: string): RedShiftDatabase
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.PrivateRedshiftCluster.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.redshift.PrivateRedshiftCluster.isConstruct"></a>
 
 ```typescript
-import { PrivateRedshiftCluster } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-PrivateRedshiftCluster.isConstruct(x: any)
+redshift.PrivateRedshiftCluster.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.PrivateRedshiftCluster.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.redshift.PrivateRedshiftCluster.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -6639,14 +5070,14 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.clusterParameters">clusterParameters</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
-| <code><a href="#raindancers-network.PrivateRedshiftCluster.property.clusterSecurityGroup">clusterSecurityGroup</a></code> | <code>aws-cdk-lib.aws_ec2.SecurityGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.property.clusterParameters">clusterParameters</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.PrivateRedshiftCluster.property.clusterSecurityGroup">clusterSecurityGroup</a></code> | <code>aws-cdk-lib.aws_ec2.SecurityGroup</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.PrivateRedshiftCluster.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.redshift.PrivateRedshiftCluster.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -6658,7 +5089,7 @@ The tree node.
 
 ---
 
-##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.PrivateRedshiftCluster.property.cluster"></a>
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.redshift.PrivateRedshiftCluster.property.cluster"></a>
 
 ```typescript
 public readonly cluster: Cluster;
@@ -6668,7 +5099,7 @@ public readonly cluster: Cluster;
 
 ---
 
-##### `clusterParameters`<sup>Required</sup> <a name="clusterParameters" id="raindancers-network.PrivateRedshiftCluster.property.clusterParameters"></a>
+##### `clusterParameters`<sup>Required</sup> <a name="clusterParameters" id="raindancers-network.redshift.PrivateRedshiftCluster.property.clusterParameters"></a>
 
 ```typescript
 public readonly clusterParameters: ClusterParameterGroup;
@@ -6678,7 +5109,7 @@ public readonly clusterParameters: ClusterParameterGroup;
 
 ---
 
-##### `clusterSecurityGroup`<sup>Required</sup> <a name="clusterSecurityGroup" id="raindancers-network.PrivateRedshiftCluster.property.clusterSecurityGroup"></a>
+##### `clusterSecurityGroup`<sup>Required</sup> <a name="clusterSecurityGroup" id="raindancers-network.redshift.PrivateRedshiftCluster.property.clusterSecurityGroup"></a>
 
 ```typescript
 public readonly clusterSecurityGroup: SecurityGroup;
@@ -6799,27 +5230,27 @@ public readonly function: Function;
 ---
 
 
-### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.R53Resolverendpoints"></a>
+### R53Resolverendpoints <a name="R53Resolverendpoints" id="raindancers-network.dns.R53Resolverendpoints"></a>
 
 Create Route53 Resolver Endpoints for MultiVPC and Hybrid DNS Resolution.
 
-#### Initializers <a name="Initializers" id="raindancers-network.R53Resolverendpoints.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.dns.R53Resolverendpoints.Initializer"></a>
 
 ```typescript
-import { R53Resolverendpoints } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-new R53Resolverendpoints(scope: Construct, id: string, props: R53ResolverendpointsProps)
+new dns.R53Resolverendpoints(scope: Construct, id: string, props: R53ResolverendpointsProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | the scope in which these resources are craeted. |
-| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.id">id</a></code> | <code>string</code> | the id of the construct. |
-| <code><a href="#raindancers-network.R53Resolverendpoints.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.R53ResolverendpointsProps">R53ResolverendpointsProps</a></code> | propertys for the R53Resolver Endpoints. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | the scope in which these resources are craeted. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.id">id</a></code> | <code>string</code> | the id of the construct. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.props">props</a></code> | <code>raindancers-network.dns.R53ResolverendpointsProps</code> | propertys for the R53Resolver Endpoints. |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -6827,7 +5258,7 @@ the scope in which these resources are craeted.
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.id"></a>
 
 - *Type:* string
 
@@ -6835,9 +5266,9 @@ the id of the construct.
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.R53Resolverendpoints.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.dns.R53Resolverendpoints.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.R53ResolverendpointsProps">R53ResolverendpointsProps</a>
+- *Type:* raindancers-network.dns.R53ResolverendpointsProps
 
 propertys for the R53Resolver Endpoints.
 
@@ -6847,11 +5278,11 @@ propertys for the R53Resolver Endpoints.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.R53Resolverendpoints.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.R53Resolverendpoints.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.dns.R53Resolverendpoints.toString"></a>
 
 ```typescript
 public toString(): string
@@ -6863,21 +5294,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.R53Resolverendpoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.R53Resolverendpoints.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.dns.R53Resolverendpoints.isConstruct"></a>
 
 ```typescript
-import { R53Resolverendpoints } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-R53Resolverendpoints.isConstruct(x: any)
+dns.R53Resolverendpoints.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.R53Resolverendpoints.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.dns.R53Resolverendpoints.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -6889,14 +5320,14 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.R53Resolverendpoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.R53Resolverendpoints.property.inboundResolver">inboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | inbound resolver. |
-| <code><a href="#raindancers-network.R53Resolverendpoints.property.inboundResolversIp">inboundResolversIp</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | list of Resolver IP address's. |
-| <code><a href="#raindancers-network.R53Resolverendpoints.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | outbound resolver. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.property.inboundResolver">inboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | inbound resolver. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.property.inboundResolversIp">inboundResolversIp</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | list of Resolver IP address's. |
+| <code><a href="#raindancers-network.dns.R53Resolverendpoints.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | outbound resolver. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.R53Resolverendpoints.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.dns.R53Resolverendpoints.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -6908,7 +5339,7 @@ The tree node.
 
 ---
 
-##### `inboundResolver`<sup>Required</sup> <a name="inboundResolver" id="raindancers-network.R53Resolverendpoints.property.inboundResolver"></a>
+##### `inboundResolver`<sup>Required</sup> <a name="inboundResolver" id="raindancers-network.dns.R53Resolverendpoints.property.inboundResolver"></a>
 
 ```typescript
 public readonly inboundResolver: CfnResolverEndpoint;
@@ -6920,7 +5351,7 @@ inbound resolver.
 
 ---
 
-##### `inboundResolversIp`<sup>Required</sup> <a name="inboundResolversIp" id="raindancers-network.R53Resolverendpoints.property.inboundResolversIp"></a>
+##### `inboundResolversIp`<sup>Required</sup> <a name="inboundResolversIp" id="raindancers-network.dns.R53Resolverendpoints.property.inboundResolversIp"></a>
 
 ```typescript
 public readonly inboundResolversIp: TargetAddressProperty[];
@@ -6932,7 +5363,7 @@ list of Resolver IP address's.
 
 ---
 
-##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.R53Resolverendpoints.property.outboundResolver"></a>
+##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.dns.R53Resolverendpoints.property.outboundResolver"></a>
 
 ```typescript
 public readonly outboundResolver: CfnResolverEndpoint;
@@ -6945,41 +5376,41 @@ outbound resolver.
 ---
 
 
-### RedShiftDatabase <a name="RedShiftDatabase" id="raindancers-network.RedShiftDatabase"></a>
+### RedShiftDatabase <a name="RedShiftDatabase" id="raindancers-network.redshift.RedShiftDatabase"></a>
 
 Create a Database in a Redshift Cluster.
 
-#### Initializers <a name="Initializers" id="raindancers-network.RedShiftDatabase.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.redshift.RedShiftDatabase.Initializer"></a>
 
 ```typescript
-import { RedShiftDatabase } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-new RedShiftDatabase(scope: Construct, id: string, props: RedShiftDatabaseProps)
+new redshift.RedShiftDatabase(scope: Construct, id: string, props: RedShiftDatabaseProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RedShiftDatabase.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.RedShiftDatabaseProps">RedShiftDatabaseProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.props">props</a></code> | <code>raindancers-network.redshift.RedShiftDatabaseProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.RedShiftDatabase.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.RedShiftDatabase.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.RedShiftDatabase.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.redshift.RedShiftDatabase.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.RedShiftDatabaseProps">RedShiftDatabaseProps</a>
+- *Type:* raindancers-network.redshift.RedShiftDatabaseProps
 
 ---
 
@@ -6987,12 +5418,12 @@ new RedShiftDatabase(scope: Construct, id: string, props: RedShiftDatabaseProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabase.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.RedShiftDatabase.executeSQLStatement">executeSQLStatement</a></code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.executeSQLStatement">executeSQLStatement</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.RedShiftDatabase.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.redshift.RedShiftDatabase.toString"></a>
 
 ```typescript
 public toString(): string
@@ -7000,19 +5431,19 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `executeSQLStatement` <a name="executeSQLStatement" id="raindancers-network.RedShiftDatabase.executeSQLStatement"></a>
+##### `executeSQLStatement` <a name="executeSQLStatement" id="raindancers-network.redshift.RedShiftDatabase.executeSQLStatement"></a>
 
 ```typescript
 public executeSQLStatement(statementName: string, sql: string): void
 ```
 
-###### `statementName`<sup>Required</sup> <a name="statementName" id="raindancers-network.RedShiftDatabase.executeSQLStatement.parameter.statementName"></a>
+###### `statementName`<sup>Required</sup> <a name="statementName" id="raindancers-network.redshift.RedShiftDatabase.executeSQLStatement.parameter.statementName"></a>
 
 - *Type:* string
 
 ---
 
-###### `sql`<sup>Required</sup> <a name="sql" id="raindancers-network.RedShiftDatabase.executeSQLStatement.parameter.sql"></a>
+###### `sql`<sup>Required</sup> <a name="sql" id="raindancers-network.redshift.RedShiftDatabase.executeSQLStatement.parameter.sql"></a>
 
 - *Type:* string
 
@@ -7022,21 +5453,21 @@ public executeSQLStatement(statementName: string, sql: string): void
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.RedShiftDatabase.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.redshift.RedShiftDatabase.isConstruct"></a>
 
 ```typescript
-import { RedShiftDatabase } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-RedShiftDatabase.isConstruct(x: any)
+redshift.RedShiftDatabase.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.RedShiftDatabase.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.redshift.RedShiftDatabase.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -7048,13 +5479,13 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.RedShiftDatabase.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
-| <code><a href="#raindancers-network.RedShiftDatabase.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabase.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.RedShiftDatabase.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.redshift.RedShiftDatabase.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -7066,7 +5497,7 @@ The tree node.
 
 ---
 
-##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.RedShiftDatabase.property.cluster"></a>
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.redshift.RedShiftDatabase.property.cluster"></a>
 
 ```typescript
 public readonly cluster: Cluster;
@@ -7076,7 +5507,7 @@ public readonly cluster: Cluster;
 
 ---
 
-##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.RedShiftDatabase.property.databaseName"></a>
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.redshift.RedShiftDatabase.property.databaseName"></a>
 
 ```typescript
 public readonly databaseName: string;
@@ -7087,41 +5518,41 @@ public readonly databaseName: string;
 ---
 
 
-### ResolveSubnetGroupName <a name="ResolveSubnetGroupName" id="raindancers-network.ResolveSubnetGroupName"></a>
+### ResolveSubnetGroupName <a name="ResolveSubnetGroupName" id="raindancers-network.network.ResolveSubnetGroupName"></a>
 
 Creates a period task to update the SSM Agent on an EC2 Instance.
 
-#### Initializers <a name="Initializers" id="raindancers-network.ResolveSubnetGroupName.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.network.ResolveSubnetGroupName.Initializer"></a>
 
 ```typescript
-import { ResolveSubnetGroupName } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-new ResolveSubnetGroupName(scope: Construct, id: string, props: ResolveSubnetGroupNameProps)
+new network.ResolveSubnetGroupName(scope: Construct, id: string, props: ResolveSubnetGroupNameProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ResolveSubnetGroupNameProps">ResolveSubnetGroupNameProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.props">props</a></code> | <code>raindancers-network.network.ResolveSubnetGroupNameProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ResolveSubnetGroupName.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.ResolveSubnetGroupName.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.ResolveSubnetGroupNameProps">ResolveSubnetGroupNameProps</a>
+- *Type:* raindancers-network.network.ResolveSubnetGroupNameProps
 
 ---
 
@@ -7129,11 +5560,11 @@ new ResolveSubnetGroupName(scope: Construct, id: string, props: ResolveSubnetGro
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.ResolveSubnetGroupName.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.network.ResolveSubnetGroupName.toString"></a>
 
 ```typescript
 public toString(): string
@@ -7145,21 +5576,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ResolveSubnetGroupName.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.network.ResolveSubnetGroupName.isConstruct"></a>
 
 ```typescript
-import { ResolveSubnetGroupName } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-ResolveSubnetGroupName.isConstruct(x: any)
+network.ResolveSubnetGroupName.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ResolveSubnetGroupName.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.network.ResolveSubnetGroupName.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -7171,12 +5602,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.ResolveSubnetGroupName.property.subnetSelection">subnetSelection</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupName.property.subnetSelection">subnetSelection</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ResolveSubnetGroupName.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.network.ResolveSubnetGroupName.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -7188,7 +5619,7 @@ The tree node.
 
 ---
 
-##### `subnetSelection`<sup>Required</sup> <a name="subnetSelection" id="raindancers-network.ResolveSubnetGroupName.property.subnetSelection"></a>
+##### `subnetSelection`<sup>Required</sup> <a name="subnetSelection" id="raindancers-network.network.ResolveSubnetGroupName.property.subnetSelection"></a>
 
 ```typescript
 public readonly subnetSelection: SubnetSelection;
@@ -7320,32 +5751,39 @@ public readonly target: IS3TargetObject;
 ---
 
 
-### StatefulRuleDatabase <a name="StatefulRuleDatabase" id="raindancers-network.StatefulRuleDatabase"></a>
+### SubnetGroup <a name="SubnetGroup" id="raindancers-network.network.SubnetGroup"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.StatefulRuleDatabase.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.network.SubnetGroup.Initializer"></a>
 
 ```typescript
-import { StatefulRuleDatabase } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-new StatefulRuleDatabase(scope: Construct, id: string)
+new network.SubnetGroup(scope: Construct, id: string, props: ESubnetGroupProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.SubnetGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.network.SubnetGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.SubnetGroup.Initializer.parameter.props">props</a></code> | <code>raindancers-network.network.ESubnetGroupProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.StatefulRuleDatabase.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.network.SubnetGroup.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.StatefulRuleDatabase.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.network.SubnetGroup.Initializer.parameter.id"></a>
 
 - *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.network.SubnetGroup.Initializer.parameter.props"></a>
+
+- *Type:* raindancers-network.network.ESubnetGroupProps
 
 ---
 
@@ -7353,11 +5791,11 @@ new StatefulRuleDatabase(scope: Construct, id: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.network.SubnetGroup.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.StatefulRuleDatabase.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.network.SubnetGroup.toString"></a>
 
 ```typescript
 public toString(): string
@@ -7369,21 +5807,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.network.SubnetGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.StatefulRuleDatabase.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.network.SubnetGroup.isConstruct"></a>
 
 ```typescript
-import { StatefulRuleDatabase } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-StatefulRuleDatabase.isConstruct(x: any)
+network.SubnetGroup.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.StatefulRuleDatabase.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.network.SubnetGroup.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -7395,13 +5833,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.property.crudServiceToken">crudServiceToken</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.StatefulRuleDatabase.property.policyTable">policyTable</a></code> | <code>aws-cdk-lib.aws_dynamodb.Table</code> | *No description.* |
+| <code><a href="#raindancers-network.network.SubnetGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.network.SubnetGroup.property.subnet">subnet</a></code> | <code>raindancers-network.network.ESubnetGroup</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.StatefulRuleDatabase.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.network.SubnetGroup.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -7413,295 +5850,52 @@ The tree node.
 
 ---
 
-##### `crudServiceToken`<sup>Required</sup> <a name="crudServiceToken" id="raindancers-network.StatefulRuleDatabase.property.crudServiceToken"></a>
-
-```typescript
-public readonly crudServiceToken: string;
-```
-
-- *Type:* string
-
----
-
-##### `policyTable`<sup>Required</sup> <a name="policyTable" id="raindancers-network.StatefulRuleDatabase.property.policyTable"></a>
-
-```typescript
-public readonly policyTable: Table;
-```
-
-- *Type:* aws-cdk-lib.aws_dynamodb.Table
-
----
-
-
-### SubnetGroup <a name="SubnetGroup" id="raindancers-network.SubnetGroup"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.SubnetGroup.Initializer"></a>
-
-```typescript
-import { SubnetGroup } from 'raindancers-network'
-
-new SubnetGroup(scope: Construct, id: string, props: ESubnetGroupProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SubnetGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.ESubnetGroupProps">ESubnetGroupProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.SubnetGroup.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.SubnetGroup.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SubnetGroup.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.ESubnetGroupProps">ESubnetGroupProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.SubnetGroup.toString">toString</a></code> | Returns a string representation of this construct. |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.SubnetGroup.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.SubnetGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.SubnetGroup.isConstruct"></a>
-
-```typescript
-import { SubnetGroup } from 'raindancers-network'
-
-SubnetGroup.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.SubnetGroup.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SubnetGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.SubnetGroup.property.subnet">subnet</a></code> | <code><a href="#raindancers-network.ESubnetGroup">ESubnetGroup</a></code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.SubnetGroup.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.SubnetGroup.property.subnet"></a>
+##### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.network.SubnetGroup.property.subnet"></a>
 
 ```typescript
 public readonly subnet: ESubnetGroup;
 ```
 
-- *Type:* <a href="#raindancers-network.ESubnetGroup">ESubnetGroup</a>
+- *Type:* raindancers-network.network.ESubnetGroup
 
 ---
 
 
-### SuricataRuleGroup <a name="SuricataRuleGroup" id="raindancers-network.SuricataRuleGroup"></a>
-
-#### Initializers <a name="Initializers" id="raindancers-network.SuricataRuleGroup.Initializer"></a>
-
-```typescript
-import { SuricataRuleGroup } from 'raindancers-network'
-
-new SuricataRuleGroup(scope: Construct, id: string, props: SuricataRuleGroupProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroup.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.SuricataRuleGroupProps">SuricataRuleGroupProps</a></code> | *No description.* |
-
----
-
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.scope"></a>
-
-- *Type:* constructs.Construct
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.id"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SuricataRuleGroup.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.SuricataRuleGroupProps">SuricataRuleGroupProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleGroup.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#raindancers-network.SuricataRuleGroup.addRule">addRule</a></code> | *No description.* |
-
----
-
-##### `toString` <a name="toString" id="raindancers-network.SuricataRuleGroup.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `addRule` <a name="addRule" id="raindancers-network.SuricataRuleGroup.addRule"></a>
-
-```typescript
-public addRule(props: FQDNStatefulRuleProps): void
-```
-
-###### `props`<sup>Required</sup> <a name="props" id="raindancers-network.SuricataRuleGroup.addRule.parameter.props"></a>
-
-- *Type:* <a href="#raindancers-network.FQDNStatefulRuleProps">FQDNStatefulRuleProps</a>
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.SuricataRuleGroup.isConstruct"></a>
-
-```typescript
-import { SuricataRuleGroup } from 'raindancers-network'
-
-SuricataRuleGroup.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.SuricataRuleGroup.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.SuricataRuleGroup.property.ruleGroupArn">ruleGroupArn</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.SuricataRuleGroup.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `ruleGroupArn`<sup>Required</sup> <a name="ruleGroupArn" id="raindancers-network.SuricataRuleGroup.property.ruleGroupArn"></a>
-
-```typescript
-public readonly ruleGroupArn: string;
-```
-
-- *Type:* string
-
----
-
-
-### UpdateSSMAgent <a name="UpdateSSMAgent" id="raindancers-network.UpdateSSMAgent"></a>
+### UpdateSSMAgent <a name="UpdateSSMAgent" id="raindancers-network.ssm.UpdateSSMAgent"></a>
 
 Creates a period task to update the SSM Agent on an EC2 Instance.
 
-#### Initializers <a name="Initializers" id="raindancers-network.UpdateSSMAgent.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.ssm.UpdateSSMAgent.Initializer"></a>
 
 ```typescript
-import { UpdateSSMAgent } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-new UpdateSSMAgent(scope: Construct, id: string, props: UpdateSSMAgentProps)
+new ssm.UpdateSSMAgent(scope: Construct, id: string, props: UpdateSSMAgentProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.UpdateSSMAgent.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#raindancers-network.UpdateSSMAgent.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.UpdateSSMAgent.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.UpdateSSMAgentProps">UpdateSSMAgentProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.props">props</a></code> | <code>raindancers-network.ssm.UpdateSSMAgentProps</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.UpdateSSMAgent.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.UpdateSSMAgent.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.UpdateSSMAgent.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.ssm.UpdateSSMAgent.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.UpdateSSMAgentProps">UpdateSSMAgentProps</a>
+- *Type:* raindancers-network.ssm.UpdateSSMAgentProps
 
 ---
 
@@ -7709,11 +5903,11 @@ new UpdateSSMAgent(scope: Construct, id: string, props: UpdateSSMAgentProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.UpdateSSMAgent.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.UpdateSSMAgent.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.ssm.UpdateSSMAgent.toString"></a>
 
 ```typescript
 public toString(): string
@@ -7725,21 +5919,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.UpdateSSMAgent.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.UpdateSSMAgent.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="raindancers-network.ssm.UpdateSSMAgent.isConstruct"></a>
 
 ```typescript
-import { UpdateSSMAgent } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-UpdateSSMAgent.isConstruct(x: any)
+ssm.UpdateSSMAgent.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.UpdateSSMAgent.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="raindancers-network.ssm.UpdateSSMAgent.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -7751,11 +5945,11 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.UpdateSSMAgent.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgent.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.UpdateSSMAgent.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.ssm.UpdateSSMAgent.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -7770,28 +5964,28 @@ The tree node.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### AddAwsServiceEndPointsProps <a name="AddAwsServiceEndPointsProps" id="raindancers-network.AddAwsServiceEndPointsProps"></a>
+### AddAwsServiceEndPointsProps <a name="AddAwsServiceEndPointsProps" id="raindancers-network.network.AddAwsServiceEndPointsProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddAwsServiceEndPointsProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AddAwsServiceEndPointsProps.Initializer"></a>
 
 ```typescript
-import { AddAwsServiceEndPointsProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const addAwsServiceEndPointsProps: AddAwsServiceEndPointsProps = { ... }
+const addAwsServiceEndPointsProps: network.AddAwsServiceEndPointsProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.dynamoDbGateway">dynamoDbGateway</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#raindancers-network.AddAwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddAwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddAwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code>raindancers-network.network.SubnetGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddAwsServiceEndPointsProps.property.dynamoDbGateway">dynamoDbGateway</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddAwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
-##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.AddAwsServiceEndPointsProps.property.services"></a>
+##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.network.AddAwsServiceEndPointsProps.property.services"></a>
 
 ```typescript
 public readonly services: InterfaceVpcEndpointAwsService[];
@@ -7801,17 +5995,17 @@ public readonly services: InterfaceVpcEndpointAwsService[];
 
 ---
 
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.AddAwsServiceEndPointsProps.property.subnetGroup"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.network.AddAwsServiceEndPointsProps.property.subnetGroup"></a>
 
 ```typescript
 public readonly subnetGroup: SubnetGroup;
 ```
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+- *Type:* raindancers-network.network.SubnetGroup
 
 ---
 
-##### `dynamoDbGateway`<sup>Optional</sup> <a name="dynamoDbGateway" id="raindancers-network.AddAwsServiceEndPointsProps.property.dynamoDbGateway"></a>
+##### `dynamoDbGateway`<sup>Optional</sup> <a name="dynamoDbGateway" id="raindancers-network.network.AddAwsServiceEndPointsProps.property.dynamoDbGateway"></a>
 
 ```typescript
 public readonly dynamoDbGateway: boolean;
@@ -7821,7 +6015,7 @@ public readonly dynamoDbGateway: boolean;
 
 ---
 
-##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.AddAwsServiceEndPointsProps.property.s3GatewayInterface"></a>
+##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.network.AddAwsServiceEndPointsProps.property.s3GatewayInterface"></a>
 
 ```typescript
 public readonly s3GatewayInterface: boolean;
@@ -7859,30 +6053,30 @@ public readonly classifiers: GlueClassifier[];
 
 ---
 
-### AddCoreRoutesProps <a name="AddCoreRoutesProps" id="raindancers-network.AddCoreRoutesProps"></a>
+### AddCoreRoutesProps <a name="AddCoreRoutesProps" id="raindancers-network.network.AddCoreRoutesProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddCoreRoutesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AddCoreRoutesProps.Initializer"></a>
 
 ```typescript
-import { AddCoreRoutesProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const addCoreRoutesProps: AddCoreRoutesProps = { ... }
+const addCoreRoutesProps: network.AddCoreRoutesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.attachmentId">attachmentId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.policyTableArn">policyTableArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddCoreRoutesProps.property.segments">segments</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.attachmentId">attachmentId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.coreName">coreName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.policyTableArn">policyTableArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddCoreRoutesProps.property.segments">segments</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `attachmentId`<sup>Required</sup> <a name="attachmentId" id="raindancers-network.AddCoreRoutesProps.property.attachmentId"></a>
+##### `attachmentId`<sup>Required</sup> <a name="attachmentId" id="raindancers-network.network.AddCoreRoutesProps.property.attachmentId"></a>
 
 ```typescript
 public readonly attachmentId: string;
@@ -7892,7 +6086,7 @@ public readonly attachmentId: string;
 
 ---
 
-##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.AddCoreRoutesProps.property.coreName"></a>
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.network.AddCoreRoutesProps.property.coreName"></a>
 
 ```typescript
 public readonly coreName: string;
@@ -7902,7 +6096,7 @@ public readonly coreName: string;
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddCoreRoutesProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.network.AddCoreRoutesProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -7912,7 +6106,7 @@ public readonly description: string;
 
 ---
 
-##### `destinationCidrBlocks`<sup>Required</sup> <a name="destinationCidrBlocks" id="raindancers-network.AddCoreRoutesProps.property.destinationCidrBlocks"></a>
+##### `destinationCidrBlocks`<sup>Required</sup> <a name="destinationCidrBlocks" id="raindancers-network.network.AddCoreRoutesProps.property.destinationCidrBlocks"></a>
 
 ```typescript
 public readonly destinationCidrBlocks: string[];
@@ -7922,7 +6116,7 @@ public readonly destinationCidrBlocks: string[];
 
 ---
 
-##### `policyTableArn`<sup>Required</sup> <a name="policyTableArn" id="raindancers-network.AddCoreRoutesProps.property.policyTableArn"></a>
+##### `policyTableArn`<sup>Required</sup> <a name="policyTableArn" id="raindancers-network.network.AddCoreRoutesProps.property.policyTableArn"></a>
 
 ```typescript
 public readonly policyTableArn: string;
@@ -7932,7 +6126,7 @@ public readonly policyTableArn: string;
 
 ---
 
-##### `segments`<sup>Required</sup> <a name="segments" id="raindancers-network.AddCoreRoutesProps.property.segments"></a>
+##### `segments`<sup>Required</sup> <a name="segments" id="raindancers-network.network.AddCoreRoutesProps.property.segments"></a>
 
 ```typescript
 public readonly segments: string[];
@@ -8046,27 +6240,27 @@ Name for database.
 
 ---
 
-### AddEnterprizeZoneProps <a name="AddEnterprizeZoneProps" id="raindancers-network.AddEnterprizeZoneProps"></a>
+### AddEnterprizeZoneProps <a name="AddEnterprizeZoneProps" id="raindancers-network.network.AddEnterprizeZoneProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddEnterprizeZoneProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AddEnterprizeZoneProps.Initializer"></a>
 
 ```typescript
-import { AddEnterprizeZoneProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const addEnterprizeZoneProps: AddEnterprizeZoneProps = { ... }
+const addEnterprizeZoneProps: network.AddEnterprizeZoneProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.domainname">domainname</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.hubVpcs">hubVpcs</a></code> | <code><a href="#raindancers-network.HubVpc">HubVpc</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddEnterprizeZoneProps.property.isHubVpc">isHubVpc</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddEnterprizeZoneProps.property.domainname">domainname</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddEnterprizeZoneProps.property.hubVpcs">hubVpcs</a></code> | <code>raindancers-network.dns.HubVpc[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddEnterprizeZoneProps.property.isHubVpc">isHubVpc</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
-##### `domainname`<sup>Required</sup> <a name="domainname" id="raindancers-network.AddEnterprizeZoneProps.property.domainname"></a>
+##### `domainname`<sup>Required</sup> <a name="domainname" id="raindancers-network.network.AddEnterprizeZoneProps.property.domainname"></a>
 
 ```typescript
 public readonly domainname: string;
@@ -8076,17 +6270,17 @@ public readonly domainname: string;
 
 ---
 
-##### `hubVpcs`<sup>Required</sup> <a name="hubVpcs" id="raindancers-network.AddEnterprizeZoneProps.property.hubVpcs"></a>
+##### `hubVpcs`<sup>Required</sup> <a name="hubVpcs" id="raindancers-network.network.AddEnterprizeZoneProps.property.hubVpcs"></a>
 
 ```typescript
 public readonly hubVpcs: HubVpc[];
 ```
 
-- *Type:* <a href="#raindancers-network.HubVpc">HubVpc</a>[]
+- *Type:* raindancers-network.dns.HubVpc[]
 
 ---
 
-##### `isHubVpc`<sup>Optional</sup> <a name="isHubVpc" id="raindancers-network.AddEnterprizeZoneProps.property.isHubVpc"></a>
+##### `isHubVpc`<sup>Optional</sup> <a name="isHubVpc" id="raindancers-network.network.AddEnterprizeZoneProps.property.isHubVpc"></a>
 
 ```typescript
 public readonly isHubVpc: boolean;
@@ -8158,26 +6352,26 @@ specified, which is the recommended approach.
 
 ---
 
-### AddR53ZoneProps <a name="AddR53ZoneProps" id="raindancers-network.AddR53ZoneProps"></a>
+### AddR53ZoneProps <a name="AddR53ZoneProps" id="raindancers-network.network.AddR53ZoneProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddR53ZoneProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AddR53ZoneProps.Initializer"></a>
 
 ```typescript
-import { AddR53ZoneProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const addR53ZoneProps: AddR53ZoneProps = { ... }
+const addR53ZoneProps: network.AddR53ZoneProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddR53ZoneProps.property.zone">zone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddR53ZoneProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddR53ZoneProps.property.zone">zone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddR53ZoneProps.property.centralVpc">centralVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `zone`<sup>Required</sup> <a name="zone" id="raindancers-network.AddR53ZoneProps.property.zone"></a>
+##### `zone`<sup>Required</sup> <a name="zone" id="raindancers-network.network.AddR53ZoneProps.property.zone"></a>
 
 ```typescript
 public readonly zone: string;
@@ -8187,7 +6381,7 @@ public readonly zone: string;
 
 ---
 
-##### `centralVpc`<sup>Optional</sup> <a name="centralVpc" id="raindancers-network.AddR53ZoneProps.property.centralVpc"></a>
+##### `centralVpc`<sup>Optional</sup> <a name="centralVpc" id="raindancers-network.network.AddR53ZoneProps.property.centralVpc"></a>
 
 ```typescript
 public readonly centralVpc: Vpc;
@@ -8197,32 +6391,32 @@ public readonly centralVpc: Vpc;
 
 ---
 
-### AddRoutesProps <a name="AddRoutesProps" id="raindancers-network.AddRoutesProps"></a>
+### AddRoutesProps <a name="AddRoutesProps" id="raindancers-network.network.AddRoutesProps"></a>
 
 Propertys for Adding Routes in VPC.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddRoutesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AddRoutesProps.Initializer"></a>
 
 ```typescript
-import { AddRoutesProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const addRoutesProps: AddRoutesProps = { ... }
+const addRoutesProps: network.AddRoutesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddRoutesProps.property.cidr">cidr</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddRoutesProps.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AddRoutesProps.property.cloudwanName">cloudwanName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddRoutesProps.property.networkFirewallArn">networkFirewallArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.cidr">cidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.destination">destination</a></code> | <code>raindancers-network.network.Destination</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.cloudwanName">cloudwanName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AddRoutesProps.property.networkFirewallArn">networkFirewallArn</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.AddRoutesProps.property.cidr"></a>
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.network.AddRoutesProps.property.cidr"></a>
 
 ```typescript
 public readonly cidr: string[];
@@ -8232,7 +6426,7 @@ public readonly cidr: string[];
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddRoutesProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.network.AddRoutesProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -8242,17 +6436,17 @@ public readonly description: string;
 
 ---
 
-##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.AddRoutesProps.property.destination"></a>
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.network.AddRoutesProps.property.destination"></a>
 
 ```typescript
 public readonly destination: Destination;
 ```
 
-- *Type:* <a href="#raindancers-network.Destination">Destination</a>
+- *Type:* raindancers-network.network.Destination
 
 ---
 
-##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.AddRoutesProps.property.subnetGroups"></a>
+##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.network.AddRoutesProps.property.subnetGroups"></a>
 
 ```typescript
 public readonly subnetGroups: string[];
@@ -8262,7 +6456,7 @@ public readonly subnetGroups: string[];
 
 ---
 
-##### `cloudwanName`<sup>Optional</sup> <a name="cloudwanName" id="raindancers-network.AddRoutesProps.property.cloudwanName"></a>
+##### `cloudwanName`<sup>Optional</sup> <a name="cloudwanName" id="raindancers-network.network.AddRoutesProps.property.cloudwanName"></a>
 
 ```typescript
 public readonly cloudwanName: string;
@@ -8272,7 +6466,7 @@ public readonly cloudwanName: string;
 
 ---
 
-##### `networkFirewallArn`<sup>Optional</sup> <a name="networkFirewallArn" id="raindancers-network.AddRoutesProps.property.networkFirewallArn"></a>
+##### `networkFirewallArn`<sup>Optional</sup> <a name="networkFirewallArn" id="raindancers-network.network.AddRoutesProps.property.networkFirewallArn"></a>
 
 ```typescript
 public readonly networkFirewallArn: string;
@@ -8282,55 +6476,55 @@ public readonly networkFirewallArn: string;
 
 ---
 
-### AddStatefulRulesProps <a name="AddStatefulRulesProps" id="raindancers-network.AddStatefulRulesProps"></a>
+### AddStatefulRulesProps <a name="AddStatefulRulesProps" id="raindancers-network.firewall.AddStatefulRulesProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddStatefulRulesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.firewall.AddStatefulRulesProps.Initializer"></a>
 
 ```typescript
-import { AddStatefulRulesProps } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-const addStatefulRulesProps: AddStatefulRulesProps = { ... }
+const addStatefulRulesProps: firewall.AddStatefulRulesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddStatefulRulesProps.property.awsManagedRules">awsManagedRules</a></code> | <code><a href="#raindancers-network.ManagedAwsFirewallRules">ManagedAwsFirewallRules</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.AddStatefulRulesProps.property.awsManagedRules">awsManagedRules</a></code> | <code>raindancers-network.firewall.ManagedAwsFirewallRules[]</code> | *No description.* |
 
 ---
 
-##### `awsManagedRules`<sup>Required</sup> <a name="awsManagedRules" id="raindancers-network.AddStatefulRulesProps.property.awsManagedRules"></a>
+##### `awsManagedRules`<sup>Required</sup> <a name="awsManagedRules" id="raindancers-network.firewall.AddStatefulRulesProps.property.awsManagedRules"></a>
 
 ```typescript
 public readonly awsManagedRules: ManagedAwsFirewallRules[];
 ```
 
-- *Type:* <a href="#raindancers-network.ManagedAwsFirewallRules">ManagedAwsFirewallRules</a>[]
+- *Type:* raindancers-network.firewall.ManagedAwsFirewallRules[]
 
 ---
 
-### AddStatelessRulesProps <a name="AddStatelessRulesProps" id="raindancers-network.AddStatelessRulesProps"></a>
+### AddStatelessRulesProps <a name="AddStatelessRulesProps" id="raindancers-network.firewall.AddStatelessRulesProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AddStatelessRulesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.firewall.AddStatelessRulesProps.Initializer"></a>
 
 ```typescript
-import { AddStatelessRulesProps } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-const addStatelessRulesProps: AddStatelessRulesProps = { ... }
+const addStatelessRulesProps: firewall.AddStatelessRulesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AddStatelessRulesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddStatelessRulesProps.property.groupName">groupName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AddStatelessRulesProps.property.rules">rules</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.AddStatelessRulesProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.AddStatelessRulesProps.property.groupName">groupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.AddStatelessRulesProps.property.rules">rules</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty[]</code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.AddStatelessRulesProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.firewall.AddStatelessRulesProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -8340,7 +6534,7 @@ public readonly description: string;
 
 ---
 
-##### `groupName`<sup>Required</sup> <a name="groupName" id="raindancers-network.AddStatelessRulesProps.property.groupName"></a>
+##### `groupName`<sup>Required</sup> <a name="groupName" id="raindancers-network.firewall.AddStatelessRulesProps.property.groupName"></a>
 
 ```typescript
 public readonly groupName: string;
@@ -8350,7 +6544,7 @@ public readonly groupName: string;
 
 ---
 
-##### `rules`<sup>Required</sup> <a name="rules" id="raindancers-network.AddStatelessRulesProps.property.rules"></a>
+##### `rules`<sup>Required</sup> <a name="rules" id="raindancers-network.firewall.AddStatelessRulesProps.property.rules"></a>
 
 ```typescript
 public readonly rules: StatelessRuleProperty[];
@@ -8360,54 +6554,54 @@ public readonly rules: StatelessRuleProperty[];
 
 ---
 
-### AssignmentAttributes <a name="AssignmentAttributes" id="raindancers-network.AssignmentAttributes"></a>
+### AssignmentAttributes <a name="AssignmentAttributes" id="raindancers-network.sso.AssignmentAttributes"></a>
 
 Attributes for an assignment of which there are none.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AssignmentAttributes.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.AssignmentAttributes.Initializer"></a>
 
 ```typescript
-import { AssignmentAttributes } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const assignmentAttributes: AssignmentAttributes = { ... }
+const assignmentAttributes: sso.AssignmentAttributes = { ... }
 ```
 
 
-### AssignmentOptions <a name="AssignmentOptions" id="raindancers-network.AssignmentOptions"></a>
+### AssignmentOptions <a name="AssignmentOptions" id="raindancers-network.sso.AssignmentOptions"></a>
 
 The options for creating an assignment.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AssignmentOptions.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.AssignmentOptions.Initializer"></a>
 
 ```typescript
-import { AssignmentOptions } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const assignmentOptions: AssignmentOptions = { ... }
+const assignmentOptions: sso.AssignmentOptions = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AssignmentOptions.property.principal">principal</a></code> | <code><a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a></code> | The principal to assign the permission set to. |
-| <code><a href="#raindancers-network.AssignmentOptions.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
-| <code><a href="#raindancers-network.AssignmentOptions.property.targetType">targetType</a></code> | <code><a href="#raindancers-network.TargetTypes">TargetTypes</a></code> | The entity type for which the assignment will be created. |
+| <code><a href="#raindancers-network.sso.AssignmentOptions.property.principal">principal</a></code> | <code>raindancers-network.sso.PrincipalProperty</code> | The principal to assign the permission set to. |
+| <code><a href="#raindancers-network.sso.AssignmentOptions.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
+| <code><a href="#raindancers-network.sso.AssignmentOptions.property.targetType">targetType</a></code> | <code>raindancers-network.sso.TargetTypes</code> | The entity type for which the assignment will be created. |
 
 ---
 
-##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.AssignmentOptions.property.principal"></a>
+##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.sso.AssignmentOptions.property.principal"></a>
 
 ```typescript
 public readonly principal: PrincipalProperty;
 ```
 
-- *Type:* <a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a>
+- *Type:* raindancers-network.sso.PrincipalProperty
 
 The principal to assign the permission set to.
 
 ---
 
-##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.AssignmentOptions.property.targetId"></a>
+##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.sso.AssignmentOptions.property.targetId"></a>
 
 ```typescript
 public readonly targetId: string;
@@ -8419,55 +6613,55 @@ The target id the permission set will be assigned to.
 
 ---
 
-##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.AssignmentOptions.property.targetType"></a>
+##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.sso.AssignmentOptions.property.targetType"></a>
 
 ```typescript
 public readonly targetType: TargetTypes;
 ```
 
-- *Type:* <a href="#raindancers-network.TargetTypes">TargetTypes</a>
+- *Type:* raindancers-network.sso.TargetTypes
 - *Default:* TargetTypes.AWS_ACCOUNT
 
 The entity type for which the assignment will be created.
 
 ---
 
-### AssignmentProps <a name="AssignmentProps" id="raindancers-network.AssignmentProps"></a>
+### AssignmentProps <a name="AssignmentProps" id="raindancers-network.sso.AssignmentProps"></a>
 
 The properties of a new assignment.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AssignmentProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.AssignmentProps.Initializer"></a>
 
 ```typescript
-import { AssignmentProps } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const assignmentProps: AssignmentProps = { ... }
+const assignmentProps: sso.AssignmentProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AssignmentProps.property.principal">principal</a></code> | <code><a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a></code> | The principal to assign the permission set to. |
-| <code><a href="#raindancers-network.AssignmentProps.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
-| <code><a href="#raindancers-network.AssignmentProps.property.targetType">targetType</a></code> | <code><a href="#raindancers-network.TargetTypes">TargetTypes</a></code> | The entity type for which the assignment will be created. |
-| <code><a href="#raindancers-network.AssignmentProps.property.permissionSet">permissionSet</a></code> | <code><a href="#raindancers-network.IPermissionSet">IPermissionSet</a></code> | The permission set to assign to the principal. |
+| <code><a href="#raindancers-network.sso.AssignmentProps.property.principal">principal</a></code> | <code>raindancers-network.sso.PrincipalProperty</code> | The principal to assign the permission set to. |
+| <code><a href="#raindancers-network.sso.AssignmentProps.property.targetId">targetId</a></code> | <code>string</code> | The target id the permission set will be assigned to. |
+| <code><a href="#raindancers-network.sso.AssignmentProps.property.targetType">targetType</a></code> | <code>raindancers-network.sso.TargetTypes</code> | The entity type for which the assignment will be created. |
+| <code><a href="#raindancers-network.sso.AssignmentProps.property.permissionSet">permissionSet</a></code> | <code>raindancers-network.sso.IPermissionSet</code> | The permission set to assign to the principal. |
 
 ---
 
-##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.AssignmentProps.property.principal"></a>
+##### `principal`<sup>Required</sup> <a name="principal" id="raindancers-network.sso.AssignmentProps.property.principal"></a>
 
 ```typescript
 public readonly principal: PrincipalProperty;
 ```
 
-- *Type:* <a href="#raindancers-network.PrincipalProperty">PrincipalProperty</a>
+- *Type:* raindancers-network.sso.PrincipalProperty
 
 The principal to assign the permission set to.
 
 ---
 
-##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.AssignmentProps.property.targetId"></a>
+##### `targetId`<sup>Required</sup> <a name="targetId" id="raindancers-network.sso.AssignmentProps.property.targetId"></a>
 
 ```typescript
 public readonly targetId: string;
@@ -8479,51 +6673,51 @@ The target id the permission set will be assigned to.
 
 ---
 
-##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.AssignmentProps.property.targetType"></a>
+##### `targetType`<sup>Optional</sup> <a name="targetType" id="raindancers-network.sso.AssignmentProps.property.targetType"></a>
 
 ```typescript
 public readonly targetType: TargetTypes;
 ```
 
-- *Type:* <a href="#raindancers-network.TargetTypes">TargetTypes</a>
+- *Type:* raindancers-network.sso.TargetTypes
 - *Default:* TargetTypes.AWS_ACCOUNT
 
 The entity type for which the assignment will be created.
 
 ---
 
-##### `permissionSet`<sup>Required</sup> <a name="permissionSet" id="raindancers-network.AssignmentProps.property.permissionSet"></a>
+##### `permissionSet`<sup>Required</sup> <a name="permissionSet" id="raindancers-network.sso.AssignmentProps.property.permissionSet"></a>
 
 ```typescript
 public readonly permissionSet: IPermissionSet;
 ```
 
-- *Type:* <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
+- *Type:* raindancers-network.sso.IPermissionSet
 
 The permission set to assign to the principal.
 
 ---
 
-### AssociateSharedResolverRuleProps <a name="AssociateSharedResolverRuleProps" id="raindancers-network.AssociateSharedResolverRuleProps"></a>
+### AssociateSharedResolverRuleProps <a name="AssociateSharedResolverRuleProps" id="raindancers-network.dns.AssociateSharedResolverRuleProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.AssociateSharedResolverRuleProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.AssociateSharedResolverRuleProps.Initializer"></a>
 
 ```typescript
-import { AssociateSharedResolverRuleProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const associateSharedResolverRuleProps: AssociateSharedResolverRuleProps = { ... }
+const associateSharedResolverRuleProps: dns.AssociateSharedResolverRuleProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AssociateSharedResolverRuleProps.property.domainNames">domainNames</a></code> | <code>string[]</code> | domainNames which are to be associated. |
-| <code><a href="#raindancers-network.AssociateSharedResolverRuleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The VPC which will be assocaited with the ResolverRules. |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRuleProps.property.domainNames">domainNames</a></code> | <code>string[]</code> | domainNames which are to be associated. |
+| <code><a href="#raindancers-network.dns.AssociateSharedResolverRuleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | The VPC which will be assocaited with the ResolverRules. |
 
 ---
 
-##### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.AssociateSharedResolverRuleProps.property.domainNames"></a>
+##### `domainNames`<sup>Required</sup> <a name="domainNames" id="raindancers-network.dns.AssociateSharedResolverRuleProps.property.domainNames"></a>
 
 ```typescript
 public readonly domainNames: string[];
@@ -8535,52 +6729,52 @@ domainNames which are to be associated.
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.AssociateSharedResolverRuleProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.AssociateSharedResolverRuleProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 The VPC which will be assocaited with the ResolverRules.
 
 ---
 
-### AttachmentConditions <a name="AttachmentConditions" id="raindancers-network.AttachmentConditions"></a>
+### AttachmentConditions <a name="AttachmentConditions" id="raindancers-network.cloudwan.AttachmentConditions"></a>
 
 an attachmentconditions.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AttachmentConditions.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.AttachmentConditions.Initializer"></a>
 
 ```typescript
-import { AttachmentConditions } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const attachmentConditions: AttachmentConditions = { ... }
+const attachmentConditions: cloudwan.AttachmentConditions = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AttachmentConditions.property.type">type</a></code> | <code><a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentConditions.property.key">key</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentConditions.property.operator">operator</a></code> | <code><a href="#raindancers-network.Operators">Operators</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentConditions.property.value">value</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentConditions.property.type">type</a></code> | <code>raindancers-network.cloudwan.AttachmentCondition</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentConditions.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentConditions.property.operator">operator</a></code> | <code>raindancers-network.cloudwan.Operators</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentConditions.property.value">value</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `type`<sup>Required</sup> <a name="type" id="raindancers-network.AttachmentConditions.property.type"></a>
+##### `type`<sup>Required</sup> <a name="type" id="raindancers-network.cloudwan.AttachmentConditions.property.type"></a>
 
 ```typescript
 public readonly type: AttachmentCondition;
 ```
 
-- *Type:* <a href="#raindancers-network.AttachmentCondition">AttachmentCondition</a>
+- *Type:* raindancers-network.cloudwan.AttachmentCondition
 
 ---
 
-##### `key`<sup>Optional</sup> <a name="key" id="raindancers-network.AttachmentConditions.property.key"></a>
+##### `key`<sup>Optional</sup> <a name="key" id="raindancers-network.cloudwan.AttachmentConditions.property.key"></a>
 
 ```typescript
 public readonly key: string;
@@ -8590,17 +6784,17 @@ public readonly key: string;
 
 ---
 
-##### `operator`<sup>Optional</sup> <a name="operator" id="raindancers-network.AttachmentConditions.property.operator"></a>
+##### `operator`<sup>Optional</sup> <a name="operator" id="raindancers-network.cloudwan.AttachmentConditions.property.operator"></a>
 
 ```typescript
 public readonly operator: Operators;
 ```
 
-- *Type:* <a href="#raindancers-network.Operators">Operators</a>
+- *Type:* raindancers-network.cloudwan.Operators
 
 ---
 
-##### `value`<sup>Optional</sup> <a name="value" id="raindancers-network.AttachmentConditions.property.value"></a>
+##### `value`<sup>Optional</sup> <a name="value" id="raindancers-network.cloudwan.AttachmentConditions.property.value"></a>
 
 ```typescript
 public readonly value: string;
@@ -8610,51 +6804,51 @@ public readonly value: string;
 
 ---
 
-### AttachmentPolicy <a name="AttachmentPolicy" id="raindancers-network.AttachmentPolicy"></a>
+### AttachmentPolicy <a name="AttachmentPolicy" id="raindancers-network.cloudwan.AttachmentPolicy"></a>
 
 an attachment policy.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AttachmentPolicy.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.AttachmentPolicy.Initializer"></a>
 
 ```typescript
-import { AttachmentPolicy } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const attachmentPolicy: AttachmentPolicy = { ... }
+const attachmentPolicy: cloudwan.AttachmentPolicy = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.action">action</a></code> | <code><a href="#raindancers-network.AttachmentPolicyAction">AttachmentPolicyAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.conditions">conditions</a></code> | <code><a href="#raindancers-network.AttachmentConditions">AttachmentConditions</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.conditionLogic">conditionLogic</a></code> | <code><a href="#raindancers-network.ConditionLogic">ConditionLogic</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentPolicy.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicy.property.action">action</a></code> | <code>raindancers-network.cloudwan.AttachmentPolicyAction</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicy.property.conditions">conditions</a></code> | <code>raindancers-network.cloudwan.AttachmentConditions[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicy.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicy.property.conditionLogic">conditionLogic</a></code> | <code>raindancers-network.cloudwan.ConditionLogic</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicy.property.description">description</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.AttachmentPolicy.property.action"></a>
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.cloudwan.AttachmentPolicy.property.action"></a>
 
 ```typescript
 public readonly action: AttachmentPolicyAction;
 ```
 
-- *Type:* <a href="#raindancers-network.AttachmentPolicyAction">AttachmentPolicyAction</a>
+- *Type:* raindancers-network.cloudwan.AttachmentPolicyAction
 
 ---
 
-##### `conditions`<sup>Required</sup> <a name="conditions" id="raindancers-network.AttachmentPolicy.property.conditions"></a>
+##### `conditions`<sup>Required</sup> <a name="conditions" id="raindancers-network.cloudwan.AttachmentPolicy.property.conditions"></a>
 
 ```typescript
 public readonly conditions: AttachmentConditions[];
 ```
 
-- *Type:* <a href="#raindancers-network.AttachmentConditions">AttachmentConditions</a>[]
+- *Type:* raindancers-network.cloudwan.AttachmentConditions[]
 
 ---
 
-##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.AttachmentPolicy.property.ruleNumber"></a>
+##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.cloudwan.AttachmentPolicy.property.ruleNumber"></a>
 
 ```typescript
 public readonly ruleNumber: number;
@@ -8664,17 +6858,17 @@ public readonly ruleNumber: number;
 
 ---
 
-##### `conditionLogic`<sup>Optional</sup> <a name="conditionLogic" id="raindancers-network.AttachmentPolicy.property.conditionLogic"></a>
+##### `conditionLogic`<sup>Optional</sup> <a name="conditionLogic" id="raindancers-network.cloudwan.AttachmentPolicy.property.conditionLogic"></a>
 
 ```typescript
 public readonly conditionLogic: ConditionLogic;
 ```
 
-- *Type:* <a href="#raindancers-network.ConditionLogic">ConditionLogic</a>
+- *Type:* raindancers-network.cloudwan.ConditionLogic
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.AttachmentPolicy.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.cloudwan.AttachmentPolicy.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -8684,40 +6878,53 @@ public readonly description: string;
 
 ---
 
-### AttachmentPolicyAction <a name="AttachmentPolicyAction" id="raindancers-network.AttachmentPolicyAction"></a>
+### AttachmentPolicyAction <a name="AttachmentPolicyAction" id="raindancers-network.cloudwan.AttachmentPolicyAction"></a>
 
 Attachment Policy Action.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AttachmentPolicyAction.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.AttachmentPolicyAction.Initializer"></a>
 
 ```typescript
-import { AttachmentPolicyAction } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const attachmentPolicyAction: AttachmentPolicyAction = { ... }
+const attachmentPolicyAction: cloudwan.AttachmentPolicyAction = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AttachmentPolicyAction.property.associationMethod">associationMethod</a></code> | <code><a href="#raindancers-network.AssociationMethod">AssociationMethod</a></code> | The Assocation Method. |
-| <code><a href="#raindancers-network.AttachmentPolicyAction.property.segment">segment</a></code> | <code>string</code> | The Segment this applies to. |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicyAction.property.associationMethod">associationMethod</a></code> | <code>raindancers-network.cloudwan.AssociationMethod</code> | The Assocation Method. |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicyAction.property.requireAcceptance">requireAcceptance</a></code> | <code>boolean</code> | Does this require approval. |
+| <code><a href="#raindancers-network.cloudwan.AttachmentPolicyAction.property.segment">segment</a></code> | <code>string</code> | The Segment this applies to. |
 
 ---
 
-##### `associationMethod`<sup>Required</sup> <a name="associationMethod" id="raindancers-network.AttachmentPolicyAction.property.associationMethod"></a>
+##### `associationMethod`<sup>Required</sup> <a name="associationMethod" id="raindancers-network.cloudwan.AttachmentPolicyAction.property.associationMethod"></a>
 
 ```typescript
 public readonly associationMethod: AssociationMethod;
 ```
 
-- *Type:* <a href="#raindancers-network.AssociationMethod">AssociationMethod</a>
+- *Type:* raindancers-network.cloudwan.AssociationMethod
 
 The Assocation Method.
 
 ---
 
-##### `segment`<sup>Optional</sup> <a name="segment" id="raindancers-network.AttachmentPolicyAction.property.segment"></a>
+##### `requireAcceptance`<sup>Optional</sup> <a name="requireAcceptance" id="raindancers-network.cloudwan.AttachmentPolicyAction.property.requireAcceptance"></a>
+
+```typescript
+public readonly requireAcceptance: boolean;
+```
+
+- *Type:* boolean
+
+Does this require approval.
+
+---
+
+##### `segment`<sup>Optional</sup> <a name="segment" id="raindancers-network.cloudwan.AttachmentPolicyAction.property.segment"></a>
 
 ```typescript
 public readonly segment: string;
@@ -8729,30 +6936,30 @@ The Segment this applies to.
 
 ---
 
-### AttachToCloudWanProps <a name="AttachToCloudWanProps" id="raindancers-network.AttachToCloudWanProps"></a>
+### AttachToCloudWanProps <a name="AttachToCloudWanProps" id="raindancers-network.network.AttachToCloudWanProps"></a>
 
 Propertys for Attaching to a Cloudwan Core Network.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AttachToCloudWanProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AttachToCloudWanProps.Initializer"></a>
 
 ```typescript
-import { AttachToCloudWanProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const attachToCloudWanProps: AttachToCloudWanProps = { ... }
+const attachToCloudWanProps: network.AttachToCloudWanProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AttachToCloudWanProps.property.coreNetworkName">coreNetworkName</a></code> | <code>string</code> | corenetworkName. |
-| <code><a href="#raindancers-network.AttachToCloudWanProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.AttachToCloudWanProps.property.applianceMode">applianceMode</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#raindancers-network.AttachToCloudWanProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AttachToCloudWanProps.property.coreNetworkName">coreNetworkName</a></code> | <code>string</code> | corenetworkName. |
+| <code><a href="#raindancers-network.network.AttachToCloudWanProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AttachToCloudWanProps.property.applianceMode">applianceMode</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AttachToCloudWanProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `coreNetworkName`<sup>Required</sup> <a name="coreNetworkName" id="raindancers-network.AttachToCloudWanProps.property.coreNetworkName"></a>
+##### `coreNetworkName`<sup>Required</sup> <a name="coreNetworkName" id="raindancers-network.network.AttachToCloudWanProps.property.coreNetworkName"></a>
 
 ```typescript
 public readonly coreNetworkName: string;
@@ -8764,7 +6971,7 @@ corenetworkName.
 
 ---
 
-##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.AttachToCloudWanProps.property.segmentName"></a>
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.network.AttachToCloudWanProps.property.segmentName"></a>
 
 ```typescript
 public readonly segmentName: string;
@@ -8774,7 +6981,7 @@ public readonly segmentName: string;
 
 ---
 
-##### `applianceMode`<sup>Optional</sup> <a name="applianceMode" id="raindancers-network.AttachToCloudWanProps.property.applianceMode"></a>
+##### `applianceMode`<sup>Optional</sup> <a name="applianceMode" id="raindancers-network.network.AttachToCloudWanProps.property.applianceMode"></a>
 
 ```typescript
 public readonly applianceMode: boolean;
@@ -8784,7 +6991,7 @@ public readonly applianceMode: boolean;
 
 ---
 
-##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.AttachToCloudWanProps.property.attachmentSubnetGroup"></a>
+##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.network.AttachToCloudWanProps.property.attachmentSubnetGroup"></a>
 
 ```typescript
 public readonly attachmentSubnetGroup: string;
@@ -8794,29 +7001,29 @@ public readonly attachmentSubnetGroup: string;
 
 ---
 
-### AttachToTransitGatewayProps <a name="AttachToTransitGatewayProps" id="raindancers-network.AttachToTransitGatewayProps"></a>
+### AttachToTransitGatewayProps <a name="AttachToTransitGatewayProps" id="raindancers-network.network.AttachToTransitGatewayProps"></a>
 
 Propertys to attach the Vpc To Transit Gateway.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AttachToTransitGatewayProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.AttachToTransitGatewayProps.Initializer"></a>
 
 ```typescript
-import { AttachToTransitGatewayProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const attachToTransitGatewayProps: AttachToTransitGatewayProps = { ... }
+const attachToTransitGatewayProps: network.AttachToTransitGatewayProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | the TransitGateway to connect to. |
-| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.applicanceMode">applicanceMode</a></code> | <code><a href="#raindancers-network.ApplianceMode">ApplianceMode</a></code> | Will this be connected in appliance mode ( used if you have Network Firewalls ). |
-| <code><a href="#raindancers-network.AttachToTransitGatewayProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.AttachToTransitGatewayProps.property.transitGateway">transitGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnTransitGateway</code> | the TransitGateway to connect to. |
+| <code><a href="#raindancers-network.network.AttachToTransitGatewayProps.property.applicanceMode">applicanceMode</a></code> | <code>raindancers-network.network.ApplianceMode</code> | Will this be connected in appliance mode ( used if you have Network Firewalls ). |
+| <code><a href="#raindancers-network.network.AttachToTransitGatewayProps.property.attachmentSubnetGroup">attachmentSubnetGroup</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.AttachToTransitGatewayProps.property.transitGateway"></a>
+##### `transitGateway`<sup>Required</sup> <a name="transitGateway" id="raindancers-network.network.AttachToTransitGatewayProps.property.transitGateway"></a>
 
 ```typescript
 public readonly transitGateway: CfnTransitGateway;
@@ -8828,19 +7035,19 @@ the TransitGateway to connect to.
 
 ---
 
-##### `applicanceMode`<sup>Optional</sup> <a name="applicanceMode" id="raindancers-network.AttachToTransitGatewayProps.property.applicanceMode"></a>
+##### `applicanceMode`<sup>Optional</sup> <a name="applicanceMode" id="raindancers-network.network.AttachToTransitGatewayProps.property.applicanceMode"></a>
 
 ```typescript
 public readonly applicanceMode: ApplianceMode;
 ```
 
-- *Type:* <a href="#raindancers-network.ApplianceMode">ApplianceMode</a>
+- *Type:* raindancers-network.network.ApplianceMode
 
 Will this be connected in appliance mode ( used if you have Network Firewalls ).
 
 ---
 
-##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.AttachToTransitGatewayProps.property.attachmentSubnetGroup"></a>
+##### `attachmentSubnetGroup`<sup>Optional</sup> <a name="attachmentSubnetGroup" id="raindancers-network.network.AttachToTransitGatewayProps.property.attachmentSubnetGroup"></a>
 
 ```typescript
 public readonly attachmentSubnetGroup: string;
@@ -8850,31 +7057,31 @@ public readonly attachmentSubnetGroup: string;
 
 ---
 
-### AwsServiceEndPointsProps <a name="AwsServiceEndPointsProps" id="raindancers-network.AwsServiceEndPointsProps"></a>
+### AwsServiceEndPointsProps <a name="AwsServiceEndPointsProps" id="raindancers-network.endpoints.AwsServiceEndPointsProps"></a>
 
 Properties to create a set of AWS service Endpoints.
 
-#### Initializer <a name="Initializer" id="raindancers-network.AwsServiceEndPointsProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.endpoints.AwsServiceEndPointsProps.Initializer"></a>
 
 ```typescript
-import { AwsServiceEndPointsProps } from 'raindancers-network'
+import { endpoints } from 'raindancers-network'
 
-const awsServiceEndPointsProps: AwsServiceEndPointsProps = { ... }
+const awsServiceEndPointsProps: endpoints.AwsServiceEndPointsProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | An arry of InterfaceVPCEndpoints. |
-| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | Subnet Group in which to create the service. |
-| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The vpc in which the service is created. |
-| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface">dynamoDBGatewayInterface</a></code> | <code>boolean</code> | indicate true for a Dynamo Gateway Interface. |
-| <code><a href="#raindancers-network.AwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | indicate true for a S3 Gateway Interface. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPointsProps.property.services">services</a></code> | <code>aws-cdk-lib.aws_ec2.InterfaceVpcEndpointAwsService[]</code> | An arry of InterfaceVPCEndpoints. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | Subnet Group in which to create the service. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | The vpc in which the service is created. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface">dynamoDBGatewayInterface</a></code> | <code>boolean</code> | indicate true for a Dynamo Gateway Interface. |
+| <code><a href="#raindancers-network.endpoints.AwsServiceEndPointsProps.property.s3GatewayInterface">s3GatewayInterface</a></code> | <code>boolean</code> | indicate true for a S3 Gateway Interface. |
 
 ---
 
-##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.AwsServiceEndPointsProps.property.services"></a>
+##### `services`<sup>Required</sup> <a name="services" id="raindancers-network.endpoints.AwsServiceEndPointsProps.property.services"></a>
 
 ```typescript
 public readonly services: InterfaceVpcEndpointAwsService[];
@@ -8886,7 +7093,7 @@ An arry of InterfaceVPCEndpoints.
 
 ---
 
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.AwsServiceEndPointsProps.property.subnetGroup"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.endpoints.AwsServiceEndPointsProps.property.subnetGroup"></a>
 
 ```typescript
 public readonly subnetGroup: string;
@@ -8900,19 +7107,19 @@ Typically a subnet Dedicated to the task
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.AwsServiceEndPointsProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.endpoints.AwsServiceEndPointsProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 The vpc in which the service is created.
 
 ---
 
-##### `dynamoDBGatewayInterface`<sup>Optional</sup> <a name="dynamoDBGatewayInterface" id="raindancers-network.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface"></a>
+##### `dynamoDBGatewayInterface`<sup>Optional</sup> <a name="dynamoDBGatewayInterface" id="raindancers-network.endpoints.AwsServiceEndPointsProps.property.dynamoDBGatewayInterface"></a>
 
 ```typescript
 public readonly dynamoDBGatewayInterface: boolean;
@@ -8924,7 +7131,7 @@ indicate true for a Dynamo Gateway Interface.
 
 ---
 
-##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.AwsServiceEndPointsProps.property.s3GatewayInterface"></a>
+##### `s3GatewayInterface`<sup>Optional</sup> <a name="s3GatewayInterface" id="raindancers-network.endpoints.AwsServiceEndPointsProps.property.s3GatewayInterface"></a>
 
 ```typescript
 public readonly s3GatewayInterface: boolean;
@@ -8936,27 +7143,27 @@ indicate true for a S3 Gateway Interface.
 
 ---
 
-### CentralAccountAssnRoleProps <a name="CentralAccountAssnRoleProps" id="raindancers-network.CentralAccountAssnRoleProps"></a>
+### CentralAccountAssnRoleProps <a name="CentralAccountAssnRoleProps" id="raindancers-network.dns.CentralAccountAssnRoleProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CentralAccountAssnRoleProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.CentralAccountAssnRoleProps.Initializer"></a>
 
 ```typescript
-import { CentralAccountAssnRoleProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const centralAccountAssnRoleProps: CentralAccountAssnRoleProps = { ... }
+const centralAccountAssnRoleProps: dns.CentralAccountAssnRoleProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralAccountAssnRoleProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRoleProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRoleProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralAccountAssnRoleProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `orgId`<sup>Required</sup> <a name="orgId" id="raindancers-network.CentralAccountAssnRoleProps.property.orgId"></a>
+##### `orgId`<sup>Required</sup> <a name="orgId" id="raindancers-network.dns.CentralAccountAssnRoleProps.property.orgId"></a>
 
 ```typescript
 public readonly orgId: string;
@@ -8966,17 +7173,17 @@ public readonly orgId: string;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CentralAccountAssnRoleProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.CentralAccountAssnRoleProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
-##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.CentralAccountAssnRoleProps.property.roleName"></a>
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.dns.CentralAccountAssnRoleProps.property.roleName"></a>
 
 ```typescript
 public readonly roleName: string;
@@ -8986,28 +7193,28 @@ public readonly roleName: string;
 
 ---
 
-### CentralResolverRulesProps <a name="CentralResolverRulesProps" id="raindancers-network.CentralResolverRulesProps"></a>
+### CentralResolverRulesProps <a name="CentralResolverRulesProps" id="raindancers-network.dns.CentralResolverRulesProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CentralResolverRulesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.CentralResolverRulesProps.Initializer"></a>
 
 ```typescript
-import { CentralResolverRulesProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const centralResolverRulesProps: CentralResolverRulesProps = { ... }
+const centralResolverRulesProps: dns.CentralResolverRulesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CentralResolverRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralResolverRulesProps.property.resolvers">resolvers</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CentralResolverRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.CentralResolverRulesProps.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRulesProps.property.resolvers">resolvers</a></code> | <code>raindancers-network.dns.R53Resolverendpoints</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CentralResolverRulesProps.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
 
 ---
 
-##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.CentralResolverRulesProps.property.domains"></a>
+##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.dns.CentralResolverRulesProps.property.domains"></a>
 
 ```typescript
 public readonly domains: string[];
@@ -9017,27 +7224,27 @@ public readonly domains: string[];
 
 ---
 
-##### `resolvers`<sup>Required</sup> <a name="resolvers" id="raindancers-network.CentralResolverRulesProps.property.resolvers"></a>
+##### `resolvers`<sup>Required</sup> <a name="resolvers" id="raindancers-network.dns.CentralResolverRulesProps.property.resolvers"></a>
 
 ```typescript
 public readonly resolvers: R53Resolverendpoints;
 ```
 
-- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
+- *Type:* raindancers-network.dns.R53Resolverendpoints
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CentralResolverRulesProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.CentralResolverRulesProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
-##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.CentralResolverRulesProps.property.vpcSearchTag"></a>
+##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.dns.CentralResolverRulesProps.property.vpcSearchTag"></a>
 
 ```typescript
 public readonly vpcSearchTag: Tag;
@@ -9047,27 +7254,27 @@ public readonly vpcSearchTag: Tag;
 
 ---
 
-### CloudWanRoutingProtocolProps <a name="CloudWanRoutingProtocolProps" id="raindancers-network.CloudWanRoutingProtocolProps"></a>
+### CloudWanRoutingProtocolProps <a name="CloudWanRoutingProtocolProps" id="raindancers-network.network.CloudWanRoutingProtocolProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CloudWanRoutingProtocolProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.CloudWanRoutingProtocolProps.Initializer"></a>
 
 ```typescript
-import { CloudWanRoutingProtocolProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const cloudWanRoutingProtocolProps: CloudWanRoutingProtocolProps = { ... }
+const cloudWanRoutingProtocolProps: network.CloudWanRoutingProtocolProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.acceptRouteFilter">acceptRouteFilter</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.CloudWanRoutingProtocolProps.property.denyRouteFilter">denyRouteFilter</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.CloudWanRoutingProtocolProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.CloudWanRoutingProtocolProps.property.acceptRouteFilter">acceptRouteFilter</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.CloudWanRoutingProtocolProps.property.denyRouteFilter">denyRouteFilter</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.CloudWanRoutingProtocolProps.property.subnetGroups"></a>
+##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.network.CloudWanRoutingProtocolProps.property.subnetGroups"></a>
 
 ```typescript
 public readonly subnetGroups: string[];
@@ -9077,7 +7284,7 @@ public readonly subnetGroups: string[];
 
 ---
 
-##### `acceptRouteFilter`<sup>Optional</sup> <a name="acceptRouteFilter" id="raindancers-network.CloudWanRoutingProtocolProps.property.acceptRouteFilter"></a>
+##### `acceptRouteFilter`<sup>Optional</sup> <a name="acceptRouteFilter" id="raindancers-network.network.CloudWanRoutingProtocolProps.property.acceptRouteFilter"></a>
 
 ```typescript
 public readonly acceptRouteFilter: string[];
@@ -9087,7 +7294,7 @@ public readonly acceptRouteFilter: string[];
 
 ---
 
-##### `denyRouteFilter`<sup>Optional</sup> <a name="denyRouteFilter" id="raindancers-network.CloudWanRoutingProtocolProps.property.denyRouteFilter"></a>
+##### `denyRouteFilter`<sup>Optional</sup> <a name="denyRouteFilter" id="raindancers-network.network.CloudWanRoutingProtocolProps.property.denyRouteFilter"></a>
 
 ```typescript
 public readonly denyRouteFilter: string[];
@@ -9097,38 +7304,38 @@ public readonly denyRouteFilter: string[];
 
 ---
 
-### ConditionalForwarderProps <a name="ConditionalForwarderProps" id="raindancers-network.ConditionalForwarderProps"></a>
+### ConditionalForwarderProps <a name="ConditionalForwarderProps" id="raindancers-network.dns.ConditionalForwarderProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ConditionalForwarderProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.ConditionalForwarderProps.Initializer"></a>
 
 ```typescript
-import { ConditionalForwarderProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const conditionalForwarderProps: ConditionalForwarderProps = { ... }
+const conditionalForwarderProps: dns.ConditionalForwarderProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ConditionalForwarderProps.property.forwardingRules">forwardingRules</a></code> | <code><a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionalForwarderProps.property.inboundResolverTargets">inboundResolverTargets</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionalForwarderProps.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionalForwarderProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarderProps.property.forwardingRules">forwardingRules</a></code> | <code>raindancers-network.dns.OutboundForwardingRule[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarderProps.property.inboundResolverTargets">inboundResolverTargets</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverRule.TargetAddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarderProps.property.outboundResolver">outboundResolver</a></code> | <code>aws-cdk-lib.aws_route53resolver.CfnResolverEndpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ConditionalForwarderProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.ConditionalForwarderProps.property.forwardingRules"></a>
+##### `forwardingRules`<sup>Required</sup> <a name="forwardingRules" id="raindancers-network.dns.ConditionalForwarderProps.property.forwardingRules"></a>
 
 ```typescript
 public readonly forwardingRules: OutboundForwardingRule[];
 ```
 
-- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
+- *Type:* raindancers-network.dns.OutboundForwardingRule[]
 
 ---
 
-##### `inboundResolverTargets`<sup>Required</sup> <a name="inboundResolverTargets" id="raindancers-network.ConditionalForwarderProps.property.inboundResolverTargets"></a>
+##### `inboundResolverTargets`<sup>Required</sup> <a name="inboundResolverTargets" id="raindancers-network.dns.ConditionalForwarderProps.property.inboundResolverTargets"></a>
 
 ```typescript
 public readonly inboundResolverTargets: TargetAddressProperty[];
@@ -9138,7 +7345,7 @@ public readonly inboundResolverTargets: TargetAddressProperty[];
 
 ---
 
-##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.ConditionalForwarderProps.property.outboundResolver"></a>
+##### `outboundResolver`<sup>Required</sup> <a name="outboundResolver" id="raindancers-network.dns.ConditionalForwarderProps.property.outboundResolver"></a>
 
 ```typescript
 public readonly outboundResolver: CfnResolverEndpoint;
@@ -9148,44 +7355,44 @@ public readonly outboundResolver: CfnResolverEndpoint;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ConditionalForwarderProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.ConditionalForwarderProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
-### CoreNetworkProps <a name="CoreNetworkProps" id="raindancers-network.CoreNetworkProps"></a>
+### CoreNetworkProps <a name="CoreNetworkProps" id="raindancers-network.cloudwan.CoreNetworkProps"></a>
 
 CoreNetwork Properties.
 
-#### Initializer <a name="Initializer" id="raindancers-network.CoreNetworkProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.CoreNetworkProps.Initializer"></a>
 
 ```typescript
-import { CoreNetworkProps } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const coreNetworkProps: CoreNetworkProps = { ... }
+const coreNetworkProps: cloudwan.CoreNetworkProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.asnRanges">asnRanges</a></code> | <code>string[]</code> | a list of of asn's that can be used. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.coreName">coreName</a></code> | <code>string</code> | core name. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | list of edgeLocaitons. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.globalNetwork">globalNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnGlobalNetwork</code> | Which Global Network. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.policyDescription">policyDescription</a></code> | <code>string</code> | a decription for the policy Document. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.insideCidrBlocks">insideCidrBlocks</a></code> | <code>string[]</code> | List of InsideCidr Blocks. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.nonProduction">nonProduction</a></code> | <code>boolean</code> | If this is a non production stack, backups will not be made. |
-| <code><a href="#raindancers-network.CoreNetworkProps.property.vpnEcmpSupport">vpnEcmpSupport</a></code> | <code>boolean</code> | support VpnECmp. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.asnRanges">asnRanges</a></code> | <code>string[]</code> | a list of of asn's that can be used. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.coreName">coreName</a></code> | <code>string</code> | core name. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | list of edgeLocaitons. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.globalNetwork">globalNetwork</a></code> | <code>aws-cdk-lib.aws_networkmanager.CfnGlobalNetwork</code> | Which Global Network. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.policyDescription">policyDescription</a></code> | <code>string</code> | a decription for the policy Document. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.insideCidrBlocks">insideCidrBlocks</a></code> | <code>string[]</code> | List of InsideCidr Blocks. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.nonProduction">nonProduction</a></code> | <code>boolean</code> | If this is a non production stack, backups will not be made. |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkProps.property.vpnEcmpSupport">vpnEcmpSupport</a></code> | <code>boolean</code> | support VpnECmp. |
 
 ---
 
-##### `asnRanges`<sup>Required</sup> <a name="asnRanges" id="raindancers-network.CoreNetworkProps.property.asnRanges"></a>
+##### `asnRanges`<sup>Required</sup> <a name="asnRanges" id="raindancers-network.cloudwan.CoreNetworkProps.property.asnRanges"></a>
 
 ```typescript
 public readonly asnRanges: string[];
@@ -9197,7 +7404,7 @@ a list of of asn's that can be used.
 
 ---
 
-##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.CoreNetworkProps.property.coreName"></a>
+##### `coreName`<sup>Required</sup> <a name="coreName" id="raindancers-network.cloudwan.CoreNetworkProps.property.coreName"></a>
 
 ```typescript
 public readonly coreName: string;
@@ -9209,7 +7416,7 @@ core name.
 
 ---
 
-##### `edgeLocations`<sup>Required</sup> <a name="edgeLocations" id="raindancers-network.CoreNetworkProps.property.edgeLocations"></a>
+##### `edgeLocations`<sup>Required</sup> <a name="edgeLocations" id="raindancers-network.cloudwan.CoreNetworkProps.property.edgeLocations"></a>
 
 ```typescript
 public readonly edgeLocations: object[];
@@ -9221,7 +7428,7 @@ list of edgeLocaitons.
 
 ---
 
-##### `globalNetwork`<sup>Required</sup> <a name="globalNetwork" id="raindancers-network.CoreNetworkProps.property.globalNetwork"></a>
+##### `globalNetwork`<sup>Required</sup> <a name="globalNetwork" id="raindancers-network.cloudwan.CoreNetworkProps.property.globalNetwork"></a>
 
 ```typescript
 public readonly globalNetwork: CfnGlobalNetwork;
@@ -9233,7 +7440,7 @@ Which Global Network.
 
 ---
 
-##### `policyDescription`<sup>Required</sup> <a name="policyDescription" id="raindancers-network.CoreNetworkProps.property.policyDescription"></a>
+##### `policyDescription`<sup>Required</sup> <a name="policyDescription" id="raindancers-network.cloudwan.CoreNetworkProps.property.policyDescription"></a>
 
 ```typescript
 public readonly policyDescription: string;
@@ -9245,7 +7452,7 @@ a decription for the policy Document.
 
 ---
 
-##### `insideCidrBlocks`<sup>Optional</sup> <a name="insideCidrBlocks" id="raindancers-network.CoreNetworkProps.property.insideCidrBlocks"></a>
+##### `insideCidrBlocks`<sup>Optional</sup> <a name="insideCidrBlocks" id="raindancers-network.cloudwan.CoreNetworkProps.property.insideCidrBlocks"></a>
 
 ```typescript
 public readonly insideCidrBlocks: string[];
@@ -9257,7 +7464,7 @@ List of InsideCidr Blocks.
 
 ---
 
-##### `nonProduction`<sup>Optional</sup> <a name="nonProduction" id="raindancers-network.CoreNetworkProps.property.nonProduction"></a>
+##### `nonProduction`<sup>Optional</sup> <a name="nonProduction" id="raindancers-network.cloudwan.CoreNetworkProps.property.nonProduction"></a>
 
 ```typescript
 public readonly nonProduction: boolean;
@@ -9269,7 +7476,7 @@ If this is a non production stack, backups will not be made.
 
 ---
 
-##### `vpnEcmpSupport`<sup>Optional</sup> <a name="vpnEcmpSupport" id="raindancers-network.CoreNetworkProps.property.vpnEcmpSupport"></a>
+##### `vpnEcmpSupport`<sup>Optional</sup> <a name="vpnEcmpSupport" id="raindancers-network.cloudwan.CoreNetworkProps.property.vpnEcmpSupport"></a>
 
 ```typescript
 public readonly vpnEcmpSupport: boolean;
@@ -9281,29 +7488,29 @@ support VpnECmp.
 
 ---
 
-### CoreNetworkShare <a name="CoreNetworkShare" id="raindancers-network.CoreNetworkShare"></a>
+### CoreNetworkShare <a name="CoreNetworkShare" id="raindancers-network.cloudwan.CoreNetworkShare"></a>
 
 CoreNetworkShare.
 
-#### Initializer <a name="Initializer" id="raindancers-network.CoreNetworkShare.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.CoreNetworkShare.Initializer"></a>
 
 ```typescript
-import { CoreNetworkShare } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const coreNetworkShare: CoreNetworkShare = { ... }
+const coreNetworkShare: cloudwan.CoreNetworkShare = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CoreNetworkShare.property.allowExternalPrincipals">allowExternalPrincipals</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetworkShare.property.principals">principals</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.CoreNetworkShare.property.tags">tags</a></code> | <code>aws-cdk-lib.Tag[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkShare.property.allowExternalPrincipals">allowExternalPrincipals</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkShare.property.principals">principals</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.CoreNetworkShare.property.tags">tags</a></code> | <code>aws-cdk-lib.Tag[]</code> | *No description.* |
 
 ---
 
-##### `allowExternalPrincipals`<sup>Required</sup> <a name="allowExternalPrincipals" id="raindancers-network.CoreNetworkShare.property.allowExternalPrincipals"></a>
+##### `allowExternalPrincipals`<sup>Required</sup> <a name="allowExternalPrincipals" id="raindancers-network.cloudwan.CoreNetworkShare.property.allowExternalPrincipals"></a>
 
 ```typescript
 public readonly allowExternalPrincipals: boolean;
@@ -9313,7 +7520,7 @@ public readonly allowExternalPrincipals: boolean;
 
 ---
 
-##### `principals`<sup>Required</sup> <a name="principals" id="raindancers-network.CoreNetworkShare.property.principals"></a>
+##### `principals`<sup>Required</sup> <a name="principals" id="raindancers-network.cloudwan.CoreNetworkShare.property.principals"></a>
 
 ```typescript
 public readonly principals: string[];
@@ -9323,7 +7530,7 @@ public readonly principals: string[];
 
 ---
 
-##### `tags`<sup>Optional</sup> <a name="tags" id="raindancers-network.CoreNetworkShare.property.tags"></a>
+##### `tags`<sup>Optional</sup> <a name="tags" id="raindancers-network.cloudwan.CoreNetworkShare.property.tags"></a>
 
 ```typescript
 public readonly tags: Tag[];
@@ -9416,26 +7623,26 @@ public readonly s3Targets: S3Target[];
 
 ---
 
-### CrossAccountProps <a name="CrossAccountProps" id="raindancers-network.CrossAccountProps"></a>
+### CrossAccountProps <a name="CrossAccountProps" id="raindancers-network.dns.CrossAccountProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrossAccountProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.CrossAccountProps.Initializer"></a>
 
 ```typescript
-import { CrossAccountProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const crossAccountProps: CrossAccountProps = { ... }
+const crossAccountProps: dns.CrossAccountProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossAccountProps.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossAccountProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CrossAccountProps.property.accountId">accountId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.CrossAccountProps.property.roleName">roleName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `accountId`<sup>Required</sup> <a name="accountId" id="raindancers-network.CrossAccountProps.property.accountId"></a>
+##### `accountId`<sup>Required</sup> <a name="accountId" id="raindancers-network.dns.CrossAccountProps.property.accountId"></a>
 
 ```typescript
 public readonly accountId: string;
@@ -9445,7 +7652,7 @@ public readonly accountId: string;
 
 ---
 
-##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.CrossAccountProps.property.roleName"></a>
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="raindancers-network.dns.CrossAccountProps.property.roleName"></a>
 
 ```typescript
 public readonly roleName: string;
@@ -9455,26 +7662,26 @@ public readonly roleName: string;
 
 ---
 
-### CrossRegionParameterReaderProps <a name="CrossRegionParameterReaderProps" id="raindancers-network.CrossRegionParameterReaderProps"></a>
+### CrossRegionParameterReaderProps <a name="CrossRegionParameterReaderProps" id="raindancers-network.ssm.CrossRegionParameterReaderProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionParameterReaderProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ssm.CrossRegionParameterReaderProps.Initializer"></a>
 
 ```typescript
-import { CrossRegionParameterReaderProps } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-const crossRegionParameterReaderProps: CrossRegionParameterReaderProps = { ... }
+const crossRegionParameterReaderProps: ssm.CrossRegionParameterReaderProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterReaderProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterReaderProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReaderProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterReaderProps.property.region">region</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.CrossRegionParameterReaderProps.property.parameterName"></a>
+##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.ssm.CrossRegionParameterReaderProps.property.parameterName"></a>
 
 ```typescript
 public readonly parameterName: string;
@@ -9484,7 +7691,7 @@ public readonly parameterName: string;
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.CrossRegionParameterReaderProps.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.ssm.CrossRegionParameterReaderProps.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -9494,27 +7701,27 @@ public readonly region: string;
 
 ---
 
-### CrossRegionParameterWriterProps <a name="CrossRegionParameterWriterProps" id="raindancers-network.CrossRegionParameterWriterProps"></a>
+### CrossRegionParameterWriterProps <a name="CrossRegionParameterWriterProps" id="raindancers-network.ssm.CrossRegionParameterWriterProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrossRegionParameterWriterProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ssm.CrossRegionParameterWriterProps.Initializer"></a>
 
 ```typescript
-import { CrossRegionParameterWriterProps } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-const crossRegionParameterWriterProps: CrossRegionParameterWriterProps = { ... }
+const crossRegionParameterWriterProps: ssm.CrossRegionParameterWriterProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrossRegionParameterWriterProps.property.value">value</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriterProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriterProps.property.parameterName">parameterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ssm.CrossRegionParameterWriterProps.property.value">value</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.CrossRegionParameterWriterProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.ssm.CrossRegionParameterWriterProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -9524,7 +7731,7 @@ public readonly description: string;
 
 ---
 
-##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.CrossRegionParameterWriterProps.property.parameterName"></a>
+##### `parameterName`<sup>Required</sup> <a name="parameterName" id="raindancers-network.ssm.CrossRegionParameterWriterProps.property.parameterName"></a>
 
 ```typescript
 public readonly parameterName: string;
@@ -9534,7 +7741,7 @@ public readonly parameterName: string;
 
 ---
 
-##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.CrossRegionParameterWriterProps.property.value"></a>
+##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.ssm.CrossRegionParameterWriterProps.property.value"></a>
 
 ```typescript
 public readonly value: string;
@@ -9544,50 +7751,50 @@ public readonly value: string;
 
 ---
 
-### CrowdStrikeExtendedEndpointProps <a name="CrowdStrikeExtendedEndpointProps" id="raindancers-network.CrowdStrikeExtendedEndpointProps"></a>
+### CrowdStrikeExtendedEndpointProps <a name="CrowdStrikeExtendedEndpointProps" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeExtendedEndpointProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.Initializer"></a>
 
 ```typescript
-import { CrowdStrikeExtendedEndpointProps } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const crowdStrikeExtendedEndpointProps: CrowdStrikeExtendedEndpointProps = { ... }
+const crowdStrikeExtendedEndpointProps: crowdstrike.CrowdStrikeExtendedEndpointProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | aws The EC2 Instance that will be udpated. |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc">peeringVpc</a></code> | <code><a href="#raindancers-network.VpcRegionId">VpcRegionId</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc">useELBInPeeredVpc</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr">vpccidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud">crowdstrikeCloud</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeCloud</code> | aws The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.peeringVpc">peeringVpc</a></code> | <code>raindancers-network.crowdstrike.VpcRegionId</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc">useELBInPeeredVpc</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.vpccidr">vpccidr</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `crowdstrikeCloud`<sup>Required</sup> <a name="crowdstrikeCloud" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud"></a>
+##### `crowdstrikeCloud`<sup>Required</sup> <a name="crowdstrikeCloud" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.crowdstrikeCloud"></a>
 
 ```typescript
 public readonly crowdstrikeCloud: CrowdStrikeCloud;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeCloud
 
 aws The EC2 Instance that will be udpated.
 
 ---
 
-##### `peeringVpc`<sup>Optional</sup> <a name="peeringVpc" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.peeringVpc"></a>
+##### `peeringVpc`<sup>Optional</sup> <a name="peeringVpc" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.peeringVpc"></a>
 
 ```typescript
 public readonly peeringVpc: VpcRegionId;
 ```
 
-- *Type:* <a href="#raindancers-network.VpcRegionId">VpcRegionId</a>
+- *Type:* raindancers-network.crowdstrike.VpcRegionId
 
 ---
 
-##### `useELBInPeeredVpc`<sup>Optional</sup> <a name="useELBInPeeredVpc" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc"></a>
+##### `useELBInPeeredVpc`<sup>Optional</sup> <a name="useELBInPeeredVpc" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.useELBInPeeredVpc"></a>
 
 ```typescript
 public readonly useELBInPeeredVpc: boolean;
@@ -9597,7 +7804,7 @@ public readonly useELBInPeeredVpc: boolean;
 
 ---
 
-##### `vpccidr`<sup>Optional</sup> <a name="vpccidr" id="raindancers-network.CrowdStrikeExtendedEndpointProps.property.vpccidr"></a>
+##### `vpccidr`<sup>Optional</sup> <a name="vpccidr" id="raindancers-network.crowdstrike.CrowdStrikeExtendedEndpointProps.property.vpccidr"></a>
 
 ```typescript
 public readonly vpccidr: string;
@@ -9607,45 +7814,45 @@ public readonly vpccidr: string;
 
 ---
 
-### CrowdStrikeNLBProps <a name="CrowdStrikeNLBProps" id="raindancers-network.CrowdStrikeNLBProps"></a>
+### CrowdStrikeNLBProps <a name="CrowdStrikeNLBProps" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeNLBProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.Initializer"></a>
 
 ```typescript
-import { CrowdStrikeNLBProps } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const crowdStrikeNLBProps: CrowdStrikeNLBProps = { ... }
+const crowdStrikeNLBProps: crowdstrike.CrowdStrikeNLBProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.crowdstrikeRegion">crowdstrikeRegion</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.download">download</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.region">region</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.routeresolverEndpoints">routeresolverEndpoints</a></code> | <code><a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeNLBProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.crowdstrikeRegion">crowdstrikeRegion</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeCloud</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.download">download</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.downloadhostedZone">downloadhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.downloadhostedZoneName">downloadhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxy">proxy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxyhostedZone">proxyhostedZone</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxyhostedZoneName">proxyhostedZoneName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.routeresolverEndpoints">routeresolverEndpoints</a></code> | <code>raindancers-network.dns.R53Resolverendpoints</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `crowdstrikeRegion`<sup>Required</sup> <a name="crowdstrikeRegion" id="raindancers-network.CrowdStrikeNLBProps.property.crowdstrikeRegion"></a>
+##### `crowdstrikeRegion`<sup>Required</sup> <a name="crowdstrikeRegion" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.crowdstrikeRegion"></a>
 
 ```typescript
 public readonly crowdstrikeRegion: CrowdStrikeCloud;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeCloud
 
 ---
 
-##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.CrowdStrikeNLBProps.property.download"></a>
+##### `download`<sup>Required</sup> <a name="download" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.download"></a>
 
 ```typescript
 public readonly download: string;
@@ -9655,7 +7862,7 @@ public readonly download: string;
 
 ---
 
-##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZone"></a>
+##### `downloadhostedZone`<sup>Required</sup> <a name="downloadhostedZone" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.downloadhostedZone"></a>
 
 ```typescript
 public readonly downloadhostedZone: string;
@@ -9665,7 +7872,7 @@ public readonly downloadhostedZone: string;
 
 ---
 
-##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.CrowdStrikeNLBProps.property.downloadhostedZoneName"></a>
+##### `downloadhostedZoneName`<sup>Required</sup> <a name="downloadhostedZoneName" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.downloadhostedZoneName"></a>
 
 ```typescript
 public readonly downloadhostedZoneName: string;
@@ -9675,7 +7882,7 @@ public readonly downloadhostedZoneName: string;
 
 ---
 
-##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.CrowdStrikeNLBProps.property.proxy"></a>
+##### `proxy`<sup>Required</sup> <a name="proxy" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxy"></a>
 
 ```typescript
 public readonly proxy: string;
@@ -9685,7 +7892,7 @@ public readonly proxy: string;
 
 ---
 
-##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZone"></a>
+##### `proxyhostedZone`<sup>Required</sup> <a name="proxyhostedZone" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxyhostedZone"></a>
 
 ```typescript
 public readonly proxyhostedZone: string;
@@ -9695,7 +7902,7 @@ public readonly proxyhostedZone: string;
 
 ---
 
-##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.CrowdStrikeNLBProps.property.proxyhostedZoneName"></a>
+##### `proxyhostedZoneName`<sup>Required</sup> <a name="proxyhostedZoneName" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.proxyhostedZoneName"></a>
 
 ```typescript
 public readonly proxyhostedZoneName: string;
@@ -9705,7 +7912,7 @@ public readonly proxyhostedZoneName: string;
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.CrowdStrikeNLBProps.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -9715,17 +7922,17 @@ public readonly region: string;
 
 ---
 
-##### `routeresolverEndpoints`<sup>Required</sup> <a name="routeresolverEndpoints" id="raindancers-network.CrowdStrikeNLBProps.property.routeresolverEndpoints"></a>
+##### `routeresolverEndpoints`<sup>Required</sup> <a name="routeresolverEndpoints" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.routeresolverEndpoints"></a>
 
 ```typescript
 public readonly routeresolverEndpoints: R53Resolverendpoints;
 ```
 
-- *Type:* <a href="#raindancers-network.R53Resolverendpoints">R53Resolverendpoints</a>
+- *Type:* raindancers-network.dns.R53Resolverendpoints
 
 ---
 
-##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.CrowdStrikeNLBProps.property.subnetGroupName"></a>
+##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.subnetGroupName"></a>
 
 ```typescript
 public readonly subnetGroupName: string;
@@ -9735,7 +7942,7 @@ public readonly subnetGroupName: string;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CrowdStrikeNLBProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.crowdstrike.CrowdStrikeNLBProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: Vpc;
@@ -9745,38 +7952,38 @@ public readonly vpc: Vpc;
 
 ---
 
-### CrowdStrikePrivateLinkEndpointProps <a name="CrowdStrikePrivateLinkEndpointProps" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps"></a>
+### CrowdStrikePrivateLinkEndpointProps <a name="CrowdStrikePrivateLinkEndpointProps" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.Initializer"></a>
 
 ```typescript
-import { CrowdStrikePrivateLinkEndpointProps } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const crowdStrikePrivateLinkEndpointProps: CrowdStrikePrivateLinkEndpointProps = { ... }
+const crowdStrikePrivateLinkEndpointProps: crowdstrike.CrowdStrikePrivateLinkEndpointProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud">crowdStrikeCloud</a></code> | <code><a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.subnets">subnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | The EC2 Instance that will be udpated. |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB">peeredwithNLB</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud">crowdStrikeCloud</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeCloud</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.subnets">subnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB">peeredwithNLB</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
-##### `crowdStrikeCloud`<sup>Required</sup> <a name="crowdStrikeCloud" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud"></a>
+##### `crowdStrikeCloud`<sup>Required</sup> <a name="crowdStrikeCloud" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.crowdStrikeCloud"></a>
 
 ```typescript
 public readonly crowdStrikeCloud: CrowdStrikeCloud;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeCloud">CrowdStrikeCloud</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeCloud
 
 ---
 
-##### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.subnets"></a>
+##### `subnets`<sup>Required</sup> <a name="subnets" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.subnets"></a>
 
 ```typescript
 public readonly subnets: SubnetSelection;
@@ -9786,19 +7993,19 @@ public readonly subnets: SubnetSelection;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 The EC2 Instance that will be udpated.
 
 ---
 
-##### `peeredwithNLB`<sup>Optional</sup> <a name="peeredwithNLB" id="raindancers-network.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB"></a>
+##### `peeredwithNLB`<sup>Optional</sup> <a name="peeredwithNLB" id="raindancers-network.crowdstrike.CrowdStrikePrivateLinkEndpointProps.property.peeredwithNLB"></a>
 
 ```typescript
 public readonly peeredwithNLB: boolean;
@@ -9808,76 +8015,76 @@ public readonly peeredwithNLB: boolean;
 
 ---
 
-### CrowdStrikeServices <a name="CrowdStrikeServices" id="raindancers-network.CrowdStrikeServices"></a>
+### CrowdStrikeServices <a name="CrowdStrikeServices" id="raindancers-network.crowdstrike.CrowdStrikeServices"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CrowdStrikeServices.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.CrowdStrikeServices.Initializer"></a>
 
 ```typescript
-import { CrowdStrikeServices } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const crowdStrikeServices: CrowdStrikeServices = { ... }
+const crowdStrikeServices: crowdstrike.CrowdStrikeServices = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeServices.property.awsRegion">awsRegion</a></code> | <code><a href="#raindancers-network.CrowdStrikeRegion">CrowdStrikeRegion</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeServices.property.downloadServer">downloadServer</a></code> | <code><a href="#raindancers-network.Endpoint">Endpoint</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeServices.property.sensorProxy">sensorProxy</a></code> | <code><a href="#raindancers-network.Endpoint">Endpoint</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeServices.property.awsRegion">awsRegion</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeRegion</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeServices.property.downloadServer">downloadServer</a></code> | <code>raindancers-network.crowdstrike.Endpoint</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeServices.property.sensorProxy">sensorProxy</a></code> | <code>raindancers-network.crowdstrike.Endpoint</code> | *No description.* |
 
 ---
 
-##### `awsRegion`<sup>Required</sup> <a name="awsRegion" id="raindancers-network.CrowdStrikeServices.property.awsRegion"></a>
+##### `awsRegion`<sup>Required</sup> <a name="awsRegion" id="raindancers-network.crowdstrike.CrowdStrikeServices.property.awsRegion"></a>
 
 ```typescript
 public readonly awsRegion: CrowdStrikeRegion;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeRegion">CrowdStrikeRegion</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeRegion
 
 ---
 
-##### `downloadServer`<sup>Required</sup> <a name="downloadServer" id="raindancers-network.CrowdStrikeServices.property.downloadServer"></a>
+##### `downloadServer`<sup>Required</sup> <a name="downloadServer" id="raindancers-network.crowdstrike.CrowdStrikeServices.property.downloadServer"></a>
 
 ```typescript
 public readonly downloadServer: Endpoint;
 ```
 
-- *Type:* <a href="#raindancers-network.Endpoint">Endpoint</a>
+- *Type:* raindancers-network.crowdstrike.Endpoint
 
 ---
 
-##### `sensorProxy`<sup>Required</sup> <a name="sensorProxy" id="raindancers-network.CrowdStrikeServices.property.sensorProxy"></a>
+##### `sensorProxy`<sup>Required</sup> <a name="sensorProxy" id="raindancers-network.crowdstrike.CrowdStrikeServices.property.sensorProxy"></a>
 
 ```typescript
 public readonly sensorProxy: Endpoint;
 ```
 
-- *Type:* <a href="#raindancers-network.Endpoint">Endpoint</a>
+- *Type:* raindancers-network.crowdstrike.Endpoint
 
 ---
 
-### CustomerManagedPolicyReference <a name="CustomerManagedPolicyReference" id="raindancers-network.CustomerManagedPolicyReference"></a>
+### CustomerManagedPolicyReference <a name="CustomerManagedPolicyReference" id="raindancers-network.sso.CustomerManagedPolicyReference"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.CustomerManagedPolicyReference.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.CustomerManagedPolicyReference.Initializer"></a>
 
 ```typescript
-import { CustomerManagedPolicyReference } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const customerManagedPolicyReference: CustomerManagedPolicyReference = { ... }
+const customerManagedPolicyReference: sso.CustomerManagedPolicyReference = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CustomerManagedPolicyReference.property.name">name</a></code> | <code>string</code> | The name of the IAM policy that you have configured in each account where you want to deploy your permission set. |
-| <code><a href="#raindancers-network.CustomerManagedPolicyReference.property.path">path</a></code> | <code>string</code> | The path to the IAM policy that you have configured in each account where you want to deploy your permission set. |
+| <code><a href="#raindancers-network.sso.CustomerManagedPolicyReference.property.name">name</a></code> | <code>string</code> | The name of the IAM policy that you have configured in each account where you want to deploy your permission set. |
+| <code><a href="#raindancers-network.sso.CustomerManagedPolicyReference.property.path">path</a></code> | <code>string</code> | The path to the IAM policy that you have configured in each account where you want to deploy your permission set. |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.CustomerManagedPolicyReference.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.sso.CustomerManagedPolicyReference.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -9891,7 +8098,7 @@ The name of the IAM policy that you have configured in each account where you wa
 
 ---
 
-##### `path`<sup>Optional</sup> <a name="path" id="raindancers-network.CustomerManagedPolicyReference.property.path"></a>
+##### `path`<sup>Optional</sup> <a name="path" id="raindancers-network.sso.CustomerManagedPolicyReference.property.path"></a>
 
 ```typescript
 public readonly path: string;
@@ -9935,104 +8142,26 @@ public readonly databaseName: string;
 
 ---
 
-### DynamicTagResourceGroupProps <a name="DynamicTagResourceGroupProps" id="raindancers-network.DynamicTagResourceGroupProps"></a>
+### Endpoint <a name="Endpoint" id="raindancers-network.crowdstrike.Endpoint"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.Endpoint.Initializer"></a>
 
 ```typescript
-import { DynamicTagResourceGroupProps } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const dynamicTagResourceGroupProps: DynamicTagResourceGroupProps = { ... }
+const endpoint: crowdstrike.Endpoint = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroupProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.DynamicTagResourceGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.Endpoint.property.dnsName">dnsName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.Endpoint.property.vpcEndpointName">vpcEndpointName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroupProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.DynamicTagResourceGroupProps.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-### DynamicTagResourceGroupSet <a name="DynamicTagResourceGroupSet" id="raindancers-network.DynamicTagResourceGroupSet"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.DynamicTagResourceGroupSet.Initializer"></a>
-
-```typescript
-import { DynamicTagResourceGroupSet } from 'raindancers-network'
-
-const dynamicTagResourceGroupSet: DynamicTagResourceGroupSet = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.DynamicTagResourceGroupSet.property.arn">arn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.DynamicTagResourceGroupSet.property.name">name</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.DynamicTagResourceGroupSet.property.arn"></a>
-
-```typescript
-public readonly arn: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.DynamicTagResourceGroupSet.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-### Endpoint <a name="Endpoint" id="raindancers-network.Endpoint"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.Endpoint.Initializer"></a>
-
-```typescript
-import { Endpoint } from 'raindancers-network'
-
-const endpoint: Endpoint = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.Endpoint.property.dnsName">dnsName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Endpoint.property.vpcEndpointName">vpcEndpointName</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `dnsName`<sup>Required</sup> <a name="dnsName" id="raindancers-network.Endpoint.property.dnsName"></a>
+##### `dnsName`<sup>Required</sup> <a name="dnsName" id="raindancers-network.crowdstrike.Endpoint.property.dnsName"></a>
 
 ```typescript
 public readonly dnsName: string;
@@ -10042,7 +8171,7 @@ public readonly dnsName: string;
 
 ---
 
-##### `vpcEndpointName`<sup>Required</sup> <a name="vpcEndpointName" id="raindancers-network.Endpoint.property.vpcEndpointName"></a>
+##### `vpcEndpointName`<sup>Required</sup> <a name="vpcEndpointName" id="raindancers-network.crowdstrike.Endpoint.property.vpcEndpointName"></a>
 
 ```typescript
 public readonly vpcEndpointName: string;
@@ -10052,25 +8181,25 @@ public readonly vpcEndpointName: string;
 
 ---
 
-### EnforceImdsv2Props <a name="EnforceImdsv2Props" id="raindancers-network.EnforceImdsv2Props"></a>
+### EnforceImdsv2Props <a name="EnforceImdsv2Props" id="raindancers-network.ec2.EnforceImdsv2Props"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.EnforceImdsv2Props.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ec2.EnforceImdsv2Props.Initializer"></a>
 
 ```typescript
-import { EnforceImdsv2Props } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-const enforceImdsv2Props: EnforceImdsv2Props = { ... }
+const enforceImdsv2Props: ec2.EnforceImdsv2Props = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnforceImdsv2Props.property.instances">instances</a></code> | <code>aws-cdk-lib.aws_ec2.Instance \| aws-cdk-lib.aws_ec2.Instance[]</code> | ec2 Instance or Instances. |
+| <code><a href="#raindancers-network.ec2.EnforceImdsv2Props.property.instances">instances</a></code> | <code>aws-cdk-lib.aws_ec2.Instance \| aws-cdk-lib.aws_ec2.Instance[]</code> | ec2 Instance or Instances. |
 
 ---
 
-##### `instances`<sup>Required</sup> <a name="instances" id="raindancers-network.EnforceImdsv2Props.property.instances"></a>
+##### `instances`<sup>Required</sup> <a name="instances" id="raindancers-network.ec2.EnforceImdsv2Props.property.instances"></a>
 
 ```typescript
 public readonly instances: Instance | Instance[];
@@ -10082,68 +8211,68 @@ ec2 Instance or Instances.
 
 ---
 
-### EnterpriseVpcProps <a name="EnterpriseVpcProps" id="raindancers-network.EnterpriseVpcProps"></a>
+### EnterpriseVpcProps <a name="EnterpriseVpcProps" id="raindancers-network.network.EnterpriseVpcProps"></a>
 
 Propertys for an Enterprise VPC.
 
-#### Initializer <a name="Initializer" id="raindancers-network.EnterpriseVpcProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.EnterpriseVpcProps.Initializer"></a>
 
 ```typescript
-import { EnterpriseVpcProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const enterpriseVpcProps: EnterpriseVpcProps = { ... }
+const enterpriseVpcProps: network.EnterpriseVpcProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseVpcProps.property.evpc">evpc</a></code> | <code><a href="#raindancers-network.EvpcProps">EvpcProps</a></code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpcProps.property.evpc">evpc</a></code> | <code>raindancers-network.network.EvpcProps</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EnterpriseVpcProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `evpc`<sup>Optional</sup> <a name="evpc" id="raindancers-network.EnterpriseVpcProps.property.evpc"></a>
+##### `evpc`<sup>Optional</sup> <a name="evpc" id="raindancers-network.network.EnterpriseVpcProps.property.evpc"></a>
 
 ```typescript
 public readonly evpc: EvpcProps;
 ```
 
-- *Type:* <a href="#raindancers-network.EvpcProps">EvpcProps</a>
+- *Type:* raindancers-network.network.EvpcProps
 
 ---
 
-##### `vpc`<sup>Optional</sup> <a name="vpc" id="raindancers-network.EnterpriseVpcProps.property.vpc"></a>
+##### `vpc`<sup>Optional</sup> <a name="vpc" id="raindancers-network.network.EnterpriseVpcProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
-### EnterpriseZoneProps <a name="EnterpriseZoneProps" id="raindancers-network.EnterpriseZoneProps"></a>
+### EnterpriseZoneProps <a name="EnterpriseZoneProps" id="raindancers-network.dns.EnterpriseZoneProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.EnterpriseZoneProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.EnterpriseZoneProps.Initializer"></a>
 
 ```typescript
-import { EnterpriseZoneProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const enterpriseZoneProps: EnterpriseZoneProps = { ... }
+const enterpriseZoneProps: dns.EnterpriseZoneProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.EnterpriseZoneProps.property.hubVpcs">hubVpcs</a></code> | <code><a href="#raindancers-network.HubVpc">HubVpc</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZoneProps.property.enterpriseDomainName">enterpriseDomainName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZoneProps.property.localVpc">localVpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.EnterpriseZoneProps.property.hubVpcs">hubVpcs</a></code> | <code>raindancers-network.dns.HubVpc[]</code> | *No description.* |
 
 ---
 
-##### `enterpriseDomainName`<sup>Required</sup> <a name="enterpriseDomainName" id="raindancers-network.EnterpriseZoneProps.property.enterpriseDomainName"></a>
+##### `enterpriseDomainName`<sup>Required</sup> <a name="enterpriseDomainName" id="raindancers-network.dns.EnterpriseZoneProps.property.enterpriseDomainName"></a>
 
 ```typescript
 public readonly enterpriseDomainName: string;
@@ -10153,47 +8282,47 @@ public readonly enterpriseDomainName: string;
 
 ---
 
-##### `localVpc`<sup>Required</sup> <a name="localVpc" id="raindancers-network.EnterpriseZoneProps.property.localVpc"></a>
+##### `localVpc`<sup>Required</sup> <a name="localVpc" id="raindancers-network.dns.EnterpriseZoneProps.property.localVpc"></a>
 
 ```typescript
-public readonly localVpc: Vpc;
+public readonly localVpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 ---
 
-##### `hubVpcs`<sup>Optional</sup> <a name="hubVpcs" id="raindancers-network.EnterpriseZoneProps.property.hubVpcs"></a>
+##### `hubVpcs`<sup>Optional</sup> <a name="hubVpcs" id="raindancers-network.dns.EnterpriseZoneProps.property.hubVpcs"></a>
 
 ```typescript
 public readonly hubVpcs: HubVpc[];
 ```
 
-- *Type:* <a href="#raindancers-network.HubVpc">HubVpc</a>[]
+- *Type:* raindancers-network.dns.HubVpc[]
 
 ---
 
-### ESubnetGroup <a name="ESubnetGroup" id="raindancers-network.ESubnetGroup"></a>
+### ESubnetGroup <a name="ESubnetGroup" id="raindancers-network.network.ESubnetGroup"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ESubnetGroup.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.ESubnetGroup.Initializer"></a>
 
 ```typescript
-import { ESubnetGroup } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const eSubnetGroup: ESubnetGroup = { ... }
+const eSubnetGroup: network.ESubnetGroup = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ESubnetGroup.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.ESubnetGroup.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ESubnetGroup.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroup.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroup.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroup.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
 
 ---
 
-##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.ESubnetGroup.property.cidrMask"></a>
+##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.network.ESubnetGroup.property.cidrMask"></a>
 
 ```typescript
 public readonly cidrMask: number;
@@ -10203,7 +8332,7 @@ public readonly cidrMask: number;
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ESubnetGroup.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.network.ESubnetGroup.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -10213,7 +8342,7 @@ public readonly name: string;
 
 ---
 
-##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.ESubnetGroup.property.subnetType"></a>
+##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.network.ESubnetGroup.property.subnetType"></a>
 
 ```typescript
 public readonly subnetType: SubnetType;
@@ -10223,27 +8352,27 @@ public readonly subnetType: SubnetType;
 
 ---
 
-### ESubnetGroupProps <a name="ESubnetGroupProps" id="raindancers-network.ESubnetGroupProps"></a>
+### ESubnetGroupProps <a name="ESubnetGroupProps" id="raindancers-network.network.ESubnetGroupProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ESubnetGroupProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.ESubnetGroupProps.Initializer"></a>
 
 ```typescript
-import { ESubnetGroupProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const eSubnetGroupProps: ESubnetGroupProps = { ... }
+const eSubnetGroupProps: network.ESubnetGroupProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ESubnetGroupProps.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.ESubnetGroupProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ESubnetGroupProps.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroupProps.property.cidrMask">cidrMask</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroupProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ESubnetGroupProps.property.subnetType">subnetType</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetType</code> | *No description.* |
 
 ---
 
-##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.ESubnetGroupProps.property.cidrMask"></a>
+##### `cidrMask`<sup>Required</sup> <a name="cidrMask" id="raindancers-network.network.ESubnetGroupProps.property.cidrMask"></a>
 
 ```typescript
 public readonly cidrMask: number;
@@ -10253,7 +8382,7 @@ public readonly cidrMask: number;
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ESubnetGroupProps.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.network.ESubnetGroupProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -10263,7 +8392,7 @@ public readonly name: string;
 
 ---
 
-##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.ESubnetGroupProps.property.subnetType"></a>
+##### `subnetType`<sup>Required</sup> <a name="subnetType" id="raindancers-network.network.ESubnetGroupProps.property.subnetType"></a>
 
 ```typescript
 public readonly subnetType: SubnetType;
@@ -10273,45 +8402,45 @@ public readonly subnetType: SubnetType;
 
 ---
 
-### EvpcProps <a name="EvpcProps" id="raindancers-network.EvpcProps"></a>
+### EvpcProps <a name="EvpcProps" id="raindancers-network.network.EvpcProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.EvpcProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.EvpcProps.Initializer"></a>
 
 ```typescript
-import { EvpcProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const evpcProps: EvpcProps = { ... }
+const evpcProps: network.EvpcProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.EvpcProps.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Availability zones this VPC spans. |
-| <code><a href="#raindancers-network.EvpcProps.property.cidr">cidr</a></code> | <code>string</code> | The CIDR range to use for the VPC, e.g. '10.0.0.0/16'. |
-| <code><a href="#raindancers-network.EvpcProps.property.defaultInstanceTenancy">defaultInstanceTenancy</a></code> | <code>aws-cdk-lib.aws_ec2.DefaultInstanceTenancy</code> | The default tenancy of instances launched into the VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.enableDnsHostnames">enableDnsHostnames</a></code> | <code>boolean</code> | Indicates whether the instances launched in the VPC get public DNS hostnames. |
-| <code><a href="#raindancers-network.EvpcProps.property.enableDnsSupport">enableDnsSupport</a></code> | <code>boolean</code> | Indicates whether the DNS resolution is supported for the VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.flowLogs">flowLogs</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.FlowLogOptions}</code> | Flow logs to add to this VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.gatewayEndpoints">gatewayEndpoints</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.GatewayVpcEndpointOptions}</code> | Gateway endpoints to add to this VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.ipAddresses">ipAddresses</a></code> | <code>aws-cdk-lib.aws_ec2.IIpAddresses</code> | The Provider to use to allocate IP Space to your VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.maxAzs">maxAzs</a></code> | <code>number</code> | Define the maximum number of AZs to use in this region. |
-| <code><a href="#raindancers-network.EvpcProps.property.natGatewayProvider">natGatewayProvider</a></code> | <code>aws-cdk-lib.aws_ec2.NatProvider</code> | What type of NAT provider to use. |
-| <code><a href="#raindancers-network.EvpcProps.property.natGateways">natGateways</a></code> | <code>number</code> | The number of NAT Gateways/Instances to create. |
-| <code><a href="#raindancers-network.EvpcProps.property.natGatewaySubnets">natGatewaySubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Configures the subnets which will have NAT Gateways/Instances. |
-| <code><a href="#raindancers-network.EvpcProps.property.reservedAzs">reservedAzs</a></code> | <code>number</code> | Define the number of AZs to reserve. |
-| <code><a href="#raindancers-network.EvpcProps.property.restrictDefaultSecurityGroup">restrictDefaultSecurityGroup</a></code> | <code>boolean</code> | If set to true then the default inbound & outbound rules will be removed from the default security group. |
-| <code><a href="#raindancers-network.EvpcProps.property.subnetConfiguration">subnetConfiguration</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | Configure the subnets to build for each AZ. |
-| <code><a href="#raindancers-network.EvpcProps.property.vpcName">vpcName</a></code> | <code>string</code> | The VPC name. |
-| <code><a href="#raindancers-network.EvpcProps.property.vpnConnections">vpnConnections</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.VpnConnectionOptions}</code> | VPN connections to this VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.vpnGateway">vpnGateway</a></code> | <code>boolean</code> | Indicates whether a VPN gateway should be created and attached to this VPC. |
-| <code><a href="#raindancers-network.EvpcProps.property.vpnGatewayAsn">vpnGatewayAsn</a></code> | <code>number</code> | The private Autonomous System Number (ASN) for the VPN gateway. |
-| <code><a href="#raindancers-network.EvpcProps.property.vpnRoutePropagation">vpnRoutePropagation</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection[]</code> | Where to propagate VPN routes. |
-| <code><a href="#raindancers-network.EvpcProps.property.subnetGroups">subnetGroups</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.EvpcProps.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Availability zones this VPC spans. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.cidr">cidr</a></code> | <code>string</code> | The CIDR range to use for the VPC, e.g. '10.0.0.0/16'. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.defaultInstanceTenancy">defaultInstanceTenancy</a></code> | <code>aws-cdk-lib.aws_ec2.DefaultInstanceTenancy</code> | The default tenancy of instances launched into the VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.enableDnsHostnames">enableDnsHostnames</a></code> | <code>boolean</code> | Indicates whether the instances launched in the VPC get public DNS hostnames. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.enableDnsSupport">enableDnsSupport</a></code> | <code>boolean</code> | Indicates whether the DNS resolution is supported for the VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.flowLogs">flowLogs</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.FlowLogOptions}</code> | Flow logs to add to this VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.gatewayEndpoints">gatewayEndpoints</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.GatewayVpcEndpointOptions}</code> | Gateway endpoints to add to this VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.ipAddresses">ipAddresses</a></code> | <code>aws-cdk-lib.aws_ec2.IIpAddresses</code> | The Provider to use to allocate IP Space to your VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.maxAzs">maxAzs</a></code> | <code>number</code> | Define the maximum number of AZs to use in this region. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.natGatewayProvider">natGatewayProvider</a></code> | <code>aws-cdk-lib.aws_ec2.NatProvider</code> | What type of NAT provider to use. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.natGateways">natGateways</a></code> | <code>number</code> | The number of NAT Gateways/Instances to create. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.natGatewaySubnets">natGatewaySubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Configures the subnets which will have NAT Gateways/Instances. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.reservedAzs">reservedAzs</a></code> | <code>number</code> | Define the number of AZs to reserve. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.restrictDefaultSecurityGroup">restrictDefaultSecurityGroup</a></code> | <code>boolean</code> | If set to true then the default inbound & outbound rules will be removed from the default security group. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.subnetConfiguration">subnetConfiguration</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetConfiguration[]</code> | Configure the subnets to build for each AZ. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.vpcName">vpcName</a></code> | <code>string</code> | The VPC name. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.vpnConnections">vpnConnections</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_ec2.VpnConnectionOptions}</code> | VPN connections to this VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.vpnGateway">vpnGateway</a></code> | <code>boolean</code> | Indicates whether a VPN gateway should be created and attached to this VPC. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.vpnGatewayAsn">vpnGatewayAsn</a></code> | <code>number</code> | The private Autonomous System Number (ASN) for the VPN gateway. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.vpnRoutePropagation">vpnRoutePropagation</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection[]</code> | Where to propagate VPN routes. |
+| <code><a href="#raindancers-network.network.EvpcProps.property.subnetGroups">subnetGroups</a></code> | <code>raindancers-network.network.SubnetGroup[]</code> | *No description.* |
 
 ---
 
-##### `availabilityZones`<sup>Optional</sup> <a name="availabilityZones" id="raindancers-network.EvpcProps.property.availabilityZones"></a>
+##### `availabilityZones`<sup>Optional</sup> <a name="availabilityZones" id="raindancers-network.network.EvpcProps.property.availabilityZones"></a>
 
 ```typescript
 public readonly availabilityZones: string[];
@@ -10326,7 +8455,7 @@ Specify this option only if you do not specify `maxAzs`.
 
 ---
 
-##### ~~`cidr`~~<sup>Optional</sup> <a name="cidr" id="raindancers-network.EvpcProps.property.cidr"></a>
+##### ~~`cidr`~~<sup>Optional</sup> <a name="cidr" id="raindancers-network.network.EvpcProps.property.cidr"></a>
 
 - *Deprecated:* Use ipAddresses instead
 
@@ -10344,7 +8473,7 @@ split across all subnets per Availability Zone.
 
 ---
 
-##### `defaultInstanceTenancy`<sup>Optional</sup> <a name="defaultInstanceTenancy" id="raindancers-network.EvpcProps.property.defaultInstanceTenancy"></a>
+##### `defaultInstanceTenancy`<sup>Optional</sup> <a name="defaultInstanceTenancy" id="raindancers-network.network.EvpcProps.property.defaultInstanceTenancy"></a>
 
 ```typescript
 public readonly defaultInstanceTenancy: DefaultInstanceTenancy;
@@ -10362,7 +8491,7 @@ with Dedicated tenancy.
 
 ---
 
-##### `enableDnsHostnames`<sup>Optional</sup> <a name="enableDnsHostnames" id="raindancers-network.EvpcProps.property.enableDnsHostnames"></a>
+##### `enableDnsHostnames`<sup>Optional</sup> <a name="enableDnsHostnames" id="raindancers-network.network.EvpcProps.property.enableDnsHostnames"></a>
 
 ```typescript
 public readonly enableDnsHostnames: boolean;
@@ -10378,7 +8507,7 @@ but only if the enableDnsSupport attribute is also set to true.
 
 ---
 
-##### `enableDnsSupport`<sup>Optional</sup> <a name="enableDnsSupport" id="raindancers-network.EvpcProps.property.enableDnsSupport"></a>
+##### `enableDnsSupport`<sup>Optional</sup> <a name="enableDnsSupport" id="raindancers-network.network.EvpcProps.property.enableDnsSupport"></a>
 
 ```typescript
 public readonly enableDnsSupport: boolean;
@@ -10397,7 +8526,7 @@ VPC IPv4 network range plus two will succeed.
 
 ---
 
-##### `flowLogs`<sup>Optional</sup> <a name="flowLogs" id="raindancers-network.EvpcProps.property.flowLogs"></a>
+##### `flowLogs`<sup>Optional</sup> <a name="flowLogs" id="raindancers-network.network.EvpcProps.property.flowLogs"></a>
 
 ```typescript
 public readonly flowLogs: {[ key: string ]: FlowLogOptions};
@@ -10410,7 +8539,7 @@ Flow logs to add to this VPC.
 
 ---
 
-##### `gatewayEndpoints`<sup>Optional</sup> <a name="gatewayEndpoints" id="raindancers-network.EvpcProps.property.gatewayEndpoints"></a>
+##### `gatewayEndpoints`<sup>Optional</sup> <a name="gatewayEndpoints" id="raindancers-network.network.EvpcProps.property.gatewayEndpoints"></a>
 
 ```typescript
 public readonly gatewayEndpoints: {[ key: string ]: GatewayVpcEndpointOptions};
@@ -10423,7 +8552,7 @@ Gateway endpoints to add to this VPC.
 
 ---
 
-##### `ipAddresses`<sup>Optional</sup> <a name="ipAddresses" id="raindancers-network.EvpcProps.property.ipAddresses"></a>
+##### `ipAddresses`<sup>Optional</sup> <a name="ipAddresses" id="raindancers-network.network.EvpcProps.property.ipAddresses"></a>
 
 ```typescript
 public readonly ipAddresses: IIpAddresses;
@@ -10438,7 +8567,7 @@ Options include static allocation or from a pool.
 
 ---
 
-##### `maxAzs`<sup>Optional</sup> <a name="maxAzs" id="raindancers-network.EvpcProps.property.maxAzs"></a>
+##### `maxAzs`<sup>Optional</sup> <a name="maxAzs" id="raindancers-network.network.EvpcProps.property.maxAzs"></a>
 
 ```typescript
 public readonly maxAzs: number;
@@ -10465,7 +8594,7 @@ Specify this option only if you do not specify `availabilityZones`.
 
 ---
 
-##### `natGatewayProvider`<sup>Optional</sup> <a name="natGatewayProvider" id="raindancers-network.EvpcProps.property.natGatewayProvider"></a>
+##### `natGatewayProvider`<sup>Optional</sup> <a name="natGatewayProvider" id="raindancers-network.network.EvpcProps.property.natGatewayProvider"></a>
 
 ```typescript
 public readonly natGatewayProvider: NatProvider;
@@ -10481,7 +8610,7 @@ may not be available in all AWS regions.
 
 ---
 
-##### `natGateways`<sup>Optional</sup> <a name="natGateways" id="raindancers-network.EvpcProps.property.natGateways"></a>
+##### `natGateways`<sup>Optional</sup> <a name="natGateways" id="raindancers-network.network.EvpcProps.property.natGateways"></a>
 
 ```typescript
 public readonly natGateways: number;
@@ -10501,7 +8630,7 @@ cross-AZ data traffic instead.
 
 ---
 
-##### `natGatewaySubnets`<sup>Optional</sup> <a name="natGatewaySubnets" id="raindancers-network.EvpcProps.property.natGatewaySubnets"></a>
+##### `natGatewaySubnets`<sup>Optional</sup> <a name="natGatewaySubnets" id="raindancers-network.network.EvpcProps.property.natGatewaySubnets"></a>
 
 ```typescript
 public readonly natGatewaySubnets: SubnetSelection;
@@ -10519,7 +8648,7 @@ Only necessary if you have more than one public subnet group.
 
 ---
 
-##### `reservedAzs`<sup>Optional</sup> <a name="reservedAzs" id="raindancers-network.EvpcProps.property.reservedAzs"></a>
+##### `reservedAzs`<sup>Optional</sup> <a name="reservedAzs" id="raindancers-network.network.EvpcProps.property.reservedAzs"></a>
 
 ```typescript
 public readonly reservedAzs: number;
@@ -10535,7 +8664,7 @@ resources are provisioned.
 
 ---
 
-##### `restrictDefaultSecurityGroup`<sup>Optional</sup> <a name="restrictDefaultSecurityGroup" id="raindancers-network.EvpcProps.property.restrictDefaultSecurityGroup"></a>
+##### `restrictDefaultSecurityGroup`<sup>Optional</sup> <a name="restrictDefaultSecurityGroup" id="raindancers-network.network.EvpcProps.property.restrictDefaultSecurityGroup"></a>
 
 ```typescript
 public readonly restrictDefaultSecurityGroup: boolean;
@@ -10548,7 +8677,7 @@ If set to true then the default inbound & outbound rules will be removed from th
 
 ---
 
-##### `subnetConfiguration`<sup>Optional</sup> <a name="subnetConfiguration" id="raindancers-network.EvpcProps.property.subnetConfiguration"></a>
+##### `subnetConfiguration`<sup>Optional</sup> <a name="subnetConfiguration" id="raindancers-network.network.EvpcProps.property.subnetConfiguration"></a>
 
 ```typescript
 public readonly subnetConfiguration: SubnetConfiguration[];
@@ -10589,7 +8718,7 @@ new ec2.Vpc(this, 'VPC', {
 
 ---
 
-##### `vpcName`<sup>Optional</sup> <a name="vpcName" id="raindancers-network.EvpcProps.property.vpcName"></a>
+##### `vpcName`<sup>Optional</sup> <a name="vpcName" id="raindancers-network.network.EvpcProps.property.vpcName"></a>
 
 ```typescript
 public readonly vpcName: string;
@@ -10604,7 +8733,7 @@ Since the VPC resource doesn't support providing a physical name, the value prov
 
 ---
 
-##### `vpnConnections`<sup>Optional</sup> <a name="vpnConnections" id="raindancers-network.EvpcProps.property.vpnConnections"></a>
+##### `vpnConnections`<sup>Optional</sup> <a name="vpnConnections" id="raindancers-network.network.EvpcProps.property.vpnConnections"></a>
 
 ```typescript
 public readonly vpnConnections: {[ key: string ]: VpnConnectionOptions};
@@ -10617,7 +8746,7 @@ VPN connections to this VPC.
 
 ---
 
-##### `vpnGateway`<sup>Optional</sup> <a name="vpnGateway" id="raindancers-network.EvpcProps.property.vpnGateway"></a>
+##### `vpnGateway`<sup>Optional</sup> <a name="vpnGateway" id="raindancers-network.network.EvpcProps.property.vpnGateway"></a>
 
 ```typescript
 public readonly vpnGateway: boolean;
@@ -10630,7 +8759,7 @@ Indicates whether a VPN gateway should be created and attached to this VPC.
 
 ---
 
-##### `vpnGatewayAsn`<sup>Optional</sup> <a name="vpnGatewayAsn" id="raindancers-network.EvpcProps.property.vpnGatewayAsn"></a>
+##### `vpnGatewayAsn`<sup>Optional</sup> <a name="vpnGatewayAsn" id="raindancers-network.network.EvpcProps.property.vpnGatewayAsn"></a>
 
 ```typescript
 public readonly vpnGatewayAsn: number;
@@ -10643,7 +8772,7 @@ The private Autonomous System Number (ASN) for the VPN gateway.
 
 ---
 
-##### `vpnRoutePropagation`<sup>Optional</sup> <a name="vpnRoutePropagation" id="raindancers-network.EvpcProps.property.vpnRoutePropagation"></a>
+##### `vpnRoutePropagation`<sup>Optional</sup> <a name="vpnRoutePropagation" id="raindancers-network.network.EvpcProps.property.vpnRoutePropagation"></a>
 
 ```typescript
 public readonly vpnRoutePropagation: SubnetSelection[];
@@ -10656,35 +8785,35 @@ Where to propagate VPN routes.
 
 ---
 
-##### `subnetGroups`<sup>Optional</sup> <a name="subnetGroups" id="raindancers-network.EvpcProps.property.subnetGroups"></a>
+##### `subnetGroups`<sup>Optional</sup> <a name="subnetGroups" id="raindancers-network.network.EvpcProps.property.subnetGroups"></a>
 
 ```typescript
 public readonly subnetGroups: SubnetGroup[];
 ```
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>[]
+- *Type:* raindancers-network.network.SubnetGroup[]
 
 ---
 
-### FindPrefixListProps <a name="FindPrefixListProps" id="raindancers-network.FindPrefixListProps"></a>
+### FindPrefixListProps <a name="FindPrefixListProps" id="raindancers-network.ec2.FindPrefixListProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.FindPrefixListProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ec2.FindPrefixListProps.Initializer"></a>
 
 ```typescript
-import { FindPrefixListProps } from 'raindancers-network'
+import { ec2 } from 'raindancers-network'
 
-const findPrefixListProps: FindPrefixListProps = { ... }
+const findPrefixListProps: ec2.FindPrefixListProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FindPrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.ec2.FindPrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `prefixListName`<sup>Required</sup> <a name="prefixListName" id="raindancers-network.FindPrefixListProps.property.prefixListName"></a>
+##### `prefixListName`<sup>Required</sup> <a name="prefixListName" id="raindancers-network.ec2.FindPrefixListProps.property.prefixListName"></a>
 
 ```typescript
 public readonly prefixListName: string;
@@ -10694,28 +8823,28 @@ public readonly prefixListName: string;
 
 ---
 
-### FirewallPolicyProps <a name="FirewallPolicyProps" id="raindancers-network.FirewallPolicyProps"></a>
+### FirewallPolicyProps <a name="FirewallPolicyProps" id="raindancers-network.firewall.FirewallPolicyProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.FirewallPolicyProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.firewall.FirewallPolicyProps.Initializer"></a>
 
 ```typescript
-import { FirewallPolicyProps } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-const firewallPolicyProps: FirewallPolicyProps = { ... }
+const firewallPolicyProps: firewall.FirewallPolicyProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FirewallPolicyProps.property.policyName">policyName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicyProps.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.FirewallPolicyProps.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicyProps.property.policyName">policyName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicyProps.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code>raindancers-network.firewall.StatelessActions[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicyProps.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code>raindancers-network.firewall.StatelessActions[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.FirewallPolicyProps.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty</code> | *No description.* |
 
 ---
 
-##### `policyName`<sup>Required</sup> <a name="policyName" id="raindancers-network.FirewallPolicyProps.property.policyName"></a>
+##### `policyName`<sup>Required</sup> <a name="policyName" id="raindancers-network.firewall.FirewallPolicyProps.property.policyName"></a>
 
 ```typescript
 public readonly policyName: string;
@@ -10725,27 +8854,27 @@ public readonly policyName: string;
 
 ---
 
-##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statelessDefaultActions"></a>
+##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.firewall.FirewallPolicyProps.property.statelessDefaultActions"></a>
 
 ```typescript
 public readonly statelessDefaultActions: StatelessActions[];
 ```
 
-- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+- *Type:* raindancers-network.firewall.StatelessActions[]
 
 ---
 
-##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.FirewallPolicyProps.property.statelessFragmentDefaultActions"></a>
+##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.firewall.FirewallPolicyProps.property.statelessFragmentDefaultActions"></a>
 
 ```typescript
 public readonly statelessFragmentDefaultActions: StatelessActions[];
 ```
 
-- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+- *Type:* raindancers-network.firewall.StatelessActions[]
 
 ---
 
-##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.FirewallPolicyProps.property.statefulEngineOptions"></a>
+##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.firewall.FirewallPolicyProps.property.statefulEngineOptions"></a>
 
 ```typescript
 public readonly statefulEngineOptions: StatefulEngineOptionsProperty;
@@ -10755,29 +8884,29 @@ public readonly statefulEngineOptions: StatefulEngineOptionsProperty;
 
 ---
 
-### FlowLogProps <a name="FlowLogProps" id="raindancers-network.FlowLogProps"></a>
+### FlowLogProps <a name="FlowLogProps" id="raindancers-network.network.FlowLogProps"></a>
 
 Properties for flow logs *.
 
-#### Initializer <a name="Initializer" id="raindancers-network.FlowLogProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.FlowLogProps.Initializer"></a>
 
 ```typescript
-import { FlowLogProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const flowLogProps: FlowLogProps = { ... }
+const flowLogProps: network.FlowLogProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.FlowLogProps.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | the central s3 location for enterprise flow logs. |
-| <code><a href="#raindancers-network.FlowLogProps.property.localAthenaQuerys">localAthenaQuerys</a></code> | <code>boolean</code> | create in Account Athena Querys for flow logs. |
-| <code><a href="#raindancers-network.FlowLogProps.property.oneMinuteFlowLogs">oneMinuteFlowLogs</a></code> | <code>boolean</code> | 1 minute resolution. |
+| <code><a href="#raindancers-network.network.FlowLogProps.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | the central s3 location for enterprise flow logs. |
+| <code><a href="#raindancers-network.network.FlowLogProps.property.localAthenaQuerys">localAthenaQuerys</a></code> | <code>boolean</code> | create in Account Athena Querys for flow logs. |
+| <code><a href="#raindancers-network.network.FlowLogProps.property.oneMinuteFlowLogs">oneMinuteFlowLogs</a></code> | <code>boolean</code> | 1 minute resolution. |
 
 ---
 
-##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.FlowLogProps.property.bucket"></a>
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.network.FlowLogProps.property.bucket"></a>
 
 ```typescript
 public readonly bucket: IBucket;
@@ -10789,7 +8918,7 @@ the central s3 location for enterprise flow logs.
 
 ---
 
-##### `localAthenaQuerys`<sup>Optional</sup> <a name="localAthenaQuerys" id="raindancers-network.FlowLogProps.property.localAthenaQuerys"></a>
+##### `localAthenaQuerys`<sup>Optional</sup> <a name="localAthenaQuerys" id="raindancers-network.network.FlowLogProps.property.localAthenaQuerys"></a>
 
 ```typescript
 public readonly localAthenaQuerys: boolean;
@@ -10801,7 +8930,7 @@ create in Account Athena Querys for flow logs.
 
 ---
 
-##### `oneMinuteFlowLogs`<sup>Optional</sup> <a name="oneMinuteFlowLogs" id="raindancers-network.FlowLogProps.property.oneMinuteFlowLogs"></a>
+##### `oneMinuteFlowLogs`<sup>Optional</sup> <a name="oneMinuteFlowLogs" id="raindancers-network.network.FlowLogProps.property.oneMinuteFlowLogs"></a>
 
 ```typescript
 public readonly oneMinuteFlowLogs: boolean;
@@ -10813,28 +8942,28 @@ public readonly oneMinuteFlowLogs: boolean;
 
 ---
 
-### ForwardingRulesProps <a name="ForwardingRulesProps" id="raindancers-network.ForwardingRulesProps"></a>
+### ForwardingRulesProps <a name="ForwardingRulesProps" id="raindancers-network.dns.ForwardingRulesProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ForwardingRulesProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.ForwardingRulesProps.Initializer"></a>
 
 ```typescript
-import { ForwardingRulesProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const forwardingRulesProps: ForwardingRulesProps = { ... }
+const forwardingRulesProps: dns.ForwardingRulesProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ForwardingRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.ForwardingRulesProps.property.resolverId">resolverId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ForwardingRulesProps.property.resolverIP">resolverIP</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.ForwardingRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRulesProps.property.domains">domains</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRulesProps.property.resolverId">resolverId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRulesProps.property.resolverIP">resolverIP</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.ForwardingRulesProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.ForwardingRulesProps.property.domains"></a>
+##### `domains`<sup>Required</sup> <a name="domains" id="raindancers-network.dns.ForwardingRulesProps.property.domains"></a>
 
 ```typescript
 public readonly domains: string[];
@@ -10844,7 +8973,7 @@ public readonly domains: string[];
 
 ---
 
-##### `resolverId`<sup>Required</sup> <a name="resolverId" id="raindancers-network.ForwardingRulesProps.property.resolverId"></a>
+##### `resolverId`<sup>Required</sup> <a name="resolverId" id="raindancers-network.dns.ForwardingRulesProps.property.resolverId"></a>
 
 ```typescript
 public readonly resolverId: string;
@@ -10854,7 +8983,7 @@ public readonly resolverId: string;
 
 ---
 
-##### `resolverIP`<sup>Required</sup> <a name="resolverIP" id="raindancers-network.ForwardingRulesProps.property.resolverIP"></a>
+##### `resolverIP`<sup>Required</sup> <a name="resolverIP" id="raindancers-network.dns.ForwardingRulesProps.property.resolverIP"></a>
 
 ```typescript
 public readonly resolverIP: string[];
@@ -10864,7 +8993,7 @@ public readonly resolverIP: string[];
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ForwardingRulesProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.ForwardingRulesProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: Vpc;
@@ -10874,166 +9003,28 @@ public readonly vpc: Vpc;
 
 ---
 
-### FQDNStatefulRuleProps <a name="FQDNStatefulRuleProps" id="raindancers-network.FQDNStatefulRuleProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.FQDNStatefulRuleProps.Initializer"></a>
-
-```typescript
-import { FQDNStatefulRuleProps } from 'raindancers-network'
-
-const fQDNStatefulRuleProps: FQDNStatefulRuleProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.fqdn">fqdn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
-
----
-
-##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.FQDNStatefulRuleProps.property.action"></a>
-
-```typescript
-public readonly action: StatefulAction;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulAction">StatefulAction</a>
-
----
-
-##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.FQDNStatefulRuleProps.property.destination"></a>
-
-```typescript
-public readonly destination: string | PrefixList | DynamicTagResourceGroup;
-```
-
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
-
----
-
-##### `destPort`<sup>Required</sup> <a name="destPort" id="raindancers-network.FQDNStatefulRuleProps.property.destPort"></a>
-
-```typescript
-public readonly destPort: string;
-```
-
-- *Type:* string
-
----
-
-##### `direction`<sup>Required</sup> <a name="direction" id="raindancers-network.FQDNStatefulRuleProps.property.direction"></a>
-
-```typescript
-public readonly direction: Direction;
-```
-
-- *Type:* <a href="#raindancers-network.Direction">Direction</a>
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.FQDNStatefulRuleProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `protocol`<sup>Required</sup> <a name="protocol" id="raindancers-network.FQDNStatefulRuleProps.property.protocol"></a>
-
-```typescript
-public readonly protocol: FWProtocol;
-```
-
-- *Type:* <a href="#raindancers-network.FWProtocol">FWProtocol</a>
-
----
-
-##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.FQDNStatefulRuleProps.property.source"></a>
-
-```typescript
-public readonly source: string | PrefixList | DynamicTagResourceGroup;
-```
-
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
-
----
-
-##### `srcPort`<sup>Required</sup> <a name="srcPort" id="raindancers-network.FQDNStatefulRuleProps.property.srcPort"></a>
-
-```typescript
-public readonly srcPort: string;
-```
-
-- *Type:* string
-
----
-
-##### `fqdn`<sup>Required</sup> <a name="fqdn" id="raindancers-network.FQDNStatefulRuleProps.property.fqdn"></a>
-
-```typescript
-public readonly fqdn: string;
-```
-
-- *Type:* string
-
----
-
-##### `priority`<sup>Optional</sup> <a name="priority" id="raindancers-network.FQDNStatefulRuleProps.property.priority"></a>
-
-```typescript
-public readonly priority: number;
-```
-
-- *Type:* number
-
----
-
-##### `rulesDatabase`<sup>Optional</sup> <a name="rulesDatabase" id="raindancers-network.FQDNStatefulRuleProps.property.rulesDatabase"></a>
-
-```typescript
-public readonly rulesDatabase: StatefulRuleDatabase;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
-
----
-
-### GetTunnelAddressPairProps <a name="GetTunnelAddressPairProps" id="raindancers-network.GetTunnelAddressPairProps"></a>
+### GetTunnelAddressPairProps <a name="GetTunnelAddressPairProps" id="raindancers-network.ipam.GetTunnelAddressPairProps"></a>
 
 Properties for obtaining an IPAM assigned address pair for use on IPsec VPN Tunnels.
 
-#### Initializer <a name="Initializer" id="raindancers-network.GetTunnelAddressPairProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ipam.GetTunnelAddressPairProps.Initializer"></a>
 
 ```typescript
-import { GetTunnelAddressPairProps } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-const getTunnelAddressPairProps: GetTunnelAddressPairProps = { ... }
+const getTunnelAddressPairProps: ipam.GetTunnelAddressPairProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.GetTunnelAddressPairProps.property.ipamPoolId">ipamPoolId</a></code> | <code>string</code> | The IPAM Pool Id from which the assginment will be made from. |
-| <code><a href="#raindancers-network.GetTunnelAddressPairProps.property.name">name</a></code> | <code>string</code> | The Name used by IPAM to record the allocation. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPairProps.property.ipamPoolId">ipamPoolId</a></code> | <code>string</code> | The IPAM Pool Id from which the assginment will be made from. |
+| <code><a href="#raindancers-network.ipam.GetTunnelAddressPairProps.property.name">name</a></code> | <code>string</code> | The Name used by IPAM to record the allocation. |
 
 ---
 
-##### `ipamPoolId`<sup>Required</sup> <a name="ipamPoolId" id="raindancers-network.GetTunnelAddressPairProps.property.ipamPoolId"></a>
+##### `ipamPoolId`<sup>Required</sup> <a name="ipamPoolId" id="raindancers-network.ipam.GetTunnelAddressPairProps.property.ipamPoolId"></a>
 
 ```typescript
 public readonly ipamPoolId: string;
@@ -11045,7 +9036,7 @@ The IPAM Pool Id from which the assginment will be made from.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.GetTunnelAddressPairProps.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ipam.GetTunnelAddressPairProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -11129,27 +9120,27 @@ public readonly xmlClassifier: XMLClassifierProperty;
 
 ---
 
-### HubVpc <a name="HubVpc" id="raindancers-network.HubVpc"></a>
+### HubVpc <a name="HubVpc" id="raindancers-network.dns.HubVpc"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.HubVpc.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.HubVpc.Initializer"></a>
 
 ```typescript
-import { HubVpc } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const hubVpc: HubVpc = { ... }
+const hubVpc: dns.HubVpc = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.HubVpc.property.region">region</a></code> | <code>string</code> | what region is the central account in. |
-| <code><a href="#raindancers-network.HubVpc.property.crossAccount">crossAccount</a></code> | <code><a href="#raindancers-network.CrossAccountProps">CrossAccountProps</a></code> | *No description.* |
-| <code><a href="#raindancers-network.HubVpc.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.HubVpc.property.region">region</a></code> | <code>string</code> | what region is the central account in. |
+| <code><a href="#raindancers-network.dns.HubVpc.property.crossAccount">crossAccount</a></code> | <code>raindancers-network.dns.CrossAccountProps</code> | *No description.* |
+| <code><a href="#raindancers-network.dns.HubVpc.property.vpcSearchTag">vpcSearchTag</a></code> | <code>aws-cdk-lib.Tag</code> | *No description.* |
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.HubVpc.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="raindancers-network.dns.HubVpc.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -11161,17 +9152,17 @@ what region is the central account in.
 
 ---
 
-##### `crossAccount`<sup>Optional</sup> <a name="crossAccount" id="raindancers-network.HubVpc.property.crossAccount"></a>
+##### `crossAccount`<sup>Optional</sup> <a name="crossAccount" id="raindancers-network.dns.HubVpc.property.crossAccount"></a>
 
 ```typescript
 public readonly crossAccount: CrossAccountProps;
 ```
 
-- *Type:* <a href="#raindancers-network.CrossAccountProps">CrossAccountProps</a>
+- *Type:* raindancers-network.dns.CrossAccountProps
 
 ---
 
-##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.HubVpc.property.vpcSearchTag"></a>
+##### `vpcSearchTag`<sup>Optional</sup> <a name="vpcSearchTag" id="raindancers-network.dns.HubVpc.property.vpcSearchTag"></a>
 
 ```typescript
 public readonly vpcSearchTag: Tag;
@@ -11181,30 +9172,30 @@ public readonly vpcSearchTag: Tag;
 
 ---
 
-### IpsecTunnelPoolProps <a name="IpsecTunnelPoolProps" id="raindancers-network.IpsecTunnelPoolProps"></a>
+### IpsecTunnelPoolProps <a name="IpsecTunnelPoolProps" id="raindancers-network.ipam.IpsecTunnelPoolProps"></a>
 
 Properties for defining a IPAM Pool specifically for IPSec VPN Tunnels.
 
-#### Initializer <a name="Initializer" id="raindancers-network.IpsecTunnelPoolProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ipam.IpsecTunnelPoolProps.Initializer"></a>
 
 ```typescript
-import { IpsecTunnelPoolProps } from 'raindancers-network'
+import { ipam } from 'raindancers-network'
 
-const ipsecTunnelPoolProps: IpsecTunnelPoolProps = { ... }
+const ipsecTunnelPoolProps: ipam.IpsecTunnelPoolProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.cidr">cidr</a></code> | <code>string</code> | The Cidr range for pools to be created from    eg, 169.254.100.0/27 The cidr must be in the 169.254.0.0/16 range and must be a minimum of a /29 and a maximum of /24. |
-| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.description">description</a></code> | <code>string</code> | the description used by IPAM to describe the pool. |
-| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.ipamScopeId">ipamScopeId</a></code> | <code>string</code> | The IPAM Scope Id to use to create the Pool. |
-| <code><a href="#raindancers-network.IpsecTunnelPoolProps.property.name">name</a></code> | <code>string</code> | the name used by IPAM to identify the pool. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPoolProps.property.cidr">cidr</a></code> | <code>string</code> | The Cidr range for pools to be created from    eg, 169.254.100.0/27 The cidr must be in the 169.254.0.0/16 range and must be a minimum of a /29 and a maximum of /24. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPoolProps.property.description">description</a></code> | <code>string</code> | the description used by IPAM to describe the pool. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPoolProps.property.ipamScopeId">ipamScopeId</a></code> | <code>string</code> | The IPAM Scope Id to use to create the Pool. |
+| <code><a href="#raindancers-network.ipam.IpsecTunnelPoolProps.property.name">name</a></code> | <code>string</code> | the name used by IPAM to identify the pool. |
 
 ---
 
-##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.IpsecTunnelPoolProps.property.cidr"></a>
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.ipam.IpsecTunnelPoolProps.property.cidr"></a>
 
 ```typescript
 public readonly cidr: string;
@@ -11218,7 +9209,7 @@ It must also not overlap the AWS reserved ranges. T
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.IpsecTunnelPoolProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.ipam.IpsecTunnelPoolProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -11230,7 +9221,7 @@ the description used by IPAM to describe the pool.
 
 ---
 
-##### `ipamScopeId`<sup>Required</sup> <a name="ipamScopeId" id="raindancers-network.IpsecTunnelPoolProps.property.ipamScopeId"></a>
+##### `ipamScopeId`<sup>Required</sup> <a name="ipamScopeId" id="raindancers-network.ipam.IpsecTunnelPoolProps.property.ipamScopeId"></a>
 
 ```typescript
 public readonly ipamScopeId: string;
@@ -11242,7 +9233,7 @@ The IPAM Scope Id to use to create the Pool.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.IpsecTunnelPoolProps.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ipam.IpsecTunnelPoolProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -11416,136 +9407,26 @@ public readonly crawlerLineageSettings: CrawlerLineageSettings;
 
 ---
 
-### NetworkFirewallProps <a name="NetworkFirewallProps" id="raindancers-network.NetworkFirewallProps"></a>
+### OutboundForwardingRule <a name="OutboundForwardingRule" id="raindancers-network.dns.OutboundForwardingRule"></a>
 
-Propertys of a Network Firewall.
-
-#### Initializer <a name="Initializer" id="raindancers-network.NetworkFirewallProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.OutboundForwardingRule.Initializer"></a>
 
 ```typescript
-import { NetworkFirewallProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const networkFirewallProps: NetworkFirewallProps = { ... }
+const outboundForwardingRule: dns.OutboundForwardingRule = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.NetworkFirewallProps.property.firewallName">firewallName</a></code> | <code>string</code> | the name that will be given to the firewall. |
-| <code><a href="#raindancers-network.NetworkFirewallProps.property.firewallPolicy">firewallPolicy</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy</code> | the firewalls policy. |
-| <code><a href="#raindancers-network.NetworkFirewallProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetGroup where the firewall will be created. |
-| <code><a href="#raindancers-network.NetworkFirewallProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the the vpc where the Network firewall is placed. |
+| <code><a href="#raindancers-network.dns.OutboundForwardingRule.property.domain">domain</a></code> | <code>string</code> | domain to forward. |
+| <code><a href="#raindancers-network.dns.OutboundForwardingRule.property.forwardTo">forwardTo</a></code> | <code>string[]</code> | array of ip address's to forward request to. |
 
 ---
 
-##### `firewallName`<sup>Required</sup> <a name="firewallName" id="raindancers-network.NetworkFirewallProps.property.firewallName"></a>
-
-```typescript
-public readonly firewallName: string;
-```
-
-- *Type:* string
-
-the name that will be given to the firewall.
-
----
-
-##### `firewallPolicy`<sup>Required</sup> <a name="firewallPolicy" id="raindancers-network.NetworkFirewallProps.property.firewallPolicy"></a>
-
-```typescript
-public readonly firewallPolicy: CfnFirewallPolicy;
-```
-
-- *Type:* aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy
-
-the firewalls policy.
-
----
-
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.NetworkFirewallProps.property.subnetGroup"></a>
-
-```typescript
-public readonly subnetGroup: string;
-```
-
-- *Type:* string
-
-the subnetGroup where the firewall will be created.
-
----
-
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.NetworkFirewallProps.property.vpc"></a>
-
-```typescript
-public readonly vpc: Vpc;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
-
-the the vpc where the Network firewall is placed.
-
----
-
-### NWFWRulesEngine <a name="NWFWRulesEngine" id="raindancers-network.NWFWRulesEngine"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.NWFWRulesEngine.Initializer"></a>
-
-```typescript
-import { NWFWRulesEngine } from 'raindancers-network'
-
-const nWFWRulesEngine: NWFWRulesEngine = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.NWFWRulesEngine.property.firewallAccount">firewallAccount</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.NWFWRulesEngine.property.rulesDatabase">rulesDatabase</a></code> | <code><a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a></code> | *No description.* |
-
----
-
-##### `firewallAccount`<sup>Required</sup> <a name="firewallAccount" id="raindancers-network.NWFWRulesEngine.property.firewallAccount"></a>
-
-```typescript
-public readonly firewallAccount: string;
-```
-
-- *Type:* string
-
----
-
-##### `rulesDatabase`<sup>Required</sup> <a name="rulesDatabase" id="raindancers-network.NWFWRulesEngine.property.rulesDatabase"></a>
-
-```typescript
-public readonly rulesDatabase: StatefulRuleDatabase;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulRuleDatabase">StatefulRuleDatabase</a>
-
----
-
-### OutboundForwardingRule <a name="OutboundForwardingRule" id="raindancers-network.OutboundForwardingRule"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.OutboundForwardingRule.Initializer"></a>
-
-```typescript
-import { OutboundForwardingRule } from 'raindancers-network'
-
-const outboundForwardingRule: OutboundForwardingRule = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.OutboundForwardingRule.property.domain">domain</a></code> | <code>string</code> | domain to forward. |
-| <code><a href="#raindancers-network.OutboundForwardingRule.property.forwardTo">forwardTo</a></code> | <code>string[]</code> | array of ip address's to forward request to. |
-
----
-
-##### `domain`<sup>Required</sup> <a name="domain" id="raindancers-network.OutboundForwardingRule.property.domain"></a>
+##### `domain`<sup>Required</sup> <a name="domain" id="raindancers-network.dns.OutboundForwardingRule.property.domain"></a>
 
 ```typescript
 public readonly domain: string;
@@ -11557,7 +9438,7 @@ domain to forward.
 
 ---
 
-##### `forwardTo`<sup>Required</sup> <a name="forwardTo" id="raindancers-network.OutboundForwardingRule.property.forwardTo"></a>
+##### `forwardTo`<sup>Required</sup> <a name="forwardTo" id="raindancers-network.dns.OutboundForwardingRule.property.forwardTo"></a>
 
 ```typescript
 public readonly forwardTo: string[];
@@ -11569,26 +9450,26 @@ array of ip address's to forward request to.
 
 ---
 
-### PermissionBoundary <a name="PermissionBoundary" id="raindancers-network.PermissionBoundary"></a>
+### PermissionBoundary <a name="PermissionBoundary" id="raindancers-network.sso.PermissionBoundary"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.PermissionBoundary.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.PermissionBoundary.Initializer"></a>
 
 ```typescript
-import { PermissionBoundary } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const permissionBoundary: PermissionBoundary = { ... }
+const permissionBoundary: sso.PermissionBoundary = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionBoundary.property.customerManagedPolicyReference">customerManagedPolicyReference</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty</code> | Specifies the name and path of a customer managed policy. |
-| <code><a href="#raindancers-network.PermissionBoundary.property.managedPolicyArn">managedPolicyArn</a></code> | <code>string</code> | The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary. |
+| <code><a href="#raindancers-network.sso.PermissionBoundary.property.customerManagedPolicyReference">customerManagedPolicyReference</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_sso.CfnPermissionSet.CustomerManagedPolicyReferenceProperty</code> | Specifies the name and path of a customer managed policy. |
+| <code><a href="#raindancers-network.sso.PermissionBoundary.property.managedPolicyArn">managedPolicyArn</a></code> | <code>string</code> | The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary. |
 
 ---
 
-##### `customerManagedPolicyReference`<sup>Optional</sup> <a name="customerManagedPolicyReference" id="raindancers-network.PermissionBoundary.property.customerManagedPolicyReference"></a>
+##### `customerManagedPolicyReference`<sup>Optional</sup> <a name="customerManagedPolicyReference" id="raindancers-network.sso.PermissionBoundary.property.customerManagedPolicyReference"></a>
 
 ```typescript
 public readonly customerManagedPolicyReference: IResolvable | CustomerManagedPolicyReferenceProperty;
@@ -11604,7 +9485,7 @@ You must have an IAM policy that matches the name and path in each AWS account w
 
 ---
 
-##### `managedPolicyArn`<sup>Optional</sup> <a name="managedPolicyArn" id="raindancers-network.PermissionBoundary.property.managedPolicyArn"></a>
+##### `managedPolicyArn`<sup>Optional</sup> <a name="managedPolicyArn" id="raindancers-network.sso.PermissionBoundary.property.managedPolicyArn"></a>
 
 ```typescript
 public readonly managedPolicyArn: string;
@@ -11618,28 +9499,28 @@ The AWS managed policy ARN that you want to attach to a permission set as a perm
 
 ---
 
-### PermissionSetAttributes <a name="PermissionSetAttributes" id="raindancers-network.PermissionSetAttributes"></a>
+### PermissionSetAttributes <a name="PermissionSetAttributes" id="raindancers-network.sso.PermissionSetAttributes"></a>
 
 Attributes for a permission set.
 
-#### Initializer <a name="Initializer" id="raindancers-network.PermissionSetAttributes.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.PermissionSetAttributes.Initializer"></a>
 
 ```typescript
-import { PermissionSetAttributes } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const permissionSetAttributes: PermissionSetAttributes = { ... }
+const permissionSetAttributes: sso.PermissionSetAttributes = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionSetAttributes.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
-| <code><a href="#raindancers-network.PermissionSetAttributes.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
+| <code><a href="#raindancers-network.sso.PermissionSetAttributes.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.sso.PermissionSetAttributes.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
 
 ---
 
-##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.PermissionSetAttributes.property.permissionSetArn"></a>
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.sso.PermissionSetAttributes.property.permissionSetArn"></a>
 
 ```typescript
 public readonly permissionSetArn: string;
@@ -11654,7 +9535,7 @@ Such as
 
 ---
 
-##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSetAttributes.property.ssoInstanceArn"></a>
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.sso.PermissionSetAttributes.property.ssoInstanceArn"></a>
 
 ```typescript
 public readonly ssoInstanceArn: string;
@@ -11666,35 +9547,35 @@ The SSO instance ARN of the permission set.
 
 ---
 
-### PermissionSetProps <a name="PermissionSetProps" id="raindancers-network.PermissionSetProps"></a>
+### PermissionSetProps <a name="PermissionSetProps" id="raindancers-network.sso.PermissionSetProps"></a>
 
 The properties of a new permission set.
 
-#### Initializer <a name="Initializer" id="raindancers-network.PermissionSetProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.PermissionSetProps.Initializer"></a>
 
 ```typescript
-import { PermissionSetProps } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const permissionSetProps: PermissionSetProps = { ... }
+const permissionSetProps: sso.PermissionSetProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PermissionSetProps.property.name">name</a></code> | <code>string</code> | The name of the permission set. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The ARN of the SSO instance under which the operation will be executed. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.awsManagedPolicies">awsManagedPolicies</a></code> | <code>aws-cdk-lib.aws_iam.IManagedPolicy[]</code> | The AWS managed policies to attach to the `PermissionSet`. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.customerManagedPolicyReferences">customerManagedPolicyReferences</a></code> | <code><a href="#raindancers-network.CustomerManagedPolicyReference">CustomerManagedPolicyReference</a>[]</code> | Specifies the names and paths of a customer managed policy. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.description">description</a></code> | <code>string</code> | The description of the `PermissionSet`. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.inlinePolicy">inlinePolicy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyDocument</code> | The IAM inline policy that is attached to the permission set. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code><a href="#raindancers-network.PermissionBoundary">PermissionBoundary</a></code> | Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.relayStateType">relayStateType</a></code> | <code>string</code> | Used to redirect users within the application during the federation authentication process. |
-| <code><a href="#raindancers-network.PermissionSetProps.property.sessionDuration">sessionDuration</a></code> | <code>aws-cdk-lib.Duration</code> | The length of time that the application user sessions are valid for. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.name">name</a></code> | <code>string</code> | The name of the permission set. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The ARN of the SSO instance under which the operation will be executed. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.awsManagedPolicies">awsManagedPolicies</a></code> | <code>aws-cdk-lib.aws_iam.IManagedPolicy[]</code> | The AWS managed policies to attach to the `PermissionSet`. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.customerManagedPolicyReferences">customerManagedPolicyReferences</a></code> | <code>raindancers-network.sso.CustomerManagedPolicyReference[]</code> | Specifies the names and paths of a customer managed policy. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.description">description</a></code> | <code>string</code> | The description of the `PermissionSet`. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.inlinePolicy">inlinePolicy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyDocument</code> | The IAM inline policy that is attached to the permission set. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code>raindancers-network.sso.PermissionBoundary</code> | Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.relayStateType">relayStateType</a></code> | <code>string</code> | Used to redirect users within the application during the federation authentication process. |
+| <code><a href="#raindancers-network.sso.PermissionSetProps.property.sessionDuration">sessionDuration</a></code> | <code>aws-cdk-lib.Duration</code> | The length of time that the application user sessions are valid for. |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.PermissionSetProps.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.sso.PermissionSetProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -11706,7 +9587,7 @@ The name of the permission set.
 
 ---
 
-##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.PermissionSetProps.property.ssoInstanceArn"></a>
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.sso.PermissionSetProps.property.ssoInstanceArn"></a>
 
 ```typescript
 public readonly ssoInstanceArn: string;
@@ -11718,7 +9599,7 @@ The ARN of the SSO instance under which the operation will be executed.
 
 ---
 
-##### `awsManagedPolicies`<sup>Optional</sup> <a name="awsManagedPolicies" id="raindancers-network.PermissionSetProps.property.awsManagedPolicies"></a>
+##### `awsManagedPolicies`<sup>Optional</sup> <a name="awsManagedPolicies" id="raindancers-network.sso.PermissionSetProps.property.awsManagedPolicies"></a>
 
 ```typescript
 public readonly awsManagedPolicies: IManagedPolicy[];
@@ -11731,13 +9612,13 @@ The AWS managed policies to attach to the `PermissionSet`.
 
 ---
 
-##### `customerManagedPolicyReferences`<sup>Optional</sup> <a name="customerManagedPolicyReferences" id="raindancers-network.PermissionSetProps.property.customerManagedPolicyReferences"></a>
+##### `customerManagedPolicyReferences`<sup>Optional</sup> <a name="customerManagedPolicyReferences" id="raindancers-network.sso.PermissionSetProps.property.customerManagedPolicyReferences"></a>
 
 ```typescript
 public readonly customerManagedPolicyReferences: CustomerManagedPolicyReference[];
 ```
 
-- *Type:* <a href="#raindancers-network.CustomerManagedPolicyReference">CustomerManagedPolicyReference</a>[]
+- *Type:* raindancers-network.sso.CustomerManagedPolicyReference[]
 - *Default:* No customer managed policies
 
 Specifies the names and paths of a customer managed policy.
@@ -11747,7 +9628,7 @@ AWS account where you want to deploy your permission set.
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.PermissionSetProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.sso.PermissionSetProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -11760,7 +9641,7 @@ The description of the `PermissionSet`.
 
 ---
 
-##### `inlinePolicy`<sup>Optional</sup> <a name="inlinePolicy" id="raindancers-network.PermissionSetProps.property.inlinePolicy"></a>
+##### `inlinePolicy`<sup>Optional</sup> <a name="inlinePolicy" id="raindancers-network.sso.PermissionSetProps.property.inlinePolicy"></a>
 
 ```typescript
 public readonly inlinePolicy: PolicyDocument;
@@ -11773,13 +9654,13 @@ The IAM inline policy that is attached to the permission set.
 
 ---
 
-##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="raindancers-network.PermissionSetProps.property.permissionsBoundary"></a>
+##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="raindancers-network.sso.PermissionSetProps.property.permissionsBoundary"></a>
 
 ```typescript
 public readonly permissionsBoundary: PermissionBoundary;
 ```
 
-- *Type:* <a href="#raindancers-network.PermissionBoundary">PermissionBoundary</a>
+- *Type:* raindancers-network.sso.PermissionBoundary
 - *Default:* No permissions boundary
 
 Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary.
@@ -11797,7 +9678,7 @@ for IAM entities in the AWS Identity and Access Management User Guide.
 
 ---
 
-##### `relayStateType`<sup>Optional</sup> <a name="relayStateType" id="raindancers-network.PermissionSetProps.property.relayStateType"></a>
+##### `relayStateType`<sup>Optional</sup> <a name="relayStateType" id="raindancers-network.sso.PermissionSetProps.property.relayStateType"></a>
 
 ```typescript
 public readonly relayStateType: string;
@@ -11823,7 +9704,7 @@ administrator role.
 
 ---
 
-##### `sessionDuration`<sup>Optional</sup> <a name="sessionDuration" id="raindancers-network.PermissionSetProps.property.sessionDuration"></a>
+##### `sessionDuration`<sup>Optional</sup> <a name="sessionDuration" id="raindancers-network.sso.PermissionSetProps.property.sessionDuration"></a>
 
 ```typescript
 public readonly sessionDuration: Duration;
@@ -11835,476 +9716,25 @@ The length of time that the application user sessions are valid for.
 
 ---
 
-### PowerBIGateway <a name="PowerBIGateway" id="raindancers-network.PowerBIGateway"></a>
+### PrefixCidr <a name="PrefixCidr" id="raindancers-network.network.PrefixCidr"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.PowerBIGateway.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.PrefixCidr.Initializer"></a>
 
 ```typescript
-import { PowerBIGateway } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const powerBIGateway: PowerBIGateway = { ... }
+const prefixCidr: network.PrefixCidr = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBIGateway.property.cfgSecretArn">cfgSecretArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGateway.property.hostname">hostname</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGateway.property.instancetype">instancetype</a></code> | <code>aws-cdk-lib.aws_ec2.InstanceType</code> | *No description.* |
+| <code><a href="#raindancers-network.network.PrefixCidr.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `cfgSecretArn`<sup>Required</sup> <a name="cfgSecretArn" id="raindancers-network.PowerBIGateway.property.cfgSecretArn"></a>
-
-```typescript
-public readonly cfgSecretArn: string;
-```
-
-- *Type:* string
-
----
-
-##### `hostname`<sup>Required</sup> <a name="hostname" id="raindancers-network.PowerBIGateway.property.hostname"></a>
-
-```typescript
-public readonly hostname: string;
-```
-
-- *Type:* string
-
----
-
-##### `instancetype`<sup>Required</sup> <a name="instancetype" id="raindancers-network.PowerBIGateway.property.instancetype"></a>
-
-```typescript
-public readonly instancetype: InstanceType;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.InstanceType
-
----
-
-### PowerBiGatewayProps <a name="PowerBiGatewayProps" id="raindancers-network.PowerBiGatewayProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PowerBiGatewayProps.Initializer"></a>
-
-```typescript
-import { PowerBiGatewayProps } from 'raindancers-network'
-
-const powerBiGatewayProps: PowerBiGatewayProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.cfgSecret">cfgSecret</a></code> | <code>aws-cdk-lib.aws_secretsmanager.ISecret \| aws-cdk-lib.aws_secretsmanager.Secret</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.hostname">hostname</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.initscript">initscript</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.instanceType">instanceType</a></code> | <code>aws-cdk-lib.aws_ec2.InstanceType</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.machineImage">machineImage</a></code> | <code>aws-cdk-lib.aws_ec2.WindowsImage</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.powerBIgatewaySetupScript">powerBIgatewaySetupScript</a></code> | <code>aws-cdk-lib.aws_ec2.S3DownloadOptions</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.subnet">subnet</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBiGatewayProps.property.zone">zone</a></code> | <code>aws-cdk-lib.aws_route53.IPrivateHostedZone \| aws-cdk-lib.aws_route53.PrivateHostedZone</code> | *No description.* |
-
----
-
-##### `cfgSecret`<sup>Required</sup> <a name="cfgSecret" id="raindancers-network.PowerBiGatewayProps.property.cfgSecret"></a>
-
-```typescript
-public readonly cfgSecret: ISecret | Secret;
-```
-
-- *Type:* aws-cdk-lib.aws_secretsmanager.ISecret | aws-cdk-lib.aws_secretsmanager.Secret
-
----
-
-##### `hostname`<sup>Required</sup> <a name="hostname" id="raindancers-network.PowerBiGatewayProps.property.hostname"></a>
-
-```typescript
-public readonly hostname: string;
-```
-
-- *Type:* string
-
----
-
-##### `initscript`<sup>Required</sup> <a name="initscript" id="raindancers-network.PowerBiGatewayProps.property.initscript"></a>
-
-```typescript
-public readonly initscript: string;
-```
-
-- *Type:* string
-
----
-
-##### `instanceType`<sup>Required</sup> <a name="instanceType" id="raindancers-network.PowerBiGatewayProps.property.instanceType"></a>
-
-```typescript
-public readonly instanceType: InstanceType;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.InstanceType
-
----
-
-##### `machineImage`<sup>Required</sup> <a name="machineImage" id="raindancers-network.PowerBiGatewayProps.property.machineImage"></a>
-
-```typescript
-public readonly machineImage: WindowsImage;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.WindowsImage
-
----
-
-##### `powerBIgatewaySetupScript`<sup>Required</sup> <a name="powerBIgatewaySetupScript" id="raindancers-network.PowerBiGatewayProps.property.powerBIgatewaySetupScript"></a>
-
-```typescript
-public readonly powerBIgatewaySetupScript: S3DownloadOptions;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.S3DownloadOptions
-
----
-
-##### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.PowerBiGatewayProps.property.subnet"></a>
-
-```typescript
-public readonly subnet: SubnetSelection;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
-
----
-
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.PowerBiGatewayProps.property.vpc"></a>
-
-```typescript
-public readonly vpc: IVpc | Vpc;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
-
----
-
-##### `zone`<sup>Required</sup> <a name="zone" id="raindancers-network.PowerBiGatewayProps.property.zone"></a>
-
-```typescript
-public readonly zone: IPrivateHostedZone | PrivateHostedZone;
-```
-
-- *Type:* aws-cdk-lib.aws_route53.IPrivateHostedZone | aws-cdk-lib.aws_route53.PrivateHostedZone
-
----
-
-### PowerBIGatewayZooProps <a name="PowerBIGatewayZooProps" id="raindancers-network.PowerBIGatewayZooProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PowerBIGatewayZooProps.Initializer"></a>
-
-```typescript
-import { PowerBIGatewayZooProps } from 'raindancers-network'
-
-const powerBIGatewayZooProps: PowerBIGatewayZooProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.analyticsReporting">analyticsReporting</a></code> | <code>boolean</code> | Include runtime versioning information in this Stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.crossRegionReferences">crossRegionReferences</a></code> | <code>boolean</code> | Enable this flag to allow native cross region stack references. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.description">description</a></code> | <code>string</code> | A description of the stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.env">env</a></code> | <code>aws-cdk-lib.Environment</code> | The AWS environment (account/region) where this stack will be deployed. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.permissionsBoundary">permissionsBoundary</a></code> | <code>aws-cdk-lib.PermissionsBoundary</code> | Options for applying a permissions boundary to all IAM Roles and Users created within this Stage. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.stackName">stackName</a></code> | <code>string</code> | Name to deploy the stack with. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method to use while deploying this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | Stack tags that will be applied to all the taggable resources and the stack itself. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether to enable termination protection for this stack. |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.deployAssetsPath">deployAssetsPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.gateways">gateways</a></code> | <code><a href="#raindancers-network.PowerBIGateway">PowerBIGateway</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.initscript">initscript</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.r53zoneID">r53zoneID</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.subnet">subnet</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | *No description.* |
-| <code><a href="#raindancers-network.PowerBIGatewayZooProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-
----
-
-##### `analyticsReporting`<sup>Optional</sup> <a name="analyticsReporting" id="raindancers-network.PowerBIGatewayZooProps.property.analyticsReporting"></a>
-
-```typescript
-public readonly analyticsReporting: boolean;
-```
-
-- *Type:* boolean
-- *Default:* `analyticsReporting` setting of containing `App`, or value of 'aws:cdk:version-reporting' context key
-
-Include runtime versioning information in this Stack.
-
----
-
-##### `crossRegionReferences`<sup>Optional</sup> <a name="crossRegionReferences" id="raindancers-network.PowerBIGatewayZooProps.property.crossRegionReferences"></a>
-
-```typescript
-public readonly crossRegionReferences: boolean;
-```
-
-- *Type:* boolean
-- *Default:* false
-
-Enable this flag to allow native cross region stack references.
-
-Enabling this will create a CloudFormation custom resource
-in both the producing stack and consuming stack in order to perform the export/import
-
-This feature is currently experimental
-
----
-
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.PowerBIGatewayZooProps.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-- *Default:* No description.
-
-A description of the stack.
-
----
-
-##### `env`<sup>Optional</sup> <a name="env" id="raindancers-network.PowerBIGatewayZooProps.property.env"></a>
-
-```typescript
-public readonly env: Environment;
-```
-
-- *Type:* aws-cdk-lib.Environment
-- *Default:* The environment of the containing `Stage` if available, otherwise create the stack will be environment-agnostic.
-
-The AWS environment (account/region) where this stack will be deployed.
-
-Set the `region`/`account` fields of `env` to either a concrete value to
-select the indicated environment (recommended for production stacks), or to
-the values of environment variables
-`CDK_DEFAULT_REGION`/`CDK_DEFAULT_ACCOUNT` to let the target environment
-depend on the AWS credentials/configuration that the CDK CLI is executed
-under (recommended for development stacks).
-
-If the `Stack` is instantiated inside a `Stage`, any undefined
-`region`/`account` fields from `env` will default to the same field on the
-encompassing `Stage`, if configured there.
-
-If either `region` or `account` are not set nor inherited from `Stage`, the
-Stack will be considered "*environment-agnostic*"". Environment-agnostic
-stacks can be deployed to any environment but may not be able to take
-advantage of all features of the CDK. For example, they will not be able to
-use environmental context lookups such as `ec2.Vpc.fromLookup` and will not
-automatically translate Service Principals to the right format based on the
-environment's AWS partition, and other such enhancements.
-
----
-
-*Example*
-
-```typescript
-// Use a concrete account and region to deploy this stack to:
-// `.account` and `.region` will simply return these values.
-new Stack(app, 'Stack1', {
-  env: {
-    account: '123456789012',
-    region: 'us-east-1'
-  },
-});
-
-// Use the CLI's current credentials to determine the target environment:
-// `.account` and `.region` will reflect the account+region the CLI
-// is configured to use (based on the user CLI credentials)
-new Stack(app, 'Stack2', {
-  env: {
-    account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: process.env.CDK_DEFAULT_REGION
-  },
-});
-
-// Define multiple stacks stage associated with an environment
-const myStage = new Stage(app, 'MyStage', {
-  env: {
-    account: '123456789012',
-    region: 'us-east-1'
-  }
-});
-
-// both of these stacks will use the stage's account/region:
-// `.account` and `.region` will resolve to the concrete values as above
-new MyStack(myStage, 'Stack1');
-new YourStack(myStage, 'Stack2');
-
-// Define an environment-agnostic stack:
-// `.account` and `.region` will resolve to `{ "Ref": "AWS::AccountId" }` and `{ "Ref": "AWS::Region" }` respectively.
-// which will only resolve to actual values by CloudFormation during deployment.
-new MyStack(app, 'Stack1');
-```
-
-
-##### `permissionsBoundary`<sup>Optional</sup> <a name="permissionsBoundary" id="raindancers-network.PowerBIGatewayZooProps.property.permissionsBoundary"></a>
-
-```typescript
-public readonly permissionsBoundary: PermissionsBoundary;
-```
-
-- *Type:* aws-cdk-lib.PermissionsBoundary
-- *Default:* no permissions boundary is applied
-
-Options for applying a permissions boundary to all IAM Roles and Users created within this Stage.
-
----
-
-##### `stackName`<sup>Optional</sup> <a name="stackName" id="raindancers-network.PowerBIGatewayZooProps.property.stackName"></a>
-
-```typescript
-public readonly stackName: string;
-```
-
-- *Type:* string
-- *Default:* Derived from construct path.
-
-Name to deploy the stack with.
-
----
-
-##### `synthesizer`<sup>Optional</sup> <a name="synthesizer" id="raindancers-network.PowerBIGatewayZooProps.property.synthesizer"></a>
-
-```typescript
-public readonly synthesizer: IStackSynthesizer;
-```
-
-- *Type:* aws-cdk-lib.IStackSynthesizer
-- *Default:* The synthesizer specified on `App`, or `DefaultStackSynthesizer` otherwise.
-
-Synthesis method to use while deploying this stack.
-
-The Stack Synthesizer controls aspects of synthesis and deployment,
-like how assets are referenced and what IAM roles to use. For more
-information, see the README of the main CDK package.
-
-If not specified, the `defaultStackSynthesizer` from `App` will be used.
-If that is not specified, `DefaultStackSynthesizer` is used if
-`@aws-cdk/core:newStyleStackSynthesis` is set to `true` or the CDK major
-version is v2. In CDK v1 `LegacyStackSynthesizer` is the default if no
-other synthesizer is specified.
-
----
-
-##### `tags`<sup>Optional</sup> <a name="tags" id="raindancers-network.PowerBIGatewayZooProps.property.tags"></a>
-
-```typescript
-public readonly tags: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-- *Default:* {}
-
-Stack tags that will be applied to all the taggable resources and the stack itself.
-
----
-
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="raindancers-network.PowerBIGatewayZooProps.property.terminationProtection"></a>
-
-```typescript
-public readonly terminationProtection: boolean;
-```
-
-- *Type:* boolean
-- *Default:* false
-
-Whether to enable termination protection for this stack.
-
----
-
-##### `deployAssetsPath`<sup>Required</sup> <a name="deployAssetsPath" id="raindancers-network.PowerBIGatewayZooProps.property.deployAssetsPath"></a>
-
-```typescript
-public readonly deployAssetsPath: string;
-```
-
-- *Type:* string
-
----
-
-##### `gateways`<sup>Required</sup> <a name="gateways" id="raindancers-network.PowerBIGatewayZooProps.property.gateways"></a>
-
-```typescript
-public readonly gateways: PowerBIGateway[];
-```
-
-- *Type:* <a href="#raindancers-network.PowerBIGateway">PowerBIGateway</a>[]
-
----
-
-##### `initscript`<sup>Required</sup> <a name="initscript" id="raindancers-network.PowerBIGatewayZooProps.property.initscript"></a>
-
-```typescript
-public readonly initscript: string;
-```
-
-- *Type:* string
-
----
-
-##### `r53zoneID`<sup>Required</sup> <a name="r53zoneID" id="raindancers-network.PowerBIGatewayZooProps.property.r53zoneID"></a>
-
-```typescript
-public readonly r53zoneID: string;
-```
-
-- *Type:* string
-
----
-
-##### `subnet`<sup>Required</sup> <a name="subnet" id="raindancers-network.PowerBIGatewayZooProps.property.subnet"></a>
-
-```typescript
-public readonly subnet: SubnetSelection;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.SubnetSelection
-
----
-
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.PowerBIGatewayZooProps.property.vpc"></a>
-
-```typescript
-public readonly vpc: IVpc | Vpc;
-```
-
-- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
-
----
-
-### PrefixCidr <a name="PrefixCidr" id="raindancers-network.PrefixCidr"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PrefixCidr.Initializer"></a>
-
-```typescript
-import { PrefixCidr } from 'raindancers-network'
-
-const prefixCidr: PrefixCidr = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixCidr.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.PrefixCidr.property.cidr"></a>
+##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.network.PrefixCidr.property.cidr"></a>
 
 ```typescript
 public readonly cidr: string;
@@ -12314,154 +9744,26 @@ public readonly cidr: string;
 
 ---
 
-### PrefixListEntry <a name="PrefixListEntry" id="raindancers-network.PrefixListEntry"></a>
+### PrincipalProperty <a name="PrincipalProperty" id="raindancers-network.sso.PrincipalProperty"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.PrefixListEntry.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.sso.PrincipalProperty.Initializer"></a>
 
 ```typescript
-import { PrefixListEntry } from 'raindancers-network'
+import { sso } from 'raindancers-network'
 
-const prefixListEntry: PrefixListEntry = { ... }
+const principalProperty: sso.PrincipalProperty = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixListEntry.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixListEntry.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.sso.PrincipalProperty.property.principalId">principalId</a></code> | <code>string</code> | The id of the principal. |
+| <code><a href="#raindancers-network.sso.PrincipalProperty.property.principalType">principalType</a></code> | <code>raindancers-network.sso.PrincipalTypes</code> | The type of the principal. |
 
 ---
 
-##### `cidr`<sup>Required</sup> <a name="cidr" id="raindancers-network.PrefixListEntry.property.cidr"></a>
-
-```typescript
-public readonly cidr: string;
-```
-
-- *Type:* string
-
----
-
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.PrefixListEntry.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-### PrefixListProps <a name="PrefixListProps" id="raindancers-network.PrefixListProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PrefixListProps.Initializer"></a>
-
-```typescript
-import { PrefixListProps } from 'raindancers-network'
-
-const prefixListProps: PrefixListProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixListProps.property.addressFamily">addressFamily</a></code> | <code><a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a></code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixListProps.property.maxEntries">maxEntries</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixListProps.property.prefixListName">prefixListName</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `addressFamily`<sup>Required</sup> <a name="addressFamily" id="raindancers-network.PrefixListProps.property.addressFamily"></a>
-
-```typescript
-public readonly addressFamily: IPAddressFamily;
-```
-
-- *Type:* <a href="#raindancers-network.IPAddressFamily">IPAddressFamily</a>
-
----
-
-##### `maxEntries`<sup>Required</sup> <a name="maxEntries" id="raindancers-network.PrefixListProps.property.maxEntries"></a>
-
-```typescript
-public readonly maxEntries: number;
-```
-
-- *Type:* number
-
----
-
-##### `prefixListName`<sup>Required</sup> <a name="prefixListName" id="raindancers-network.PrefixListProps.property.prefixListName"></a>
-
-```typescript
-public readonly prefixListName: string;
-```
-
-- *Type:* string
-
----
-
-### PrefixListSetInterface <a name="PrefixListSetInterface" id="raindancers-network.PrefixListSetInterface"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PrefixListSetInterface.Initializer"></a>
-
-```typescript
-import { PrefixListSetInterface } from 'raindancers-network'
-
-const prefixListSetInterface: PrefixListSetInterface = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrefixListSetInterface.property.arn">arn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.PrefixListSetInterface.property.name">name</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.PrefixListSetInterface.property.arn"></a>
-
-```typescript
-public readonly arn: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.PrefixListSetInterface.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-### PrincipalProperty <a name="PrincipalProperty" id="raindancers-network.PrincipalProperty"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.PrincipalProperty.Initializer"></a>
-
-```typescript
-import { PrincipalProperty } from 'raindancers-network'
-
-const principalProperty: PrincipalProperty = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.PrincipalProperty.property.principalId">principalId</a></code> | <code>string</code> | The id of the principal. |
-| <code><a href="#raindancers-network.PrincipalProperty.property.principalType">principalType</a></code> | <code><a href="#raindancers-network.PrincipalTypes">PrincipalTypes</a></code> | The type of the principal. |
-
----
-
-##### `principalId`<sup>Required</sup> <a name="principalId" id="raindancers-network.PrincipalProperty.property.principalId"></a>
+##### `principalId`<sup>Required</sup> <a name="principalId" id="raindancers-network.sso.PrincipalProperty.property.principalId"></a>
 
 ```typescript
 public readonly principalId: string;
@@ -12473,13 +9775,13 @@ The id of the principal.
 
 ---
 
-##### `principalType`<sup>Required</sup> <a name="principalType" id="raindancers-network.PrincipalProperty.property.principalType"></a>
+##### `principalType`<sup>Required</sup> <a name="principalType" id="raindancers-network.sso.PrincipalProperty.property.principalType"></a>
 
 ```typescript
 public readonly principalType: PrincipalTypes;
 ```
 
-- *Type:* <a href="#raindancers-network.PrincipalTypes">PrincipalTypes</a>
+- *Type:* raindancers-network.sso.PrincipalTypes
 
 The type of the principal.
 
@@ -12623,30 +9925,30 @@ public readonly timeOut: Duration;
 
 ---
 
-### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.R53ResolverendpointsProps"></a>
+### R53ResolverendpointsProps <a name="R53ResolverendpointsProps" id="raindancers-network.dns.R53ResolverendpointsProps"></a>
 
 Properties to for creating inbound resolvers.
 
-#### Initializer <a name="Initializer" id="raindancers-network.R53ResolverendpointsProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.dns.R53ResolverendpointsProps.Initializer"></a>
 
 ```typescript
-import { R53ResolverendpointsProps } from 'raindancers-network'
+import { dns } from 'raindancers-network'
 
-const r53ResolverendpointsProps: R53ResolverendpointsProps = { ... }
+const r53ResolverendpointsProps: dns.R53ResolverendpointsProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetgroup to place the resolvers in. |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.Vpc</code> | the vpc that the resolvers will be placed in. |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.outboundForwardingRules">outboundForwardingRules</a></code> | <code><a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
-| <code><a href="#raindancers-network.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
+| <code><a href="#raindancers-network.dns.R53ResolverendpointsProps.property.subnetGroup">subnetGroup</a></code> | <code>string</code> | the subnetgroup to place the resolvers in. |
+| <code><a href="#raindancers-network.dns.R53ResolverendpointsProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | the vpc that the resolvers will be placed in. |
+| <code><a href="#raindancers-network.dns.R53ResolverendpointsProps.property.outboundForwardingRules">outboundForwardingRules</a></code> | <code>raindancers-network.dns.OutboundForwardingRule[]</code> | An array of Internal domains that can be centrally resolved in this VPC. |
+| <code><a href="#raindancers-network.dns.R53ResolverendpointsProps.property.tagValue">tagValue</a></code> | <code>string</code> | Value for Sharing. |
 
 ---
 
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.R53ResolverendpointsProps.property.subnetGroup"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.dns.R53ResolverendpointsProps.property.subnetGroup"></a>
 
 ```typescript
 public readonly subnetGroup: string;
@@ -12658,31 +9960,31 @@ the subnetgroup to place the resolvers in.
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.R53ResolverendpointsProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.dns.R53ResolverendpointsProps.property.vpc"></a>
 
 ```typescript
-public readonly vpc: Vpc;
+public readonly vpc: IVpc | Vpc;
 ```
 
-- *Type:* aws-cdk-lib.aws_ec2.Vpc
+- *Type:* aws-cdk-lib.aws_ec2.IVpc | aws-cdk-lib.aws_ec2.Vpc
 
 the vpc that the resolvers will be placed in.
 
 ---
 
-##### `outboundForwardingRules`<sup>Optional</sup> <a name="outboundForwardingRules" id="raindancers-network.R53ResolverendpointsProps.property.outboundForwardingRules"></a>
+##### `outboundForwardingRules`<sup>Optional</sup> <a name="outboundForwardingRules" id="raindancers-network.dns.R53ResolverendpointsProps.property.outboundForwardingRules"></a>
 
 ```typescript
 public readonly outboundForwardingRules: OutboundForwardingRule[];
 ```
 
-- *Type:* <a href="#raindancers-network.OutboundForwardingRule">OutboundForwardingRule</a>[]
+- *Type:* raindancers-network.dns.OutboundForwardingRule[]
 
 An array of Internal domains that can be centrally resolved in this VPC.
 
 ---
 
-##### `tagValue`<sup>Optional</sup> <a name="tagValue" id="raindancers-network.R53ResolverendpointsProps.property.tagValue"></a>
+##### `tagValue`<sup>Optional</sup> <a name="tagValue" id="raindancers-network.dns.R53ResolverendpointsProps.property.tagValue"></a>
 
 ```typescript
 public readonly tagValue: string;
@@ -12722,36 +10024,36 @@ public readonly recrawlBehavior: RecrawlBehavior;
 
 ---
 
-### RedshiftClusterProps <a name="RedshiftClusterProps" id="raindancers-network.RedshiftClusterProps"></a>
+### RedshiftClusterProps <a name="RedshiftClusterProps" id="raindancers-network.redshift.RedshiftClusterProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.RedshiftClusterProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.redshift.RedshiftClusterProps.Initializer"></a>
 
 ```typescript
-import { RedshiftClusterProps } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-const redshiftClusterProps: RedshiftClusterProps = { ... }
+const redshiftClusterProps: redshift.RedshiftClusterProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.clusterName">clusterName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.defaultrole">defaultrole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.logging">logging</a></code> | <code>@aws-cdk/aws-redshift-alpha.LoggingProperties</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.masterUser">masterUser</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.subnetGroup">subnetGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterSubnetGroup</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.defaultDBName">defaultDBName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.nodes">nodes</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.nodeType">nodeType</a></code> | <code>@aws-cdk/aws-redshift-alpha.NodeType</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.parameterGroup">parameterGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.preferredMaintenanceWindow">preferredMaintenanceWindow</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.RedshiftClusterProps.property.removalPolicy">removalPolicy</a></code> | <code>aws-cdk-lib.RemovalPolicy</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.clusterName">clusterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.defaultrole">defaultrole</a></code> | <code>aws-cdk-lib.aws_iam.Role</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.logging">logging</a></code> | <code>@aws-cdk/aws-redshift-alpha.LoggingProperties</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.masterUser">masterUser</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.subnetGroup">subnetGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterSubnetGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.defaultDBName">defaultDBName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.nodes">nodes</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.nodeType">nodeType</a></code> | <code>@aws-cdk/aws-redshift-alpha.NodeType</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.parameterGroup">parameterGroup</a></code> | <code>@aws-cdk/aws-redshift-alpha.ClusterParameterGroup</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.preferredMaintenanceWindow">preferredMaintenanceWindow</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.redshift.RedshiftClusterProps.property.removalPolicy">removalPolicy</a></code> | <code>aws-cdk-lib.RemovalPolicy</code> | *No description.* |
 
 ---
 
-##### `clusterName`<sup>Required</sup> <a name="clusterName" id="raindancers-network.RedshiftClusterProps.property.clusterName"></a>
+##### `clusterName`<sup>Required</sup> <a name="clusterName" id="raindancers-network.redshift.RedshiftClusterProps.property.clusterName"></a>
 
 ```typescript
 public readonly clusterName: string;
@@ -12761,7 +10063,7 @@ public readonly clusterName: string;
 
 ---
 
-##### `defaultrole`<sup>Required</sup> <a name="defaultrole" id="raindancers-network.RedshiftClusterProps.property.defaultrole"></a>
+##### `defaultrole`<sup>Required</sup> <a name="defaultrole" id="raindancers-network.redshift.RedshiftClusterProps.property.defaultrole"></a>
 
 ```typescript
 public readonly defaultrole: Role;
@@ -12771,7 +10073,7 @@ public readonly defaultrole: Role;
 
 ---
 
-##### `logging`<sup>Required</sup> <a name="logging" id="raindancers-network.RedshiftClusterProps.property.logging"></a>
+##### `logging`<sup>Required</sup> <a name="logging" id="raindancers-network.redshift.RedshiftClusterProps.property.logging"></a>
 
 ```typescript
 public readonly logging: LoggingProperties;
@@ -12781,7 +10083,7 @@ public readonly logging: LoggingProperties;
 
 ---
 
-##### `masterUser`<sup>Required</sup> <a name="masterUser" id="raindancers-network.RedshiftClusterProps.property.masterUser"></a>
+##### `masterUser`<sup>Required</sup> <a name="masterUser" id="raindancers-network.redshift.RedshiftClusterProps.property.masterUser"></a>
 
 ```typescript
 public readonly masterUser: string;
@@ -12791,7 +10093,7 @@ public readonly masterUser: string;
 
 ---
 
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.RedshiftClusterProps.property.subnetGroup"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.redshift.RedshiftClusterProps.property.subnetGroup"></a>
 
 ```typescript
 public readonly subnetGroup: ClusterSubnetGroup;
@@ -12801,7 +10103,7 @@ public readonly subnetGroup: ClusterSubnetGroup;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.RedshiftClusterProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.redshift.RedshiftClusterProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: IVpc | Vpc;
@@ -12811,7 +10113,7 @@ public readonly vpc: IVpc | Vpc;
 
 ---
 
-##### `defaultDBName`<sup>Optional</sup> <a name="defaultDBName" id="raindancers-network.RedshiftClusterProps.property.defaultDBName"></a>
+##### `defaultDBName`<sup>Optional</sup> <a name="defaultDBName" id="raindancers-network.redshift.RedshiftClusterProps.property.defaultDBName"></a>
 
 ```typescript
 public readonly defaultDBName: string;
@@ -12821,7 +10123,7 @@ public readonly defaultDBName: string;
 
 ---
 
-##### `nodes`<sup>Optional</sup> <a name="nodes" id="raindancers-network.RedshiftClusterProps.property.nodes"></a>
+##### `nodes`<sup>Optional</sup> <a name="nodes" id="raindancers-network.redshift.RedshiftClusterProps.property.nodes"></a>
 
 ```typescript
 public readonly nodes: number;
@@ -12831,7 +10133,7 @@ public readonly nodes: number;
 
 ---
 
-##### `nodeType`<sup>Optional</sup> <a name="nodeType" id="raindancers-network.RedshiftClusterProps.property.nodeType"></a>
+##### `nodeType`<sup>Optional</sup> <a name="nodeType" id="raindancers-network.redshift.RedshiftClusterProps.property.nodeType"></a>
 
 ```typescript
 public readonly nodeType: NodeType;
@@ -12841,7 +10143,7 @@ public readonly nodeType: NodeType;
 
 ---
 
-##### `parameterGroup`<sup>Optional</sup> <a name="parameterGroup" id="raindancers-network.RedshiftClusterProps.property.parameterGroup"></a>
+##### `parameterGroup`<sup>Optional</sup> <a name="parameterGroup" id="raindancers-network.redshift.RedshiftClusterProps.property.parameterGroup"></a>
 
 ```typescript
 public readonly parameterGroup: ClusterParameterGroup;
@@ -12851,7 +10153,7 @@ public readonly parameterGroup: ClusterParameterGroup;
 
 ---
 
-##### `preferredMaintenanceWindow`<sup>Optional</sup> <a name="preferredMaintenanceWindow" id="raindancers-network.RedshiftClusterProps.property.preferredMaintenanceWindow"></a>
+##### `preferredMaintenanceWindow`<sup>Optional</sup> <a name="preferredMaintenanceWindow" id="raindancers-network.redshift.RedshiftClusterProps.property.preferredMaintenanceWindow"></a>
 
 ```typescript
 public readonly preferredMaintenanceWindow: string;
@@ -12861,7 +10163,7 @@ public readonly preferredMaintenanceWindow: string;
 
 ---
 
-##### `removalPolicy`<sup>Optional</sup> <a name="removalPolicy" id="raindancers-network.RedshiftClusterProps.property.removalPolicy"></a>
+##### `removalPolicy`<sup>Optional</sup> <a name="removalPolicy" id="raindancers-network.redshift.RedshiftClusterProps.property.removalPolicy"></a>
 
 ```typescript
 public readonly removalPolicy: RemovalPolicy;
@@ -12871,26 +10173,26 @@ public readonly removalPolicy: RemovalPolicy;
 
 ---
 
-### RedShiftDatabaseProps <a name="RedShiftDatabaseProps" id="raindancers-network.RedShiftDatabaseProps"></a>
+### RedShiftDatabaseProps <a name="RedShiftDatabaseProps" id="raindancers-network.redshift.RedShiftDatabaseProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.RedShiftDatabaseProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.redshift.RedShiftDatabaseProps.Initializer"></a>
 
 ```typescript
-import { RedShiftDatabaseProps } from 'raindancers-network'
+import { redshift } from 'raindancers-network'
 
-const redShiftDatabaseProps: RedShiftDatabaseProps = { ... }
+const redShiftDatabaseProps: redshift.RedShiftDatabaseProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RedShiftDatabaseProps.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | which cluster will the database be created in. |
-| <code><a href="#raindancers-network.RedShiftDatabaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | A name for the database. |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabaseProps.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-redshift-alpha.Cluster</code> | which cluster will the database be created in. |
+| <code><a href="#raindancers-network.redshift.RedShiftDatabaseProps.property.databaseName">databaseName</a></code> | <code>string</code> | A name for the database. |
 
 ---
 
-##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.RedShiftDatabaseProps.property.cluster"></a>
+##### `cluster`<sup>Required</sup> <a name="cluster" id="raindancers-network.redshift.RedShiftDatabaseProps.property.cluster"></a>
 
 ```typescript
 public readonly cluster: Cluster;
@@ -12902,7 +10204,7 @@ which cluster will the database be created in.
 
 ---
 
-##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.RedShiftDatabaseProps.property.databaseName"></a>
+##### `databaseName`<sup>Required</sup> <a name="databaseName" id="raindancers-network.redshift.RedShiftDatabaseProps.property.databaseName"></a>
 
 ```typescript
 public readonly databaseName: string;
@@ -12914,66 +10216,27 @@ A name for the database.
 
 ---
 
-### ReferenceSet <a name="ReferenceSet" id="raindancers-network.ReferenceSet"></a>
+### ResolveSubnetGroupNameProps <a name="ResolveSubnetGroupNameProps" id="raindancers-network.network.ResolveSubnetGroupNameProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ReferenceSet.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.ResolveSubnetGroupNameProps.Initializer"></a>
 
 ```typescript
-import { ReferenceSet } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const referenceSet: ReferenceSet = { ... }
+const resolveSubnetGroupNameProps: network.ResolveSubnetGroupNameProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ReferenceSet.property.arn">arn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ReferenceSet.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupNameProps.property.azcount">azcount</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupNameProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ResolveSubnetGroupNameProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
 
 ---
 
-##### `arn`<sup>Required</sup> <a name="arn" id="raindancers-network.ReferenceSet.property.arn"></a>
-
-```typescript
-public readonly arn: string;
-```
-
-- *Type:* string
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.ReferenceSet.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-### ResolveSubnetGroupNameProps <a name="ResolveSubnetGroupNameProps" id="raindancers-network.ResolveSubnetGroupNameProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.ResolveSubnetGroupNameProps.Initializer"></a>
-
-```typescript
-import { ResolveSubnetGroupNameProps } from 'raindancers-network'
-
-const resolveSubnetGroupNameProps: ResolveSubnetGroupNameProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.azcount">azcount</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.subnetGroupName">subnetGroupName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ResolveSubnetGroupNameProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc \| aws-cdk-lib.aws_ec2.Vpc</code> | *No description.* |
-
----
-
-##### `azcount`<sup>Required</sup> <a name="azcount" id="raindancers-network.ResolveSubnetGroupNameProps.property.azcount"></a>
+##### `azcount`<sup>Required</sup> <a name="azcount" id="raindancers-network.network.ResolveSubnetGroupNameProps.property.azcount"></a>
 
 ```typescript
 public readonly azcount: number;
@@ -12983,7 +10246,7 @@ public readonly azcount: number;
 
 ---
 
-##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.ResolveSubnetGroupNameProps.property.subnetGroupName"></a>
+##### `subnetGroupName`<sup>Required</sup> <a name="subnetGroupName" id="raindancers-network.network.ResolveSubnetGroupNameProps.property.subnetGroupName"></a>
 
 ```typescript
 public readonly subnetGroupName: string;
@@ -12993,7 +10256,7 @@ public readonly subnetGroupName: string;
 
 ---
 
-##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.ResolveSubnetGroupNameProps.property.vpc"></a>
+##### `vpc`<sup>Required</sup> <a name="vpc" id="raindancers-network.network.ResolveSubnetGroupNameProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: IVpc | Vpc;
@@ -13003,28 +10266,28 @@ public readonly vpc: IVpc | Vpc;
 
 ---
 
-### Route <a name="Route" id="raindancers-network.Route"></a>
+### Route <a name="Route" id="raindancers-network.network.Route"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.Route.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.Route.Initializer"></a>
 
 ```typescript
-import { Route } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const route: Route = { ... }
+const route: network.Route = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Route.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Route.property.destination">destination</a></code> | <code><a href="#raindancers-network.Destination">Destination</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Route.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.Route.property.subnet">subnet</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a> \| <a href="#raindancers-network.SubnetWildCards">SubnetWildCards</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.Route.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.Route.property.destination">destination</a></code> | <code>raindancers-network.network.Destination</code> | *No description.* |
+| <code><a href="#raindancers-network.network.Route.property.cidr">cidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.network.Route.property.subnet">subnet</a></code> | <code>raindancers-network.network.SubnetGroup \| raindancers-network.network.SubnetWildCards</code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.Route.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.network.Route.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -13034,17 +10297,17 @@ public readonly description: string;
 
 ---
 
-##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.Route.property.destination"></a>
+##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.network.Route.property.destination"></a>
 
 ```typescript
 public readonly destination: Destination;
 ```
 
-- *Type:* <a href="#raindancers-network.Destination">Destination</a>
+- *Type:* raindancers-network.network.Destination
 
 ---
 
-##### `cidr`<sup>Optional</sup> <a name="cidr" id="raindancers-network.Route.property.cidr"></a>
+##### `cidr`<sup>Optional</sup> <a name="cidr" id="raindancers-network.network.Route.property.cidr"></a>
 
 ```typescript
 public readonly cidr: string;
@@ -13054,52 +10317,52 @@ public readonly cidr: string;
 
 ---
 
-##### `subnet`<sup>Optional</sup> <a name="subnet" id="raindancers-network.Route.property.subnet"></a>
+##### `subnet`<sup>Optional</sup> <a name="subnet" id="raindancers-network.network.Route.property.subnet"></a>
 
 ```typescript
 public readonly subnet: SubnetGroup | SubnetWildCards;
 ```
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a> | <a href="#raindancers-network.SubnetWildCards">SubnetWildCards</a>
+- *Type:* raindancers-network.network.SubnetGroup | raindancers-network.network.SubnetWildCards
 
 ---
 
-### RouterGroup <a name="RouterGroup" id="raindancers-network.RouterGroup"></a>
+### RouterGroup <a name="RouterGroup" id="raindancers-network.network.RouterGroup"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.RouterGroup.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.RouterGroup.Initializer"></a>
 
 ```typescript
-import { RouterGroup } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const routerGroup: RouterGroup = { ... }
+const routerGroup: network.RouterGroup = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.RouterGroup.property.routes">routes</a></code> | <code><a href="#raindancers-network.Route">Route</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.RouterGroup.property.subnetGroup">subnetGroup</a></code> | <code><a href="#raindancers-network.SubnetGroup">SubnetGroup</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.RouterGroup.property.routes">routes</a></code> | <code>raindancers-network.network.Route[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.RouterGroup.property.subnetGroup">subnetGroup</a></code> | <code>raindancers-network.network.SubnetGroup</code> | *No description.* |
 
 ---
 
-##### `routes`<sup>Required</sup> <a name="routes" id="raindancers-network.RouterGroup.property.routes"></a>
+##### `routes`<sup>Required</sup> <a name="routes" id="raindancers-network.network.RouterGroup.property.routes"></a>
 
 ```typescript
 public readonly routes: Route[];
 ```
 
-- *Type:* <a href="#raindancers-network.Route">Route</a>[]
+- *Type:* raindancers-network.network.Route[]
 
 ---
 
-##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.RouterGroup.property.subnetGroup"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.network.RouterGroup.property.subnetGroup"></a>
 
 ```typescript
 public readonly subnetGroup: SubnetGroup;
 ```
 
-- *Type:* <a href="#raindancers-network.SubnetGroup">SubnetGroup</a>
+- *Type:* raindancers-network.network.SubnetGroup
 
 ---
 
@@ -13225,29 +10488,29 @@ public readonly sampleSize: number;
 
 ---
 
-### SampleConfig <a name="SampleConfig" id="raindancers-network.SampleConfig"></a>
+### SampleConfig <a name="SampleConfig" id="raindancers-network.cloudwan.SampleConfig"></a>
 
 An interface that defines a set of Sample Configurations.
 
-#### Initializer <a name="Initializer" id="raindancers-network.SampleConfig.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.SampleConfig.Initializer"></a>
 
 ```typescript
-import { SampleConfig } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const sampleConfig: SampleConfig = { ... }
+const sampleConfig: cloudwan.SampleConfig = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.SampleConfig.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | The S3 bucket where to place the sample configurations. |
-| <code><a href="#raindancers-network.SampleConfig.property.deviceType">deviceType</a></code> | <code><a href="#raindancers-network.VpnDeviceType">VpnDeviceType</a></code> | the type of device of the customer gateway. |
-| <code><a href="#raindancers-network.SampleConfig.property.ikeVersion">ikeVersion</a></code> | <code><a href="#raindancers-network.IkeVersion">IkeVersion</a></code> | create configs for IKE1 or IKE2. |
+| <code><a href="#raindancers-network.cloudwan.SampleConfig.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | The S3 bucket where to place the sample configurations. |
+| <code><a href="#raindancers-network.cloudwan.SampleConfig.property.deviceType">deviceType</a></code> | <code>raindancers-network.cloudwan.VpnDeviceType</code> | the type of device of the customer gateway. |
+| <code><a href="#raindancers-network.cloudwan.SampleConfig.property.ikeVersion">ikeVersion</a></code> | <code>raindancers-network.cloudwan.IkeVersion</code> | create configs for IKE1 or IKE2. |
 
 ---
 
-##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.SampleConfig.property.bucket"></a>
+##### `bucket`<sup>Required</sup> <a name="bucket" id="raindancers-network.cloudwan.SampleConfig.property.bucket"></a>
 
 ```typescript
 public readonly bucket: Bucket;
@@ -13259,25 +10522,25 @@ The S3 bucket where to place the sample configurations.
 
 ---
 
-##### `deviceType`<sup>Required</sup> <a name="deviceType" id="raindancers-network.SampleConfig.property.deviceType"></a>
+##### `deviceType`<sup>Required</sup> <a name="deviceType" id="raindancers-network.cloudwan.SampleConfig.property.deviceType"></a>
 
 ```typescript
 public readonly deviceType: VpnDeviceType;
 ```
 
-- *Type:* <a href="#raindancers-network.VpnDeviceType">VpnDeviceType</a>
+- *Type:* raindancers-network.cloudwan.VpnDeviceType
 
 the type of device of the customer gateway.
 
 ---
 
-##### `ikeVersion`<sup>Required</sup> <a name="ikeVersion" id="raindancers-network.SampleConfig.property.ikeVersion"></a>
+##### `ikeVersion`<sup>Required</sup> <a name="ikeVersion" id="raindancers-network.cloudwan.SampleConfig.property.ikeVersion"></a>
 
 ```typescript
 public readonly ikeVersion: IkeVersion;
 ```
 
-- *Type:* <a href="#raindancers-network.IkeVersion">IkeVersion</a>
+- *Type:* raindancers-network.cloudwan.IkeVersion
 
 create configs for IKE1 or IKE2.
 
@@ -13372,33 +10635,33 @@ public readonly secretName: string;
 
 ---
 
-### Segment <a name="Segment" id="raindancers-network.Segment"></a>
+### Segment <a name="Segment" id="raindancers-network.cloudwan.Segment"></a>
 
 Segment Properties.
 
-#### Initializer <a name="Initializer" id="raindancers-network.Segment.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.Segment.Initializer"></a>
 
 ```typescript
-import { Segment } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const segment: Segment = { ... }
+const segment: cloudwan.Segment = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.Segment.property.name">name</a></code> | <code>string</code> | Name of the Segment. |
-| <code><a href="#raindancers-network.Segment.property.allowFilter">allowFilter</a></code> | <code>string[]</code> | A list of denys. |
-| <code><a href="#raindancers-network.Segment.property.denyFilter">denyFilter</a></code> | <code>string[]</code> | a List of denys. |
-| <code><a href="#raindancers-network.Segment.property.description">description</a></code> | <code>string</code> | A description of the of the segement. |
-| <code><a href="#raindancers-network.Segment.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | A list of edge locations where the segement will be avaialble. |
-| <code><a href="#raindancers-network.Segment.property.isolateAttachments">isolateAttachments</a></code> | <code>boolean</code> | Set true if attached VPCS are isolated from each other. |
-| <code><a href="#raindancers-network.Segment.property.requireAttachmentAcceptance">requireAttachmentAcceptance</a></code> | <code>boolean</code> | Set true if the attachment needs approval for connection. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.name">name</a></code> | <code>string</code> | Name of the Segment. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.allowFilter">allowFilter</a></code> | <code>string[]</code> | A list of denys. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.denyFilter">denyFilter</a></code> | <code>string[]</code> | a List of denys. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.description">description</a></code> | <code>string</code> | A description of the of the segement. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.edgeLocations">edgeLocations</a></code> | <code>object[]</code> | A list of edge locations where the segement will be avaialble. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.isolateAttachments">isolateAttachments</a></code> | <code>boolean</code> | Set true if attached VPCS are isolated from each other. |
+| <code><a href="#raindancers-network.cloudwan.Segment.property.requireAttachmentAcceptance">requireAttachmentAcceptance</a></code> | <code>boolean</code> | Set true if the attachment needs approval for connection. |
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.Segment.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.cloudwan.Segment.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -13410,7 +10673,7 @@ Name of the Segment.
 
 ---
 
-##### `allowFilter`<sup>Optional</sup> <a name="allowFilter" id="raindancers-network.Segment.property.allowFilter"></a>
+##### `allowFilter`<sup>Optional</sup> <a name="allowFilter" id="raindancers-network.cloudwan.Segment.property.allowFilter"></a>
 
 ```typescript
 public readonly allowFilter: string[];
@@ -13422,7 +10685,7 @@ A list of denys.
 
 ---
 
-##### `denyFilter`<sup>Optional</sup> <a name="denyFilter" id="raindancers-network.Segment.property.denyFilter"></a>
+##### `denyFilter`<sup>Optional</sup> <a name="denyFilter" id="raindancers-network.cloudwan.Segment.property.denyFilter"></a>
 
 ```typescript
 public readonly denyFilter: string[];
@@ -13434,7 +10697,7 @@ a List of denys.
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.Segment.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.cloudwan.Segment.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -13446,7 +10709,7 @@ A description of the of the segement.
 
 ---
 
-##### `edgeLocations`<sup>Optional</sup> <a name="edgeLocations" id="raindancers-network.Segment.property.edgeLocations"></a>
+##### `edgeLocations`<sup>Optional</sup> <a name="edgeLocations" id="raindancers-network.cloudwan.Segment.property.edgeLocations"></a>
 
 ```typescript
 public readonly edgeLocations: object[];
@@ -13461,7 +10724,7 @@ locations must also be included in the core network edge ( CNE )
 
 ---
 
-##### `isolateAttachments`<sup>Optional</sup> <a name="isolateAttachments" id="raindancers-network.Segment.property.isolateAttachments"></a>
+##### `isolateAttachments`<sup>Optional</sup> <a name="isolateAttachments" id="raindancers-network.cloudwan.Segment.property.isolateAttachments"></a>
 
 ```typescript
 public readonly isolateAttachments: boolean;
@@ -13473,7 +10736,7 @@ Set true if attached VPCS are isolated from each other.
 
 ---
 
-##### `requireAttachmentAcceptance`<sup>Optional</sup> <a name="requireAttachmentAcceptance" id="raindancers-network.Segment.property.requireAttachmentAcceptance"></a>
+##### `requireAttachmentAcceptance`<sup>Optional</sup> <a name="requireAttachmentAcceptance" id="raindancers-network.cloudwan.Segment.property.requireAttachmentAcceptance"></a>
 
 ```typescript
 public readonly requireAttachmentAcceptance: boolean;
@@ -13488,43 +10751,43 @@ and requires an automation step
 
 ---
 
-### SegmentAction <a name="SegmentAction" id="raindancers-network.SegmentAction"></a>
+### SegmentAction <a name="SegmentAction" id="raindancers-network.cloudwan.SegmentAction"></a>
 
 Segmment ACtions.
 
-#### Initializer <a name="Initializer" id="raindancers-network.SegmentAction.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.SegmentAction.Initializer"></a>
 
 ```typescript
-import { SegmentAction } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const segmentAction: SegmentAction = { ... }
+const segmentAction: cloudwan.SegmentAction = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.SegmentAction.property.action">action</a></code> | <code><a href="#raindancers-network.SegmentActionType">SegmentActionType</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.destinations">destinations</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.except">except</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.mode">mode</a></code> | <code><a href="#raindancers-network.SegmentActionMode">SegmentActionMode</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentAction.property.shareWith">shareWith</a></code> | <code>string \| string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.action">action</a></code> | <code>raindancers-network.cloudwan.SegmentActionType</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.destinationCidrBlocks">destinationCidrBlocks</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.destinations">destinations</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.except">except</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.mode">mode</a></code> | <code>raindancers-network.cloudwan.SegmentActionMode</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentAction.property.shareWith">shareWith</a></code> | <code>string \| string[]</code> | *No description.* |
 
 ---
 
-##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.SegmentAction.property.action"></a>
+##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.cloudwan.SegmentAction.property.action"></a>
 
 ```typescript
 public readonly action: SegmentActionType;
 ```
 
-- *Type:* <a href="#raindancers-network.SegmentActionType">SegmentActionType</a>
+- *Type:* raindancers-network.cloudwan.SegmentActionType
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.SegmentAction.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.cloudwan.SegmentAction.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -13534,7 +10797,7 @@ public readonly description: string;
 
 ---
 
-##### `destinationCidrBlocks`<sup>Optional</sup> <a name="destinationCidrBlocks" id="raindancers-network.SegmentAction.property.destinationCidrBlocks"></a>
+##### `destinationCidrBlocks`<sup>Optional</sup> <a name="destinationCidrBlocks" id="raindancers-network.cloudwan.SegmentAction.property.destinationCidrBlocks"></a>
 
 ```typescript
 public readonly destinationCidrBlocks: string[];
@@ -13544,7 +10807,7 @@ public readonly destinationCidrBlocks: string[];
 
 ---
 
-##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.SegmentAction.property.destinations"></a>
+##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.cloudwan.SegmentAction.property.destinations"></a>
 
 ```typescript
 public readonly destinations: string[];
@@ -13554,7 +10817,7 @@ public readonly destinations: string[];
 
 ---
 
-##### `except`<sup>Optional</sup> <a name="except" id="raindancers-network.SegmentAction.property.except"></a>
+##### `except`<sup>Optional</sup> <a name="except" id="raindancers-network.cloudwan.SegmentAction.property.except"></a>
 
 ```typescript
 public readonly except: string[];
@@ -13564,17 +10827,17 @@ public readonly except: string[];
 
 ---
 
-##### `mode`<sup>Optional</sup> <a name="mode" id="raindancers-network.SegmentAction.property.mode"></a>
+##### `mode`<sup>Optional</sup> <a name="mode" id="raindancers-network.cloudwan.SegmentAction.property.mode"></a>
 
 ```typescript
 public readonly mode: SegmentActionMode;
 ```
 
-- *Type:* <a href="#raindancers-network.SegmentActionMode">SegmentActionMode</a>
+- *Type:* raindancers-network.cloudwan.SegmentActionMode
 
 ---
 
-##### `shareWith`<sup>Optional</sup> <a name="shareWith" id="raindancers-network.SegmentAction.property.shareWith"></a>
+##### `shareWith`<sup>Optional</sup> <a name="shareWith" id="raindancers-network.cloudwan.SegmentAction.property.shareWith"></a>
 
 ```typescript
 public readonly shareWith: string | string[];
@@ -13584,65 +10847,65 @@ public readonly shareWith: string | string[];
 
 ---
 
-### ShareSubnetGroupProps <a name="ShareSubnetGroupProps" id="raindancers-network.ShareSubnetGroupProps"></a>
+### ShareSubnetGroupProps <a name="ShareSubnetGroupProps" id="raindancers-network.network.ShareSubnetGroupProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.ShareSubnetGroupProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.network.ShareSubnetGroupProps.Initializer"></a>
 
 ```typescript
-import { ShareSubnetGroupProps } from 'raindancers-network'
+import { network } from 'raindancers-network'
 
-const shareSubnetGroupProps: ShareSubnetGroupProps = { ... }
+const shareSubnetGroupProps: network.ShareSubnetGroupProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ShareSubnetGroupProps.property.account">account</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ShareSubnetGroupProps.property.subnetGroups">subnetGroups</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ShareSubnetGroupProps.property.accounts">accounts</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.network.ShareSubnetGroupProps.property.subnetGroup">subnetGroup</a></code> | <code>raindancers-network.network.SubnetGroup</code> | *No description.* |
 
 ---
 
-##### `account`<sup>Required</sup> <a name="account" id="raindancers-network.ShareSubnetGroupProps.property.account"></a>
+##### `accounts`<sup>Required</sup> <a name="accounts" id="raindancers-network.network.ShareSubnetGroupProps.property.accounts"></a>
 
 ```typescript
-public readonly account: string;
-```
-
-- *Type:* string
-
----
-
-##### `subnetGroups`<sup>Required</sup> <a name="subnetGroups" id="raindancers-network.ShareSubnetGroupProps.property.subnetGroups"></a>
-
-```typescript
-public readonly subnetGroups: string[];
+public readonly accounts: string[];
 ```
 
 - *Type:* string[]
 
 ---
 
-### SimpleAttachmentPolicyProps <a name="SimpleAttachmentPolicyProps" id="raindancers-network.SimpleAttachmentPolicyProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.SimpleAttachmentPolicyProps.Initializer"></a>
+##### `subnetGroup`<sup>Required</sup> <a name="subnetGroup" id="raindancers-network.network.ShareSubnetGroupProps.property.subnetGroup"></a>
 
 ```typescript
-import { SimpleAttachmentPolicyProps } from 'raindancers-network'
+public readonly subnetGroup: SubnetGroup;
+```
 
-const simpleAttachmentPolicyProps: SimpleAttachmentPolicyProps = { ... }
+- *Type:* raindancers-network.network.SubnetGroup
+
+---
+
+### SimpleAttachmentPolicyProps <a name="SimpleAttachmentPolicyProps" id="raindancers-network.cloudwan.SimpleAttachmentPolicyProps"></a>
+
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.SimpleAttachmentPolicyProps.Initializer"></a>
+
+```typescript
+import { cloudwan } from 'raindancers-network'
+
+const simpleAttachmentPolicyProps: cloudwan.SimpleAttachmentPolicyProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.SimpleAttachmentPolicyProps.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.SimpleAttachmentPolicyProps.property.account">account</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SimpleAttachmentPolicyProps.property.ruleNumber">ruleNumber</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SimpleAttachmentPolicyProps.property.account">account</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.SimpleAttachmentPolicyProps.property.ruleNumber"></a>
+##### `ruleNumber`<sup>Required</sup> <a name="ruleNumber" id="raindancers-network.cloudwan.SimpleAttachmentPolicyProps.property.ruleNumber"></a>
 
 ```typescript
 public readonly ruleNumber: number;
@@ -13652,7 +10915,7 @@ public readonly ruleNumber: number;
 
 ---
 
-##### `account`<sup>Optional</sup> <a name="account" id="raindancers-network.SimpleAttachmentPolicyProps.property.account"></a>
+##### `account`<sup>Optional</sup> <a name="account" id="raindancers-network.cloudwan.SimpleAttachmentPolicyProps.property.account"></a>
 
 ```typescript
 public readonly account: string;
@@ -13662,26 +10925,26 @@ public readonly account: string;
 
 ---
 
-### SimpleShareActionProps <a name="SimpleShareActionProps" id="raindancers-network.SimpleShareActionProps"></a>
+### SimpleShareActionProps <a name="SimpleShareActionProps" id="raindancers-network.cloudwan.SimpleShareActionProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.SimpleShareActionProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.SimpleShareActionProps.Initializer"></a>
 
 ```typescript
-import { SimpleShareActionProps } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const simpleShareActionProps: SimpleShareActionProps = { ... }
+const simpleShareActionProps: cloudwan.SimpleShareActionProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.SimpleShareActionProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SimpleShareActionProps.property.shareWith">shareWith</a></code> | <code>string \| <a href="#raindancers-network.CoreNetworkSegment">CoreNetworkSegment</a>[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SimpleShareActionProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SimpleShareActionProps.property.shareWith">shareWith</a></code> | <code>string \| raindancers-network.cloudwan.CoreNetworkSegment[]</code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.SimpleShareActionProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.cloudwan.SimpleShareActionProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -13691,52 +10954,52 @@ public readonly description: string;
 
 ---
 
-##### `shareWith`<sup>Required</sup> <a name="shareWith" id="raindancers-network.SimpleShareActionProps.property.shareWith"></a>
+##### `shareWith`<sup>Required</sup> <a name="shareWith" id="raindancers-network.cloudwan.SimpleShareActionProps.property.shareWith"></a>
 
 ```typescript
 public readonly shareWith: string | CoreNetworkSegment[];
 ```
 
-- *Type:* string | <a href="#raindancers-network.CoreNetworkSegment">CoreNetworkSegment</a>[]
+- *Type:* string | raindancers-network.cloudwan.CoreNetworkSegment[]
 
 ---
 
-### StatelessRuleProps <a name="StatelessRuleProps" id="raindancers-network.StatelessRuleProps"></a>
+### StatelessRuleProps <a name="StatelessRuleProps" id="raindancers-network.firewall.StatelessRuleProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.StatelessRuleProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.firewall.StatelessRuleProps.Initializer"></a>
 
 ```typescript
-import { StatelessRuleProps } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-const statelessRuleProps: StatelessRuleProps = { ... }
+const statelessRuleProps: firewall.StatelessRuleProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.actions">actions</a></code> | <code><a href="#raindancers-network.StatelessActions">StatelessActions</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.destinationPorts">destinationPorts</a></code> | <code>string \| number[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.destinations">destinations</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.protocols">protocols</a></code> | <code><a href="#raindancers-network.Protocol">Protocol</a>[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.sourcePorts">sourcePorts</a></code> | <code>string \| number[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.sources">sources</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessRuleProps.property.tcpFlags">tcpFlags</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.TCPFlagFieldProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.actions">actions</a></code> | <code>raindancers-network.firewall.StatelessActions[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.priority">priority</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.destinationPorts">destinationPorts</a></code> | <code>string \| number[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.destinations">destinations</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.protocols">protocols</a></code> | <code>raindancers-network.firewall.Protocol[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.sourcePorts">sourcePorts</a></code> | <code>string \| number[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.sources">sources</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.AddressProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRuleProps.property.tcpFlags">tcpFlags</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.TCPFlagFieldProperty[]</code> | *No description.* |
 
 ---
 
-##### `actions`<sup>Required</sup> <a name="actions" id="raindancers-network.StatelessRuleProps.property.actions"></a>
+##### `actions`<sup>Required</sup> <a name="actions" id="raindancers-network.firewall.StatelessRuleProps.property.actions"></a>
 
 ```typescript
 public readonly actions: StatelessActions[];
 ```
 
-- *Type:* <a href="#raindancers-network.StatelessActions">StatelessActions</a>[]
+- *Type:* raindancers-network.firewall.StatelessActions[]
 
 ---
 
-##### `priority`<sup>Required</sup> <a name="priority" id="raindancers-network.StatelessRuleProps.property.priority"></a>
+##### `priority`<sup>Required</sup> <a name="priority" id="raindancers-network.firewall.StatelessRuleProps.property.priority"></a>
 
 ```typescript
 public readonly priority: number;
@@ -13746,7 +11009,7 @@ public readonly priority: number;
 
 ---
 
-##### `destinationPorts`<sup>Optional</sup> <a name="destinationPorts" id="raindancers-network.StatelessRuleProps.property.destinationPorts"></a>
+##### `destinationPorts`<sup>Optional</sup> <a name="destinationPorts" id="raindancers-network.firewall.StatelessRuleProps.property.destinationPorts"></a>
 
 ```typescript
 public readonly destinationPorts: string | number[];
@@ -13756,7 +11019,7 @@ public readonly destinationPorts: string | number[];
 
 ---
 
-##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.StatelessRuleProps.property.destinations"></a>
+##### `destinations`<sup>Optional</sup> <a name="destinations" id="raindancers-network.firewall.StatelessRuleProps.property.destinations"></a>
 
 ```typescript
 public readonly destinations: AddressProperty[];
@@ -13766,17 +11029,17 @@ public readonly destinations: AddressProperty[];
 
 ---
 
-##### `protocols`<sup>Optional</sup> <a name="protocols" id="raindancers-network.StatelessRuleProps.property.protocols"></a>
+##### `protocols`<sup>Optional</sup> <a name="protocols" id="raindancers-network.firewall.StatelessRuleProps.property.protocols"></a>
 
 ```typescript
 public readonly protocols: Protocol[];
 ```
 
-- *Type:* <a href="#raindancers-network.Protocol">Protocol</a>[]
+- *Type:* raindancers-network.firewall.Protocol[]
 
 ---
 
-##### `sourcePorts`<sup>Optional</sup> <a name="sourcePorts" id="raindancers-network.StatelessRuleProps.property.sourcePorts"></a>
+##### `sourcePorts`<sup>Optional</sup> <a name="sourcePorts" id="raindancers-network.firewall.StatelessRuleProps.property.sourcePorts"></a>
 
 ```typescript
 public readonly sourcePorts: string | number[];
@@ -13786,7 +11049,7 @@ public readonly sourcePorts: string | number[];
 
 ---
 
-##### `sources`<sup>Optional</sup> <a name="sources" id="raindancers-network.StatelessRuleProps.property.sources"></a>
+##### `sources`<sup>Optional</sup> <a name="sources" id="raindancers-network.firewall.StatelessRuleProps.property.sources"></a>
 
 ```typescript
 public readonly sources: AddressProperty[];
@@ -13796,7 +11059,7 @@ public readonly sources: AddressProperty[];
 
 ---
 
-##### `tcpFlags`<sup>Optional</sup> <a name="tcpFlags" id="raindancers-network.StatelessRuleProps.property.tcpFlags"></a>
+##### `tcpFlags`<sup>Optional</sup> <a name="tcpFlags" id="raindancers-network.firewall.StatelessRuleProps.property.tcpFlags"></a>
 
 ```typescript
 public readonly tcpFlags: TCPFlagFieldProperty[];
@@ -13806,249 +11069,33 @@ public readonly tcpFlags: TCPFlagFieldProperty[];
 
 ---
 
-### SuricataRuleGroupProps <a name="SuricataRuleGroupProps" id="raindancers-network.SuricataRuleGroupProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.SuricataRuleGroupProps.Initializer"></a>
-
-```typescript
-import { SuricataRuleGroupProps } from 'raindancers-network'
-
-const suricataRuleGroupProps: SuricataRuleGroupProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.capacity">capacity</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.networkFirewallEngine">networkFirewallEngine</a></code> | <code><a href="#raindancers-network.NWFWRulesEngine">NWFWRulesEngine</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.ruleGroupName">ruleGroupName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleGroupProps.property.suricataRules">suricataRules</a></code> | <code><a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]</code> | *No description.* |
-
----
-
-##### `capacity`<sup>Required</sup> <a name="capacity" id="raindancers-network.SuricataRuleGroupProps.property.capacity"></a>
-
-```typescript
-public readonly capacity: number;
-```
-
-- *Type:* number
-
----
-
-##### `networkFirewallEngine`<sup>Required</sup> <a name="networkFirewallEngine" id="raindancers-network.SuricataRuleGroupProps.property.networkFirewallEngine"></a>
-
-```typescript
-public readonly networkFirewallEngine: NWFWRulesEngine;
-```
-
-- *Type:* <a href="#raindancers-network.NWFWRulesEngine">NWFWRulesEngine</a>
-
----
-
-##### `ruleGroupName`<sup>Required</sup> <a name="ruleGroupName" id="raindancers-network.SuricataRuleGroupProps.property.ruleGroupName"></a>
-
-```typescript
-public readonly ruleGroupName: string;
-```
-
-- *Type:* string
-
----
-
-##### `description`<sup>Optional</sup> <a name="description" id="raindancers-network.SuricataRuleGroupProps.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-##### `suricataRules`<sup>Optional</sup> <a name="suricataRules" id="raindancers-network.SuricataRuleGroupProps.property.suricataRules"></a>
-
-```typescript
-public readonly suricataRules: FQDNStatefulRule[];
-```
-
-- *Type:* <a href="#raindancers-network.FQDNStatefulRule">FQDNStatefulRule</a>[]
-
----
-
-### SuricataRuleProps <a name="SuricataRuleProps" id="raindancers-network.SuricataRuleProps"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.SuricataRuleProps.Initializer"></a>
-
-```typescript
-import { SuricataRuleProps } from 'raindancers-network'
-
-const suricataRuleProps: SuricataRuleProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.action">action</a></code> | <code><a href="#raindancers-network.StatefulAction">StatefulAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.destination">destination</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.destPort">destPort</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.direction">direction</a></code> | <code><a href="#raindancers-network.Direction">Direction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.protocol">protocol</a></code> | <code><a href="#raindancers-network.FWProtocol">FWProtocol</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.source">source</a></code> | <code>string \| <a href="#raindancers-network.PrefixList">PrefixList</a> \| <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SuricataRuleProps.property.srcPort">srcPort</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `action`<sup>Required</sup> <a name="action" id="raindancers-network.SuricataRuleProps.property.action"></a>
-
-```typescript
-public readonly action: StatefulAction;
-```
-
-- *Type:* <a href="#raindancers-network.StatefulAction">StatefulAction</a>
-
----
-
-##### `destination`<sup>Required</sup> <a name="destination" id="raindancers-network.SuricataRuleProps.property.destination"></a>
-
-```typescript
-public readonly destination: string | PrefixList | DynamicTagResourceGroup;
-```
-
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
-
----
-
-##### `destPort`<sup>Required</sup> <a name="destPort" id="raindancers-network.SuricataRuleProps.property.destPort"></a>
-
-```typescript
-public readonly destPort: string;
-```
-
-- *Type:* string
-
----
-
-##### `direction`<sup>Required</sup> <a name="direction" id="raindancers-network.SuricataRuleProps.property.direction"></a>
-
-```typescript
-public readonly direction: Direction;
-```
-
-- *Type:* <a href="#raindancers-network.Direction">Direction</a>
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="raindancers-network.SuricataRuleProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
-##### `protocol`<sup>Required</sup> <a name="protocol" id="raindancers-network.SuricataRuleProps.property.protocol"></a>
-
-```typescript
-public readonly protocol: FWProtocol;
-```
-
-- *Type:* <a href="#raindancers-network.FWProtocol">FWProtocol</a>
-
----
-
-##### `source`<sup>Required</sup> <a name="source" id="raindancers-network.SuricataRuleProps.property.source"></a>
-
-```typescript
-public readonly source: string | PrefixList | DynamicTagResourceGroup;
-```
-
-- *Type:* string | <a href="#raindancers-network.PrefixList">PrefixList</a> | <a href="#raindancers-network.DynamicTagResourceGroup">DynamicTagResourceGroup</a>
-
----
-
-##### `srcPort`<sup>Required</sup> <a name="srcPort" id="raindancers-network.SuricataRuleProps.property.srcPort"></a>
-
-```typescript
-public readonly srcPort: string;
-```
-
-- *Type:* string
-
----
-
-### TagFilter <a name="TagFilter" id="raindancers-network.TagFilter"></a>
-
-#### Initializer <a name="Initializer" id="raindancers-network.TagFilter.Initializer"></a>
-
-```typescript
-import { TagFilter } from 'raindancers-network'
-
-const tagFilter: TagFilter = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#raindancers-network.TagFilter.property.key">key</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TagFilter.property.values">values</a></code> | <code>string[]</code> | *No description.* |
-
----
-
-##### `key`<sup>Required</sup> <a name="key" id="raindancers-network.TagFilter.property.key"></a>
-
-```typescript
-public readonly key: string;
-```
-
-- *Type:* string
-
----
-
-##### `values`<sup>Required</sup> <a name="values" id="raindancers-network.TagFilter.property.values"></a>
-
-```typescript
-public readonly values: string[];
-```
-
-- *Type:* string[]
-
----
-
-### TGWOnCloudWanProps <a name="TGWOnCloudWanProps" id="raindancers-network.TGWOnCloudWanProps"></a>
+### TGWOnCloudWanProps <a name="TGWOnCloudWanProps" id="raindancers-network.cloudwan.TGWOnCloudWanProps"></a>
 
 Properties for a TWGOnCloudWan.
 
-#### Initializer <a name="Initializer" id="raindancers-network.TGWOnCloudWanProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.TGWOnCloudWanProps.Initializer"></a>
 
 ```typescript
-import { TGWOnCloudWanProps } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const tGWOnCloudWanProps: TGWOnCloudWanProps = { ... }
+const tGWOnCloudWanProps: cloudwan.TGWOnCloudWanProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn">amazonSideAsn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.attachmentSegment">attachmentSegment</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudwan">cloudwan</a></code> | <code><a href="#raindancers-network.CoreNetwork">CoreNetwork</a></code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr">cloudWanCidr</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.defaultRouteInSegments">defaultRouteInSegments</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.TGWOnCloudWanProps.property.tgCidr">tgCidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.amazonSideAsn">amazonSideAsn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.attachmentSegment">attachmentSegment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.cloudwan">cloudwan</a></code> | <code>raindancers-network.cloudwan.CoreNetwork</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.cloudWanCidr">cloudWanCidr</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.defaultRouteInSegments">defaultRouteInSegments</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.TGWOnCloudWanProps.property.tgCidr">tgCidr</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `amazonSideAsn`<sup>Required</sup> <a name="amazonSideAsn" id="raindancers-network.TGWOnCloudWanProps.property.amazonSideAsn"></a>
+##### `amazonSideAsn`<sup>Required</sup> <a name="amazonSideAsn" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.amazonSideAsn"></a>
 
 ```typescript
 public readonly amazonSideAsn: string;
@@ -14058,7 +11105,7 @@ public readonly amazonSideAsn: string;
 
 ---
 
-##### `attachmentSegment`<sup>Required</sup> <a name="attachmentSegment" id="raindancers-network.TGWOnCloudWanProps.property.attachmentSegment"></a>
+##### `attachmentSegment`<sup>Required</sup> <a name="attachmentSegment" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.attachmentSegment"></a>
 
 ```typescript
 public readonly attachmentSegment: string;
@@ -14068,17 +11115,17 @@ public readonly attachmentSegment: string;
 
 ---
 
-##### `cloudwan`<sup>Required</sup> <a name="cloudwan" id="raindancers-network.TGWOnCloudWanProps.property.cloudwan"></a>
+##### `cloudwan`<sup>Required</sup> <a name="cloudwan" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.cloudwan"></a>
 
 ```typescript
 public readonly cloudwan: CoreNetwork;
 ```
 
-- *Type:* <a href="#raindancers-network.CoreNetwork">CoreNetwork</a>
+- *Type:* raindancers-network.cloudwan.CoreNetwork
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.TGWOnCloudWanProps.property.description"></a>
+##### `description`<sup>Required</sup> <a name="description" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -14088,7 +11135,7 @@ public readonly description: string;
 
 ---
 
-##### `cloudWanCidr`<sup>Optional</sup> <a name="cloudWanCidr" id="raindancers-network.TGWOnCloudWanProps.property.cloudWanCidr"></a>
+##### `cloudWanCidr`<sup>Optional</sup> <a name="cloudWanCidr" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.cloudWanCidr"></a>
 
 ```typescript
 public readonly cloudWanCidr: string[];
@@ -14098,7 +11145,7 @@ public readonly cloudWanCidr: string[];
 
 ---
 
-##### `defaultRouteInSegments`<sup>Optional</sup> <a name="defaultRouteInSegments" id="raindancers-network.TGWOnCloudWanProps.property.defaultRouteInSegments"></a>
+##### `defaultRouteInSegments`<sup>Optional</sup> <a name="defaultRouteInSegments" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.defaultRouteInSegments"></a>
 
 ```typescript
 public readonly defaultRouteInSegments: string[];
@@ -14108,7 +11155,7 @@ public readonly defaultRouteInSegments: string[];
 
 ---
 
-##### `tgCidr`<sup>Optional</sup> <a name="tgCidr" id="raindancers-network.TGWOnCloudWanProps.property.tgCidr"></a>
+##### `tgCidr`<sup>Optional</sup> <a name="tgCidr" id="raindancers-network.cloudwan.TGWOnCloudWanProps.property.tgCidr"></a>
 
 ```typescript
 public readonly tgCidr: string[];
@@ -14118,25 +11165,25 @@ public readonly tgCidr: string[];
 
 ---
 
-### UpdateSSMAgentProps <a name="UpdateSSMAgentProps" id="raindancers-network.UpdateSSMAgentProps"></a>
+### UpdateSSMAgentProps <a name="UpdateSSMAgentProps" id="raindancers-network.ssm.UpdateSSMAgentProps"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.UpdateSSMAgentProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.ssm.UpdateSSMAgentProps.Initializer"></a>
 
 ```typescript
-import { UpdateSSMAgentProps } from 'raindancers-network'
+import { ssm } from 'raindancers-network'
 
-const updateSSMAgentProps: UpdateSSMAgentProps = { ... }
+const updateSSMAgentProps: ssm.UpdateSSMAgentProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.UpdateSSMAgentProps.property.instance">instance</a></code> | <code>aws-cdk-lib.aws_ec2.Instance</code> | The EC2 Instance that will be udpated. |
+| <code><a href="#raindancers-network.ssm.UpdateSSMAgentProps.property.instance">instance</a></code> | <code>aws-cdk-lib.aws_ec2.Instance</code> | The EC2 Instance that will be udpated. |
 
 ---
 
-##### `instance`<sup>Required</sup> <a name="instance" id="raindancers-network.UpdateSSMAgentProps.property.instance"></a>
+##### `instance`<sup>Required</sup> <a name="instance" id="raindancers-network.ssm.UpdateSSMAgentProps.property.instance"></a>
 
 ```typescript
 public readonly instance: Instance;
@@ -14148,26 +11195,26 @@ The EC2 Instance that will be udpated.
 
 ---
 
-### VpcRegionId <a name="VpcRegionId" id="raindancers-network.VpcRegionId"></a>
+### VpcRegionId <a name="VpcRegionId" id="raindancers-network.crowdstrike.VpcRegionId"></a>
 
-#### Initializer <a name="Initializer" id="raindancers-network.VpcRegionId.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.crowdstrike.VpcRegionId.Initializer"></a>
 
 ```typescript
-import { VpcRegionId } from 'raindancers-network'
+import { crowdstrike } from 'raindancers-network'
 
-const vpcRegionId: VpcRegionId = { ... }
+const vpcRegionId: crowdstrike.VpcRegionId = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.VpcRegionId.property.peeringVpcId">peeringVpcId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.VpcRegionId.property.peerVpcRegion">peerVpcRegion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.VpcRegionId.property.peeringVpcId">peeringVpcId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.VpcRegionId.property.peerVpcRegion">peerVpcRegion</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `peeringVpcId`<sup>Required</sup> <a name="peeringVpcId" id="raindancers-network.VpcRegionId.property.peeringVpcId"></a>
+##### `peeringVpcId`<sup>Required</sup> <a name="peeringVpcId" id="raindancers-network.crowdstrike.VpcRegionId.property.peeringVpcId"></a>
 
 ```typescript
 public readonly peeringVpcId: string;
@@ -14177,7 +11224,7 @@ public readonly peeringVpcId: string;
 
 ---
 
-##### `peerVpcRegion`<sup>Required</sup> <a name="peerVpcRegion" id="raindancers-network.VpcRegionId.property.peerVpcRegion"></a>
+##### `peerVpcRegion`<sup>Required</sup> <a name="peerVpcRegion" id="raindancers-network.crowdstrike.VpcRegionId.property.peerVpcRegion"></a>
 
 ```typescript
 public readonly peerVpcRegion: string;
@@ -14187,31 +11234,31 @@ public readonly peerVpcRegion: string;
 
 ---
 
-### VpnProps <a name="VpnProps" id="raindancers-network.VpnProps"></a>
+### VpnProps <a name="VpnProps" id="raindancers-network.cloudwan.VpnProps"></a>
 
 Properties for S2S VPN.
 
-#### Initializer <a name="Initializer" id="raindancers-network.VpnProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.VpnProps.Initializer"></a>
 
 ```typescript
-import { VpnProps } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const vpnProps: VpnProps = { ... }
+const vpnProps: cloudwan.VpnProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.VpnProps.property.customerGateway">customerGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnCustomerGateway</code> | The customer gateway where the vpn will terminate. |
-| <code><a href="#raindancers-network.VpnProps.property.vpnspec">vpnspec</a></code> | <code><a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a></code> | a VPN specification for the VPN. |
-| <code><a href="#raindancers-network.VpnProps.property.sampleconfig">sampleconfig</a></code> | <code><a href="#raindancers-network.SampleConfig">SampleConfig</a></code> | Optionally provide a sampleconfig specification. |
-| <code><a href="#raindancers-network.VpnProps.property.tunnelInsideCidr">tunnelInsideCidr</a></code> | <code>string[]</code> | Specify a pair of concrete Cidr's for the tunnel. |
-| <code><a href="#raindancers-network.VpnProps.property.tunnelIpamPool">tunnelIpamPool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | Specify an ipam pool to allocated the tunnel address's from. |
+| <code><a href="#raindancers-network.cloudwan.VpnProps.property.customerGateway">customerGateway</a></code> | <code>aws-cdk-lib.aws_ec2.CfnCustomerGateway</code> | The customer gateway where the vpn will terminate. |
+| <code><a href="#raindancers-network.cloudwan.VpnProps.property.vpnspec">vpnspec</a></code> | <code>raindancers-network.cloudwan.VpnSpecProps</code> | a VPN specification for the VPN. |
+| <code><a href="#raindancers-network.cloudwan.VpnProps.property.sampleconfig">sampleconfig</a></code> | <code>raindancers-network.cloudwan.SampleConfig</code> | Optionally provide a sampleconfig specification. |
+| <code><a href="#raindancers-network.cloudwan.VpnProps.property.tunnelInsideCidr">tunnelInsideCidr</a></code> | <code>string[]</code> | Specify a pair of concrete Cidr's for the tunnel. |
+| <code><a href="#raindancers-network.cloudwan.VpnProps.property.tunnelIpamPool">tunnelIpamPool</a></code> | <code>aws-cdk-lib.aws_ec2.CfnIPAMPool</code> | Specify an ipam pool to allocated the tunnel address's from. |
 
 ---
 
-##### `customerGateway`<sup>Required</sup> <a name="customerGateway" id="raindancers-network.VpnProps.property.customerGateway"></a>
+##### `customerGateway`<sup>Required</sup> <a name="customerGateway" id="raindancers-network.cloudwan.VpnProps.property.customerGateway"></a>
 
 ```typescript
 public readonly customerGateway: CfnCustomerGateway;
@@ -14223,31 +11270,31 @@ The customer gateway where the vpn will terminate.
 
 ---
 
-##### `vpnspec`<sup>Required</sup> <a name="vpnspec" id="raindancers-network.VpnProps.property.vpnspec"></a>
+##### `vpnspec`<sup>Required</sup> <a name="vpnspec" id="raindancers-network.cloudwan.VpnProps.property.vpnspec"></a>
 
 ```typescript
 public readonly vpnspec: VpnSpecProps;
 ```
 
-- *Type:* <a href="#raindancers-network.VpnSpecProps">VpnSpecProps</a>
+- *Type:* raindancers-network.cloudwan.VpnSpecProps
 
 a VPN specification for the VPN.
 
 ---
 
-##### `sampleconfig`<sup>Optional</sup> <a name="sampleconfig" id="raindancers-network.VpnProps.property.sampleconfig"></a>
+##### `sampleconfig`<sup>Optional</sup> <a name="sampleconfig" id="raindancers-network.cloudwan.VpnProps.property.sampleconfig"></a>
 
 ```typescript
 public readonly sampleconfig: SampleConfig;
 ```
 
-- *Type:* <a href="#raindancers-network.SampleConfig">SampleConfig</a>
+- *Type:* raindancers-network.cloudwan.SampleConfig
 
 Optionally provide a sampleconfig specification.
 
 ---
 
-##### `tunnelInsideCidr`<sup>Optional</sup> <a name="tunnelInsideCidr" id="raindancers-network.VpnProps.property.tunnelInsideCidr"></a>
+##### `tunnelInsideCidr`<sup>Optional</sup> <a name="tunnelInsideCidr" id="raindancers-network.cloudwan.VpnProps.property.tunnelInsideCidr"></a>
 
 ```typescript
 public readonly tunnelInsideCidr: string[];
@@ -14261,7 +11308,7 @@ Only use one of tunnelInsideCidr or tunnelIpmamPool
 
 ---
 
-##### `tunnelIpamPool`<sup>Optional</sup> <a name="tunnelIpamPool" id="raindancers-network.VpnProps.property.tunnelIpamPool"></a>
+##### `tunnelIpamPool`<sup>Optional</sup> <a name="tunnelIpamPool" id="raindancers-network.cloudwan.VpnProps.property.tunnelIpamPool"></a>
 
 ```typescript
 public readonly tunnelIpamPool: CfnIPAMPool;
@@ -14275,59 +11322,59 @@ Use only one of tunnelInsideCidr or tunnelIpamPool
 
 ---
 
-### VpnSpecProps <a name="VpnSpecProps" id="raindancers-network.VpnSpecProps"></a>
+### VpnSpecProps <a name="VpnSpecProps" id="raindancers-network.cloudwan.VpnSpecProps"></a>
 
 THe properties for a S2S Ipsec Vpn Connection https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html.
 
-#### Initializer <a name="Initializer" id="raindancers-network.VpnSpecProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="raindancers-network.cloudwan.VpnSpecProps.Initializer"></a>
 
 ```typescript
-import { VpnSpecProps } from 'raindancers-network'
+import { cloudwan } from 'raindancers-network'
 
-const vpnSpecProps: VpnSpecProps = { ... }
+const vpnSpecProps: cloudwan.VpnSpecProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.VpnSpecProps.property.dpdTimeoutAction">dpdTimeoutAction</a></code> | <code><a href="#raindancers-network.DPDTimeoutAction">DPDTimeoutAction</a></code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.dpdTimeoutSeconds">dpdTimeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.enableAcceleration">enableAcceleration</a></code> | <code>boolean</code> | Indicate whether to enable acceleration for the VPN connection. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.enableLogging">enableLogging</a></code> | <code>boolean</code> | Enable CloudwatchLogging for the S2S VPN. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.ikeVersions">ikeVersions</a></code> | <code><a href="#raindancers-network.IkeVersion">IkeVersion</a>[]</code> | The IKE versions that are permitted for the VPN tunnel. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.localIpv4NetworkCidr">localIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.outsideIpAddressType">outsideIpAddressType</a></code> | <code><a href="#raindancers-network.OutsideIpAddressType">OutsideIpAddressType</a></code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase1DHGroupNumbers">phase1DHGroupNumbers</a></code> | <code><a href="#raindancers-network.Phase1DHGroupNumbers">Phase1DHGroupNumbers</a>[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase1EncryptionAlgorithms">phase1EncryptionAlgorithms</a></code> | <code><a href="#raindancers-network.Phase1EncryptionAlgorithms">Phase1EncryptionAlgorithms</a>[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase1IntegrityAlgorithms">phase1IntegrityAlgorithms</a></code> | <code><a href="#raindancers-network.Phase1IntegrityAlgorithms">Phase1IntegrityAlgorithms</a>[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase1LifetimeSeconds">phase1LifetimeSeconds</a></code> | <code>number</code> | The lifetime for phase 1 of the IKE negotiation, in seconds. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase2DHGroupNumbers">phase2DHGroupNumbers</a></code> | <code><a href="#raindancers-network.Phase2DHGroupNumbers">Phase2DHGroupNumbers</a>[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase2EncryptionAlgorithms">phase2EncryptionAlgorithms</a></code> | <code><a href="#raindancers-network.Phase2EncryptionAlgorithms">Phase2EncryptionAlgorithms</a>[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase2IntegrityAlgorithms">phase2IntegrityAlgorithms</a></code> | <code><a href="#raindancers-network.Phase2IntegrityAlgorithms">Phase2IntegrityAlgorithms</a>[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.phase2LifeTimeSeconds">phase2LifeTimeSeconds</a></code> | <code>number</code> | The lifetime for phase 2 of the IKE negotiation, in seconds. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.rekeyFuzzPercentage">rekeyFuzzPercentage</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.rekeyMarginTimeSeconds">rekeyMarginTimeSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.remoteIpv4NetworkCidr">remoteIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.replayWindowSize">replayWindowSize</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#raindancers-network.VpnSpecProps.property.startupAction">startupAction</a></code> | <code><a href="#raindancers-network.StartupAction">StartupAction</a></code> | The action to take when the establishing the tunnel for the VPN connection. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.staticRoutesOnly">staticRoutesOnly</a></code> | <code>boolean \| aws-cdk-lib.IResolvable</code> | Indicate if this will only use Static Routes Only. |
-| <code><a href="#raindancers-network.VpnSpecProps.property.tunnelInsideIpVersion">tunnelInsideIpVersion</a></code> | <code><a href="#raindancers-network.TunnelInsideIpVersion">TunnelInsideIpVersion</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.dpdTimeoutAction">dpdTimeoutAction</a></code> | <code>raindancers-network.cloudwan.DPDTimeoutAction</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.dpdTimeoutSeconds">dpdTimeoutSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.enableAcceleration">enableAcceleration</a></code> | <code>boolean</code> | Indicate whether to enable acceleration for the VPN connection. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.enableLogging">enableLogging</a></code> | <code>boolean</code> | Enable CloudwatchLogging for the S2S VPN. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.ikeVersions">ikeVersions</a></code> | <code>raindancers-network.cloudwan.IkeVersion[]</code> | The IKE versions that are permitted for the VPN tunnel. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.localIpv4NetworkCidr">localIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.outsideIpAddressType">outsideIpAddressType</a></code> | <code>raindancers-network.cloudwan.OutsideIpAddressType</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase1DHGroupNumbers">phase1DHGroupNumbers</a></code> | <code>raindancers-network.cloudwan.Phase1DHGroupNumbers[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase1EncryptionAlgorithms">phase1EncryptionAlgorithms</a></code> | <code>raindancers-network.cloudwan.Phase1EncryptionAlgorithms[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase1IntegrityAlgorithms">phase1IntegrityAlgorithms</a></code> | <code>raindancers-network.cloudwan.Phase1IntegrityAlgorithms[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase1LifetimeSeconds">phase1LifetimeSeconds</a></code> | <code>number</code> | The lifetime for phase 1 of the IKE negotiation, in seconds. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase2DHGroupNumbers">phase2DHGroupNumbers</a></code> | <code>raindancers-network.cloudwan.Phase2DHGroupNumbers[]</code> | One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase2EncryptionAlgorithms">phase2EncryptionAlgorithms</a></code> | <code>raindancers-network.cloudwan.Phase2EncryptionAlgorithms[]</code> | One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase2IntegrityAlgorithms">phase2IntegrityAlgorithms</a></code> | <code>raindancers-network.cloudwan.Phase2IntegrityAlgorithms[]</code> | One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.phase2LifeTimeSeconds">phase2LifeTimeSeconds</a></code> | <code>number</code> | The lifetime for phase 2 of the IKE negotiation, in seconds. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.rekeyFuzzPercentage">rekeyFuzzPercentage</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.rekeyMarginTimeSeconds">rekeyMarginTimeSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.remoteIpv4NetworkCidr">remoteIpv4NetworkCidr</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.replayWindowSize">replayWindowSize</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.startupAction">startupAction</a></code> | <code>raindancers-network.cloudwan.StartupAction</code> | The action to take when the establishing the tunnel for the VPN connection. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.staticRoutesOnly">staticRoutesOnly</a></code> | <code>boolean \| aws-cdk-lib.IResolvable</code> | Indicate if this will only use Static Routes Only. |
+| <code><a href="#raindancers-network.cloudwan.VpnSpecProps.property.tunnelInsideIpVersion">tunnelInsideIpVersion</a></code> | <code>raindancers-network.cloudwan.TunnelInsideIpVersion</code> | *No description.* |
 
 ---
 
-##### `dpdTimeoutAction`<sup>Optional</sup> <a name="dpdTimeoutAction" id="raindancers-network.VpnSpecProps.property.dpdTimeoutAction"></a>
+##### `dpdTimeoutAction`<sup>Optional</sup> <a name="dpdTimeoutAction" id="raindancers-network.cloudwan.VpnSpecProps.property.dpdTimeoutAction"></a>
 
 ```typescript
 public readonly dpdTimeoutAction: DPDTimeoutAction;
 ```
 
-- *Type:* <a href="#raindancers-network.DPDTimeoutAction">DPDTimeoutAction</a>
+- *Type:* raindancers-network.cloudwan.DPDTimeoutAction
 - *Default:* CLEAR The action to take after DPD timeout occurs. Specify restart to restart the IKE initiation. Specify clear to end the IKE session.
 
 ---
 
-##### `dpdTimeoutSeconds`<sup>Optional</sup> <a name="dpdTimeoutSeconds" id="raindancers-network.VpnSpecProps.property.dpdTimeoutSeconds"></a>
+##### `dpdTimeoutSeconds`<sup>Optional</sup> <a name="dpdTimeoutSeconds" id="raindancers-network.cloudwan.VpnSpecProps.property.dpdTimeoutSeconds"></a>
 
 ```typescript
 public readonly dpdTimeoutSeconds: number;
@@ -14338,7 +11385,7 @@ public readonly dpdTimeoutSeconds: number;
 
 ---
 
-##### `enableAcceleration`<sup>Optional</sup> <a name="enableAcceleration" id="raindancers-network.VpnSpecProps.property.enableAcceleration"></a>
+##### `enableAcceleration`<sup>Optional</sup> <a name="enableAcceleration" id="raindancers-network.cloudwan.VpnSpecProps.property.enableAcceleration"></a>
 
 ```typescript
 public readonly enableAcceleration: boolean;
@@ -14350,7 +11397,7 @@ Indicate whether to enable acceleration for the VPN connection.
 
 ---
 
-##### `enableLogging`<sup>Optional</sup> <a name="enableLogging" id="raindancers-network.VpnSpecProps.property.enableLogging"></a>
+##### `enableLogging`<sup>Optional</sup> <a name="enableLogging" id="raindancers-network.cloudwan.VpnSpecProps.property.enableLogging"></a>
 
 ```typescript
 public readonly enableLogging: boolean;
@@ -14362,19 +11409,19 @@ Enable CloudwatchLogging for the S2S VPN.
 
 ---
 
-##### `ikeVersions`<sup>Optional</sup> <a name="ikeVersions" id="raindancers-network.VpnSpecProps.property.ikeVersions"></a>
+##### `ikeVersions`<sup>Optional</sup> <a name="ikeVersions" id="raindancers-network.cloudwan.VpnSpecProps.property.ikeVersions"></a>
 
 ```typescript
 public readonly ikeVersions: IkeVersion[];
 ```
 
-- *Type:* <a href="#raindancers-network.IkeVersion">IkeVersion</a>[]
+- *Type:* raindancers-network.cloudwan.IkeVersion[]
 
 The IKE versions that are permitted for the VPN tunnel.
 
 ---
 
-##### `localIpv4NetworkCidr`<sup>Optional</sup> <a name="localIpv4NetworkCidr" id="raindancers-network.VpnSpecProps.property.localIpv4NetworkCidr"></a>
+##### `localIpv4NetworkCidr`<sup>Optional</sup> <a name="localIpv4NetworkCidr" id="raindancers-network.cloudwan.VpnSpecProps.property.localIpv4NetworkCidr"></a>
 
 ```typescript
 public readonly localIpv4NetworkCidr: string;
@@ -14385,54 +11432,54 @@ public readonly localIpv4NetworkCidr: string;
 
 ---
 
-##### `outsideIpAddressType`<sup>Optional</sup> <a name="outsideIpAddressType" id="raindancers-network.VpnSpecProps.property.outsideIpAddressType"></a>
+##### `outsideIpAddressType`<sup>Optional</sup> <a name="outsideIpAddressType" id="raindancers-network.cloudwan.VpnSpecProps.property.outsideIpAddressType"></a>
 
 ```typescript
 public readonly outsideIpAddressType: OutsideIpAddressType;
 ```
 
-- *Type:* <a href="#raindancers-network.OutsideIpAddressType">OutsideIpAddressType</a>
+- *Type:* raindancers-network.cloudwan.OutsideIpAddressType
 - *Default:* PUBLIC The type of IPv4 address assigned to the outside interface of the customer gateway device.
 
 ---
 
-##### `phase1DHGroupNumbers`<sup>Optional</sup> <a name="phase1DHGroupNumbers" id="raindancers-network.VpnSpecProps.property.phase1DHGroupNumbers"></a>
+##### `phase1DHGroupNumbers`<sup>Optional</sup> <a name="phase1DHGroupNumbers" id="raindancers-network.cloudwan.VpnSpecProps.property.phase1DHGroupNumbers"></a>
 
 ```typescript
 public readonly phase1DHGroupNumbers: Phase1DHGroupNumbers[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase1DHGroupNumbers">Phase1DHGroupNumbers</a>[]
+- *Type:* raindancers-network.cloudwan.Phase1DHGroupNumbers[]
 
 One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.
 
 ---
 
-##### `phase1EncryptionAlgorithms`<sup>Optional</sup> <a name="phase1EncryptionAlgorithms" id="raindancers-network.VpnSpecProps.property.phase1EncryptionAlgorithms"></a>
+##### `phase1EncryptionAlgorithms`<sup>Optional</sup> <a name="phase1EncryptionAlgorithms" id="raindancers-network.cloudwan.VpnSpecProps.property.phase1EncryptionAlgorithms"></a>
 
 ```typescript
 public readonly phase1EncryptionAlgorithms: Phase1EncryptionAlgorithms[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase1EncryptionAlgorithms">Phase1EncryptionAlgorithms</a>[]
+- *Type:* raindancers-network.cloudwan.Phase1EncryptionAlgorithms[]
 
 One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
 
 ---
 
-##### `phase1IntegrityAlgorithms`<sup>Optional</sup> <a name="phase1IntegrityAlgorithms" id="raindancers-network.VpnSpecProps.property.phase1IntegrityAlgorithms"></a>
+##### `phase1IntegrityAlgorithms`<sup>Optional</sup> <a name="phase1IntegrityAlgorithms" id="raindancers-network.cloudwan.VpnSpecProps.property.phase1IntegrityAlgorithms"></a>
 
 ```typescript
 public readonly phase1IntegrityAlgorithms: Phase1IntegrityAlgorithms[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase1IntegrityAlgorithms">Phase1IntegrityAlgorithms</a>[]
+- *Type:* raindancers-network.cloudwan.Phase1IntegrityAlgorithms[]
 
 One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
 
 ---
 
-##### `phase1LifetimeSeconds`<sup>Optional</sup> <a name="phase1LifetimeSeconds" id="raindancers-network.VpnSpecProps.property.phase1LifetimeSeconds"></a>
+##### `phase1LifetimeSeconds`<sup>Optional</sup> <a name="phase1LifetimeSeconds" id="raindancers-network.cloudwan.VpnSpecProps.property.phase1LifetimeSeconds"></a>
 
 ```typescript
 public readonly phase1LifetimeSeconds: number;
@@ -14444,43 +11491,43 @@ The lifetime for phase 1 of the IKE negotiation, in seconds.
 
 ---
 
-##### `phase2DHGroupNumbers`<sup>Optional</sup> <a name="phase2DHGroupNumbers" id="raindancers-network.VpnSpecProps.property.phase2DHGroupNumbers"></a>
+##### `phase2DHGroupNumbers`<sup>Optional</sup> <a name="phase2DHGroupNumbers" id="raindancers-network.cloudwan.VpnSpecProps.property.phase2DHGroupNumbers"></a>
 
 ```typescript
 public readonly phase2DHGroupNumbers: Phase2DHGroupNumbers[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase2DHGroupNumbers">Phase2DHGroupNumbers</a>[]
+- *Type:* raindancers-network.cloudwan.Phase2DHGroupNumbers[]
 
 One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.
 
 ---
 
-##### `phase2EncryptionAlgorithms`<sup>Optional</sup> <a name="phase2EncryptionAlgorithms" id="raindancers-network.VpnSpecProps.property.phase2EncryptionAlgorithms"></a>
+##### `phase2EncryptionAlgorithms`<sup>Optional</sup> <a name="phase2EncryptionAlgorithms" id="raindancers-network.cloudwan.VpnSpecProps.property.phase2EncryptionAlgorithms"></a>
 
 ```typescript
 public readonly phase2EncryptionAlgorithms: Phase2EncryptionAlgorithms[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase2EncryptionAlgorithms">Phase2EncryptionAlgorithms</a>[]
+- *Type:* raindancers-network.cloudwan.Phase2EncryptionAlgorithms[]
 
 One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
 
 ---
 
-##### `phase2IntegrityAlgorithms`<sup>Optional</sup> <a name="phase2IntegrityAlgorithms" id="raindancers-network.VpnSpecProps.property.phase2IntegrityAlgorithms"></a>
+##### `phase2IntegrityAlgorithms`<sup>Optional</sup> <a name="phase2IntegrityAlgorithms" id="raindancers-network.cloudwan.VpnSpecProps.property.phase2IntegrityAlgorithms"></a>
 
 ```typescript
 public readonly phase2IntegrityAlgorithms: Phase2IntegrityAlgorithms[];
 ```
 
-- *Type:* <a href="#raindancers-network.Phase2IntegrityAlgorithms">Phase2IntegrityAlgorithms</a>[]
+- *Type:* raindancers-network.cloudwan.Phase2IntegrityAlgorithms[]
 
 One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
 
 ---
 
-##### `phase2LifeTimeSeconds`<sup>Optional</sup> <a name="phase2LifeTimeSeconds" id="raindancers-network.VpnSpecProps.property.phase2LifeTimeSeconds"></a>
+##### `phase2LifeTimeSeconds`<sup>Optional</sup> <a name="phase2LifeTimeSeconds" id="raindancers-network.cloudwan.VpnSpecProps.property.phase2LifeTimeSeconds"></a>
 
 ```typescript
 public readonly phase2LifeTimeSeconds: number;
@@ -14492,7 +11539,7 @@ The lifetime for phase 2 of the IKE negotiation, in seconds.
 
 ---
 
-##### `rekeyFuzzPercentage`<sup>Optional</sup> <a name="rekeyFuzzPercentage" id="raindancers-network.VpnSpecProps.property.rekeyFuzzPercentage"></a>
+##### `rekeyFuzzPercentage`<sup>Optional</sup> <a name="rekeyFuzzPercentage" id="raindancers-network.cloudwan.VpnSpecProps.property.rekeyFuzzPercentage"></a>
 
 ```typescript
 public readonly rekeyFuzzPercentage: number;
@@ -14503,7 +11550,7 @@ public readonly rekeyFuzzPercentage: number;
 
 ---
 
-##### `rekeyMarginTimeSeconds`<sup>Optional</sup> <a name="rekeyMarginTimeSeconds" id="raindancers-network.VpnSpecProps.property.rekeyMarginTimeSeconds"></a>
+##### `rekeyMarginTimeSeconds`<sup>Optional</sup> <a name="rekeyMarginTimeSeconds" id="raindancers-network.cloudwan.VpnSpecProps.property.rekeyMarginTimeSeconds"></a>
 
 ```typescript
 public readonly rekeyMarginTimeSeconds: number;
@@ -14514,7 +11561,7 @@ public readonly rekeyMarginTimeSeconds: number;
 
 ---
 
-##### `remoteIpv4NetworkCidr`<sup>Optional</sup> <a name="remoteIpv4NetworkCidr" id="raindancers-network.VpnSpecProps.property.remoteIpv4NetworkCidr"></a>
+##### `remoteIpv4NetworkCidr`<sup>Optional</sup> <a name="remoteIpv4NetworkCidr" id="raindancers-network.cloudwan.VpnSpecProps.property.remoteIpv4NetworkCidr"></a>
 
 ```typescript
 public readonly remoteIpv4NetworkCidr: string;
@@ -14525,7 +11572,7 @@ public readonly remoteIpv4NetworkCidr: string;
 
 ---
 
-##### `replayWindowSize`<sup>Optional</sup> <a name="replayWindowSize" id="raindancers-network.VpnSpecProps.property.replayWindowSize"></a>
+##### `replayWindowSize`<sup>Optional</sup> <a name="replayWindowSize" id="raindancers-network.cloudwan.VpnSpecProps.property.replayWindowSize"></a>
 
 ```typescript
 public readonly replayWindowSize: number;
@@ -14536,13 +11583,13 @@ public readonly replayWindowSize: number;
 
 ---
 
-##### `startupAction`<sup>Optional</sup> <a name="startupAction" id="raindancers-network.VpnSpecProps.property.startupAction"></a>
+##### `startupAction`<sup>Optional</sup> <a name="startupAction" id="raindancers-network.cloudwan.VpnSpecProps.property.startupAction"></a>
 
 ```typescript
 public readonly startupAction: StartupAction;
 ```
 
-- *Type:* <a href="#raindancers-network.StartupAction">StartupAction</a>
+- *Type:* raindancers-network.cloudwan.StartupAction
 
 The action to take when the establishing the tunnel for the VPN connection.
 
@@ -14550,7 +11597,7 @@ By default, your customer gateway device must initiate the IKE negotiation and b
 
 ---
 
-##### `staticRoutesOnly`<sup>Optional</sup> <a name="staticRoutesOnly" id="raindancers-network.VpnSpecProps.property.staticRoutesOnly"></a>
+##### `staticRoutesOnly`<sup>Optional</sup> <a name="staticRoutesOnly" id="raindancers-network.cloudwan.VpnSpecProps.property.staticRoutesOnly"></a>
 
 ```typescript
 public readonly staticRoutesOnly: boolean | IResolvable;
@@ -14562,30 +11609,30 @@ Indicate if this will only use Static Routes Only.
 
 ---
 
-##### `tunnelInsideIpVersion`<sup>Optional</sup> <a name="tunnelInsideIpVersion" id="raindancers-network.VpnSpecProps.property.tunnelInsideIpVersion"></a>
+##### `tunnelInsideIpVersion`<sup>Optional</sup> <a name="tunnelInsideIpVersion" id="raindancers-network.cloudwan.VpnSpecProps.property.tunnelInsideIpVersion"></a>
 
 ```typescript
 public readonly tunnelInsideIpVersion: TunnelInsideIpVersion;
 ```
 
-- *Type:* <a href="#raindancers-network.TunnelInsideIpVersion">TunnelInsideIpVersion</a>
+- *Type:* raindancers-network.cloudwan.TunnelInsideIpVersion
 - *Default:* IPV4 Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
 
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
 
-### CrowdStrikePrivateLink <a name="CrowdStrikePrivateLink" id="raindancers-network.CrowdStrikePrivateLink"></a>
+### CrowdStrikePrivateLink <a name="CrowdStrikePrivateLink" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink"></a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLink.toString">toString</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLink.toString">toString</a></code> | *No description.* |
 
 ---
 
-##### `toString` <a name="toString" id="raindancers-network.CrowdStrikePrivateLink.toString"></a>
+##### `toString` <a name="toString" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink.toString"></a>
 
 ```typescript
 public toString(): string
@@ -14596,17 +11643,17 @@ public toString(): string
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.value">value</a></code> | <code><a href="#raindancers-network.CrowdStrikeServices">CrowdStrikeServices</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.value">value</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikeServices</code> | *No description.* |
 
 ---
 
-##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.CrowdStrikePrivateLink.property.value"></a>
+##### `value`<sup>Required</sup> <a name="value" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.value"></a>
 
 ```typescript
 public readonly value: CrowdStrikeServices;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikeServices">CrowdStrikeServices</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikeServices
 
 ---
 
@@ -14614,61 +11661,61 @@ public readonly value: CrowdStrikeServices;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.EU1">EU1</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.US1">US1</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikePrivateLink.property.US2">US2</a></code> | <code><a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.EU1">EU1</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikePrivateLink</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.US1">US1</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikePrivateLink</code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.US2">US2</a></code> | <code>raindancers-network.crowdstrike.CrowdStrikePrivateLink</code> | *No description.* |
 
 ---
 
-##### `EU1`<sup>Required</sup> <a name="EU1" id="raindancers-network.CrowdStrikePrivateLink.property.EU1"></a>
+##### `EU1`<sup>Required</sup> <a name="EU1" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.EU1"></a>
 
 ```typescript
 public readonly EU1: CrowdStrikePrivateLink;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikePrivateLink
 
 ---
 
-##### `US1`<sup>Required</sup> <a name="US1" id="raindancers-network.CrowdStrikePrivateLink.property.US1"></a>
+##### `US1`<sup>Required</sup> <a name="US1" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.US1"></a>
 
 ```typescript
 public readonly US1: CrowdStrikePrivateLink;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikePrivateLink
 
 ---
 
-##### `US2`<sup>Required</sup> <a name="US2" id="raindancers-network.CrowdStrikePrivateLink.property.US2"></a>
+##### `US2`<sup>Required</sup> <a name="US2" id="raindancers-network.crowdstrike.CrowdStrikePrivateLink.property.US2"></a>
 
 ```typescript
 public readonly US2: CrowdStrikePrivateLink;
 ```
 
-- *Type:* <a href="#raindancers-network.CrowdStrikePrivateLink">CrowdStrikePrivateLink</a>
+- *Type:* raindancers-network.crowdstrike.CrowdStrikePrivateLink
 
 ---
 
-### StatelessRule <a name="StatelessRule" id="raindancers-network.StatelessRule"></a>
+### StatelessRule <a name="StatelessRule" id="raindancers-network.firewall.StatelessRule"></a>
 
-#### Initializers <a name="Initializers" id="raindancers-network.StatelessRule.Initializer"></a>
+#### Initializers <a name="Initializers" id="raindancers-network.firewall.StatelessRule.Initializer"></a>
 
 ```typescript
-import { StatelessRule } from 'raindancers-network'
+import { firewall } from 'raindancers-network'
 
-new StatelessRule(props: StatelessRuleProps)
+new firewall.StatelessRule(props: StatelessRuleProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.StatelessRule.Initializer.parameter.props">props</a></code> | <code><a href="#raindancers-network.StatelessRuleProps">StatelessRuleProps</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRule.Initializer.parameter.props">props</a></code> | <code>raindancers-network.firewall.StatelessRuleProps</code> | *No description.* |
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.StatelessRule.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="raindancers-network.firewall.StatelessRule.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#raindancers-network.StatelessRuleProps">StatelessRuleProps</a>
+- *Type:* raindancers-network.firewall.StatelessRuleProps
 
 ---
 
@@ -14678,11 +11725,11 @@ new StatelessRule(props: StatelessRuleProps)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.StatelessRule.property.statelessRuleProperty">statelessRuleProperty</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessRule.property.statelessRuleProperty">statelessRuleProperty</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnRuleGroup.StatelessRuleProperty</code> | *No description.* |
 
 ---
 
-##### `statelessRuleProperty`<sup>Required</sup> <a name="statelessRuleProperty" id="raindancers-network.StatelessRule.property.statelessRuleProperty"></a>
+##### `statelessRuleProperty`<sup>Required</sup> <a name="statelessRuleProperty" id="raindancers-network.firewall.StatelessRule.property.statelessRuleProperty"></a>
 
 ```typescript
 public readonly statelessRuleProperty: StatelessRuleProperty;
@@ -14695,11 +11742,11 @@ public readonly statelessRuleProperty: StatelessRuleProperty;
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
-### IAssignment <a name="IAssignment" id="raindancers-network.IAssignment"></a>
+### IAssignment <a name="IAssignment" id="raindancers-network.sso.IAssignment"></a>
 
 - *Extends:* aws-cdk-lib.IResource
 
-- *Implemented By:* <a href="#raindancers-network.Assignment">Assignment</a>, <a href="#raindancers-network.IAssignment">IAssignment</a>
+- *Implemented By:* raindancers-network.sso.Assignment, raindancers-network.sso.IAssignment
 
 The resource interface for an AWS SSO assignment.
 
@@ -14710,13 +11757,13 @@ This interface has no attributes because the resulting resource has none.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IAssignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.IAssignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#raindancers-network.IAssignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.sso.IAssignment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.sso.IAssignment.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.sso.IAssignment.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IAssignment.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.sso.IAssignment.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -14728,7 +11775,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.IAssignment.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.sso.IAssignment.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -14747,7 +11794,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.IAssignment.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.sso.IAssignment.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -14759,9 +11806,9 @@ The stack in which this resource is defined.
 
 ---
 
-### ICoreNetworkSegmentProps <a name="ICoreNetworkSegmentProps" id="raindancers-network.ICoreNetworkSegmentProps"></a>
+### ICoreNetworkSegmentProps <a name="ICoreNetworkSegmentProps" id="raindancers-network.cloudwan.ICoreNetworkSegmentProps"></a>
 
-- *Implemented By:* <a href="#raindancers-network.ICoreNetworkSegmentProps">ICoreNetworkSegmentProps</a>
+- *Implemented By:* raindancers-network.cloudwan.ICoreNetworkSegmentProps
 
 Properties creating a Corenetwork Segment.
 
@@ -14770,13 +11817,13 @@ Properties creating a Corenetwork Segment.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#raindancers-network.ICoreNetworkSegmentProps.property.updateDependsOn">updateDependsOn</a></code> | <code>aws-cdk-lib.CustomResource[]</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.policyTableServiceToken">policyTableServiceToken</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.segmentName">segmentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.updateDependsOn">updateDependsOn</a></code> | <code>aws-cdk-lib.CustomResource[]</code> | *No description.* |
 
 ---
 
-##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.ICoreNetworkSegmentProps.property.policyTableServiceToken"></a>
+##### `policyTableServiceToken`<sup>Required</sup> <a name="policyTableServiceToken" id="raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.policyTableServiceToken"></a>
 
 ```typescript
 public readonly policyTableServiceToken: string;
@@ -14786,7 +11833,7 @@ public readonly policyTableServiceToken: string;
 
 ---
 
-##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.ICoreNetworkSegmentProps.property.segmentName"></a>
+##### `segmentName`<sup>Required</sup> <a name="segmentName" id="raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.segmentName"></a>
 
 ```typescript
 public readonly segmentName: string;
@@ -14796,7 +11843,7 @@ public readonly segmentName: string;
 
 ---
 
-##### `updateDependsOn`<sup>Required</sup> <a name="updateDependsOn" id="raindancers-network.ICoreNetworkSegmentProps.property.updateDependsOn"></a>
+##### `updateDependsOn`<sup>Required</sup> <a name="updateDependsOn" id="raindancers-network.cloudwan.ICoreNetworkSegmentProps.property.updateDependsOn"></a>
 
 ```typescript
 public readonly updateDependsOn: CustomResource[];
@@ -14806,26 +11853,26 @@ public readonly updateDependsOn: CustomResource[];
 
 ---
 
-### IFirewallPolicyProperty <a name="IFirewallPolicyProperty" id="raindancers-network.IFirewallPolicyProperty"></a>
+### IFirewallPolicyProperty <a name="IFirewallPolicyProperty" id="raindancers-network.firewall.IFirewallPolicyProperty"></a>
 
-- *Implemented By:* <a href="#raindancers-network.IFirewallPolicyProperty">IFirewallPolicyProperty</a>
+- *Implemented By:* raindancers-network.firewall.IFirewallPolicyProperty
 
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulDefaultActions">statefulDefaultActions</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty \| aws-cdk-lib.IResolvable</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statefulRuleGroupReferences">statefulRuleGroupReferences</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulRuleGroupReferenceProperty[]</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessCustomActions">statelessCustomActions</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.CustomActionProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
-| <code><a href="#raindancers-network.IFirewallPolicyProperty.property.statelessRuleGroupReferences">statelessRuleGroupReferences</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatelessRuleGroupReferenceProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statelessDefaultActions">statelessDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statelessFragmentDefaultActions">statelessFragmentDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statefulDefaultActions">statefulDefaultActions</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statefulEngineOptions">statefulEngineOptions</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulEngineOptionsProperty \| aws-cdk-lib.IResolvable</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statefulRuleGroupReferences">statefulRuleGroupReferences</a></code> | <code>aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatefulRuleGroupReferenceProperty[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statelessCustomActions">statelessCustomActions</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.CustomActionProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.IFirewallPolicyProperty.property.statelessRuleGroupReferences">statelessRuleGroupReferences</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_networkfirewall.CfnFirewallPolicy.StatelessRuleGroupReferenceProperty \| aws-cdk-lib.IResolvable[]</code> | *No description.* |
 
 ---
 
-##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessDefaultActions"></a>
+##### `statelessDefaultActions`<sup>Required</sup> <a name="statelessDefaultActions" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statelessDefaultActions"></a>
 
 ```typescript
 public readonly statelessDefaultActions: string[];
@@ -14835,7 +11882,7 @@ public readonly statelessDefaultActions: string[];
 
 ---
 
-##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessFragmentDefaultActions"></a>
+##### `statelessFragmentDefaultActions`<sup>Required</sup> <a name="statelessFragmentDefaultActions" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statelessFragmentDefaultActions"></a>
 
 ```typescript
 public readonly statelessFragmentDefaultActions: string[];
@@ -14845,7 +11892,7 @@ public readonly statelessFragmentDefaultActions: string[];
 
 ---
 
-##### `statefulDefaultActions`<sup>Optional</sup> <a name="statefulDefaultActions" id="raindancers-network.IFirewallPolicyProperty.property.statefulDefaultActions"></a>
+##### `statefulDefaultActions`<sup>Optional</sup> <a name="statefulDefaultActions" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statefulDefaultActions"></a>
 
 ```typescript
 public readonly statefulDefaultActions: string[];
@@ -14855,7 +11902,7 @@ public readonly statefulDefaultActions: string[];
 
 ---
 
-##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.IFirewallPolicyProperty.property.statefulEngineOptions"></a>
+##### `statefulEngineOptions`<sup>Optional</sup> <a name="statefulEngineOptions" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statefulEngineOptions"></a>
 
 ```typescript
 public readonly statefulEngineOptions: StatefulEngineOptionsProperty | IResolvable;
@@ -14865,7 +11912,7 @@ public readonly statefulEngineOptions: StatefulEngineOptionsProperty | IResolvab
 
 ---
 
-##### `statefulRuleGroupReferences`<sup>Optional</sup> <a name="statefulRuleGroupReferences" id="raindancers-network.IFirewallPolicyProperty.property.statefulRuleGroupReferences"></a>
+##### `statefulRuleGroupReferences`<sup>Optional</sup> <a name="statefulRuleGroupReferences" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statefulRuleGroupReferences"></a>
 
 ```typescript
 public readonly statefulRuleGroupReferences: StatefulRuleGroupReferenceProperty[];
@@ -14875,7 +11922,7 @@ public readonly statefulRuleGroupReferences: StatefulRuleGroupReferenceProperty[
 
 ---
 
-##### `statelessCustomActions`<sup>Optional</sup> <a name="statelessCustomActions" id="raindancers-network.IFirewallPolicyProperty.property.statelessCustomActions"></a>
+##### `statelessCustomActions`<sup>Optional</sup> <a name="statelessCustomActions" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statelessCustomActions"></a>
 
 ```typescript
 public readonly statelessCustomActions: IResolvable | CustomActionProperty | IResolvable[];
@@ -14885,7 +11932,7 @@ public readonly statelessCustomActions: IResolvable | CustomActionProperty | IRe
 
 ---
 
-##### `statelessRuleGroupReferences`<sup>Optional</sup> <a name="statelessRuleGroupReferences" id="raindancers-network.IFirewallPolicyProperty.property.statelessRuleGroupReferences"></a>
+##### `statelessRuleGroupReferences`<sup>Optional</sup> <a name="statelessRuleGroupReferences" id="raindancers-network.firewall.IFirewallPolicyProperty.property.statelessRuleGroupReferences"></a>
 
 ```typescript
 public readonly statelessRuleGroupReferences: IResolvable | StatelessRuleGroupReferenceProperty | IResolvable[];
@@ -14951,11 +11998,11 @@ public readonly path: string;
 
 ---
 
-### IPermissionSet <a name="IPermissionSet" id="raindancers-network.IPermissionSet"></a>
+### IPermissionSet <a name="IPermissionSet" id="raindancers-network.sso.IPermissionSet"></a>
 
 - *Extends:* aws-cdk-lib.IResource
 
-- *Implemented By:* <a href="#raindancers-network.PermissionSet">PermissionSet</a>, <a href="#raindancers-network.IPermissionSet">IPermissionSet</a>
+- *Implemented By:* raindancers-network.sso.PermissionSet, raindancers-network.sso.IPermissionSet
 
 The resource interface for an AWS SSO permission set.
 
@@ -14963,11 +12010,11 @@ The resource interface for an AWS SSO permission set.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.IPermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.grant">grant</a></code> | Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance. |
 
 ---
 
-##### `grant` <a name="grant" id="raindancers-network.IPermissionSet.grant"></a>
+##### `grant` <a name="grant" id="raindancers-network.sso.IPermissionSet.grant"></a>
 
 ```typescript
 public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
@@ -14975,15 +12022,15 @@ public grant(id: string, assignmentOptions: AssignmentOptions): Assignment
 
 Grant this permission set to a given principal for a given targetId (AWS account identifier) on a given SSO instance.
 
-###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.IPermissionSet.grant.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="raindancers-network.sso.IPermissionSet.grant.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.IPermissionSet.grant.parameter.assignmentOptions"></a>
+###### `assignmentOptions`<sup>Required</sup> <a name="assignmentOptions" id="raindancers-network.sso.IPermissionSet.grant.parameter.assignmentOptions"></a>
 
-- *Type:* <a href="#raindancers-network.AssignmentOptions">AssignmentOptions</a>
+- *Type:* raindancers-network.sso.AssignmentOptions
 
 ---
 
@@ -14991,15 +12038,15 @@ Grant this permission set to a given principal for a given targetId (AWS account
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#raindancers-network.IPermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#raindancers-network.IPermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#raindancers-network.IPermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#raindancers-network.IPermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
-| <code><a href="#raindancers-network.IPermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.property.permissionSetArn">permissionSetArn</a></code> | <code>string</code> | The permission set ARN of the permission set. |
+| <code><a href="#raindancers-network.sso.IPermissionSet.property.ssoInstanceArn">ssoInstanceArn</a></code> | <code>string</code> | The SSO instance ARN of the permission set. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.IPermissionSet.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="raindancers-network.sso.IPermissionSet.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -15011,7 +12058,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.IPermissionSet.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="raindancers-network.sso.IPermissionSet.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -15030,7 +12077,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.IPermissionSet.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="raindancers-network.sso.IPermissionSet.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -15042,7 +12089,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.IPermissionSet.property.permissionSetArn"></a>
+##### `permissionSetArn`<sup>Required</sup> <a name="permissionSetArn" id="raindancers-network.sso.IPermissionSet.property.permissionSetArn"></a>
 
 ```typescript
 public readonly permissionSetArn: string;
@@ -15057,7 +12104,7 @@ Such as
 
 ---
 
-##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.IPermissionSet.property.ssoInstanceArn"></a>
+##### `ssoInstanceArn`<sup>Required</sup> <a name="ssoInstanceArn" id="raindancers-network.sso.IPermissionSet.property.ssoInstanceArn"></a>
 
 ```typescript
 public readonly ssoInstanceArn: string;
@@ -15149,7 +12196,7 @@ public readonly sampleSize: number;
 
 ## Enums <a name="Enums" id="Enums"></a>
 
-### ApplianceMode <a name="ApplianceMode" id="raindancers-network.ApplianceMode"></a>
+### ApplianceMode <a name="ApplianceMode" id="raindancers-network.network.ApplianceMode"></a>
 
 Propertys for Appliance Mode.
 
@@ -15157,18 +12204,18 @@ Propertys for Appliance Mode.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ApplianceMode.ENABLED">ENABLED</a></code> | enable Connecting VPC to TransitGateway in Appliance Mode. |
+| <code><a href="#raindancers-network.network.ApplianceMode.ENABLED">ENABLED</a></code> | enable Connecting VPC to TransitGateway in Appliance Mode. |
 
 ---
 
-##### `ENABLED` <a name="ENABLED" id="raindancers-network.ApplianceMode.ENABLED"></a>
+##### `ENABLED` <a name="ENABLED" id="raindancers-network.network.ApplianceMode.ENABLED"></a>
 
 enable Connecting VPC to TransitGateway in Appliance Mode.
 
 ---
 
 
-### AssociationMethod <a name="AssociationMethod" id="raindancers-network.AssociationMethod"></a>
+### AssociationMethod <a name="AssociationMethod" id="raindancers-network.cloudwan.AssociationMethod"></a>
 
 Association Methods.
 
@@ -15176,22 +12223,22 @@ Association Methods.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AssociationMethod.CONSTANT">CONSTANT</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AssociationMethod.TAG">TAG</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AssociationMethod.CONSTANT">CONSTANT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AssociationMethod.TAG">TAG</a></code> | *No description.* |
 
 ---
 
-##### `CONSTANT` <a name="CONSTANT" id="raindancers-network.AssociationMethod.CONSTANT"></a>
-
----
-
-
-##### `TAG` <a name="TAG" id="raindancers-network.AssociationMethod.TAG"></a>
+##### `CONSTANT` <a name="CONSTANT" id="raindancers-network.cloudwan.AssociationMethod.CONSTANT"></a>
 
 ---
 
 
-### AttachmentCondition <a name="AttachmentCondition" id="raindancers-network.AttachmentCondition"></a>
+##### `TAG` <a name="TAG" id="raindancers-network.cloudwan.AssociationMethod.TAG"></a>
+
+---
+
+
+### AttachmentCondition <a name="AttachmentCondition" id="raindancers-network.cloudwan.AttachmentCondition"></a>
 
 Attachment Conditions.
 
@@ -15199,223 +12246,223 @@ Attachment Conditions.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AttachmentCondition.ANY">ANY</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.RESOURCE_ID">RESOURCE_ID</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.ACCOUNT_ID">ACCOUNT_ID</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.REGION">REGION</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.ATTACHMENT_TYPE">ATTACHMENT_TYPE</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.TAG_EXISTS">TAG_EXISTS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AttachmentCondition.TAG_VALUE">TAG_VALUE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.ANY">ANY</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.RESOURCE_ID">RESOURCE_ID</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.ACCOUNT_ID">ACCOUNT_ID</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.REGION">REGION</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.ATTACHMENT_TYPE">ATTACHMENT_TYPE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.TAG_EXISTS">TAG_EXISTS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.AttachmentCondition.TAG_VALUE">TAG_VALUE</a></code> | *No description.* |
 
 ---
 
-##### `ANY` <a name="ANY" id="raindancers-network.AttachmentCondition.ANY"></a>
-
----
-
-
-##### `RESOURCE_ID` <a name="RESOURCE_ID" id="raindancers-network.AttachmentCondition.RESOURCE_ID"></a>
+##### `ANY` <a name="ANY" id="raindancers-network.cloudwan.AttachmentCondition.ANY"></a>
 
 ---
 
 
-##### `ACCOUNT_ID` <a name="ACCOUNT_ID" id="raindancers-network.AttachmentCondition.ACCOUNT_ID"></a>
+##### `RESOURCE_ID` <a name="RESOURCE_ID" id="raindancers-network.cloudwan.AttachmentCondition.RESOURCE_ID"></a>
 
 ---
 
 
-##### `REGION` <a name="REGION" id="raindancers-network.AttachmentCondition.REGION"></a>
+##### `ACCOUNT_ID` <a name="ACCOUNT_ID" id="raindancers-network.cloudwan.AttachmentCondition.ACCOUNT_ID"></a>
 
 ---
 
 
-##### `ATTACHMENT_TYPE` <a name="ATTACHMENT_TYPE" id="raindancers-network.AttachmentCondition.ATTACHMENT_TYPE"></a>
+##### `REGION` <a name="REGION" id="raindancers-network.cloudwan.AttachmentCondition.REGION"></a>
 
 ---
 
 
-##### `TAG_EXISTS` <a name="TAG_EXISTS" id="raindancers-network.AttachmentCondition.TAG_EXISTS"></a>
+##### `ATTACHMENT_TYPE` <a name="ATTACHMENT_TYPE" id="raindancers-network.cloudwan.AttachmentCondition.ATTACHMENT_TYPE"></a>
 
 ---
 
 
-##### `TAG_VALUE` <a name="TAG_VALUE" id="raindancers-network.AttachmentCondition.TAG_VALUE"></a>
+##### `TAG_EXISTS` <a name="TAG_EXISTS" id="raindancers-network.cloudwan.AttachmentCondition.TAG_EXISTS"></a>
 
 ---
 
 
-### AwsRegions <a name="AwsRegions" id="raindancers-network.AwsRegions"></a>
+##### `TAG_VALUE` <a name="TAG_VALUE" id="raindancers-network.cloudwan.AttachmentCondition.TAG_VALUE"></a>
+
+---
+
+
+### AwsRegions <a name="AwsRegions" id="raindancers-network.regions.AwsRegions"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.AwsRegions.US_EAST_1">US_EAST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.US_EAST_2">US_EAST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.US_WEST_1">US_WEST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.US_WEST_2">US_WEST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AF_SOUTH_1">AF_SOUTH_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_EAST_1">AP_EAST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTH_1">AP_SOUTH_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTH_2">AP_SOUTH_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_1">AP_SOUTHEAST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_2">AP_SOUTHEAST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_3">AP_SOUTHEAST_3</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_SOUTHEAST_4">AP_SOUTHEAST_4</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_1">AP_NORTHEAST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_2">AP_NORTHEAST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.AP_NORTHEAST_3">AP_NORTHEAST_3</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.CA_CENTRAL_1">CA_CENTRAL_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_SOUTH_1">EU_SOUTH_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_WEST_1">EU_WEST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_WEST_2">EU_WEST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_WEST_3">EU_WEST_3</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_SOUTH_2">EU_SOUTH_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_NORTH_1">EU_NORTH_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.EU_CENTRAL_2">EU_CENTRAL_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.ME_SOUTH_1">ME_SOUTH_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.ME_CENTRAL">ME_CENTRAL</a></code> | *No description.* |
-| <code><a href="#raindancers-network.AwsRegions.SA_EAST_1">SA_EAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.US_EAST_1">US_EAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.US_EAST_2">US_EAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.US_WEST_1">US_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.US_WEST_2">US_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AF_SOUTH_1">AF_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_EAST_1">AP_EAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTH_1">AP_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTH_2">AP_SOUTH_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTHEAST_1">AP_SOUTHEAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTHEAST_2">AP_SOUTHEAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTHEAST_3">AP_SOUTHEAST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_SOUTHEAST_4">AP_SOUTHEAST_4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_NORTHEAST_1">AP_NORTHEAST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_NORTHEAST_2">AP_NORTHEAST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.AP_NORTHEAST_3">AP_NORTHEAST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.CA_CENTRAL_1">CA_CENTRAL_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_SOUTH_1">EU_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_WEST_1">EU_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_WEST_2">EU_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_WEST_3">EU_WEST_3</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_SOUTH_2">EU_SOUTH_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_NORTH_1">EU_NORTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.EU_CENTRAL_2">EU_CENTRAL_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.ME_SOUTH_1">ME_SOUTH_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.ME_CENTRAL">ME_CENTRAL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.regions.AwsRegions.SA_EAST_1">SA_EAST_1</a></code> | *No description.* |
 
 ---
 
-##### `US_EAST_1` <a name="US_EAST_1" id="raindancers-network.AwsRegions.US_EAST_1"></a>
-
----
-
-
-##### `US_EAST_2` <a name="US_EAST_2" id="raindancers-network.AwsRegions.US_EAST_2"></a>
+##### `US_EAST_1` <a name="US_EAST_1" id="raindancers-network.regions.AwsRegions.US_EAST_1"></a>
 
 ---
 
 
-##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.AwsRegions.US_WEST_1"></a>
+##### `US_EAST_2` <a name="US_EAST_2" id="raindancers-network.regions.AwsRegions.US_EAST_2"></a>
 
 ---
 
 
-##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.AwsRegions.US_WEST_2"></a>
+##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.regions.AwsRegions.US_WEST_1"></a>
 
 ---
 
 
-##### `AF_SOUTH_1` <a name="AF_SOUTH_1" id="raindancers-network.AwsRegions.AF_SOUTH_1"></a>
+##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.regions.AwsRegions.US_WEST_2"></a>
 
 ---
 
 
-##### `AP_EAST_1` <a name="AP_EAST_1" id="raindancers-network.AwsRegions.AP_EAST_1"></a>
+##### `AF_SOUTH_1` <a name="AF_SOUTH_1" id="raindancers-network.regions.AwsRegions.AF_SOUTH_1"></a>
 
 ---
 
 
-##### `AP_SOUTH_1` <a name="AP_SOUTH_1" id="raindancers-network.AwsRegions.AP_SOUTH_1"></a>
+##### `AP_EAST_1` <a name="AP_EAST_1" id="raindancers-network.regions.AwsRegions.AP_EAST_1"></a>
 
 ---
 
 
-##### `AP_SOUTH_2` <a name="AP_SOUTH_2" id="raindancers-network.AwsRegions.AP_SOUTH_2"></a>
+##### `AP_SOUTH_1` <a name="AP_SOUTH_1" id="raindancers-network.regions.AwsRegions.AP_SOUTH_1"></a>
 
 ---
 
 
-##### `AP_SOUTHEAST_1` <a name="AP_SOUTHEAST_1" id="raindancers-network.AwsRegions.AP_SOUTHEAST_1"></a>
+##### `AP_SOUTH_2` <a name="AP_SOUTH_2" id="raindancers-network.regions.AwsRegions.AP_SOUTH_2"></a>
 
 ---
 
 
-##### `AP_SOUTHEAST_2` <a name="AP_SOUTHEAST_2" id="raindancers-network.AwsRegions.AP_SOUTHEAST_2"></a>
+##### `AP_SOUTHEAST_1` <a name="AP_SOUTHEAST_1" id="raindancers-network.regions.AwsRegions.AP_SOUTHEAST_1"></a>
 
 ---
 
 
-##### `AP_SOUTHEAST_3` <a name="AP_SOUTHEAST_3" id="raindancers-network.AwsRegions.AP_SOUTHEAST_3"></a>
+##### `AP_SOUTHEAST_2` <a name="AP_SOUTHEAST_2" id="raindancers-network.regions.AwsRegions.AP_SOUTHEAST_2"></a>
 
 ---
 
 
-##### `AP_SOUTHEAST_4` <a name="AP_SOUTHEAST_4" id="raindancers-network.AwsRegions.AP_SOUTHEAST_4"></a>
+##### `AP_SOUTHEAST_3` <a name="AP_SOUTHEAST_3" id="raindancers-network.regions.AwsRegions.AP_SOUTHEAST_3"></a>
 
 ---
 
 
-##### `AP_NORTHEAST_1` <a name="AP_NORTHEAST_1" id="raindancers-network.AwsRegions.AP_NORTHEAST_1"></a>
+##### `AP_SOUTHEAST_4` <a name="AP_SOUTHEAST_4" id="raindancers-network.regions.AwsRegions.AP_SOUTHEAST_4"></a>
 
 ---
 
 
-##### `AP_NORTHEAST_2` <a name="AP_NORTHEAST_2" id="raindancers-network.AwsRegions.AP_NORTHEAST_2"></a>
+##### `AP_NORTHEAST_1` <a name="AP_NORTHEAST_1" id="raindancers-network.regions.AwsRegions.AP_NORTHEAST_1"></a>
 
 ---
 
 
-##### `AP_NORTHEAST_3` <a name="AP_NORTHEAST_3" id="raindancers-network.AwsRegions.AP_NORTHEAST_3"></a>
+##### `AP_NORTHEAST_2` <a name="AP_NORTHEAST_2" id="raindancers-network.regions.AwsRegions.AP_NORTHEAST_2"></a>
 
 ---
 
 
-##### `CA_CENTRAL_1` <a name="CA_CENTRAL_1" id="raindancers-network.AwsRegions.CA_CENTRAL_1"></a>
+##### `AP_NORTHEAST_3` <a name="AP_NORTHEAST_3" id="raindancers-network.regions.AwsRegions.AP_NORTHEAST_3"></a>
 
 ---
 
 
-##### `EU_SOUTH_1` <a name="EU_SOUTH_1" id="raindancers-network.AwsRegions.EU_SOUTH_1"></a>
+##### `CA_CENTRAL_1` <a name="CA_CENTRAL_1" id="raindancers-network.regions.AwsRegions.CA_CENTRAL_1"></a>
 
 ---
 
 
-##### `EU_WEST_1` <a name="EU_WEST_1" id="raindancers-network.AwsRegions.EU_WEST_1"></a>
+##### `EU_SOUTH_1` <a name="EU_SOUTH_1" id="raindancers-network.regions.AwsRegions.EU_SOUTH_1"></a>
 
 ---
 
 
-##### `EU_WEST_2` <a name="EU_WEST_2" id="raindancers-network.AwsRegions.EU_WEST_2"></a>
+##### `EU_WEST_1` <a name="EU_WEST_1" id="raindancers-network.regions.AwsRegions.EU_WEST_1"></a>
 
 ---
 
 
-##### `EU_WEST_3` <a name="EU_WEST_3" id="raindancers-network.AwsRegions.EU_WEST_3"></a>
+##### `EU_WEST_2` <a name="EU_WEST_2" id="raindancers-network.regions.AwsRegions.EU_WEST_2"></a>
 
 ---
 
 
-##### `EU_SOUTH_2` <a name="EU_SOUTH_2" id="raindancers-network.AwsRegions.EU_SOUTH_2"></a>
+##### `EU_WEST_3` <a name="EU_WEST_3" id="raindancers-network.regions.AwsRegions.EU_WEST_3"></a>
 
 ---
 
 
-##### `EU_NORTH_1` <a name="EU_NORTH_1" id="raindancers-network.AwsRegions.EU_NORTH_1"></a>
+##### `EU_SOUTH_2` <a name="EU_SOUTH_2" id="raindancers-network.regions.AwsRegions.EU_SOUTH_2"></a>
 
 ---
 
 
-##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.AwsRegions.EU_CENTRAL_1"></a>
+##### `EU_NORTH_1` <a name="EU_NORTH_1" id="raindancers-network.regions.AwsRegions.EU_NORTH_1"></a>
 
 ---
 
 
-##### `EU_CENTRAL_2` <a name="EU_CENTRAL_2" id="raindancers-network.AwsRegions.EU_CENTRAL_2"></a>
+##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.regions.AwsRegions.EU_CENTRAL_1"></a>
 
 ---
 
 
-##### `ME_SOUTH_1` <a name="ME_SOUTH_1" id="raindancers-network.AwsRegions.ME_SOUTH_1"></a>
+##### `EU_CENTRAL_2` <a name="EU_CENTRAL_2" id="raindancers-network.regions.AwsRegions.EU_CENTRAL_2"></a>
 
 ---
 
 
-##### `ME_CENTRAL` <a name="ME_CENTRAL" id="raindancers-network.AwsRegions.ME_CENTRAL"></a>
+##### `ME_SOUTH_1` <a name="ME_SOUTH_1" id="raindancers-network.regions.AwsRegions.ME_SOUTH_1"></a>
 
 ---
 
 
-##### `SA_EAST_1` <a name="SA_EAST_1" id="raindancers-network.AwsRegions.SA_EAST_1"></a>
+##### `ME_CENTRAL` <a name="ME_CENTRAL" id="raindancers-network.regions.AwsRegions.ME_CENTRAL"></a>
 
 ---
 
 
-### ConditionLogic <a name="ConditionLogic" id="raindancers-network.ConditionLogic"></a>
+##### `SA_EAST_1` <a name="SA_EAST_1" id="raindancers-network.regions.AwsRegions.SA_EAST_1"></a>
+
+---
+
+
+### ConditionLogic <a name="ConditionLogic" id="raindancers-network.cloudwan.ConditionLogic"></a>
 
 Conditon Logic.
 
@@ -15423,17 +12470,17 @@ Conditon Logic.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ConditionLogic.AND">AND</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ConditionLogic.OR">OR</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.ConditionLogic.AND">AND</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.ConditionLogic.OR">OR</a></code> | *No description.* |
 
 ---
 
-##### `AND` <a name="AND" id="raindancers-network.ConditionLogic.AND"></a>
+##### `AND` <a name="AND" id="raindancers-network.cloudwan.ConditionLogic.AND"></a>
 
 ---
 
 
-##### `OR` <a name="OR" id="raindancers-network.ConditionLogic.OR"></a>
+##### `OR` <a name="OR" id="raindancers-network.cloudwan.ConditionLogic.OR"></a>
 
 ---
 
@@ -15459,56 +12506,56 @@ Conditon Logic.
 ---
 
 
-### CrowdStrikeCloud <a name="CrowdStrikeCloud" id="raindancers-network.CrowdStrikeCloud"></a>
+### CrowdStrikeCloud <a name="CrowdStrikeCloud" id="raindancers-network.crowdstrike.CrowdStrikeCloud"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeCloud.US1">US1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeCloud.US2">US2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeCloud.EU1">EU1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeCloud.US1">US1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeCloud.US2">US2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeCloud.EU1">EU1</a></code> | *No description.* |
 
 ---
 
-##### `US1` <a name="US1" id="raindancers-network.CrowdStrikeCloud.US1"></a>
-
----
-
-
-##### `US2` <a name="US2" id="raindancers-network.CrowdStrikeCloud.US2"></a>
+##### `US1` <a name="US1" id="raindancers-network.crowdstrike.CrowdStrikeCloud.US1"></a>
 
 ---
 
 
-##### `EU1` <a name="EU1" id="raindancers-network.CrowdStrikeCloud.EU1"></a>
+##### `US2` <a name="US2" id="raindancers-network.crowdstrike.CrowdStrikeCloud.US2"></a>
 
 ---
 
 
-### CrowdStrikeRegion <a name="CrowdStrikeRegion" id="raindancers-network.CrowdStrikeRegion"></a>
+##### `EU1` <a name="EU1" id="raindancers-network.crowdstrike.CrowdStrikeCloud.EU1"></a>
+
+---
+
+
+### CrowdStrikeRegion <a name="CrowdStrikeRegion" id="raindancers-network.crowdstrike.CrowdStrikeRegion"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.CrowdStrikeRegion.US_WEST_1">US_WEST_1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeRegion.US_WEST_2">US_WEST_2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.CrowdStrikeRegion.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeRegion.US_WEST_1">US_WEST_1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeRegion.US_WEST_2">US_WEST_2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.crowdstrike.CrowdStrikeRegion.EU_CENTRAL_1">EU_CENTRAL_1</a></code> | *No description.* |
 
 ---
 
-##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.CrowdStrikeRegion.US_WEST_1"></a>
-
----
-
-
-##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.CrowdStrikeRegion.US_WEST_2"></a>
+##### `US_WEST_1` <a name="US_WEST_1" id="raindancers-network.crowdstrike.CrowdStrikeRegion.US_WEST_1"></a>
 
 ---
 
 
-##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.CrowdStrikeRegion.EU_CENTRAL_1"></a>
+##### `US_WEST_2` <a name="US_WEST_2" id="raindancers-network.crowdstrike.CrowdStrikeRegion.US_WEST_2"></a>
+
+---
+
+
+##### `EU_CENTRAL_1` <a name="EU_CENTRAL_1" id="raindancers-network.crowdstrike.CrowdStrikeRegion.EU_CENTRAL_1"></a>
 
 ---
 
@@ -15540,7 +12587,7 @@ Conditon Logic.
 ---
 
 
-### Destination <a name="Destination" id="raindancers-network.Destination"></a>
+### Destination <a name="Destination" id="raindancers-network.network.Destination"></a>
 
 The Destinations for Adding Routes.
 
@@ -15548,111 +12595,86 @@ The Destinations for Adding Routes.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Destination.CLOUDWAN">CLOUDWAN</a></code> | route to the cloudwan that the vpc is attached to. |
-| <code><a href="#raindancers-network.Destination.TRANSITGATEWAY">TRANSITGATEWAY</a></code> | route to the transitGateway that the vpc is attached to. |
-| <code><a href="#raindancers-network.Destination.NWFIREWALL">NWFIREWALL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.Destination.CLOUDWAN">CLOUDWAN</a></code> | route to the cloudwan that the vpc is attached to. |
+| <code><a href="#raindancers-network.network.Destination.TRANSITGATEWAY">TRANSITGATEWAY</a></code> | route to the transitGateway that the vpc is attached to. |
+| <code><a href="#raindancers-network.network.Destination.NWFIREWALL">NWFIREWALL</a></code> | *No description.* |
 
 ---
 
-##### `CLOUDWAN` <a name="CLOUDWAN" id="raindancers-network.Destination.CLOUDWAN"></a>
+##### `CLOUDWAN` <a name="CLOUDWAN" id="raindancers-network.network.Destination.CLOUDWAN"></a>
 
 route to the cloudwan that the vpc is attached to.
 
 ---
 
 
-##### `TRANSITGATEWAY` <a name="TRANSITGATEWAY" id="raindancers-network.Destination.TRANSITGATEWAY"></a>
+##### `TRANSITGATEWAY` <a name="TRANSITGATEWAY" id="raindancers-network.network.Destination.TRANSITGATEWAY"></a>
 
 route to the transitGateway that the vpc is attached to.
 
 ---
 
 
-##### `NWFIREWALL` <a name="NWFIREWALL" id="raindancers-network.Destination.NWFIREWALL"></a>
+##### `NWFIREWALL` <a name="NWFIREWALL" id="raindancers-network.network.Destination.NWFIREWALL"></a>
 
 ---
 
 
-### Direction <a name="Direction" id="raindancers-network.Direction"></a>
+### DNSFirewallActions <a name="DNSFirewallActions" id="raindancers-network.dns.DNSFirewallActions"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Direction.OUTBOUND">OUTBOUND</a></code> | Traffic allowed from Src to destination only. |
-| <code><a href="#raindancers-network.Direction.BOTH">BOTH</a></code> | Traffic allowed in both directions. |
+| <code><a href="#raindancers-network.dns.DNSFirewallActions.ALLOW">ALLOW</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.DNSFirewallActions.BLOCK">BLOCK</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.DNSFirewallActions.ALERT">ALERT</a></code> | *No description.* |
 
 ---
 
-##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.Direction.OUTBOUND"></a>
-
-Traffic allowed from Src to destination only.
-
----
-
-
-##### `BOTH` <a name="BOTH" id="raindancers-network.Direction.BOTH"></a>
-
-Traffic allowed in both directions.
+##### `ALLOW` <a name="ALLOW" id="raindancers-network.dns.DNSFirewallActions.ALLOW"></a>
 
 ---
 
 
-### DNSFirewallActions <a name="DNSFirewallActions" id="raindancers-network.DNSFirewallActions"></a>
+##### `BLOCK` <a name="BLOCK" id="raindancers-network.dns.DNSFirewallActions.BLOCK"></a>
+
+---
+
+
+##### `ALERT` <a name="ALERT" id="raindancers-network.dns.DNSFirewallActions.ALERT"></a>
+
+---
+
+
+### DNSFirewallBlockResponse <a name="DNSFirewallBlockResponse" id="raindancers-network.dns.DNSFirewallBlockResponse"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.DNSFirewallActions.ALLOW">ALLOW</a></code> | *No description.* |
-| <code><a href="#raindancers-network.DNSFirewallActions.BLOCK">BLOCK</a></code> | *No description.* |
-| <code><a href="#raindancers-network.DNSFirewallActions.ALERT">ALERT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.DNSFirewallBlockResponse.NODATA">NODATA</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.DNSFirewallBlockResponse.NXDOMAIN">NXDOMAIN</a></code> | *No description.* |
+| <code><a href="#raindancers-network.dns.DNSFirewallBlockResponse.OVERRIDE">OVERRIDE</a></code> | *No description.* |
 
 ---
 
-##### `ALLOW` <a name="ALLOW" id="raindancers-network.DNSFirewallActions.ALLOW"></a>
-
----
-
-
-##### `BLOCK` <a name="BLOCK" id="raindancers-network.DNSFirewallActions.BLOCK"></a>
+##### `NODATA` <a name="NODATA" id="raindancers-network.dns.DNSFirewallBlockResponse.NODATA"></a>
 
 ---
 
 
-##### `ALERT` <a name="ALERT" id="raindancers-network.DNSFirewallActions.ALERT"></a>
+##### `NXDOMAIN` <a name="NXDOMAIN" id="raindancers-network.dns.DNSFirewallBlockResponse.NXDOMAIN"></a>
 
 ---
 
 
-### DNSFirewallBlockResponse <a name="DNSFirewallBlockResponse" id="raindancers-network.DNSFirewallBlockResponse"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.DNSFirewallBlockResponse.NODATA">NODATA</a></code> | *No description.* |
-| <code><a href="#raindancers-network.DNSFirewallBlockResponse.NXDOMAIN">NXDOMAIN</a></code> | *No description.* |
-| <code><a href="#raindancers-network.DNSFirewallBlockResponse.OVERRIDE">OVERRIDE</a></code> | *No description.* |
-
----
-
-##### `NODATA` <a name="NODATA" id="raindancers-network.DNSFirewallBlockResponse.NODATA"></a>
+##### `OVERRIDE` <a name="OVERRIDE" id="raindancers-network.dns.DNSFirewallBlockResponse.OVERRIDE"></a>
 
 ---
 
 
-##### `NXDOMAIN` <a name="NXDOMAIN" id="raindancers-network.DNSFirewallBlockResponse.NXDOMAIN"></a>
-
----
-
-
-##### `OVERRIDE` <a name="OVERRIDE" id="raindancers-network.DNSFirewallBlockResponse.OVERRIDE"></a>
-
----
-
-
-### DPDTimeoutAction <a name="DPDTimeoutAction" id="raindancers-network.DPDTimeoutAction"></a>
+### DPDTimeoutAction <a name="DPDTimeoutAction" id="raindancers-network.cloudwan.DPDTimeoutAction"></a>
 
 Dead Peer Detection Timeout Actions.
 
@@ -15660,74 +12682,29 @@ Dead Peer Detection Timeout Actions.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.DPDTimeoutAction.CLEAR">CLEAR</a></code> | Clear the Session. |
-| <code><a href="#raindancers-network.DPDTimeoutAction.NONE">NONE</a></code> | Do nothing. |
-| <code><a href="#raindancers-network.DPDTimeoutAction.RESTART">RESTART</a></code> | Restart The Session. |
+| <code><a href="#raindancers-network.cloudwan.DPDTimeoutAction.CLEAR">CLEAR</a></code> | Clear the Session. |
+| <code><a href="#raindancers-network.cloudwan.DPDTimeoutAction.NONE">NONE</a></code> | Do nothing. |
+| <code><a href="#raindancers-network.cloudwan.DPDTimeoutAction.RESTART">RESTART</a></code> | Restart The Session. |
 
 ---
 
-##### `CLEAR` <a name="CLEAR" id="raindancers-network.DPDTimeoutAction.CLEAR"></a>
+##### `CLEAR` <a name="CLEAR" id="raindancers-network.cloudwan.DPDTimeoutAction.CLEAR"></a>
 
 Clear the Session.
 
 ---
 
 
-##### `NONE` <a name="NONE" id="raindancers-network.DPDTimeoutAction.NONE"></a>
+##### `NONE` <a name="NONE" id="raindancers-network.cloudwan.DPDTimeoutAction.NONE"></a>
 
 Do nothing.
 
 ---
 
 
-##### `RESTART` <a name="RESTART" id="raindancers-network.DPDTimeoutAction.RESTART"></a>
+##### `RESTART` <a name="RESTART" id="raindancers-network.cloudwan.DPDTimeoutAction.RESTART"></a>
 
 Restart The Session.
-
----
-
-
-### FWProtocol <a name="FWProtocol" id="raindancers-network.FWProtocol"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.FWProtocol.TCP">TCP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FWProtocol.UPD">UPD</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FWProtocol.ICMP">ICMP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FWProtocol.IP">IP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FWProtocol.HTTP">HTTP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.FWProtocol.TLS">TLS</a></code> | *No description.* |
-
----
-
-##### `TCP` <a name="TCP" id="raindancers-network.FWProtocol.TCP"></a>
-
----
-
-
-##### `UPD` <a name="UPD" id="raindancers-network.FWProtocol.UPD"></a>
-
----
-
-
-##### `ICMP` <a name="ICMP" id="raindancers-network.FWProtocol.ICMP"></a>
-
----
-
-
-##### `IP` <a name="IP" id="raindancers-network.FWProtocol.IP"></a>
-
----
-
-
-##### `HTTP` <a name="HTTP" id="raindancers-network.FWProtocol.HTTP"></a>
-
----
-
-
-##### `TLS` <a name="TLS" id="raindancers-network.FWProtocol.TLS"></a>
 
 ---
 
@@ -15773,7 +12750,7 @@ A classifier for XML content.
 ---
 
 
-### IkeVersion <a name="IkeVersion" id="raindancers-network.IkeVersion"></a>
+### IkeVersion <a name="IkeVersion" id="raindancers-network.cloudwan.IkeVersion"></a>
 
 Ike Version for S2S VPN.
 
@@ -15781,171 +12758,150 @@ Ike Version for S2S VPN.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.IkeVersion.IKEV1">IKEV1</a></code> | Use IKEv1. |
-| <code><a href="#raindancers-network.IkeVersion.IKEV2">IKEV2</a></code> | Use IKEv2. |
+| <code><a href="#raindancers-network.cloudwan.IkeVersion.IKEV1">IKEV1</a></code> | Use IKEv1. |
+| <code><a href="#raindancers-network.cloudwan.IkeVersion.IKEV2">IKEV2</a></code> | Use IKEv2. |
 
 ---
 
-##### `IKEV1` <a name="IKEV1" id="raindancers-network.IkeVersion.IKEV1"></a>
+##### `IKEV1` <a name="IKEV1" id="raindancers-network.cloudwan.IkeVersion.IKEV1"></a>
 
 Use IKEv1.
 
 ---
 
 
-##### `IKEV2` <a name="IKEV2" id="raindancers-network.IkeVersion.IKEV2"></a>
+##### `IKEV2` <a name="IKEV2" id="raindancers-network.cloudwan.IkeVersion.IKEV2"></a>
 
 Use IKEv2.
 
 ---
 
 
-### IPAddressFamily <a name="IPAddressFamily" id="raindancers-network.IPAddressFamily"></a>
+### ManagedAwsFirewallRules <a name="ManagedAwsFirewallRules" id="raindancers-network.firewall.ManagedAwsFirewallRules"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.IPAddressFamily.IPV4">IPV4</a></code> | *No description.* |
-| <code><a href="#raindancers-network.IPAddressFamily.IPV6">IPV6</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER">MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER">THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER">THREAT_SIGNATURES_DOS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER">THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER">THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER">THREAT_SIGNATURES_FUP_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER">THREAT_SIGNATURES_IOC_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER">THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER">THREAT_SIGNATURES_PHISHING_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER">THREAT_SIGNATURES_SCANNERS_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER">THREAT_SIGNATURES_SUSPECT_ACTION_ORDER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER">THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER</a></code> | *No description.* |
 
 ---
 
-##### `IPV4` <a name="IPV4" id="raindancers-network.IPAddressFamily.IPV4"></a>
-
----
-
-
-##### `IPV6` <a name="IPV6" id="raindancers-network.IPAddressFamily.IPV6"></a>
-
----
-
-
-### ManagedAwsFirewallRules <a name="ManagedAwsFirewallRules" id="raindancers-network.ManagedAwsFirewallRules"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER">MALWARE_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER">BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER">THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER">THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER">THREAT_SIGNATURES_DOS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER">THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER">THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER">THREAT_SIGNATURES_FUP_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER">THREAT_SIGNATURES_IOC_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER">THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER">THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER">THREAT_SIGNATURES_PHISHING_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER">THREAT_SIGNATURES_SCANNERS_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER">THREAT_SIGNATURES_SUSPECT_ACTION_ORDER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER">THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER</a></code> | *No description.* |
-
----
-
-##### `ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER"></a>
+##### `ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.ABUSED_LEGIT_MALWARE_DOMAINS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
+##### `ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.ABUSED_LEGIT_BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `MALWARE_DOMAINS_ACTION_ORDER` <a name="MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER"></a>
+##### `MALWARE_DOMAINS_ACTION_ORDER` <a name="MALWARE_DOMAINS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.MALWARE_DOMAINS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
+##### `BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER` <a name="BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.BOTNET_COMMAND_AND_CONTROL_DOMAINS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_BOTNET_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_BOTNET_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WEB_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER` <a name="THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER"></a>
+##### `THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER` <a name="THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_BOTNET_WINDOWS_ACTION_ODER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_DOS_ACTION_ORDER` <a name="THREAT_SIGNATURES_DOS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_DOS_ACTION_ORDER` <a name="THREAT_SIGNATURES_DOS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_DOS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_EMERGING_EVENTS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER` <a name="THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_EXPLOITS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_FUP_ACTION_ORDER` <a name="THREAT_SIGNATURES_FUP_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_FUP_ACTION_ORDER` <a name="THREAT_SIGNATURES_FUP_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_FUP_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_IOC_ACTION_ORDER` <a name="THREAT_SIGNATURES_IOC_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_IOC_ACTION_ORDER` <a name="THREAT_SIGNATURES_IOC_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_IOC_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_MALWARE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_MALWARE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_COIN_MINING_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER` <a name="THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MAWLARE_WEB_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER` <a name="THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_MALWARE_MOBILE_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_PHISHING_ACTION_ORDER` <a name="THREAT_SIGNATURES_PHISHING_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_PHISHING_ACTION_ORDER` <a name="THREAT_SIGNATURES_PHISHING_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_PHISHING_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_SCANNERS_ACTION_ORDER` <a name="THREAT_SIGNATURES_SCANNERS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_SCANNERS_ACTION_ORDER` <a name="THREAT_SIGNATURES_SCANNERS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_SCANNERS_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_SUSPECT_ACTION_ORDER` <a name="THREAT_SIGNATURES_SUSPECT_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_SUSPECT_ACTION_ORDER` <a name="THREAT_SIGNATURES_SUSPECT_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_SUSPECT_ACTION_ORDER"></a>
 
 ---
 
 
-##### `THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER` <a name="THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER" id="raindancers-network.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER"></a>
+##### `THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER` <a name="THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER" id="raindancers-network.firewall.ManagedAwsFirewallRules.THREAT_SIGNATURES_WEB_ATTACKS_ACTION_ORDER"></a>
 
 ---
 
@@ -15971,7 +12927,7 @@ Use IKEv2.
 ---
 
 
-### Operators <a name="Operators" id="raindancers-network.Operators"></a>
+### Operators <a name="Operators" id="raindancers-network.cloudwan.Operators"></a>
 
 Operatior COnditons for Attachments.
 
@@ -15979,34 +12935,34 @@ Operatior COnditons for Attachments.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Operators.EQUALS">EQUALS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Operators.NOTEQUALS">NOTEQUALS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Operators.CONTAINS">CONTAINS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Operators.BEGINS_WITH">BEGINS_WITH</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Operators.EQUALS">EQUALS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Operators.NOTEQUALS">NOTEQUALS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Operators.CONTAINS">CONTAINS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Operators.BEGINS_WITH">BEGINS_WITH</a></code> | *No description.* |
 
 ---
 
-##### `EQUALS` <a name="EQUALS" id="raindancers-network.Operators.EQUALS"></a>
-
----
-
-
-##### `NOTEQUALS` <a name="NOTEQUALS" id="raindancers-network.Operators.NOTEQUALS"></a>
+##### `EQUALS` <a name="EQUALS" id="raindancers-network.cloudwan.Operators.EQUALS"></a>
 
 ---
 
 
-##### `CONTAINS` <a name="CONTAINS" id="raindancers-network.Operators.CONTAINS"></a>
+##### `NOTEQUALS` <a name="NOTEQUALS" id="raindancers-network.cloudwan.Operators.NOTEQUALS"></a>
 
 ---
 
 
-##### `BEGINS_WITH` <a name="BEGINS_WITH" id="raindancers-network.Operators.BEGINS_WITH"></a>
+##### `CONTAINS` <a name="CONTAINS" id="raindancers-network.cloudwan.Operators.CONTAINS"></a>
 
 ---
 
 
-### OutsideIpAddressType <a name="OutsideIpAddressType" id="raindancers-network.OutsideIpAddressType"></a>
+##### `BEGINS_WITH` <a name="BEGINS_WITH" id="raindancers-network.cloudwan.Operators.BEGINS_WITH"></a>
+
+---
+
+
+### OutsideIpAddressType <a name="OutsideIpAddressType" id="raindancers-network.cloudwan.OutsideIpAddressType"></a>
 
 Specify the use of public or private IP address's for Site to Site VPN.
 
@@ -16014,19 +12970,19 @@ Specify the use of public or private IP address's for Site to Site VPN.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.OutsideIpAddressType.PRIVATE">PRIVATE</a></code> | Use Private IPv4 Address from the Transit Gateways IP address Pool. |
-| <code><a href="#raindancers-network.OutsideIpAddressType.PUBLIC">PUBLIC</a></code> | Use Public IPv4 Address Assigned by AWS. |
+| <code><a href="#raindancers-network.cloudwan.OutsideIpAddressType.PRIVATE">PRIVATE</a></code> | Use Private IPv4 Address from the Transit Gateways IP address Pool. |
+| <code><a href="#raindancers-network.cloudwan.OutsideIpAddressType.PUBLIC">PUBLIC</a></code> | Use Public IPv4 Address Assigned by AWS. |
 
 ---
 
-##### `PRIVATE` <a name="PRIVATE" id="raindancers-network.OutsideIpAddressType.PRIVATE"></a>
+##### `PRIVATE` <a name="PRIVATE" id="raindancers-network.cloudwan.OutsideIpAddressType.PRIVATE"></a>
 
 Use Private IPv4 Address from the Transit Gateways IP address Pool.
 
 ---
 
 
-##### `PUBLIC` <a name="PUBLIC" id="raindancers-network.OutsideIpAddressType.PUBLIC"></a>
+##### `PUBLIC` <a name="PUBLIC" id="raindancers-network.cloudwan.OutsideIpAddressType.PUBLIC"></a>
 
 Use Public IPv4 Address Assigned by AWS.
 
@@ -16122,350 +13078,350 @@ Permissions that can be used as part of a LakeFormation Permissions refer https:
 ---
 
 
-### Phase1DHGroupNumbers <a name="Phase1DHGroupNumbers" id="raindancers-network.Phase1DHGroupNumbers"></a>
+### Phase1DHGroupNumbers <a name="Phase1DHGroupNumbers" id="raindancers-network.cloudwan.Phase1DHGroupNumbers"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
 
 ---
 
-##### `DH2` <a name="DH2" id="raindancers-network.Phase1DHGroupNumbers.DH2"></a>
-
----
-
-
-##### `DH14` <a name="DH14" id="raindancers-network.Phase1DHGroupNumbers.DH14"></a>
+##### `DH2` <a name="DH2" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH2"></a>
 
 ---
 
 
-##### `DH15` <a name="DH15" id="raindancers-network.Phase1DHGroupNumbers.DH15"></a>
+##### `DH14` <a name="DH14" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH14"></a>
 
 ---
 
 
-##### `DH16` <a name="DH16" id="raindancers-network.Phase1DHGroupNumbers.DH16"></a>
+##### `DH15` <a name="DH15" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH15"></a>
 
 ---
 
 
-##### `DH17` <a name="DH17" id="raindancers-network.Phase1DHGroupNumbers.DH17"></a>
+##### `DH16` <a name="DH16" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH16"></a>
 
 ---
 
 
-##### `DH18` <a name="DH18" id="raindancers-network.Phase1DHGroupNumbers.DH18"></a>
+##### `DH17` <a name="DH17" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH17"></a>
 
 ---
 
 
-##### `DH19` <a name="DH19" id="raindancers-network.Phase1DHGroupNumbers.DH19"></a>
+##### `DH18` <a name="DH18" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH18"></a>
 
 ---
 
 
-##### `DH20` <a name="DH20" id="raindancers-network.Phase1DHGroupNumbers.DH20"></a>
+##### `DH19` <a name="DH19" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH19"></a>
 
 ---
 
 
-##### `DH21` <a name="DH21" id="raindancers-network.Phase1DHGroupNumbers.DH21"></a>
+##### `DH20` <a name="DH20" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH20"></a>
 
 ---
 
 
-##### `DH22` <a name="DH22" id="raindancers-network.Phase1DHGroupNumbers.DH22"></a>
+##### `DH21` <a name="DH21" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH21"></a>
 
 ---
 
 
-##### `DH23` <a name="DH23" id="raindancers-network.Phase1DHGroupNumbers.DH23"></a>
+##### `DH22` <a name="DH22" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH22"></a>
 
 ---
 
 
-##### `DH24` <a name="DH24" id="raindancers-network.Phase1DHGroupNumbers.DH24"></a>
+##### `DH23` <a name="DH23" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH23"></a>
 
 ---
 
 
-### Phase1EncryptionAlgorithms <a name="Phase1EncryptionAlgorithms" id="raindancers-network.Phase1EncryptionAlgorithms"></a>
+##### `DH24` <a name="DH24" id="raindancers-network.cloudwan.Phase1DHGroupNumbers.DH24"></a>
+
+---
+
+
+### Phase1EncryptionAlgorithms <a name="Phase1EncryptionAlgorithms" id="raindancers-network.cloudwan.Phase1EncryptionAlgorithms"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
 
 ---
 
-##### `AES128` <a name="AES128" id="raindancers-network.Phase1EncryptionAlgorithms.AES128"></a>
-
----
-
-
-##### `AES256` <a name="AES256" id="raindancers-network.Phase1EncryptionAlgorithms.AES256"></a>
+##### `AES128` <a name="AES128" id="raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES128"></a>
 
 ---
 
 
-##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.Phase1EncryptionAlgorithms.AES128_GCM_16"></a>
+##### `AES256` <a name="AES256" id="raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES256"></a>
 
 ---
 
 
-##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.Phase1EncryptionAlgorithms.AES256_GCM_16"></a>
+##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES128_GCM_16"></a>
 
 ---
 
 
-### Phase1IntegrityAlgorithms <a name="Phase1IntegrityAlgorithms" id="raindancers-network.Phase1IntegrityAlgorithms"></a>
+##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.cloudwan.Phase1EncryptionAlgorithms.AES256_GCM_16"></a>
+
+---
+
+
+### Phase1IntegrityAlgorithms <a name="Phase1IntegrityAlgorithms" id="raindancers-network.cloudwan.Phase1IntegrityAlgorithms"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase1IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
 
 ---
 
-##### `SHA1` <a name="SHA1" id="raindancers-network.Phase1IntegrityAlgorithms.SHA1"></a>
-
----
-
-
-##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_256"></a>
+##### `SHA1` <a name="SHA1" id="raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA1"></a>
 
 ---
 
 
-##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_384"></a>
+##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_256"></a>
 
 ---
 
 
-##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.Phase1IntegrityAlgorithms.SHA2_512"></a>
+##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_384"></a>
 
 ---
 
 
-### Phase2DHGroupNumbers <a name="Phase2DHGroupNumbers" id="raindancers-network.Phase2DHGroupNumbers"></a>
+##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.cloudwan.Phase1IntegrityAlgorithms.SHA2_512"></a>
+
+---
+
+
+### Phase2DHGroupNumbers <a name="Phase2DHGroupNumbers" id="raindancers-network.cloudwan.Phase2DHGroupNumbers"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH5">DH5</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH2">DH2</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH5">DH5</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH14">DH14</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH15">DH15</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH16">DH16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH17">DH17</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH18">DH18</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH19">DH19</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH20">DH20</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH21">DH21</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH22">DH22</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH23">DH23</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2DHGroupNumbers.DH24">DH24</a></code> | *No description.* |
 
 ---
 
-##### `DH2` <a name="DH2" id="raindancers-network.Phase2DHGroupNumbers.DH2"></a>
-
----
-
-
-##### `DH5` <a name="DH5" id="raindancers-network.Phase2DHGroupNumbers.DH5"></a>
+##### `DH2` <a name="DH2" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH2"></a>
 
 ---
 
 
-##### `DH14` <a name="DH14" id="raindancers-network.Phase2DHGroupNumbers.DH14"></a>
+##### `DH5` <a name="DH5" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH5"></a>
 
 ---
 
 
-##### `DH15` <a name="DH15" id="raindancers-network.Phase2DHGroupNumbers.DH15"></a>
+##### `DH14` <a name="DH14" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH14"></a>
 
 ---
 
 
-##### `DH16` <a name="DH16" id="raindancers-network.Phase2DHGroupNumbers.DH16"></a>
+##### `DH15` <a name="DH15" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH15"></a>
 
 ---
 
 
-##### `DH17` <a name="DH17" id="raindancers-network.Phase2DHGroupNumbers.DH17"></a>
+##### `DH16` <a name="DH16" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH16"></a>
 
 ---
 
 
-##### `DH18` <a name="DH18" id="raindancers-network.Phase2DHGroupNumbers.DH18"></a>
+##### `DH17` <a name="DH17" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH17"></a>
 
 ---
 
 
-##### `DH19` <a name="DH19" id="raindancers-network.Phase2DHGroupNumbers.DH19"></a>
+##### `DH18` <a name="DH18" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH18"></a>
 
 ---
 
 
-##### `DH20` <a name="DH20" id="raindancers-network.Phase2DHGroupNumbers.DH20"></a>
+##### `DH19` <a name="DH19" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH19"></a>
 
 ---
 
 
-##### `DH21` <a name="DH21" id="raindancers-network.Phase2DHGroupNumbers.DH21"></a>
+##### `DH20` <a name="DH20" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH20"></a>
 
 ---
 
 
-##### `DH22` <a name="DH22" id="raindancers-network.Phase2DHGroupNumbers.DH22"></a>
+##### `DH21` <a name="DH21" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH21"></a>
 
 ---
 
 
-##### `DH23` <a name="DH23" id="raindancers-network.Phase2DHGroupNumbers.DH23"></a>
+##### `DH22` <a name="DH22" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH22"></a>
 
 ---
 
 
-##### `DH24` <a name="DH24" id="raindancers-network.Phase2DHGroupNumbers.DH24"></a>
+##### `DH23` <a name="DH23" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH23"></a>
 
 ---
 
 
-### Phase2EncryptionAlgorithms <a name="Phase2EncryptionAlgorithms" id="raindancers-network.Phase2EncryptionAlgorithms"></a>
+##### `DH24` <a name="DH24" id="raindancers-network.cloudwan.Phase2DHGroupNumbers.DH24"></a>
+
+---
+
+
+### Phase2EncryptionAlgorithms <a name="Phase2EncryptionAlgorithms" id="raindancers-network.cloudwan.Phase2EncryptionAlgorithms"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES128">AES128</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES256">AES256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES128_GCM_16">AES128_GCM_16</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES256_GCM_16">AES256_GCM_16</a></code> | *No description.* |
 
 ---
 
-##### `AES128` <a name="AES128" id="raindancers-network.Phase2EncryptionAlgorithms.AES128"></a>
-
----
-
-
-##### `AES256` <a name="AES256" id="raindancers-network.Phase2EncryptionAlgorithms.AES256"></a>
+##### `AES128` <a name="AES128" id="raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES128"></a>
 
 ---
 
 
-##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.Phase2EncryptionAlgorithms.AES128_GCM_16"></a>
+##### `AES256` <a name="AES256" id="raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES256"></a>
 
 ---
 
 
-##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.Phase2EncryptionAlgorithms.AES256_GCM_16"></a>
+##### `AES128_GCM_16` <a name="AES128_GCM_16" id="raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES128_GCM_16"></a>
 
 ---
 
 
-### Phase2IntegrityAlgorithms <a name="Phase2IntegrityAlgorithms" id="raindancers-network.Phase2IntegrityAlgorithms"></a>
+##### `AES256_GCM_16` <a name="AES256_GCM_16" id="raindancers-network.cloudwan.Phase2EncryptionAlgorithms.AES256_GCM_16"></a>
+
+---
+
+
+### Phase2IntegrityAlgorithms <a name="Phase2IntegrityAlgorithms" id="raindancers-network.cloudwan.Phase2IntegrityAlgorithms"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Phase2IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA1">SHA1</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_256">SHA2_256</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_384">SHA2_384</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_512">SHA2_512</a></code> | *No description.* |
 
 ---
 
-##### `SHA1` <a name="SHA1" id="raindancers-network.Phase2IntegrityAlgorithms.SHA1"></a>
-
----
-
-
-##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_256"></a>
+##### `SHA1` <a name="SHA1" id="raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA1"></a>
 
 ---
 
 
-##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_384"></a>
+##### `SHA2_256` <a name="SHA2_256" id="raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_256"></a>
 
 ---
 
 
-##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.Phase2IntegrityAlgorithms.SHA2_512"></a>
+##### `SHA2_384` <a name="SHA2_384" id="raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_384"></a>
 
 ---
 
 
-### PrincipalTypes <a name="PrincipalTypes" id="raindancers-network.PrincipalTypes"></a>
+##### `SHA2_512` <a name="SHA2_512" id="raindancers-network.cloudwan.Phase2IntegrityAlgorithms.SHA2_512"></a>
+
+---
+
+
+### PrincipalTypes <a name="PrincipalTypes" id="raindancers-network.sso.PrincipalTypes"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.PrincipalTypes.USER">USER</a></code> | *No description.* |
-| <code><a href="#raindancers-network.PrincipalTypes.GROUP">GROUP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.sso.PrincipalTypes.USER">USER</a></code> | *No description.* |
+| <code><a href="#raindancers-network.sso.PrincipalTypes.GROUP">GROUP</a></code> | *No description.* |
 
 ---
 
-##### `USER` <a name="USER" id="raindancers-network.PrincipalTypes.USER"></a>
-
----
-
-
-##### `GROUP` <a name="GROUP" id="raindancers-network.PrincipalTypes.GROUP"></a>
+##### `USER` <a name="USER" id="raindancers-network.sso.PrincipalTypes.USER"></a>
 
 ---
 
 
-### Protocol <a name="Protocol" id="raindancers-network.Protocol"></a>
+##### `GROUP` <a name="GROUP" id="raindancers-network.sso.PrincipalTypes.GROUP"></a>
+
+---
+
+
+### Protocol <a name="Protocol" id="raindancers-network.firewall.Protocol"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.Protocol.ICMP">ICMP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Protocol.TCP">TCP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.Protocol.UDP">UDP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.Protocol.ICMP">ICMP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.Protocol.TCP">TCP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.Protocol.UDP">UDP</a></code> | *No description.* |
 
 ---
 
-##### `ICMP` <a name="ICMP" id="raindancers-network.Protocol.ICMP"></a>
-
----
-
-
-##### `TCP` <a name="TCP" id="raindancers-network.Protocol.TCP"></a>
+##### `ICMP` <a name="ICMP" id="raindancers-network.firewall.Protocol.ICMP"></a>
 
 ---
 
 
-##### `UDP` <a name="UDP" id="raindancers-network.Protocol.UDP"></a>
+##### `TCP` <a name="TCP" id="raindancers-network.firewall.Protocol.TCP"></a>
+
+---
+
+
+##### `UDP` <a name="UDP" id="raindancers-network.firewall.Protocol.UDP"></a>
 
 ---
 
@@ -16497,7 +13453,7 @@ Permissions that can be used as part of a LakeFormation Permissions refer https:
 ---
 
 
-### ResolverDirection <a name="ResolverDirection" id="raindancers-network.ResolverDirection"></a>
+### ResolverDirection <a name="ResolverDirection" id="raindancers-network.dns.ResolverDirection"></a>
 
 Direction of Resolver.
 
@@ -16505,68 +13461,47 @@ Direction of Resolver.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResolverDirection.INBOUND">INBOUND</a></code> | Resolver is Inbound. |
-| <code><a href="#raindancers-network.ResolverDirection.OUTBOUND">OUTBOUND</a></code> | Resolver is outbound. |
+| <code><a href="#raindancers-network.dns.ResolverDirection.INBOUND">INBOUND</a></code> | Resolver is Inbound. |
+| <code><a href="#raindancers-network.dns.ResolverDirection.OUTBOUND">OUTBOUND</a></code> | Resolver is outbound. |
 
 ---
 
-##### `INBOUND` <a name="INBOUND" id="raindancers-network.ResolverDirection.INBOUND"></a>
+##### `INBOUND` <a name="INBOUND" id="raindancers-network.dns.ResolverDirection.INBOUND"></a>
 
 Resolver is Inbound.
 
 ---
 
 
-##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.ResolverDirection.OUTBOUND"></a>
+##### `OUTBOUND` <a name="OUTBOUND" id="raindancers-network.dns.ResolverDirection.OUTBOUND"></a>
 
 Resolver is outbound.
 
 ---
 
 
-### ResourceGroupQueryTypes <a name="ResourceGroupQueryTypes" id="raindancers-network.ResourceGroupQueryTypes"></a>
+### RuleGroupType <a name="RuleGroupType" id="raindancers-network.firewall.RuleGroupType"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.ResourceGroupQueryTypes.TAG_FILTERS_1_0">TAG_FILTERS_1_0</a></code> | *No description.* |
-| <code><a href="#raindancers-network.ResourceGroupQueryTypes.CLOUDFORMATION_STACK_1_0">CLOUDFORMATION_STACK_1_0</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.RuleGroupType.STATEFUL">STATEFUL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.RuleGroupType.STATELESS">STATELESS</a></code> | *No description.* |
 
 ---
 
-##### `TAG_FILTERS_1_0` <a name="TAG_FILTERS_1_0" id="raindancers-network.ResourceGroupQueryTypes.TAG_FILTERS_1_0"></a>
-
----
-
-
-##### `CLOUDFORMATION_STACK_1_0` <a name="CLOUDFORMATION_STACK_1_0" id="raindancers-network.ResourceGroupQueryTypes.CLOUDFORMATION_STACK_1_0"></a>
+##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.firewall.RuleGroupType.STATEFUL"></a>
 
 ---
 
 
-### RuleGroupType <a name="RuleGroupType" id="raindancers-network.RuleGroupType"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.RuleGroupType.STATEFUL">STATEFUL</a></code> | *No description.* |
-| <code><a href="#raindancers-network.RuleGroupType.STATELESS">STATELESS</a></code> | *No description.* |
-
----
-
-##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.RuleGroupType.STATEFUL"></a>
+##### `STATELESS` <a name="STATELESS" id="raindancers-network.firewall.RuleGroupType.STATELESS"></a>
 
 ---
 
 
-##### `STATELESS` <a name="STATELESS" id="raindancers-network.RuleGroupType.STATELESS"></a>
-
----
-
-
-### SegmentActionMode <a name="SegmentActionMode" id="raindancers-network.SegmentActionMode"></a>
+### SegmentActionMode <a name="SegmentActionMode" id="raindancers-network.cloudwan.SegmentActionMode"></a>
 
 Segment Action Mode.
 
@@ -16574,16 +13509,16 @@ Segment Action Mode.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.SegmentActionMode.ATTACHMENT_ROUTE">ATTACHMENT_ROUTE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentActionMode.ATTACHMENT_ROUTE">ATTACHMENT_ROUTE</a></code> | *No description.* |
 
 ---
 
-##### `ATTACHMENT_ROUTE` <a name="ATTACHMENT_ROUTE" id="raindancers-network.SegmentActionMode.ATTACHMENT_ROUTE"></a>
+##### `ATTACHMENT_ROUTE` <a name="ATTACHMENT_ROUTE" id="raindancers-network.cloudwan.SegmentActionMode.ATTACHMENT_ROUTE"></a>
 
 ---
 
 
-### SegmentActionType <a name="SegmentActionType" id="raindancers-network.SegmentActionType"></a>
+### SegmentActionType <a name="SegmentActionType" id="raindancers-network.cloudwan.SegmentActionType"></a>
 
 Segment Action Type.
 
@@ -16591,22 +13526,22 @@ Segment Action Type.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.SegmentActionType.SHARE">SHARE</a></code> | *No description.* |
-| <code><a href="#raindancers-network.SegmentActionType.CREATE_ROUTE">CREATE_ROUTE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentActionType.SHARE">SHARE</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.SegmentActionType.CREATE_ROUTE">CREATE_ROUTE</a></code> | *No description.* |
 
 ---
 
-##### `SHARE` <a name="SHARE" id="raindancers-network.SegmentActionType.SHARE"></a>
-
----
-
-
-##### `CREATE_ROUTE` <a name="CREATE_ROUTE" id="raindancers-network.SegmentActionType.CREATE_ROUTE"></a>
+##### `SHARE` <a name="SHARE" id="raindancers-network.cloudwan.SegmentActionType.SHARE"></a>
 
 ---
 
 
-### StartupAction <a name="StartupAction" id="raindancers-network.StartupAction"></a>
+##### `CREATE_ROUTE` <a name="CREATE_ROUTE" id="raindancers-network.cloudwan.SegmentActionType.CREATE_ROUTE"></a>
+
+---
+
+
+### StartupAction <a name="StartupAction" id="raindancers-network.cloudwan.StartupAction"></a>
 
 Startup Action for S2S VPN.
 
@@ -16614,159 +13549,116 @@ Startup Action for S2S VPN.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StartupAction.START">START</a></code> | AWS end to Intiate Startup. |
-| <code><a href="#raindancers-network.StartupAction.ADD">ADD</a></code> | Do not attempt to startup. |
+| <code><a href="#raindancers-network.cloudwan.StartupAction.START">START</a></code> | AWS end to Intiate Startup. |
+| <code><a href="#raindancers-network.cloudwan.StartupAction.ADD">ADD</a></code> | Do not attempt to startup. |
 
 ---
 
-##### `START` <a name="START" id="raindancers-network.StartupAction.START"></a>
+##### `START` <a name="START" id="raindancers-network.cloudwan.StartupAction.START"></a>
 
 AWS end to Intiate Startup.
 
 ---
 
 
-##### `ADD` <a name="ADD" id="raindancers-network.StartupAction.ADD"></a>
+##### `ADD` <a name="ADD" id="raindancers-network.cloudwan.StartupAction.ADD"></a>
 
 Do not attempt to startup.
 
 ---
 
 
-### StatefulAction <a name="StatefulAction" id="raindancers-network.StatefulAction"></a>
+### StatefulDefaultActions <a name="StatefulDefaultActions" id="raindancers-network.firewall.StatefulDefaultActions"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StatefulAction.PASS">PASS</a></code> | Traffic will pass. |
-| <code><a href="#raindancers-network.StatefulAction.DROP">DROP</a></code> | Traffic will be droped silently. |
-| <code><a href="#raindancers-network.StatefulAction.REJECT">REJECT</a></code> | Traffic will be dropped, and a TCP reset sent to the source. |
-| <code><a href="#raindancers-network.StatefulAction.ALERT">ALERT</a></code> | Raises an alert according to the firewalls logging/alert. |
+| <code><a href="#raindancers-network.firewall.StatefulDefaultActions.DROP_STRICT">DROP_STRICT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatefulDefaultActions.DROP_ESTABLISHED">DROP_ESTABLISHED</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatefulDefaultActions.ALERT_STRICT">ALERT_STRICT</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatefulDefaultActions.ALERT_ESTABLISHED">ALERT_ESTABLISHED</a></code> | *No description.* |
 
 ---
 
-##### `PASS` <a name="PASS" id="raindancers-network.StatefulAction.PASS"></a>
-
-Traffic will pass.
-
----
-
-
-##### `DROP` <a name="DROP" id="raindancers-network.StatefulAction.DROP"></a>
-
-Traffic will be droped silently.
-
-Note, When will cause a timeout for TCP, Consider using REJECT
+##### `DROP_STRICT` <a name="DROP_STRICT" id="raindancers-network.firewall.StatefulDefaultActions.DROP_STRICT"></a>
 
 ---
 
 
-##### `REJECT` <a name="REJECT" id="raindancers-network.StatefulAction.REJECT"></a>
-
-Traffic will be dropped, and a TCP reset sent to the source.
+##### `DROP_ESTABLISHED` <a name="DROP_ESTABLISHED" id="raindancers-network.firewall.StatefulDefaultActions.DROP_ESTABLISHED"></a>
 
 ---
 
 
-##### `ALERT` <a name="ALERT" id="raindancers-network.StatefulAction.ALERT"></a>
-
-Raises an alert according to the firewalls logging/alert.
+##### `ALERT_STRICT` <a name="ALERT_STRICT" id="raindancers-network.firewall.StatefulDefaultActions.ALERT_STRICT"></a>
 
 ---
 
 
-### StatefulDefaultActions <a name="StatefulDefaultActions" id="raindancers-network.StatefulDefaultActions"></a>
+##### `ALERT_ESTABLISHED` <a name="ALERT_ESTABLISHED" id="raindancers-network.firewall.StatefulDefaultActions.ALERT_ESTABLISHED"></a>
+
+---
+
+
+### StatelessActions <a name="StatelessActions" id="raindancers-network.firewall.StatelessActions"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StatefulDefaultActions.DROP_STRICT">DROP_STRICT</a></code> | *No description.* |
-| <code><a href="#raindancers-network.StatefulDefaultActions.DROP_ESTABLISHED">DROP_ESTABLISHED</a></code> | *No description.* |
-| <code><a href="#raindancers-network.StatefulDefaultActions.ALERT_STRICT">ALERT_STRICT</a></code> | *No description.* |
-| <code><a href="#raindancers-network.StatefulDefaultActions.ALERT_ESTABLISHED">ALERT_ESTABLISHED</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessActions.PASS">PASS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessActions.DROP">DROP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.StatelessActions.STATEFUL">STATEFUL</a></code> | *No description.* |
 
 ---
 
-##### `DROP_STRICT` <a name="DROP_STRICT" id="raindancers-network.StatefulDefaultActions.DROP_STRICT"></a>
-
----
-
-
-##### `DROP_ESTABLISHED` <a name="DROP_ESTABLISHED" id="raindancers-network.StatefulDefaultActions.DROP_ESTABLISHED"></a>
+##### `PASS` <a name="PASS" id="raindancers-network.firewall.StatelessActions.PASS"></a>
 
 ---
 
 
-##### `ALERT_STRICT` <a name="ALERT_STRICT" id="raindancers-network.StatefulDefaultActions.ALERT_STRICT"></a>
+##### `DROP` <a name="DROP" id="raindancers-network.firewall.StatelessActions.DROP"></a>
 
 ---
 
 
-##### `ALERT_ESTABLISHED` <a name="ALERT_ESTABLISHED" id="raindancers-network.StatefulDefaultActions.ALERT_ESTABLISHED"></a>
+##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.firewall.StatelessActions.STATEFUL"></a>
 
 ---
 
 
-### StatelessActions <a name="StatelessActions" id="raindancers-network.StatelessActions"></a>
+### SubnetWildCards <a name="SubnetWildCards" id="raindancers-network.network.SubnetWildCards"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.StatelessActions.PASS">PASS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessActions.DROP">DROP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.StatelessActions.STATEFUL">STATEFUL</a></code> | *No description.* |
+| <code><a href="#raindancers-network.network.SubnetWildCards.ALLSUBNETS">ALLSUBNETS</a></code> | *No description.* |
 
 ---
 
-##### `PASS` <a name="PASS" id="raindancers-network.StatelessActions.PASS"></a>
-
----
-
-
-##### `DROP` <a name="DROP" id="raindancers-network.StatelessActions.DROP"></a>
+##### `ALLSUBNETS` <a name="ALLSUBNETS" id="raindancers-network.network.SubnetWildCards.ALLSUBNETS"></a>
 
 ---
 
 
-##### `STATEFUL` <a name="STATEFUL" id="raindancers-network.StatelessActions.STATEFUL"></a>
-
----
-
-
-### SubnetWildCards <a name="SubnetWildCards" id="raindancers-network.SubnetWildCards"></a>
+### TargetTypes <a name="TargetTypes" id="raindancers-network.sso.TargetTypes"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.SubnetWildCards.ALLSUBNETS">ALLSUBNETS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.sso.TargetTypes.AWS_ACCOUNT">AWS_ACCOUNT</a></code> | *No description.* |
 
 ---
 
-##### `ALLSUBNETS` <a name="ALLSUBNETS" id="raindancers-network.SubnetWildCards.ALLSUBNETS"></a>
-
----
-
-
-### TargetTypes <a name="TargetTypes" id="raindancers-network.TargetTypes"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#raindancers-network.TargetTypes.AWS_ACCOUNT">AWS_ACCOUNT</a></code> | *No description.* |
-
----
-
-##### `AWS_ACCOUNT` <a name="AWS_ACCOUNT" id="raindancers-network.TargetTypes.AWS_ACCOUNT"></a>
+##### `AWS_ACCOUNT` <a name="AWS_ACCOUNT" id="raindancers-network.sso.TargetTypes.AWS_ACCOUNT"></a>
 
 ---
 
 
-### TunnelInsideIpVersion <a name="TunnelInsideIpVersion" id="raindancers-network.TunnelInsideIpVersion"></a>
+### TunnelInsideIpVersion <a name="TunnelInsideIpVersion" id="raindancers-network.cloudwan.TunnelInsideIpVersion"></a>
 
 Determine if this is an IPv4 or IPv6 Tunnel.
 
@@ -16774,19 +13666,19 @@ Determine if this is an IPv4 or IPv6 Tunnel.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.TunnelInsideIpVersion.IPV4">IPV4</a></code> | Use IPv4. |
-| <code><a href="#raindancers-network.TunnelInsideIpVersion.IPV6">IPV6</a></code> | Use IPv6. |
+| <code><a href="#raindancers-network.cloudwan.TunnelInsideIpVersion.IPV4">IPV4</a></code> | Use IPv4. |
+| <code><a href="#raindancers-network.cloudwan.TunnelInsideIpVersion.IPV6">IPV6</a></code> | Use IPv6. |
 
 ---
 
-##### `IPV4` <a name="IPV4" id="raindancers-network.TunnelInsideIpVersion.IPV4"></a>
+##### `IPV4` <a name="IPV4" id="raindancers-network.cloudwan.TunnelInsideIpVersion.IPV4"></a>
 
 Use IPv4.
 
 ---
 
 
-##### `IPV6` <a name="IPV6" id="raindancers-network.TunnelInsideIpVersion.IPV6"></a>
+##### `IPV6` <a name="IPV6" id="raindancers-network.cloudwan.TunnelInsideIpVersion.IPV6"></a>
 
 Use IPv6.
 
@@ -16814,7 +13706,7 @@ Use IPv6.
 ---
 
 
-### VpnDeviceType <a name="VpnDeviceType" id="raindancers-network.VpnDeviceType"></a>
+### VpnDeviceType <a name="VpnDeviceType" id="raindancers-network.cloudwan.VpnDeviceType"></a>
 
 Remote end Device Types.
 
@@ -16822,64 +13714,64 @@ Remote end Device Types.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R77_10">CHECKPOINT_R77_10</a></code> | Checkpoint R77_10. |
-| <code><a href="#raindancers-network.VpnDeviceType.CHECKPOINT_R80_10">CHECKPOINT_R80_10</a></code> | *No description.* |
-| <code><a href="#raindancers-network.VpnDeviceType.CISCO_ISR_12_4">CISCO_ISR_12_4</a></code> | *No description.* |
-| <code><a href="#raindancers-network.VpnDeviceType.CISCO_ASR_12_4">CISCO_ASR_12_4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnDeviceType.CHECKPOINT_R77_10">CHECKPOINT_R77_10</a></code> | Checkpoint R77_10. |
+| <code><a href="#raindancers-network.cloudwan.VpnDeviceType.CHECKPOINT_R80_10">CHECKPOINT_R80_10</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnDeviceType.CISCO_ISR_12_4">CISCO_ISR_12_4</a></code> | *No description.* |
+| <code><a href="#raindancers-network.cloudwan.VpnDeviceType.CISCO_ASR_12_4">CISCO_ASR_12_4</a></code> | *No description.* |
 
 ---
 
-##### `CHECKPOINT_R77_10` <a name="CHECKPOINT_R77_10" id="raindancers-network.VpnDeviceType.CHECKPOINT_R77_10"></a>
+##### `CHECKPOINT_R77_10` <a name="CHECKPOINT_R77_10" id="raindancers-network.cloudwan.VpnDeviceType.CHECKPOINT_R77_10"></a>
 
 Checkpoint R77_10.
 
 ---
 
 
-##### `CHECKPOINT_R80_10` <a name="CHECKPOINT_R80_10" id="raindancers-network.VpnDeviceType.CHECKPOINT_R80_10"></a>
+##### `CHECKPOINT_R80_10` <a name="CHECKPOINT_R80_10" id="raindancers-network.cloudwan.VpnDeviceType.CHECKPOINT_R80_10"></a>
 
 ---
 
 
-##### `CISCO_ISR_12_4` <a name="CISCO_ISR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ISR_12_4"></a>
+##### `CISCO_ISR_12_4` <a name="CISCO_ISR_12_4" id="raindancers-network.cloudwan.VpnDeviceType.CISCO_ISR_12_4"></a>
 
 ---
 
 
-##### `CISCO_ASR_12_4` <a name="CISCO_ASR_12_4" id="raindancers-network.VpnDeviceType.CISCO_ASR_12_4"></a>
+##### `CISCO_ASR_12_4` <a name="CISCO_ASR_12_4" id="raindancers-network.cloudwan.VpnDeviceType.CISCO_ASR_12_4"></a>
 
 ---
 
 
-### WellKnownPorts <a name="WellKnownPorts" id="raindancers-network.WellKnownPorts"></a>
+### WellKnownPorts <a name="WellKnownPorts" id="raindancers-network.firewall.WellKnownPorts"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#raindancers-network.WellKnownPorts.SSH">SSH</a></code> | *No description.* |
-| <code><a href="#raindancers-network.WellKnownPorts.HTTP">HTTP</a></code> | *No description.* |
-| <code><a href="#raindancers-network.WellKnownPorts.HTTPS">HTTPS</a></code> | *No description.* |
-| <code><a href="#raindancers-network.WellKnownPorts.RDP">RDP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.WellKnownPorts.SSH">SSH</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.WellKnownPorts.HTTP">HTTP</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.WellKnownPorts.HTTPS">HTTPS</a></code> | *No description.* |
+| <code><a href="#raindancers-network.firewall.WellKnownPorts.RDP">RDP</a></code> | *No description.* |
 
 ---
 
-##### `SSH` <a name="SSH" id="raindancers-network.WellKnownPorts.SSH"></a>
-
----
-
-
-##### `HTTP` <a name="HTTP" id="raindancers-network.WellKnownPorts.HTTP"></a>
+##### `SSH` <a name="SSH" id="raindancers-network.firewall.WellKnownPorts.SSH"></a>
 
 ---
 
 
-##### `HTTPS` <a name="HTTPS" id="raindancers-network.WellKnownPorts.HTTPS"></a>
+##### `HTTP` <a name="HTTP" id="raindancers-network.firewall.WellKnownPorts.HTTP"></a>
 
 ---
 
 
-##### `RDP` <a name="RDP" id="raindancers-network.WellKnownPorts.RDP"></a>
+##### `HTTPS` <a name="HTTPS" id="raindancers-network.firewall.WellKnownPorts.HTTPS"></a>
+
+---
+
+
+##### `RDP` <a name="RDP" id="raindancers-network.firewall.WellKnownPorts.RDP"></a>
 
 ---
 

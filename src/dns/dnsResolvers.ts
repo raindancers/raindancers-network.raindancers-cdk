@@ -40,7 +40,7 @@ export interface R53ResolverendpointsProps {
   /**
 	 * the vpc that the resolvers will be placed in
 	 */
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   /**
 	 * the subnetgroup to place the resolvers in
 	 */
@@ -152,7 +152,7 @@ export interface ConditionalForwarderProps {
   readonly forwardingRules: OutboundForwardingRule[];
   readonly outboundResolver: r53r.CfnResolverEndpoint;
   readonly inboundResolverTargets: r53r.CfnResolverRule.TargetAddressProperty[];
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
 }
 
 export class ConditionalForwarder extends constructs.Construct {

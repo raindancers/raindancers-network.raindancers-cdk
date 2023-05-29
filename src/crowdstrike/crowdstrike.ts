@@ -13,7 +13,7 @@ export interface CrowdStrikePrivateLinkEndpointProps {
 /**
  * The EC2 Instance that will be udpated.
  */
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   readonly crowdStrikeCloud: CrowdStrikeCloud;
   readonly subnets: ec2.SubnetSelection;
   readonly peeredwithNLB?: boolean;

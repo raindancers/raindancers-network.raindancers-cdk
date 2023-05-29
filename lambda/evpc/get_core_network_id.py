@@ -1,4 +1,3 @@
-from symbol import global_stmt
 import boto3
 
 net_manager = boto3.client('networkmanager', region_name='us-west-2')
@@ -90,11 +89,10 @@ def is_complete(event, context):
 		raise ValueError(f'Did not find the CoreNetwork {props["CoreNetworkName"]}')
 
 
-
-	response = net_manager.get_core_network(
-		CoreNetworkId=core_network_id
-	)
-	if response['CoreNetwork']['State'] == 'AVAILABLE':
+	# response = net_manager.get_core_network(
+	#	CoreNetworkId=core_network_id
+	#)
+	if core_network['State'] == 'AVAILABLE':
 		return { 'IsComplete': True }
 	else:
 		return { 'IsComplete': False }

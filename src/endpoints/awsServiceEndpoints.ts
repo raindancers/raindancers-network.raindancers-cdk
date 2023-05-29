@@ -10,7 +10,7 @@ export interface AwsServiceEndPointsProps {
   /**
 	   * The vpc in which the service is created
 	   */
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   /**
 	   * Subnet Group in which to create the service. Typically a subnet Dedicated to the task
 	   */

@@ -202,14 +202,18 @@ export class CoreNetworkSegment extends constructs.Construct {
     attachmentPolicy.conditions = props.conditions; // ok
 
 
-    //deal to key naming issues.
+    //deal to key naming issues for the action
+    let localAction: {[k: string]: any} = {};
+    localAction.segment = props.action.segment;
+
     if ('associationMethod' in props.action) {
-      let localAction: {[k: string]: any} = {};
-      localAction.segment = props.action.segment;
       localAction['association-method'] = props.action.associationMethod;
-      attachmentPolicy.action = localAction;
-    } else {
-      attachmentPolicy.action = props.action;
+    }
+
+    attachmentPolicy.action = localAction;
+
+    if (props.action.requireAcceptance) {
+      localAction['require-acceptance'] = props.action.requireAcceptance;
     }
 
     if (props.conditionLogic !== undefined) {
@@ -219,7 +223,8 @@ export class CoreNetworkSegment extends constructs.Construct {
     if (props.description !== undefined) {
       attachmentPolicy.description = props.description;
     }
-
+    console.log('*** attachment policy ***');
+    console.log(attachmentPolicy);
 
     const segmentpolicy = new cdk.CustomResource(this, `AttachmentPolicy${props.ruleNumber}`, {
       serviceToken: this.policyTableServiceToken,

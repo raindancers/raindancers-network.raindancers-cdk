@@ -1,82 +1,47 @@
 // the Evpc constructs
 
-export * from './aws/regions';
-//export * from './evpc/evpc';
-export * from './evpc/enterprisevpc';
-export * from './evpc/enterprisevpclambdas';
-export * from './evpc/resolveSubnetGroupNames';
+export * as network from './evpc/index';
+
+export * as regions from './aws/regions';
 
 // the ipam constructs
-export * from './ipam/ipam';
+export * as ipam from './ipam/ipam';
 
 // the cloudwan constructs
-export * from './cloudwan/cloudWan';
-export * from './cloudwan/cloudWanEnum';
-export * from './cloudwan/cloudwanTGW';
-export * from './cloudwan/coreNetworkSegment';
-
-// the cloudwan TransitGateway Constructs
-export * from './cloudwan/cloudwanTGWProps';
-export * from './cloudwan/cloudwanTGW';
+export * as cloudwan from './cloudwan/index';
 
 // aws Service Endpoints.
-export * from './endpoints/awsServiceEndpoints';
+export * as endpoints from './endpoints/index';
 
 // dns
-export * from './dns/dnsResolvers';
-export * from './dns/forwardingRules';
-export * from './dns/enterpriseZone';
-export * from './dns/resolverRules';
-export * from './dns/dnsfirewall';
+export * as dns from './dns/index';
 
 // firewall
-export * from './nwfirewall/firewall';
-export * from './nwfirewall/firewallPolicy';
-export * from './nwfirewall/suricataRule';
-export * from './nwfirewall/statefuldatabase';
-export * from './nwfirewall/resourceGroups';
+export * as firewall from './nwfirewall/firewallPolicy';
 
 // ssm
-export * from './ssm/manageEC2';
-export * from './ssm/ssmParameterReader';
-
-//cloudwatch
-//export * from './cloudwatch/monitorUser';
+export * as ssm from './ssm/index';
 
 // ec2
-export * from './ec2/imdvs2';
-export * from './ec2/prefixlist';
-
+export * as ec2 from './ec2/index';
 
 // crowdstrike
-export * from './crowdstrike/crowdstrikeRegionInfo';
-export * from './crowdstrike/crowdstrike';
-export * from './crowdstrike/crowdstrikeNLBendpoint';
+export * as crowdstrike from './crowdstrike/index';
 
 // redshift
-
-export * from './redshift/index';
-
+export * as redshift from './redshift/index';
 
 // sso
-
-export * from './sso/index';
-
-//power bi
-
-export * from './mspowerbigateway';
+export * as sso from './sso/index';
 
 // delay
 export * as delay from './delay/index';
 
 // glue
-
 export * as glue from './glue/index';
 
 // lakeformation
-
 export * as lakeformation from './lakeformation/index';
 
 // api lambda
-
 export * as apilambda from './apiLambda/index';

@@ -96,8 +96,8 @@ export interface RouterGroup {
 }
 
 export interface ShareSubnetGroupProps {
-  readonly subnetGroups: string [];
-  readonly account: string;
+  readonly subnetGroup: SubnetGroup;
+  readonly accounts: string[];
 }
 
 export interface AddR53ZoneProps {
@@ -204,7 +204,7 @@ export interface EvpcProps extends ec2.VpcProps {
 /** Propertys for an Enterprise VPC */
 export interface EnterpriseVpcProps {
   // the vpc
-  readonly vpc?: ec2.Vpc;
+  readonly vpc?: ec2.Vpc | ec2.IVpc;
   readonly evpc?: EvpcProps;
 
 }// end of addRoutetoCloudWan
@@ -237,7 +237,7 @@ export class EnterpriseVpc extends constructs.Construct {
   /**
 	 * the ec2.Vpc that is passed in as property
 	 */
-  public readonly vpc: ec2.Vpc;
+  public readonly vpc: ec2.Vpc | ec2.IVpc;
 
   public readonly addRoutesProvider: cr.Provider;
 
@@ -847,21 +847,19 @@ export class EnterpriseVpc extends constructs.Construct {
 
     var subnetarns: string[] = [];
 
-    props.subnetGroups.forEach((groupName)=> {
-      const selection = this.vpc.selectSubnets({
-        subnetGroupName: groupName,
-      });
+    const selection = this.vpc.selectSubnets({
+      subnetGroupName: props.subnetGroup.subnet.name,
+    });
 
-      selection.subnets.forEach((subnet) => {
-        subnetarns.push(`arn:aws:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
-      });
+    selection.subnets.forEach((subnet) => {
+      subnetarns.push(`arn:${cdk.Aws.PARTITION}:ec2:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:subnet/${subnet.subnetId}`);
+    });
 
-      new ram.CfnResourceShare(this, `ramshare${groupName}${hashProps(props)}`, {
-        name: props.account + hashProps(props),
-        allowExternalPrincipals: false,
-        principals: [props.account],
-        resourceArns: subnetarns,
-      });
+    new ram.CfnResourceShare(this, `ramshare${props.subnetGroup.subnet.name}$`, {
+      name: `shareSubnetGroup-${props.subnetGroup.subnet.name}`,
+      allowExternalPrincipals: false,
+      principals: props.accounts,
+      resourceArns: subnetarns,
     });
   }
 

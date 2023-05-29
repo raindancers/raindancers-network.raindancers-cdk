@@ -58,7 +58,7 @@ export interface AssociateSharedResolverRuleProps {
   /**
    * The VPC which will be assocaited with the ResolverRules
    */
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
 
 }
 

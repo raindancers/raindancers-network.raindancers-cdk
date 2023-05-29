@@ -15,7 +15,7 @@ export interface NetworkFirewallProps {
   /**
    * the the vpc where the Network firewall is placed
    */
-  readonly vpc: ec2.Vpc;
+  readonly vpc: ec2.Vpc | ec2.IVpc;
   /**
    * the subnetGroup where the firewall will be created.
    */
